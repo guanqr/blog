@@ -6,4 +6,10 @@ HUGO_ENABLEGITINFO = "true"
 [build]
   base = "/"
   publish = "public/"
-  command = "hugo && gulp build"
+  command = "hugo && gulp build && gulp"
+
+[[redirects]]
+  from = "https://guanqr-blog.netlify.com/*"
+  to = "https://blog.guanqr.com/:splat"
+  status = 301
+  force = true

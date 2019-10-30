@@ -1,7 +1,6 @@
 +++
 title = "Hello World!"
 date = "2019-05-01T00:20:00+08:00"
-updated = "2019-08-17T15:24:30+08:00"
 tags = ["Hello"]
 categories = ["Life","whimsy"]
 dropCap = true

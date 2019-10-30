@@ -2,3 +2,8 @@
 HUGO_VERSION = "0.59.0"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
+
+[build]
+  base = "/"
+  publish = "public/"
+  command = "hugo && gulp build"

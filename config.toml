@@ -9,7 +9,7 @@ copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0
 defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = false
 
-enableGitInfo = false
+enableGitInfo = true
 
 pluralizeListTitles = false
 

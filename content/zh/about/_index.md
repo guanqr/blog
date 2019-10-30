@@ -1,29 +1,90 @@
 +++
 title = "关于"
-description = "Hugo, the world’s fastest framework for building websites"
+description = "关于本站，关于我，还有其他一些事..."
 date = "2019-02-28"
-author = "Hugo Authors"
+dropCap = false
 original = false
-website = "https://gohugo.io/"
-link = "https://git.io/fjbhZ"
-copyright = "[Some rights reserved.](https://github.com/gohugoio/hugoBasicExample/blob/master/LICENSE)"
-comments = true
+gitinfo = true
 +++
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+<p style="text-align:center">十里青山远，潮平路带沙。<br>
+数声啼鸟怨年华。<br>
+又是凄凉时候，在天涯。<br>
+白露收残月，清风散晓霞。<br>
+绿杨堤畔问荷花：<br>
+记得年时沽酒，那人家？</p>
 
-Hugo makes use of a variety of open source projects including:
+---
 
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+## 关于此博客
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
+### 基本信息
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
++ 采用 Hugo 博客框架
++ 主题为 Meme
++ 源码存放于 Github
++ 部署在 Netlify
 
-Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
+### 订阅服务
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+目前本站支持以下三种方式订阅：
+
++ [Wechat](https://www.guanqr.com/images/wechat-official-accounts.svg)
++ [Atom](https://blog.guanqr.com/atom.xml) / [RSS](https://blog.guanqr.com/rss.xml)
++ [Telegram Channel](https://t.me/guanqr)
+
+### 建立博客的原因
+
+我希望通过一个平台来分享自己的生活、想法，把自己学到的知识分享给他人。
+
+最初我在新浪博客、QQ 空间之类的平台上写写文章，这样的社交平台给大家提供了很好地交流机会，但这些平台终究是属于别人家的，文章的格式，个人主页的主题都会受到限制。在别人的地盘上，说不定由于某些原因，你的账号就消失了，你辛辛苦苦写的那些文章也不存在了。除此之外，我认为，这些提供交流服务的平台，说不定哪一天就因为时代的变化，无法与同行竞争下去，宣告死亡。
+
+因此，在自己的网站上，才能最大程度地避免类似的事情发生。你的域名是你的，只要你交钱下去就永远是你的，除非互联网被革命了所有网络协议都被重新洗牌。你的文章都存在自己的领地当中，你可以任意控制自己网站的布局设计，发挥最大的自由空间。
+
+选择建立静态博客，是因为我觉得花费很多钱来管理维护一个服务器实在没必要。我尝试过使用 WordPress 建站，但后来还是抛弃了它。这是一个不起眼的小站，访问量也很少，使用服务器的话有些大材小用。如果说哪一天我的博客爆红的话，可以考虑一下。
+
+### 博客的名字
+
+博客的名字取自鲁迅的诗作《题〈彷徨〉》的最后一句。最初我是在小学时期的语文课本中读到的这首诗，此后便一直把这句话作为我的网名。
+
+<p style="text-align:center">寂寞新文苑，平安旧战场。<br>
+两间余一卒，荷戟独彷徨。</p>
+
+关于副标题：<i>The Sound of Silence</i>（寂静之声）。这是一首歌的名字，歌曲在上方。我们对未来充满向往，却也会感到迷茫，人生会有很多无奈，但还是要努力前行。「荷戟独彷徨」加上「寂静之声」，便有了一种独特的韵味。
+
+### 文章内容分类
+
+我的文章主要分为两大类：「生活感悟」（<i>life</i>）与「学海无涯」（<i>study</i>）。「学海无涯」方面的内容，主要偏向于我的专业（光学）部分，除此之外还有一些我在互联网上学到的知识总结，一些我认为比较好的文章的搬运，转载时会注明来源。当然，「学海无涯」之外的所有文章，都将放在「生活感悟」的分类中。文章均采用 [<i class="fa fa-creative-commons"></i> BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。具体的分类情况通过下面的「文章分类目录树」进行展示。
+
+```
+分类(categories)
+│
+├── 生活感悟(life)
+│   ├── 品影天地(film)
+│   ├── 悦读笔记(reading)
+│   ├── 校园生活(school)
+│   ├── 时事评论(society)
+│   ├── 旅行日记(travel)
+│   └── 奇思妙想(whimsy)
+│ 
+└── 学海无涯(study)
+    ├── 建站笔记(blog) 
+    ├── 信息技术(computer) 
+    └── 光学工程(optics)
+```
+
+### 更新日志
+
+点击[这里](https://www.guanqr.com/update/)查看本站的更新日志。
+
+## 关于我
+
+一个默默无闻的普通人。浙江大学光电科学与工程学院本科在读。喜欢看电影、追美剧、读书、运动。
+
+## 其他
+
++ 建议使用 Chrome 浏览器浏览本站，使用 PC 端浏览本站效果更佳。
++ 本站启用了 PWA 技术，如果喜欢的话，你可以通过浏览器添加本站到你的手机主屏或计算机桌面，随时随地进行浏览。
++ 本站无广告插入，一些浏览器插件如 AdBlocks 可能会影响用户体验，希望来访的各位能将本站加入白名单。
++ 如果你在浏览博客的过程中发现了任何问题，欢迎前往 GitHub  的[代码仓库](https://github.com/guanqr/blog)提交 Issue 或直接修改相关文件后提交 PR。
++ 若有其他事情想要咨询，可以通过电子邮箱联系我，邮箱地址：guanqirui@zju.edu.cn。

@@ -491,7 +491,7 @@ enableKaTeX = false
 
 enableComments = false
 enableDisqus = true
-disqusShortname = "meme-5"
+disqusShortname = "Guanqr"
 
 enableGoogleAnalytics = false
 # `gtag` or `analytics`
@@ -545,7 +545,7 @@ displayReadingTime = true
 readingTimeIcon = "clock"
 
 # Table of Contents
-enableTOC = true
+enableTOC = false
 displayTOCTitle = true
 linkHeadingsToTOC = true
 
@@ -623,7 +623,7 @@ enableChinesePunctuationGlyphCorrection = false
 enableSmallCap = true
 
 # Post first paragraph
-enableDropCap = true
+enableDropCap = false
 # Every paragraph after `<hr />` or `---` in Markdown
 enableDropCapAfterHr = false
 deleteHrBeforeDropCap = false
@@ -632,11 +632,11 @@ enableParagraphIndent = true
 # margin or indent, globe setting, Front Matter: indent
 paragraphStyle = "margin"
 
-enableJustify = false
+enableJustify = true
 
 # Post Copyright
 enablePostCopyright = true
-displayPostCopyright = true
+displayPostCopyright = false
 
 enablePostUpdatedBadge = true
 displayUpdatedBadge = true
@@ -644,7 +644,7 @@ enableBadgeTitle = true
 badgeTitlePrefix = "Updated @ "
 
 enablePostGitInfo = true
-displayPostGitInfo = true
+displayPostGitInfo = false
 repoURL = "https://github.com/guanqr/blog"
 # or https://github.com/reuixiy/meme-test/edit/master
 repoEditURL = "https://github.com/guanqr/blog/blob/master"

@@ -4,6 +4,8 @@ date = "2019-05-01T00:20:00+08:00"
 tags = ["Hello"]
 categories = ["Life","whimsy"]
 dropCap = true
+displayCopyright = true
+gitinfo = true
 +++
 今天，我创建了这个博客。就像我们学习计算机语言，写出的第一个程序是「Hello World!」一样，在这里，第一篇文章的标题就为「Hello World!」。我希望能在这里分享我生活中的点点滴滴。
 

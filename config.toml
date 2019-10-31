@@ -3,8 +3,6 @@ theme = "meme"
 title = "荷戟独彷徨"
 # https://en.wikipedia.org/wiki/Language_localisation
 # https://www.zhihu.com/question/21980689
-languageCode = "zh-CN"
-copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)"
 
 defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = false
@@ -65,7 +63,7 @@ weight = 1
 languageCode = "zh-CN"
 hasCJKLanguage= true
 title = "荷戟独彷徨"
-copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)"
+copyright = "本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 许可协议，转载请注明出处。"
 
 [languages.en-us]
 languageName = "English"
@@ -73,7 +71,7 @@ contentDir = "content/en"
 weight = 2
 languageCode = "en-US"
 title = "The Sound of Silence"
-copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)"
+copyright = "The article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)."
 [[languages.en-us.menu.main]]
 url = "/en-us/"
 name = "Home"
@@ -515,7 +513,7 @@ primaryColorDark = "349, 75%, 51%"
 
 # Unit: em
 # You can leave it empty ("") to fallback to default value: 42
-postWidth = 32
+postWidth = 36
 
 # Do NOT Change this value!
 # If one post is not original, set in that post’s Front Matter.
@@ -599,7 +597,7 @@ enableEmphasisPoint = false
 fontSize = 16
 # Unitless values: use this number multiplied by the element’s font size
 # Apply to post paragraph & toc only
-lineHeight = 1.618
+lineHeight = 2
 
 # Any value is not set, fallback to `fontFamilyBody` it will.
 # If you use SVG as your Site Brand, then leave this value empty.

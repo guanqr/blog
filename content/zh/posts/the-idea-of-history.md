@@ -4,6 +4,7 @@ description = "大一春夏学期的时候，我选修了「西方思想经典�
 date = "2019-05-02T08:01:27+08:00"
 tags = ["History","Philosophy","Literature"]
 categories = ["life","reading"]
+dropCap = true
 displayCopyright = true
 gitinfo = true
 +++

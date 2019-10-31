@@ -8,11 +8,12 @@ dropCap = true
 displayCopyright = true
 gitinfo = true
 +++
+
 乔布斯，一个无数青年人心中的偶像，一位引发世界潮流的大师。他创造的一个又一个商业奇迹，让旁人为之惊羡，Mac 电脑，皮克斯电影，iPod，iPhone，iPad……所以人们评价乔布斯改变了人们对电脑，出版，电影，音乐，手机和个人电脑的认识。曾经作为一个 “果粉”，我将苹果的一系列产品都看作是珍贵的艺术品，这些艺术品的创造离不开乔布斯极度追求完美的思想。
 
 <!-- more-->
 
-![to-the-crazy-ones-jobs-1.jpg](/images/to-the-crazy-ones-jobs-1.jpg "史蒂夫 • 乔布斯")
+![to-the-crazy-ones-jobs-1.jpg](/images/to-the-crazy-ones-jobs-1.jpg "史蒂夫·乔布斯")
 
 ---
 
@@ -40,7 +41,7 @@ gitinfo = true
 
 ---
 
-![to-the-crazy-ones-jobs-2.jpg](/images/to-the-crazy-ones-jobs-2.jpg "史蒂夫 • 乔布斯")
+![to-the-crazy-ones-jobs-2.jpg](/images/to-the-crazy-ones-jobs-2.jpg "史蒂夫·乔布斯")
 
 我们追述伟人的事迹，探索成功的秘诀，往往忘记了他们的不可复制性，如果说有什么共性，我想就是对成功的热望和不懈的追求。没有那些非凡的生涯，只是单纯地追求处事方式的相似，往往不能做出相似的成就。上帝给了乔布斯一个苹果，可是它有一个缺口。对于现在社会倡导的创新仅仅停留在口头上的硬伤，乔布斯绝对是创新的先行者。伟人最大的价值不是他们为当时的年代创造了多少利益，而是让我们可以看到人的一生应该怎样度过。[^2]
 

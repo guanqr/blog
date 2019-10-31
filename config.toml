@@ -3,8 +3,8 @@ theme = "meme"
 title = "荷戟独彷徨"
 # https://en.wikipedia.org/wiki/Language_localisation
 # https://www.zhihu.com/question/21980689
-languageCode = "en-US"
-copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)"
+languageCode = "zh-CN"
+copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)"
 
 defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = false
@@ -13,7 +13,7 @@ enableGitInfo = true
 
 pluralizeListTitles = false
 
-summaryLength = 42
+summaryLength = 150
 
 enableRobotsTXT = true
 
@@ -26,7 +26,7 @@ enableEmoji = true
 
 footnoteReturnLinkContents = "↩"
 
-paginate = 5
+paginate = 10
 
 [related]
 threshold = 80
@@ -456,7 +456,7 @@ hideThemeToggleInHome = false
 # black and white on a white background. Also, you can set
 # `true` here and set `false` in Front Matter which will
 # override what you have set here.
-darkImage = true
+darkImage = false
 
 # Web App
 # https://realfavicongenerator.net/

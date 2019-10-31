@@ -4,3 +4,54 @@
 blockquote {
     font-family: 'EB Garamond', 'STKaiti', 'KaiTi', 'SimKai', 'Noto Serif SC', sans-serif;
 }
+:root {
+    --color-div-danger: #d9534f;
+	--color-div-danger-bg: #fcf1f2;
+	--color-div-warning: #f0ad4e;
+	--color-div-warning-bg: #fdf8ea;
+	--color-div-success: #5cb85c;
+	--color-div-success-bg: #eff8f0;
+	--color-div-info: #428bca;
+	--color-div-info-bg: #eef7fa;
+	--color-div-primary: #6f42c1;
+	--color-div-primary-bg: #f5f0fa;
+	--color-div-default: #777;
+	--color-div-default-bg: #f7f7f7;
+}
+[data-theme="dark"] {
+    --color-div-danger-bg: rgba(38,38,38,0.5);
+	--color-div-warning-bg: rgba(38,38,38,0.5);
+	--color-div-success-bg: rgba(38,38,38,0.5);
+	--color-div-info-bg: rgba(38,38,38,0.5);
+	--color-div-primary-bg: rgba(38,38,38,0.5);
+	--color-div-default-bg: rgba(38,38,38,0.5);
+}
+// 自定义引用边框
+p#div-danger, p#div-warning, p#div-success, p#div-info, p#div-primary, p#div-default {
+    padding: 0.5em 1em;
+	border-left: 3px solid #eee;
+}
+p#div-danger {
+    background: var(--color-div-danger-bg);
+    border-left-color: var(--color-div-danger);
+}
+p#div-warning {
+    background: var(--color-div-warning-bg);
+    border-left-color: var(--color-div-warning);
+}
+p#div-success {
+    background: var(--color-div-success-bg);
+    border-left-color: var(--color-div-success);
+}
+p#div-info {
+    background: var(--color-div-info-bg);
+    border-left-color: var(--color-div-info);
+}
+p#div-primary {
+    background: var(--color-div-primary-bg);
+    border-left-color: var(--color-div-primary);
+}
+p#div-default {
+    background: var(--color-div-default-bg);
+    border-left-color: var(--color-div-default);
+}

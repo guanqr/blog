@@ -9,7 +9,7 @@ gitinfo = true
 
 >河伯说，大河是母亲滚烫的柔肠，黄花说，铁塔是父亲挺拔的脊梁；河伯说，大河是奔流的紫电青霜，黄花说，铁塔是屹立的钨亮锋芒。
 
-![the-legend-of-a-tower-1.jpg](/images/the-legend-of-a-tower-1.jpg)
+![the-legend-of-a-tower-0.jpg](/images/the-legend-of-a-tower-0.jpg)
 
 九曲黄河在此转向，七朝更迭经历沧桑。开封，没有耸立的高楼大厦，没有发达的铁路交通。我更愿意称她为汴梁。一千年前，宋仁宗带着阿育王佛舍利，来到了京城的东北隅。
 
@@ -21,7 +21,7 @@ gitinfo = true
 
 汴梁人就是那样的坚忍不拔。黄河水一次次决堤，浑浊的泥沙淹没了他们的家园，他们奔向太行山的那一边。人们劝他们不要再回去了，黄河水无情啊。可是他们毅然决定回家，又在那黄沙上建立新的城镇。他们心里清楚：那座塔还在，我们也不能走。
 
-![the-legend-of-a-tower-2.jpg](/images/the-legend-of-a-tower-2.jpg)
+![the-legend-of-a-tower-1.jpg](/images/the-legend-of-a-tower-1.jpg)
 
 ---
 

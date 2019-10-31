@@ -590,7 +590,7 @@ insertHrBySelf = true
 
 # Markdown
 # New Markdown Syntax: Emphasis Point `..text..`
-enableEmphasisPoint = false
+enableEmphasisPoint = true
 
 # Typography
 # Fonts, Unit: px
@@ -615,7 +615,7 @@ fontFamilyBody = "'EB Garamond', 'Noto Serif SC', serif"
 # https://fonts.google.com/
 fontsLink = 'https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,700,700i|Noto+Serif+SC:400,700|Source+Code+Pro:400,400i,700,700i|Cinzel+Decorative:700&display=swap&subset=chinese-simplified'
 
-enableChinesePunctuationGlyphCorrection = false
+enableChinesePunctuationGlyphCorrection = true
 
 # Post headings and contents title
 enableSmallCap = true

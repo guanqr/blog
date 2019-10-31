@@ -102,20 +102,20 @@ weight = 4
 pre = "internal"
 post = "archive"
 identifier = "archives"
-[[languages.en-us.menu.main]]
-url = "/en-us/life/"
-name = "Life"
-weight = 5
-pre = "internal"
-post = "grav"
-identifier = "life"
-[[languages.en-us.menu.main]]
-url = "/en-us/study/"
-name = "Study"
-weight = 6
-pre = "internal"
-post = "wpexplorer"
-identifier = "study"
+#[[languages.en-us.menu.main]]
+#url = "/en-us/posts/"
+#name = "Posts"
+#weight = 5
+#pre = "internal"
+#post = "grav"
+#identifier = "posts"
+#[[languages.en-us.menu.main]]
+#url = "/en-us/study/"
+#name = "Study"
+#weight = 6
+#pre = "internal"
+#post = "wpexplorer"
+#identifier = "study"
 [[languages.en-us.menu.main]]
 url = "/en-us/about/"
 name = "About"
@@ -272,21 +272,21 @@ pre = "internal"
 post = "archive"
 identifier = "archives"
 
-[[menu.main]]
-url = "/life/"
-name = "生活"
-weight = 5
-pre = "internal"
-post = "grav"
-identifier = "life"
+#[[menu.main]]
+#url = "/posts/"
+#name = "文章"
+#weight = 5
+#pre = "internal"
+#post = "grav"
+#identifier = "posts"
 
-[[menu.main]]
-url = "/study/"
-name = "学习"
-weight = 6
-pre = "internal"
-post = "wpexplorer"
-identifier = "study"
+#[[menu.main]]
+#url = "/study/"
+#name = "学习"
+#weight = 6
+#pre = "internal"
+#post = "wpexplorer"
+#identifier = "study"
 
 [[menu.main]]
 url = "/about/"
@@ -389,7 +389,7 @@ siteDescription = "The Sound of Silence"
 # If not set, will use site’s all taxonomy terms as default
 siteKeywords = []
 # Keep this format, change the number
-siteCreatedTime = "2019-05-01T00:17:43+00:00"
+siteCreatedTime = "2019-04-30T16:17:43+08:00"
 # If you enable `twitterCards`, then add your Twitter username
 siteTwitter = "Guanqr"
 # If you enable `openGraph`, then add your Facebook username
@@ -417,7 +417,7 @@ smallestFontSize = 1
 listWidth = 30
 displayListTitle = true
 # https://gohugo.io/functions/format/
-listDateFormat = "January 2"
+listDateFormat = "2006-01-02"
 # left / right
 listDatePosition = "right"
 groupByMonth = true
@@ -429,13 +429,13 @@ i18nMonth = true
 displayTaxonomyTermCount = true
 
 # Override Hugo’s default value
-mainSections = ["life", "study"]
+mainSections = ["posts"]
 
 # Post Sections
-postSections = ["life", "study"]
+postSections = ["posts"]
 
 # Feed
-feedSections = ["life", "study"]
+feedSections = ["posts"]
 # If `true`, will add content to Atom; If `false`, won’t.
 # Note: By default, will add summary to Atom as `summary`,
 # and if Front Matter have a description, description

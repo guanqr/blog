@@ -412,7 +412,7 @@ smallestFontSize = 1
 
 # Unit: em
 # You can leave it empty ("") to fallback to default value: 42
-listWidth = 30
+listWidth = 36
 displayListTitle = true
 # https://gohugo.io/functions/format/
 listDateFormat = "2006-01-02"

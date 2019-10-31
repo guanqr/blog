@@ -270,13 +270,13 @@ pre = "internal"
 post = "archive"
 identifier = "archives"
 
-#[[menu.main]]
-#url = "/posts/"
-#name = "文章"
-#weight = 5
-#pre = "internal"
-#post = "grav"
-#identifier = "posts"
+[[menu.main]]
+url = "/friends/"
+name = "友链"
+weight = 5
+pre = "internal"
+post = "grav"
+identifier = "friends"
 
 #[[menu.main]]
 #url = "/study/"

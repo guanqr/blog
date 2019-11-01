@@ -84,3 +84,60 @@ p#div-default {
 .blockquote-center {
     border-left: 0;
 }
+// 友链样式
+.links-content{
+    margin-top:1rem;
+}
+.link-navigation::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.card {
+    width: 240px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition-duration: 0.15s;
+    margin-bottom: 1rem;
+    display:flex;
+}	
+.card:nth-child(odd) {
+    float: left;
+}
+.card:nth-child(even) {
+    float: left;
+}
+.card a {
+     border:none; 
+}
+.card .ava {
+    width: 3rem!important;
+    height: 3rem!important;
+    margin:0!important;
+    margin-right: 1em!important;
+    border-radius:4px;   
+}
+.card .card-header {
+    font-style: italic;
+    overflow: hidden;
+    width: 100%;
+}
+.card .card-header a {
+    font-style: normal;
+    color: #2bbc8a;
+    font-weight: bold;
+    text-decoration: none;
+}
+.card .card-header a:hover {
+    color: #a166ab;
+    text-decoration: none;
+}
+.card .card-header .info {
+    font-style:normal;
+    color:#a3a3a3;
+    font-size:14px;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}

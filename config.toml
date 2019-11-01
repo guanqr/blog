@@ -664,11 +664,11 @@ relatedPostsNumber = 5
 relatedPostsIcon = "plus-circle"
 
 # Post tags
-enablePostTags = false
+enablePostTags = true
 postTagsIcon = "tag"
 
 # Post minimal footer
-enableMinimalFooter = true
+enableMinimalFooter = false
 enableAboutPageMinimalFooter = true
 
 # Post nav

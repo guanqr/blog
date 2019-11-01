@@ -529,7 +529,7 @@ enablePostMetaInHome = true
 postMetaDateFormat = "2006-01-02"
 displayPublishedDate = true
 publishedDateIcon = "calendar-alt"
-displayModifiedDate = true
+displayModifiedDate = false
 modifiedDateIcon = "calendar-check"
 # Note that it will not display if the date is zero (not set).
 displayExpiredDate = true

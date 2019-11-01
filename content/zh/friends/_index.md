@@ -2,7 +2,8 @@
 title = "友情链接"
 description = "感谢您的关注与支持 ~"
 date = "2019-04-30T16:41:47+08:00"
-gitinfo = true
+badge = false
+meta = false
 +++
 
 <div id="links">

@@ -55,3 +55,32 @@ p#div-default {
     background: var(--color-div-default-bg);
     border-left-color: var(--color-div-default);
 }
+.blockquote-center::after, .blockquote-center::before {
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    content: ' ';
+    display: block;
+    height: 24px;
+    opacity: .2;
+    //position: absolute;
+    width: 100%;
+}
+.blockquote-center::before {
+    background-image: url(../images/quote-l.svg);
+    background-position: 0 -6px;
+    border-top: 1px solid #ccc;
+    top: -20px;
+}
+.blockquote-center::after {
+    background-image: url(../images/quote-r.svg);
+    background-position: 100% 8px;
+    border-bottom: 1px solid #ccc;
+    bottom: -20px;
+}
+.blockquote-center div, .blockquote-center p {
+    text-align: center !important;
+    margin: 0;
+}
+.blockquote-center {
+    border-left: 0;
+}

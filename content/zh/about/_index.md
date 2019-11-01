@@ -2,17 +2,11 @@
 title = "关于"
 description = "关于本站，关于我，还有其他一些事..."
 date = "2019-04-30T16:41:47+08:00"
-gitinfo = true
+badge = false
+meta = false
 +++
 
-<p style="text-align:center">十里青山远，潮平路带沙。<br>
-数声啼鸟怨年华。<br>
-又是凄凉时候，在天涯。<br>
-白露收残月，清风散晓霞。<br>
-绿杨堤畔问荷花：<br>
-记得年时沽酒，那人家？</p>
-
----
+<blockquote class="blockquote-center"><p>十里青山远，潮平路带沙。<br>数声啼鸟怨年华。<br>又是凄凉时候，在天涯。<br>白露收残月，清风散晓霞。<br>绿杨堤畔问荷花：<br>记得年时沽酒，那人家？</p></blockquote>
 
 ## 关于此博客
 
@@ -45,8 +39,8 @@ gitinfo = true
 
 博客的名字取自鲁迅的诗作《题〈彷徨〉》的最后一句。最初我是在小学时期的语文课本中读到的这首诗，此后便一直把这句话作为我的网名。
 
-<p style="text-align:center">寂寞新文苑，平安旧战场。<br>
-两间余一卒，荷戟独彷徨。</p>
+<blockquote class="blockquote-center"><p>寂寞新文苑，平安旧战场。<br>
+两间余一卒，荷戟独彷徨。</p></blockquote>
 
 关于副标题：<i>The Sound of Silence</i>（寂静之声）。这是一首歌的名字，歌曲在上方。我们对未来充满向往，却也会感到迷茫，人生会有很多无奈，但还是要努力前行。「荷戟独彷徨」加上「寂静之声」，便有了一种独特的韵味。
 

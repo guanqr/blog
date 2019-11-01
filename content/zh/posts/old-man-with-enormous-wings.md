@@ -1,7 +1,7 @@
 +++
 title = "《巨翅老人》天使与人类"
 description = "文明终究是不会彻底消亡的，它终将丰满自己的双翅，飞向需要他的地方。"
-date = "2019-05-02T08:37:42+08:00"
+date = "2019-05-02T16:37:42+08:00"
 tags = ["Literature","Novel","Magical-Realism"]
 categories = ["life","reading"]
 dropCap = true

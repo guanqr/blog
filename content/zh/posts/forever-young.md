@@ -1,7 +1,7 @@
 +++
 title = "《无问西东》献礼青春"
 description = "这不仅仅是一部献礼清华大学百年校庆的电影。"
-date = "2019-05-02T02:17:51+08:00"
+date = "2019-05-02T10:17:51+08:00"
 tags = ["Youth","THU"]
 categories = ["life","film"]
 dropCap = true

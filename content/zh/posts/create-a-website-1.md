@@ -1,6 +1,6 @@
 +++
 title = "Linux 系统安装宝塔面板建站"
-date = "2019-05-04T16:00:00+08:00"
+date = "2019-05-05T00:00:00+08:00"
 tags = ["WordPress","Linux"]
 categories = ["study","blog"]
 displayCopyright = true

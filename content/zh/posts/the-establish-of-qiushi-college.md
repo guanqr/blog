@@ -1,7 +1,7 @@
 +++
 title = "两浙无两，孤山不孤"
 description = "此文是我作为校写作中心学员，为学校档案馆创作的文章初稿。"
-date = "2019-05-04T14:38:29+08:00"
+date = "2019-05-04T22:38:29+08:00"
 tags = ["Hangzhou","History","ZJU"]
 categories = ["life","school"]
 dropCap = true

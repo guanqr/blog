@@ -1,7 +1,7 @@
 +++
 title = "致疯狂的人"
 description = "我高中时期语文课堂上的一次演讲。"
-date = "2019-05-01T04:24:01+08:00"
+date = "2019-05-01T12:24:01+08:00"
 tags = ["Apple","IBM"]
 categories = ["life","whimsy"]
 dropCap = true

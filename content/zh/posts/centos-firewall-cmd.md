@@ -1,6 +1,6 @@
 +++
 title = "CentOS 使用 firewall-cmd 打开关闭防火墙与端口"
-date = "2019-05-10T14:44:44+08:00"
+date = "2019-05-10T22:44:44+08:00"
 tags = ["Linux","CentOS","Firewall"]
 categories = ["study","computer"]
 dropCap = true

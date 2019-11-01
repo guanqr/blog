@@ -1,7 +1,7 @@
 +++
 title = "军训回忆录"
 description = "风云二团，壮我河山，战狼三连，豪啸云巅。"
-date = "2019-05-03T15:05:38+08:00"
+date = "2019-05-03T23:05:38+08:00"
 tags = ["ZJU","Hangzhou"]
 categories = ["life","school"]
 dropCap = true

@@ -10,6 +10,8 @@ gitinfo = true
 toc = true
 +++
 
+![24-color-checker.jpg](/images/24-color-checker.jpg)
+
 随着数码相机的普及，人们已经不满足停留在仅仅会拍照的阶段，考虑更多的是如何选择一个好的相机，拍更好的照片。如何客观、公正、准确的评价数码相机的成像质量？用拍摄所得图片的质量进行评价，是一个有效的方法。本文记录的是我第一次尝试使用 Imatest 软件进行像质分析的过程，在这一过程中出现了部分操作上的错误，尽管数据结果不太准确，但作为一个初学者，对像质评价有了深入的认识。
 
 ## 前言
@@ -22,49 +24,39 @@ toc = true
 
 光学系统的光学传递函数，由调制传递函数（Modulation Transfer Function，MTF）和相位传递函数两部分组成，前者是光学传递函数的模，后者是光学传递函数的相位部分。但由于目前测试相位传递函数的仪器种类较少，测量精度也不高，且相位传递过程对图像的影响较小，所以目前在研究摄影镜头的成像质量时都不考虑相位的影响，只研究调制传递函数。它是光学系统的性能的主要评价指标之一，它表达了光学系统重新分配光能的特性，所以通常光学系统的 MTF 值小于 1。MTF 的值越大，光能的改变程度越小，光学系统的性能越好。
 
-
-
 ## MTF 的测量方法
 
 点扩散函数（PSF），线扩散函数（LSF）和边缘扩散函数（ESF）是与 MTF 密切相关的几个重要概念。常用的 MTF 测试方法正是基于这几个函数之间的关系进行计算的。
 
-一个理想的点光源可以看成在 x 和 y 方向上无限小的一个物体，用二维脉冲函数 $\delta(x,y)$ 来表示。理想的点光源经过光学系统后，由于衍射的限制，所成的像不再是一个理想的点，而是模糊了的弥散斑，这个弥散斑称为星点像。星点像的光强分布是点扩散函数 PSF(x,y)。假设图像接收器是连续采样，即不用考虑有限大小的像素或有限的采样距离，则接收到的二维的图像强度分布就等于点扩散函数 PSF(x,y)。由光学传递函数的定义可知，MTF 可以通过对 PSF(x,y) 进行二维傅立叶变换得到，即：
+一个理想的点光源可以看成在 $x$ 和 $y$ 方向上无限小的一个物体，用二维脉冲函数 $\delta(x,y)$ 来表示。理想的点光源经过光学系统后，由于衍射的限制，所成的像不再是一个理想的点，而是模糊了的弥散斑，这个弥散斑称为星点像。星点像的光强分布是点扩散函数 PSF$(x,y)$。假设图像接收器是连续采样，即不用考虑有限大小的像素或有限的采样距离，则接收到的二维的图像强度分布就等于点扩散函数 PSF$(x,y)$。由光学传递函数的定义可知，MTF 可以通过对 PSF$(x,y)$ 进行二维傅立叶变换得到，即：
 
-{% raw %}
 $$
 OTF(U,V)=\iint_{-\infty}^{+\infty}e^{-i\pi(xu+yv)}dxdy
 $$
-{% endraw %}
 
-在实际应用中，由于点光源提供的能量较弱，而且得到理想的点光源比较困难，进行二维光学传递函数计算较为繁琐，所以很少应用。常用的方法是利用狭缝像代替星点像，从而获得线扩散函数及其一维方向上的光学传递函数。设光源沿 y 方向延伸形成一维光源，其上各发光点不相干，则狭缝目标物可以表示为 $\delta(x)l(y)$。像平面的图像强度分布是一个与狭缝目标物一样只与 x 空间变量相关的函数，可以用线扩散函数 LSF(x) 来表示。由傅立叶变换的卷积定理可以得到一维光学传递函数：
+在实际应用中，由于点光源提供的能量较弱，而且得到理想的点光源比较困难，进行二维光学传递函数计算较为繁琐，所以很少应用。常用的方法是利用狭缝像代替星点像，从而获得线扩散函数及其一维方向上的光学传递函数。设光源沿 $y$ 方向延伸形成一维光源，其上各发光点不相干，则狭缝目标物可以表示为 $\delta(x)l(y)$。像平面的图像强度分布是一个与狭缝目标物一样只与 $x$ 空间变量相关的函数，可以用线扩散函数 LSF$(x)$ 来表示。由傅立叶变换的卷积定理可以得到一维光学传递函数：
 
-{% raw %}
 $$
 OTF(u)=\int_{-\infty}^{+\infty}LSF(x)e^{-i2\pi ux}dx
 $$
-{% endraw %}
 
-对于满足线性空间不变性的光学系统，采用刃边作为目标物对系统成像，则其二维像光强分布就是边缘扩散函数 ESF，等价于电子系统中的阶跃响应 step(x)l(y)。边缘扩散函数 ESF 可以理解成线扩散函数 LSF 的累加，其关系表示如下：
+对于满足线性空间不变性的光学系统，采用刃边作为目标物对系统成像，则其二维像光强分布就是边缘扩散函数 ESF，等价于电子系统中的阶跃响应 $step(x)l(y)$。边缘扩散函数 ESF 可以理解成线扩散函数 LSF 的累加，其关系表示如下：
 
-{% raw %}
 $$
 ESF(x)=\int_{-\infty}^{x}LSF(x')dx'
 $$
-{% endraw %}
 
 要从 ESF 获得 MTF，必须先对 ESF 求导得到 LSF，然后由 LSF 经过傅立叶变换得到 MTF。我们可以将 PSF、LSF、ESF 和 MTF 四者之间的关系用下图来概括。
 
-<img src="../../../../images/applied-optics-2/0.png" alt="PSF、LSF、ESF和MTF之间的转换关系" title="PSF、LSF、ESF和MTF之间的转换关系" />
+![psf-lsf-esf-mtf.png](/images/psf-lsf-esf-mtf.png "PSF、LSF、ESF和MTF之间的转换关系")
 
 此外，还有一种不经过傅里叶变换获得 MTF 的测量方法，是对方波靶标成像，从图像的对比度可以直接得到对应空间频率处的 MTF，即 (最大亮度-最小亮度)/(最大亮度+最小亮度)，通过对一块包含了一组不同空间频率的标板成像即可得到不同空间频率下的 MTF 数值。为了比较全面地评价像质，应当测量出高、中、低不同频率下的 MTF。朗奇变频光栅就是这样包含不同空间频率的矩形光栅。
 
-在本人的这一次使用中，采用斜边法，对标准分辨率测试卡 ISO 12233 上的斜边图像进行拍摄，然后通过 Imatest 软件进行图像分析，其过程是通过图像处理获得 ESF 曲线与 LSF 曲线，进而获得 MTF 曲线。
-
-
+在我这一次的使用中，采用斜边法，对标准分辨率测试卡 ISO 12233 上的斜边图像进行拍摄，然后通过 Imatest 软件进行图像分析，其过程是通过图像处理获得 ESF 曲线与 LSF 曲线，进而获得 MTF 曲线。
 
 ## 色彩还原性测试原理
 
-色彩还原评价主要用到标准 24 色色卡，将 24色测试卡在标准灯箱内与水平方向成 45 度放置，打开光源，使成像系统垂直正对测试卡进行拍摄。经过软件分析，计算得到的图像的颜色参数，并与 24 色色卡标准值进行比对，从而可以计算彩度差和色差。由以上的参数可以评价待测成像系统色彩还原能力。
+色彩还原评价主要用到标准 24 色色卡，将 24 色测试卡在标准灯箱内与水平方向成 45 度放置，打开光源，使成像系统垂直正对测试卡进行拍摄。经过软件分析，计算得到的图像的颜色参数，并与 24 色色卡标准值进行比对，从而可以计算彩度差和色差。由以上的参数可以评价待测成像系统色彩还原能力。
 
 白平衡计算主要是看 24 色卡最后一排灰度色块的值。通过计算 RGB 中的最大值与最小值之差，可以得到图像 RGB 的偏差值，并能分析测得的图像是偏向哪个颜色。
 
@@ -72,81 +64,58 @@ $$
 
 明度差：
 
-{% raw %}
 $$
 \Delta L^\star=L_1^\star-L_2^\star
 $$
 
-{% endraw %}
-
 色度差：
 
-{% raw %}
 $$
 \Delta a^\star=a_1^\star-a_2^\star\\\\
 \Delta b^\star=b_1^\star-b_2^\star
 $$
 
-{% endraw %}
-
 色差：
 
-{% raw %}
 $$
 \Delta E^\star=(\Delta {L^\star}^2+\Delta {a^\star}^2+\Delta b^2)^{1/2}
 $$
 
-{% endraw %}
-
 彩度差：
 
-{% raw %}
 $$
 \Delta C^\star=(\Delta {a^\star}^2+\Delta b^2)^{1/2}
 $$
-{% endraw %}
 
 由上可以得到各色块的色差和彩度差参数，将 24 色平均，即可得到色彩评价相关参数。
 
 白平衡测试用到 24 色卡最下面一排 6 个灰度色块，再由下式得到 6 个白平衡误差值：
 
-{% raw %}
 $$
 White\ Error=Max(R,G,B)-Min(R,G,B)
 $$
 
-{% endraw %}
-
-
-
 ## 灰阶测试原理
 
-灰阶，是将最亮与最暗之间的亮度变化，区分为若干份。以便于进行信号输入相对应的影像亮度控制。每张数字影像都是由许多点所组合而成的，这些点又称为像素（pixels），通常每一个像素可以呈现出许多不同的颜色，它是由红、绿、蓝（RGB）三个子像素组成的。 每一个子像素，其背后的光源都可以显现出不同的亮度级别。而灰阶代表了由最暗到最亮之间不同亮度的层次级别。这中间层级越多，所能够呈现的画面效果也就越细腻。以 8bit panel 为例，能表现 2 的 8 次方，等于 256 个亮度层次，我们就称之为 256 灰阶。LCD 屏幕上每个像素，均由不同亮度层次的红、绿、蓝组合起来，最终形成不同的色彩点。也就是说，屏幕上每一个点的色彩变化，其实都是由构成这个点的三个 RGB 子像素的灰阶变化所带来的。
+灰阶，是将最亮与最暗之间的亮度变化，区分为若干份。以便于进行信号输入相对应的影像亮度控制。每张数字影像都是由许多点所组合而成的，这些点又称为像素（pixels），通常每一个像素可以呈现出许多不同的颜色，它是由红、绿、蓝（RGB）三个子像素组成的。 每一个子像素，其背后的光源都可以显现出不同的亮度级别。而灰阶代表了由最暗到最亮之间不同亮度的层次级别。这中间层级越多，所能够呈现的画面效果也就越细腻。以 8 bit panel 为例，能表现 2 的 8 次方，等于 256 个亮度层次，我们就称之为 256 灰阶。LCD 屏幕上每个像素，均由不同亮度层次的红、绿、蓝组合起来，最终形成不同的色彩点。也就是说，屏幕上每一个点的色彩变化，其实都是由构成这个点的三个 RGB 子像素的灰阶变化所带来的。
 
 灰阶测试是通过拍摄灰阶测试卡，得到可识别的灰阶数，从而体现成像系统的动态范围能力。将灰阶测试卡在标准灯箱内 D65 光源下与水平方向成 45 度放置，成像系统垂直正对灰阶测试卡进行拍摄，注意要调整光圈大小以避免最左端白色色块过曝。将拍摄图像输入电脑中，在每个灰度条中截取面积不小于 30% 的灰度块，读出所截取的每个灰度块的灰度值，若两相邻灰阶之间的灰度值之差大于等于 0.7（参考 Imatest 参数），则认为这两个灰阶是可以分辨的，从而可以得到从黑到白可分辨的灰阶的级数。饱和度可以由下式得到：
 
-{% raw %}
 $$
 Saturation=\frac{MaxGrey-MinGrey}{255}\times100\\%
 $$
 
-{% endraw %}
-
-其中 $MaxGrey$ 是得到的灰阶测试图像中最大的灰度参数，$MinGrey$ 是得到的灰阶测试图像中最小的灰度参数，饱和度粗略地反映了成像系统的动态范围大小。
-
-
+其中 MaxGrey 是得到的灰阶测试图像中最大的灰度参数，MinGrey 是得到的灰阶测试图像中最小的灰度参数，饱和度粗略地反映了成像系统的动态范围大小。
 
 ## 具体操作
 
 ### 下载 Imatest 软件
 
-喜欢摄影的人经常使用 Adobe 的 LightRoom 来处理拍摄的图像，我们也可以用一种更加彻底、数据化的办法 -- 利用 MATLAB 直接处理数码相机的 CFA（Color Filter Array）数据。在这里推荐一篇我们学院学长所写的[文章](https://capbone.com/process-raw-data-using-matlab-and-dcraw/)，专门讲解的是如何利用 MATLAB 和 Dcraw 处理数码相机 Raw 文件。
+喜欢摄影的人经常使用 Adobe 的 LightRoom 来处理拍摄的图像，我们也可以用一种更加彻底、数据化的办法——利用 MATLAB 直接处理数码相机的 CFA（Color Filter Array）数据。在这里推荐一篇我们学院学长所写的[文章](https://capbone.com/process-raw-data-using-matlab-and-dcraw/)，专门讲解的是如何利用 MATLAB 和 Dcraw 处理数码相机 Raw 文件。
 
 Imatest 是一款基于 MATLAB 的图像分析软件，功能十分强大。但巨坑的是这一款软件的试用版只能使用 20 次。这里的二十次不是说能够试用二十天，也不是打开关闭软件二十次，是分析图像二十次！如此巨坑的软件，在我安装后没有怎么用，并尝试了一下破解结果失败后，试用次数直接减到零次，差点吐血。后来为了完成此次实验，只好借用室友的电脑。
 
 Imatest 的具体使用方法可以参考[官方使用文档](http://www.imatest.com/docs/)。
-
-
 
 ### 拍摄图片
 
@@ -156,28 +125,29 @@ Imatest 的具体使用方法可以参考[官方使用文档](http://www.imatest
 
 分别使用焦距为 50mm，18mm，75mm 的三种镜头拍摄，画面比例为 3:2。拍摄的图像如下所示。
 
-|<img src="../../../../images/applied-optics-2/1.jpg" alt="IMG_0479.CR2" title="IMG_0479.CR2" />|<img src="../../../../images/applied-optics-2/2.jpg" alt="IMG_0482.CR2" title="IMG_0482.CR2" />|<img src="../../../../images/applied-optics-2/3.jpg" alt="IMG_0483.CR2" title="IMG_0483.CR2" />|
-|:-|:-|:-|
+![IMG-0479-CR2-f50.jpg](/images/IMG-0479-CR2-f50.jpg "IMG_0479.CR2")
 
+![IMG-0482-CR2-f18.jpg](/images/IMG-0482-CR2-f18.jpg "IMG_0482.CR2")
 
+![IMG-0483-CR2-f75.jpg](/images/IMG-0483-CR2-f75.jpg "IMG_0483.CR2")
 
 #### 拍摄 X-rite 标准 24 色色卡
 
 在 SPL-QC 反射式灯箱中进行拍摄，分别采用 A 光源，D65 光源，TL84 光源进行拍摄。拍摄的图像如下所示。
 
-|<img src="../../../../images/applied-optics-2/4.jpg" alt="IMG_0487.CR2" title="IMG_0487.CR2" />|<img src="../../../../images/applied-optics-2/5.jpg" alt="IMG_0488.CR2" title="IMG_0488.CR2" />|<img src="../../../../images/applied-optics-2/6.jpg" alt="IMG_0489.CR2" title="IMG_0489.CR2" />|
-|:-|:-|:-|
+![IMG-0487-CR2-light-a.jpg](/images/IMG-0487-CR2-light-a.jpg "IMG_0487.CR2")
 
+![IMG-0488-CR2-light-d65.jpg](/images/IMG-0488-CR2-light-d65.jpg "IMG_0488.CR2")
 
+![IMG-0489-CR2-light-tl84.jpg](/images/IMG-0489-CR2-light-tl84.jpg "IMG_0489.CR2")
 
 #### 拍摄灰阶测试卡
 
 这里拍摄了两张不同的灰阶测试卡。
 
-|<img src="../../../../images/applied-optics-2/7.jpg" alt="IMG_0492.CR2" title="IMG_0492.CR2" />|<img src="../../../../images/applied-optics-2/8.jpg" alt="IMG_0493.CR2" title="IMG_0493.CR2" />|
-|:-|:-|
+![IMG-0492-CR2-grayscale.jpg](/images/IMG-0492-CR2-grayscale.jpg "IMG_0492.CR2")
 
-
+![IMG-0493-CR2-grayscale.jpg](/images/IMG-0493-CR2-grayscale.jpg "IMG_0493.CR2")
 
 ### 分析图像
 
@@ -187,24 +157,23 @@ Imatest 的具体使用方法可以参考[官方使用文档](http://www.imatest
 
 ##### 50mm 焦距
 
-|<img src="../../../../images/applied-optics-2/9.png" alt="视场中心" title="视场中心" />|<img src="../../../../images/applied-optics-2/10.png" alt="视场边角" title="视场边角" />|
-|:-|:-|
+![IMG-0479-CR2-f50-fov-center.png](/images/IMG-0479-CR2-f50-fov-center.png "视场中心")
 
+![IMG-0479-CR2-f50-fov-edge.png](/images/IMG-0479-CR2-f50-fov-edge.png "视场边角")
 
 ##### 18mm 焦距
 
-|<img src="../../../../images/applied-optics-2/11.png" alt="视场中心" title="视场中心" />|<img src="../../../../images/applied-optics-2/12.png" alt="视场边角" title="视场边角" />|
-|:-|:-|
+![IMG-0482-CR2-f18-fov-center.png](/images/IMG-0482-CR2-f18-fov-center.png "视场中心")
 
+![IMG-0482-CR2-f18-fov-edge.png](/images/IMG-0482-CR2-f18-fov-edge.png "视场边角")
 
 ##### 75mm 焦距
 
-|<img src="../../../../images/applied-optics-2/13.png" alt="视场中心" title="视场中心" />|<img src="../../../../images/applied-optics-2/14.png" alt="视场边角" title="视场边角" />|
-|:-|:-|
+![IMG-0483-CR2-f75-fov-center.png](/images/IMG-0483-CR2-f75-fov-center.png "视场中心")
+
+![IMG-0483-CR2-f75-fov-edge.png](/images/IMG-0483-CR2-f75-fov-edge.png "视场边角")
 
 MTF50 表示的是 MTF 为最大值的 50%（即 MTF=0.5）时，对应的空间频率。单位为 Cy/Pxl，则是表示在一个像素里有多少个线对，黑白线对为一个周期。由以上三组图线可知，IMG_0479 与 IMG_0482 的视场边角的 MTF 曲线在奈奎斯特频率到达 0.8 后骤增，分析其原因可能是由于在通过软件采样的时候，并没有采取到合适的位置，导致分析结果偏差很大,也可能是因为使用相对应的镜头拍摄时，没有拍摄好，成像质量较差。三张图的 MTF 曲线近似相等。在拍摄标准分辨率板的时候，房间光线不太充足，使用相机拍摄时没有将曝光时间调节到足够大，导致接受到的信号不足。
-
-
 
 #### 色彩还原性与白平衡特性分析
 
@@ -212,38 +181,36 @@ MTF50 表示的是 MTF 为最大值的 50%（即 MTF=0.5）时，对应的空间
 
 ##### A 光源
 
-|<img src="../../../../images/applied-optics-2/15.png" alt="色彩还原性" title="色彩还原性" />|<img src="../../../../images/applied-optics-2/16.png" alt="白平衡特性" title="白平衡特性" />|
-|:-|:-|
+![IMG-0487-CR2-light-a-color-reducibility.png](/images/IMG-0487-CR2-light-a-color-reducibility.png "色彩还原性")
+
+![IMG-0487-CR2-light-a-white-balance.png](/images/IMG-0487-CR2-light-a-white-balance.png "白平衡特性")
 
 ##### D65 光源
 
-|<img src="../../../../images/applied-optics-2/17.png" alt="色彩还原性" title="色彩还原性" />|<img src="../../../../images/applied-optics-2/18.png" alt="白平衡特性" title="白平衡特性" />|
-|:-|:-|
+![IMG-0488-CR2-light-d65-color-reducibility.png](/images/IMG-0488-CR2-light-d65-color-reducibility.png "色彩还原性")
+
+![IMG-0488-CR2-light-d65-white-balance.png](/images/IMG-0488-CR2-light-d65-white-balance.png "白平衡特性")
 
 ##### TL84 光源
 
-|<img src="../../../../images/applied-optics-2/19.png" alt="色彩还原性" title="色彩还原性" />|<img src="../../../../images/applied-optics-2/20.png" alt="白平衡特性" title="白平衡特性" />|
-|:-|:-|
+![IMG-0489-CR2-light-tl84-color-reducibility.png](/images/IMG-0489-CR2-light-tl84-color-reducibility.png "色彩还原性")
 
-
+![IMG-0489-CR2-light-tl84-white-balance.png](/images/IMG-0489-CR2-light-tl84-white-balance.png "白平衡特性")
 
 由分析结果可以得出：
 
-| 光源种类 | 饱和度 | 校正饱和度后的色差平均值 | 白平衡误差平均值 |
+|  光源种类 | 饱和度 |  校正饱和度后的色差平均值  | 白平衡误差平均值 |
 | :------: | :----: | :----------------------: | :--------------: |
-|  A光源   | 137.3% |           28.7           |      0.647       |
-| D65光源  | 106.5% |           5.3            |      0.014       |
-| TL84光源 | 120.4% |           19.3           |      0.387       |
+|  A 光源   | 137.3% |           28.7           |      0.647       |
+| D65 光源  | 106.5% |           5.3            |      0.014       |
+| TL84 光源 | 120.4% |           19.3           |      0.387       |
 
 三种光源中，D65 光源色彩还原性效果最佳，白平衡误差也最小，其次为 TL84 光源，对色彩还原性最差的以及白平衡误差最大的是 A 光源。
 
-
-
 #### 灰阶特性分析
 
-|<img src="../../../../images/applied-optics-2/21.png" alt="IMG_0492" title="IMG_0492" />|<img src="../../../../images/applied-optics-2/22.png" alt="IMG_0493" title="IMG_0493" />|
-|:-|:-|
+![IMG-0492-CR2-grayscale-result.png](/images/IMG-0492-CR2-grayscale-result.png "IMG_0492")
 
-
+![IMG-0493-CR2-grayscale-result.png](/images/IMG-0493-CR2-grayscale-result.png "IMG_0493")
 
 IMG_0492 的动态范围较 IMG_0493 的动态范围大，所能表现得层次更为丰富，包含的色彩空间更广。

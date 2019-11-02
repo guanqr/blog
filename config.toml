@@ -317,21 +317,21 @@ identifier = "cc98"
 
 [[menu.links]]
 url = "/"
-name = "HOME"
+name = "首页"
 weight = 1
 pre = "internal"
 identifier = "home"
 
 [[menu.links]]
 url = "/series/"
-name = "Series"
+name = "专栏"
 weight = 2
 pre = "internal"
 identifier = "series"
 
 [[menu.links]]
 url = "/atom.xml"
-name = "Feed"
+name = "订阅"
 weight = 3
 pre = "external"
 identifier = "feed"

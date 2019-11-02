@@ -37,24 +37,24 @@ toc = true
 #define uint unsigned int
 void delayms(uint k)
 {
-    uint i;
-    uchar j;
-    for(i=k;i>0;i--)
-    for(j=110;j>0;j--);
+	uint i;
+	uchar j;
+	for(i=k;i>0;i--)
+	for(j=110;j>0;j--);
 }
 
 void main(){
-    char data s,i;
-    while(1){
-        s=0xaa;
-        P2=s;
-        delayms(1000);
-        for(i=0;i<7;i++){
-            s=_cror_(s,1);
-            P2=s;
-            delayms(1000);
-        } 
-    }
+	char data s,i;
+	while(1){
+		s=0xaa;
+		P2=s;
+		delayms(1000);
+		for(i=0;i<7;i++){
+			s=_cror_(s,1);
+			P2=s;
+			delayms(1000);
+		} 
+	}
 }
 ```
 
@@ -67,24 +67,24 @@ void main(){
 #define uint unsigned int
 void delayms(uint k)
 {
-  uint i;
-  uchar j;
-  for(i=k;i>0;i--)
-  for(j=110;j>0;j--);
+	uint i;
+	uchar j;
+	for(i=k;i>0;i--)
+		for(j=110;j>0;j--);
 }
 
 void main(){
-  char data s,i;
-     while(1){
-        s=0x80;
-        P2=s;
-        delayms(1000);
-        for(i=0;i<7;i++){
-           s=_cror_(s,1);
-           P2=s;
-           delayms(1000);
-        }
-    }
+	char data s,i;
+	while(1){
+		s=0x80;
+		P2=s;
+		delayms(1000);
+		for(i=0;i<7;i++){
+			s=_cror_(s,1);
+			P2=s;
+			delayms(1000);
+		}
+	}
 }
 ```
 
@@ -119,118 +119,113 @@ sbit k4=P0^3;
 
 void main()
 {
-  while(1)
-  {
-  key1();
-  key2();
-  key3();
-  key4();
-  }
+	while(1){
+		key1();
+		key2();
+		key3();
+		key4();
+	}
 }
 
 void delay(uint k)
 {
-  uint i;
-  uchar j;
-  for(i=k;i>0;i--)
-    for(j=55;j>0;j--){
-      if(k1==0){
-      P2=0x00;
-      p=1;
-      break;
-      }
-      else if(k2==0){
-        P2=0xff;
-        p=1;
-        break;
-      }
-      else if(k3==0){
-        key3();
-      }
-      else if(k4==0){
-        key4();
-      }
-    }
-  }
+	uint i;
+	uchar j;
+	for(i=k;i>0;i--)
+		for(j=55;j>0;j--){
+			if(k1==0){
+				P2=0x00;
+				p=1;
+				break;
+			}
+			else if(k2==0){
+				P2=0xff;
+				p=1;
+				break;
+			}
+			else if(k3==0){
+				key3();
+			}
+			else if(k4==0){
+				key4();
+			}
+		}
+}
 
 void key1()
 {
-  if(k1==0)
-  {
-    P2=0x00;
-    while(!k1);
-  }
+	if(k1==0){
+		P2=0x00;
+		while(!k1);
+	}
 }
 
 void key2()
 {
-  if(k2==0)
-  {
-    P2=0xff;
-    while(!k2);
-  }
+	if(k2==0){
+		P2=0xff;
+		while(!k2);
+	}
 }
 
 void key3()
 {
-  if(k3==0)
-  {
-    char data s,i;
-    int p=0,k=0;
-    while(1){
-      s=0x80;
-      P2=s;
-      delay(1000);
-      for(i=0;i<7;i++){
-        if(k1==0){
-          P2=0x00;
-          p=1;
-          break;
-        }
-        else if(k2==0){
-          P2=0xff;
-          p=1;
-          break;
-        }
-        s=_cror_(s,1);
-        P2=s;
-        delay(1000);
-      }
-      if(p==1) break;
-    }
-    while(!k3);
-  }
+	if(k3==0){
+		char data s,i;
+		int p=0,k=0;
+		while(1){
+			s=0x80;
+			P2=s;
+			delay(1000);
+			for(i=0;i<7;i++){
+				if(k1==0){
+					P2=0x00;
+					p=1;
+					break;
+				}
+				else if(k2==0){
+					P2=0xff;
+					p=1;
+					break;
+				}
+				s=_cror_(s,1);
+				P2=s;
+				delay(1000);
+			}
+			if(p==1) break;
+		}
+		while(!k3);
+	}
 }
 
 void key4()
 {
-  if(k4==0)
-  {
-    char data s,i;
-    int p=0;
-    while(1){
-      s=0xaa;
-      P2=s;
-      delay(1000);
-      for(i=0;i<7;i++){
-        if(k1==0){
-          P2=0x00;
-          p=1;
-          break;
-        }
-        else if(k2==0){
-          P2=0xff;
-          p=1;
-          break;
-        }
-        s=_cror_(s,1);
-        P2=s;
-        delay(1000);
-      }
-      if(p==1) break;
-    }
-    while(!k4);
-  }
+	if(k4==0){
+		char data s,i;
+		int p=0;
+		while(1){
+			s=0xaa;
+			P2=s;
+			delay(1000);
+			for(i=0;i<7;i++){
+				if(k1==0){
+					P2=0x00;
+					p=1;
+					break;
+				}
+        		else if(k2==0){
+					P2=0xff;
+					p=1;
+					break;
+				}
+				s=_cror_(s,1);
+				P2=s;
+				delay(1000);
+			}
+			if(p==1) break;
+		}
+		while(!k4);
+	}
 }
 ```
 
@@ -247,33 +242,33 @@ void key4()
 #define uint unsigned int
 void delay(uint k)
 {
-  uint i;
-  uchar j;
-  for(i=k;i>0;i--)
-  for(j=110;j>0;j--) ;
+	uint i;
+	uchar j;
+	for(i=k;i>0;i--)
+		for(j=110;j>0;j--) ;
 }
 
 void main(){
-  P2=0xdb;
-  delay(1000);
-  P2=0xb7;
-  delay(1000);
-  P2=0x6f;
-  delay(1000);
-  while(1){
-    P2=0x7f;
-    delay(500);
-    P2=0xbf;
-    delay(500);
-    P2=0xdf;
-    delay(500);
-    P2=0xef;
-    delay(500);
-    P2=0xf7;
-    delay(500);
-    P2=0xfb;
-    delay(500);
-  }
+	P2=0xdb;
+	delay(1000);
+	P2=0xb7;
+	delay(1000);
+	P2=0x6f;
+	delay(1000);
+	while(1){
+		P2=0x7f;
+		delay(500);
+		P2=0xbf;
+		delay(500);
+		P2=0xdf;
+		delay(500);
+		P2=0xef;
+		delay(500);
+		P2=0xf7;
+		delay(500);
+		P2=0xfb;
+		delay(500);
+	}
 }
 ```
 
@@ -299,39 +294,39 @@ sbit gre2=P2^7;
 
 void delay(uint k)
 {
-  uint i;
-  uchar j;
-  for(i=k;i>0;i--)
-  for(j=110;j>0;j--) ;
+	uint i;
+	uchar j;
+	for(i=k;i>0;i--)
+		for(j=110;j>0;j--) ;
 }
 
 void main(){
-  int i;
-  rt1=0;
-  P2=0x7a;
-  delay(2000);
-  for(i=1;i<=3;i++){
-    gre2=1;
-    delay(500);
-    gre2=0;
-    delay(500);
-  }
-  P2=0xba;
-  delay(2000);
-  P2=0xcd;
-  rt1=1;
-  rt2=0;
-  delay(2000);
-  for(i=1;i<=3;i++){
-    gre1=1;
-    delay(500);
-    gre1=0;
-    delay(500);
-  }
-  P2=0xd5;
-  delay(2000);
-  rt2=1;
-  up2=0;
+	int i;
+	rt1=0;
+	P2=0x7a;
+	delay(2000);
+	for(i=1;i<=3;i++){
+		gre2=1;
+		delay(500);
+		gre2=0;
+		delay(500);
+	}
+	P2=0xba;
+	delay(2000);
+	P2=0xcd;
+	rt1=1;
+	rt2=0;
+	delay(2000);
+	for(i=1;i<=3;i++){
+		gre1=1;
+		delay(500);
+		gre1=0;
+		delay(500);
+	}
+	P2=0xd5;
+	delay(2000);
+	rt2=1;
+	up2=0;
 }
 ```
 
@@ -353,24 +348,24 @@ u16 i=0;
 
 void main()
 {
-  TMOD=0x01;	
-  TH0=0XFC;
-  TL0=0X18;
-  ET0=1;
-  EA=1;
-  TR0=1;
-  while(1);
+	TMOD=0x01;	
+	TH0=0XFC;
+	TL0=0X18;
+	ET0=1;
+	EA=1;
+	TR0=1;
+	while(1);
 }
 void time0()interrupt 1
 {
-  TH0=0XFC;
-  TL0=0X18;
-  i++;
-  if(i==1000)
-  {
-    i=0;
-    led=~led;
-  }
+	TH0=0XFC;
+	TL0=0X18;
+	i++;
+	if(i==1000)
+	{
+		i=0;
+		led=~led;
+	}
 }
 ```
 

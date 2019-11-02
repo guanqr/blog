@@ -3,6 +3,7 @@ title = "单片机基础操作"
 date = "2019-06-14T19:12:11+08:00"
 tags = ["Microcontroller","C51","ASM"]
 categories = ["study","computer"]
+series = ["Major-Courses"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

@@ -7,7 +7,6 @@ categories = ["life","reading"]
 dropCap = true
 displayCopyright = true
 gitinfo = true
-toc = true
 +++
 
 ## 前言

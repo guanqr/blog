@@ -53,11 +53,11 @@ meta = false
 │
 ├── 生活感悟(life)
 │    ├── 品影天地(film)
+│    ├── 奇思妙想(idea)
 │    ├── 悦读笔记(reading)
 │    ├── 校园生活(school)
 │    ├── 时事评论(society)
-│    ├── 旅行日记(travel)
-│    └── 奇思妙想(whimsy)
+│    └── 旅行日记(travel)
 │ 
 └── 学海无涯(study)
       ├── 建站笔记(blog) 

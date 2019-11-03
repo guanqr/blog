@@ -2,7 +2,7 @@
 title = "水之坚韧"
 date = "2019-05-01T11:11:55+08:00"
 tags = ["Prose"]
-categories = ["life","whimsy"]
+categories = ["life"]
 displayCopyright = true
 gitinfo = true
 +++

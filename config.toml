@@ -401,7 +401,7 @@ categoryBy = "categories"
 # Categories Page
 # Note: You can NOT disable tree if you set categoryBy equal to `sections`.
 enableTree = true
-displayPosts = false
+displayPosts = true
 displayPostsCount = true
 
 # Tags

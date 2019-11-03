@@ -4,6 +4,7 @@
   "description": "Blog of Mine",
   "main": "index.js",
   "scripts": {
+    "build": "hugo --gc --minify --cleanDestinationDir && gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,7 +16,7 @@
     "hugo",
     "hugo-theme-meme"
   ],
-  "author": "reuixiy",
+  "author": "Guanqr",
   "license": "CC-BY-NC-SA-4.0",
   "bugs": {
     "url": "https://github.com/guanqr/blog/issues"

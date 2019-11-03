@@ -85,6 +85,10 @@ p#div-default {
     border-left: 0;
 }
 // 友链样式
+#links {
+    overflow: auto hidden;
+    white-space: nowrap;
+}
 .links-content{
     margin-top:1rem;
 }
@@ -94,10 +98,9 @@ p#div-default {
     clear: both;
 }
 .card {
-    width: 240px;
+    width: 250px;
     font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 10px 0 10px 30px;
     transition-duration: 0.15s;
     margin-bottom: 1rem;
     display:flex;

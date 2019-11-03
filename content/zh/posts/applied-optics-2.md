@@ -49,7 +49,7 @@ $$
 
 要从 ESF 获得 MTF，必须先对 ESF 求导得到 LSF，然后由 LSF 经过傅立叶变换得到 MTF。我们可以将 PSF、LSF、ESF 和 MTF 四者之间的关系用下图来概括。
 
-![psf-lsf-esf-mtf.png](/images/psf-lsf-esf-mtf.png "PSF、LSF、ESF和MTF之间的转换关系")
+![psf-lsf-esf-mtf.png](/images/psf-lsf-esf-mtf.png "PSF、LSF、ESF 和 MTF 之间的转换关系")
 
 此外，还有一种不经过傅里叶变换获得 MTF 的测量方法，是对方波靶标成像，从图像的对比度可以直接得到对应空间频率处的 MTF，即 (最大亮度-最小亮度)/(最大亮度+最小亮度)，通过对一块包含了一组不同空间频率的标板成像即可得到不同空间频率下的 MTF 数值。为了比较全面地评价像质，应当测量出高、中、低不同频率下的 MTF。朗奇变频光栅就是这样包含不同空间频率的矩形光栅。
 

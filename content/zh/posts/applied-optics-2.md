@@ -72,8 +72,10 @@ $$
 色度差：
 
 $$
-\Delta a^\star=a_1^\star-a_2^\star\\\\
-\Delta b^\star=b_1^\star-b_2^\star
+\begin{aligned}
+\Delta a^\star&=a_1^\star-a_2^\star\\\\
+\Delta b^\star&=b_1^\star-b_2^\star
+\end{aligned}
 $$
 
 色差：
@@ -112,7 +114,7 @@ $$
 
 ### 下载 Imatest 软件
 
-喜欢摄影的人经常使用 Adobe 的 LightRoom 来处理拍摄的图像，我们也可以用一种更加彻底、数据化的办法——利用 MATLAB 直接处理数码相机的 CFA（Color Filter Array）数据。在这里推荐一篇我们学院学长所写的[文章](https://capbone.com/process-raw-data-using-matlab-and-dcraw/)，专门讲解的是如何利用 MATLAB 和 Dcraw 处理数码相机 Raw 文件。
+喜欢摄影的人经常使用 Adobe 的 LightRoom 来处理拍摄的图像，我们也可以用一种更加彻底、数据化的办法——利用 MATLAB 直接处理数码相机的 CFA（Color Filter Array）数据。在这里推荐一篇我们学院学长所写的[文章](https://ridiqulous.com/process-raw-data-using-matlab-and-dcraw/)，专门讲解的是如何利用 MATLAB 和 Dcraw 处理数码相机 Raw 文件。
 
 Imatest 是一款基于 MATLAB 的图像分析软件，功能十分强大。但巨坑的是这一款软件的试用版只能使用 20 次。这里的二十次不是说能够试用二十天，也不是打开关闭软件二十次，是分析图像二十次！如此巨坑的软件，在我安装后没有怎么用，并尝试了一下破解结果失败后，试用次数直接减到零次，差点吐血。后来为了完成此次实验，只好借用室友的电脑。
 

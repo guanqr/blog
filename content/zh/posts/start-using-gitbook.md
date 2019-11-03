@@ -1158,4 +1158,4 @@ git clone -b gh-pages git@github.com:USERNAME/book.git book-end
 
 这样，你的一本 GitBook 电子书就诞生了。
 
-[^1]: 图源：<https://docs.gitbook.com/>
+[^1]: 图源：<https://docs.gitbook.com/>。

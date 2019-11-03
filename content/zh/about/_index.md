@@ -1,10 +1,12 @@
 +++
 title = "关于"
-description = "关于本站，关于我，还有其他一些事..."
+description = "关于本站，关于我，还有其他一些事……"
 date = "2019-05-01T08:41:47+08:00"
 badge = false
 meta = false
 +++
+
+![zijingang-qiushi-college.jpg](/images/zijingang-qiushi-college.jpg "浙江大学紫金港校区·求是书院")
 
 <blockquote class="blockquote-center"><p>十里青山远，潮平路带沙。<br>数声啼鸟怨年华。<br>又是凄凉时候，在天涯。<br>白露收残月，清风散晓霞。<br>绿杨堤畔问荷花：<br>记得年时沽酒，那人家？</p></blockquote>
 

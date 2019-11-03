@@ -7,6 +7,8 @@ title = "荷戟独彷徨"
 defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = false
 
+relativeURLs = true
+
 enableGitInfo = true
 
 pluralizeListTitles = false
@@ -401,7 +403,7 @@ categoryBy = "categories"
 # Categories Page
 # Note: You can NOT disable tree if you set categoryBy equal to `sections`.
 enableTree = true
-displayPosts = true
+displayPosts = false
 displayPostsCount = true
 
 # Tags

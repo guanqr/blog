@@ -2,7 +2,7 @@
 title = "Hello World!"
 date = "2019-03-31T19:35:30+08:00"
 tags = ["Hello"]
-categories = ["Life"]
+categories = ["life","idea"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

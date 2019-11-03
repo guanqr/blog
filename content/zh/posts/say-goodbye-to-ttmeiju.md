@@ -2,7 +2,7 @@
 title = "再见了，天天美剧"
 date = "2019-05-16T00:49:31+08:00"
 tags = ["Prose","TV-series"]
-categories = ["life"]
+categories = ["life","idea"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

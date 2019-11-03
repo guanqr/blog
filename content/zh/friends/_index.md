@@ -41,7 +41,7 @@ meta = false
                         <img class="ava" src="/images/friends/buaacoder.jpg"/>
                         <div class="card-header">
                               <div><a href="https://buaacoder.github.io/" target="_blank">逗比南波万</a></div>
-                              <div class="info">Welcome</div>
+                              <div class="info">一名来自北航的学弟</div>
                         </div>
                   </div>
                   <div class="card">
@@ -58,9 +58,20 @@ meta = false
                               <div class="info">能全力以赴不尽力而为</div>
                         </div>
                   </div>
+                  <div class="card">
+                        <img class="ava" src="/images/friends/ridiqulous.png"/>
+                        <div class="card-header">
+                              <div><a href="https://ridiqulous.com/" target="_blank">RidiQulous</a></div>
+                              <div class="info">一名与我同院系的学长</div>
+                        </div>
+                  </div>
             </div>
       </div>
 </div>
+
+---
+
+以上友链按照添加时间先后排序。
 
 ## 申请条件
 

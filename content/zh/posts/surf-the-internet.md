@@ -9,7 +9,7 @@ gitinfo = true
 toc = true
 +++
 
-![Shadowsocks-logo.png](/images/Shadowsocks-logo.png)
+![shadowsocks-logo.png](/images/shadowsocks-logo.png)
 
 ## 前言
 

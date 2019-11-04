@@ -5,7 +5,9 @@ tags = ["ZJU","Optics","Zemax","C51","Microcontroller","PCB","SolidWorks"]
 categories = ["study","optics"]
 katex = true
 toc = true
-darkImage = true
+dropCap = true
+displayCopyright = true
+gitinfo = true
 +++
 
 随着课程答辩的完成，短学期课程正式结束。我们开始准备跨校区搬迁，从紫金港搬到玉泉。从刚结束数电考试的 7 月 4 日到 7 月 27 日，将近一个月的时间里，我们总共上了两门课程，分别是《光学系统设计》和《电子系统设计》。同信息类的其他专业早已结束课程开始搬迁，我们仍然在骄阳似火中设计着电路，看着一批又一批的外校学生来浙大夏令营。我们拥有全浙大最长的短学期，拥有最不水的短学期。在这里，我对今年短学期课程的成果做个总结。

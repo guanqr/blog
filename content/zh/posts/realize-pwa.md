@@ -25,6 +25,8 @@ PWA 的特点：
 
 第一点：对于读者，博客可一触即达，且无浏览器的地址栏、菜单栏等「无关」干扰；对于博客，非常有利于博客的用户留存率，也利于博客的品牌形象。第二点：可以利用 Service Worker 的缓存特点，极大地加速你的博客。第三点：能让你的博客更贴近 APP 的形象。
 
+PWA 有很多要求，比如：HTTPS、响应式布局等等，可参考这个 [Checklist](https://developers.google.com/web/progressive-web-apps/checklist)，可用 Lighthouse[^3] 检查。
+
 我在之前的文章「[加速 Hexo 博客的方法及遇到的问题](/posts/speed-up-hexo/)」中提到过如何实现 PWA 功能。在那一篇文章中，我使用的是 Hexo 的一款插件 hexo-service-worker。但最近几个月，通过这款插件生成的 `sw.js` 文件无法被浏览器识别，且网页停止自动更新，需要手动清理缓存才可以看到最新的内容。这显然是与我们的意愿相违背的。
 
 那么该如何改进呢，还有别的插件能提供这样的功能吗？
@@ -111,7 +113,7 @@ preload:
 
 我目前采用的就是通过 Workbox 实现博客的 PWA，个人感觉效果要比使用上述三种插件要好很多。
 
-首先依然是设定你的 `manifest.json`文件，直接参考「[加速 Hexo 博客的方法及遇到的问题](/posts/speed-up-hexo/)」中的「[将博客添加至桌面](/posts/speed-up-hexo/#将博客添加至桌面)」这一章节即可。
+首先依然是设定你的 `manifest.json` 文件，直接参考「[加速 Hexo 博客的方法及遇到的问题](/posts/speed-up-hexo/)」中的「[将博客添加至桌面](/posts/speed-up-hexo/#将博客添加至桌面)」这一章节即可。
 
 由于需要使用 Node 的模块，因此我们的电脑必须安装 [Node.js](https://nodejs.org/zh-cn/download/)。如果你使用的是 Hexo，那么是已经安装过的；如果你使用的并非基于 Node.js 的博客框架，那么请自行安装一下。然后，我们安装模块：
 
@@ -273,69 +275,67 @@ gulp build
 
 最后，我们还需要在 HTML 页面中加入相关代码以注册 Service Worker，并添加页面更新后的提醒功能。在这里可能要编辑你的主题相关模板文件，把以下代码放在 `</body>` 的前面：
 
-```javascript
-<script type="module" data-no-instant>
-    import {Workbox} from 'https://cdn.jsdelivr.net/npm/workbox-cdn@4.3.1/workbox/workbox-window.prod.mjs';
-    if ('serviceWorker' in navigator) {
-        const wb = new Workbox('/sw.js');
-        
-        wb.addEventListener('activated', (event) => {
-            if (event.isUpdate) {
-                appRefresh ({
-                    text: '已更新最新版本',
-                    action: '点击刷新',
-                    callback: () => location.reload()
-                })
-            }
+```html
+<div class="app-refresh" id="app-refresh">
+    <div class="app-refresh-wrap" onclick="location.reload()">
+        <label>已更新最新版本</label>
+        <span>点击刷新</span>
+    </div>
+</div>
+
+<script>
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+        .then(reg => {
+            reg.addEventListener('updatefound', () => {
+                newWorker = reg.installing;
+                newWorker.addEventListener('statechange', () => {
+                    if (newWorker.state === 'installed') {
+                        if (navigator.serviceWorker.controller) {
+                            showNotification();
+                        }
+                    }
+                });
+            });
         });
-        wb.register();
     }
-    async function appRefresh({text, action, callback}={}) {
-        let themeColor = document.querySelector('meta[name=theme-color]');
-        let dom = document.createElement('div');
-        themeColor && (themeColor.content = '#000');
-        dom.innerHTML = `
-            <style>
-                .app-refresh {
-                    background: #000;
-                    height: 0;
-                    line-height: 3em;
-                    overflow: hidden;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    z-index: 42;
-                    padding: 0 1em;
-                    transition: all .3s ease;
-                }
-                .app-refresh-wrap {
-                    display: flex;
-                    color: #fff;
-                }
-                .app-refresh-wrap label {
-                    flex: 1;
-                }
-                .app-refresh-show {
-                    height: 3em;
-                }
-            </style>
-            <div class="app-refresh" id="app-refresh">
-                <div class="app-refresh-wrap" onclick="(${callback})()">
-                    <label>${text}</label>
-                    <span>${action}</span>
-                </div>
-            </div>
-        `;
-        document.body.appendChild(dom);
-        setTimeout(function() {
-            document.getElementById('app-refresh').className += ' app-refresh-show';
-        }, 16);
+    
+    function showNotification() {
+        document.querySelector('meta[name=theme-color]').content = '#000';
+        document.getElementById('app-refresh').className += ' app-refresh-show';
     }
 </script>
 ```
 
 如果你使用的是 Hexo 的 NexT 主题，且主题版本在 v7.4.0 以上，请直接在 `~/themes/next/layout/_layout.swig` 文件中的 `</body>` 前面添加上述内容，不要使用主题的 inject 注入功能，在 `~/source/_data/body-end.swig/` 中添加。因为如果你启用了 PJAX 功能，在 `body-end.swig` 中添加的内容会自动带上 PJAX 的标签，亲测在博客部署后会报错。
+
+然后再添加以下 CSS 样式到你的自定义样式文件中：
+
+```css
+.app-refresh {
+    background: #000;
+    height: 0;
+    line-height: 3em;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 42;
+    padding: 0 1em;
+    transition: all .3s ease;
+}
+.app-refresh-wrap {
+    display: flex;
+    color: #fff;
+}
+.app-refresh-wrap label {
+    flex: 1;
+}
+.app-refresh-show {
+    height: 3em;
+}
+```
 
 ## 参考
 
@@ -370,4 +370,5 @@ PWA：
 3. [小程序标准化 & PWA | Fred’s Blog](https://blog.fredliang.cn/posts/2019-05-16-mini-program-vs-pwa/)
 
 [^1]: 图源：<https://developers.google.com/web/tools/workbox>。
-[^2]: 参考①：<https://zh.wikipedia.org/wiki/渐进式网络应用程序>；<br>参考②：<https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps>
+[^2]: 参考①：<https://zh.wikipedia.org/wiki/渐进式网络应用程序>；<br>参考②：<https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps>。
+[^3]: 这里一个提供在线测试的网站：<https://www.webpagetest.org/lighthouse>。

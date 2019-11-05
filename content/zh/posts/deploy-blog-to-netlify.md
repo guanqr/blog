@@ -1,6 +1,6 @@
 +++
 title = "博客通过 Netlify 实现持续集成"
-date = "2019-10-05T00:04:30"
+date = "2019-10-05T00:04:30+08:00"
 tags = ["Netlify","Hexo"]
 categories = ["study","blog"]
 series = ["Build-Up-Blog"]

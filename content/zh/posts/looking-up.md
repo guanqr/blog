@@ -1,6 +1,6 @@
 +++
 title = "《银河补习班》并非荒谬绝伦"
-date = "2019-10-17T15:52:32"
+date = "2019-10-17T15:52:32+08:00"
 tags = ["Family","Education","Pilot","Space"]
 categories = ["life","film"]
 dropCap = true

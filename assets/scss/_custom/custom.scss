@@ -198,3 +198,8 @@ p#div-default {
 .weixin-menu:hover .weixin-description {
     opacity: 1;
 }
+// footer 样式
+.footer-inner {
+    border-top-style: solid;
+    background: var(--color-contrast-lower);
+}

@@ -23,8 +23,8 @@ meta = false
 
 目前本站支持以下三种方式订阅：
 
-+ [Wechat](https://www.guanqr.com/images/wechat-official-accounts.svg)
-+ [Atom](https://blog.guanqr.com/atom.xml) / [RSS](https://blog.guanqr.com/rss.xml)
++ <a href="/images/wechat-official-accounts.svg" target="_blank">Wechat</a>
++ <a href="/atom.xml" target="_blank">Atom</a> / <a href="/rss.xml" target="_blank">RSS</a>
 + [Telegram Channel](https://t.me/guanqr)
 
 ### 建立博客的原因
@@ -44,11 +44,11 @@ meta = false
 <blockquote class="blockquote-center"><p>寂寞新文苑，平安旧战场。<br>
 两间余一卒，荷戟独彷徨。</p></blockquote>
 
-关于副标题：<i>The Sound of Silence</i>（寂静之声）。这是一首歌的名字，歌曲在上方。我们对未来充满向往，却也会感到迷茫，人生会有很多无奈，但还是要努力前行。「荷戟独彷徨」加上「寂静之声」，便有了一种独特的韵味。
+关于副标题：The Sound of Silence（寂静之声）。这是一首歌的名字。我们对未来充满向往，却也会感到迷茫，人生会有很多无奈，但还是要努力前行。「荷戟独彷徨」加上「寂静之声」，便有了一种独特的韵味。
 
 ### 文章内容分类
 
-我的文章主要分为两大类：「生活感悟」（<i>life</i>）与「学海无涯」（<i>study</i>）。「学海无涯」方面的内容，主要偏向于我的专业（光学）部分，除此之外还有一些我在互联网上学到的知识总结，一些我认为比较好的文章的搬运，转载时会注明来源。当然，「学海无涯」之外的所有文章，都将放在「生活感悟」的分类中。文章均采用 [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。具体的分类情况通过下面的「文章分类目录树」进行展示。
+我的文章主要分为两大类：「生活感悟」（life）与「学海无涯」（study）。「学海无涯」方面的内容，主要偏向于我的专业（光学）部分，除此之外还有一些我在互联网上学到的知识总结，一些我认为比较好的文章的搬运，转载时会注明来源。当然，「学海无涯」之外的所有文章，都将放在「生活感悟」的分类中。文章均采用 [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。具体的分类情况通过下面的「文章分类目录树」进行展示。
 
 ```
 分类(categories)

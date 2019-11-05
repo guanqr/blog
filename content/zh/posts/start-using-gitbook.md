@@ -7,7 +7,6 @@ dropCap = true
 displayCopyright = true
 gitinfo = true
 toc = true
-darkImage = true
 katex = true
 +++
 

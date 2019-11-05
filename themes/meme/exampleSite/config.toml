@@ -71,7 +71,7 @@ languageName = "中文"
 contentDir = "content/zh"
 weight = 2
 languageCode = "zh-CN"
-hasCJKLanguage= true
+hasCJKLanguage = true
 title = "Hugo 主题 MemE"
 copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)"
 [[languages.zh-cn.menu.main]]
@@ -491,13 +491,6 @@ defaultTheme = "light"
 # has enabled Dark Mode (`prefers-color-scheme: dark`).
 hideThemeToggle = false
 hideThemeToggleInHome = false
-# Useful for black and white images on a white background.
-# Bad for color images. I suggest you set `true` in post’s
-# Front Matter instead of here, unless all your images are
-# black and white on a white background. Also, you can set
-# `true` here and set `false` in Front Matter which will
-# override what you have set here.
-darkImage = true
 
 # Web App
 # https://realfavicongenerator.net/
@@ -510,7 +503,7 @@ darkImage = true
 # See https://github.com/OneSignal/OneSignal-Website-SDK/issues/332
 # Check and Modify manifest.json (/icons path)
 themeColor = "#fff"
-themeColorDark = "#000"
+themeColorDark = "#1c1c21"
 safariMaskColor = "#2a6df4"
 msApplicationTileColor = "#fff"
 
@@ -552,7 +545,7 @@ duration = 0.5
 
 # HSL color
 primaryColorLight = "220, 90%, 56%"
-primaryColorDark = "349, 75%, 51%"
+primaryColorDark = "201, 65%, 62%"
 
 # Unit: em
 # You can leave it empty ("") to fallback to default value: 42

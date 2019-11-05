@@ -68,7 +68,7 @@
 @import "_variables/light.scss";
 
 {{ if .Site.Params.enableDarkMode }}
-    {{ with .Site.Params.primaryColorDark | default "349, 75%, 51%" }}
+    {{ with .Site.Params.primaryColorDark | default "201, 65%, 62%" }}
         {{ $number := (split (replace . "%" "") ", ") }}
         {{ range $index, $value := $number }}
             {{ if eq $index 0 }}
@@ -99,6 +99,9 @@
         float: right;
         position: relative;
         z-index: 4;
+    }
+    html[data-theme='dark'] .post img {
+        filter: brightness(50%);
     }
 {{ end }}
 
@@ -301,14 +304,19 @@
         }
     {{ end }}
     {{ if .Site.Params.iconAnimation }}
-        @keyframes heartAnimate {
-            0%,100%{transform:scale(1);}
-            10%,30%{transform:scale(0.9);}
-            20%,40%,60%,80%{transform:scale(1.1);}
-            50%,70%{transform:scale(1.1);}
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            10%, 30% {
+                transform: scale(0.9);
+            }
+            20%, 40%, 50%, 60%, 70%, 80% {
+                transform: scale(1.1);
+            }
         }
         .footer-icon {
-            animation: heartAnimate 1.33s ease-in-out infinite;
+            animation: heartbeat 1.33s ease-in-out infinite;
         }
     {{ end }}
 {{ end }}
@@ -339,13 +347,13 @@
     @import "_common/_highlight/light.scss";
     .chroma {
         color: var(--color-contrast-high);
-        background-color: alpha(var(--color-contrast-lower), 0.75);
+        background-color: alpha(var(--color-contrast-lower), 0.5);
     }
     {{ if .Site.Params.enableDarkMode }}
         @import "_common/_highlight/dark.scss";
         .chroma-dark {
             color: var(--color-contrast-high);
-            background-color: alpha(var(--color-contrast-lower), 0.75);
+            background-color: alpha(var(--color-contrast-lower), 0.5);
         }
     {{ end }}
 {{ end }}

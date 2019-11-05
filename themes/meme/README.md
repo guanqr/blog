@@ -1,5 +1,5 @@
 English | 
-<a href="README.zh-cn.md">简体中文</a>
+<a href="https://github.com/reuixiy/hugo-theme-meme/blob/master/README.zh-cn.md">简体中文</a>
 
 <div align="center"><img src="https://raw.githubusercontent.com/reuixiy/hugo-theme-meme/master/static/icons/apple-touch-icon.png" /></div>
 
@@ -164,7 +164,6 @@ motto | author’s description | string, Markdown supported, theme only
 avatar | author’s avatar | string, URL, theme only
 twitter | author’s twitter id | string, theme only
 facebook | author’s facebook id | string, theme only
-darkImage | dark image? | boolean, override `darkImage` in `config.toml`, theme only
 smallCaps | small caps? | boolean, override `enableSmallCaps` in `config.toml`, theme only
 dropCap | drop cap? | boolean, override `enableDropCap` in `config.toml`, theme only
 dropCapAfterHr | drop cap after every horizontal rule tag? | boolean, override `enableDropCapAfterHr` in `config.toml`, theme only

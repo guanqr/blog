@@ -6,7 +6,6 @@ categories = ["study","computer"]
 displayCopyright = true
 gitinfo = true
 toc = true
-darkImage = true
 +++
 
 ## Wireshark 简介

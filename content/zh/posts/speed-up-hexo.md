@@ -3,14 +3,15 @@ title = "加速 Hexo 博客的方法及遇到的问题"
 date = "2019-08-20T12:33:10"
 tags = ["Hexo","NexT","Service-Worker","PWA"]
 categories = ["study","blog"]
+series = ["Build-Up-Blog"]
 dropCap = true
 displayCopyright = true
 gitinfo = true
 +++
 
-由于我的博客部署在 GitHub Pages 上面，在国内访问的话部分地区的加载速度比较慢。因此我在 6 月份的时候尝试使用 hexo-service-worker 与 hexo-filter-optimize 插件加速网站的访问速度。这两款插件确实对博客的加载速度有所帮助，但在当时我并没有留意是否出现了问题。直到最近，我在使用 Aplayer 音乐播放器的时候，一个很严重的 BUG 暴露了出来。通过对插件的逐个排查，终于找到了问题所在之处。
-
 ![speed-up-hexo.png](/images/speed-up-hexo.png)
+
+由于我的博客部署在 GitHub Pages 上面，在国内访问的话部分地区的加载速度比较慢。因此我在 6 月份的时候尝试使用 hexo-service-worker 与 hexo-filter-optimize 插件加速网站的访问速度。这两款插件确实对博客的加载速度有所帮助，但在当时我并没有留意是否出现了问题。直到最近，我在使用 Aplayer 音乐播放器的时候，一个很严重的 BUG 暴露了出来。通过对插件的逐个排查，终于找到了问题所在之处。
 
 ## 加速 Hexo 博客
 

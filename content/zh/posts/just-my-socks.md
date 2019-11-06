@@ -67,5 +67,5 @@ Youtube 观看 1440p 的视频基本没有卡顿。
 
 ## 参考
 
-1. [搬瓦工附属飞机场Just My Socks测评 | Fenghe's Blog](https://fenghe.us/benchmark-just-my-host/)
-2. [紧急测评 Just My Socks | Fenghe's Blog](https://fenghe.us/190917-review-just-my-socks/)
+1. [搬瓦工附属飞机场Just My Socks测评 | Fenghe's Blog](https://fenghe.us/benchmark-just-my-host/)。
+2. [紧急测评 Just My Socks | Fenghe's Blog](https://fenghe.us/190917-review-just-my-socks/)。

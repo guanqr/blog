@@ -61,5 +61,5 @@ gitinfo = true
 
 维柯试图探索的却是在神的意志之外的人类活动的规律性。但他仍摆脱不了基督教神学统治的社会大环境，在前有伽利略受教会迫害的事实面前，维柯也很难彻底放弃有神论。
 
-[^1]: 图源：<https://en.wikipedia.org/wiki/Giambattista_Vico>
-[^2]: 图源：<https://en.wikipedia.org/wiki/The_New_Science>
+[^1]: 图源：<https://en.wikipedia.org/wiki/Giambattista_Vico>。
+[^2]: 图源：<https://en.wikipedia.org/wiki/The_New_Science>。

@@ -64,4 +64,4 @@ Do you want to install Bt-Panel to the /www directory now?(y/n): y
 
 <p id="div-warning">为了网站的安全，别忘了更改用户名、密码以及端口号。</p>
 
-[^1]: 图源：<https://www.bt.cn/>
+[^1]: 图源：<https://www.bt.cn/>。

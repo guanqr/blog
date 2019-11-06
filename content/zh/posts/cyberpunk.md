@@ -88,7 +88,7 @@ gitinfo = true
 
 *I've seen things you people wouldn't believe. Attack ships on fire off the shoulder of Orion. I watched C-beams glitter in the dark near the Tannhauser Gate. All those moments will be lost in time. Like tears in rain. Time... to die.*[^4]
 
-[^1]: 参考：<https://zh.wikipedia.org/wiki/赛博朋克>
-[^2]: 劳仑斯·普尔森
-[^3]: 布鲁斯·斯特灵
+[^1]: 参考：<https://zh.wikipedia.org/wiki/赛博朋克>。
+[^2]: 劳仑斯·普尔森。
+[^3]: 布鲁斯·斯特灵。
 [^4]: 电影《银翼杀手》结尾复制人 Roy 临死前的独白。

@@ -45,4 +45,4 @@ gitinfo = true
 
 <p id="div-warning">在进行建站的过程中，各位一定要保护好自己的账号密码，最好在设定完成之后进行更改！</p>
 
-[^1]: 图源：<https://wordpress.org/>
+[^1]: 图源：<https://wordpress.org/>。

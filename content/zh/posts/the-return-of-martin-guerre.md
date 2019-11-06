@@ -45,6 +45,6 @@ gitinfo = true
 
 真假马丁的故事再这么长的时间里反反复复被人们议论，并引起人文主义者的浓厚兴趣。这个故事中涉及了三个讲述故事的人：写下《难忘的判决》的法官让·科拉斯、著有《图卢兹冒牌马丁的奇妙故事》的纪尧姆·勒叙厄尔、写下《论瘸子》的米歇尔·德·蒙田。这三位来自不同职业，拥有不同的社会地位，但他们都属于人文主义者。他们表现出了对社会下层普通群众的关注与同情。尽管当时社会等级分明，农民和政治生活似乎并没有联系，但那些人文主义者确确实实表现出来了对他们的关注。作者以一个小村庄的故事对一个时代的社会状况进行分析，以小见大，是微观史学研究的典范之作。
 
-[^1]: 图源：<https://en.wikipedia.org/wiki/The_Return_of_Martin_Guerre>
-[^2]: 琼·斯特劳斯，《新闻周刊》
-[^3]: 图源：<https://en.wikipedia.org/wiki/Natalie_Zemon_Davis>
+[^1]: 图源：<https://en.wikipedia.org/wiki/The_Return_of_Martin_Guerre>。
+[^2]: 琼·斯特劳斯，《新闻周刊》。
+[^3]: 图源：<https://en.wikipedia.org/wiki/Natalie_Zemon_Davis>。

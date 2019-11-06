@@ -212,4 +212,4 @@ systemctl restart sshd.service
 
 1. <https://www.cnblogs.com/rwxwsblog/p/4590608.html>
 
-[^1]: 图源：<http://denyhosts.sourceforge.net/>
+[^1]: 图源：<http://denyhosts.sourceforge.net/>。

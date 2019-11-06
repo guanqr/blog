@@ -92,21 +92,4 @@ workbox.routing.registerRoute(
     })
 );
 
-// External Images
-//workbox.routing.registerRoute(
-//    /^https:\/\/raw\.githubusercontent\.com\/reuixiy\/hugo-theme-meme\/master\/static\/icons\/.*/,
-//    new workbox.strategies.CacheFirst({
-//        cacheName: "external-images",
-//        plugins: [
-//            new workbox.expiration.Plugin({
-//                maxEntries: 1000,
-//                maxAgeSeconds: 60 * 60 * 24 * 30
-//            }),
-//            new workbox.cacheableResponse.Plugin({
-//                statuses: [0, 200]
-//            })
-//        ]
-//    })
-//);
-
 workbox.googleAnalytics.initialize({});

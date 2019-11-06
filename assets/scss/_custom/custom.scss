@@ -1,6 +1,8 @@
+// 首字下沉
 .drop-cap {
     margin-top: 16px !important;
 }
+// 引用样式
 blockquote {
     font-family: 'EB Garamond', 'STKaiti', 'KaiTi', 'SimKai', 'Noto Serif SC', sans-serif;
 }
@@ -149,10 +151,7 @@ p#div-default {
     position: absolute;
     bottom: 1em;
     left: 1em;
-    //bottom: 43px;
-    //left: 10px;
     border-radius: 5px;
-    //box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
 }
 .weixin-menu {
     position: relative;
@@ -169,7 +168,6 @@ p#div-default {
     height: 0px;
     width: 0px;
     border-radius: 3px;
-    //box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
     background: url(/images/wechat-official-accounts.svg);
     border: 1px solid var(--color-contrast-lower);
     background-color: #fff;
@@ -201,4 +199,11 @@ p#div-default {
 // footer 样式
 .footer-inner {
     background: var(--color-contrast-lower);
+}
+// 段落样式
+.post-body h2 {
+    border-bottom: 1px solid #eee;
+}
+.post-body h3 {
+    border-bottom: 1px dotted #eee;
 }

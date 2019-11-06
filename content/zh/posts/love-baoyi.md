@@ -1,8 +1,11 @@
 +++
 title = "「情系宝一」网站制作"
 date = "2019-08-14T10:09:01+08:00"
-tags = ["Google","Open-Source","Front-End","High-School"]
+tags = ["Google","High-School"]
 categories = ["study","computer"]
+dropCap = true
+displayCopyright = true
+gitinfo = true
 +++
 
 几天前在 GitHub 上看到了一个有意思的项目，功能是从本地上传一个图片，网站会在这个图片上加入一个固定的图案，相当于一个水印。原作者制作这个网站是为了生成高考加油的头像。距离我参加高考已经过去两年的时间了，每逢高考，有些同学就会把头像换成给一中考生加油的头像。不知道原头像是谁设计的，样式有些单一，我便想改一改原有的样式。由于目前对网页设计的学习还不是很深入，我参考了原项目的代码，加上了一些个人的修改，制作出了「情系宝一」的头像生成网站。

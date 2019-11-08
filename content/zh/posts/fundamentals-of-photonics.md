@@ -253,7 +253,10 @@ $$
 $$
 \begin{aligned}
     b=F\cos\varphi
-\end{aligned}\\\\
+\end{aligned}
+$$
+
+$$
 \begin{aligned}
     (F^2-b^2)^{1/2}=F\sin\varphi
 \end{aligned}
@@ -264,7 +267,10 @@ $$
 $$
 \begin{aligned}
     h=F(\cos\varphi\pm i\sin\varphi)=F\exp(\pm i\varphi)
-\end{aligned}\\\\
+\end{aligned}
+$$
+
+$$
 \begin{aligned}
     y\_m=y\_0F^m\exp(\pm im\varphi)
 \end{aligned}

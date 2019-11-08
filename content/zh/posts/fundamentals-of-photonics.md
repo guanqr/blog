@@ -478,12 +478,6 @@ $$
 
 ##### 品质因子 $Q$
 
-$$
-\begin{aligned}
-    Q=\frac{2\pi(腔能量)}{每周期能耗}
-\end{aligned}
-$$
-
 大品质因子的系统对应低的谐振损耗。对于光学谐振腔，$Q$ 因子可以用腔内储能以 $c\alpha\_r$ 速度来确定，即每个周期损耗率为 $c\alpha\_r/\nu\_0$，因此 $Q=\frac{2\pi}{c\alpha\_r/\nu\_0}$。因为 $\delta\nu=c\alpha\_r/(2\pi)$，所以光学谐振腔的 $Q$ 因子为：
 
 $$
@@ -528,7 +522,7 @@ $$
 
 $$
 \begin{aligned}
-    N\_\nu=\frac{k空间的大小}{每个波矢的面积}\times 2=\frac{\pi(\frac{2\pi\nu}{c})^2/4}{(\pi/d)^2}\times 2=\frac{2\pi\nu^2d^2}{c^2}
+    N\_\nu=\frac{\pi(\frac{2\pi\nu}{c})^2/4}{(\pi/d)^2}\times 2=\frac{2\pi\nu^2d^2}{c^2}
 \end{aligned}
 $$
 

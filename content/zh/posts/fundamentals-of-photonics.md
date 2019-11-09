@@ -1,5 +1,5 @@
 +++
-title = "光电子学"
+title = "光电子学：基础理论总结"
 date = "2019-11-07T14:42:32+08:00"
 tags = ["Photonics"]
 categories = ["study","optics"]
@@ -62,7 +62,7 @@ $$
 $$
 M=\begin{bmatrix}
     1 & 0\\\\
-    0 & \frac{n_1}{n_2}
+    0 & n_1/n_2
 \end{bmatrix}
 $$
 
@@ -71,7 +71,7 @@ $$
 $$
 M=\begin{bmatrix}
     1 & 0\\\\
-    -\frac{n_2-n_1}{n_2 R} & \frac{n_1}{n_2}
+    -(n_2-n_1)/(n_2 R) & n_1/n_2
 \end{bmatrix}
 $$
 
@@ -80,7 +80,7 @@ $$
 $$
 M=\begin{bmatrix}
     1 & 0\\\\
-    -\frac{1}{f} & 1
+    -1/f & 1
 \end{bmatrix}
 $$
 
@@ -98,7 +98,7 @@ $$
 $$
 M=\begin{bmatrix}
     1 & 0\\\\
-    \frac{2}{R} & 1
+    2/R & 1
 \end{bmatrix}
 $$
 

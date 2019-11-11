@@ -113,7 +113,7 @@ custom_file_path:
 我们可以在博客主题文件夹下的 `~/source/css/_variables/base.styl` 文件中找到 NexT 主题的字体设定：
 
 ```css
-/* Font families. */
+// Font families.
 $font-family-chinese      = "PingFang SC", "Microsoft YaHei";
 
 $font-family-base         = $font-family-chinese, sans-serif;
@@ -158,6 +158,7 @@ $font-family-icons        = 'FontAwesome';
 
 ```css
 /* 文件位置：~/source/_data/styles.styl */
+
 @font-face {
   font-family: 'Linux Biolinum';
   src: url("/fonts/LinBiolinum_Rah.eot");
@@ -187,6 +188,9 @@ $font-family-icons        = 'FontAwesome';
 最后，在 `base.styl` 文件中修改：
 
 ```diff
+# 文件位置：~/themes/next/source/css/_variables/base.styl
+
+// Font families.
 -$font-family-chinese      = "PingFang SC", "Microsoft YaHei"
 +$font-family-chinese      = "Linux Biolinum", "PingFang SC", "Microsoft YaHei"
 ```
@@ -199,9 +203,91 @@ $font-family-icons        = 'FontAwesome';
 
 ![hexo-theme-next-google-fonts-chinese-simplified.png](/images/hexo-theme-next-google-fonts-chinese-simplified.png "Google Fonts 提供的中文简体字体")
 
-面对电子显示屏上千篇一律的黑体字，当读者看到一个显示宋体字的网页自然会眼前一亮。再加上合理的排版，你的博客必然会脱颖而出。宋体的衬线更适合长时间阅读，这也是目前各类阅读器或者浏览器上的阅读模式都会使用衬线字的原因。
+面对电子显示屏上千篇一律的黑体字，当读者看到一个显示宋体字的网页自然会眼前一亮。再加上合理的排版，你的博客必然会脱颖而出。宋体的衬线更适合长时间阅读，这也是目前各类阅读器或者浏览器上的阅读模式都会使用衬线字的原因。使用 Google Fonts 字体的方法很简单，NexT 主题配置文件中已经提供了设置：
 
+```yaml
+# 文件位置：~/themes/next/_config.yml
 
+font:
+  # Use custom fonts families or not.
+  # Depended options: `external` and `family`.
+  enable: false
+
+  # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
+  host:
+
+  # Font options:
+  # `external: true` will load this font family from `host` above.
+  # `family: Times New Roman`. Without any quotes.
+  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
+
+  # Global font settings used for all elements inside <body>.
+  global:
+    external: true
+    family: Lato
+    size:
+
+  # Font settings for site title (.site-title).
+  title:
+    external: true
+    family:
+    size:
+
+  # Font settings for headlines (<h1> to <h6>).
+  headings:
+    external: true
+    family:
+    size:
+
+  # Font settings for posts (.post-body).
+  posts:
+    external: true
+    family:
+
+  # Font settings for <code> and code blocks.
+  codes:
+    external: true
+    family:
+```
+
+首先将 `enable:` 的 `false` 改为 `true`，然后在 `host:` 后添加 Google Fonts API 地址：`fonts.googleapis.com`。考虑到国内的网络对 Google 的域名并不友好，建议将 `googleapis.com` 修改为烧饼博客提供的镜像 `loli.net`。
+
+然后，设置中下面的一些选项，就是设定博客各区域的字体，比如网站标题 `title`，文章内容 `posts`……这些都可以进行修改，你要做的只是到 Google Fonts 上找到适合的字体，然后将字体的名字填写到 `family:` 中。最关键的是 `global` 字体的设定，这里的字体将会是你网站的基本（全局）字体。个人建议不要在这里填思源宋体的名字 `Noto Serif SC`，而是选取一款英文字体进行填写。因为中文字体往往携带同样的英文字体，如果将中文字体优先级设置为第一位，那么英文字体必将也会是中文字体的样式。如果你在这里设置的是 `Noto Serif SC`，那么英文字体也会是 `Noto Serif SC`。那么，中文字体到哪里去设置呢？当然还是要到 `base.styl` 文件中，直接这样修改：
+
+```diff
+# 文件位置：~/themes/next/source/css/_variables/base.styl
+
+// Font families.
+-$font-family-chinese      = "PingFang SC", "Microsoft YaHei"
++$font-family-chinese      = "Noto Serif SC"
+```
+
+然后进入 [Google Fonts](https://fonts.google.com/)，搜索 Noto Serif SC，点 `+` 号选择，选择好后底部会弹出一个提示框，里面有使用说明。还可以点击提示框中的 `CUSTOMIZE` 定制要加载的字重与语言。之后，点击 `EMBED`，复制生成的 `<link>` 代码，添加到博客的 `<head>` 标签内，NexT 主题可直接添加到 `~/source/_data/head.swig` 文件中。如果你想使用上文中提到的烧饼博客镜像，就将代码中的将 `googleapis.com` 修改为 `loli.net`。
+
+为了方便，我在这里直接给出代码：
+
+```html
+<!-- 文件位置：~/source/_data/head.swig -->
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,500,700&display=swap&subset=chinese-simplified" rel="stylesheet">
+```
+
+考虑到宋体的笔画要比黑体细，因此建议通过自定义 CSS 将字体的颜色加深，比如修改为 `#333`，以达到较好的阅读效果。
+
+```css
+/* 文件位置：~/source/_data/styles.styl */
+
+.post-body {
+    color: #333;
+}
+```
+
+这种先在 `<head>` 中引入字体，再通过 CSS 设定字体显示部位的方式适用于各种网页的设计，不局限于 NexT 主题。另外，我在这里给出我的博客字体设定：
+
++ 中文字体：Noto Serif SC
++ 英文字体：EB Garamond
++ 标题字体：Cinzel Decorative
++ 代码字体：Source Code Pro
 
 ## 文章内容美化
 

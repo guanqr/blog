@@ -705,6 +705,6 @@ hideLangToggleInHome = false
 enableFingerprint = false
 
 # 404
-fofPoster = "/images/flying-clouds-720p.jpg"
-fofVideoWebm = "/videos/flying-clouds-720p.webm"
-fofVideoMp4 = "/videos/flying-clouds-720p.mp4"
+fofPoster = ""
+fofVideoWebm = ""
+fofVideoMp4 = ""

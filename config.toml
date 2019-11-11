@@ -7,7 +7,7 @@ title = "荷戟独彷徨"
 defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = false
 
-relativeURLs = true
+relativeURLs = false
 
 enableGitInfo = true
 

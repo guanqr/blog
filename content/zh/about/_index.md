@@ -15,7 +15,7 @@ meta = false
 ### 基本信息
 
 + 采用 Hugo 博客框架
-+ 主题为 Meme
++ 主题为 MemE
 + 源码存放于 Github
 + 部署在 Netlify
 
@@ -68,7 +68,7 @@ meta = false
 
 ### 更新日志
 
-点击[这里](https://www.guanqr.com/update/)查看本站的更新日志。
+点击[这里](/update/)查看本站的更新日志。
 
 ## 关于我
 

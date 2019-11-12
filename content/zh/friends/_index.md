@@ -85,8 +85,8 @@ meta = false
 
 <p id="div-default">
 网站名称：荷戟独彷徨<br>
-网站地址：<a href="https://www.guanqr.com/" target="_blank">https://www.guanqr.com/</a><br>
-网站标志：<a href="https://www.guanqr.com/images/favicon-512x512.png" target="_blank">https://www.guanqr.com/images/favicon-512x512.png</a><br>
+网站地址：<a href="/" target="_blank">https://blog.guanqr.com/</a><br>
+网站标志：<a href="/images/favicon-512x512.png" target="_blank">https://blog.guanqr.com/images/favicon-512x512.png</a><br>
 网站描述：The Sound of Silence</p>
 
 + 将您的网站信息按照上述格式发送电子邮件至 <guanqirui@zju.edu.cn>，审核通过后将会添加至该页面中。

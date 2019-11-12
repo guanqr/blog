@@ -13,3 +13,9 @@ HUGO_ENABLEGITINFO = "true"
   to = "https://blog.guanqr.com/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://www.guanqr.com/*"
+  to = "https://blog.guanqr.com/:splat"
+  status = 301
+  force = true

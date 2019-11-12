@@ -486,10 +486,10 @@ enableComments = false
 enableDisqus = true
 disqusShortname = "Guanqr"
 
-enableGoogleAnalytics = false
+enableGoogleAnalytics = true
 # `gtag` or `analytics`
 trackingCodeType = "gtag"
-trackingID = "UA-145421897-1"
+trackingID = "UA-140800645-1"
 
 googleSiteVerification = ""
 

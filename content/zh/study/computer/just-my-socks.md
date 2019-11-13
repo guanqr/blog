@@ -12,7 +12,7 @@ gitinfo = true
 
 本来想等这段时间过去再说。但是最近我还在进行一项小的科研训练项目，还是需要查文献资料什么的，另外我在 Telegram 上有几个群聊，一直耗着也不是个办法。之前就听说搬瓦工推出了自家的机场服务 Just My Socks，看了几个性能测试，个人感觉还不错，于是就趁此机会尝试了一下。
 
-我之前写的购买 VPS 服务器搭建 ShadowSocks 和 V2ray 的教程：「[脚著谢公屐，身登青云梯](/posts/surf-the-internet/)」。
+我之前写的购买 VPS 服务器搭建 ShadowSocks 和 V2ray 的教程：「[脚著谢公屐，身登青云梯](/blog/computer/surf-the-internet/)」。
 
 ## Just My Socks 优势
 

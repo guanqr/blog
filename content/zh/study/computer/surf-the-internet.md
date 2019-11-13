@@ -22,7 +22,7 @@ toc = true
 + https://233v2.com/
 + https://fenghe.us/category/fuck-gfw/
 
-六月和十月查封了很多 IP，如果是个人使用的话购买 VPS 服务器很不划算，目前我使用的是搬瓦工推出的 Just My Socks 机场服务，具体内容可以参考我的另一篇文章：「[推荐 Just My Socks 机场服务](/posts/just-my-socks/)」。
+六月和十月查封了很多 IP，如果是个人使用的话购买 VPS 服务器很不划算，目前我使用的是搬瓦工推出的 Just My Socks 机场服务，具体内容可以参考我的另一篇文章：「[推荐 Just My Socks 机场服务](/blog/computer/just-my-socks/)」。
 
 ## 搭建 ShadowSocks
 

@@ -1,7 +1,7 @@
 +++
 title = "谈谈博客主题的那些事"
 date = "2019-06-08T00:24:26+08:00"
-tags = ["Hexo","NexT","Open-Source"] 
+tags = ["Hexo","NexT"] 
 categories = ["study","blog"]
 dropCap = true
 displayCopyright = true

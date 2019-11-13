@@ -22,13 +22,13 @@ pluralizeListTitles = false
 summaryLength = 150
 
 # 是否开启 GitHub 风格的 Emoji 书写方式
-enableEmoji = false
+enableEmoji = true
 
 # 脚注的返回链接中的文本
 footnoteReturnLinkContents = "↩"
 
 # 是否启用 Git 版本信息
-enableGitInfo = false
+enableGitInfo = true
 
 # 是否生成 robots.txt 文件
 enableRobotsTXT = true
@@ -92,12 +92,18 @@ uglyURLs = false
     threshold = 80
     includeNewer = true
     toLower = true
+	[[related.indices]]
+        name = "series"
+        weight = 100
     [[related.indices]]
         name = "categories"
         weight = 100
     [[related.indices]]
         name = "tags"
         weight = 95
+	[[related.indices]]
+        name = "keywords"
+        weight = 90
     [[related.indices]]
         name = "date"
         weight = 10
@@ -160,7 +166,6 @@ uglyURLs = false
         weight = 1
         pre = "internal"
         post = "home"
-        identifier = "home"
     [[menu.main]]
         url = "/tags/"
         name = "标签"
@@ -633,7 +638,7 @@ uglyURLs = false
     publishedDateIcon = "calendar-alt"
 
     # 是否显示修改时间
-    displayModifiedDate = true
+    displayModifiedDate = false
     # 修改时间的图标
     modifiedDateIcon = "calendar-check"
 
@@ -1107,6 +1112,7 @@ uglyURLs = false
     weight = 2
     languageCode = "en-US"
     hasCJKLanguage = false
+	title = "The Sound of Silence"
     copyright = "The article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)."
 [languages.en-us.taxonomies]
     category = "categories"
@@ -1118,7 +1124,6 @@ uglyURLs = false
         weight = 1
         pre = "internal"
         post = "home"
-        identifier = "home"
     [[languages.en-us.menu.main]]
         url = "/en-us/tags/"
         name = "Tags"
@@ -1137,7 +1142,6 @@ uglyURLs = false
         weight = 4
         pre = "internal"
         post = "archive"
-        identifier = "archives"
     [[languages.en-us.menu.main]]
         url = "/en-us/about/"
         name = "About"
@@ -1189,3 +1193,4 @@ uglyURLs = false
     enableSmallCap = true
     enableEmphasisPoint = false
     enableChinesePunctuationGlyphCorrection = false
+	mainSections = ["posts"]

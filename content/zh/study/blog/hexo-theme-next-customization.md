@@ -31,7 +31,31 @@ toc = true
 
 ## 基本功能配置
 
+博客的建立最关键的就是选择主题，NexT 主题是目前使用人数最多的 Hexo 博客主题。如果你想要尝试其他主题，可以去 Hexo Themes 慢慢找。对于在 GitHub 上 Star 较多的几个主题，我都有尝试过，对于这些主题的简要分析可以参考我的这一篇[文章](/study/blog/blog-theme/)。最终我选择 NexT 的原因正是它简洁、功能齐全、更新维护速度快。
+
 ### 安装 NexT 主题
+
+目前在 GitHub 上面有两个 NexT 主题的仓库，一个是 v6.0.0 之前版本的[个人仓库](https://github.com/iissnan/hexo-theme-next)，因为主题原作者停止维护该主题，所以有高人另起炉灶，单独创立了一个 NexT 的 Organization，目前最新版本的主题在这个[仓库](https://github.com/theme-next/hexo-theme-next)中。我发现到目前为止，还有很多人选择从旧仓库下载只有 v5 版本的主题，无视仓库停止维护的公告，依旧在旧仓库中发起很多早已解决的 issues，真是令人哭笑不得。所以为了避免一些不必要的麻烦，在这里我还是要提醒各位读者，请从[这里](https://github.com/theme-next/hexo-theme-next)下载最新版本的主题，以防主题版本太旧，从而与 Hexo 版本或是环境之间发生冲突。
+
+你可以选择直接 `clone` 主分支（master）的最新版本主题文件到 Hexo 的主题文件夹（`themes`）中：
+
+```bash
+$ cd hexo
+$ git clone https://github.com/theme-next/hexo-theme-next themes/next
+```
+
+或者到 Releases 中下载每月月初发布的[发行版](https://github.com/theme-next/hexo-theme-next/releases)主题，将压缩文件中的内容解压至主题文件夹下的 `next` 文件夹中。
+
+然后在站点配置文件 `_config.yml` 中修改主题名称：
+
+```yml
+# 文件位置：~/_config.yml
+
+## Themes: https://hexo.io/themes/
+theme: next
+```
+
+我比较喜欢下载和更新发行版的主题，因为版本明确，便于管理。不过对于 NexT 主题来说，发行版和主分支的版本并没有什么区别，发行版只是一个每月月初的「总结」罢了。虽然发行版是稳定的版本，不过主分支的版本一定会解决一些在当前发行版中可能出现的 BUG，或许也会添加一些新的功能，当然也不可避免一些新 BUG 的出现。所以这两种版本到底选择哪一个，只能看你自己的想法了。
 
 ### 站点配置文件
 
@@ -113,7 +137,8 @@ custom_file_path:
 我们可以在博客主题文件夹下的 `~/source/css/_variables/base.styl` 文件中找到 NexT 主题的字体设定：
 
 ```css
-// Font families.
+/* 文件位置：~/themes/next/source/css/_variables/base.styl */
+
 $font-family-chinese      = "PingFang SC", "Microsoft YaHei";
 
 $font-family-base         = $font-family-chinese, sans-serif;
@@ -264,6 +289,8 @@ font:
 
 然后进入 [Google Fonts](https://fonts.google.com/)，搜索 Noto Serif SC，点 `+` 号选择，选择好后底部会弹出一个提示框，里面有使用说明。还可以点击提示框中的 `CUSTOMIZE` 定制要加载的字重与语言。之后，点击 `EMBED`，复制生成的 `<link>` 代码，添加到博客的 `<head>` 标签内，NexT 主题可直接添加到 `~/source/_data/head.swig` 文件中。如果你想使用上文中提到的烧饼博客镜像，就将代码中的将 `googleapis.com` 修改为 `loli.net`。
 
+![hexo-theme-next-google-fonts-select.png](/images/hexo-theme-next-google-fonts-select.png "定制字体")
+
 为了方便，我在这里直接给出代码：
 
 ```html
@@ -288,6 +315,7 @@ font:
 + 英文字体：EB Garamond
 + 标题字体：Cinzel Decorative
 + 代码字体：Source Code Pro
+
 
 ## 文章内容美化
 

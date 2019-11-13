@@ -94,7 +94,7 @@ filter_optimize:
 <link rel="manifest" href="/manifest.json">
 ```
 
-如果不知道如何引入自定义文件的话，可以参考我的文章《[Hexo-NexT 主题：文章内容美化](https://www.guanqr.com/2019/05/04/hexo-next-1/)》的「[写在前面](https://www.guanqr.com/2019/05/04/hexo-next-1/#写在前面)」部分。
+如果不知道如何引入自定义文件的话，可以参考我的文章《[Hexo-NexT 主题个性优化](/study/blog/hexo-theme-next-customization/)》的「网页样式布局」部分。
 
 部署完成后，在 Chrome 浏览器中按 `F12` 进入元素审查界面，选择进入 `Application` 一栏，即可看到你的 App Manifest 设定以及缓存文件的大小。
 

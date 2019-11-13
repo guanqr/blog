@@ -93,9 +93,136 @@
   to = "/study/computer/shangxueba-crack/"
 
 [[redirects]]
+  from = "/2019/05/06/create-a-website-2/"
+  to = "/study/blog/create-a-website-2/"
+
+[[redirects]]
+  from = "/2019/05/08/hexo-next-2/"
+  to = "/study/blog/hexo-theme-next-customization/"
+
+[[redirects]]
+  from = "/2019/05/10/centos-firewall-cmd/"
+  to = "/study/computer/centos-firewall-cmd/"
+
+[[redirects]]
+  from = "/2019/05/11/discovering-history-in-china/"
+  to = "/life/books/discovering-history-in-china/"
+
+[[redirects]]
   from = "/2019/05/16/say-goodbye-to-ttmeiju/"
   to = "/life/ideas/say-goodbye-to-ttmeiju/"
 
 [[redirects]]
+  from = "/2019/05/18/applied-optics-1/"
+  to = "/study/optics/applied-optics-1/"
+
+[[redirects]]
+  from = "/2019/05/22/the-responsibility-of-sophomore/"
+  to = "/life/school/the-responsibility-of-sophomore/"
+
+[[redirects]]
+  from = "/2019/06/08/change-theme/"
+  to = "/study/blog/blog-theme/"
+
+[[redirects]]
+  from = "/2019/06/14/microcontroller-homework/"
+  to = "/study/computer/microcontroller-homework/"
+
+[[redirects]]
+  from = "/2019/06/17/applied-optics-2/"
+  to = "/study/optics/applied-optics-2/"
+
+[[redirects]]
+  from = "/2019/06/08/change-theme/"
+  to = "/study/blog/blog-theme/"
+
+[[redirects]]
+  from = "/2019/06/25/chromium-edge/"
+  to = "/study/computer/chromium-edge/"
+
+[[redirects]]
+  from = "/2019/06/30/zjuidcard-trading-inquiry/"
+  to = "/study/computer/zjuidcard-trading-inquiry/"
+
+[[redirects]]
+  from = "/2019/07/02/surf-the-internet/"
+  to = "/study/computer/surf-the-internet/"
+
+[[redirects]]
+  from = "/2019/07/04/zjuidcard-data-structure/"
+  to = "/study/computer/zjuidcard-data-structure/"
+
+[[redirects]]
+  from = "/2019/07/10/wireshark/"
+  to = "/study/computer/wireshark/"
+
+[[redirects]]
+  from = "/2019/07/16/cyberpunk/"
+  to = "/life/ideas/cyberpunk/"
+
+[[redirects]]
+  from = "/2019/07/22/start-using-gitbook/"
+  to = "/study/computer/start-using-gitbook/"
+
+[[redirects]]
+  from = "/2019/07/29/opt-short-term-2019/"
+  to = "/study/optics/opt-short-term-2019/"
+
+[[redirects]]
+  from = "/2019/08/01/move-to-yuquan/"
+  to = "/life/school/move-to-yuquan/"
+
+[[redirects]]
+  from = "/2019/08/14/qingxibaoyi/"
+  to = "/study/computer/love-baoyi/"
+
+[[redirects]]
   from = "/2019/08/20/speed-up-hexo/"
   to = "/study/blog/speed-up-hexo/"
+
+[[redirects]]
+  from = "/2019/08/28/wechat-subscription/"
+  to = "/life/ideas/wechat-subscription/"
+
+[[redirects]]
+  from = "/2019/09/04/internet-service-in-yuquan/"
+  to = "/study/computer/internet-service-in-yuquan/"
+
+[[redirects]]
+  from = "/2019/09/07/a-brief-history-of-humankind/"
+  to = "/life/books/a-brief-history-of-humankind/"
+
+[[redirects]]
+  from = "/2019/09/28/gisaengchung/"
+  to = "/life/films/gisaengchung/"
+
+[[redirects]]
+  from = "/2019/10/01/china-70th-anniversary/"
+  to = "/life/school/china-70th-anniversary/"
+
+[[redirects]]
+  from = "/2019/10/02/use-gulp-to-compress-source-code/"
+  to = "/study/blog/use-gulp-to-compress-source-code/"
+
+[[redirects]]
+  from = "/2019/10/03/just-my-socks/"
+  to = "/study/computer/just-my-socks/"
+
+[[redirects]]
+  from = "/2019/10/04/realize-pwa/"
+  to = "/study/blog/realize-pwa/"
+
+[[redirects]]
+  from = "/2019/10/05/deploy-blog-to-netlify/"
+  to = "/study/blog/deploy-blog-to-netlify/"
+
+[[redirects]]
+  from = "/2019/10/17/looking-up/"
+  to = "/life/films/looking-up/"
+
+
+
+
+
+
+

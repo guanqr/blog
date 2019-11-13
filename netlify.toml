@@ -19,3 +19,7 @@ HUGO_ENABLEGITINFO = "true"
   to = "https://blog.guanqr.com/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/2019/05/01/hello-world/"
+  to = "/life/ideas/hello-world/"

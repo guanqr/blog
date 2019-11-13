@@ -561,7 +561,7 @@ uglyURLs = false
 
     ## Disqus
     enableDisqus = true
-    disqusShortname = "guanqr"
+    disqusShortname = "Guanqr"
 
 
     ######################################

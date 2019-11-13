@@ -54,11 +54,11 @@ meta = false
 分类(categories)
 │
 ├── 生活感悟(life)
-│    ├── 品影天地(film)
-│    ├── 奇思妙想(idea)
-│    ├── 悦读笔记(reading)
+│    ├── 品影天地(films)
+│    ├── 奇思妙想(ideas)
+│    ├── 悦读笔记(books)
 │    ├── 校园生活(school)
-│    └── 旅行日记(travel)
+│    └── 旅行日记(travels)
 │ 
 └── 学海无涯(study)
       ├── 建站笔记(blog) 

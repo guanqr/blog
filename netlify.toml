@@ -1,7 +1,7 @@
 [context.production.environment]
-HUGO_VERSION = "0.59.0"
-HUGO_ENV = "production"
-HUGO_ENABLEGITINFO = "true"
+  HUGO_VERSION = "0.59.0"
+  HUGO_ENV = "production"
+  HUGO_ENABLEGITINFO = "true"
 
 [build]
   base = "/"
@@ -23,3 +23,79 @@ HUGO_ENABLEGITINFO = "true"
 [[redirects]]
   from = "/2019/05/01/hello-world/"
   to = "/life/ideas/hello-world/"
+
+[[redirects]]
+  from = "/2019/05/01/tenacity-of-water/"
+  to = "/life/ideas/tenacity-of-water/"
+
+[[redirects]]
+  from = "/2019/05/01/to-the-crazy-ones/"
+  to = "/life/ideas/to-the-crazy-ones/"
+
+[[redirects]]
+  from = "/2019/05/01/sonnet-xv/"
+  to = "/life/books/sonnet-xv/"
+
+[[redirects]]
+  from = "/2019/05/02/forever-young/"
+  to = "/life/films/forever-young/"
+
+[[redirects]]
+  from = "/2019/05/02/the-legend-of-a-tower/"
+  to = "/life/travels/the-legend-of-a-tower/"
+
+[[redirects]]
+  from = "/2019/05/02/the-idea-of-history/"
+  to = "/life/books/the-idea-of-history/"
+
+[[redirects]]
+  from = "/2019/05/02/old-man-with-enormous-wings/"
+  to = "/life/books/old-man-with-enormous-wings/"
+
+[[redirects]]
+  from = "/2019/05/02/the-return-of-martin-guerre/"
+  to = "/life/books/the-return-of-martin-guerre/"
+
+[[redirects]]
+  from = "/2019/05/02/new-science/"
+  to = "/life/books/the-new-science/"
+
+[[redirects]]
+  from = "/2019/05/03/science-summer-camp-in-japan/"
+  to = "/life/school/science-summer-camp-in-japan/"
+
+[[redirects]]
+  from = "/2019/05/03/military-training/"
+  to = "/life/school/military-training/"
+
+[[redirects]]
+  from = "/2019/05/04/hexo-next-1/"
+  to = "/study/blog/hexo-theme-next-customization/"
+
+[[redirects]]
+  from = "/2019/05/04/linux-speed-test/"
+  to = "/study/computer/linux-speed-test/"
+
+[[redirects]]
+  from = "/2019/05/04/install-denyhosts/"
+  to = "/study/computer/install-denyhosts/"
+
+[[redirects]]
+  from = "/2019/05/04/the-establish-of-qiushi-college/"
+  to = "/life/school/the-establish-of-qiushi-college/"
+
+[[redirects]]
+  from = "/2019/05/05/create-a-website-1/"
+  to = "/study/blog/create-a-website-1/"
+
+[[redirects]]
+  from = "/2019/05/05/shangxueba-crack/"
+  to = "/study/computer/shangxueba-crack/"
+
+[[redirects]]
+  from = "/2019/05/16/say-goodbye-to-ttmeiju/"
+  to = "/life/ideas/say-goodbye-to-ttmeiju/"
+
+[[redirects]]
+  from = "/2019/08/20/speed-up-hexo/"
+  to = "/study/blog/speed-up-hexo/"

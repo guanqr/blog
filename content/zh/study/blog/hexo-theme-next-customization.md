@@ -59,6 +59,147 @@ theme: next
 
 ### 站点配置文件
 
+首先，请认真查看 [Hexo 官方文档](https://hexo.io/zh-cn/docs/configuration.html)的说明，基本上每一处的设置都有较为详细的解释。我在这里也给出我的设定，这里 Hexo 版本为 v4.0.0，其他版本的配置基本相同。这里还需要提醒一下，各项参数名称的 `:` 为半角字符，且其后需要一个空格再写内容。另外，不要随意添加任何内容，除非是安装一些特定的插件，需要在这里进行一些参数的设定，因为这类操作可能会影响到博客的生成。
+
+```yml
+# 文件位置：~/_config.yml
+# Hexo version: v4.0.0
+
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+## 网站标题、副标题、网站描述、关键词、作者、语言等基本信息的配置
+title: 荷戟独彷徨
+subtitle: The Sound of Silence
+description: 啼鸟怨年华
+keywords: 
+author: Guanqr
+language: zh-CN
+timezone: Asia/Shanghai
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+## 博客的网址及文章 URL 结构，默认在根目录
+## 如果你想要将博客设定在一个子目录，如 'http://yoursite.com/blog'，则将 root 设定为该子目录的名称 '/child/'
+## 建议博客的 URL 结构在博客建立初期就规划好，因为当你写的文章被搜索引擎收录以及被读者收藏后，再更改结构，会对你的网站访问造成一定影响
+url: https://blog.guanqr.com/
+root: /
+## 详细参数请查看：https://hexo.io/docs/permalinks.html
+## 这里默认的路径太不利于 SEO，建议修改成较短的链接。比如 'year:month:day/:title/'
+## 或者你也可以考虑使用一些插件，直接生成永久链接，如 hexo-abbrlink 插件：https://github.com/rozbo/hexo-abbrlink
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+## 这里是设定一些基本文件夹的名称，如资源文件夹等。
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+## skip_render 是为了避免在执行 'hexo generate' 命令后将一些你不想转义的文件转成 HTML 格式。
+## 比如 README.md，你可以将这些文件名填写在括号内，格式为 [README.md, Post1.md, Post2.md]
+skip_render: [README.md]
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+## post_asset_folder 设置为 true 后，当你新建一个 post 的时候，会在同级目录生成一个相同名字的文件夹
+post_asset_folder: false
+relative_link: false
+future: true
+## 代码高亮设置
+highlight:
+  enable: true
+  line_number: true
+## 代码自动高亮
+  auto_detect: false
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+## URL 中的分类和标签「翻译」成英文
+## 参见：https://github.com/hexojs/hexo/issues/1162
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+
+# 以下为我额外添加的参数设定
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+## Dependency: https://github.com/hexojs/hexo-deployer-git
+## 设定执行 'hexo deploy' 命令后提交的代码仓库地址
+deploy:
+  type: git
+  repo: https://github.com/guanqr/guanqr.github.io.git
+  branch: master
+  
+# 推荐文章功能插件，需要同主题配置文件一起设定
+## Dependency: https://github.com/huiwang/hexo-recommended-posts
+recommended_posts:
+  server: https://api.truelaurel.com #后端推荐服务器地址
+  timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
+  internalLinks: 5 #内部文章数量
+  externalLinks: 0 #外部文章数量
+  fixedNumber: true
+  autoDisplay: false
+
+# Aplayer 音乐播放器插件
+## Dependency: https://github.com/MoePlayer/hexo-tag-aplayer
+aplayer:
+  script_dir: js # Public 目录下脚本目录路径，默认: 'assets/js'
+  style_dir: css # Public 目录下样式目录路径，默认: 'assets/css'
+  #cdn: http://xxx/aplayer.min.js # 引用 APlayer.js 外部 CDN 地址 (默认不开启)
+  #style_cdn: http://xxx/aplayer.min.css # 引用 APlayer.css 外部 CDN 地址 (默认不开启)
+  meting: true # MetingJS 支持
+  #meting_api: http://xxx/api.php # 自定义 Meting API 地址
+  #meting_cdn: http://xxx/Meing.min.js # 引用 Meting.js 外部 CDN 地址 (默认不开启)
+  asset_inject: true # 自动插入 Aplayer.js 与 Meting.js 资源脚本, 默认开启
+  #externalLink: http://xxx/aplayer.min.js # 老版本参数，功能与参数 cdn 相同
+
+# NexT 主题统计文章字数与阅读时长功能，需要同主题配置文件一起设定
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+```
+
 ### 主题配置文件
 
 ## 网页样式布局

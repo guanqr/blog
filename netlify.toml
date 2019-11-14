@@ -209,11 +209,11 @@
   to = "/study/computer/just-my-socks/"
 
 [[redirects]]
-  from = "/2019/10/04/realize-pwa/"
+  from = "/2019/10/03/realize-pwa/"
   to = "/study/blog/realize-pwa/"
 
 [[redirects]]
-  from = "/2019/10/05/deploy-blog-to-netlify/"
+  from = "/2019/10/04/deploy-blog-to-netlify/"
   to = "/study/blog/deploy-blog-to-netlify/"
 
 [[redirects]]

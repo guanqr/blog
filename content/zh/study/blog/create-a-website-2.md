@@ -10,7 +10,7 @@ gitinfo = true
 
 [^1]![wordpress-screen-themes.png](/images/wordpress-screen-themes.png "WordPress 控制面板")
 
-在依照以下方式进行 WordPress 网站建立之前，你需要安装好宝塔面板。具体操作过程请看我的另一篇文章《[Linux 系统安装宝塔面板建站](/posts/create-a-website-1/)》。
+在依照以下方式进行 WordPress 网站建立之前，你需要安装好宝塔面板。具体操作过程请看我的另一篇文章《[Linux 系统安装宝塔面板建站](/study/blog/create-a-website-1/)》。
 
 ## 准备工作
 

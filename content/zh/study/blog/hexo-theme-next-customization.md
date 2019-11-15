@@ -202,13 +202,252 @@ symbols_count_time:
 
 ### 主题配置文件
 
+NexT 主题的配置文件内容有很多，因为该主题有很多扩展功能。在配置主题各项功能之前，我建议先阅读 [NexT 官方网站](https://theme-next.org/)[^2]的相关文档说明。主题配置文件内容过长，为了排版美观以及阅读方便，这里我将分功能对主题的设定进行较为详细的说明。这里我的 NexT 版本为 v7.4.2，不同版本之间的配置文件可能有微小变化，这里仅供参考。我的完整的主题配置文件可在这里下载：[hexo-theme-next-config.zip](/uploads/hexo-theme-next-config.zip)。
+
+#### 自定义网页样式
+
+对应配置文件中的 `custom_file_path` 内容，如果你需要在网站的 `<head>`、`<body>` 等部位添加自己的代码，无需直接修改主题文件，NexT 主题拥有多样自由的注入功能，这一部分的说明参见下一章节「[网页样式布局](#网页样式布局)」
+
+#### 自定义站点图标
+
+主题自带的站点图标是 NexT 主题的 LOGO，图片存放位置位于..主题文件夹..下的 `/source/images/` 文件夹。如果你想要自定义图标，可以不用修改该文件夹的内容，直接在..博客根目录..下的 `source` 文件夹下创建一个名为 `images` 的文件夹，将对应的图片存放于该文件夹下即可。注意，图片的大小及文件格式最好与原主题保持一致。
+
+```yml
+favicon:
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon-32x32-next.png
+  apple_touch_icon: /images/apple-touch-icon-next.png
+  safari_pinned_tab: /images/logo.svg
+  #android_manifest: /images/manifest.json
+  #ms_browserconfig: /images/browserconfig.xml
+```
+
+#### RSS 订阅
+
+开启博客的订阅功能，需要安装 hexo-generator-feed 插件，然后在 `rss: ` 后添加 `/atom.xml`，如下所示：
+
+```diff
+# hexo-generator-feed required for rss support. Leave rss as blank to use site's feed link.
+# Set rss to false to disable feed link. Set rss to specific value if you have burned your feed already.
++ rss: /atom.xml
+```
+
+#### 页脚网站信息
+
+在网页的底部显示版权信息，包括年份、图标、作者信息，是否显示 Hexo 及其版本、NexT 及其版本，还有备案信息。这里的图标我设置成了心形，颜色为红色（`#ff0000`），并且添加了动画效果：`animated: true`。这里的图标名称需要填写 [Font Awesome](https://fontawesome.com/) 中提供的图标名称。如果你想要添加任何自定义内容，比如添加一句话，可以考虑在 `~/source/_data/` 路径下建立 `footer.swig` 文件，在该文件下添加内容。
+
+```yml
+footer:
+  # Specify the date when the site was setup. If not defined, current year will be used.
+  since: 2019
+
+  # Icon between year and copyright info.
+  icon:
+    # Icon name in Font Awesome. See: https://fontawesome.com/v4.7.0/icons/
+    # `heart` is recommended with animation in red (#ff0000).
+    name: heart
+    # If you want to animate the icon, set it to true.
+    animated: true
+    # Change the color of icon, using Hex Code.
+    color: "#ff0000"
+
+  # If not defined, `author` from Hexo `_config.yml` will be used.
+  copyright: Guanqr
+
+  powered:
+    # Hexo link (Powered by Hexo).
+    enable: true
+    # Version info of Hexo after Hexo link (vX.X.X).
+    version: true
+
+  theme:
+    # Theme & scheme info link (Theme - NexT.scheme).
+    enable: true
+    # Version info of NexT after scheme info (vX.X.X).
+    version: true
+
+  # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
+  beian:
+    enable: false
+    icp:
+    # The digit in the num of gongan beian.
+    gongan_id:
+    # The full num of gongan beian.
+    gongan_num:
+    # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
+    gongan_icon_url:
+```
+
+#### 版权声明
+
+此处的版权声明可以选择在侧栏和文章的末尾两处显示。在侧栏显示版权声明我觉得有些突兀，所以我选择在文章末尾显示。
+
+```yml
+creative_commons:
+  # 版权协议
+  license: by-nc-sa
+  # 侧栏显示
+  sidebar: false
+  # 文章末尾显示
+  post: true
+  # 语言
+  language:
+```
+
+#### 主题风格选择
+
+NexT 主题最大的特点就是提供了四套风格的主题，其中 Muse 和 Mist 两款风格相近，Pisces 和 Gemini 两款风格相近。我的博客主题是基于 Muse 主题进行修改的，对于这四款主题的选择，仁者见仁，智者见智。我在这篇[文章](/study/blog/blog-theme/)中分析了我对这四种风格的看法，可供参考。
+
+```yml
+# Schemes
+scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+#scheme: Gemini
+```
+
+#### 设置目录
+
+##### 一级目录
+
+你可以在此处设置目录选项的名称和所在文件夹的位置，以及对应的图标，这里的图标同样需要对应 Font Awesome 中图标的名称。
+
+```yml
+menu:
+  home: / || home
+  #about: /about/ || user
+  #tags: /tags/ || tags
+  #categories: /categories/ || th
+  archives: /archives/ || archive
+  #schedule: /schedule/ || calendar
+  #sitemap: /sitemap.xml || sitemap
+  #commonweal: /404/ || heartbeat
+```
+
+以 `home: / || home` 为例，第一个 `home` 为该目录选项的名称，此处可以先设置成英文，然后在 `~/themes/next/languages/zh-CN.yml` 下对应的 `menu:` 下添加对应的中文，格式为 `home: 首页`。`home: `后填写的是该页面的文件夹位置，`/` 即为网站的根目录。`||` 后的 `home` 即为图标名称。
+
+如果你要建立标签页面和分类页面，首先需要去掉 `tags` 和 `categories` 前的注释，然后在 `~/source/` 文件夹下建立该页面，对应名称为 `tags` 和 `categories`。可以执行以下命令生成：
+
+```bash
+hexo new page tags
+hexo new page categories
+```
+
+然后可以发现在 `~/source/` 文件夹中生成了对应名称的文件夹，在该文件夹下会有一个 `index.md` 文件，打开该文件，在如下所示位置添加内容：
+
+```diff
+---
+title: 
+date: 
++ type: "name"
+---
+```
+其中，在 `name` 处，标签页面就替换为 `tags`，分类页面替换为 `categories`。填写对应类型后，主题会根据类型对页面进行渲染，前提是 NexT 主题支持你设定的这种类型。不同类型格式的模板存放在 `~/themes/next/layout/` 文件夹下，你也可以自己写一个类型模板存放在此处。
+
+如果你想要在目录中建立其他页面的链接入口，比如友情链接，可以添加：
+
+```diff
+menu:
++ links: /links/ || user-plus
+```
+
+对应在 `~/source/` 文件夹下建立名为 `links` 的页面，此时你会发现该链接的名称为英文名 `links`，如果你想要就改成中文，可以直接在此处直接将 `links` 修改为中文 `友链`，不过另一种通用的方法就是在主题的语言包文件中添加对应的翻译。在 `zh-CN.yml` 文件中的如下位置添加对应翻译：
+
+```diff
+# 文件位置：~/themes/next/languages/zh-CN.yml
+
+menu:
++ links: 友链
+```
+
+##### 多级目录
+
+NexT 主题支持多级目录，但是官网并没有直接给出配置的方法，因此很少见到有人使用，具体的样式可以参考官方网站的 [Docs](https://theme-next.org/docs/) 页面，其上方的样式即为二级目录和三级目录。
+
+![hexo-theme-next-title.png](/images/hexo-theme-next-title.png "多级目录样式")
+
+就以官方网站的 Docs 页面为例，其配置文件的目录设定内容为：
+
+```yml
+menu:
+    News: / || bullhorn
+
+    Docs:
+      default: /docs/ || book
+
+      Getting Started:
+        default: /getting-started/ || flag
+        Installation: /installation.html || download
+        Deployment: /deployment.html || upload
+        Data Files: /data-files.html || wrench
+        Update from 5.x: /update-from-v5.html || retweet
+
+      Theme Settings:
+        default: /theme-settings/ || star
+        Footer: /footer.html || sun-o
+        Sidebar: /sidebar.html || bars
+        Posts: /posts.html || pencil-square-o
+        Custom Pages: /custom-pages.html || file-o
+        SEO: /seo.html || external-link-square
+        Front Matter: /front-matter.html || header
+
+      Third Party Services:
+        default: /third-party-services/ || plug
+        Math Equations: /math-equations.html || superscript
+        Comment Systems: /comments.html || comments-o
+        Statistics and Analytics: /statistics-and-analytics.html || bar-chart
+        Post Widgets: /post-widgets.html || share-square
+        Search Services: /search-services.html || search-plus
+        Chat Services: /chat-services.html || comment
+        External Libraries: /external-libraries.html || puzzle-piece
+
+      Tag Plugins:
+        default: /tag-plugins/ || rocket
+        Note: /note.html || comment
+        Tabs: /tabs.html || columns
+        PDF: /pdf.html || file-pdf-o
+        Mermaid: /mermaid.html || tasks
+        Label: /label.html || font
+        Video: /video.html || video-camera
+        Button: /button.html || square
+        Caniuse: /caniuse.html || signal
+        Group Pictures: /group-pictures.html || file-image-o
+
+      Advanced Settings: /advanced-settings.html || cogs
+      FAQ's: /faqs.html || life-ring
+      Troubleshooting: /troubleshooting.html || bug
+    archives: /archives/ || archive
+```
+
+也就是说，在一级目录 `Docs` 下，我们想要创建 `Getting Started`、`Theme Settings` 等二级目录页面，那么需要作出如下修改：
+
+```diff
+menu:
+-   Docs: /docs/ || book
++   Docs:
++         default: /docs/ || book
+```
+
+即将当前目录默认页面的名称改为 `default`。然后再在 `default` 同级下添加：
+
+```diff
+Docs:
+      default: /docs/ || book
++     Getting Started: /getting-started/ || flag
++     Theme Settings: /theme-settings/ || star
+```
+
+我们需要在 `~/source/docs/` 文件夹下创建对应的文件夹 `Getting Started` 和 `Theme Settings`，文件夹中创建对应的 `index.md` 文件，该文件即为其二级目录对应页面内容的存放文件。
+
+同样，创建三级目录的时候，需要将对应的二级目录默认页面改为 `default`，然后在同级下添加同样格式的内容，在此不再赘述。如果你还没有明白是怎么设定的，可以研究一下 NexT 官方网站的源码[仓库](https://github.com/theme-next/theme-next.org)文件的存放位置。
+
 ## 网页样式布局
 
 在对 NexT 主题的个性优化中，如果想要添加一些个性化的内容，就需要对内部代码进行修改。主题提供了许多注入点，可以通过注入点插入自己想要的东西，而不会对原有的主题内部文件进行大量的修改。这样便于以后主题的升级，避免一系列的错误发生。NexT 主题更新到 v7.2.0 后，简化了自定义内容的添加方法，删除了以前版本中所用的 `css/_custom.styl` 自定义 CSS 样式文件。如果想要修改样式或者在 HTML 中的 `<head>`、`<body>` 等部位插入代码。即直接在博客 `sourse` 资源文件夹下新建自定义文件 `_data/xxx` 实现该功能。
 
 在主题配置文件 `_config.yml` 中，写道：
 
-```yaml
+```yml
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
 custom_file_path:
@@ -273,7 +512,7 @@ custom_file_path:
 + fantasy（梦幻）
 + cuisive（草体）
 
-这 5 个分类是 `font-family` 的 5 个可用字体系列取值。也就是说，上述 5 个名字，代表的并非某个特定字体，而是一系列字体，这些通用的名称允许用户代理从相应集合中选择一款字体[^2]。
+这 5 个分类是 `font-family` 的 5 个可用字体系列取值。也就是说，上述 5 个名字，代表的并非某个特定字体，而是一系列字体，这些通用的名称允许用户代理从相应集合中选择一款字体[^3]。
 
 我们可以在博客主题文件夹下的 `~/source/css/_variables/base.styl` 文件中找到 NexT 主题的字体设定：
 
@@ -302,7 +541,7 @@ $font-family-icons        = 'FontAwesome';
 
 从这一部分的代码可以看出，NexT 默认的中文字体（font-family-chinese）是 `PingFang SC` 和 `Microsoft YaHei`，同时设定两个字体，在浏览网站的时候，浏览器会优先选取放在第一位的字体 `PingFang SC`，这是苹果系统的苹方字体。而如果你使用的是 Windows 系统，计算机中并未安装 `PingFang SC`，那么浏览器就会选择排在其后的 `Microsoft YaHei`，也就是微软雅黑字体。而博客中的基础字体（font-family-base）设定中，先是选用中文字体，在中文字体后添加了一个 `sans-serif`，也就是无衬线字作为最后的设定。也就是说，如果你的计算机系统中，苹方字体和微软雅黑都没有安装，那么浏览器就会选择你计算机系统中带有的基本无衬线字体。除此之外，这一部分代码也包含博客中的标题、文章主体、以及代码区域的字体设定。
 
-目前，电子显示屏上使用的字体普遍是无衬线体，比如黑体。在过去，因为屏幕技术的限制，想要在屏幕上展现出好看的衬线字角非常困难。如今高清显示屏的普及，在同质化的屏幕界面上使用衬线体为读者提供了另一种阅读选择。合适的衬线字体被引入到屏幕中，为单调的无衬线字体世界带来了新鲜的阅读体验。[^3]对于中文来说，宋体就是一种标准的衬线字体，衬线的特征非常明显。我们可以考虑将博客的中文默认字体更换为宋体，这样可以增强读者的阅读体验。
+目前，电子显示屏上使用的字体普遍是无衬线体，比如黑体。在过去，因为屏幕技术的限制，想要在屏幕上展现出好看的衬线字角非常困难。如今高清显示屏的普及，在同质化的屏幕界面上使用衬线体为读者提供了另一种阅读选择。合适的衬线字体被引入到屏幕中，为单调的无衬线字体世界带来了新鲜的阅读体验。[^4]对于中文来说，宋体就是一种标准的衬线字体，衬线的特征非常明显。我们可以考虑将博客的中文默认字体更换为宋体，这样可以增强读者的阅读体验。
 
 ![hexo-theme-next-fonts-serif.jpg](/images/hexo-theme-next-fonts-serif.jpg "石碑与屏幕上的字体")
 
@@ -316,7 +555,7 @@ $font-family-icons        = 'FontAwesome';
 
 举个例子，比如你想使用 Linux Biolinum 字体。
 
-[^4]![hexo-theme-next-fonts-linux-biolinum.png](/images/hexo-theme-next-fonts-linux-biolinum.png "Linux Biolinum 字体")
+[^5]![hexo-theme-next-fonts-linux-biolinum.png](/images/hexo-theme-next-fonts-linux-biolinum.png "Linux Biolinum 字体")
 
 首先，下载 Linux Biolinum 字体，这里我提供一个下载地址：[linux-biolinum.zip](/uploads/linux-biolinum.zip)。下载该压缩文件后，将里面的文件解压至博客根目录下的 `~/source/fonts/` 文件夹中，若无 `fonts` 文件夹请自建。
 
@@ -463,6 +702,7 @@ font:
 ## 结尾
 
 [^1]: 图源：<https://github.com/theme-next/hexo-theme-next>。
-[^2]: 参考：[前端开发你该知道的字体 font-family | fly63 前端网](http://www.fly63.com/article/detial/1114)。
-[^3]: 参考：[衬线体的进化：从纸面到屏幕 | 方正字库](https://zhuanlan.zhihu.com/p/49470735)。
-[^4]: 图源：<https://www.fontke.com/family/290108/>。
+[^2]: 官方网站的 News 中会对每一个发行版相对上一版本的修改进行说明，Docs 中有主题配置的详细说明。
+[^3]: 参考：[前端开发你该知道的字体 font-family | fly63 前端网](http://www.fly63.com/article/detial/1114)。
+[^4]: 参考：[衬线体的进化：从纸面到屏幕 | 方正字库](https://zhuanlan.zhihu.com/p/49470735)。
+[^5]: 图源：<https://www.fontke.com/family/290108/>。

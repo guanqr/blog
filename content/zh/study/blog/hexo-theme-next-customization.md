@@ -202,13 +202,15 @@ symbols_count_time:
 
 ### 主题配置文件
 
-NexT 主题的配置文件内容有很多，因为该主题有很多扩展功能。在配置主题各项功能之前，我建议先阅读 [NexT 官方网站](https://theme-next.org/)[^2]的相关文档说明。主题配置文件内容过长，为了排版美观以及阅读方便，这里我将分功能对主题的设定进行较为详细的说明。这里我的 NexT 版本为 v7.4.2，不同版本之间的配置文件可能有微小变化，这里仅供参考。我的完整的主题配置文件可在这里下载：[hexo-theme-next-config.zip](/uploads/hexo-theme-next-config.zip)。
+NexT 主题的配置文件内容有很多，因为该主题有很多扩展功能。在配置主题各项功能之前，我建议先阅读 [NexT 官方网站](https://theme-next.org/)[^2]的相关文档说明。主题配置文件内容过长，为了排版美观以及阅读方便，这里我将分功能对主题的设定进行较为详细的说明，一些我认为不太重要的配置就不再说明。这里我的 NexT 版本为 v7.4.2，不同版本之间的配置文件可能有微小变化，这里仅供参考。我的完整的主题配置文件可在这里下载：[hexo-theme-next-config.zip](/uploads/hexo-theme-next-config.zip)。
 
-#### 自定义网页样式
+#### 自定义配置
 
 对应配置文件中的 `custom_file_path` 内容，如果你需要在网站的 `<head>`、`<body>` 等部位添加自己的代码，无需直接修改主题文件，NexT 主题拥有多样自由的注入功能，这一部分的说明参见下一章节「[网页样式布局](#网页样式布局)」
 
-#### 自定义站点图标
+#### 基本信息配置
+
+##### 站点图标
 
 主题自带的站点图标是 NexT 主题的 LOGO，图片存放位置位于..主题文件夹..下的 `/source/images/` 文件夹。如果你想要自定义图标，可以不用修改该文件夹的内容，直接在..博客根目录..下的 `source` 文件夹下创建一个名为 `images` 的文件夹，将对应的图片存放于该文件夹下即可。注意，图片的大小及文件格式最好与原主题保持一致。
 
@@ -222,7 +224,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 ```
 
-#### RSS 订阅
+##### RSS 订阅
 
 开启博客的订阅功能，需要安装 hexo-generator-feed 插件，然后在 `rss: ` 后添加 `/atom.xml`，如下所示：
 
@@ -232,7 +234,7 @@ favicon:
 + rss: /atom.xml
 ```
 
-#### 页脚网站信息
+##### 页脚信息
 
 在网页的底部显示版权信息，包括年份、图标、作者信息，是否显示 Hexo 及其版本、NexT 及其版本，还有备案信息。这里的图标我设置成了心形，颜色为红色（`#ff0000`），并且添加了动画效果：`animated: true`。这里的图标名称需要填写 [Font Awesome](https://fontawesome.com/) 中提供的图标名称。如果你想要添加任何自定义内容，比如添加一句话，可以考虑在 `~/source/_data/` 路径下建立 `footer.swig` 文件，在该文件下添加内容。
 
@@ -278,7 +280,7 @@ footer:
     gongan_icon_url:
 ```
 
-#### 版权声明
+##### 版权声明
 
 此处的版权声明可以选择在侧栏和文章的末尾两处显示。在侧栏显示版权声明我觉得有些突兀，所以我选择在文章末尾显示。
 
@@ -294,7 +296,7 @@ creative_commons:
   language:
 ```
 
-#### 主题风格选择
+#### 主题风格配置
 
 NexT 主题最大的特点就是提供了四套风格的主题，其中 Muse 和 Mist 两款风格相近，Pisces 和 Gemini 两款风格相近。我的博客主题是基于 Muse 主题进行修改的，对于这四款主题的选择，仁者见仁，智者见智。我在这篇[文章](/study/blog/blog-theme/)中分析了我对这四种风格的看法，可供参考。
 
@@ -306,7 +308,7 @@ scheme: Muse
 #scheme: Gemini
 ```
 
-#### 设置目录
+#### 导航目录配置
 
 ##### 一级目录
 
@@ -342,6 +344,7 @@ date:
 + type: "name"
 ---
 ```
+
 其中，在 `name` 处，标签页面就替换为 `tags`，分类页面替换为 `categories`。填写对应类型后，主题会根据类型对页面进行渲染，前提是 NexT 主题支持你设定的这种类型。不同类型格式的模板存放在 `~/themes/next/layout/` 文件夹下，你也可以自己写一个类型模板存放在此处。
 
 如果你想要在目录中建立其他页面的链接入口，比如友情链接，可以添加：
@@ -440,6 +443,147 @@ Docs:
 我们需要在 `~/source/docs/` 文件夹下创建对应的文件夹 `Getting Started` 和 `Theme Settings`，文件夹中创建对应的 `index.md` 文件，该文件即为其二级目录对应页面内容的存放文件。
 
 同样，创建三级目录的时候，需要将对应的二级目录默认页面改为 `default`，然后在同级下添加同样格式的内容，在此不再赘述。如果你还没有明白是怎么设定的，可以研究一下 NexT 官方网站的源码[仓库](https://github.com/theme-next/theme-next.org)文件的存放位置。
+
+#### 侧栏配置
+
+##### 侧栏样式
+
+目前侧栏四个主题风格..都支持..选择在左侧还是右侧显示。旧版本中这一功能仅有 Pisces 和 Gemini 支持，Muse 和 Mist 只能显示在右侧，因此网上出现了一些教程教你如何修改 Muse 和 Mist 的侧边栏到左侧，不过这些教程中的方法并不完美，会在动画显示等方面出现 BUG。你也可以在该项配置中配置在移动端显示侧边栏，这是我很喜欢的一个功能，毕竟侧边栏中含有很多博客的基本信息，比如你的头像、联系方式等等，如果在移动端不能显示这些内容，总觉得缺少某些东西……不过这项功能目前..仅支持.. Muse 和 Mist。
+
+```yml
+sidebar:
+  # Sidebar Position.
+  #position: left
+  position: right
+
+  # Manual define the sidebar width. If commented, will be default for:
+  # Muse | Mist: 320
+  # Pisces | Gemini: 240
+  #width: 300
+
+  # Sidebar Display (only for Muse | Mist), available values:
+  #  - post    expand on posts automatically. Default.
+  #  - always  expand for all pages automatically.
+  #  - hide    expand only when click on the sidebar toggle icon.
+  #  - remove  totally remove sidebar including sidebar toggle.
+  display: hide
+
+  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
+  offset: 12
+  # Enable sidebar on narrow view (only for Muse | Mist).
+  onmobile: true
+```
+
+##### 个人头像
+
+这里的设定不是博客标识，而是显示在侧栏的个人标识，即作者头像。你可以设定头像的边框为正方向还是圆形，设定鼠标停靠在头像上时是否旋转。
+
+```yml
+# Sidebar Avatar
+avatar:
+  # In theme directory (source/images): /images/avatar.gif
+  # In site directory (source/uploads): /uploads/avatar.gif
+  # You can also use other linking images.
+  url: /images/guanqr-avatar.jpg
+  # If true, the avatar would be dispalyed in circle.
+  rounded: true
+  # If true, the avatar would be rotated with the cursor.
+  rotated: true
+```
+
+##### 社交链接
+
+在侧栏中添加你的社交链接，格式与[上文](#导航目录)中目录的设定相同，即：`名称: 链接 || 图标`。你也可以在这里设定是图标和名称一起显示还是只显示图标。
+
+```yml
+social:
+  GitHub: https://github.com/guanqr || github
+  Telegram: https://t.me/guanqr || telegram
+  CC98: https://www.cc98.org/user/id/583696 || graduation-cap
+  E-Mail: mailto:guanqirui@zju.edu.cn || envelope
+
+social_icons:
+  enable: true
+  icons_only: false
+  transition: true
+```
+
+#### 文章页面配置
+
+##### 首页文章摘要
+
+如果这一部分内容选择默认配置的话，你会发现你的主页所有的文章都是默认全部展开的，这对于网页的阅读效率影响很大，最佳的阅读体验应该是，在首页只能看到这篇文章的摘要，只有点击该篇文章才可阅读全文。这一部分的配置就是实现该功能的。
+
+```yml
+# Automatically scroll page to section which is under <!-- more --> mark.
+scroll_to_more: true
+
+# Automatically excerpt description in homepage as preamble text.
+excerpt_description: true
+
+# Automatically excerpt (Not recommend).
+# Use <!-- more --> in the post to control excerpt accurately.
+auto_excerpt:
+  enable: true
+  length: 150
+```
+
+我们不妨把这三部分的配置都设定为 `true`，下面我对这三项配置逐一解释。
+
+1. 第一项配置需要我们在文章中..手动..添加 `<!-- more -->` 标记，在网页生成的时候，如果文中有该标记，那么 Hexo 就可以自动截取该标记前的内容作为文章摘要。
+2. 第二项配置即为添加 `description` 描述。如果你的文章中有添加对该文章的描述内容，如 `description: This is a test.`，那么在生成网页的时候，Hexo 会自动截取描述的内容作为文章的摘要，其优先级大于 `<!-- more -->` 标记。
+3. 第三项配置即为自动截取文章前段内容作为摘要，这一项需要自己配置自动截取的字数。这一项的优先级最低。
+
+##### 文章元数据
+
+即每一篇文章标题下的写作时间、更新时间等信息。
+
+```yml
+# Post meta display settings
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at:
+    enable: true
+    another_day: true
+  categories: true
+
+# Post wordcount display settings
+# Dependencies: https://github.com/theme-next/hexo-symbols-count-time
+symbols_count_time:
+  separated_meta: true
+  item_text_post: true
+  item_text_total: false
+  awl: 2
+  wpm: 275
+```
+
+对于 `symbols_count_time`，即文章字数与阅读时长统计的信息，需要依赖 hexo-symbols-count-time 插件。具体的配置方法可参考该插件的[说明文档](https://github.com/theme-next/hexo-symbols-count-time)。这里提醒一下，该项功能的设定还需要在..站点配置文件..中添加以下内容：
+
+```yml
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+```
+
+如果没有添加上述内容，则无法显示统计信息。
+
+##### 标签图标
+
+##### 微信订阅
+
+##### 赞赏功能
+
+##### 相关文章
+
+##### 在线编辑
+
+#### 个性页面配置
+
+#### 第三方功能配置
 
 ## 网页样式布局
 

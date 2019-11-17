@@ -573,13 +573,77 @@ symbols_count_time:
 
 ##### 标签图标
 
+主题默认的标签图标是一个 `#` ，这里可以将其修改为标签对应的 Font Awesome 图标。目前网络上有很多关于此的教程，不过那都是针对旧版本主题的，新版本主题直接在这里修改即可。
+
+```yml
+# Use icon instead of the symbol # to indicate the tag at the bottom of the post
+tag_icon: true
+```
+
 ##### 微信订阅
+
+开启微信订阅功能的时候不要忘记填写二维码所在路径。这里的微信订阅功能开启后，会在文章的末尾显示二维码，个人认为这个设计有些丑陋，你也可以选择像我一样在页脚放置一个二维码链接。只有鼠标停靠在图标上时才会弹出二维码。关于该项功能的实现请看下文。
+
+```yml
+# Wechat Subscriber
+wechat_subscriber:
+  enable: false
+  qcode: #/uploads/wechat-qcode.jpg
+  #description: Subscribe to my blog by scanning my public wechat account.
+```
 
 ##### 赞赏功能
 
+在文章的末尾开启赞赏，不要忘记填写二维码所在路径。该功能实现后会有一个红色按钮，点击按钮则会弹出赞赏二维码。个人不太建议使用此处的动画效果，因为这里的「晃动」效果有些突兀。
+
+```yml
+# Reward (Donate)
+reward_settings:
+  # If true, reward would be displayed in every article by default.
+  # You can show or hide reward in a specific article throuth `reward: true | false` in Front-matter.
+  enable: false
+  animation: false
+  #comment: Donate comment here.
+
+reward:
+  #wechatpay: /images/wechatpay.png
+  #alipay: /images/alipay.png
+  #bitcoin: /images/bitcoin.png
+```
+
 ##### 相关文章
 
+在文章的末尾添加相关（推荐）文章。因为我使用的并不是这一款插件，而是 [hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts)，关于该项功能的设置我并没有研究过，所以此处的具体设置请看[官方说明](https://github.com/tea3/hexo-related-popular-posts)。如果想要使用 hexo-recommended-posts 插件请看下文。
+
+```yml
+# Related popular posts
+# Dependencies: https://github.com/tea3/hexo-related-popular-posts
+related_posts:
+  enable: false
+  title: # Custom header, leave empty to use the default one
+  display_in_home: false
+  params:
+    maxCount: 5
+    #PPMixingRate: 0.0
+    #isDate: false
+    #isImage: false
+    #isExcerpt: false
+```
+
 ##### 在线编辑
+
+因为 Hexo 博客并没有数据库，正常情况下无法在线编辑，这里的在线编辑功能需要借助 GitHub 与提供自动部署博客服务以实现持续集成的平台。这里我推荐使用 GitHub 与 Netlify 的组合。这里需要注意，如果你此前部署博客的时候，只是通过使用 `hexo deploy` 将生成的 `public` 文件夹中的内容上传到仓库，借助 GitHub Pages 实现博客生成的话，那么你就需要更改你的部署方式了。这里需要新建一个仓库，上传本地的博客文件夹，因为只有将你的原始 Markdown 文件上传至仓库，才可以在线编辑，生成的 HTML 文件编辑起来很困难。有关使用 Netlify 实现博客持续集成的方法请看我的这一篇[文章](/study/blog/deploy-blog-to-netlify/)。
+
+```yml
+# Post edit
+# Dependencies: https://github.com/hexojs/hexo-deployer-git
+post_edit:
+  enable: true
+  #url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source
+  url: https://github.com/guanqr/guanqr.com/edit/master/source/ # Link for fork & edit
+```
+
+该项功能的具体效果可以参考 [NexT 官方网站](https://theme-next.org/)，每一篇文章的右上角都有一个「笔头」图标，点击就会跳转到你的 GitHub 仓库的该篇文章的位置，实现在线编辑。
 
 #### 个性页面配置
 

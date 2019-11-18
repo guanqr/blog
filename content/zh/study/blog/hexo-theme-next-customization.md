@@ -632,7 +632,7 @@ related_posts:
 
 ##### 在线编辑
 
-因为 Hexo 博客并没有数据库，正常情况下无法在线编辑，这里的在线编辑功能需要借助 GitHub 与提供自动部署博客服务以实现持续集成的平台。这里我推荐使用 GitHub 与 Netlify 的组合。这里需要注意，如果你此前部署博客的时候，只是通过使用 `hexo deploy` 将生成的 `public` 文件夹中的内容上传到仓库，借助 GitHub Pages 实现博客生成的话，那么你就需要更改你的部署方式了。这里需要新建一个仓库，上传本地的博客文件夹，因为只有将你的原始 Markdown 文件上传至仓库，才可以在线编辑，生成的 HTML 文件编辑起来很困难。有关使用 Netlify 实现博客持续集成的方法请看我的这一篇[文章](/study/blog/deploy-blog-to-netlify/)。
+因为 Hexo 博客并没有后端数据库，正常情况下无法在线编辑，这里的在线编辑功能需要借助 GitHub 与提供自动部署博客服务以实现持续集成的平台，这里我推荐使用 GitHub 与 Netlify 的组合。即你只需要将你的博客文件夹上传至代码仓库（因为在线编辑功能编辑的是你的原始 Markdown 文件），不用自己执行 `hexo generate && hexo deploy` 命令，而是让 Netlify 帮助你进行自动部署。有关使用 Netlify 实现博客持续集成的方法请看我的这一篇[文章](/study/blog/deploy-blog-to-netlify/)。
 
 ```yml
 # Post edit
@@ -647,7 +647,189 @@ post_edit:
 
 #### 个性页面配置
 
+##### 归档页面「cheers」
+
+归档页面的顶部会有一句鼓励的话，类似「嗯..! 目前共计 3 篇日志。 继续努力。」，我不太喜欢这句话，觉得有些多余。如果你想要去掉，可以直接设置：
+
+```yml
+# Enable "cheers" for archive page.
+cheers: false
+```
+
+##### 标签页面「标签云」
+
+标签页面的标签云可以自己设定最大和最小的字号，以及颜色的过渡。这里我给出适合我的主题的配色方案：
+
+```yml
+# TagCloud settings for tags page.
+tagcloud:
+  # All values below are same as default, change them by yourself
+  min: 12 # Minimun font size in px
+  max: 30 # Maxium font size in px
+  start: "#FF69B4" # Start color (hex, rgba, hsla or color keywords)
+  end: "#8A2BE2" # End color (hex, rgba, hsla or color keywords)
+  amount: 200 # Amount of tags, change it if you have more than 200 tags
+```
+
+##### 标题栏颜色
+
+我们使用安卓系统的谷歌 Chrome 浏览器的时候，会发现访问不同的网站，浏览器标题栏的颜色也不同。NexT 主题默认的颜色为黑色 `#222`，如果你想要修改成其他颜色，直接在如下所示的位置修改即可：
+
+```yml
+# Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
+android_chrome_color: "#222"
+```
+
+##### 彩虹标题栏
+
+开启此项功能，使用 Safari 浏览器浏览你的网站的时候，标题栏会出现绚丽的彩虹配色。
+
+```yml
+# Hide sticky headers and color the menu bar on Safari (iOS / macOS).
+safari_rainbow: true
+```
+
+##### 代码框主题
+
+大部分人写博客文章的时候都会插入代码。选用一个适合自己风格的代码框主题必不可少。NexT 主题提供了多种风格的代码框供你选择。我个人推荐的是最简洁的 `normal` 亮色主题和 `night` 暗色主题。另外，你也可以设置是否启用「复制」按钮，「复制」按钮也可选择不同的风格。我推荐使用默认的 `default` 和 Mac 主题风格 `mac`。
+
+```yml
+codeblock:
+  # Code Highlight theme
+  # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
+  # See: https://github.com/chriskempson/tomorrow-theme
+  highlight_theme: normal
+  # Add copy button on codeblock
+  copy_button:
+    enable: true
+    # Show text copy result.
+    show_result: true
+    # Available values: default | flat | mac
+    style: default
+```
+
+##### 返回顶部
+
+你可以设定返回顶部按钮的位置和是否显示当前浏览位置的百分比。返回顶部按钮默认显示在页脚，如果你使用的是 Pisces 或者 Gemini 主题，设定 `sidebar: true`，则可显示在侧栏的底部。
+
+```yml
+back2top:
+  enable: true
+  # Back to top in sidebar.
+  sidebar: false
+  # Scroll percent label in b2t button.
+  scrollpercent: true
+```
+
+##### 阅读进程
+
+在页面顶部或底部边缘位置显示一个阅读进程的进度条，你可以自定义进度条的颜色和粗细。
+
+```yml
+# Reading progress bar
+reading_progress:
+  enable: true
+  # Available values: top | bottom
+  position: top
+  color: "#37c6c0"
+  height: 3px
+```
+
+##### 书签标记
+
+在页面左上角添加一个书签图标，可以记录你阅读每一篇文章的位置，在你下次浏览该页面的时候，直接跳转到上一次浏览到的位置。旧版本中点击该该图标会自动跳转到最后浏览的文章页面，但目前已取消该项功能。
+
+```yml
+# Bookmark Support
+bookmark:
+  enable: true
+  # Customize the color of the bookmark.
+  color: "#222"
+  # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
+  # If manual, only save it by clicking the bookmark-icon.
+  save: auto
+```
+
+#### 字体配置
+
+该项配置的详细说明请参考[下文](#修改字体)。
+
 #### 第三方功能配置
+
+##### 数学公式
+
+支持 MathJax 和 KaTeX 两种加载数学公式的方法，使用语法都是 LaTeX 语法。不过 MathJax 的功能比较全面，KaTeX 的加载速度比较快。不过有一点要注意，不论是用哪一个方式，我都推荐替换默认渲染器。
+
+MathJax 使用 hexo-renderer-pandoc 或者 hexo-renderer-kramed；KaTeX 使用 hexo-renderer-markdown-it-plus 或者 hexo-renderer-markdown-it。
+
+如果你使用的是 KaTeX，还要注意，过长的公式会超出页面边框，可能需要自行添加 CSS 样式对长公式进行滚动浏览。
+
+```yml
+# Math Formulas Render Support
+math:
+  enable: true
+
+  # Default (true) will load mathjax / katex script on demand.
+  # That is it only render those page which has `mathjax: true` in Front-matter.
+  # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
+  per_page: true
+
+  # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
+  mathjax:
+    enable: true
+    # See: https://mhchem.github.io/MathJax-mhchem/
+    mhchem: false
+
+  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
+  katex:
+    enable: false
+    # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
+    copy_tex: false
+```
+
+##### PJAX
+
+该项功能的作用是：跳转到同网站另一个页面的时候，前后两个页面相同的元素不再重复加载，进而节省了加载的时间，加快访问速度。该项功能依赖官方提供的 [PJAX 插件](https://github.com/theme-next/theme-next-pjax)。开启 PJAX 后或多或少会出现出现浏览上的 BUG，特别是一些使用 JavaScript 的地方。我没有深入研究过该项功能的原理，所以也无法修复一些出现的 BUG。
+
+```yml
+# Easily enable fast Ajax navigation on your website.
+# Dependencies: https://github.com/theme-next/theme-next-pjax
+# For moreinformation: https://github.com/MoOx/pjax
+pjax: true
+```
+
+##### 图片浏览
+
+该项功能的效果是：点击文中插图，图片能够放大，有幻灯片的效果。目前 NexT 提供了两款插件 fancybox 和 mediumzoom，两款插件开启一个即可。两款插件的效果不同，各有各的特点，请自行选择。
+
+```yml
+# FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
+# For more information: https://fancyapps.com/fancybox
+fancybox: false
+
+# A JavaScript library for zooming images like Medium.
+# Do not enable both `fancybox` and `mediumzoom`.
+# For more information: https://github.com/francoischalifour/medium-zoom
+mediumzoom: false
+```
+
+##### 评论系统
+
+NexT 主题支持 Disqus、Valine、Gitalk 等多种第三方评论系统。我推荐使用 Valine 或者 Disqus（加载评论需科学上网）。Valine 评论系统借助于 LeanCloud 存储数据，LeanCloud 的[国内版本](https://leancloud.cn/)需要绑定域名和备案，这对于很多人来说不太方便，所以可以选择使用[国际版](https://leancloud.app/)。目前 NexT 主题支持双评论系统，即可以同时使用两套评论系统，不过我认为这项功能有些多余，有谁会无聊使用两套评论系统呢？不方便管理评论，将简单的管理变得更加复杂。下面我将对 Disqus、Valine、Gitalk 三种评论系统的配置进行详细说明。其他评论系统我没有使用过，在此不再说明。
+
+###### Disqus
+
+![hexo-theme-next-disqus.png](/images/hexo-theme-next-disqus.png)
+
+[Disqus](https://disqus.com/) 评论系统我认为是重多评论系统中最好的一个，无奈需要科学上网才能访问。
+
+###### Valine
+
+###### Gitalk
+
+##### 访客统计
+
+##### 本地搜索
 
 ## 网页样式布局
 

@@ -6,7 +6,6 @@ categories = ["study","blog"]
 dropCap = true
 displayCopyright = true
 gitinfo = true
-toc = true
 +++
 
 我最喜欢的 Hexo 博客主题就是 NexT 主题，从建立这个博客之初，我选择的就是该主题。因为其具有简洁友好的界面、强大的功能扩展、自由的自定义样式、四种主题风格的选择。在建站一个月之后，抱着「尝试一下别的主题看看有没有更吸引我的」的心态，我考虑过更换其他主题，但换来换去，总没有 NexT 这么灵活自由。NexT 主题的背后有着一些默默为之付出的团队，这也是该主题能够不断维持更新的原因。我想，有这样一支团队的存在，也是大家喜爱该主题的原因。在这篇文章中，我主要分析一些我曾经尝试过的主题的特色与缺陷，记录本站主题外观的变化，记录一下我眼中的 NexT 主题。
@@ -87,6 +86,6 @@ custom_file_path:
 
 在官方的中文讨论群中，负责引入 PJAX 技术的人对该问题的代码修改思路如下图所示。
 
-![hexo-theme-telegram-communication.jpg](/images/hexo-theme-telegram-communication.jpg)
+![hexo-theme-next-telegram-communication.jpg](/images/hexo-theme-next-telegram-communication.jpg)
 
 由于我目前还未认真研究过 PJAX 的代码，尝试修改无果，等以后有时间再来看看吧。

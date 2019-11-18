@@ -762,7 +762,7 @@ bookmark:
 
 MathJax 使用 hexo-renderer-pandoc 或者 hexo-renderer-kramed；KaTeX 使用 hexo-renderer-markdown-it-plus 或者 hexo-renderer-markdown-it。
 
-如果你使用的是 KaTeX，还要注意，过长的公式会超出页面边框，可能需要自行添加 CSS 样式对长公式进行滚动浏览。
+默认的 `per_page: true` 的意思是，只用当你在文章设定中添加 `mathjax: ture`，才会在当前页面中加载公式渲染。如果你使用的是 KaTeX，还要注意，过长的公式会超出页面边框，可能需要自行添加 CSS 样式对长公式进行滚动浏览。
 
 ```yml
 # Math Formulas Render Support
@@ -906,12 +906,26 @@ disqusjs:
 
 [Valine](https://valine.js.org/) 评论系统是我认为的在国内网络环境下最好用的评论系统，可通过 Leancloud 管理评论，无广告，简洁美观。不过缺点就是，Leancloud 平台的不稳定性，在 2019 年夏季的时候，出现了一次域名停止解析的事故，原因是有人利用 Leancloud 进行一些非法行为，而平台管理人员并没有监管到位。在那次事故之后，Leancloud 加强了监管，国内用户必须进行实名注册，每一个服务器必须绑定一个备案的域名[^3]。如果你不想备案，可以选择使用 Leancloud 国际版。但谁也无法确保 Leancloud 国际版会发生什么事情。
 
+Leancloud 国内版和国际版的配置相同，这里以国际版为例进行说明。首先进入[官网](https://leancloud.app/)进行用户注册，注册完成后点击「创建应用」，填写应用的名称，选择「开发版」进行创建。
+
+![hexo-theme-next-leancloud-create-app.png](/images/hexo-theme-next-leancloud-create-app.png)
+
+进入刚才创建好的应用，在「储存」中选择「创建 Class」，设定 Class 名称为 Comment，设定 ACL 权限为创建者可读可写，其他人可读不可写。
+
+![hexo-theme-next-leancloud-comment.png](/images/hexo-theme-next-leancloud-comment.png)
+
+然后进入「设置」中的「安全中心」，添加 Web 安全域名，防止其他用户盗用你的 Keys 存储个人数据。
+
+![hexo-theme-next-leancloud-safe.png](/images/hexo-theme-next-leancloud-safe.png)
+
+再进入「设置」中的「应用 Keys」，记录 AppID 和 AppKey 的值。回到主题配置文件中，开启 Valine，在 Valine 配置中填写 AppID 和 AppKey 即可。在该项配置中，你也可以设置评论框中的提示语，默认是「Just go go」。当你将 `visitor` 选项设置为 `true` 时，可以记录当前页面的访客数。下文中的「[访客统计](#访客统计)」用到的也是 Leancloud。
+
 ```yml
 # Valine
 # You can get your appid and appkey from https://leancloud.cn
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
   appid: # Your leancloud application appid
   appkey: # Your leancloud application appkey
   notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki
@@ -930,11 +944,92 @@ valine:
 
 ###### Gitalk
 
-Gitalk 评论系统借助 GitHub 平台，将评论的数据存储在你的博客仓库的 Issues 中。
+Gitalk 评论系统借助 GitHub 平台，将评论的数据存储在仓库的 Issues 中。另一款评论系统 Gitment 与之类似，不过由于 Gitment 已停止维护，目前已经从 NexT 主题中删除。
+
+![hexo-theme-next-gitalk.png](/images/hexo-theme-next-gitalk.png)
+
+首先，你需要在 GitHub 上创建一个仓库，用来存放评论，用你存放博客源代码的仓库即可。然后创建一个 Github Application 用来授权登录。点击[这里](https://github.com/settings/applications/new)申请，「Authorization callback URL」（回调地址）填写你主页地址，完成后会生成相应的 clientID 和 clientSecret，记录这两项的值，回到主题配置文件的 Gitalk 设定中，开启 Gitalk，填写你的 GitHub 用户名，以及之前记录的 lientID 和 clientSecret 的值即可。
+
+每一篇文章在你登录评论系统前都未开启评论功能，所以在你发布文章后，需要先浏览文章，在评论系统中登录你的账号，此时，Gitalk 就会将该篇文章的标题作为一个 Issue 记录在仓库的 Issues 中。如果 Gitalk 评论系统配置异常，请查看你的网站地址（回调地址）是否填写正确。
+
+```yml
+# Gitalk
+# Demo: https://gitalk.github.io
+# For more information: https://github.com/gitalk/gitalk
+gitalk:
+  enable: true
+  github_id: # GitHub repo owner
+  repo: # Repository name to store issues
+  client_id: # GitHub Application Client ID
+  client_secret: # GitHub Application Client Secret
+  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  distraction_free_mode: true # Facebook-like distraction free mode
+  # Gitalk's display language depends on user's browser or system environment
+  # If you want everyone visiting your site to see a uniform language, you can set a force language value
+  # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
+  language:
+
+```
 
 ##### 访客统计
 
+###### Leancloud
+
+访客统计功能使用的也是 Leancloud。创建应用的过程与[上文](#valine) Valine 评论系统相同，只不过创建的 Class 名称要改为 Counter。这里有一个 [hexo-leancloud-counter-security](https://github.com/theme-next/hexo-leancloud-counter-security) 插件用来修复访客统计的一个漏洞，使访客统计更安全准确，因为我并没有使用该项功能，所以在此不再做详细说明。
+
+```yml
+# Show number of visitors to each article.
+# You can visit https://leancloud.cn to get AppID and AppKey.
+leancloud_visitors:
+  enable: true
+  app_id: # <app_id>
+  app_key: # <app_key>
+  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+  # If you don't care about security in leancloud counter and just want to use it directly
+  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
+  security: true
+  betterPerformance: false
+```
+
+###### 不蒜子
+
+![hexo-theme-next-busuanzi.png](/images/hexo-theme-next-busuanzi.png)
+
+不蒜子的统计准确程度不如 Leancloud，不过它能够统计网站总访客量与访问量，显示在页脚。如果你使用了 Leancloud 统计文章访问量，那么 `post_views` 可以设定为 `false`。
+
+```yml
+# Show Views / Visitors of the website / page with busuanzi.
+# Get more information on http://ibruce.info/2015/04/04/busuanzi
+busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_visitors_icon: user
+  total_views: true
+  total_views_icon: eye
+  post_views: true
+  post_views_icon: eye
+
+```
+
 ##### 本地搜索
+
+本地搜索借助于搜索插件 [hexo-generator-searchdb](https://github.com/theme-next/hexo-generator-searchdb)。
+
+```yml
+# Local Search
+# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+local_search:
+  enable: true
+  # If auto, trigger search by changing input.
+  # If manual, trigger search by pressing enter key or search button.
+  trigger: auto
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # Unescape html strings to the readable one.
+  unescape: false
+  # Preload the search data when the page loads.
+  preload: false
+```
 
 ## 网页样式布局
 

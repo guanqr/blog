@@ -815,17 +815,122 @@ mediumzoom: false
 
 ##### 评论系统
 
-NexT 主题支持 Disqus、Valine、Gitalk 等多种第三方评论系统。我推荐使用 Valine 或者 Disqus（加载评论需科学上网）。Valine 评论系统借助于 LeanCloud 存储数据，LeanCloud 的[国内版本](https://leancloud.cn/)需要绑定域名和备案，这对于很多人来说不太方便，所以可以选择使用[国际版](https://leancloud.app/)。目前 NexT 主题支持双评论系统，即可以同时使用两套评论系统，不过我认为这项功能有些多余，有谁会无聊使用两套评论系统呢？不方便管理评论，将简单的管理变得更加复杂。下面我将对 Disqus、Valine、Gitalk 三种评论系统的配置进行详细说明。其他评论系统我没有使用过，在此不再说明。
+NexT 主题支持 Disqus、Valine、Gitalk 等多种第三方评论系统。我推荐使用 Valine 或者 Disqus（加载评论需科学上网）。Valine 评论系统借助于 LeanCloud 存储数据，LeanCloud 的[国内版本](https://leancloud.cn/)需要绑定域名和备案，这对于很多人来说不太方便，所以可以选择使用[国际版](https://leancloud.app/)。目前 NexT 主题支持多评论系统，不过我认为这项功能有些多余，有谁会无聊使用多种评论系统呢？不方便管理评论，将简单的管理变得更加复杂。
+
+下面这一部分是设定多评论系统，首先设定默认的评论系统，然后是其他评论系统的优先级等等配置，由于我没有使用该项功能，所以不再做过多说明：
+
+```yml
+# Multiple Comment System Support
+comments:
+  # Available values: tabs | buttons
+  style: tabs
+  # Choose a comment system to be displayed by default.
+  # Available values: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
+  active:
+  # Setting `true` means remembering the comment system selected by the visitor.
+  storage: true
+  # Modify texts or order for any navs, here are some examples.
+  nav:
+    #disqus:
+    #  text: Load Disqus
+    #  order: -1
+    #facebook_comments_plugin:
+    #  text: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
+    #gitalk:
+    #  order: -2
+```
+
+下面我将对 Disqus、Valine、Gitalk 三种评论系统的单独配置进行详细说明。
 
 ###### Disqus
 
-![hexo-theme-next-disqus.png](/images/hexo-theme-next-disqus.png)
+![hexo-theme-next-disqus.png](/images/hexo-theme-next-disqus.png "Disqus 官网主页")
 
-[Disqus](https://disqus.com/) 评论系统我认为是重多评论系统中最好的一个，无奈需要科学上网才能访问。
+[Disqus](https://disqus.com/) 评论系统我认为是重多评论系统中最好的一个，无奈需要科学上网才能访问。首先是到官网注册一个用户，然后在官网的主页，有一个「GET STARTED」按钮，点击进入，可以看到如下界面：
+
+![hexo-theme-next-disqus-install-site.png](/images/hexo-theme-next-disqus-install-site.png)
+
+选择「I want to install Disqus on my site」，就会跳转到信息设定页面。在信息设定页面，设定你的网站名称，比如我在这里填写的是「guanqr」，那么「guanqr」就是你的一个 shortname，记住这个名字。相应的，你的聊天系统的控制台对应的网址就是 `guanqr.disqus.com`。你还需要在这里填写你的网站类别和语言，这里我填写的是技术类「Tech」，语言是中文。
+
+![hexo-theme-next-disqus-setting.png](/images/hexo-theme-next-disqus-setting.png)
+
+这些设定完成后，回到主题配置文件中，找到 Disqus 评论系统的配置，开启 Disqus 评论，`shortname` 填写之前你设定的网站名称，如下所示：
+
+```yml
+# Disqus
+disqus:
+  enable: true
+  shortname: 
+  count: true
+  lazyload: false
+  #post_meta_order: 0
+
+```
+
+到此，Disqus 评论系统的配置就完成了。如果你想实现在国内网络环境下也能访问 Disqus 评论的内容，则需要借助 Disqus API，这就用到了 [DisqusJS](https://github.com/SukkaW/DisqusJS)。这里需要注意，目前 DisqusJS 仅支持评论的「读」操作，不支持「写」操作。
+
+配置 DisqusJS 的时候，首先要到 [Disqus API Application](https://disqus.com/api/applications/) 处注册一个 Application，如下图所示，点击右边的「Register new application」。
+
+![hexo-theme-next-disqus-api.png](/images/hexo-theme-next-disqus-api.png)
+
+然后进行网站的基本信息设定，将信息提交后，网站会提供给你一个 API Key，将这一长串字符记下来。
+
+![hexo-theme-next-disqus-api-key.png](/images/hexo-theme-next-disqus-api-key.png)
+
+进入 [Settings] 页面，设置你的域名，Disqus 会检查 API 请求的 Referrer。
+
+![hexo-theme-next-disqus-api-domains.png](/images/hexo-theme-next-disqus-api-domains.png)
+
+在这些都设定完成后，回到主题配置文件，进行 DisqusJS 的配置。开启 DisqusJS，这里的 `api` 是 DisqusJS 请求的 API Endpoint，通常情况下你应该配置一个 Disqus API 的反代并填入反代的地址。你也可以直接使用 Disqus 官方 API 的 Endpoint：`https://disqus.com/api/`。如果不填写，则默认为该插件的作者自己搭建的 Disqus API 反代 Endpoint：`https://disqus.skk.moe/disqus/`。`apikey` 就是上文中让你记下的那一串字符。`shortname` 即上文配置 Disqus 评论系统时记下的网站名称。
+
+```yml
+# DisqusJS
+# Alternative Disqus - Render comment component using Disqus API.
+# Demo: https://suka.js.org/DisqusJS/
+# For more information: https://github.com/SukkaW/DisqusJS
+disqusjs:
+  enable: true
+  # API Endpoint of Disqus API (https://disqus.com/api/).
+  # Leave api empty if you are able to connect to Disqus API.
+  # Otherwise you need a reverse proxy for Disqus API.
+  # For example:
+  # api: https://disqus.skk.moe/disqus/
+  api:
+  apikey: # Register new application from https://disqus.com/api/applications/
+  shortname: # See: https://disqus.com/admin/settings/general/
+```
 
 ###### Valine
 
+![hexo-theme-next-valine.png](/images/hexo-theme-next-valine.png "Valine 官方主页")
+
+[Valine](https://valine.js.org/) 评论系统是我认为的在国内网络环境下最好用的评论系统，可通过 Leancloud 管理评论，无广告，简洁美观。不过缺点就是，Leancloud 平台的不稳定性，在 2019 年夏季的时候，出现了一次域名停止解析的事故，原因是有人利用 Leancloud 进行一些非法行为，而平台管理人员并没有监管到位。在那次事故之后，Leancloud 加强了监管，国内用户必须进行实名注册，每一个服务器必须绑定一个备案的域名[^3]。如果你不想备案，可以选择使用 Leancloud 国际版。但谁也无法确保 Leancloud 国际版会发生什么事情。
+
+```yml
+# Valine
+# You can get your appid and appkey from https://leancloud.cn
+# For more information: https://valine.js.org, https://github.com/xCss/Valine
+valine:
+  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
+  appid: # Your leancloud application appid
+  appkey: # Your leancloud application appkey
+  notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  placeholder: Just go go # Comment box placeholder
+  avatar: mm # Gravatar style
+  guest_info: nick,mail,link # Custom comment header
+  pageSize: 10 # Pagination size
+  language: # Language, available values: en, zh-cn
+  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+  comment_count: true # If false, comment count will only be displayed in post page, not in home page
+  recordIP: false # Whether to record the commenter IP
+  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
+  #post_meta_order: 0
+```
+
 ###### Gitalk
+
+Gitalk 评论系统借助 GitHub 平台，将评论的数据存储在你的博客仓库的 Issues 中。
 
 ##### 访客统计
 
@@ -902,7 +1007,7 @@ custom_file_path:
 + fantasy（梦幻）
 + cuisive（草体）
 
-这 5 个分类是 `font-family` 的 5 个可用字体系列取值。也就是说，上述 5 个名字，代表的并非某个特定字体，而是一系列字体，这些通用的名称允许用户代理从相应集合中选择一款字体[^3]。
+这 5 个分类是 `font-family` 的 5 个可用字体系列取值。也就是说，上述 5 个名字，代表的并非某个特定字体，而是一系列字体，这些通用的名称允许用户代理从相应集合中选择一款字体[^4]。
 
 我们可以在博客主题文件夹下的 `~/source/css/_variables/base.styl` 文件中找到 NexT 主题的字体设定：
 
@@ -931,7 +1036,7 @@ $font-family-icons        = 'FontAwesome';
 
 从这一部分的代码可以看出，NexT 默认的中文字体（font-family-chinese）是 `PingFang SC` 和 `Microsoft YaHei`，同时设定两个字体，在浏览网站的时候，浏览器会优先选取放在第一位的字体 `PingFang SC`，这是苹果系统的苹方字体。而如果你使用的是 Windows 系统，计算机中并未安装 `PingFang SC`，那么浏览器就会选择排在其后的 `Microsoft YaHei`，也就是微软雅黑字体。而博客中的基础字体（font-family-base）设定中，先是选用中文字体，在中文字体后添加了一个 `sans-serif`，也就是无衬线字作为最后的设定。也就是说，如果你的计算机系统中，苹方字体和微软雅黑都没有安装，那么浏览器就会选择你计算机系统中带有的基本无衬线字体。除此之外，这一部分代码也包含博客中的标题、文章主体、以及代码区域的字体设定。
 
-目前，电子显示屏上使用的字体普遍是无衬线体，比如黑体。在过去，因为屏幕技术的限制，想要在屏幕上展现出好看的衬线字角非常困难。如今高清显示屏的普及，在同质化的屏幕界面上使用衬线体为读者提供了另一种阅读选择。合适的衬线字体被引入到屏幕中，为单调的无衬线字体世界带来了新鲜的阅读体验。[^4]对于中文来说，宋体就是一种标准的衬线字体，衬线的特征非常明显。我们可以考虑将博客的中文默认字体更换为宋体，这样可以增强读者的阅读体验。
+目前，电子显示屏上使用的字体普遍是无衬线体，比如黑体。在过去，因为屏幕技术的限制，想要在屏幕上展现出好看的衬线字角非常困难。如今高清显示屏的普及，在同质化的屏幕界面上使用衬线体为读者提供了另一种阅读选择。合适的衬线字体被引入到屏幕中，为单调的无衬线字体世界带来了新鲜的阅读体验。[^5]对于中文来说，宋体就是一种标准的衬线字体，衬线的特征非常明显。我们可以考虑将博客的中文默认字体更换为宋体，这样可以增强读者的阅读体验。
 
 ![hexo-theme-next-fonts-serif.jpg](/images/hexo-theme-next-fonts-serif.jpg "石碑与屏幕上的字体")
 
@@ -945,7 +1050,7 @@ $font-family-icons        = 'FontAwesome';
 
 举个例子，比如你想使用 Linux Biolinum 字体。
 
-[^5]![hexo-theme-next-fonts-linux-biolinum.png](/images/hexo-theme-next-fonts-linux-biolinum.png "Linux Biolinum 字体")
+[^6]![hexo-theme-next-fonts-linux-biolinum.png](/images/hexo-theme-next-fonts-linux-biolinum.png "Linux Biolinum 字体")
 
 首先，下载 Linux Biolinum 字体，这里我提供一个下载地址：[linux-biolinum.zip](/uploads/linux-biolinum.zip)。下载该压缩文件后，将里面的文件解压至博客根目录下的 `~/source/fonts/` 文件夹中，若无 `fonts` 文件夹请自建。
 
@@ -1093,6 +1198,7 @@ font:
 
 [^1]: 图源：<https://github.com/theme-next/hexo-theme-next>。
 [^2]: 官方网站的 News 中会对每一个发行版相对上一版本的修改进行说明，Docs 中有主题配置的详细说明。
-[^3]: 参考：[前端开发你该知道的字体 font-family | fly63 前端网](http://www.fly63.com/article/detial/1114)。
-[^4]: 参考：[衬线体的进化：从纸面到屏幕 | 方正字库](https://zhuanlan.zhihu.com/p/49470735)。
-[^5]: 图源：<https://www.fontke.com/family/290108/>。
+[^3]: 我就是从这个事件起停止使用评论系统了，一方面是因为 Leancloud 的实名与备案，另一方面是我的博客访客比较少，基本没有什么评论，加载评论还会影响一定的访问速度。
+[^4]: 参考：[前端开发你该知道的字体 font-family | fly63 前端网](http://www.fly63.com/article/detial/1114)。
+[^5]: 参考：[衬线体的进化：从纸面到屏幕 | 方正字库](https://zhuanlan.zhihu.com/p/49470735)。
+[^6]: 图源：<https://www.fontke.com/family/290108/>。

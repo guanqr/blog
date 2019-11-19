@@ -1031,6 +1031,117 @@ local_search:
   preload: false
 ```
 
+#### 注释标签配置
+
+这里的注释标签（note tag）指的是文中带颜色背景的段落注释，具体的配置见下文。
+
+#### 动画配置
+
+由于我目前已经将博客从 Hexo 迁移至 Hugo，页面载入后不会有这些 NexT 主体动画的效果，这里给出的是我以前的设定，个人认为效果是不错的。
+
+##### 页面移动动画
+
+这里的动画指的是加载页面时，每一部分元素（标题、文章主体等等）加载的效果。有多种样式可以选择，究竟要选择哪种样式，最好自己一个一个尝试。
+
+```yml
+# Use velocity to animate everything.
+# For more information: http://velocityjs.org
+motion:
+  enable: true
+  async: false
+  transition:
+    # Transition variants:
+    # fadeIn | flipXIn | flipYIn | flipBounceXIn | flipBounceYIn
+    # swoopIn | whirlIn | shrinkIn | expandIn
+    # bounceIn | bounceUpIn | bounceDownIn | bounceLeftIn | bounceRightIn
+    # slideUpIn | slideDownIn | slideLeftIn | slideRightIn
+    # slideUpBigIn | slideDownBigIn | slideLeftBigIn | slideRightBigIn
+    # perspectiveUpIn | perspectiveDownIn | perspectiveLeftIn | perspectiveRightIn
+    post_block: fadeIn
+    post_header: slideDownIn
+    post_body: slideDownIn
+    coll_header: slideLeftIn
+    # Only for Pisces | Gemini.
+    sidebar: slideUpIn
+```
+
+##### 页面加载动画
+
+页面加载动画指的是刚访问页面，各元素还没有加载完成时，显示的加载进度动画。这里的配置最好也是自己一个一个尝试，选出适合自己的动画效果。另外，这个加载动画需要安装[依赖](https://github.com/theme-next/theme-next-pace)。
+
+安装：
+
+```bash
+cd themes/next
+git clone https://github.com/theme-next/theme-next-pace source/lib/pace
+```
+配置：
+
+```yml
+# Progress bar in the top during page loading.
+# Dependencies: https://github.com/theme-next/theme-next-pace
+# For more information: https://github.com/HubSpot/pace
+pace:
+  enable: true
+  # Themes list:
+  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
+  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
+  theme: flash
+```
+
+##### 页面背景动画
+
+NexT 主题提供了多种背景动画配置，`three` 的动画是线和点的组合，随鼠标位置的移动而变化。`canvas_nest` 是自由移动的线条，当你的鼠标移动时，线条汇聚在你的鼠标位置上，形成多边形，个人认为这是很炫酷的背景效果。`canvas_ribbon` 是随鼠标点击而变化颜色的彩带。
+
+如果你想要打造很炫酷的博客，可以考虑加载这些动画中的..一个..，同时加载多个动画是没有效果的。你只需要通过下载 `dependencies` 链接中的动画库到 `~/themes/next/source/lib/` 文件夹中。
+
+```bash
+JavaScript 3D library:
+cd themes/next
+git clone https://github.com/theme-next/theme-next-three source/lib/three
+
+Canvas-nest:
+cd themes/next
+git clone https://github.com/theme-next/theme-next-canvas-nest source/lib/canvas-nest
+
+canvas_ribbon:
+cd themes/next
+git clone https://github.com/theme-next/theme-next-canvas-ribbon source/lib/canvas-ribbon
+```
+
+另外，由于这些动画都是用过 JavaScript 控制的，所以播放动画可能会造成页面加载缓慢、卡顿的现象。
+
+```yml
+# JavaScript 3D library.
+# Dependencies: https://github.com/theme-next/theme-next-three
+three:
+  enable: false
+  # 只能选择加载其中的一个
+  three_waves: false
+  canvas_lines: false
+  canvas_sphere: false
+
+# Canvas-nest
+# Dependencies: https://github.com/theme-next/theme-next-canvas-nest
+# For more information: https://github.com/hustcc/canvas-nest.js
+canvas_nest:
+  enable: false
+  onmobile: true # Display on mobile or not
+  color: "0,0,255" # RGB values, use `,` to separate
+  opacity: 0.5 # The opacity of line: 0~1
+  zIndex: -1 # z-index property of the background
+  count: 99 # The number of lines
+
+# Canvas-ribbon
+# Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
+# For more information: https://github.com/zproo/canvas-ribbon
+canvas_ribbon:
+  enable: false
+  size: 300 # The width of the ribbon
+  alpha: 0.6 # The transparency of the ribbon
+  zIndex: -1 # The display level of the ribbon
+```
+
 ## 网页样式布局
 
 在对 NexT 主题的个性优化中，如果想要添加一些个性化的内容，就需要对内部代码进行修改。主题提供了许多注入点，可以通过注入点插入自己想要的东西，而不会对原有的主题内部文件进行大量的修改。这样便于以后主题的升级，避免一系列的错误发生。NexT 主题更新到 v7.2.0 后，简化了自定义内容的添加方法，删除了以前版本中所用的 `css/_custom.styl` 自定义 CSS 样式文件。如果想要修改样式或者在 HTML 中的 `<head>`、`<body>` 等部位插入代码。即直接在博客 `sourse` 资源文件夹下新建自定义文件 `_data/xxx` 实现该功能。

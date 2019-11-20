@@ -1,7 +1,7 @@
 +++
 title = "记 2018 年暑期日本科研夏令营"
 date = "2019-04-03T10:00:01+08:00"
-tags = ["ZJU","Optics","Summer-Camp","Japan","Tokyo"]
+tags = ["ZJU","Optics","Summer-Camp","Tokyo","Hamamatsu"]
 categories = ["life","school"]
 dropCap = true
 displayCopyright = true

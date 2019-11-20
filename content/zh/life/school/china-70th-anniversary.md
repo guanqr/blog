@@ -1,7 +1,7 @@
 +++
 title = "喜迎祖国七十华诞"
 date = "2019-10-01T13:25:16+08:00"
-tags = ["China","ZJU","National-Day"]
+tags = ["ZJU","National-Day"]
 categories = ["life","school"]
 dropCap = true
 displayCopyright = true

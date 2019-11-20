@@ -1,0 +1,4 @@
++++
+title = "CentOS"
+slug = "centos"
++++

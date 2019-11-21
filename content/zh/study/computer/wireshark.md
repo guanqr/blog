@@ -1,7 +1,7 @@
 +++
 title = "网络数据监测与分析"
 date = "2019-07-10T00:23:42+08:00"
-tags = ["Wireshark","IPv4","Security"]
+tags = ["Wireshark","IP","Security"]
 categories = ["study","computer"]
 displayCopyright = true
 gitinfo = true

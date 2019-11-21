@@ -560,9 +560,27 @@ uglyURLs = false
     #      的优先级高于此处
 
     ## Disqus
-    enableDisqus = true
+    enableDisqus = false
     disqusShortname = "Guanqr"
 
+    ## Valine
+    enableValine = false
+    valineAppId = "ylfWNE6qOyav0cPQThQzA3RB-MdYXbMMI"
+    valineAppKey = "mdjuKVrk0XTLMBIg07OHmrJK"
+    valinePlaceholder = "Just go go"
+    valineNotify = false
+    valineVerify = false
+    valinePath = "window.location.pathname"
+    valineAvatar = "mm"
+    valineMeta = ["nick", "mail", "link"]
+    valinePageSize = 10
+    valineLang = "zh-cn"
+    valineVisitor = false
+    valineHighlight = true
+    avatarForce = false
+    valineRecordIP = false
+    valineServerURLs = "http[s]://[tab/us].avoscloud.com"
+    # 说明：https://valine.js.org/
 
     ######################################
     # Google Analytics

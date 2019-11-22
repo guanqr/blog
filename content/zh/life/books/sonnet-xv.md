@@ -3,14 +3,9 @@ title = "Sonnet XV"
 date = "2019-05-15T23:43:58+08:00"
 tags = ["Literature","Sonnet","Shakespeare"]
 categories = ["life","reading"]
-dropCap = true
 displayCopyright = true
 gitinfo = true
 +++
-
-我第一次读这首诗是在宝树的小说《时间之墟》中，后来一直把这首诗置顶在 QQ 空间的日志中。感觉这首诗写得很美，用汉语很难表达出原本的意蕴。我国也有很多人翻译过这首诗，在这里我摘录下了我最喜欢的一个译文版本。
-
----
 
 <p style="text-align:center">
 <i>When I consider everything that grows</i><br>

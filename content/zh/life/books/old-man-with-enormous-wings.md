@@ -1,5 +1,5 @@
 +++
-title = "《巨翅老人》天使与人类"
+title = "天使与人类，文明的延续或消亡"
 description = "文明终究是不会彻底消亡的，它终将丰满自己的双翅，飞向需要他的地方。"
 date = "2019-05-31T16:37:42+08:00"
 tags = ["Literature","Novel","Magical-Realism"]

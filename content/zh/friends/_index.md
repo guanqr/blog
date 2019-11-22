@@ -17,7 +17,7 @@ meta = false
                         </div>
                   </div>
                   <div class="card">
-                        <img class="ava" src="/images/friends/dnocm.png"/>
+                        <img class="ava" src="/images/friends/dnocm.jpg"/>
                         <div class="card-header">
                               <div><a href="https://www.dnocm.com/" target="_blank">Dnocm</a></div>
                               <div class="info">若白驹过隙，忽然而已</div>
@@ -31,20 +31,6 @@ meta = false
                         </div>
                   </div>
                   <div class="card">
-                        <img class="ava" src="/images/friends/dlzhang.png"/>
-                        <div class="card-header">
-                              <div><a href="https://blog.dlzhang.com/" target="_blank">班班碎碎念</a></div>
-                              <div class="info">靡革匪因，靡故匪新</div>
-                        </div>
-                  </div>
-                  <div class="card">
-                        <img class="ava" src="/images/friends/buaacoder.jpg"/>
-                        <div class="card-header">
-                              <div><a href="https://buaacoder.github.io/" target="_blank">逗比南波万</a></div>
-                              <div class="info">一名来自北航的学弟</div>
-                        </div>
-                  </div>
-                  <div class="card">
                         <img class="ava" src="/images/friends/sanarous.png"/>
                         <div class="card-header">
                               <div><a href="https://bestzuo.cn/" target="_blank">Sanarous</a></div>
@@ -54,7 +40,7 @@ meta = false
                   <div class="card">
                         <img class="ava" src="/images/friends/zzzain46.jpg"/>
                         <div class="card-header">
-                              <div><a href="https://www.52debug.cn/" target="_blank">zzzain46</a></div>
+                              <div><a href="https://www.52debug.cn/" target="_blank">zzzain46's Blog</a></div>
                               <div class="info">能全力以赴不尽力而为</div>
                         </div>
                   </div>
@@ -62,7 +48,21 @@ meta = false
                         <img class="ava" src="/images/friends/ridiqulous.png"/>
                         <div class="card-header">
                               <div><a href="https://ridiqulous.com/" target="_blank">RidiQulous</a></div>
-                              <div class="info">一名与我同院系的学长</div>
+                              <div class="info">与我同院系的学长</div>
+                        </div>
+                  </div>
+                  <div class="card">
+                        <img class="ava" src="/images/friends/dingzhi.jpg"/>
+                        <div class="card-header">
+                              <div><a href="https://dingzhi.ga/" target="_blank">DingZhi's Blog</a></div>
+                              <div class="info">路在脚下，心向远方</div>
+                        </div>
+                  </div>
+                  <div class="card">
+                        <img class="ava" src="/images/friends/sange.webp"/>
+                        <div class="card-header">
+                              <div><a href="https://qsctech-sange.github.io/" target="_blank">三个技术小站</a></div>
+                              <div class="info">金融、计算机与数据科学</div>
                         </div>
                   </div>
             </div>
@@ -90,8 +90,3 @@ meta = false
 网站描述：The Sound of Silence</p>
 
 + 将您的网站信息按照上述格式发送电子邮件至 <guanqirui@zju.edu.cn>，审核通过后将会添加至该页面中。
-
-## 相关说明
-
-+ 已添加友情链接的网站，如果更换了域名或者标志 LOGO ，请及时和我联系进行修改。
-+ 本站的友情链接中包括但不限于互换友链的朋友们，一些我个人认为不错的网站也会添加在该页面中。

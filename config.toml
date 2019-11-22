@@ -402,7 +402,7 @@ uglyURLs = false
     displayListTitle = true
 
     # 日期的格式
-    listDateFormat = "2006-01-02"
+    listDateFormat = "01 月 02 日"
     # 注意：请遵循格式 https://gohugo.io/functions/format/
 
     # 日期的位置

@@ -19,7 +19,7 @@ meta = false
                   <div class="card">
                         <img class="ava" src="/images/friends/dnocm.jpg"/>
                         <div class="card-header">
-                              <div><a href="https://www.dnocm.com/" target="_blank">Dnocm</a></div>
+                              <div><a href="https://www.dnocm.com/" target="_blank">Dnocm ☀</a></div>
                               <div class="info">若白驹过隙，忽然而已</div>
                         </div>
                   </div>

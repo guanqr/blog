@@ -26,7 +26,7 @@ meta = false
                   <div class="card">
                         <img class="ava" src="/images/friends/fishstar.jpg"/>
                         <div class="card-header">
-                              <div><a href="http://blog.fishstar.me/" target="_blank">游鱼星</a></div>
+                              <div><a href="http://blog.fishstar.xyz/" target="_blank">游鱼星</a></div>
                               <div class="info">摸鱼火葬场，一直一直爽</div>
                         </div>
                   </div>

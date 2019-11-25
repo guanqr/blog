@@ -25,7 +25,9 @@ PWA 的特点：
 
 第一点：对于读者，博客可一触即达，且无浏览器的地址栏、菜单栏等「无关」干扰；对于博客，非常有利于博客的用户留存率，也利于博客的品牌形象。第二点：可以利用 Service Worker 的缓存特点，极大地加速你的博客。第三点：能让你的博客更贴近 APP 的形象。
 
-PWA 有很多要求，比如：HTTPS、响应式布局等等，可参考这个 [Checklist](https://developers.google.com/web/progressive-web-apps/checklist)，可用 Lighthouse[^3] 检查。
+PWA 有很多要求，比如：HTTPS、响应式布局等等，可参考这个 [Checklist](https://developers.google.com/web/progressive-web-apps/checklist)，可用 [Lighthouse](https://developers.google.com/web/tools/lighthouse)[^3] 检查你的网站是否满足 PWA 的所有要求。
+
+![lighthouse-pwa.png](/images/lighthouse-pwa.png "Lighthouse 检测结果")
 
 我在之前的文章「[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)」中提到过如何实现 PWA 功能。在那一篇文章中，我使用的是 Hexo 的一款插件 hexo-service-worker。但最近几个月，通过这款插件生成的 `sw.js` 文件无法被浏览器识别，且网页停止自动更新，需要手动清理缓存才可以看到最新的内容。这显然是与我们的意愿相违背的。
 
@@ -98,7 +100,7 @@ pwa:
   priority: 5
 ```
 
-其中，`manifest:` 后面接的就是 `manifest.json` 的设定，在此处对博客的名称、图标等进行设定，运行该插件后，可以直接在 `/public/` 中生成 `manifest.json` 文件。`serviceWorker:` 后面接的就是你要设置的缓存内容。
+其中，`manifest:` 后面接的就是 `manifest.json` 的设定，在此处对博客的名称、图标等进行设定，运行该插件后，可以直接在 `public` 中生成 `manifest.json` 文件。`serviceWorker:` 后面接的就是你要设置的缓存内容。
 
 ```yaml
 preload:
@@ -271,7 +273,7 @@ hexo g
 gulp build
 ```
 
-即可在 `/public/` 文件夹下生成一个 `sw.js` 文件。
+即可在 `public` 文件夹下生成一个 `sw.js` 文件。
 
 最后，我们还需要在 HTML 页面中加入相关代码以注册 Service Worker，并添加页面更新后的提醒功能。在这里可能要编辑你的主题相关模板文件，把以下代码放在 `</body>` 的前面：
 
@@ -336,6 +338,8 @@ gulp build
     height: 3em;
 }
 ```
+
+如果你完成了上述配置，将网站部署后，就可以实现 PWA 了。
 
 ## 参考
 

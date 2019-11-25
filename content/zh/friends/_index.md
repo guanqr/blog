@@ -4,6 +4,7 @@ description = "感谢您的关注与支持 ~"
 date = "2019-05-01T08:41:47+08:00"
 badge = false
 meta = false
+comments = true
 +++
 
 <div id="links">
@@ -27,7 +28,7 @@ meta = false
                         <img class="ava" src="/images/friends/fishstar.jpg"/>
                         <div class="card-header">
                               <div><a href="http://blog.fishstar.xyz/" target="_blank">游鱼星</a></div>
-                              <div class="info">摸鱼火葬场，一直一直爽</div>
+                              <div class="info">享受生活，享受代码</div>
                         </div>
                   </div>
                   <div class="card">
@@ -89,4 +90,4 @@ meta = false
 网站标志：<a href="/images/favicon-512x512.png" target="_blank">https://blog.guanqr.com/images/favicon-512x512.png</a><br>
 网站描述：The Sound of Silence</p>
 
-+ 将您的网站信息按照上述格式发送电子邮件至 <guanqirui@zju.edu.cn>，审核通过后将会添加至该页面中。
++ 将您的网站信息按照上述格式在下方留言或发送电子邮件至 <guanqirui@zju.edu.cn>，审核通过后将会添加至该页面中。

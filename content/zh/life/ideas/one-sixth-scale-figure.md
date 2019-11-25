@@ -96,7 +96,7 @@ toc = false
 
 ![some-collections-from-weibo.jpg](/images/some-collections-from-weibo.jpg "一些定制的兵人")
 
-目前制作人物配件最好的手艺人应该是 [Robbie Jones](https://www.instagram.com/robbiethepainter/)。头雕大师有很多，我比较喜欢的是 [Balloon Man](https://www.instagram.com/balloonmanstudio/)和 [Jnix Shin](https://www.instagram.com/jnixshin/)。服装方面，目前最好的应该是 Yunsil 和 Iris。
+目前制作人物配件最好的手艺人应该是 [Robbie Jones](https://www.instagram.com/robbiethepainter/)。头雕大师有很多，我比较喜欢的是 [Balloon Man](https://www.instagram.com/balloonmanstudio/) 和 [Jnix Shin](https://www.instagram.com/jnixshin/)。服装方面，目前最好的应该是 Yunsil 和 Iris。
 
 几个月前开始集单新的屠夫比尔服装，Yunsil 制作，我也参与了此次集单，不过这一角色的头雕和鞋帽我都还没有，以后有机会的话争取收一套吧。
 

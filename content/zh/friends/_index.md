@@ -4,7 +4,7 @@ description = "感谢您的关注与支持 ~"
 date = "2019-05-01T08:41:47+08:00"
 badge = false
 meta = false
-comments = true
+comments = false
 +++
 
 <div id="links">
@@ -76,6 +76,7 @@ comments = true
 
 ## 申请条件
 
++ 网站为个人博客。
 + 网站能稳定访问，博客内容保持更新。
 + 网站页面允许存在广告，但所占面积不能超过可视范围的 1/3。
 + 网站被谷歌等搜索引擎收录。
@@ -90,4 +91,4 @@ comments = true
 网站标志：<a href="/images/favicon-512x512.png" target="_blank">https://blog.guanqr.com/images/favicon-512x512.png</a><br>
 网站描述：The Sound of Silence</p>
 
-+ 将您的网站信息按照上述格式在下方留言或发送电子邮件至 <guanqirui@zju.edu.cn>，审核通过后将会添加至该页面中。
++ 将您的网站信息按照上述格式在[这里](https://github.com/guanqr/blog/issues/5)留言或发送电子邮件至 <guanqirui@zju.edu.cn>，审核通过后将会添加至该页面中。

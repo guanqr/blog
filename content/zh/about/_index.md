@@ -4,7 +4,7 @@ description = "关于本站，关于我，还有其他一些事……"
 date = "2019-05-01T08:41:47+08:00"
 badge = false
 meta = false
-comments = true
+comments = false
 +++
 
 ![zijingang-qiushi-college.jpg](/images/zijingang-qiushi-college.jpg "浙江大学紫金港校区·求是书院")

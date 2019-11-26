@@ -7,7 +7,6 @@ series = ["Major-Courses"]
 dropCap = true
 displayCopyright = true
 gitinfo = true
-toc = true
 +++
 
 ![c51-computer.jpg](/images/c51-computer.jpg)
@@ -407,74 +406,73 @@ unsigned int LedOut[10];
 
 void main()
 {  
-  TMOD=0x01;
-  TH0=0XFC;
-  TL0=0X18;
-  ET0=1;
-  EA=0;
-  TR0=1;
+	TMOD=0x01;
+	TH0=0XFC;
+	TL0=0X18;
+	ET0=1;
+	EA=0;
+	TR0=1;
 
-  while(1){
-    EA=1;
-    LedOut[0]=Disp_Tab[a%10000/1000];
-    LedOut[1]=Disp_Tab[a%1000/100]|0x80;  // 增加小数点，倒计时功能中包含小数
-    LedOut[2]=Disp_Tab[a%100/10];
-    LedOut[3]=Disp_Tab[a%10];
-    if(k1==0){
-      LedNumVal=6000;
-      break;
-    }
-  }
-  // 这里实现的是只有当按键按下才开始计数，而不是接通电源直接计数
-  while(1)
-  {	 
-    LedOut[0]=Disp_Tab[LedNumVal%10000/1000];
-    LedOut[1]=Disp_Tab[LedNumVal%1000/100]|0x80;
-    LedOut[2]=Disp_Tab[LedNumVal%100/10];
-    LedOut[3]=Disp_Tab[LedNumVal%10];
-    if(k2==0){
-      EA=1;
-      break;
-    }
-  }  	 
-}	
+	while(1){
+		EA=1;
+		LedOut[0]=Disp_Tab[a%10000/1000];
+		LedOut[1]=Disp_Tab[a%1000/100]|0x80;  // 增加小数点，倒计时功能中包含小数
+		LedOut[2]=Disp_Tab[a%100/10];
+		LedOut[3]=Disp_Tab[a%10];
+		if(k1==0){
+			LedNumVal=6000;
+			break;
+		}
+	}
+	// 这里实现的是只有当按键按下才开始计数，而不是接通电源直接计数
+	while(1){	 
+		LedOut[0]=Disp_Tab[LedNumVal%10000/1000];
+		LedOut[1]=Disp_Tab[LedNumVal%1000/100]|0x80;
+		LedOut[2]=Disp_Tab[LedNumVal%100/10];
+		LedOut[3]=Disp_Tab[LedNumVal%10];
+		if(k2==0){
+			EA=1;
+			break;
+		}
+	}  	 
+}
+
 void delay(unsigned int i)
 {
-  char j;
-  for(i; i > 0; i--)
-    for(j = 200; j > 0; j--);
+	char j;
+	for(i; i>0; i--)
+	for(j=200; j>0; j--);
 }
 
 void time0()interrupt 1
 {
-  TH0=0XFC;
-  TL0=0X18;
-  i++;
-  if(i%4==0){
-    P0 = LedOut[0];
-    LS138A=0; LS138B=0; LS138C=0;
-  }
-  else if(i%4==1){
-    P0 = LedOut[1];		
-    LS138A=1; LS138B=0; LS138C=0;
-  }
-  else if(i%4==2){
-    P0 = LedOut[2];		
-    LS138A=0; LS138B=1; LS138C=0;
-  }
-  else if(i%4==3){
-    P0 = LedOut[3];		
-    LS138A=1; LS138B=1; LS138C=0;
-  }
-  // 这里与其他同学设计的不同，其他人是直接连接单片机上数码管位码判定的 8 根管脚，需要用到 8 根线，我利用译码器，实现只用 3 根线控制 8 位显示。
-  if(i==10&&LedNumVal!=0)
-  {
-    i=0;
-    --LedNumVal;
-  }
-  if(LedNumVal==0){		
-    LedNumVal=0;
-  }
+	TH0=0XFC;
+	TL0=0X18;
+	i++;
+	if(i%4==0){
+		P0 = LedOut[0];
+		LS138A=0; LS138B=0; LS138C=0;
+	}
+	else if(i%4==1){
+		P0 = LedOut[1];		
+		 LS138A=1; LS138B=0; LS138C=0;
+    }
+	else if(i%4==2){
+		P0 = LedOut[2];		
+		LS138A=0; LS138B=1; LS138C=0;
+	}
+	else if(i%4==3){
+		P0 = LedOut[3];		
+		LS138A=1; LS138B=1; LS138C=0;
+	}
+	// 这里与其他同学设计的不同，其他人是直接连接单片机上数码管位码判定的 8 根管脚，需要用到 8 根线，我利用译码器，实现只用 3 根线控制 8 位显示。
+	if(i==10&&LedNumVal!=0){
+		i=0;
+		--LedNumVal;
+	}
+	if(LedNumVal==0){		
+		LedNumVal=0;
+	}
 }
 ```
 
@@ -490,28 +488,27 @@ unsigned int a=0;
 sbit led=P0^0; 
 void main()
 {
-  TMOD=0x01;
-  TH0=0XFC;
-  TL0=0X18;	
-  ET0=1;
-  EA=1;
-  TR0=1;
-  while(1);
+	TMOD=0x01;
+	TH0=0XFC;
+	TL0=0X18;	
+	ET0=1;
+	EA=1;
+	TR0=1;
+	while(1);
 }
 void time0()interrupt 1
 {
-  TH0=0XFC;
-  TL0=0X18;
-  i++;
-  if(i>=2*(a%9)){
-    led=1;
-  }
-  if(i==20)
-  {
-    led=0;
-    i=0;
-    a++;
-  }
+	TH0=0XFC;
+	TL0=0X18;
+	i++;
+	if(i>=2*(a%9)){
+		led=1;
+	}
+	if(i==20){
+		led=0;
+		i=0;
+		a++;
+	}
 }
 ```
 
@@ -534,75 +531,72 @@ unsigned int LedNumVal;
 unsigned char code Disp_Tab[] = {0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x40}; 
 unsigned int LedOut[10];
 sbit led=P0^0; 
-sbit k1=P1^0; //+
-sbit k2=P1^1; //-
+sbit k1=P1^0; // +
+sbit k2=P1^1; // -
 void key1();
 void key2();
 void delay(unsigned int k)
 {
-  for(d=k;d>0;d--)
-  for(p=110;p>0;p--) ;
+	for(d=k;d>0;d--)
+	for(p=110;p>0;p--) ;
 }
 void main()
 {
-  TMOD=0x01;
-  TH0=0XFC;
-  TL0=0X18;	
-  ET0=1;
-  EA=1;
-  TR0=1;
-  while(1){
-    LedNumVal=a;
-    LedOut[3]=Disp_Tab[LedNumVal];
-    P2=LedOut[3];
-  }
+	TMOD=0x01;
+	TH0=0XFC;
+	TL0=0X18;	
+	ET0=1;
+	EA=1;
+	TR0=1;
+	while(1){
+		LedNumVal=a;
+		LedOut[3]=Disp_Tab[LedNumVal];
+		P2=LedOut[3];
+	}
 }
 void time0()interrupt 1
 {
-  TH0=0XFC;
-  TL0=0X18;
-  i++;
-  if(i>=2*a){
-    led=1;
-  }
-  if(i==20)
-  {
-    led=0;
-    i=0;
-  }
-  key1();
-  key2();
+	TH0=0XFC;
+	TL0=0X18;
+	i++;
+	if(i>=2*a){
+		led=1;
+	}
+	if(i==20){
+		led=0;
+		i=0;
+	}
+	key1();
+	key2();
 }
 
 void key1()
 {
-  if(k1==0)
-  {
-    delay(50);
-    if(k1==0){
-      led=1;
-      a--;
-      if(a<0){
-        a=9;
-      }
-      while(!k1);
-    }
-  }
+	if(k1==0){
+		delay(50);
+		if(k1==0){
+			led=1;
+			a--;
+			if(a<0){
+				a=9;
+			}
+		while(!k1);
+		}
+	}
 }
 void key2()
 {
-  if(k2==0)
-  {
-    delay(50);
-    if(k2==0){
-      led=1;
-      a++;
-      if(a>9){
-        a=0;
-      }
-      while(!k2);
-    }
-  }
+	if(k2==0){
+		delay(50);
+		if(k2==0){
+			led=1;
+			a++;
+			if(a>9){
+				a=0;
+			}
+			while(!k2);
+		}
+	}
 }
 ```
 
@@ -651,7 +645,7 @@ void time0()interrupt 1
 }
 ```
 
-实验二：采用矩阵式键盘，指定IO与键盘的连接，设计程序实现对键盘的扫描、按键去抖动等处理。当Key0－KeyF键按下时分别对寄存器B赋值0－F，并通过数码管显示。
+实验二：采用矩阵式键盘，指定 IO 与键盘的连接，设计程序实现对键盘的扫描、按键去抖动等处理。当 Key0－KeyF 键按下时分别对寄存器 B 赋值 0－F，并通过数码管显示。
 
 ```c
 #include <reg51.h>
@@ -668,67 +662,65 @@ uchar code LED7Code[] = {~0x3F,~0x06,~0x5B,~0x4F,~0x66,~0x6D,~0x7D,~0x07,~0x7F,~
 
 void delay(uint k)
 {
-  uint i;
-  uchar j;
-  for(i=k;i>0;i--)
-  for(j=110;j>0;j--);
+	uint i;
+	uchar j;
+	for(i=k;i>0;i--)
+	for(j=110;j>0;j--);
 }
 
 void keyscan(void)
 { 	
-  temp = 0;
-  P1=0xF0;     
-  delay(50);		
-  temp=P1;       
-  temp=temp&0xF0;			
-  temp=~((temp>>4)|0xF0);	  
-  if(temp==1)	  
-    key=0; 
-  else if(temp==2)  
-    key=1;	
-  else if(temp==4)   
-    key=2;	
-  else if(temp==8)  
-    key=3;	 
-  else
-    key = 16;
+	temp = 0;
+	P1=0xF0;     
+	delay(50);		
+	temp=P1;       
+	temp=temp&0xF0;			
+	temp=~((temp>>4)|0xF0);	  
+	if(temp==1)	  
+		key=0; 
+	else if(temp==2)  
+		key=1;	
+	else if(temp==4)   
+		key=2;	
+	else if(temp==8)  
+		key=3;	 
+	else
+		key = 16;
         
-  P1=0x0F;   
-  delay(50);	
-  temp=P1;          
-  temp=temp&0x0F;
-  temp=~(temp|0xF0);
-  if(temp==1)		
-    key=key+0;
-  else if(temp==2)	
-    key=key+4; 
-  else if(temp==4) 
-    key=key+8;
-  else if(temp==8)  
-    key=key+12;
-  else
-    key = 16;	
-  dis_buf = key;	
-  dis_buf = dis_buf & 0x0f;
+	P1=0x0F;   
+	delay(50);	
+	temp=P1;          
+	temp=temp&0x0F;
+	temp=~(temp|0xF0);
+	if(temp==1)		
+		key=key+0;
+	else if(temp==2)	
+		key=key+4; 
+	else if(temp==4) 
+		key=key+8;
+	else if(temp==8)  
+		key=key+12;
+	else
+		key = 16;	
+	dis_buf = key;	
+	dis_buf = dis_buf & 0x0f;
 }
 void keydown(void)
 {  
-  P1=0xF0;  
-  if(P1!=0xF0) 
-  {
-    keyscan(); 
-  }
+	P1=0xF0;  
+	if(P1!=0xF0) {
+		keyscan(); 
+	}
 }
 main()
 {
-  P0=0xFF; 
-  P1=0xFF;   
-  delay(50);     
-  while(1)
-  { 
-    keydown();	
-    P0 = LED7Code[dis_buf%16];
-  }
+	P0=0xFF; 
+	P1=0xFF;   
+	delay(50);     
+	while(1){ 
+		keydown();	
+		P0 = LED7Code[dis_buf%16];
+	}
 }   
 ```
 
@@ -753,71 +745,68 @@ unsigned int LedOut[10];
 
 void main()
 {  
-  TMOD=0x01;
-  TH0=0XFC;
-  TL0=0X18;
-  ET0=1;
-  EA=1;
-  TR0=1;
+	TMOD=0x01;
+	TH0=0XFC;
+	TL0=0X18;
+	ET0=1;
+	EA=1;
+	TR0=1;
 
-  while(1)
-  {	 
-     LedOut[0]=Disp_Tab[num[a]];
-     LedOut[1]=Disp_Tab[num[a+1]];
-     LedOut[2]=Disp_Tab[num[a+2]];
-     LedOut[3]=Disp_Tab[num[a+3]];		
-     LedOut[4]=Disp_Tab[num[a+4]];
-     LedOut[5]=Disp_Tab[num[a+5]];
-     LedOut[6]=Disp_Tab[num[a+6]];
-     LedOut[7]=Disp_Tab[num[a+7]];
-  }   
+	while(1){	 
+		LedOut[0]=Disp_Tab[num[a]];
+		LedOut[1]=Disp_Tab[num[a+1]];
+		LedOut[2]=Disp_Tab[num[a+2]];
+		LedOut[3]=Disp_Tab[num[a+3]];		
+		LedOut[4]=Disp_Tab[num[a+4]];
+		LedOut[5]=Disp_Tab[num[a+5]];
+		LedOut[6]=Disp_Tab[num[a+6]];
+		LedOut[7]=Disp_Tab[num[a+7]];
+	}   
 }	
-
 
 void time0()interrupt 1
 {
-  TH0=0XFC;
-  TL0=0X18;
-  i++;
-
-  if(i%8==0){
-    P3 = LedOut[0];
-    LS138A=0; LS138B=0; LS138C=0;
-  }
-  else if(i%8==1){
-    P3 = LedOut[1];		
-    LS138A=1; LS138B=0; LS138C=0;
-  }
-  else if(i%8==2){
-    P3 = LedOut[2];		
-    LS138A=0; LS138B=1; LS138C=0;
-  }
-  else if(i%8==3){
-    P3 = LedOut[3];		
-    LS138A=1; LS138B=1; LS138C=0;
-  }
-  else if(i%8==4){
-    P3 = LedOut[4];		
-    LS138A=0; LS138B=0; LS138C=1;
-  }
-  else if(i%8==5){
-    P3 = LedOut[5];		
-    LS138A=1; LS138B=0; LS138C=1;
-  }
-  else if(i%8==6){
-    P3 = LedOut[6];		
-    LS138A=0; LS138B=1; LS138C=1;
-  }
-  else if(i%8==7){
-    P3 = LedOut[7];		
-    LS138A=1; LS138B=1; LS138C=1;
-  }
-  if(i==500)
-  {
-    a++;
-    i=0;
-    if(a==14) a=0;
-  }
+	TH0=0XFC;
+	TL0=0X18;
+	i++;
+	if(i%8==0){
+		P3=LedOut[0];
+		LS138A=0; LS138B=0; LS138C=0;
+	}
+	else if(i%8==1){
+		P3=LedOut[1];		
+		LS138A=1; LS138B=0; LS138C=0;
+	}
+	else if(i%8==2){
+		P3=LedOut[2];		
+		LS138A=0; LS138B=1; LS138C=0;
+	}
+	else if(i%8==3){
+		P3=LedOut[3];		
+		LS138A=1; LS138B=1; LS138C=0;
+	}
+	else if(i%8==4){
+		P3=LedOut[4];		
+		LS138A=0; LS138B=0; LS138C=1;
+	}
+	else if(i%8==5){
+		P3=LedOut[5];		
+		LS138A=1; LS138B=0; LS138C=1;
+	}
+	else if(i%8==6){
+		P3=LedOut[6];		
+		LS138A=0; LS138B=1; LS138C=1;
+	}
+	else if(i%8==7){
+		P3=LedOut[7];		
+		LS138A=1; LS138B=1; LS138C=1;
+	}
+	if(i==500){
+		a++;
+		i=0;
+		if(a==14)
+			a=0;
+	}
 }
 ```
 
@@ -846,147 +835,144 @@ void keydown(void);
 
 void main()
 {  
-  TMOD=0x01;
-  TH0=0XFC;
-  TL0=0X18;
-  ET0=1;
-  EA=1;
-  TR0=1;
+	TMOD=0x01;
+	TH0=0XFC;
+	TL0=0X18;
+	ET0=1;
+	EA=1;
+	TR0=1;
 
-  while(1)
-  {	 
-    keydown();		
-    LedOut[0]=Disp_Tab[hou%100/10];
-    LedOut[1]=Disp_Tab[hou%10];
-    LedOut[3]=Disp_Tab[min%100/10];
-    LedOut[4]=Disp_Tab[min%10];
-    //LedOut[4]=Disp_Tab[sec%10000/1000];
-    //LedOut[5]=Disp_Tab[sec%1000/100]|0x80;
-    LedOut[6]=Disp_Tab[sec%100/10];
-    LedOut[7]=Disp_Tab[sec%10];
-  }   
+	while(1){	 
+		keydown();		
+		LedOut[0]=Disp_Tab[hou%100/10];
+		LedOut[1]=Disp_Tab[hou%10];
+		LedOut[3]=Disp_Tab[min%100/10];
+		LedOut[4]=Disp_Tab[min%10];
+		//LedOut[4]=Disp_Tab[sec%10000/1000];
+		//LedOut[5]=Disp_Tab[sec%1000/100]|0x80;
+		LedOut[6]=Disp_Tab[sec%100/10];
+		LedOut[7]=Disp_Tab[sec%10];
+	}   
 }	
-
 
 void time0()interrupt 1
 {
-  TH0=0XFC;
-  TL0=0X18;
-  i++;
+	TH0=0XFC;
+	TL0=0X18;
+	i++;
 
-  if(i%8==0){
-    P3 = LedOut[0];
-    LS138A=0; LS138B=0; LS138C=0;
-  }
-  else if(i%8==1){
-    P3 = LedOut[1];		
-    LS138A=1; LS138B=0; LS138C=0;
-  }
-  else if(i%8==2){
-    P3 = LedOut[2];		
-    LS138A=0; LS138B=1; LS138C=0;
-  }
-  else if(i%8==3){
-    P3 = LedOut[3];		
-    LS138A=1; LS138B=1; LS138C=0;
-  }
-  else if(i%8==4){
-    P3 = LedOut[4];		
-    LS138A=0; LS138B=0; LS138C=1;
-  }
-  else if(i%8==5){
-    P3 = LedOut[5];		
-    LS138A=1; LS138B=0; LS138C=1;
-  }
-  else if(i%8==6){
-    P3 = LedOut[6];		
-    LS138A=0; LS138B=1; LS138C=1;
-  }
-  else if(i%8==7){
-    P3 = LedOut[7];		
-    LS138A=1; LS138B=1; LS138C=1;
-  }
+	if(i%8==0){
+		P3=LedOut[0];
+		LS138A=0; LS138B=0; LS138C=0;
+	}
+	else if(i%8==1){
+		P3=LedOut[1];		
+		LS138A=1; LS138B=0; LS138C=0;
+	}
+	else if(i%8==2){
+		P3=LedOut[2];		
+		LS138A=0; LS138B=1; LS138C=0;
+	}
+	else if(i%8==3){
+		P3 = LedOut[3];		
+		LS138A=1; LS138B=1; LS138C=0;
+	}
+	else if(i%8==4){
+		P3=LedOut[4];		
+		LS138A=0; LS138B=0; LS138C=1;
+	}
+	else if(i%8==5){
+		P3=LedOut[5];		
+		LS138A=1; LS138B=0; LS138C=1;
+	}
+	else if(i%8==6){
+		P3=LedOut[6];		
+		LS138A=0; LS138B=1; LS138C=1;
+	}
+	else if(i%8==7){
+		P3=LedOut[7];		
+		LS138A=1; LS138B=1; LS138C=1;
+	}
 	 
-  if(i==1000)
-  {
-    i=0;
-    sec++;
-    if(sec==60){
-      sec=0;
-      min++;
-    }
-    if(min==60){
-      min=0;
-      hou++;
-    }
-    if(hou==24){
-      hou=0;
-    }
-  }
+	if(i==1000){
+		i=0;
+		sec++;
+		if(sec==60){
+			sec=0;
+			min++;
+		}
+		if(min==60){
+			min=0;
+			hou++;
+		}
+		if(hou==24){
+			hou=0;
+		}
+	}
 }
 
 void delay(unsigned int k)
 {
-  unsigned int m;
-  unsigned char n;
-  for(m=k;m>0;m--)
-  for(n=110;n>0;n--);
+	unsigned int m;
+	unsigned char n;
+	for(m=k;m>0;m--)
+	for(n=110;n>0;n--);
 }
 void keyscan(void)
 { 
-  temp = 0;
-  P1=0xF0;     
-  delay(50);		
-  temp=P1;       
-  temp=temp&0xF0;			
-  temp=~((temp>>4)|0xF0);	  
-  if(temp==1)	  
-    key=0; 
-  else if(temp==2)  
-    key=1;	
-  else if(temp==4)   
-    key=2;	
-  else if(temp==8)  
-    key=3;	 
-  else
-    key = 16;
+	temp=0;
+	P1=0xF0;     
+	delay(50);		
+	temp=P1;       
+	temp=temp&0xF0;			
+	temp=~((temp>>4)|0xF0);	  
+	if(temp==1)	  
+		key=0; 
+	else if(temp==2)  
+		key=1;	
+	else if(temp==4)   
+		key=2;	
+	else if(temp==8)  
+		key=3;	 
+	else
+		key = 16;
         
-  P1=0x0F;   
-  delay(50);	
-  temp=P1;          
-  temp=temp&0x0F;
-  temp=~(temp|0xF0);
-  if(temp==1)		
-    key=key+0;
-  else if(temp==2)	
-    key=key+4; 
-  else if(temp==4) 
-    key=key+8;
-  else if(temp==8)  
-    key=key+12;
-  else
-    key = 16;
-  if(key==0){
-    sec++;
-    if(sec==60) sec=0;
-  }
-  else if(key==1){
-    min++;
-    if(min==60) min=0;
-  }
-  else if(key==2){
-    hou++;
-    if(hou==24) hou=0;
-  }
+	P1=0x0F;   
+	delay(50);	
+	temp=P1;          
+	temp=temp&0x0F;
+	temp=~(temp|0xF0);
+	if(temp==1)		
+		key=key+0;
+	else if(temp==2)	
+		key=key+4; 
+	else if(temp==4) 
+		key=key+8;
+	else if(temp==8)  
+		key=key+12;
+	else
+		key = 16;
+	if(key==0){
+		sec++;
+		if(sec==60)
+			sec=0;
+	}
+	else if(key==1){
+		min++;
+		if(min==60) min=0;
+	}
+	else if(key==2){
+		hou++;
+		if(hou==24) hou=0;
+	}
 }
 
 void keydown(void)
 {  
-  P1=0xF0;  
-  if(P1!=0xF0) 
-  {
-    keyscan(); 
-  }
+	P1=0xF0;  
+	if(P1!=0xF0) {
+		keyscan(); 
+	}
 }
 ```
 
@@ -1030,71 +1016,70 @@ unsigned int LedOut[10];
 
 void main()
 {  
-  TMOD=0x01;
-  TH0=0XFC;
-  TL0=0X18;
-  ET0=1;
-  EA=1;
-  TR0=1;
+	TMOD=0x01;
+	TH0=0XFC;
+	TL0=0X18;
+	ET0=1;
+	EA=1;
+	TR0=1;
 
-  while(1)
-  {	 
-     LedOut[0]=Disp_Tab[num[a]];
-     LedOut[1]=Disp_Tab[num[a+1]];
-     LedOut[2]=Disp_Tab[num[a+2]];
-     LedOut[3]=Disp_Tab[num[a+3]];		
-     LedOut[4]=Disp_Tab[num[a+4]];
-     LedOut[5]=Disp_Tab[num[a+5]];
-     LedOut[6]=Disp_Tab[num[a+6]];
-     LedOut[7]=Disp_Tab[num[a+7]];
-  }   
+	while(1){	 
+		LedOut[0]=Disp_Tab[num[a]];
+		LedOut[1]=Disp_Tab[num[a+1]];
+		LedOut[2]=Disp_Tab[num[a+2]];
+		LedOut[3]=Disp_Tab[num[a+3]];		
+		LedOut[4]=Disp_Tab[num[a+4]];
+		LedOut[5]=Disp_Tab[num[a+5]];
+		LedOut[6]=Disp_Tab[num[a+6]];
+		LedOut[7]=Disp_Tab[num[a+7]];
+	}   
 }	
 
 
 void time0()interrupt 1
 {
-  TH0=0XFC;
-  TL0=0X18;
-  i++;
+	TH0=0XFC;
+	TL0=0X18;
+	i++;
 
-  if(i%8==0){
-    P3 = LedOut[0];
-    LS138A=0; LS138B=0; LS138C=0;
-  }
-  else if(i%8==1){
-    P3 = LedOut[1];		
-    LS138A=1; LS138B=0; LS138C=0;
-  }
-  else if(i%8==2){
-    P3 = LedOut[2];		
-    LS138A=0; LS138B=1; LS138C=0;
-  }
-  else if(i%8==3){
-    P3 = LedOut[3];		
-    LS138A=1; LS138B=1; LS138C=0;
-  }
-  else if(i%8==4){
-    P3 = LedOut[4];		
-    LS138A=0; LS138B=0; LS138C=1;
-  }
-  else if(i%8==5){
-    P3 = LedOut[5];		
-    LS138A=1; LS138B=0; LS138C=1;
-  }
-  else if(i%8==6){
-    P3 = LedOut[6];		
-    LS138A=0; LS138B=1; LS138C=1;
-  }
-  else if(i%8==7){
-    P3 = LedOut[7];		
-    LS138A=1; LS138B=1; LS138C=1;
-  }
-  if(i==500)
-  {
-    a=a+8;
-    i=0;
-    if(a==160) a=0;
-  }
+	if(i%8==0){
+		P3=LedOut[0];
+		LS138A=0; LS138B=0; LS138C=0;
+	}
+	else if(i%8==1){
+		P3=LedOut[1];		
+		LS138A=1; LS138B=0; LS138C=0;
+	}
+	else if(i%8==2){
+		P3=LedOut[2];		
+		LS138A=0; LS138B=1; LS138C=0;
+	}
+	else if(i%8==3){
+		P3 = LedOut[3];		
+		LS138A=1; LS138B=1; LS138C=0;
+	}
+	else if(i%8==4){
+		P3=LedOut[4];		
+		LS138A=0; LS138B=0; LS138C=1;
+	}
+	else if(i%8==5){
+		P3=LedOut[5];		
+		LS138A=1; LS138B=0; LS138C=1;
+	}
+	else if(i%8==6){
+		P3=LedOut[6];		
+		LS138A=0; LS138B=1; LS138C=1;
+	}
+	else if(i%8==7){
+		P3=LedOut[7];		
+		LS138A=1; LS138B=1; LS138C=1;
+	}
+	if(i==500){
+		a=a+8;
+		i=0;
+		if(a==160)
+			a=0;
+	}
 }
 ```
 
@@ -1120,116 +1105,113 @@ DS18B20 原理图：
 #define uint unsigned int
 sbit dq=P3^7;
 uint PuZh;
-uchar sb[10]={'0','1','2','3','4','5','6','7','8','9'};
+uchar sb[10]={'0','1','2','3','4','5','6','7','8','9'}; // 至于为什么把这个数组名字定义为 sb，还有下面的 ssb，可能是当时的心情有些烦躁吧
 void UsartConfiguration();
 void Delay10ms(uint c);
 
 void sdelay(uint i)
 {
-  while(i--);
+	while(i--);
 }
 void DS18B20_Reset()
 {
-  uchar x=0;
-  dq=1;
-  sdelay(8);
-  dq=0;
-  sdelay(80);
-  dq=1;
-  sdelay(14);
-  sdelay(20);
+	uchar x=0;
+	dq=1;
+	sdelay(8);
+	dq=0;
+	sdelay(80);
+	dq=1;
+	sdelay(14);
+	sdelay(20);
 }
 
 void DS18B20_Write_Byte(uchar dat)
 {
-  uchar i=0;
-  for(i=8;i>0;i--)
-  {
-    dq=0;
-    dq=dat&0x01;
-    sdelay(5);
-    dq=1;
-    dat>>=1;
-  }
+	uchar i=0;
+	for(i=8;i>0;i--){
+		dq=0;
+		dq=dat&0x01;
+		sdelay(5);
+		dq=1;
+		dat>>=1;
+	}
 }
 uchar DS18B20_Read_Byte()
 {
-  uchar i=0,dat=0;
-  for(i=8;i>0;i--)
-  {
-    dq=0;dat>>=1;
-    dq=1;
-    if(dq)
-    dat|=0x80;
-    sdelay(4);
-  }
-  return(dat);
+	uchar i=0,dat=0;
+	for(i=8;i>0;i--){
+		dq=0;
+		dat>>=1;
+		dq=1;
+		if(dq)
+			dat|=0x80;
+		sdelay(4);
+	}
+	return(dat);
 }
 uint GET_Temperature()
 {
-  uchar a=0,b=0;
-  uint t=0;
-  float tt=0;
-  DS18B20_Reset();
-  DS18B20_Write_Byte(0xcc);
-  DS18B20_Write_Byte(0x44);
-  DS18B20_Reset();
-  DS18B20_Write_Byte(0xcc);
-  DS18B20_Write_Byte(0xbe);
-  a=DS18B20_Read_Byte();
-  b=DS18B20_Read_Byte();
-  t=b;
-  t<<=8;
-  t=t|a;
-  tt=t*0.0625;
-  t=tt*10+0.5;
-  return(t);
+	uchar a=0,b=0;
+	uint t=0;
+	float tt=0;
+	DS18B20_Reset();
+	DS18B20_Write_Byte(0xcc);
+	DS18B20_Write_Byte(0x44);
+	DS18B20_Reset();
+	DS18B20_Write_Byte(0xcc);
+	DS18B20_Write_Byte(0xbe);
+	a=DS18B20_Read_Byte();
+	b=DS18B20_Read_Byte();
+	t=b;
+	t<<=8;
+	t=t|a;
+	tt=t*0.0625;
+	t=tt*10+0.5;
+	return(t);
 }
 void main()
 {
-  uchar i;
-  uint x;
-  uint y,z;
-  uchar ssb[5];
-  UsartConfiguration();
-  while(1)
-  {
-    PuZh=GET_Temperature();
-    x=PuZh/100;
-    y=PuZh%100%10;
-    z=PuZh%100/10;
-    ssb[0]=sb[x];
-    ssb[1]=sb[y];
-    ssb[2]='.';
-    ssb[3]=sb[z];
-    ssb[4]=' ';
-    for(i=0;i<5;i++)
-    {
-      SBUF=ssb[i];
-      while(!TI);
-      TI=0;
-    }
-    Delay10ms(50);
-  }
+	uchar i;
+	uint x;
+	uint y,z;
+	uchar ssb[5];
+	UsartConfiguration();
+	while(1){
+		PuZh=GET_Temperature();
+		x=PuZh/100;
+		y=PuZh%100%10;
+		z=PuZh%100/10;
+		ssb[0]=sb[x];
+		ssb[1]=sb[y];
+		ssb[2]='.';
+		ssb[3]=sb[z];
+		ssb[4]=' ';
+		for(i=0;i<5;i++){
+			SBUF=ssb[i];
+			while(!TI);
+			TI=0;
+		}
+		Delay10ms(50);
+	}
 }
 
 void UsartConfiguration()
 {
-  SCON=0X50;
-  TMOD=0X20;
-  PCON=0X80;
-  TH1=0XF3;
-  TL1=0XF3;
-  TR1=1;
+	SCON=0X50;
+	TMOD=0X20;
+	PCON=0X80;
+	TH1=0XF3;
+	TL1=0XF3;
+	TR1=1;
 }
 void Delay10ms(unsigned int c)
 {
-  unsigned char a,b;
-  for(;c>0;c--){
-    for(b=38;b>0;b--){
-      for(a=130;a>0;a--);
-    }
-  }
+	unsigned char a,b;
+	for(;c>0;c--){
+		for(b=38;b>0;b--){
+			for(a=130;a>0;a--);
+		}
+	}
 }
 ```
 
@@ -1278,68 +1260,67 @@ void I2C_Start();
 
 void I2C_Start()     
 {
-  SCL=1;
-  _nop_();_nop_();_nop_();_nop_();_nop_();
-  SDA=1;
-  _nop_();_nop_();_nop_();_nop_();_nop_();
-  SDA=0;
-  _nop_();_nop_();_nop_();_nop_();_nop_();
-  SCL=0;
-  _nop_();_nop_();_nop_();_nop_();_nop_();
+	SCL=1;
+	_nop_();_nop_();_nop_();_nop_();_nop_();
+	SDA=1;
+	_nop_();_nop_();_nop_();_nop_();_nop_();
+	SDA=0;
+	_nop_();_nop_();_nop_();_nop_();_nop_();
+	SCL=0;
+	_nop_();_nop_();_nop_();_nop_();_nop_();
 }
 
 void I2C_Stop()      
 { 
-  SDA=0;
-  _nop_();_nop_();_nop_();_nop_();_nop_();
-  SCL=1;
-  _nop_();_nop_();_nop_();_nop_();_nop_();
-  SDA=1;
-  _nop_();_nop_();_nop_();_nop_();_nop_();
+	SDA=0;
+	_nop_();_nop_();_nop_();_nop_();_nop_();
+	SCL=1;
+	_nop_();_nop_();_nop_();_nop_();_nop_();
+	SDA=1;
+	_nop_();_nop_();_nop_();_nop_();_nop_();
 }
 
 void I2C_SendByte(unsigned char dat)   
 {
-  uchar i,j,b=0;
-  for(i=0;i<8;i++)
-  {    
-    SCL=0;  
-    _nop_();_nop_();_nop_();_nop_();_nop_();
-    SDA=(bit)(dat&0x80);     
-    dat<<=1;        
-    SCL=1;          
-    _nop_();_nop_();_nop_();_nop_();_nop_();
-  }
-  SCL=0;
-  _nop_();_nop_();_nop_();_nop_();_nop_();
-  SDA=1;     
-  _nop_();_nop_();_nop_();_nop_();_nop_();
-  SCL=1;
-  _nop_();
-  while((SDA==1)&&(j<250))  j++;  
-  SCL=0;
-  _nop_();   
+	uchar i,j,b=0;
+	for(i=0;i<8;i++){    
+		SCL=0;  
+		_nop_();_nop_();_nop_();_nop_();_nop_();
+		SDA=(bit)(dat&0x80);     
+		dat<<=1;        
+		SCL=1;          
+		_nop_();_nop_();_nop_();_nop_();_nop_();
+	}
+	SCL=0;
+	_nop_();_nop_();_nop_();_nop_();_nop_();
+	SDA=1;     
+	_nop_();_nop_();_nop_();_nop_();_nop_();
+	SCL=1;
+	_nop_();
+	while((SDA==1)&&(j<250))
+		j++;  
+	SCL=0;
+	_nop_();   
 }
 
 unsigned char I2C_ReadByte()     
 {
-  uchar i,dat=0;
-  SCL=0;         
-  _nop_();	_nop_();_nop_();_nop_();_nop_();
-  SDA=1;      
-  _nop_();
-  for(i=0;i<8;i++)   
-  {
-    SCL=1;
-    _nop_();_nop_();_nop_();_nop_();_nop_();
-    dat<<=1;
-    if(SDA==1)
-      dat=dat|0x01;
-    _nop_();_nop_();_nop_();_nop_();_nop_();
-    SCL=0;     //下降沿时读取数据
-    _nop_();_nop_();_nop_();_nop_();_nop_();
-  }
-  return dat;
+	uchar i,dat=0;
+	SCL=0;         
+	_nop_();_nop_();_nop_();_nop_();_nop_();
+	SDA=1;      
+	_nop_();
+	for(i=0;i<8;i++){
+		SCL=1;
+		_nop_();_nop_();_nop_();_nop_();_nop_();
+		dat<<=1;
+		if(SDA==1)
+			dat=dat|0x01;
+		_nop_();_nop_();_nop_();_nop_();_nop_();
+		SCL=0; // 下降沿时读取数据
+		_nop_();_nop_();_nop_();_nop_();_nop_();
+	}
+	return dat;
 }
 ```
 
@@ -1359,64 +1340,62 @@ unsigned char I2C_ReadByte()
 
 void Pcf8591SendByte(uchar channel)	
 {   
-  I2C_Start();    
-  I2C_SendByte(WRITEADDR);        
-  I2C_SendByte(0x40|channel);     
-  I2C_Stop();
+	I2C_Start();    
+	I2C_SendByte(WRITEADDR);        
+	I2C_SendByte(0x40|channel);     
+	I2C_Stop();
 }
 
 uchar Pcf8591ReadByte()		
 {
-  uchar num;
-  I2C_Start();
-  I2C_SendByte(READADDR);      
-  num=I2C_ReadByte();          
-  I2C_Stop();                  
-  return num;
+	uchar num;
+	I2C_Start();
+	I2C_SendByte(READADDR);      
+	num=I2C_ReadByte();          
+	I2C_Stop();                  
+	return num;
 }
 
 void UsartInit()        
 {
-  SCON=0X50;
-  TMOD=0X20;
-  PCON=0X80;
-  TH1=0XF3;
-  TL1=0XF3;
-  TR1=1;
+	SCON=0X50;
+	TMOD=0X20;
+	PCON=0X80;
+	TH1=0XF3;
+	TL1=0XF3;
+	TR1=1;
 }
 
 void delay1s(void)   
 {
-  unsigned char a,b,c;
-  for(c=167;c>0;c--)
-    for(b=171;b>0;b--)
-      for(a=16;a>0;a--);
-  _nop_();  
+	unsigned char a,b,c;
+	for(c=167;c>0;c--)
+		for(b=171;b>0;b--)
+			for(a=16;a>0;a--);
+				_nop_();  
 }
 
 void main()
 {
-  uint adNum,i,value;
-  uchar PuZh[4]; 
-  UsartInit();	
-  while(1)
-  {		 	
-    Pcf8591SendByte(0);      
-    adNum=Pcf8591ReadByte();   
-    value=adNum;
-    value=100 - value*100/255;
-    PuZh[0] = 32;
-    PuZh[1] = value/10+48;
-    PuZh[2] = value%10+48;
-    PuZh[3] = 32;
-    for(i=0;i<4;i++)
-    {
-      SBUF=PuZh[i];
-      while(!TI);
-      TI=0;
-    }
-    delay1s();
-  }
+	uint adNum,i,value;
+	uchar PuZh[4]; 
+	UsartInit();	
+	while(1){		 	
+		Pcf8591SendByte(0);      
+		adNum=Pcf8591ReadByte();   
+		value=adNum;
+		value=100-value*100/255;
+		PuZh[0]=32;
+		PuZh[1]=value/10+48;
+		PuZh[2]=value%10+48;
+		PuZh[3]=32;
+		for(i=0;i<4;i++){
+			SBUF=PuZh[i];
+			while(!TI);
+			TI=0;
+		}
+		delay1s();
+	}
 }
 ```
 
@@ -1443,161 +1422,158 @@ void delay()  //5us
 
 void delay1(uint z)//1ms
 {
-  uint x,y;
-  for(x=z;x>0;x--)
-    for(y=120;y>0;y--);        
+	uint x,y;
+	for(x=z;x>0;x--)
+		for(y=120;y>0;y--);        
 }
 
 void start()
 {
-  scl=1;
-  _nop_();
-  sda=1;
-  delay();
-  sda=0;
-  delay();
-  scl=0;
-  _nop_();
+	scl=1;
+	_nop_();
+	sda=1;
+	delay();
+	sda=0;
+	delay();
+	scl=0;
+	_nop_();
 }
 void stop()
 {
-  scl=1;
-  _nop_();
-  sda=0;
-  delay();
-  sda=1;
-  delay();
+	scl=1;
+	_nop_();
+	sda=0;
+	delay();
+	sda=1;
+	delay();
 }
 void respons()
 {
-  scl=1;
-  _nop_();
-  sda=0;
-  delay();
-  scl=0;
-  _nop_();
+	scl=1;
+	_nop_();
+	sda=0;
+	delay();
+	scl=0;
+	_nop_();
 }
 void norespons()
 {
-  scl=1;
-  _nop_();
-  sda=1;
-  delay();
+	scl=1;
+	_nop_();
+	sda=1;
+	delay();
 }
 void init()
 {
-  scl=1;
-  _nop_();
-  sda=1;
-  _nop_();
+	scl=1;
+	_nop_();
+	sda=1;
+	_nop_();
 }
 void write_byte(uchar dat)
 {
-  uchar i,temp;
-  temp=dat;
-  for(i=0;i<8;i++)
-  {
-    scl=0;
-    _nop_();
-    if((temp&0x80)==0x80)
-      sda=1; 
-    else
-      sda=0; 
-    scl=1;
-    _nop_();
-    temp<<=1;
-  }
-  scl=0;
-  _nop_();
+	uchar i,temp;
+	temp=dat;
+	for(i=0;i<8;i++){
+		scl=0;
+		_nop_();
+		if((temp&0x80)==0x80)
+			sda=1; 
+		else
+			sda=0; 
+		scl=1;
+		_nop_();
+		temp<<=1;
+	}
+	scl=0;
+	_nop_();
 }
 uchar read_byte()
 {
-  uchar dat,i;
-  sda=1;
-  _nop_();
-  scl=0;
-  _nop_();
-  for(i=0;i<8;i++)
-  {
-    scl=1;
-    _nop_();
-    if(sda)
-      dat|=0x01;
-    if(i<7)
-      dat<<=1;
-    scl=0;
-    _nop_();        
-  }
-  return dat;
+	uchar dat,i;
+	sda=1;
+	_nop_();
+	scl=0;
+	_nop_();
+	for(i=0;i<8;i++){
+		scl=1;
+		_nop_();
+		if(sda)
+			dat|=0x01;
+		if(i<7)
+			dat<<=1;
+		scl=0;
+		_nop_();        
+	}
+	return dat;
 }
 void DAC_write(uchar dat)
 {
-  start();
-  write_byte(0x90);
-  respons();
-  write_byte(0x40);
-  respons();
-  write_byte(dat);
-  respons();
-  stop();
+	start();
+	write_byte(0x90);
+	respons();
+	write_byte(0x40);
+	respons();
+	write_byte(dat);
+	respons();
+	stop();
 }
 uchar ADC_read(uchar com)
 {
-  uchar dat;
-  dat=com;
-  start();
-  write_byte(0x90);
-  respons();
-  write_byte(com);
-  respons();
-  start();
-  write_byte(0x91);
-  respons();
-  dat=read_byte();
-  norespons();
-  stop();
-  return dat;
+	uchar dat;
+	dat=com;
+	start();
+	write_byte(0x90);
+	respons();
+	write_byte(com);
+	respons();
+	start();
+	write_byte(0x91);
+	respons();
+	dat=read_byte();
+	norespons();
+	stop();
+	return dat;
 }
 void main()
 {
-  uchar ss=0,ad_value;
-  uint aa;
-  init();
-  UsartConfiguration();
-  while(1)
-  {
-    if(receiveData=='0') aa=0;
-    else if(receiveData=='1') aa=100;
-    else if(receiveData=='2') aa=110;
-    else if(receiveData=='3') aa=120;
-    else if(receiveData=='4') aa=130;
-    else if(receiveData=='5') aa=140;
-    else if(receiveData=='6') aa=150;
-    else if(receiveData=='7') aa=160;
-    else if(receiveData=='8') aa=170;
-    else if(receiveData=='9') aa=180;	
-    ad_value=ADC_read(0x42);
-    DAC_write(aa);
-    delay1(20);	
-  }
+	uchar ss=0,ad_value;
+	uint aa;
+	init();
+	UsartConfiguration();
+	while(1){
+		if(receiveData=='0') aa=0;
+		else if(receiveData=='1') aa=100;
+		else if(receiveData=='2') aa=110;
+		else if(receiveData=='3') aa=120;
+		else if(receiveData=='4') aa=130;
+		else if(receiveData=='5') aa=140;
+		else if(receiveData=='6') aa=150;
+		else if(receiveData=='7') aa=160;
+		else if(receiveData=='8') aa=170;
+		else if(receiveData=='9') aa=180;	
+		ad_value=ADC_read(0x42);
+		DAC_write(aa);
+		delay1(20);	
+	}
 }
 void UsartConfiguration()
 {
-  SCON=0X50;
-  TMOD=0X20;
-  PCON=0X80;
-  TH1=0XF3;
-  TL1=0XF3;
-  ES=1;
-  EA=1;
-  TR1=1;
+	SCON=0X50;
+	TMOD=0X20;
+	PCON=0X80;
+	TH1=0XF3;
+	TL1=0XF3;
+	ES=1;
+	EA=1;
+	TR1=1;
 }
 void Usart() interrupt 4
 {
-  receiveData=SBUF;
-  RI=0;
-  SBUF=receiveData;
-  while(!TI);
-  TI=0;
+	receiveData=SBUF;
+	RI=0;
+	SBUF=receiveData;
+	while(!TI);
+	TI=0;
 }
 ```

@@ -27,7 +27,8 @@
 // 自定义引用边框
 p#div-danger, p#div-warning, p#div-success, p#div-info, p#div-primary, p#div-default {
     padding: 0.5em 1em;
-    border-left: 3px solid #eee;
+    border-left: 3px solid;
+    text-align: left;
 }
 p#div-danger {
     background: var(--color-div-danger-bg);

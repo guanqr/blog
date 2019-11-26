@@ -6,7 +6,6 @@ categories = ["study","computer"]
 dropCap = true
 displayCopyright = true
 gitinfo = true
-toc = true
 katex = true
 +++
 
@@ -20,9 +19,7 @@ katex = true
 
 ## GitBook 简介
 
-GitBook [官方网站](https://www.gitbook.com/)。
-
-GitBook 是一个基于 Node.js 的命令行工具，支持 Markdown 语法格式，可以输出 HTML、PDF、eBook 等格式的电子书。
+[GitBook](https://www.gitbook.com/) 是一个基于 Node.js 的命令行工具，支持 Markdown 语法格式，可以输出 HTML、PDF、eBook 等格式的电子书。
 
 GitBook 支持的特性：
 
@@ -36,8 +33,6 @@ GitBook 支持的特性：
 ## 安装与使用
 
 ### Node.js 的安装
-
-`Node.js` 是一个基于 Chrome JavaScript 运行时建立的一个平台， 用来方便地搭建快速的， 易于扩展的网络应用。`Node.js` 借助事件驱动，非阻塞 I/O 模型变得轻量和高效，非常适合 run across distributed devices 的 data-intensive 的实时应用。
 
 在官方网站[首页](https://nodejs.org/zh-cn/)就提供了 `Node.js` 的下载链接。我推荐下载长期支持的版本。
 
@@ -188,7 +183,7 @@ $ cat book/SUMMARY.md
     "gitbook": "3.2.3",
     "links": {
         "sidebar": {
-            "返回我的博客": "https://www.guanqr.com"
+            "返回我的主页": "https://blog.guanqr.com"
         }
     },
     "styles": {
@@ -259,8 +254,8 @@ $ cat book/SUMMARY.md
             "title": "GitBook 学习笔记",
             "description": "介绍如何使用 GitBook。",
             "author": "啼鸟怨年华",
-            "feed_url": "https://www.guanqr.com/gitbook/how-to-use-gitbook/rss",
-            "site_url": "https://www.guanqr.com/gitbook/how-to-use-gitbook/",
+            "feed_url": "https://blog.guanqr.com/gitbook/how-to-use-gitbook/rss",
+            "site_url": "https://blog.guanqr.com/gitbook/how-to-use-gitbook/",
             "managingEditor": "guanqirui@zju.edu.cn",
             "webMaster": "guanqirui@zju.edu.cn",
             "categories": [
@@ -277,19 +272,19 @@ $ cat book/SUMMARY.md
 #### 一些常用的命令
 
 ```
-gitbook init //初始化目录文件
-gitbook help //列出gitbook所有的命令
-gitbook --help //输出gitbook-cli的帮助信息
-gitbook build //生成静态网页
-gitbook serve //生成静态网页并运行服务器
-gitbook build --gitbook=2.0.1 //生成时指定gitbook的版本, 本地没有会先下载
-gitbook ls //列出本地所有的gitbook版本
-gitbook ls-remote //列出远程可用的gitbook版本
-gitbook fetch 标签/版本号 //安装对应的gitbook版本
-gitbook update //更新到gitbook的最新版本
-gitbook uninstall 2.0.1 //卸载对应的gitbook版本
-gitbook build --log=debug //指定log的级别
-gitbook builid --debug //输出错误信息
+gitbook init    //初始化目录文件
+gitbook help    //列出gitbook所有的命令
+gitbook --help  //输出gitbook-cli的帮助信息
+gitbook build   //生成静态网页
+gitbook serve   //生成静态网页并运行服务器
+gitbook build --gitbook=2.0.1   //生成时指定gitbook的版本, 本地没有会先下载
+gitbook ls  //列出本地所有的gitbook版本
+gitbook ls-remote   //列出远程可用的gitbook版本
+gitbook fetch 标签/版本号   //安装对应的gitbook版本
+gitbook update  //更新到gitbook的最新版本
+gitbook uninstall 2.0.1     //卸载对应的gitbook版本
+gitbook build --log=debug   //指定log的级别
+gitbook builid --debug  //输出错误信息
 ```
 
 #### gitbook
@@ -344,11 +339,11 @@ Tags:
      pre : 4.0.0-alpha.6
 ```
 
-注意：`gitbook serve` 命令长久以来被发现不稳定，时常产生 ENOENT 错误。解决办法是，前往 `/lib/output/website/` 文件夹，将 `copyPluginAssets.js` 文件最后一个 fs.copyDir 中的 confirm 项的值由 `true` 改为 `false`。在 Windows 上，该文件的路径通常形如：`C:/Users/[你的用户名]/.gitbook/versions/[你的 Gitbook 版本号]/lib/output/website`。
+注意：`gitbook serve` 命令长久以来被发现不稳定，时常产生 ENOENT 错误。解决办法是，前往 `/lib/output/website/` 文件夹，将 `copyPluginAssets.js` 文件最后一个 `fs.copyDir` 中的 `confirm` 项的值由 `true` 改为 `false`。在 Windows 上，该文件的路径通常形如：`C:/Users/[你的用户名]/.gitbook/versions/[你的 Gitbook 版本号]/lib/output/website`。
 
 ## GitBook 插件
 
-部分工作借助插件可以很好地完成，就不需要再手动去修改默认的 CSS 等文件了。
+部分工作借助插件可以很好地完成，不需要再手动去修改默认的 CSS 等文件。
 
 ### 插件的安装与加载
 
@@ -391,12 +386,14 @@ Gitbook 默认自带了 5 个插件：
 添加 disqus 评论。
 
 ```json
-"plugins": [
-    "disqus"
-],
-"pluginsConfig": {
-    "disqus": {
-        "shortName": "gitbookuse"
+{
+    "plugins": [
+        "disqus"
+    ],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "gitbookuse"
+        }
     }
 }
 ```
@@ -447,9 +444,11 @@ pre[class*="language-"] {
 支持 [emoji 表情](http://www.emoji-cheat-sheet.com/)。
 
 ```json
-"plugins": [
-    "advanced-emoji"
-]
+{
+    "plugins": [
+        "advanced-emoji"
+    ]
+}
 ```
 
 #### Github
@@ -457,12 +456,14 @@ pre[class*="language-"] {
 添加 GitHub 图标。
 
 ```json
-"plugins": [
-    "github"
-],
-"pluginsConfig": {
-    "github": {
-        "url": "https://github.com/zhangjikai"
+{
+    "plugins": [
+        "github"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/zhangjikai"
+        }
     }
 }
 ```
@@ -510,9 +511,11 @@ editor.renderer.updateFontSize();
 使用插件：
 
 ```json
-"plugins": [
-    "ace"
-]
+{
+    "plugins": [
+        "ace"
+    ]
+}
 ```
 
 #### Emphasize
@@ -520,9 +523,11 @@ editor.renderer.updateFontSize();
 为文字加上底色。
 
 ```json
-"plugins": [
-    "emphasize"
-]
+{
+    "plugins": [
+        "emphasize"
+    ]
+}
 ```
 
 #### $\KaTeX$
@@ -530,9 +535,11 @@ editor.renderer.updateFontSize();
 为了支持数学公式, 我们可以使用 $\KaTeX$ 和 MathJax 插件,  $\KaTeX$ 的渲染速度要快于 MathJax，但 MathJax 支持的语法更多。
 
 ```json
-"plugins": [
-    "katex"
-]
+{
+    "plugins": [
+        "katex"
+    ]
+}
 ```
 
 #### Include Codeblock
@@ -559,9 +566,11 @@ editor.renderer.updateFontSize();
 使侧边栏的宽度可以自由调节。
 
 ```json
-"plugins": [
-    "splitter"
-]
+{
+    "plugins": [
+        "splitter"
+    ]
+}
 ```
 
 #### Mermaid-gb3
@@ -569,16 +578,18 @@ editor.renderer.updateFontSize();
 支持渲染 [Mermaid](https://github.com/knsv/mermaid) 图表。
 
 ```json
-"plugins": [
-    "mermaid-gb3"
-]
+{
+    "plugins": [
+        "mermaid-gb3"
+    ]
+}
 ```
 
 #### Puml
 
 使用 [PlantUML](http://plantuml.com/) 展示 uml 图。
 
-```
+```json
 {
     "plugins": ["puml"]
 }
@@ -616,37 +627,41 @@ type 可以是 `c3` 或者 `highcharts`, 默认是 `c3`。
 分享当前页面，比默认的 sharing 插件多了一些分享方式。
 
 ```json
- plugins: ["-sharing", "sharing-plus"]
+{
+    "plugins": ["-sharing", "sharing-plus"]
+}
 ```
 
 配置:
 
 ```json
-"pluginsConfig": {
-    "sharing": {
-       "douban": false,
-       "facebook": false,
-       "google": true,
-       "hatenaBookmark": false,
-       "instapaper": false,
-       "line": true,
-       "linkedin": true,
-       "messenger": false,
-       "pocket": false,
-       "qq": false,
-       "qzone": true,
-       "stumbleupon": false,
-       "twitter": false,
-       "viber": false,
-       "vk": false,
-       "weibo": true,
-       "whatsapp": false,
-       "all": [
-           "facebook", "google", "twitter",
-           "weibo", "instapaper", "linkedin",
-           "pocket", "stumbleupon"
-       ]
-   }
+{
+    "pluginsConfig": {
+        "sharing": {
+           "douban": false,
+           "facebook": false,
+            "google": true,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": true,
+           "linkedin": true,
+           "messenger": false,
+           "pocket": false,
+           "qq": false,
+           "qzone": true,
+           "stumbleupon": false,
+           "twitter": false,
+           "viber": false,
+           "vk": false,
+           "weibo": true,
+           "whatsapp": false,
+           "all": [
+                "facebook", "google", "twitter",
+                "weibo", "instapaper", "linkedin",
+                "pocket", "stumbleupon"
+            ]
+        }
+    }
 }
 ```
 
@@ -655,14 +670,16 @@ type 可以是 `c3` 或者 `highcharts`, 默认是 `c3`。
 为页面添加页脚。
 
 ```json
-"plugins": [
-   "tbfed-pagefooter"
-],
-"pluginsConfig": {
-    "tbfed-pagefooter": {
-        "copyright":"Copyright &copy zhangjikai.com 2017",
-        "modify_label": "该文件修订时间：",
-        "modify_format": "YYYY-MM-DD HH:mm:ss"
+{
+    "plugins": [
+        "tbfed-pagefooter"
+    ],
+    "pluginsConfig": {
+        "tbfed-pagefooter": {
+            "copyright":"Copyright &copy zhangjikai.com 2017",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        }
     }
 }
 ```
@@ -672,7 +689,9 @@ type 可以是 `c3` 或者 `highcharts`, 默认是 `c3`。
 使左侧的章节目录可以折叠。
 
 ```json
-plugins: ["expandable-chapters-small"]
+{
+    "plugins": ["expandable-chapters-small"]
+}
 ```
 
 #### Sectionx
@@ -683,12 +702,12 @@ plugins: ["expandable-chapters-small"]
 {
     "plugins": [
        "sectionx"
-   ],
+    ],
     "pluginsConfig": {
         "sectionx": {
-          "tag": "b"
+            "tag": "b"
         }
-      }
+    }
 }
 ```
 
@@ -697,12 +716,14 @@ plugins: ["expandable-chapters-small"]
 Google 统计。
 
 ```json
-"plugins": [
-    "ga"
- ],
-"pluginsConfig": {
-    "ga": {
-        "token": "UA-XXXX-Y"
+{
+    "plugins": [
+        "ga"
+    ],
+    "pluginsConfig": {
+        "ga": {
+            "token": "UA-XXXX-Y"
+        }
     }
 }
 ```
@@ -727,17 +748,19 @@ Google 统计。
 打赏插件。
 
 ```json
-"plugins": [
-    "donate"
-],
-"pluginsConfig": {
-    "donate": {
-        "wechat": "https://yourwebsite/resource/weixin.png",
-        "alipay": "https://yourwebsite/resource/alipay.png",
-        "title": "",
-        "button": "赏",
-        "alipayText": "支付宝打赏",
-        "wechatText": "微信打赏"
+{
+    "plugins": [
+        "donate"
+    ],
+    "pluginsConfig": {
+        "donate": {
+            "wechat": "https://yourwebsite/resource/weixin.png",
+            "alipay": "https://yourwebsite/resource/alipay.png",
+            "title": "",
+            "button": "赏",
+            "alipayText": "支付宝打赏",
+            "wechatText": "微信打赏"
+        }
     }
 }
 ```
@@ -747,12 +770,14 @@ Google 统计。
 使用 Video.js 播放本地视频。
 
 ```json
-"plugins": [ "local-video" ]
+{
+    "plugins": [ "local-video" ]
+}
 ```
 
 为了使视频可以自适应，指定视频的 `width` 为100%，并设置宽高比为 `16:9`，如下面所示：
 
-```javascript
+```html
 {% raw %}
 <video id="my-video" class="video-js" controls preload="auto" width="100%"
 poster="https://yourimage.jpg" data-setup='{"aspectRatio":"16:9"}'>
@@ -799,7 +824,9 @@ poster="https://yourimage.jpg" data-setup='{"aspectRatio":"16:9"}'>
 添加 GitHub 风格的锚点样式。
 
 ```json
-"plugins" : [ "anchors" ]
+{
+    "plugins" : [ "anchors" ]
+}
 ```
 
 #### Anchor-navigation-ex
@@ -839,11 +866,13 @@ poster="https://yourimage.jpg" data-setup='{"aspectRatio":"16:9"}'>
 如果将 GitBook 的源文件保存到 GitHub 或者其他的仓库上，使用该插件可以链接到当前页的源文件上。
 
 ```json
-"plugins": ["edit-link"],
-"pluginsConfig": {
-    "edit-link": {
-        "base": "https://github.com/USER/REPO/edit/BRANCH",
-        "label": "Edit This Page"
+{
+    "plugins": ["edit-link"],
+    "pluginsConfig": {
+        "edit-link": {
+            "base": "https://github.com/USER/REPO/edit/BRANCH",
+            "label": "Edit This Page"
+        }
     }
 }
 ```
@@ -897,7 +926,9 @@ input[type=checkbox]{
 ```
 
 ```json
-"plugins": ["todo"]
+{
+    "plugins": ["todo"]
+}
 ```
 
 #### Terminal
@@ -1003,7 +1034,7 @@ Success styling
 
 集成 [Klipse](https://github.com/viebel/klipse) (online code evaluator)。
 
-```
+```json
 {
     "plugins": ["klipse"]
 }

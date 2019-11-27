@@ -189,7 +189,7 @@ uglyURLs = false
         name = "友链"
         weight = 5
         pre = "internal"
-        post = "grav"
+        post = "pagelines"
     [[menu.main]]
         url = "/about/"
         name = "关于"

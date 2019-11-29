@@ -1,4 +1,4 @@
 +++
-title = "微控制器"
+title = "单片机"
 slug = "microcontroller"
 +++

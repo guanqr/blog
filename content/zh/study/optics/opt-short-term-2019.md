@@ -1,7 +1,7 @@
 +++
 title = "光电学院短学期结束！"
 date = "2019-07-29T09:10:03+08:00"
-tags = ["ZJU","Optics","Zemax","C51","Microcontroller","PCB","SolidWorks"]
+tags = ["ZJU","Optics","Zemax","Microcontroller","PCB","SolidWorks"]
 categories = ["study","optics"]
 katex = true
 toc = true

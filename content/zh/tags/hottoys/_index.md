@@ -1,4 +1,4 @@
 +++
-title = "Hot Toys"
+title = "HotToys"
 slug = "hottoys"
 +++

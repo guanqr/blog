@@ -1,4 +1,4 @@
 +++
 title = "IDcard"
-slug = "zju"
+slug = "idcard"
 +++

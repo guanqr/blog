@@ -1,4 +1,4 @@
 +++
-title = "NexT 主题"
+title = "NexT"
 slug = "next"
 +++

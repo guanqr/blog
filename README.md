@@ -2,10 +2,11 @@
 
 ## 博客
 
-[![Home](https://img.shields.io/badge/Home-Guanqr-blue.svg)](https://blog.guanqr.com)
-[![Mail](https://img.shields.io/badge/Mail-@Guanqr-blue.svg)](mailto:guanqirui@zju.edu.cn)
-[![Generate](https://img.shields.io/badge/Generate-Hugo-blue.svg)](https://gohugo.io/)
-[![Theme](https://img.shields.io/badge/Theme-MemE-blue.svg)](https://github.com/reuixiy/hugo-theme-meme)
+[![Home](https://img.shields.io/badge/Home-Guanqr-ef9421.svg)](https://blog.guanqr.com)
+[![Generator](https://img.shields.io/badge/Generator-Hugo-ff4088?&logo=hugo.svg)](https://gohugo.io/)
+[![Theme](https://img.shields.io/badge/Theme-MemE-2a6df4?&logo=meme)](https://github.com/reuixiy/hugo-theme-meme)
+[![Source](https://img.shields.io/badge/Source-GitHub-181717?&logo=github)](https://github.com/guanqr/blog)
+[![Built](https://img.shields.io/badge/Built-Netlify-00c7b7?&logo=netlify)](https://www.netlify.com/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dbcb5f2e-9386-4eec-be66-8647be51bc11/deploy-status)](https://app.netlify.com/sites/guanqr-blog/deploys)
 
 ## 文章

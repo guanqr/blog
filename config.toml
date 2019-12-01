@@ -1080,7 +1080,7 @@ uglyURLs = false
     # 多语言
 
     # 是否开启多语言按钮
-    enableLangToggle = false
+    enableLangToggle = true
 
     # 是否在首页隐藏多语言按钮
     hideLangToggleInHome = false
@@ -1140,34 +1140,34 @@ uglyURLs = false
     category = "categories"
     tag = "tags"
 [languages.en-us.menu]
-    [[languages.en-us.menu.main]]
-        url = "/en-us/"
-        name = "Home"
-        weight = 1
-        pre = "internal"
-        post = "home"
-    [[languages.en-us.menu.main]]
-        url = "/en-us/tags/"
-        name = "Tags"
-        weight = 2
-        pre = "internal"
-        post = "tags"
-    [[languages.en-us.menu.main]]
-        url = "/en-us/categories/"
-        name = "Categories"
-        weight = 3
-        pre = "internal"
-        post = "th"
-    [[languages.en-us.menu.main]]
-        url = "/en-us/archives/"
-        name = "Archives"
-        weight = 4
-        pre = "internal"
-        post = "archive"
+    #[[languages.en-us.menu.main]]
+        #url = "/en-us/"
+        #name = "Home"
+        #weight = 1
+        #pre = "internal"
+        #post = "home"
+    #[[languages.en-us.menu.main]]
+        #url = "/en-us/tags/"
+        #name = "Tags"
+        #weight = 2
+        #pre = "internal"
+        #post = "tags"
+    #[[languages.en-us.menu.main]]
+        #url = "/en-us/categories/"
+        #name = "Categories"
+        #weight = 3
+        #pre = "internal"
+        #post = "th"
+    #[[languages.en-us.menu.main]]
+        #url = "/en-us/archives/"
+        #name = "Archives"
+        #weight = 4
+        #pre = "internal"
+        #post = "archive"
     [[languages.en-us.menu.main]]
         url = "/en-us/about/"
         name = "About"
-        weight = 7
+        weight = 1
         pre = "internal"
         post = "user-circle"
     [[languages.en-us.menu.socials]]

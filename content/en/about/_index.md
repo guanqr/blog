@@ -1,28 +1,39 @@
 +++
 title = "About"
-description = "Hugo, the world’s fastest framework for building websites"
-date = "2019-02-28"
-author = "Hugo Authors"
-original = false
-website = "https://gohugo.io/"
-link = "https://git.io/fjbhZ"
-copyright = "[Some rights reserved.](https://github.com/gohugoio/hugoBasicExample/blob/master/LICENSE)"
+description = "About my blog, personal introduction, and some other things…"
+date = "2019-05-01T08:41:47+08:00"
+badge = false
+meta = false
+comments = false
 +++
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+![zijingang-qiushi-college.jpg](/images/zijingang-qiushi-college.jpg "Zijingang Campus of Zhejiang University · Qiushi College")
 
-Hugo makes use of a variety of open source projects including:
+## About My Blog
 
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+### Basic Information
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
++ Generator is Hugo
++ Theme is MemE
++ Source on GitHub
++ Built and Hosted on Netlify
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
+### Feed
 
-Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
+My Blog supports the following three ways of feed:
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
++ <a href="/images/wechat-official-accounts.svg" target="_blank">Wechat</a>
++ <a href="/atom.xml" target="_blank">Atom</a> / <a href="/rss.xml" target="_blank">RSS</a>
++ [Telegram Channel](https://t.me/guanqr)
+
+## About Me
+
+I am a student from College of Optical Science and Engineering, Zhejiang University. I like watching movies, watching American TV-series, Reading and cycling. Just a regular guy…
+
+## Some Other Things
+
++ It's recommended to use Google Chrome to visit my blog on Personal Computer.
++ PWA is enable in my blog. Adding  my blog to the main screen of your mobile phone or computer desktop so that you can read my articles anywhere.
++ There is no ad insertion in my blog. Some plug-ins such as AdBlock may affect the reading experience. So I hope you can add my blog to the white list. 
++ If you find any problems while reading my articles, you are welcome to create new issues or fork and create new pull requests in the [repository](https://github.com/guanqr/blog) of my blog's source code on GitHub.
++ If you want to ask anything else or need my help, please contact me by email: [guanqirui@zju.edu.cn](mailto:guanqirui@zju.edu.cn).

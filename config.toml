@@ -1137,15 +1137,15 @@ uglyURLs = false
 	title = "The Sound of Silence"
     copyright = "The article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)."
 [languages.en-us.taxonomies]
-    category = "categories"
-    tag = "tags"
+    #category = "categories"
+    #tag = "tags"
 [languages.en-us.menu]
-    #[[languages.en-us.menu.main]]
-        #url = "/en-us/"
-        #name = "Home"
-        #weight = 1
-        #pre = "internal"
-        #post = "home"
+    [[languages.en-us.menu.main]]
+        url = "/en-us/"
+        name = "Home"
+        weight = 1
+        pre = "internal"
+        post = "home"
     #[[languages.en-us.menu.main]]
         #url = "/en-us/tags/"
         #name = "Tags"
@@ -1158,18 +1158,20 @@ uglyURLs = false
         #weight = 3
         #pre = "internal"
         #post = "th"
-    #[[languages.en-us.menu.main]]
+    #[[languages.en-us.menu.home]]
         #url = "/en-us/archives/"
         #name = "Archives"
         #weight = 4
         #pre = "internal"
         #post = "archive"
+        #identifier = "archive"
     [[languages.en-us.menu.main]]
         url = "/en-us/about/"
         name = "About"
-        weight = 1
+        weight = 2
         pre = "internal"
         post = "user-circle"
+        identifier = "about"
     [[languages.en-us.menu.socials]]
         url = "https://github.com/guanqr"
         name = "GitHub"
@@ -1190,11 +1192,11 @@ uglyURLs = false
         name = "HOME"
         weight = 1
         pre = "internal"
-    [[languages.en-us.menu.links]]
-        url = "/en-us/series/"
-        name = "Series"
-        weight = 2
-        pre = "internal"
+    #[[languages.en-us.menu.links]]
+        #url = "/en-us/series/"
+        #name = "Series"
+        #weight = 2
+        #pre = "internal"
     [[languages.en-us.menu.links]]
         url = "/en-us/atom.xml"
         name = "Feed"
@@ -1216,3 +1218,11 @@ uglyURLs = false
     enableEmphasisPoint = false
     enableChinesePunctuationGlyphCorrection = false
 	mainSections = ["posts"]
+
+    homeLayout = "poetry"
+
+    ## 「诗意人生」
+    # 诗句，支持 Markdown
+    homePoetry = ["To see a world in a grain of sand","And a heaven in a wild flower","Hold infinity in the palm of your hand","And eternity in an hour"]
+    # 底部链接的内间距，单位：em
+    homeLinksPadding = 1

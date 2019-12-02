@@ -36,4 +36,4 @@ I am a student from College of Optical Science and Engineering, Zhejiang Univers
 + PWA is enable in my blog. Adding  my blog to the main screen of your mobile phone or computer desktop so that you can read my articles anywhere.
 + There is no ad insertion in my blog. Some plug-ins such as AdBlock may affect the reading experience. So I hope you can add my blog to the white list. 
 + If you find any problems while reading my articles, you are welcome to create new issues or fork and create new pull requests in the [repository](https://github.com/guanqr/blog) of my blog's source code on GitHub.
-+ If you want to ask anything else or need my help, please contact me by email: [guanqirui@zju.edu.cn](mailto:guanqirui@zju.edu.cn).
++ If you have any questions, please contact me by email: [guanqirui@zju.edu.cn](mailto:guanqirui@zju.edu.cn).

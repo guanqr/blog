@@ -84,7 +84,7 @@ toc = false
 
 ![nathan-drake.jpg](/images/nathan-drake.jpg "《神秘海域》")
 
-![eleven-nathan-drake.jpg](/images/eleven-nathan-drake.jpg "Eleven & Kai 内森·德雷克")
+[^1]![eleven-nathan-drake.jpg](/images/eleven-nathan-drake.jpg "Eleven & Kai 内森·德雷克")
 
 目前生产兵人的厂家有大厂 Hot Toys、ThreeZero，也有 Eleven 等小工作室。Hot Toys 的兵人头雕素质比较高，ThreeZero 的兵人涂装比较好。大厂的质量都有保证，人物角色都有授权，小工作室却不一定会有版权。不过，在众多工作室里，Eleven 做的是最出色的。他们会制作一些大厂因拿不到版权而不会发售的人物角色，价格也比大厂的兵人价格便宜很多。
 
@@ -100,7 +100,7 @@ toc = false
 
 在上文中我提到，我接触到兵人定制是源于希斯的伤疤在贴吧发布的一些个人收藏展示的文章。这仿佛让我打开了潘多拉魔盒—，踏进了一个更深的无底洞。定制的作品制作实在是太精致了，简直是完美的艺术品。国内的定制玩家最有名的就是希斯的伤疤和花式芋艿头两位了，他们收藏了很多经典电影的人物角色，比如《闪灵》中的男主，《老无所依》中的安通，《墓碑镇》中的多克，《绝命毒师》中的老白、炸鸡叔、风骚律师，《纽约黑帮》中的屠夫比尔等等，令我羡慕不已。
 
-![some-collections-from-weibo.jpg](/images/some-collections-from-weibo.jpg "一些定制的兵人")
+[^2]![some-collections-from-instagram.jpg](/images/some-collections-from-instagram.jpg "一些定制的兵人")
 
 目前制作人物配件最好的手艺人应该是 [Robbie Jones](https://www.instagram.com/robbiethepainter/)。头雕大师有很多，我比较喜欢的是 [Balloon Man](https://www.instagram.com/balloonmanstudio/) 和 [Jnix Shin](https://www.instagram.com/jnixshin/)。服装方面，目前最好的应该是 Yunsil 和 Iris。
 
@@ -109,3 +109,6 @@ toc = false
 ## 未来展望
 
 随着漫威热潮的过去，Hot Toys 应该会抓住最后的机会发售一批漫威的兵人来圈钱。然而，我虽然喜欢漫威英雄人物，但我对于漫威题材的兵人收藏已感到疲倦。我希望能收藏其他类型电影的兵人，比如前些时候的《神奇动物：格林德沃之罪》中的格林德沃和主角纽特的兵人就很不错，服饰偏向欧洲复古风格。另外，还有 Hot Toys 制作的《黑客帝国》中的尼奥，Eleven 与 Kai 联合制作的《浪客行》中的宫本武藏。当然还有其他一些定制的兵人。
+
+[^1]: 图源：[花式芋艿头 | 新浪微博](https://weibo.com/u/1885071285)。
+[^2]: 图源：[俞樾 | Instagram](https://www.instagram.com/yue8720/)。

@@ -1,0 +1,33 @@
+#site:
+  - name: reuixiy
+    url: https://io-oi.me/
+    avatar: /images/friends/reuixiy.png
+    description: Viva La Vida
+  - name: Dnocm ☀
+    url: https://www.dnocm.com/
+    avatar: /images/friends/dnocm.jpg
+    description: 若白驹过隙，忽然而已
+  - name: 游鱼星
+    url: http://blog.fishstar.xyz/
+    avatar: /images/friends/fishstar.jpg
+    description: 享受生活，享受代码
+  - name: zzzain46's Blog
+    url: https://www.52debug.cn/
+    avatar: /images/friends/zzzain46.jpg
+    description: 能全力以赴不尽力而为
+  - name: RidiQulous
+    url: https://ridiqulous.com/
+    avatar: /images/friends/ridiqulous.png
+    description: 与我同院系的学长
+  - name: DingZhi's Blog
+    url: https://dingzhi.ga/
+    avatar: /images/friends/dingzhi.jpg
+    description: 路在脚下，心向远方
+  - name: 三个技术小站
+    url: https://qsctech-sange.github.io/
+    avatar: /images/friends/sange.webp
+    description: 金融、计算机与数据科学
+  - name: 懒得勤快
+    url: https://masuit.com/
+    avatar: /images/friends/masuit.png
+    description: 勤于发现，乐于分享

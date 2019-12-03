@@ -1,0 +1,75 @@
+<main class="main single" id="main">
+    <div class="main-inner">
+        <article class="content post">
+
+            <h1 class="post-title">{{ .Title }}</h1>
+
+            {{ with .Params.subtitle }}
+                <div class="post-subtitle">{{ . | markdownify | safeHTML }}</div>
+            {{ end }}
+
+            {{ if .Site.Params.displayPostDescription }}
+                {{ with .Params.description }}
+                    <div class="post-description">{{ . | markdownify | safeHTML }}</div>
+                {{ end }}
+            {{ end }}
+
+            {{ if .Params.meta | default .Site.Params.enablePostMeta }}
+                {{ partial "post-meta.html" . }}
+            {{ end }}
+
+            {{ if .Params.blogroll }}
+                {{ range .Site.Data.blogroll }}
+                    {{ range sort . "url" }}
+                        <a href="{{ .url }}" target="_blank">
+                            <div class="blogroll">
+                                <img class="avatar" src="{{ .avatar }}"/>
+                                <div class="friend">
+                                    <div class="name">{{ .name }}</div>
+                                    <div class="excerpt">{{ .description }}</div>
+                                </div>
+                            </div>
+                        </a>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{ $enableTOC := .Params.toc | default .Site.Params.enableTOC -}}
+            {{- if $enableTOC -}}
+                {{- partial "components/toc.html" . -}}
+                {{- $toc := .Scratch.Get "toc" }}
+                {{ $toc -}}
+            {{- end -}}
+
+            {{- partial "components/content.html" . -}}
+            {{- $Content := .Scratch.Get "Content" -}}
+            <div class="post-body{{ if ne .Type "poetry" }}{{ if (and .Site.Params.enableParagraphIndent .Params.indent) | default (and .Site.Params.enableParagraphIndent (eq .Site.Params.paragraphStyle "indent")) }} indent{{ end }}{{ end }}">
+                {{- $Content -}}
+            </div>
+
+        </article>
+
+        {{ if and .Site.Params.enableGoogleAdUnits (eq hugo.Environment "production") -}}
+            {{ partial "third-party/google-adsense-unit.html" . }}
+        {{- end }}
+
+        {{ partial "post-copyright.html" . }}
+
+        {{ partial "post-updated-badge.html" . }}
+
+        {{ partial "post-gitinfo.html" . }}
+
+        {{ partial "related-posts.html" . }}
+
+        {{ partial "post-tags.html" . }}
+
+        {{ partial "minimal-footer.html" . }}
+
+        {{ partial "minimal-footer-about.html" . }}
+
+        {{ partial "post-nav.html" . }}
+
+        {{ partial "comments.html" . }}
+
+    </div>
+</main>

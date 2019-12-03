@@ -5,81 +5,12 @@ date = "2019-05-01T08:41:47+08:00"
 badge = false
 meta = false
 comments = false
+blogroll = true
 +++
-
-<div id="links">
-      <div class="links-content">
-            <div class="link-navigation">      
-                  <div class="card">
-                        <img class="ava" src="/images/friends/reuixiy.png"/>
-                        <div class="card-header">
-                              <div><a href="https://io-oi.me/" target="_blank">reuixiy</a></div>
-                              <div class="info">Viva La Vida</div>
-                        </div>
-                  </div>
-                  <div class="card">
-                        <img class="ava" src="/images/friends/dnocm.jpg"/>
-                        <div class="card-header">
-                              <div><a href="https://www.dnocm.com/" target="_blank">Dnocm ☀</a></div>
-                              <div class="info">若白驹过隙，忽然而已</div>
-                        </div>
-                  </div>
-                  <div class="card">
-                        <img class="ava" src="/images/friends/fishstar.jpg"/>
-                        <div class="card-header">
-                              <div><a href="http://blog.fishstar.xyz/" target="_blank">游鱼星</a></div>
-                              <div class="info">享受生活，享受代码</div>
-                        </div>
-                  </div>
-                  <div class="card">
-                        <img class="ava" src="/images/friends/sanarous.png"/>
-                        <div class="card-header">
-                              <div><a href="https://bestzuo.cn/" target="_blank">Sanarous</a></div>
-                              <div class="info">码农人生</div>
-                        </div>
-                  </div>
-                  <div class="card">
-                        <img class="ava" src="/images/friends/zzzain46.jpg"/>
-                        <div class="card-header">
-                              <div><a href="https://www.52debug.cn/" target="_blank">zzzain46's Blog</a></div>
-                              <div class="info">能全力以赴不尽力而为</div>
-                        </div>
-                  </div>
-                  <div class="card">
-                        <img class="ava" src="/images/friends/ridiqulous.png"/>
-                        <div class="card-header">
-                              <div><a href="https://ridiqulous.com/" target="_blank">RidiQulous</a></div>
-                              <div class="info">与我同院系的学长</div>
-                        </div>
-                  </div>
-                  <div class="card">
-                        <img class="ava" src="/images/friends/dingzhi.jpg"/>
-                        <div class="card-header">
-                              <div><a href="https://dingzhi.ga/" target="_blank">DingZhi's Blog</a></div>
-                              <div class="info">路在脚下，心向远方</div>
-                        </div>
-                  </div>
-                  <div class="card">
-                        <img class="ava" src="/images/friends/sange.webp"/>
-                        <div class="card-header">
-                              <div><a href="https://qsctech-sange.github.io/" target="_blank">三个技术小站</a></div>
-                              <div class="info">金融、计算机与数据科学</div>
-                        </div>
-                  </div>
-                  <div class="card">
-                        <img class="ava" src="/images/friends/masuit.png"/>
-                        <div class="card-header">
-                              <div><a href="https://masuit.com/" target="_blank">懒得勤快</a></div>
-                              <div class="info">勤于发现，乐于分享</div>
-                        </div>
-                  </div>
-            </div>
-      </div>
-</div>
 
 ---
 
-以上友链按照添加时间先后排序。
+以上友链不区分先后顺序。
 
 ## 申请条件
 
@@ -98,6 +29,4 @@ comments = false
 网站标志：<a href="/images/favicon-512x512.png" target="_blank">https://blog.guanqr.com/icons/android-chrome-512x512.png</a><br>
 网站描述：The Sound of Silence</p>
 
-+ 将您的网站信息[^1]按照上述格式在[这里](https://github.com/guanqr/blog/issues/5)留言或发送电子邮件至 <guanqirui@zju.edu.cn>，审核通过后将会添加至该页面中。
-
-[^1]: 网站描述尽量不要超过十二个字，否则可能会显示不完整。
++ 将您的网站信息按照上述格式在[这里](https://github.com/guanqr/blog/issues/5)留言或发送电子邮件至 <guanqirui@zju.edu.cn>，审核通过后将会添加至该页面中。

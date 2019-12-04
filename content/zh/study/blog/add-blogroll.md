@@ -3,10 +3,10 @@ title = "重构博客的友情链接"
 date = "2019-12-04T21:08:01+08:00"
 tags = ["hugo","hexo","typography"]
 categories = ["study","blog"]
+series = ["Build-Up-Blog"]
 dropCap = true
 displayCopyright = true
 gitinfo = true
-toc = false
 +++
 
 ![blogroll-new-style.png](/images/blogroll-new-style.png "全新的友链设计")

@@ -1,0 +1,55 @@
+[[blogroll]]
+  name = "reuixiy"
+  url = "https://io-oi.me/"
+  avatar = "/images/friends/reuixiy.png"
+  description = "Viva La Vida"
+  weight = 1
+
+[[blogroll]]
+  name = "Dnocm ☀"
+  url = "https://www.dnocm.com/"
+  avatar = "/images/friends/dnocm.jpg"
+  description = "若白驹过隙，忽然而已"
+  weight = 2
+
+[[blogroll]]
+  name = "游鱼星"
+  url = "https://blog.fishstar.xyz/"
+  avatar = "/images/friends/fishstar.jpg"
+  description = "享受生活，享受代码"
+  weight = 3
+
+[[blogroll]]
+  name = "zzzain46's Blog"
+  url = "https://www.52debug.cn/"
+  avatar = "/images/friends/zzzain46.jpg"
+  description = "能全力以赴不尽力而为"
+  weight = 4
+
+[[blogroll]]
+  name = "RidiQulous"
+  url = "https://ridiqulous.com/"
+  avatar = "/images/friends/ridiqulous.png"
+  description = "计算摄影，图像处理，颜色科学"
+  weight = 5
+
+[[blogroll]]
+  name = "DingZhi's Blog"
+  url = "https://dingzhi.ga/"
+  avatar = "/images/friends/dingzhi.jpg"
+  description = "路在脚下，心向远方"
+  weight = 6
+
+[[blogroll]]
+  name = "三个技术小站"
+  url = "https://qsctech-sange.github.io/"
+  avatar = "/images/friends/sange.webp"
+  description = "金融、计算机与数据科学"
+  weight = 7
+
+[[blogroll]]
+  name = "懒得勤快"
+  url = "https://masuit.com/"
+  avatar = "/images/friends/masuit.png"
+  description = "互联网分享精神，勤于发现，乐于分享"
+  weight = 8

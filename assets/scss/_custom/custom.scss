@@ -87,24 +87,24 @@ p#div-default {
 .blogroll {
     padding: 1rem 0;
     border: 2px solid transparent;
-    //border-bottom: 2px solid #f2f2f2;
     border-bottom: 1px dashed var(--color-contrast-low);
     display: flex;
 }
-.blogroll:hover {
-    border-radius: 4px;
-    background: var(--color-contrast-lower);;
-    //transition: .5s;
+.blogroll .friend {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .blogroll .name {
-    color: #aa96da;
     font-weight: bold;
     margin-bottom: 6px;
     margin-top: 6px;
 }
 .blogroll .excerpt {
-    //color:#a3a3a3;
     font-size:14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .blogroll .avatar {
     width: 4em !important;

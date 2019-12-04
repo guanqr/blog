@@ -9,7 +9,7 @@
   command = "npm run build"
 
 [[redirects]]
-  from = "https://guanqr-blog.netlify.com/*"
+  from = "https://guanqr.netlify.com/*"
   to = "https://blog.guanqr.com/:splat"
   status = 301
   force = true

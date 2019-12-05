@@ -18,7 +18,7 @@ toc = true
 在本文中，我将会全面讲解 Hexo 博客的搭建，NexT 主题的安装和配置，以及个性优化的内容。本文文章篇幅较长，为了方便阅读，在开头添加了文章目录，目录与各段落标题之间相互链接，可双向跳转。
 
 <p id="div-success">
-[2019/11/09] 更新：目前我的博客已经从 Hexo 迁移到了 Hugo，但是出于对 NexT 主题的喜爱，我决定继续维持更新这篇文章。在此前我共分为两篇文章讲解主题的个性优化：《Hexo-NexT 主题：文章内容美化》与《Hexo-NexT 主题：网站页面优化》，但内容分散不利于阅读，所以在本次更新中我决定将这两篇文章合二为一，并精简规范了文章内容和操作步骤。
+[2019/11/09] 更新：目前我的博客已经从 Hexo 迁移到了 Hugo，但是出于对 NexT 主题的喜爱，我今后有空的时候会继续维持更新这篇文章。在此前我共分为两篇文章讲解主题的个性优化：《Hexo-NexT 主题：文章内容美化》与《Hexo-NexT 主题：网站页面优化》，但内容分散不利于阅读，所以在本次更新中我决定将这两篇文章合二为一，并精简规范了文章内容和操作步骤。
 </p>
 
 ## 搭建 Hexo 博客
@@ -1397,6 +1397,708 @@ font:
 + 标题字体：Cinzel Decorative
 + 代码字体：Source Code Pro
 
+### 归档页面添加十二生肖
+
+![add-chinese-zodiac-to-next-title.jpg](/images/add-chinese-zodiac-to-next-title.jpg)
+
+在归档页面的年份后添加十二生肖的图案，具体样式可以参考我的[归档](/archives/)页面。
+
+由于 NexT 主题的模板文件内容更新地很快，所以不同版本之间的配置可能不太一样，这里我提供最直接的修改方法，如果你对于主题的代码结构有深入研究的话，可以尝试自己优化一下这部分内容， 比如单独建立一个 `chinese-zodiac.swig` 的文件，再在主题文件中引入配置。
+
+首先是在[这里](/uploads/chinese-zodiac.zip)下载十二生肖字体。下载后将解压的三个字体文件全部放在根目录 `~/source/fonts/` 下（若无 `fonts` 文件夹请自建）。
+
+然后编辑主题中的 `post-collapse.swig` 文件，做如下修改：
+
+```diff
+# 文件位置~/themes/next/layout/_macro/post-collapse.swig
+
+{%- if year !== current_year %}
+  {%- set current_year = year %}
+  <div class="collection-year">
+-   <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="collection-header">{{ current_year }}</{%- if theme.seo %}h2{% else %}h1{%- endif %}>
++   <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="collection-header">{{ current_year }}
++     <div class="chinese-zodiac">
++       {%- if current_year % 12 == 0 %}
++         <i class="symbolic-animals icon-monkey"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 1 %}
++         <i class="symbolic-animals icon-rooster"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 2 %}
++         <i class="symbolic-animals icon-dog"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 3 %}
++         <i class="symbolic-animals icon-pig"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 4 %}
++         <i class="symbolic-animals icon-rat"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 5 %}
++         <i class="symbolic-animals icon-ox"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 6 %}
++         <i class="symbolic-animals icon-tiger"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 7 %}
++         <i class="symbolic-animals icon-rabbit"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 8 %}
++         <i class="symbolic-animals icon-dragon"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 9 %}
++         <i class="symbolic-animals icon-snake"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 10 %}
++         <i class="symbolic-animals icon-horse"></i>
++       {%- endif %}
++       {%- if current_year % 12 == 11 %}
++         <i class="symbolic-animals icon-goat"></i>
++       {%- endif %}
++     </div>
++   </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
+  </div>
+{%- endif %}
+```
+最后再添加自定义样式到 `~/source/_data/styles.styl` 中：
+
+```css
+/* 文件位置：~/source/_data/styles.styl */
+
+.chinese-zodiac {
+    float: right;
+}
+@font-face {
+  font-family: 'chinese-zodiac';
+  font-display: swap;
+  src: url('/fonts/chinese-zodiac.eot');
+  src: url('/fonts/chinese-zodiac.eot') format('embedded-opentype'),
+       url('/fonts/chinese-zodiac.woff2') format('woff2'),
+       url('/fonts/chinese-zodiac.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.symbolic-animals {
+  display: inline-block;
+  font: normal normal normal 14px/1 chinese-zodiac;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-dragon:before { content: '\e806'; }
+.icon-tiger:before { content: '\e809'; }
+.icon-pig:before { content: '\e810'; }
+.icon-horse:before { content: '\e813'; }
+.icon-rat:before { content: '\e816'; }
+.icon-goat:before { content: '\e818'; }
+.icon-snake:before { content: '\e820'; }
+.icon-ox:before { content: '\e822'; }
+.icon-dog:before { content: '\e825'; }
+.icon-rabbit:before { content: '\e826'; }
+.icon-monkey:before { content: '\e829'; }
+.icon-rooster:before { content: '\e82f'; }
+```
+
+### 添加球形标签云样式
+
+![tag-cloud.gif](/images/tag-cloud.gif "标签云样式")
+
+首先要确保你已经开启标签功能。目前有一个标签云插件可以提供这样的效果：[hexo-tag-cloud](<https://github.com/MikeCoder/hexo-tag-cloud>)。执行 `npm install hexo-tag-cloud --save` 进行安装。插件安装完成后，你可以自定义标签云的位置，比如显示在侧栏，或者显示在标签页面。比如选择显示在标签页面，则在 `~/themes/next/layout/page.swig` 中，添加如下所示代码：
+
+```html
+<!-- 文件位置：~/themes/next/layout/page.swig -->
+
+{% if site.tags.length > 1 %}
+<script type="text/javascript" charset="utf-8" src="{{ url_for('/js/tagcloud.js') }}"></script>
+<script type="text/javascript" charset="utf-8" src="{{ url_for('/js/tagcanvas.js') }}"></script>
+<div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+            {{ list_tags() }}
+        </canvas>
+    </div>
+</div>
+{% endif %}
+```
+
+最后，你可以选择在博客根目录配置文件 `_config.yml` 中添加如下的配置项进行更细致的设定:
+
+```yaml
+# hexo-tag-cloud
+tag_cloud:
+    textFont: Trebuchet MS, Helvetica
+    textColor: '#333'
+    textHeight: 25
+    outlineColor: '#E2E1D1'
+    maxSpeed: 0.5
+```
+
+### 添加线状动态背景
+
+![dynamic-bg.gif](/images/dynamic-bg.gif "动画示例")
+
+如果你对主题自带的动画效果不满意，也可以考虑这一种动画。
+
+首先在 `~/themes/next/layout/_layout.swig` 文件中的 `<body>` 里添加：
+
+```html
+<!-- 文件位置：~/themes/next/layout/_layout.swig -->
+
+<div class="bg_content">
+  <canvas id="canvas"></canvas>
+</div>
+```
+
+然后在该文件末尾添加：
+
+```html
+<!-- 文件位置：~/themes/next/layout/_layout.swig -->
+
+<script type="text/javascript" src="/js/dynamic_bg.js"></script>
+```
+
+然后在[这里](/uploads/dynamic-bg.zip)下载 `dynamic_bg.js` 文件，将其解压到 `~/themes/next/source/js/` 中，该文件是背景动画脚本。最后再添加自定义样式：
+
+```css
+/* 文件位置：~/source/_data/styles.styl */
+
+copy.bg_content {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+```
+
+### 添加网站崩溃欺骗
+
+访问别人博客的时候，发现有些博客的标题名称会发生变化，当你离开该博客访问其他网页的时候，标题会变成「页面崩溃」的警告，从而「迫使」你返回博客查看情况，实际上当然无事发生。
+
+目前 NexT 主题提供了一个插件可以达到这种效果：[hexo-next-title](https://github.com/theme-next/hexo-next-title)。首先通过 `npm install theme-next/hexo-next-title --save` 安装该插件，然后在主题配置文件 `_config.yml` 中添加以下配置：
+
+```yaml
+# Change title and favicon when window is hidden and visible.
+title_change:
+  enable: false
+
+  # Enabling this feature on non-desktop devices may not be a good choice, but it depends on you.
+  onmobile: false
+
+  # Enable random title or not.
+  # Basically `random: true` means you have several titles to display and `random: false` means you have only one title to display.
+  # When `random: true`, YOU MUST FOLLOW the format which has been commented in two title options below.
+  # When `random: false`, please fill in the same line of the title option, like `title: one title`.
+  random: false
+
+  # Restore the original title after the specified time in milliseconds.
+  timeout: 2019
+
+  # Options when window is hidden.
+  hidden:
+    favicon: /images/favicon-32x32-next.png
+    title:
+      #- 404
+      #- φ(*￣0￣)
+      #- Waiting for you.
+
+  # Options when window is visible.
+  visible:
+    favicon: /images/favicon-32x32-next.png
+    title:
+      #- 200
+      #- (✿◡‿◡)
+      #- Welcome back!
+```
+
+具体样式根据自己的喜好进行设定即可。
+
+<p id="div-danger">
+旧方法
+</p>
+
+首先在 `~/theme/next/source/js/` 文件夹下创建 `crash_cheat.js`，添加代码：
+
+```javascript
+/* 所在目录：~/theme/next/source/js/ */
+
+/* 崩溃欺骗 */
+var OriginTitle = document.title;
+var titleTime;
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        $('[rel="icon"]').attr('href', "/img/TEP.ico");
+        document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
+        clearTimeout(titleTime);
+    }
+    else {
+        $('[rel="icon"]').attr('href', "/favicon.ico");
+        document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitle;
+        titleTime = setTimeout(function () {
+            document.title = OriginTitle;
+        }, 2000);
+    }
+});
+```
+
+然后在 `~/theme/next/layout/_layout.swig` 文件的末尾添加引用：
+
+```html
+<!-- 文件位置：~/theme/next/layout/_layout.swig -->
+
+<script type="text/javascript" src="/js/crash_cheat.js"></script>
+```
+
+### 添加点击爱心特效
+
+首先在 `~/themes/next/source/js/` 下新建文件 `clicklove.js`，接着把以下的代码拷贝粘贴到该文件中：
+
+```javascript
+/* 所在目录：~/themes/next/source/js/ */
+
+!function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
+```
+
+然后在 `~/theme/next/layout/_layout.swig` 文件的末尾添加引用：
+
+```html
+<!-- 文件位置：~/theme/next/layout/_layout.swig -->
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+```
+
+### 添加评论输入特效
+
+首先在[这里](/uploads/activate-power-mode.zip)脚本，解压文件至 `~/themes/next/source/js/` 文件夹中。然后在 `~/themes/next/layout/_layout.swig` 的末尾添加：
+
+```html
+<!-- 文件位置：~/themes/next/layout/_layout.swig -->
+
+<script src="/js/activate-power-mode.js"></script>
+<script>
+  POWERMODE.colorful = true;
+  POWERMODE.shake = false; 
+  document.body.addEventListener('input', POWERMODE);
+</script>
+```
+其中：
+
+```
+POWERMODE.colorful = true;  // 控制开启 / 开启礼花特效  
+POWERMODE.shake = false;  // 控制开启 / 关闭屏幕震动特效
+```
+
+### 添加页脚微信关注
+
+主题默认的微信订阅功能显示在文章的末尾，二维码有些大，个人感觉不美观。看到很多网站都是在页脚有个微信的 LOGO，鼠标移动到上面便会显示二维码，这样感觉很棒
+
+首先需要在 `~/sourse/_data/footer.swig` 中添加以下代码：
+
+```html
+<!-- 文件位置：~/sourse/_data/footer.swig -->
+
+<div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description">微信扫一扫，订阅本博客</div>
+    </div>
+  </div>
+</div>
+```
+
+然后添加自定义样式：
+
+```css
+/* 文件位置：~/sourse/_data/styles.styl */
+
+/* 自定义的页脚微信订阅号样式 */
+.weixin-box {
+    position: absolute;
+    bottom: 43px;
+    left: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+}
+.weixin-menu {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    background: url(https://微信的 logo.svg);
+    background-size: 24px 24px;
+}
+.weixin-hover {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 0px;
+    width: 0px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    background: url(https://二维码.svg);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    transition: all 0.35s ease-in-out;
+    z-index: 1024;
+    opacity: 0;
+}
+.weixin-menu:hover .weixin-hover {
+    bottom: 24px;
+    left: 24px;
+    height: 170px;
+    width: 150px;
+    opacity: 1;
+}
+.weixin-description {
+    opacity: 0;
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    right: 5%;
+    font-size: 12px;
+    transition: all 0.35s cubic-bezier(1, 0, 0, 1);
+}
+.weixin-menu:hover .weixin-description {
+    opacity: 1;
+}
+```
+
+替换其中的链接为图片存放地址。图片务必用矢量图 SVG 格式，否则手机上显示效果很差，其它内容请根据自己的情况更改。微信 LOGO 图片（SVG 格式）代码如下：
+
+```html
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="0 0 300 300"><path fill="#2DC100" d="M300 255c0 24.854-20.147 45-45 45H45c-24.854 0-45-20.146-45-45V45C0 20.147 20.147 0 45 0h210c24.853 0 45 20.147 45 45v210z"/><g fill="#FFF"><path d="M200.803 111.88c-24.213 1.265-45.268 8.605-62.362 25.188-17.271 16.754-25.155 37.284-23 62.734-9.464-1.172-18.084-2.462-26.753-3.192-2.994-.252-6.547.106-9.083 1.537-8.418 4.75-16.488 10.113-26.053 16.092 1.755-7.938 2.891-14.889 4.902-21.575 1.479-4.914.794-7.649-3.733-10.849-29.066-20.521-41.318-51.232-32.149-82.85 8.483-29.25 29.315-46.989 57.621-56.236 38.635-12.62 82.054.253 105.547 30.927 8.485 11.08 13.688 23.516 15.063 38.224zm-111.437-9.852c.223-5.783-4.788-10.993-10.74-11.167-6.094-.179-11.106 4.478-11.284 10.483-.18 6.086 4.475 10.963 10.613 11.119 6.085.154 11.186-4.509 11.411-10.435zm58.141-11.171c-5.974.11-11.022 5.198-10.916 11.004.109 6.018 5.061 10.726 11.204 10.652 6.159-.074 10.83-4.832 10.772-10.977-.051-6.032-4.981-10.79-11.06-10.679z"/><path d="M255.201 262.83c-7.667-3.414-14.7-8.536-22.188-9.318-7.459-.779-15.3 3.524-23.104 4.322-23.771 2.432-45.067-4.193-62.627-20.432-33.397-30.89-28.625-78.254 10.014-103.568 34.341-22.498 84.704-14.998 108.916 16.219 21.129 27.24 18.646 63.4-7.148 86.284-7.464 6.623-10.15 12.073-5.361 20.804.884 1.612.985 3.653 1.498 5.689zm-87.274-84.499c4.881.005 8.9-3.815 9.085-8.636.195-5.104-3.91-9.385-9.021-9.406-5.06-.023-9.299 4.318-9.123 9.346.166 4.804 4.213 8.69 9.059 8.696zm56.261-18.022c-4.736-.033-8.76 3.844-8.953 8.629-.205 5.117 3.772 9.319 8.836 9.332 4.898.016 8.768-3.688 8.946-8.562.19-5.129-3.789-9.364-8.829-9.399z"/></g></svg>
+```
+
+微信订阅号的二维码可以通过这个[网站](https://cli.im/weixin)进行转换，下载 SVG 格式的就可以了。
+
+### 添加阿里图标支持
+
+因为 NexT 主题是采用了 Font Awesome 图标，且版本较为落后，并未包含如知乎、豆瓣这类中国大陆的社交网站图标。所以需要加入另一种图标的支持，使得博客可以显示出自定义的图标。当然你也可以在 Font Awesome 的 GitHub 项目中提交你想要的图标的请求 Issues，等待官方的更新。
+
+首先，前往[阿里巴巴矢量库](http://www.iconfont.cn/)挑选需要的图标，在图标上点击加入 <i class="fa fa-shopping-cart"></i> 购物车。然后，进入个人购物车，选择你挑选的图标，下方会有一个「下载代码」的选项，将代码下载下来。将下载的文件解压后，找到 `iconfont.css` 文件，打开后将其中的所有内容都复制加入到主题 CSS 自定义文件中的任意位置。这里需要修改部分内容，使得图标样式可以和主题样式保持一致。在这样设置好以后，就可以在博客需要额外图标的地方使用 `<i class="iconfont icon-xxx"></i>` 的进行引用了。但是这里有一个问题，如果想在侧边栏的社交网站列表里加入知乎、豆瓣这类图标，就不是这样引用了。因为主题配置文件中，对侧边栏的社交网站图标的引用省略了 `class` 的部分内容，将其加入到了 `layout` 的模版里，所以现在不能直接填写 `zhihu` 或者 `icon-zhihu` 到主题配置文件中，所以我们需要重新设置一下自定义样式。
+
+因为阿里巴巴矢量库里有多个知乎、豆瓣的图标，大小不一，即使设置了字体大小页可能无法和原始图像大小一致，在主题 CSS 自定义文件中可以直接加入以下内容使图标显示一致：
+
+```css
+/* 文件位置：~/source/_data/styles.styl */
+
+/* 知乎豆瓣图标 font-class引用 */
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1528847148903'); /* IE9*/
+  src: url('iconfont.eot?t=1528847148903#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('iconfont.ttf?t=1528847148903') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1528847148903#iconfont') format('svg'); /* iOS 4.1- */
+}
+/* 以上是下载来自阿里巴巴矢量库的图标数据 */
+/* 以下代码相对下载下来的代码做了部分修改 */
+.fa-custom {
+  font-family:"iconfont" !important;
+  font-size:inherit;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.zhihu:before { content: "\e6ba"; }
+.douban:before { content: "\e638"; }
+```
+
+举个例子，在主题配置文件中，社交账号图标设置好以后，类似是以下这样的格式：
+
+```yaml
+social:
+  Twitter: https://twitter.com/user_id || twitter
+  GitHub: https://github.com/user_id || github
+  Zhihu: https://www.zhihu.com/people/user_id || custom zhihu
+  Douban: https://www.douban.com/people/user_id/ || custom douban
+```
+
+### 添加友情链接页面
+
+![blogroll-old-style.png](/images/blogroll-old-style.png)
+
+NexT 主题自带的友情链接的位置是在侧栏的 Social Link 中，位置不太明显，而且容量比较小，不美观。因此可以自定义一个特定的页面，单独显示友情链接。
+
+首先，在 `~/themes/next/layout/` 目录下新建一个 `links.swig` 文件，并写入以下内容：
+
+```html
+<!-- 所在目录：~/themes/next/layout/ -->
+
+{% block content %}
+  {######################}
+  {###  LINKS BLOCK   ###}
+  {######################}
+  
+    <div id="links">
+        <style>
+            .links-content{
+                margin-top:1rem;
+            }
+            
+            .link-navigation::after {
+                content: " ";
+                display: block;
+                clear: both;
+            }
+            
+            .card {
+                width: 240px;
+                font-size: 1rem;
+                padding: 10px 20px;
+                border-radius: 4px;
+                transition-duration: 0.15s;
+                margin-bottom: 1rem;
+                display:flex;
+            }
+            @media (max-width: 767px) {
+				.card:nth-child(odd) {
+                    float: left;
+                }
+                .card:nth-child(even) {
+                    float: left !important;
+                }
+			}
+			
+            .card:nth-child(odd) {
+                float: left;
+            }
+            .card:nth-child(even) {
+                float: right;
+            }
+            .card:hover {
+                transform: scale(1.1);
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+            }
+            .card a {
+                border:none; 
+            }
+            .card .ava {
+                width: 3rem!important;
+                height: 3rem!important;
+                margin:0!important;
+                margin-right: 1em!important;
+                border-radius:4px;
+                
+            }
+            .card .card-header {
+                font-style: italic;
+                overflow: hidden;
+                width: 100%;
+            }
+            .card .card-header a {
+                font-style: normal;
+                color: #2bbc8a;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            .card .card-header a:hover {
+                color: #a166ab;
+                text-decoration: none;
+            }
+            .card .card-header .info {
+                font-style:normal;
+                color:#a3a3a3;
+                font-size:14px;
+                min-width: 0;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            span.focus-links {
+                font-style: normal;
+                margin-left: 10px;
+                position: unset;
+                left: 0;
+                padding: 0 7px 0 5px;
+                font-size: 11px;
+                border-color: #42c02e;
+                border-radius: 40px;
+                line-height: 24px;
+                height: 22px;
+                color: #fff !important;
+                background-color: #42c02e;
+                display: inline-block;
+            }
+            span.focus-links:hover{
+                background-color: #318024;
+            }
+
+            .friends-btn{
+                text-align: center;
+                color: #555!important;
+                background-color: #fff;
+                border-radius: 3px;
+                font-size: 15px;
+                box-shadow: inset 0 0 10px 0 rgba(0,0,0,.35);
+                border: none!important;
+                transition-property: unset;
+                padding: 0 15px;
+                margin: inherit;
+            }
+
+            .friends-btn:hover{
+                color: rgb(255, 255, 255) !important;
+                border-radius: 3px;
+                font-size: 15px;
+                box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+                background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+                margin: inherit;
+            }
+        </style>
+        <div class="links-content">
+            <div class="link-navigation">
+
+                {% for link in theme.mylinks %}
+                
+                    <div class="card">
+                        <img class="ava" src="{{ link.avatar }}"/>
+                        <div class="card-header">
+                        <div><a href="{{ link.site }}" target="_blank"> {{ link.nickname }}</a> <a href="{{ link.site }}"><span class="focus-links">关注</span></a></div>
+                        <div class="info">{{ link.info }}</div>
+                        </div>
+                    </div>
+                
+                {% endfor %}
+
+            </div>
+            {{ page.content }}
+            </div>
+        </div>
+  
+  {##########################}
+  {###   END LINKS BLOCK  ###}
+  {##########################}
+{% endblock %}
+```
+其中的样式可以根据个人喜好进行更改。
+
+然后，修改 `~/themes/next/layout/page.swig` 文件，在如下所示位置处进行添加：
+
+```diff
+{% extends '_layout.swig' %}
+{% import '_macro/sidebar.swig' as sidebar_template with context %}
+
+  {% block title %}
+    {%- set page_title_suffix = ' | ' + title %}
+
+    {%- if page.type === 'categories' and not page.title %}
+      {{- __('title.category') + page_title_suffix }}
+    {%- elif page.type === 'tags' and not page.title %}
+      {{- __('title.tag') + page_title_suffix }}
++   {%- elif page.type === 'links' and not page.title %}
++     {{- __('title.links') + page_title_suffix }}
+    {%- elif page.type === 'schedule' and not page.title %}
+      {{- __('title.schedule') + page_title_suffix }}
+    {%- else %}
+      {{- page.title + page_title_suffix }}
+    {%- endif %}
+  {% endblock %}
+
+{% block content %}
+
+  <div class="posts-expand">
+    {##################}
+    {### PAGE BLOCK ###}
+    {##################}
+    <div class="post-block" lang="{{ page.lang or page.language or config.language }}">
+      {% include '_partials/page/page-header.swig' %}
+      {#################}
+      {### PAGE BODY ###}
+      {#################}
+      <div class="post-body{%- if page.direction and page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
+        {%- if page.type === 'tags' %}
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">
+              {{ _p('counter.tag_cloud', site.tags.length) }}
+            </div>
+            <div class="tag-cloud-tags">
+              {{ tagcloud({min_font: theme.tagcloud.min, max_font: theme.tagcloud.max, amount: theme.tagcloud.amount, color: true, start_color: theme.tagcloud.start, end_color: theme.tagcloud.end}) }}
+            </div>
+          </div>
+        {% elif page.type === 'categories' %}
+          <div class="category-all-page">
+            <div class="category-all-title">
+              {{ _p('counter.categories', site.categories.length) }}
+            </div>
+            <div class="category-all">
+              {{ list_categories() }}
+            </div>
+          </div>
++       {% elif page.type === 'links' %}
++         {% include 'links.swig' %}
+        {% elif page.type === 'schedule' %}
+          <div class="event-list">
+          </div>
+          {% include '_scripts/pages/schedule.swig' %}
+        {% else %}
+          {{ page.content }}
+        {%- endif %}
+      </div>
+      {#####################}
+      {### END PAGE BODY ###}
+      {#####################}
+    </div>
+    {% include '_partials/page/breadcrumb.swig' %}
+    {######################}
+    {### END PAGE BLOCK ###}
+    {######################}
+  </div>
+
+{% endblock %}
+
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
+```
+
+接着创建一个新页面：
+
+```sh
+hexo new page "links"
+```
+
+这样在 `~/source/` 目录下会生成一个 `links` 文件夹，打开其中的 `index.md` 文件，在标题头中写入 `type = "links"` 这个属性头，如下：
+
+```diff
+title: 友情链接
+date: 2019-09-29 13:08:43
++ type: "links"
+```
+
+如果要想在菜单栏中显示该页面的中文名称的话，不要忘记在语言配置 `zh-CN.yml` 文件中添加：
+
+```diff
+# 文件位置：~/themes/next/languages/zh-CN.yml
+
+menu:
+  home: 首页
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  about: 关于
+  search: 搜索
+  schedule: 日程表
+  sitemap: 站点地图
+  commonweal: 公益404
++  links: 友链
+```
+最后，在主题配置文件 `~/themes/next/_config.yml` 文件中按照以下格式添加友链：
+
+```yaml
+# 友情链接
+mylinks:
+  - nickname: # 昵称
+    avatar: # 头像地址
+    site: #友链地址
+    info: #相关说明
+    
+  - nickname: # 昵称
+    avatar: # 头像地址
+    site: #友链地址
+    info: #相关说明
+```
 
 ## 文章内容美化
 

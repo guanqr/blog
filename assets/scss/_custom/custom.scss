@@ -1,20 +1,16 @@
-// 首字下沉
-.drop-cap {
-    margin-top: 16px !important;
-}
 :root {
-    --color-div-danger: #d9534f;
-	--color-div-danger-bg: #fcf1f2;
-	--color-div-warning: #f0ad4e;
-	--color-div-warning-bg: #fdf8ea;
-	--color-div-success: #5cb85c;
-	--color-div-success-bg: #eff8f0;
-	--color-div-info: #428bca;
-	--color-div-info-bg: #eef7fa;
-	--color-div-primary: #6f42c1;
-	--color-div-primary-bg: #f5f0fa;
-	--color-div-default: #777;
-    --color-div-default-bg: #f7f7f7;
+    --color-div-default: hsl(0, 0%, 55%);
+    --color-div-primary: hsl(270, 75%, 55%);
+    --color-div-success: hsl(120, 75%, 55%);
+    --color-div-info: hsl(200, 75%, 55%);
+    --color-div-warning: hsl(40, 75%, 55%);
+    --color-div-danger: hsl(0, 75%, 55%);
+    --color-div-default-bg: hsl(0, 0%, 95%);
+    --color-div-primary-bg: hsl(270, 75%, 95%);
+	--color-div-success-bg: hsl(120, 75%, 95%);
+    --color-div-info-bg: hsl(200, 75%, 95%);
+    --color-div-warning-bg: hsl(40, 75%, 95%);
+    --color-div-danger-bg: hsl(0, 75%, 95%);  
     --color-label-default: hsl(0, 0%, 95%);
     --color-label-primary: hsl(270, 90%, 95%);
     --color-label-success: hsl(128, 90%, 95%);
@@ -23,12 +19,12 @@
     --color-label-danger: hsl(352, 90%, 95%);
 }
 [data-theme="dark"] {
-    --color-div-danger-bg: rgba(38,38,38,0.5);
-	--color-div-warning-bg: rgba(38,38,38,0.5);
-	--color-div-success-bg: rgba(38,38,38,0.5);
-	--color-div-info-bg: rgba(38,38,38,0.5);
-	--color-div-primary-bg: rgba(38,38,38,0.5);
-    --color-div-default-bg: rgba(38,38,38,0.5);
+    --color-div-default-bg: hsl(0, 0%, 15%);
+    --color-div-primary-bg: hsl(270, 5%, 15%);
+	--color-div-success-bg: hsl(120, 5%, 15%);
+    --color-div-info-bg: hsl(200, 5%, 15%);
+    --color-div-warning-bg: hsl(40, 5%, 15%);
+    --color-div-danger-bg: hsl(0, 5%, 15%); 
     --color-label-default: hsl(0, 0%, 35%);
     --color-label-primary: hsl(270, 35%, 35%);
     --color-label-success: hsl(128, 35%, 35%);

@@ -14,7 +14,13 @@
 	--color-div-primary: #6f42c1;
 	--color-div-primary-bg: #f5f0fa;
 	--color-div-default: #777;
-	--color-div-default-bg: #f7f7f7;
+    --color-div-default-bg: #f7f7f7;
+    --color-label-default: hsl(0, 0%, 95%);
+    --color-label-primary: hsl(270, 90%, 95%);
+    --color-label-success: hsl(128, 90%, 95%);
+    --color-label-info: hsl(198, 90%, 95%);
+    --color-label-warning: hsl(45, 90%, 95%);
+    --color-label-danger: hsl(352, 90%, 95%);
 }
 [data-theme="dark"] {
     --color-div-danger-bg: rgba(38,38,38,0.5);
@@ -22,7 +28,13 @@
 	--color-div-success-bg: rgba(38,38,38,0.5);
 	--color-div-info-bg: rgba(38,38,38,0.5);
 	--color-div-primary-bg: rgba(38,38,38,0.5);
-	--color-div-default-bg: rgba(38,38,38,0.5);
+    --color-div-default-bg: rgba(38,38,38,0.5);
+    --color-label-default: hsl(0, 0%, 35%);
+    --color-label-primary: hsl(270, 35%, 35%);
+    --color-label-success: hsl(128, 35%, 35%);
+    --color-label-info: hsl(198, 35%, 35%);
+    --color-label-warning: hsl(45, 35%, 35%);
+    --color-label-danger: hsl(352, 35%, 35%);
 }
 // 自定义引用边框
 p#div-danger, p#div-warning, p#div-success, p#div-info, p#div-primary, p#div-default {
@@ -82,6 +94,23 @@ p#div-default {
 }
 .blockquote-center {
     border-left: 0;
+}
+// 自定义的引用样式
+blockquote.question {
+    color: #555;
+    border-left: 4px solid rgb(16, 152, 173);
+    background-color: rgb(227, 242, 253);
+    margin-bottom: 20px;
+}
+// 自定义的数字块
+span#inline-toc {
+    display: inline-block;
+    border-radius: 80% 100% 90% 20%;
+    background-color: rgb(227, 242, 253);
+    color: #555;
+    padding: 0.05em 0.4em;
+    margin: 2px 5px 2px 0px;
+    line-height: 1.5;
 }
 // 友链样式
 .blogroll {

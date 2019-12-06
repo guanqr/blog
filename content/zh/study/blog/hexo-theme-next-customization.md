@@ -23,11 +23,63 @@ toc = true
 
 ## 搭建 Hexo 博客
 
+目前网上已经有很多关于如何搭建 Hexo 博客的教程了，所以此处我只进行概述，诸如博客和主题的更新方法等问题请自行谷歌搜索。
+
 ### 在本地安装 Hexo
+
+请直接参考 [Hexo 官方文档](https://hexo.io/zh-cn/docs/)。安装好 Hexo 后，先任意目录新建个文件夹，然后进入这个文件夹，输入命令初始化博客文件夹：
+
+```
+hexo init
+```
+等一会，如果出现橙色的 WARN 没关系，只要不出现红色的 ERROR 就行。然后输入命令：
+
+```
+hexo g && hexo s
+```
+
+点开 <http://localhost:4000/> ，如果显示出一个简陋的博客页面，恭喜你！已经在本地搭建好博客了，下面要做的就是部署博客还有挑选一个好看的主题。
 
 ### 博客的部署方式
 
-### 博客的更新
+#### GitHub Pages
+
+GitHub Pages 是开源协作社区 GitHub 的一个服务，免费，方便，可以自定义域名，支持 hTTPS，但仓库大小限制为 1GB，一个月 100GB 流量。
+
+首先在 GitHub 上创建一个仓库，仓库名为 `username.github.io`。`username` 为你的 GitHub 账号用户名。这里要注意，仓库名必须按照这样的格式进行填写。
+
+将 Hexo 部署到 GitHub Pages 需要借助一个插件：hexo-deployer-git，进入博客文件夹根目录下，进行插件的安装：
+
+```
+npm install hexo-deployer-git --save
+```
+
+然后，在站点配置文件 `_config.yml` 中编辑：
+
+```yaml
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+-  type:
++  type: git
++  repository: https://github.com/username/username.github.io.git
++  branch: master
+```
+`repository` 即为你之前创建的仓库地址。将其中的 `username` 改成你的 GitHub 用户名即可，然后执行下面的命令：
+
+```
+hexo clean && hexo g && hexo d
+```
+
+之后可能需要输入你的 GitHub 的用户名和密码，按照提示进行操作，完成后打开浏览器，输入你的博客网站：`username.github.io`，即可访问博客。如果想要开启 HTTPS，则进入仓库的设置页面的 GitHub Pages 设定项，开启「Enforce HTTPS」。
+
+![github-pages-enforce-https.png](/images/github-pages-enforce-https.png)
+
+如果你想要自定义域名，那么首先需要在域名商中购买一个域名，再设置域名的，添加 A 记录到 GitHub 的 IP；再将你想要使用的（二级）域名添加 CNAME 记录到你的博客原地址 `username.github.io`；最后在博客文件夹下的 `source` 文件夹下新建一个 CNAME 文件，用记事本打开，在其中添加你要使用的域名，执行 `hexo clean && hexo g && hexo d` 将博客部署一次即可。
+
+#### Netlify
+
+除此之外，你也可以考虑通过 Netlify 实现博客的自动部署和持续集成，具体的做法请参考我的文章《[博客通过 Netlify 实现持续集成](/study/blog/deploy-blog-to-netlify/)》。
 
 ## 基本功能配置
 
@@ -1033,7 +1085,7 @@ local_search:
 
 #### 注释标签配置
 
-这里的注释标签（note tag）指的是文中带颜色背景的段落注释，具体的配置见下文。
+这里的注释标签（note tag）指的是文中带颜色背景的段落注释，具体的配置见[下文](#note-标签)。
 
 #### 动画配置
 
@@ -1819,7 +1871,7 @@ social:
 
 ![blogroll-old-style.png](/images/blogroll-old-style.png)
 
-NexT 主题自带的友情链接的位置是在侧栏的 Social Link 中，位置不太明显，而且容量比较小，不美观。因此可以自定义一个特定的页面，单独显示友情链接。
+NexT 主题自带的友情链接的位置是在侧栏的 Social Link 中，位置不太明显，而且容量比较小，不美观。因此可以自定义一个特定的页面，单独显示友情链接[^7]。
 
 首先，在 `~/themes/next/layout/` 目录下新建一个 `links.swig` 文件，并写入以下内容：
 
@@ -2102,7 +2154,747 @@ mylinks:
 
 ## 文章内容美化
 
+### 主题自带样式
+
+主题自带的一些标签功能在[官方文档](https://theme-next.org/docs/tag-plugins/)中有详细的说明。推荐仔细阅读官方文档进行配置与使用。
+
+#### 文本居中引用
+
+效果：
+
+<blockquote class="blockquote-center"><p>人生乃是一面镜子，<br>从镜子里认识自己，<br>我要称之为头等大事，<br>也只是我们追求的目的！</p></blockquote>
+
+源码：
+
+```
+{% cq %}
+人生乃是一面镜子，
+从镜子里认识自己，
+我要称之为头等大事，
+也只是我们追求的目的！
+{% endcq %}
+```
+
+如果你使用了插件  [hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize) 为博客加速，那么可能会对该功能的效果造成一定的影响，对该问题的具体分析可参见我的文章《[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)》。
+
+#### note 标签
+
+在主题配置文件 `_config.yml` 里有一个关于该功能的配置：
+
+```yaml
+# 文件位置：~/themes/next/_config.yml
+
+# Note tag (bs-callout)
+note:
+  # Note tag style values:
+  #  - simple    bs-callout old alert style. Default.
+  #  - modern    bs-callout new (v2-v3) alert style.
+  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
+  #  - disabled  disable all CSS styles import of note tag.
+  style: flat
+  icons: true
+  border_radius: 3
+  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
+  # Offset also applied to label tag variables. This option can work with disabled note tag.
+  light_bg_offset: 0
+```
+
+如果你是用的风格 `style: flat`，且选择不加载图标，那么显示的效果与源码为：
+
+<p id="div-default">
+default
+</p>
+
+```
+{% note default %}
+default
+{% endnote %}
+```
+
+<p id="div-primary">
+primary
+</p>
+
+```
+{% note primary %}
+primary
+{% endnote %}
+```
+
+<p id="div-success">
+success
+</p>
+
+```
+{% note success %}
+success
+{% endnote %}
+```
+
+<p id="div-info">
+info
+</p>
+
+```
+{% note info %}
+info
+{% endnote %}
+```
+
+<p id="div-warning">
+warning
+</p>
+
+```
+{% note warning %}
+warning
+{% endnote %}
+```
+
+<p id="div-danger">
+danger
+</p>
+
+```
+{% note danger %}
+danger
+{% endnote %}
+```
+
+如果你选择加载图标，也可以在标签中添加 `no-icon` 来对个别标签设置不加载图标：
+
+```
+{% note default no-icon %}
+default
+{% endnote %}
+```
+
+#### label 标签
+
+首先可以在主题配置文件中进行配置：
+
+```yaml
+# 文件位置：~/themes/next/_config.yml
+
+# Label tag.
+label: true
+```
+
+效果如下（`@` 前面的是 `label` 的名字，后面的是要显示的文字）：
+
+<span class="label default" style="background: var(--color-label-default); padding: 0 2px 4px;">default</span>
+
+```
+{% label default@default %}
+```
+
+<span class="label primary" style="background: var(--color-label-primary); padding: 0 2px 4px;">primary</span>
+
+```
+{% label primary@primary %}
+```
+
+<span class="label success" style="background: var(--color-label-success); padding: 0 2px 4px;">success</span>
+
+```
+{% label success@success %}
+```
+
+<span class="label info" style="background: var(--color-label-info); padding: 0 2px 4px;">info</span>
+
+```
+{% label info@info %}
+```
+
+<span class="label warning" style="background: var(--color-label-warning); padding: 0 2px 4px;">warning</span>
+
+```
+{% label warning@warning %}
+```
+
+<span class="label danger" style="background: var(--color-label-danger); padding: 0 2px 4px;">danger</span>
+
+```
+{% label danger@danger %}
+```
+
+#### 其他标签
+
+NexT 主题还提供了 [tabs 标签](https://theme-next.org/docs/tag-plugins/tabs)、[botton 标签](https://theme-next.org/docs/tag-plugins/button)等等各式各样的标签，由于目前本博客从 Hexo 迁移到了 Hugo，主题也不再是 NexT，因此主题部分自带功能的展示效果受到一定限制，这里不再进行展示，请到官方文档中查看具体使用方法与效果。
+
+### 自定义样式
+
+由于是自定义的样式，故要自己将 CSS 代码加到 `styles.styl` 中，下文的自定义样式都是如此。点击[这里](http://www.divcss5.com/rumen/r3.shtml)了解一些 CSS 中 `id` 和 `class` 的知识[^8]。
+
+#### 引用样式
+
+需加入 `styles.styl` 的代码：
+
+```css
+/* 文件位置：~/sourse/_data/styles.styl */
+
+/* 自定义的引用样式 */
+blockquote.question {
+    color: #555;
+    border-left: 4px solid rgb(16, 152, 173);
+    background-color: rgb(227, 242, 253);
+    margin-bottom: 20px;
+}
+```
+
+- 文字颜色改 `color` 的值
+- 背景色改 `background-color` 的值
+- 边框颜色和粗细改 `border-left` 的值
+
+效果：
+
+<blockquote class="question">内容</blockquote>
+
+源码：
+
+```html
+<blockquote class="question">内容</blockquote>
+```
+
+#### 数字块
+
+需加入 `styles.styl` 的代码：
+
+```css
+/* 文件位置：~/sourse/_data/styles.styl */
+
+/* 自定义的数字块 */
+span#inline-toc {
+    display: inline-block;
+    border-radius: 80% 100% 90% 20%;
+    background-color: rgb(227, 242, 253);
+    color: #555;
+    padding: 0.05em 0.4em;
+    margin: 2px 5px 2px 0px;
+    line-height: 1.5;
+}
+```
+
+<span id="inline-toc">1.</span>左边是效果。
+
+源码：
+
+```html
+<span id="inline-toc">1.</span>
+```
+
+### 插入图片 / 音乐 / 视频
+
+### 图片
+
+图片可以选择通过上传到图床再引入图床链接的方式载入，或者直接将图片存放在博客文件夹中载入。如果想将图片上传到图床，我不推荐使用一些免费的图床，因为这些图床可能不太稳定，图片很可能会挂掉，我推荐使用[阿里云储存对象 OSS 服务](https://www.aliyun.com/product/oss/)。如果选择直接将图片存放至博客文件夹中，我建议你在 `~/source/` 文件夹内新建一个 `images` 文件夹来存放图片，或者在每一篇文章存放的 `~/source/_posts` 文件夹下存放图片。
+
+通过修改博客配置文件 `_config.yml`：
+
+```yaml
+post_asset_folder: true
+```
+
+将 `_config.yml` 文件中的配置项 `post_asset_folder` 设为 `true` 后，执行命令 `hexo new post_name`，在 `~/source/_posts/` 中会生成文章 `post_name.md` 和同名文件夹 `post_name`。将图片资源放在 `post_name` 中，文章就可以使用相对路径引用图片资源了。
+
+图片载入的方式可直接使用 Markdown 的语法：
+
+```markdown
+![images](images.png)
+```
+
+在 `()` 内填写图片的路径，注意相对路径与绝对路径的问题。
+
+如果你想要一次载入多个图片，NexT 官方也提供了特有的标签语句，请参考官方文档的[使用方法](https://theme-next.org/docs/tag-plugins/group-pictures)。
+
+另外，有一个图片的插件：[hexo-asset-image](https://github.com/xcodebuild/hexo-asset-image)。很多 Hexo 博客搭建教程中都有推荐使用该插件载入图片，我认为根本没必要使用这个插件，更何况这个插件或多或少存在一些路径的问题。
+
+在该插件的 v.1.0.0 版本中，如果你采用的是 `yourname.github.io` 域名，生成的 HTML 文件中图片引用地址为 `/.io//imagename.jpg/`；如果你设置为 `yourname.github.io/blog/` 这样的地址，生成的 HTML 文件中图片引用地址为 `/blog/blog/imagename.jpg/`。在该插件的 [Issues](https://github.com/xcodebuild/hexo-asset-image/issues/47) 中，有人提出问题的解决方案。打开博客文件夹下的 `node_modules/hexo-asset-image/index.js`，即该插件的安装位置，修改第 24 行代码，如下所示：
+
+```diff
+# 文件位置：~/node_modules/hexo-asset-image/index.js
+
+else {
++	var endPos = link.length-1;
+-	var endPos = link.lastIndexOf('.');
+    }
+```
+
+#### 音乐
+
+首先，你可以直接使用 HTML 的标签，比如：
+
+<audio src="https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/music/Simon%20And%20Garfunkel-The%20Sound%20Of%20Silence.mp3" style="max-height :100%; max-width: 100%; display: block; margin-left: auto; margin-right: auto;" controls="controls" loop="loop" preload="meta">Your browser does not support the audio tag.</audio>
+
+格式如下，其中 `music-url` 替换为你需要加载的音乐即可：
+
+```html
+<audio src="music-url" style="max-height :100%; max-width: 100%; display: block; margin-left: auto; margin-right: auto;" controls="controls" loop="loop" preload="meta">Your browser does not support the audio tag.</audio>
+```
+
+当然，网易云音乐的外链很好用，不仅有可以单曲，还能有歌单。在网易云音乐的播放列表中有生成外链播放器，配置好样式直接复制代码插入文章即可。但是有一些音乐因为版权原因放不了，还有就是不完全支持 https，导致小绿锁不见了。要解决这些缺点，就需要安装插件。
+
+这里推荐 [hexo-tag-aplayer](<https://github.com/MoePlayer/hexo-tag-aplayer>)，[APlayer](https://github.com/MoePlayer/APlayer) 播放器的 Hexo 标签插件。安装：
+
+```
+npm install hexo-tag-aplayer --save
+```
+
+载入标签格式如下：
+
+```javascript
+{% aplayer "歌曲名" "歌手名" "https://什么什么什么.mp3" "https://封面图.jpg" "lrc:https://歌词.lrc" %}
+```
+
+还可以支持歌单：
+
+```javascript
+{% aplayerlist %}
+{
+    "autoplay": false,
+    "showlrc": 3,
+    "mutex": true,
+    "music": [
+        {
+            "title": "歌曲名",
+            "author": "歌手名",
+            "url": "https://什么什么什么.mp3",
+            "pic": "https://封面图.jpg",
+            "lrc": "https://歌词.lrc"
+        },
+        {
+            "title": "歌曲名",
+            "author": "歌手名",
+            "url": "https://什么什么什么.mp3",
+            "pic": "https://封面图.jpg",
+            "lrc": "https://歌词.lrc"
+        }
+    ]
+}
+{% endaplayerlist %}
+```
+
+具体的参数设置可以参考该插件的 [README](https://web.archive.org/web/20190226111008/https://github.com/MoePlayer/hexo-tag-aplayer) 和这插件的 Aplayer 的[官方文档](https://web.archive.org/web/20190226111008/https://aplayer.js.org/)。
+
+另外，该插件与 [hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize) 插件共同使用会出现 BUG，对该问题的具体分析可参见我的文章《[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)》。
+
+#### 视频
+
+可以直接用 HTML 的标签，写法如下：
+
+```html
+<video poster="https://封面图.jpg" src="https://什么什么什么.mp4" style="max-height :100%; max-width: 100%; display: block; margin-left: auto; margin-right: auto;" controls="controls" loop="loop" preload="meta">Your browser does not support the video tag.</video>
+```
+
+如果想用插件的话，这里推荐 [hexo-tag-dplayer](<https://github.com/MoePlayer/hexo-tag-dplayer>)，和音乐播放器 Aplayer 属于同一系列插件，是 [Dplayer](<https://github.com/MoePlayer/DPlayer>) 播放器的 Hexo 标签插件，支持弹幕。
+
+安装：
+
+```
+npm install hexo-tag-dplayer --save
+```
+
+在文章中的写法：
+
+```javascript
+{% dplayer "url=https://什么什么什么.mp4" "https://封面图.jpg" "api=https://api.prprpr.me/dplayer/" "id=" "loop=false" %}
+```
+
+要使用弹幕，必须有 `api` 和 `id` 两项。
+
+### 插入脚注
+
+Markdown 基本语法中并不包含脚注语法，但是脚注作为一种常见的文本格式，对于文字编辑工作者，特别是喜欢插入引文的人而言，有着很大的使用需求。所以 Multi-Markdown 在其扩充语法集中增添了脚注的语法。大部分的 Markdown 编辑器现在都采用了该语法来渲染脚注。但 Hexo 的默认渲染器是不支持脚注语法的。
+
+为了实现脚注功能，可以通过替换默认渲染器或者安装插件。目前我了解到的有两款插件:
+
+1. [hexo-footnotes](https://github.com/LouisBarranqueiro/hexo-footnotes)
+2. [hexo-reference](https://github.com/quentin-chen/hexo-reference)
+
+第一款插件已经停止维护，但亲测第一款还是可以用的。我之前使用的是第二款插件，这一款插件最大的特点是能够在做脚注的原文角标处弹出悬浮窗。但该插件存在一个小 BUG，在移动端或者屏幕较窄的情况下，悬浮窗会超出页面边界。
+
+如果需要替换渲染器，可以替换为 [hexo-renderer-markdown-it](https://github.com/hexojs/hexo-renderer-markdown-it) 或者 [hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus)。由于我一直使用的是默认渲染器，所以这里不再进行详细说明。
+
+对于上述两款插件，根据喜好选择一款插件安装：
+
+```
+npm install hexo-footnotes --save
+npm install hexo-reference --save
+```
+
+如果要添加脚注，使用格式如下：
+
+```
+这是我的博客[^1]。
+
+[^1]: 地址：https://blog.guanqr.com。
+```
+
+### 插入动态图表
+
+[ECharts](http://echarts.baidu.com/index.html)，一个纯 Javascript 的图表库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari 等），底层依赖轻量级的 Canvas 类库 ZRender，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。ECharts 作为国产工具，在语言上对中文开发者有着天然的优势，官方文档对每一个细节、参数、配置都有详尽的说明，对于新手非常的友好。另外一个重要的方面，就是 ECharts 的图表颜值很高，默认的主题和配色可以呈现出优雅漂亮的图表[^9]。
+
+Hexo 的 [ECharts 插件](https://github.com/kchen0x/hexo-tag-echarts3)是博主 [KChen](https://kchen.cc/) 根据周旅军的原型插件开发的。进入博客根目录安装插件：
+
+```
+npm install hexo-tag-echarts3 --save
+```
+
+在文章中使用 ECharts 时，格式为：
+
+```javascript
+{% echarts 400 '85%' %}
+/* TODO option goes here */
+{% endecharts %}
+```
+
+其中 `echarts` 是标签名，不需要更改，`400` 是图表容器的高度，`85%` 是图表容器的相对宽度。而在 `tag` 之间的部分，则是需要自己填充的图表数据了。
+
+比如：
+
+```javascript
+{% echarts 400 '85%' %}
+{
+    title: {
+        text: "某站点用户访问来源",
+        subtext: "纯属虚构",
+        x: "center"
+    },
+    tooltip: {
+        trigger: "item",
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: "vertical",
+        x: "left",
+        data: ["直接访问", "邮件营销", "联盟广告", "视频广告", "搜索引擎"]
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            mark: {
+                show: true
+            },
+            dataView: {
+                show: true,
+                readOnly: true
+            },
+            restore: {
+                show: true
+            },
+            saveAsImage: {
+                show: true
+            }
+        }
+    },
+    calculable: true,
+    series: [
+        {
+            name: "访问来源",
+            type: "pie",
+            radius: "55%",
+            center: ["50%", "60%"],
+            data: [
+                {
+                    value: 335,
+                    name: "直接访问"
+                },
+                {
+                    value: 310,
+                    name: "邮件营销"
+                },
+                {
+                    value: 234,
+                    name: "联盟广告"
+                },
+                {
+                    value: 135,
+                    name: "视频广告"
+                },
+                {
+                    value: 1548,
+                    name: "搜索引擎"
+                }
+            ]
+        }
+    ]
+}
+{% endecharts %}
+```
+
+效果为：
+
+![echarts.gif](/images/echarts.gif)
+
+如果按照不能正确绘制图表，请照下面的指导修改一下 ECharts 的模板文件。用编辑器打开博客目录下 `~/node_modules/hexo-tag-echarts/echarts-template.html` 文件。作如下修改：
+
+```html
+<div id="<%- id %>" style="width: <%- width %>;height: <%- height %>px;margin: 0 auto"></div>
++ <script src="https://echarts.baidu.com/dist/echarts.common.min.js"></script>
+<script type="text/javascript">
+...
+</script>
+```
+
+有一种很便捷的使用 ECharts 图表的方法。[百度·图说](https://tushuo.baidu.com/)是 ECharts 团队开发的另一款非常方便的工具，提供 UI 界面给你快速的绘制和定义图表，然后导出为代码、图片以及其他格式。
+
+### 段落标题添加锚点
+
+上文中提到的 [hexo-renderer-markdown-it](https://github.com/hexojs/hexo-renderer-markdown-it) 渲染器可以实现标题的锚点功能。如果你使用的是该渲染器，那么，参考官方[说明](https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration)可对锚点进行配置。在博客的配置文件 `_config.yml` 里对渲染器进行配置的代码中有：
+
+```yaml
+# Markdown-it config
+markdown:
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSymbol: ¶
+```
+
+这就是对锚点进行配置的内容。不过使用这种方法添加锚点最大的问题就是，在文章目录中每一章节标题前也会显示锚点的图案，这样显得比较难看，即：
+
+```
+1. ¶第一章
+  1.1 ¶第一节
+2. ¶第二章
+```
+
+在这里我推荐一个更好的插件，是 NexT 官方制作的一个锚点插件：[hexo-theme-next-anchor](https://github.com/theme-next/hexo-theme-next-anchor)。
+
+如果你使用了 hexo-renderer-markdown-it，为了使插件之间不冲突，可以先设置好 hexo-renderer-markdown-it 的功能：
+
+```diff
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+-   permalink: true
++   permalink: false
+    permalinkClass: header-anchor
+    permalinkSymbol: ¶
+```
+
+然后再安装该插件：
+
+```
+npm install hexo-theme-next-anchor
+```
+
+如果你使用的是 Hexo 默认渲染器 hexo-renderer-marked，则可忽略上述步骤。
+
+然后在主题的配置文件 `_config.yml` 中添加：
+
+```yml
+anchor:
+  enable: true
+  color: '#0e83cd'
+  position: right # If left, anchors will always be visible.
+  margin: 7px 
+  text: '#'
+  icon:
+    # If true, the `text` option will be ignored.
+    enable: false 
+    # By default, NexT has built-in FontAwesome support.
+    # This option means `font-family: FontAwesome`, so DO Not change it.
+    # Also you can choose ForkAwesome, but that's another story.
+    font: FontAwesome
+    content: \f0c1 # CSS content for FontAwesome & ForkAwesome.
+```
+
+根据自己的喜好进行设定即可。
+
+### 文末添加相关文章
+
+实现该功能的插件有两个：
+
+| 插件                                                         | 说明                                                         | 特点                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [hexo-related-popular-posts](https://github.com/tea3/hexo-related-popular-posts) | 最新版本已集成，可以在主题配置文件`_config.yml`中配置。      | 可以利用 Google Analytics API 将高浏览量（热门）的文章按配置比例加入推荐列表。 |
+| [hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts) | 主题尚未集成，但插件本身支持自动显示，自定义位置请查看 README。 | 可以与其它博客相关联，不限于自己博客。                       |
+
+我使用的是第二个插件，因此这里主要讲解第二个插件的设定方法。
+
+进入博客根目录安装插件：
+
+```
+npm install hexo-recommended-posts --save
+```
+
+在编辑完新的文章之后，使用如下命令获取推荐列表
+
+```
+hexo recommend
+```
+
+如果你对默认显示的位置和样式不满意，可以进行自定义设定。在博客根目录的 `_config.yml` 添加：
+
+```yaml
+# 推荐文章
+# Dependency: https://github.com/huiwang/hexo-recommended-posts
+recommended_posts:
+  server: https://api.truelaurel.com #后端推荐服务器地址
+  timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
+  internalLinks: 5 #内部文章数量
+  externalLinks: 0 #外部文章数量
+  fixedNumber: true
+  autoDisplay: false
+  #自动在文章底部显示推荐文章
+  #excludePattern: []
+  #titleHtml: <div class="note primary"><p>相关文章</p></div> #自定义标题
+```
+
+在主题根目录的 `_config.yml` 添加：
+
+```yaml
+# Recommended posts
+# Dependency: https://github.com/huiwang/hexo-recommended-posts
+recommended_posts:
+  enabled: true
+```
+
+在主题语言包中添加：
+
+```diff 
+# 文件位置：~/theme/next/languages/zh-CN.yml
+  copyright:
+    author: 本文作者
+    link: 本文链接
+    license_title: 版权声明
+    license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
++ recommended_posts: 推荐文章
+page:
+  totally: 共有
+  tags: 标签
+```
+
+然后在主题配置文件中开启 `post-body` 后的自定义文件，并在 `~/source/_data/` 下新建文件 `post-body-end.swig`：
+
+```diff
+custom_file_path:
+- #postBodyEnd: source/_data/post-body-end.swig
++ postBodyEnd: source/_data/post-body-end.swig
+```
+
+在 `post-body-end.swig` 中添加：
+
+```html
+<!-- 文件位置：~/source/_data/post-body-end.swig -->
+
+{% if theme.recommended_posts.enabled and not is_index %}
+<div class="post-body">
+  <div class="note primary">
+    <div class="recommended_posts">
+      {% set recommended_posts = recommended_posts(post, site) %}
+      {% if recommended_posts.length > 0 %}
+        <h4>{{ __('post.recommended_posts') }}</h4>
+        <ul>
+          {% for link in recommended_posts  %}
+            <li><a href="{{ link.permalink }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %} 
+    </div> 
+  </div>
+</div>
+{% endif %}
+```
+
+在该文件中修改自己喜欢的样式即可。
+
+### 文末添加结束标语
+
+同样需要在 `post-body-end.swig` 文件中添加内容，开启自定义文件的功能参考[上文](#文末添加相关文章)。
+
+```html
+<!-- 文件位置：~/source/_data/post-body-end.swig -->
+
+<div>
+    {% if not is_index %}
+        <div class="end-slogan" style="text-align:center;font-size:13px;letter-spacing:10px;user-select:none;color:#bbb;"><br/>本文结束啦<i class="fa fa-star"></i>感谢您阅读<br/><br/></div>
+    {% endif %}
+</div> 
+```
+
+然后打开主题配置文件 `_config.yml`，添加：
+
+```yaml
+# 文章末尾添加“本文结束”标记
+passage_end_tag:
+  enabled: true
+```
+
+### 文末添加今日诗词
+
+首先通过主题配置文件启用自定义文件：
+
+```yaml
+custom_file_path:
+  postBodyEnd: source/_data/post-body-end.swig
+  bodyEnd: source/_data/body-end.swig
+  style: source/_data/styles.styl
+```
+最基础的设置参考官方说明文档：[通用简单安装代码](https://www.jinrishici.com/doc/#json-fast-easy)。首先在 `~/source/_data/body-end.swig` 文件内引入今日诗词的 SDK：
+
+```html
+<!-- 文件位置：~/source/_data/body-end.swig -->
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
+```
+
+然后在 `~/source/_data/post-body-end.swig` 文件内放入标签：
+
+```html
+<!-- 文件位置：~/source/_data/post-body-end.swig -->
+
+<span id="jinrishici-sentence">正在加载今日诗词....</span>
+```
+
+简单使用的话不会显示作者、朝代等信息，参考官方说明文档：[通用高级安装代码](https://www.jinrishici.com/doc/#json-fast-custom)以及[接口返回结果格式](https://www.jinrishici.com/doc/#return)，值得注意的地方是这一句话：
+
+> 使用定制加载时，不要将标签的 `id` 或者 `class` 设置为 `jinrishici-sentence`，否则 SDK 会自动加载一次。
+
+也就是说插入的标签不应该使用之前的 `jinrishici-sentence`，需要重新命名。参考上一节配置的两个文件，把内容修改一下即可：
+
+```html
+<!-- 文件位置：~/source/_data/body-end.swig -->
+
+<script src="//sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
+<script>
+  console.log('今日诗词 - 开始加载...');
+  jinrishici.load((result) => {
+    let jrsc = document.getElementById('jrsc');
+    if (jrsc) {
+      console.log('今日诗词 - 标签获取成功.');
+    } else {
+      console.log('今日诗词 - 标签获取失败!');
+      return;
+    }
+    const data = result.data;
+    let author = data.origin.author;
+    let title = '《' + data.origin.title + '》';
+    let content = data.content.substr(0, data.content.length - 1);
+    let dynasty = data.origin.dynasty.substr(0, data.origin.dynasty.length - 1);
+    jrsc.innerText = content + ' @ ' + dynasty + '·' + author + title;
+    console.log('今日诗词 - 载入完毕.');
+    if (data.origin.author == '李白') {
+      let audio = document.createElement("audio");
+      audio.src = "/ding.mp3";
+      audio.play();
+    }
+  });
+</script>
+```
+
+```html
+<!-- 文件位置：~/source/_data/post-body-end.swig -->
+
+<div style="text-align: center"><span id="jrsc" >正在加载今日诗词....</span></div>
+```
+
 ## 结尾
+
+写这篇文章的初衷是为了记录我对博客主题的一些优化，通过对主题的优化我也学习了很多前端的知识。NexT 主题更新的速度实在是太快了，目前网上很多关于 NexT 主题的优化方法都是过时的。所以我就想借助这篇文章汇总一些可以在新版主题中使用的优化方法。另外，我还推荐你阅读我的其他几篇和博客搭建有关的文章，或许能够引发你对博客更深入的探索。如果你喜欢这一篇文章，请多多分享。
 
 [^1]: 图源：<https://github.com/theme-next/hexo-theme-next>。
 [^2]: 官方网站的 News 中会对每一个发行版相对上一版本的修改进行说明，Docs 中有主题配置的详细说明。
@@ -2110,3 +2902,6 @@ mylinks:
 [^4]: 参考：[前端开发你该知道的字体 font-family | fly63 前端网](http://www.fly63.com/article/detial/1114)。
 [^5]: 参考：[衬线体的进化：从纸面到屏幕 | 方正字库](https://zhuanlan.zhihu.com/p/49470735)。
 [^6]: 图源：<https://www.fontke.com/family/290108/>。
+[^7]: 参考：[Hexo 博客 NexT 主题自定义友情链接页面 | Sanarous](https://bestzuo.cn/posts/2016690040.html)。
+[^8]: 参考：[样式汇总 | 千灵](https://qianling.pw/style/)。
+[^9]: 参考：[在 Hexo 中插入 ECharts 动态图表 | KChen's Blog](https://kchen.cc/2016/11/05/echarts-in-hexo/)。

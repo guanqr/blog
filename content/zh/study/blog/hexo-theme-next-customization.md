@@ -1,7 +1,7 @@
 +++
 title = "Hexo-NexT 主题个性优化"
 date = "2019-05-04T00:00:39+08:00"
-tags = ["Hexo","NexT"]
+tags = ["hexo","next","git","typography"]
 categories = ["study","blog"]
 series = ["Build-Up-Blog"]
 dropCap = false
@@ -2533,7 +2533,7 @@ npm install hexo-reference --save
 
 ### 插入动态图表
 
-[ECharts](http://echarts.baidu.com/index.html)，一个纯 Javascript 的图表库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari 等），底层依赖轻量级的 Canvas 类库 ZRender，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。ECharts 作为国产工具，在语言上对中文开发者有着天然的优势，官方文档对每一个细节、参数、配置都有详尽的说明，对于新手非常的友好。另外一个重要的方面，就是 ECharts 的图表颜值很高，默认的主题和配色可以呈现出优雅漂亮的图表[^9]。
+[ECharts](http://echarts.baidu.com/index.html)，一个纯 JavaScript 的图表库，可以流畅的运行在 PC 和移动设备上。ECharts 作为国产工具，在语言上对中文开发者有着天然的优势，官方文档对每一个细节、参数、配置都有详尽的说明，对于新手非常的友好。另外一个重要的方面，就是 ECharts 的图表颜值很高，默认的主题和配色可以呈现出优雅漂亮的图表[^9]。
 
 Hexo 的 [ECharts 插件](https://github.com/kchen0x/hexo-tag-echarts3)是博主 [KChen](https://kchen.cc/) 根据周旅军的原型插件开发的。进入博客根目录安装插件：
 
@@ -2625,7 +2625,7 @@ npm install hexo-tag-echarts3 --save
 
 效果为：
 
-![echarts.gif](/images/echarts.gif)
+![echarts-tushuo.gif](/images/echarts-tushuo.gif)
 
 如果按照不能正确绘制图表，请照下面的指导修改一下 ECharts 的模板文件。用编辑器打开博客目录下 `~/node_modules/hexo-tag-echarts/echarts-template.html` 文件。作如下修改：
 

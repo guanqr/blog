@@ -1,8 +1,7 @@
 +++
 title = "使用 GitBook 打造独一无二的电子书"
 date = "2019-07-22T10:05:12+08:00"
-tags = ["GitBook","Git"]
-categories = ["study","computer"]
+tags = ["gitBook","git"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

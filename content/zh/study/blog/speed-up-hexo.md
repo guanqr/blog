@@ -1,8 +1,7 @@
 +++
 title = "加速 Hexo 博客的方法及遇到的问题"
 date = "2019-08-20T12:33:10"
-tags = ["Hexo","NexT","Service-Worker","PWA"]
-categories = ["study","blog"]
+tags = ["hexo","next","pwa"]
 series = ["Build-Up-Blog"]
 dropCap = true
 displayCopyright = true

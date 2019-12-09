@@ -1,8 +1,7 @@
 +++
 title = "铁塔传奇"
 date = "2019-04-02T13:46:00+08:00"
-tags = ["Kaifeng","Prose"]
-categories = ["life","travel"]
+tags = ["kaifeng","essay","history"]
 displayCopyright = true
 gitinfo = true
 +++

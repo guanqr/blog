@@ -2,8 +2,7 @@
 title = "穷与富之间的分割与寄生"
 description = "《寄生虫》电影简评"
 date = "2019-09-28T08:41:46+08:00"
-tags = ["Family","Crime"]
-categories = ["life","film"]
+tags = ["family","crime"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

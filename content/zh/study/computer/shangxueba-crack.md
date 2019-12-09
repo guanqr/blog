@@ -1,8 +1,7 @@
 +++
 title = "Python 自动识别验证码破解上学吧题目答案"
 date = "2019-05-05T12:13:17+08:00"
-tags = ["Python"]
-categories = ["study","computer"]
+tags = ["python"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

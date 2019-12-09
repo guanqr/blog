@@ -1,8 +1,7 @@
 +++
 title = "「情系宝一」网站制作"
 date = "2019-08-14T10:09:01+08:00"
-tags = ["Google","High-School"]
-categories = ["study","computer"]
+tags = ["google","youth"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

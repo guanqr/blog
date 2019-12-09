@@ -1,4 +1,4 @@
 +++
-title = "魔幻现实主义"
+title = "魔幻现实"
 slug = "magical-realism"
 +++

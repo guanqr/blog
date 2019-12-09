@@ -1,4 +1,0 @@
-+++
-title = "Excel"
-slug = "excel"
-+++

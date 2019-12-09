@@ -1,8 +1,7 @@
 +++
 title = "校园卡内部数据结构研究"
 date = "2019-07-04T20:09:18+08:00"
-tags = ["ZJU","IDcard","RFID"]
-categories = ["study","computer"]
+tags = ["zju","idcard","rfid"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

@@ -1,8 +1,7 @@
 +++
 title = "学长组：责任与担当"
 date = "2019-05-22T00:47:46+08:00"
-tags = ["ZJU"]
-categories = ["life","school"]
+tags = ["zju","youth"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

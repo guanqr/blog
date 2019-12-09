@@ -2,8 +2,7 @@
 title = "影视周边：十二寸兵人收藏"
 description = "聊一聊我的一个兴趣爱好"
 date = "2019-11-22T23:29:25+08:00"
-tags = ["HotToys","ThreeZero","Collection"]
-categories = ["life","ideas"]
+tags = ["hottoys","threezero","collection"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

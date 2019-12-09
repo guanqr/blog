@@ -2,8 +2,7 @@
 title = "跨越时间的父爱，应试教育下的光芒"
 description = "《银河补习班》并非荒谬绝伦"
 date = "2019-10-17T15:52:32+08:00"
-tags = ["Family","Education","Pilot","Space"]
-categories = ["life","film"]
+tags = ["family","education","space"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

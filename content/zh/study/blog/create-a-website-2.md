@@ -1,8 +1,7 @@
 +++
 title = "一键快速部署 WordPress 博客程序"
 date = "2019-04-16T00:19:35+08:00"
-tags = ["WordPress","Linux"]
-categories = ["study","blog"]
+tags = ["wordpress","linux"]
 series = ["Build-Up-Blog"]
 displayCopyright = true
 gitinfo = true

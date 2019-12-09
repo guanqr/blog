@@ -1,8 +1,7 @@
 +++
 title = "脚著谢公屐，身登青云梯"
 date = "2019-07-02T15:13:22+08:00"
-tags = ["ShadowSocks","V2Ray","GFW","Google"]
-categories = ["study","computer"]
+tags = ["shadowsocks","v2ray","gfw","google"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

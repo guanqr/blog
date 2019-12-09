@@ -1,7 +1,7 @@
 +++
 title = "ASAP 例程 Siren Light 分析"
 date = 2019-11-06T23:43:17+08:00
-tags = ["Optics","ASAP","Modelling"]
+tags = ["optics","asap","modelling"]
 categories = ["study","optics"]
 series = ["Major-Courses"]
 dropCap = true

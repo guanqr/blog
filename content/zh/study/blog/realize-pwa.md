@@ -1,8 +1,7 @@
 +++
 title = "博客实现 PWA 功能"
 date = "2019-10-04T07:15:43+08:00"
-tags = ["PWA","Workbox","Gulp","Service-Worker"]
-categories = ["study","blog"]
+tags = ["pwa","gulp","next","hugo"]
 series = ["Build-Up-Blog"]
 dropCap = true
 displayCopyright = true

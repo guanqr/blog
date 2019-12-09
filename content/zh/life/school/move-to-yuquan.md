@@ -2,8 +2,7 @@
 title = "记一次跨校区搬迁"
 description = "再见了，承载我两年回忆的紫金港。"
 date = "2019-08-01T21:57:04+08:00"
-tags = ["ZJU"]
-categories = ["life","school"]
+tags = ["zju"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

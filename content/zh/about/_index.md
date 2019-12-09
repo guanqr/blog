@@ -9,8 +9,6 @@ comments = false
 
 ![zijingang-qiushi-college.jpg](/images/zijingang-qiushi-college.jpg "浙江大学紫金港校区·求是书院")
 
-<blockquote class="blockquote-center"><p>十里青山远，潮平路带沙。<br>数声啼鸟怨年华。<br>又是凄凉时候，在天涯。<br>白露收残月，清风散晓霞。<br>绿杨堤畔问荷花：<br>记得年时沽酒，那人家？</p></blockquote>
-
 ## 关于此博客
 
 ### 基本信息

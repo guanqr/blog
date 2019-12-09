@@ -231,7 +231,22 @@ uglyURLs = false
         weight = 3
         pre = "external"
 
-
+    # 首页的底部链接
+    #[[menu.home]]
+        #url = "/home/"
+        #name = "Home"
+        #weight = 1
+        #pre = "internal"
+    #[[menu.home]]
+        #url = "https://t.me/guanqr"
+        #name = "Telegram"
+        #weight = 2
+        #pre = "external"
+    #[[menu.home]]
+        #url = "/atom.xml"
+        #name = "Feed"
+        #weight = 3
+        #pre = "external"
 ##########################################
 # 主题配置
 
@@ -295,25 +310,25 @@ uglyURLs = false
     # 3. posts     文章摘要
     # 4. page      普通页面
 
-    homeLayout = "posts"
+    homeLayout = "poetry"
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
-    homePoetry = []
+    homePoetry = ["十里青山远，潮平路带沙","数声啼鸟怨年华","又是凄凉时候，在天涯","白露收残月，清风散晓霞","绿杨堤畔问荷花","记得年时沽酒，那人家"]
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1
 
     ## 「视频片段」
     homePoster = ""
-    homeVideoWebm = ""
-    homeVideoMp4 = ""
-    homeLogo = ""
-    homeLogoLink = ""
-    homeTitle = ""
-    homeMotto = ""
-    homeDescription = ""
-    homeKeywords = ""
-    homeLinksDelimiter = ""
+    homeVideoWebm = "https://gateway.pinata.cloud/ipns/yixiuer.me/videos/reflection-of-tree-at-night-10s-720p.webm"
+    homeVideoMp4 = "https://gateway.pinata.cloud/ipns/yixiuer.me/videos/reflection-of-tree-at-night-10s-720p.mp4"
+    homeLogo = "/icons/android-chrome-512x512.png"
+    homeLogoLink = "/home/"
+    homeTitle = "荷戟独彷徨"
+    homeMotto = "The Sound of Silence"
+    homeDescription = "十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花：记得年时沽酒，那人家？"
+    homeKeywords = "个人博客，关键词：生活、悦读、品影、旅行、青春、幻想、科学、技术、光学、计算机"
+    homeLinksDelimiter = "·"
 
 
     ######################################

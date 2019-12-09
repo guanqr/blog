@@ -232,21 +232,27 @@ uglyURLs = false
         pre = "external"
 
     # 首页的底部链接
-    #[[menu.home]]
-        #url = "/home/"
+    [[menu.home]]
+        url = "/life/"
         #name = "Home"
-        #weight = 1
-        #pre = "internal"
-    #[[menu.home]]
-        #url = "https://t.me/guanqr"
-        #name = "Telegram"
-        #weight = 2
-        #pre = "external"
-    #[[menu.home]]
-        #url = "/atom.xml"
+        weight = 1
+        pre = "internal"
+        post = "grav"
+        identifier = "life"
+    [[menu.home]]
+        url = "/study/"
+        #name = "Study"
+        weight = 2
+        pre = "internal"
+        post = "wpexplorer"
+        identifier = "study"
+    [[menu.home]]
+        url = "/series/"
         #name = "Feed"
-        #weight = 3
-        #pre = "external"
+        weight = 3
+        post = "globe-asia"
+        pre = "internal"
+        identifier = "series"
 ##########################################
 # 主题配置
 

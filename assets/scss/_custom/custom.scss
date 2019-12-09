@@ -199,3 +199,16 @@ span#inline-toc {
 .post-body h3 {
     border-bottom: 1px dotted var(--color-contrast-lower);
 }
+// 主页底部图标
+.home .poetry {
+    padding: 5em 1em 8em 1em;
+}
+.home .life {
+    color: hsl(260, 75%, 75%);
+}
+.home .study {
+    color: hsl(220, 75%, 60%);
+}
+.home .series {
+    color: hsl(180, 75%, 45%);
+}

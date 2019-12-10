@@ -2,7 +2,6 @@
 title = "Linux 系统安装宝塔面板建站"
 date = "2019-04-15T00:00:00+08:00"
 tags = ["wordpress","linux"]
-series = ["Build-Up-Blog"]
 displayCopyright = true
 gitinfo = true
 +++

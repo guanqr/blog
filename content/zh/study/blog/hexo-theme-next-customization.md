@@ -2,7 +2,7 @@
 title = "Hexo-NexT 主题个性优化"
 date = "2019-05-04T00:00:39+08:00"
 tags = ["hexo","next","git","typography"]
-series = ["Build-Up-Blog"]
+series = ["create-a-blog"]
 dropCap = false
 displayCopyright = true
 gitinfo = true

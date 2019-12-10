@@ -2,7 +2,7 @@
 title = "重构博客的友情链接"
 date = "2019-12-04T21:08:01+08:00"
 tags = ["hugo","hexo","typography"]
-series = ["Build-Up-Blog"]
+series = ["create-a-blog"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

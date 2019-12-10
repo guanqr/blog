@@ -2,7 +2,7 @@
 title = "博客通过 Netlify 实现持续集成"
 date = "2019-10-05T00:04:30+08:00"
 tags = ["netlify","hexo"]
-series = ["Build-Up-Blog"]
+series = ["create-a-blog"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

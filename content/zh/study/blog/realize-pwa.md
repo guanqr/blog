@@ -2,7 +2,7 @@
 title = "博客实现 PWA 功能"
 date = "2019-10-04T07:15:43+08:00"
 tags = ["pwa","gulp","next","hugo"]
-series = ["Build-Up-Blog"]
+series = ["create-a-blog"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

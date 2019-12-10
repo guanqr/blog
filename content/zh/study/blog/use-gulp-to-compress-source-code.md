@@ -2,7 +2,7 @@
 title = "使用 Gulp 压缩博客静态资源"
 date = "2019-10-02T13:24:25+08:00"
 tags = ["gulp","hexo","next"]
-series = ["Build-Up-Blog"]
+series = ["create-a-blog"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

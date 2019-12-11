@@ -43,7 +43,7 @@
 [[blogroll]]
   name = "三个技术小站"
   url = "https://qsctech-sange.github.io/"
-  avatar = "/images/friends/sange.webp"
+  avatar = "/images/friends/sange.png"
   description = "金融、计算机与数据科学"
   weight = 7
 

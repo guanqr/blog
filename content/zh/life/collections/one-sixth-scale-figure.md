@@ -2,7 +2,7 @@
 title = "影视周边：十二寸兵人收藏"
 description = "聊一聊我的一个兴趣爱好"
 date = "2019-11-22T23:29:25+08:00"
-tags = ["hottoys","threezero","collection"]
+tags = ["hottoys","threezero","action-figure"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

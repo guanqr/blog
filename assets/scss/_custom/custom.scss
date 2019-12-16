@@ -214,6 +214,17 @@ span#inline-toc {
     color: hsl(180, 75%, 45%);
 }
 .home .poetry {
-    font-family: 'Playball', 'Zhi Mang Xing', 'Noto Serif SC', serif;
+    font-family: 'home-poetry', 'Noto Serif SC', serif;
     font-size: 125%;
+}
+@font-face {
+    font-family: 'home-poetry';
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+    src: url("../../fonts/home-poetry.eot");
+    src: url("../../fonts/home-poetry.eot") format('embedded-opentype'),
+    url("../../fonts/home-poetry.woff2") format('woff2'),
+    url("../../fonts/home-poetry.woff") format('woff'),
+    url("./../fonts/home-poetry.ttf") format('truetype');
 }

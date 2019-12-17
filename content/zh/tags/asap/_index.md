@@ -1,4 +1,0 @@
-+++
-title = "ASAP"
-slug = "asap"
-+++

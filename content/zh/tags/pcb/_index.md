@@ -1,4 +1,0 @@
-+++
-title = "PCB"
-slug = "pcb"
-+++

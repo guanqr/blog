@@ -1,4 +1,4 @@
 +++
-title = "谷歌"
+title = "Google"
 slug = "google"
 +++

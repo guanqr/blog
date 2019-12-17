@@ -2,7 +2,7 @@
 title = "月夜下享受那份独特的安逸"
 description = "一艘游轮，一位钢琴师，海与岸，生与死，梦境与现实"
 date = "2019-11-27T23:31:14+08:00"
-tags = ["music","piano","love","death"]
+tags = ["music","love","death"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

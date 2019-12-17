@@ -1,4 +1,4 @@
 +++
-title = "苹果公司"
+title = "苹果"
 slug = "apple"
 +++

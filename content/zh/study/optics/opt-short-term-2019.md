@@ -2,7 +2,7 @@
 title = "光电学院短学期结束！"
 date = "2019-07-29T09:10:03+08:00"
 tags = ["zju","optics","zemax","microcontroller","pcb","solidworks","modelling"]
-categories = ["study","optics"]
+series = ["major-courses"]
 katex = true
 toc = true
 dropCap = true

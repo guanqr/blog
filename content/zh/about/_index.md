@@ -46,4 +46,4 @@ Guanqr 是我的姓氏加上名字的首字母缩写。我是一名学生，浙�
 
 ## 还有一些事
 
-如果你在浏览博客的过程中发现了任何问题，欢迎前往 GitHub 的[代码仓库](https://github.com/guanqr/blog)提交 Issue 或直接修改相关文件后提交 Pull Requests。如果你有其他事情想要咨询，可以通过电子邮箱联系我，邮箱地址：[guanqirui@zju.edu.cn](mailto:guanqirui@zju.edu.cn)。
+如果你在浏览博客的过程中发现了任何问题，欢迎前往 GitHub 的[代码仓库](https://github.com/guanqr/blog)提交 Issues 或直接修改相关文件后提交 Pull Requests。如果你有其他事情想要咨询，可以通过电子邮箱联系我，邮箱地址：[guanqirui@zju.edu.cn](mailto:guanqirui@zju.edu.cn)。

@@ -852,7 +852,7 @@ pjax: true
 
 ##### 图片浏览
 
-该项功能的效果是：点击文中插图，图片能够放大，有幻灯片的效果。目前 NexT 提供了两款插件 fancybox 和 mediumzoom，两款插件开启一个即可。两款插件的效果不同，各有各的特点，请自行选择。
+实现该功能的基础是在文章中[插入图片](#图片)。该项功能的效果是：点击文中插图，图片能够放大，有幻灯片的效果。目前 NexT 提供了两款插件 fancybox 和 mediumzoom，两款插件开启一个即可。两款插件的效果不同，各有各的特点，请自行选择。
 
 ```yml
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
@@ -2383,9 +2383,70 @@ span#inline-toc {
 <span id="inline-toc">1.</span>
 ```
 
+#### 图片的说明文字
+
+实现该功能的基础是你已经在文章[插入图片](#图片)。正常情况下，不论你使用下面两种方式中的任何一种，图片下方都不会出现文字说明。
+
+```markdown
+![Alt text](/path/to/img.jpg)
+![Alt text](/path/to/img.jpg "Optional title")
+```
+
+对于 Markdown 图片引用的代码，主要有三个部分：
+
+1. `Alt text`，替代文本，图片无法显示时读者看到的就是它
+2. `/path/to/img.jpg`，URL，即图片的链接
+3. `Optional title`，图片的标题
+
+添加的 `Optional title` 会变成图片的 title 属性，当你将鼠标停靠在图片上面，就会显示所写的内容，我们需要给图片添加的说明文自就可以利用这个属性。然而，对于这个属性，在电脑上还好，但在手机上就惨了，手机上哪来的鼠标啊？所以自己添加的说明文字在手机上根本不会显示的，而就算在电脑上，也需要另外的交互——鼠标停留——才会显示，不够直观。
+
+如果你使用了 NexT 主题的[图片浏览功能](#图片浏览)中的 fancybox，则会在图片下方渲染出图片的说明文字。不过，如果你不想使用 fancybox，却也想渲染图片的说明文字，就必须对 Hexo 的渲染组件进行修改。
+
+首先在你的博客站点根目录下打开 `node_modules` 文件夹，然后搜索 `marked` 文件夹，，进入该文件夹，编辑 `lib/marked.js` 文件：
+
+```diff
+# 文件位置：~/node_modules/marked/lib/marked.js
+
+Renderer.prototype.image = function(href, title, text) {
+- href = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
+- if (href === null) {
+-   return text;
+-}
++ if (this.options.baseUrl && !originIndependentUrl.test(href)) {
++   href = resolveUrl(this.options.baseUrl, href);
++ }
++ var out = '<img src="' + href + '" alt="' + text + '"';
+  if (title) {
+-   out += ' title="' + title + '"';
++   out += '>' + '<i class="img-caption">' + '◎ ' + title + '</i';
+  }
+  out += this.options.xhtml ? '/>' : '>';
+  return out;
+};
+```
+
+上面将会删除 `title`，如果你不想，可以自行修改。然后，往 `styles.styl` 添加 CSS 样式：
+
+```css
+/* 文件位置：~/source/_data/styles.styl */
+
+.img-caption {
+    font-style: normal;
+    margin: 0 0 .7em;
+    font-size: 90%;
+    color: #555;
+    display: block;
+    text-align: center;
+    text-indent: 0;
+    font-family: STKaiti, serif;
+}
+```
+
+最终呈现的效果就和我的博客图片说明文字效果一样。
+
 ### 插入图片 / 音乐 / 视频
 
-### 图片
+#### 图片
 
 图片可以选择通过上传到图床再引入图床链接的方式载入，或者直接将图片存放在博客文件夹中载入。如果想将图片上传到图床，我不推荐使用一些免费的图床，因为这些图床可能不太稳定，图片很可能会挂掉，我推荐使用[阿里云储存对象 OSS 服务](https://www.aliyun.com/product/oss/)。如果选择直接将图片存放至博客文件夹中，我建议你在 `~/source/` 文件夹内新建一个 `images` 文件夹来存放图片，或者在每一篇文章存放的 `~/source/_posts` 文件夹下存放图片。
 

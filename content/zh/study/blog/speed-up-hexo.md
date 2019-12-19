@@ -16,7 +16,7 @@ gitinfo = true
 
 我在网上找到的方法是使用 [InstantClick](https://github.com/dieulot/instantclick/) 和使用 Hexo 的两个插件 [hexo-service-worker](https://github.com/zoumiaojiang/hexo-service-worker)、[hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize)。InstantClick 对网站的提速很明显，但它最大的问题就是会与 FancyBox、Google Analytics 等等不兼容，这些问题如果想解决的话肯定能解决的，网上应该可以找得到解决方法，但我目前没有太多精力去折腾。
 
-<p id="div-success">
+<p id="div-warning">
 InstantClick 使用的正是 pushState + Ajax 的技术，即 PJAX。最新版本的 NexT 主题已经支持 PJAX，因此你可以不再考虑使用 InstantClick。
 </p>
 
@@ -124,7 +124,7 @@ filter_optimize:
 
 ### 文本居中引用标签
 
-我在《[Hexo-NexT 主题：文章内容美化](https://www.guanqr.com/2019/05/04/hexo-next-1/)》一文中所列举的「[主题自带样式 文本居中引用](https://www.guanqr.com/2019/05/04/hexo-next-1/#主题自带样式-文本居中引用)」中的样式：
+我在《[Hexo-NexT 主题个性优化](/study/blog/hexo-theme-next-customization/)》一文中所列举的「文本居中引用」中的样式：
 
 <blockquote class="blockquote-center"><p>
 人生乃是一面镜子，<br>
@@ -169,7 +169,7 @@ aplayer:
 
 1. 首先 Aplayer 音乐播放器按照上述配置进行配置。
 
-2. 比如你打算在 `about` 页面插入音乐播放器，那么除了在内容中按照 Aplayer 官方给定的格式插入音乐播放器后，还需要在当前文件夹，即 `~/sourse/about/` 下，创建 `/css/` 文件夹，在该文件夹中放置需要引用的 `Aplayer.min.css` 这一文件。这一文件在你第一次执行 `hexo g` 命令后，生成在 `~/public/css/` 下。
+2. 比如你打算在 `about` 页面插入音乐播放器，那么除了在内容中按照 Aplayer 官方给定的格式插入音乐播放器后，还需要在当前文件夹，即 `~/sourse/about/` 下，创建 `css` 文件夹，在该文件夹中放置需要引用的 `Aplayer.min.css` 这一文件。这一文件在你第一次执行 `hexo g` 命令后，生成在 `~/public/css/` 下。
 
 3. 此时还需要在博客配置文件 `_config.yml` 中设置，排除对 `aplayer.min.css` 文件的渲染。
 

@@ -2383,9 +2383,44 @@ span#inline-toc {
 <span id="inline-toc">1.</span>
 ```
 
-#### 图片的说明文字
+### 插入图片 / 音乐 / 视频
 
-实现该功能的基础是你已经在文章[插入图片](#图片)。正常情况下，不论你使用下面两种方式中的任何一种，图片下方都不会出现文字说明。
+#### 图片
+
+图片可以选择通过上传到图床再引入图床链接的方式载入，或者直接将图片存放在博客文件夹中载入。如果想将图片上传到图床，我不推荐使用一些免费的图床，因为这些图床可能不太稳定，图片很可能会挂掉，我推荐使用[阿里云储存对象 OSS 服务](https://www.aliyun.com/product/oss/)。如果选择直接将图片存放至博客文件夹中，我建议你在 `~/source/` 文件夹内新建一个 `images` 文件夹来存放图片，或者在每一篇文章存放的 `~/source/_posts` 文件夹下存放图片。
+
+通过修改博客配置文件 `_config.yml`：
+
+```yaml
+post_asset_folder: true
+```
+
+将 `_config.yml` 文件中的配置项 `post_asset_folder` 设为 `true` 后，执行命令 `hexo new post_name`，在 `~/source/_posts/` 中会生成文章 `post_name.md` 和同名文件夹 `post_name`。将图片资源放在 `post_name` 中，文章就可以使用相对路径引用图片资源了。
+
+图片载入的方式可直接使用 Markdown 的语法：
+
+```markdown
+![images](images.png)
+```
+
+在 `()` 内填写图片的路径，注意相对路径与绝对路径的问题。
+
+如果你想要一次载入多个图片，NexT 官方也提供了特有的标签语句，请参考官方文档的[使用方法](https://theme-next.org/docs/tag-plugins/group-pictures)。
+
+另外，有一个图片的插件：[hexo-asset-image](https://github.com/xcodebuild/hexo-asset-image)。很多 Hexo 博客搭建教程中都有推荐使用该插件载入图片，我认为根本没必要使用这个插件，更何况这个插件或多或少存在一些路径的问题。
+
+在该插件的 v.1.0.0 版本中，如果你采用的是 `yourname.github.io` 域名，生成的 HTML 文件中图片引用地址为 `/.io//imagename.jpg/`；如果你设置为 `yourname.github.io/blog/` 这样的地址，生成的 HTML 文件中图片引用地址为 `/blog/blog/imagename.jpg/`。在该插件的 [Issues](https://github.com/xcodebuild/hexo-asset-image/issues/47) 中，有人提出问题的解决方案。打开博客文件夹下的 `node_modules/hexo-asset-image/index.js`，即该插件的安装位置，修改第 24 行代码，如下所示：
+
+```diff
+# 文件位置：~/node_modules/hexo-asset-image/index.js
+
+else {
++	var endPos = link.length-1;
+-	var endPos = link.lastIndexOf('.');
+    }
+```
+
+对于图片的说明文字部分，正常情况下，不论你使用下面两种方式中的任何一种，图片下方都不会出现文字说明。
 
 ```markdown
 ![Alt text](/path/to/img.jpg)
@@ -2443,43 +2478,6 @@ Renderer.prototype.image = function(href, title, text) {
 ```
 
 最终呈现的效果就和我的博客图片说明文字效果一样。
-
-### 插入图片 / 音乐 / 视频
-
-#### 图片
-
-图片可以选择通过上传到图床再引入图床链接的方式载入，或者直接将图片存放在博客文件夹中载入。如果想将图片上传到图床，我不推荐使用一些免费的图床，因为这些图床可能不太稳定，图片很可能会挂掉，我推荐使用[阿里云储存对象 OSS 服务](https://www.aliyun.com/product/oss/)。如果选择直接将图片存放至博客文件夹中，我建议你在 `~/source/` 文件夹内新建一个 `images` 文件夹来存放图片，或者在每一篇文章存放的 `~/source/_posts` 文件夹下存放图片。
-
-通过修改博客配置文件 `_config.yml`：
-
-```yaml
-post_asset_folder: true
-```
-
-将 `_config.yml` 文件中的配置项 `post_asset_folder` 设为 `true` 后，执行命令 `hexo new post_name`，在 `~/source/_posts/` 中会生成文章 `post_name.md` 和同名文件夹 `post_name`。将图片资源放在 `post_name` 中，文章就可以使用相对路径引用图片资源了。
-
-图片载入的方式可直接使用 Markdown 的语法：
-
-```markdown
-![images](images.png)
-```
-
-在 `()` 内填写图片的路径，注意相对路径与绝对路径的问题。
-
-如果你想要一次载入多个图片，NexT 官方也提供了特有的标签语句，请参考官方文档的[使用方法](https://theme-next.org/docs/tag-plugins/group-pictures)。
-
-另外，有一个图片的插件：[hexo-asset-image](https://github.com/xcodebuild/hexo-asset-image)。很多 Hexo 博客搭建教程中都有推荐使用该插件载入图片，我认为根本没必要使用这个插件，更何况这个插件或多或少存在一些路径的问题。
-
-在该插件的 v.1.0.0 版本中，如果你采用的是 `yourname.github.io` 域名，生成的 HTML 文件中图片引用地址为 `/.io//imagename.jpg/`；如果你设置为 `yourname.github.io/blog/` 这样的地址，生成的 HTML 文件中图片引用地址为 `/blog/blog/imagename.jpg/`。在该插件的 [Issues](https://github.com/xcodebuild/hexo-asset-image/issues/47) 中，有人提出问题的解决方案。打开博客文件夹下的 `node_modules/hexo-asset-image/index.js`，即该插件的安装位置，修改第 24 行代码，如下所示：
-
-```diff
-# 文件位置：~/node_modules/hexo-asset-image/index.js
-
-else {
-+	var endPos = link.length-1;
--	var endPos = link.lastIndexOf('.');
-    }
-```
 
 #### 音乐
 

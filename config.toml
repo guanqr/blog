@@ -621,7 +621,7 @@ uglyURLs = false
 
     ## Utterances
     enableUtterances = true
-    utterancesRepo = "guanqr/blig-comments"
+    utterancesRepo = "guanqr/blog-comments"
     utterancesIssueTerm = "pathname"
     utterancesTheme = "github-light"
     utterancesThemeDark = "photon-dark"

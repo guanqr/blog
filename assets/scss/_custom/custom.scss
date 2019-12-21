@@ -217,6 +217,10 @@ span#inline-toc {
     font-family: 'home-poetry', 'Noto Serif SC', serif;
     font-size: 125%;
 }
+// 品牌栏自动隐藏
+.site-brand {
+    overflow: auto hidden;
+}
 @font-face {
     font-family: 'home-poetry';
     font-display: swap;

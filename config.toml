@@ -206,29 +206,19 @@ uglyURLs = false
         weight = 1
         pre = "external"
     [[menu.socials]]
-        url = "https://t.me/guanqr"
-        name = "Telegram"
-        weight = 2
-        pre = "external"
-    [[menu.socials]]
         url = "https://www.cc98.org/user/id/583696"
         name = "CC98"
-        weight = 3
+        weight = 2
         pre = "external"
-    [[menu.links]]
-        url = "/"
-        name = "首页"
-        weight = 1
-        pre = "internal"
     [[menu.links]]
         url = "/series/"
         name = "专栏"
-        weight = 2
+        weight = 1
         pre = "internal"
     [[menu.links]]
         url = "/atom.xml"
         name = "订阅"
-        weight = 3
+        weight = 2
         pre = "external"
 
     # 首页的底部链接

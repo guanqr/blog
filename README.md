@@ -7,6 +7,7 @@
 [![Theme](https://img.shields.io/badge/Theme-MemE-2a6df4?&logo=meme)](https://github.com/reuixiy/hugo-theme-meme)
 [![Source](https://img.shields.io/badge/Source-GitHub-181717?&logo=github)](https://github.com/guanqr/blog)
 [![Built](https://img.shields.io/badge/Built-Netlify-00c7b7?&logo=netlify)](https://www.netlify.com/)
+[![Hosted](https://img.shields.io/badge/Hosted-IPFS-65c2cb?&logo=ipfs)](https://ipfs.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dbcb5f2e-9386-4eec-be66-8647be51bc11/deploy-status)](https://app.netlify.com/sites/guanqr/deploys)
 
 ## 文章

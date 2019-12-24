@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "hugo --gc --minify --cleanDestinationDir && gulp build",
+	"ipfs-deploy": "ipfs-deploy -p infura public -p pinata public -u pinata -d cloudflare -C -O",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +27,7 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-uglify": "^3.0.2",
+    "ipfs-deploy": "^7.13.0",
     "readable-stream": "^3.4.0",
     "uglify-es": "^3.3.9",
     "workbox-build": "^4.3.1"

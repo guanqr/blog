@@ -6,7 +6,7 @@
 [build]
   base = "/"
   publish = "public/"
-  command = "npm run build"
+  command = "npm run build && npm run ipfs-deploy"
 
 [[redirects]]
   from = "https://guanqr.netlify.com/*"

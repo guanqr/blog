@@ -150,8 +150,10 @@ span#inline-toc {
     height: 24px;
     width: 24px;
     cursor: pointer;
-    background: url(../images/wechat.svg);
-    background-size: 24px 24px;
+}
+.wechat-logo {
+    height: 100%;
+    width: 100%;
 }
 .wechat-hover {
     position: absolute;
@@ -160,14 +162,18 @@ span#inline-toc {
     height: 0px;
     width: 0px;
     border-radius: 3px;
-    background: url(../images/wechat-official-accounts.svg);
     border: 1px solid var(--color-contrast-lower);
     background-color: var(--color-bg);
-    background-repeat: no-repeat;
-    background-size: 150px 150px;
     transition: all 0.35s ease-in-out;
     z-index: 1024;
     opacity: 0;
+}
+.wechat-qrcode {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
 }
 .wechat-menu:hover .wechat-hover {
     bottom: 24px;
@@ -177,21 +183,17 @@ span#inline-toc {
     opacity: 1;
 }
 .wechat-description {
-    opacity: 0;
     position: absolute;
-    bottom: 1%;
+    bottom: 2%;
     left: 5%;
     right: 5%;
     font-size: 12px;
     transition: all 0.35s cubic-bezier(1, 0, 0, 1);
+    opacity: 0;
 }
 .wechat-menu:hover .wechat-description {
     opacity: 1;
 }
-// footer 样式
-/*.footer {
-    background: var(--color-contrast-lower);
-}*/
 // 段落样式
 .post-body h2 {
     border-bottom: 1px solid var(--color-contrast-lower);

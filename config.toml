@@ -1128,6 +1128,11 @@ uglyURLs = false
     #      文本或图标，留空（""）则无
     #      https://busuanzi.ibruce.info/
 
+    # 自定义页脚微信订阅功能
+    weChatSubscription = true
+    weChatLogo = "../images/wechat.svg"
+    weChatQrCode = "../images/wechat-official-accounts.svg"
+    weChatDescription = "微信扫一扫，订阅本博客"
 
     ######################################
     # 多语言
@@ -1291,3 +1296,8 @@ uglyURLs = false
     homePoetry = ["*To see a world in a grain of sand*","*And a heaven in a wild flower*","*Hold infinity in the palm of your hand*","*And eternity in an hour*"]
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1
+    # 自定义页脚微信订阅功能
+    weChatSubscription = true
+    weChatLogo = "../../images/wechat.svg"
+    weChatQrCode = "../../images/wechat-official-accounts.svg"
+    weChatDescription = "WeChat Subscription"

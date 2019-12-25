@@ -11,17 +11,27 @@ comments = false
 
 ## 关于我
 
-Guanqr 是我的姓氏加上名字的首字母缩写。我是一名学生，浙江大学光电科学与工程学院本科在读，热爱光学、机械、设计，向往宇宙。我喜欢制作与[收藏模型](/life/ideas/one-sixth-scale-figure/)，[看电影](/life/films/)（文艺片与科幻片），[读书](/life/books/)（悬疑、推理、历史、哲学、科幻），骑行（有一辆高配山地车）。
+你好，欢迎来到 Guanqr 的博客。Guanqr 是我的姓氏加上名字的首字母缩写。我是一名学生，浙江大学光电科学与工程学院本科在读，热爱光学、机械、设计，向往宇宙。我喜欢制作与[收藏模型](/life/ideas/one-sixth-scale-figure/)，[看电影](/life/films/)（文艺片与科幻片），[读书](/life/books/)（悬疑、推理、历史、哲学、科幻），骑行（有一辆高配山地车）。
 
 在工作方面，我认为「正向」的团队合作会增加工作效率，「正向」的讨论与思维冲撞会创造头脑风暴。但现实中「正向」的合作很少很少。所以我喜欢独自一人工作，基本不会寻求别人的帮助，也不喜欢别人插手我的工作。因为我觉得自己做不好的事别人同样也不能做好，与其相信那些还不如我靠谱的人，不如相信自己能做得更好。在校期间我参与了一些[学生工作](/life/school/a-job-in-editorial-department/)，在新媒体运营方面比较有经验，担任过院级宣传部门的部长，曾在第五届中国「互联网 +」大学生创新创业大赛中参与志愿服务，获得了优秀志愿者称号。
 
-另外，我不喜欢使用各种社交软件进行交流，特别是反人类的微信，我的微信和 QQ 主要是用来接收学校和课程的各类通知讯息，基本不会主动加任何人为好友，如果需要联系我，请使用电子邮件。
+另外，我不喜欢使用各种社交软件进行交流，特别是反人类的微信，我的微信和 QQ 主要是用来接收学校和课程的各类通知讯息，基本不会主动加任何人为好友，如果需要联系我，请发送电子邮件。
 
 ## 关于此博客
 
 ### 基本信息
 
-本站采用 Hugo 博客框架，主题为 MemE，源码存放于 GitHub，部署在 Netlify。如果你想订阅本博客，推荐 <a href="/atom.xml" target="_blank">Atom</a> / <a href="/rss.xml" target="_blank">RSS</a>，我还会在<a href="/images/wechat-official-accounts.svg" target="_blank">微信公众号</a>和 [Telegram Channel](https://t.me/guanqr) 上推送文章，不过因为个人时间有限，推送会滞后一些。此外，本站启用了 PWA 技术，如果喜欢的话，你可以通过浏览器添加本站到你的手机主屏或计算机桌面，随时随地进行浏览。
+本站采用 [Hugo](https://gohugo.io/) 博客框架，主题为 [MemE](https://github.com/reuixiy/hugo-theme-meme)，源码存放于 [GitHub](https://github.com/guanqr/blog)，通过 [Netlify](https://www.netlify.com/) 进行构建，部署在星际文件系统 [IPFS](https://ipfs.io/) 上。
+
+你可以通过以下任一方式访问本站：
+
+1. https://blog.guanqr.com/
+2. https://ipfs.io/ipns/blog.guanqr.com/
+3. https://cloudflare-ipfs.com/ipns/blog.guanqr.com/
+4. https://gateway.pinata.cloud/ipns/blog.guanqr.com/
+5. 其他的 [IPFS 公共网关](https://ipfs.github.io/public-gateway-checker/)……
+
+本站启用了 PWA 技术，你可以通过浏览器添加本站到你的手机主屏或计算机桌面，随时随地进行浏览。如果你想订阅本博客，推荐 <a href="/atom.xml" target="_blank">Atom</a> / <a href="/rss.xml" target="_blank">RSS</a>，我还会在<a href="/images/wechat-official-accounts.svg" target="_blank">微信公众号</a>和 [Telegram Channel](https://t.me/guanqr) 上推送文章，不过因为个人时间有限，推送会滞后一些。
 
 ### 建立博客的原因
 

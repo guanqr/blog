@@ -1288,6 +1288,6 @@ uglyURLs = false
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
-    homePoetry = ["To see a world in a grain of sand","And a heaven in a wild flower","Hold infinity in the palm of your hand","And eternity in an hour"]
+    homePoetry = ["*To see a world in a grain of sand*","*And a heaven in a wild flower*","*Hold infinity in the palm of your hand*","*And eternity in an hour*"]
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1

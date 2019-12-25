@@ -213,33 +213,7 @@ span#inline-toc {
 .home .series {
     color: hsl(180, 75%, 45%);
 }
-.home .poetry {
-    font-family: 'home-poetry-en', 'home-poetry-cn', 'Noto Serif SC', serif;
-    font-size: 125%;
-}
 // 品牌栏自动隐藏
 .site-brand {
     overflow: auto hidden;
-}
-@font-face {
-    font-family: 'home-poetry-cn';
-    font-display: swap;
-    font-weight: normal;
-    font-style: normal;
-    src: url("../fonts/home-poetry-cn.eot");
-    src: url("../fonts/home-poetry-cn.eot") format('embedded-opentype'),
-    url("../fonts/home-poetry-cn.woff2") format('woff2'),
-    url("../fonts/home-poetry-cn.woff") format('woff'),
-    url("../fonts/home-poetry-cn.ttf") format('truetype');
-}
-@font-face {
-    font-family: 'home-poetry-en';
-    font-display: swap;
-    font-weight: normal;
-    font-style: normal;
-    src: url("../../fonts/home-poetry-en.eot");
-    src: url("../../fonts/home-poetry-en.eot") format('embedded-opentype'),
-    url("../../fonts/home-poetry-en.woff2") format('woff2'),
-    url("../../fonts/home-poetry-en.woff") format('woff'),
-    url("../../fonts/home-poetry-en.ttf") format('truetype');
 }

@@ -150,7 +150,7 @@ span#inline-toc {
     height: 24px;
     width: 24px;
     cursor: pointer;
-    background: url(../../../images/wechat.svg);
+    background: url(../images/wechat.svg);
     background-size: 24px 24px;
 }
 .wechat-hover {
@@ -160,7 +160,7 @@ span#inline-toc {
     height: 0px;
     width: 0px;
     border-radius: 3px;
-    background: url(../../../images/wechat-official-accounts.svg);
+    background: url(../images/wechat-official-accounts.svg);
     border: 1px solid var(--color-contrast-lower);
     background-color: var(--color-bg);
     background-repeat: no-repeat;
@@ -230,5 +230,5 @@ span#inline-toc {
     src: url("../../fonts/home-poetry.eot") format('embedded-opentype'),
     url("../../fonts/home-poetry.woff2") format('woff2'),
     url("../../fonts/home-poetry.woff") format('woff'),
-    url("./../fonts/home-poetry.ttf") format('truetype');
+    url("../../fonts/home-poetry.ttf") format('truetype');
 }

@@ -1,7 +1,11 @@
-<div class="wechat-box">
-    <div class="wechat-menu">
-        <div class="wechat-hover">
-            <div class="wechat-description">微信扫一扫，订阅本博客</div>
+{{ if .Site.Params.weChatSubscription }}
+    <div class="wechat-box">
+        <div class="wechat-menu">
+            <img class="wechat-logo" src="{{ .Site.Params.weChatLogo }}" />
+            <div class="wechat-hover">
+                <img class="wechat-qrcode" src="{{ .Site.Params.weChatQrCode }}" />
+                <div class="wechat-description">{{ .Site.Params.weChatDescription }}</div>
+            </div>
         </div>
     </div>
-</div>
+{{ end }}

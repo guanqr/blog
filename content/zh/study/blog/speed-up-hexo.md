@@ -3,6 +3,7 @@ title = "加速 Hexo 博客的方法及遇到的问题"
 date = "2019-08-20T12:33:10"
 tags = ["hexo","next","pwa"]
 series = ["create-a-blog"]
+aliases = ["/2019/08/20/speed-up-hexo/"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

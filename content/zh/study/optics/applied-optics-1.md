@@ -3,6 +3,7 @@ title = "应用光学：光学玻璃的色散"
 date = "2019-05-18T08:07:15+08:00"
 tags = ["optics","dispersion","prism"]
 series = ["major-courses"]
+aliases = ["/2019/05/18/applied-optics-1/"]
 katex = true
 dropCap = true
 displayCopyright = true

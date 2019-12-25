@@ -3,6 +3,7 @@ title = "应用光学：初识成像系统的像质评价"
 date = "2019-06-17T01:11:55+08:00"
 tags = ["optics","mtf","grayscale","white-balance","color"]
 series = ["major-courses"]
+aliases = ["/2019/06/17/applied-optics-2/"]
 katex = true
 dropCap = true
 displayCopyright = true

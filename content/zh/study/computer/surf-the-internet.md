@@ -2,6 +2,7 @@
 title = "脚著谢公屐，身登青云梯"
 date = "2019-07-02T15:13:22+08:00"
 tags = ["shadowsocks","v2ray","gfw","google"]
+aliases = ["/2019/07/02/surf-the-internet/"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

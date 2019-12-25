@@ -2,6 +2,7 @@
 title = "推荐 Just My Socks 机场服务"
 date = "2019-10-03T09:15:00+08:00"
 tags = ["gfw","google","shadowsocks"]
+aliases = ["/2019/10/03/just-my-socks/"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

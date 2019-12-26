@@ -1130,8 +1130,8 @@ uglyURLs = false
 
     # 自定义页脚微信订阅功能
     weChatSubscription = true
-    weChatLogo = "../images/wechat.svg"
-    weChatQrCode = "../images/wechat-official-accounts.svg"
+    weChatLogo = "/images/wechat.svg"
+    weChatQrCode = "/images/wechat-official-accounts.svg"
     weChatDescription = "微信扫一扫，订阅本博客"
 
     ######################################
@@ -1298,6 +1298,6 @@ uglyURLs = false
     homeLinksPadding = 1
     # 自定义页脚微信订阅功能
     weChatSubscription = true
-    weChatLogo = "../../images/wechat.svg"
-    weChatQrCode = "../../images/wechat-official-accounts.svg"
+    weChatLogo = "/images/wechat.svg"
+    weChatQrCode = "/images/wechat-official-accounts.svg"
     weChatDescription = "WeChat Subscription"

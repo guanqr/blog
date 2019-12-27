@@ -853,7 +853,7 @@ uglyURLs = false
     fontFamilyTitle = "'Cinzel Decorative', 'Noto Serif SC', serif"
     # 分节标题、目录标题
     fontFamilyHeadings = "'EB Garamond', 'Noto Serif SC', serif"
-    # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚
+    # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚、不蒜子站点浏览统计
     fontFamilyCode = "'Source Code Pro', 'Noto Serif SC', monospace"
     # 引用
     fontFamilyQuote = "'EB Garamond', 'STKaiti', 'KaiTi', 'SimKai', 'Noto Serif SC', serif"
@@ -1185,8 +1185,19 @@ uglyURLs = false
     # 视频地址
     fofVideoWebm = ""
     fofVideoMp4 = ""
-    # 说明：视频地址可留空
+    # 说明：视频地址可留空（""）
 
+
+    ######################################
+    # 自定义的单行对齐 Markdown 语法
+
+    # 1. {>text>} 右对齐
+    # 2. {>text<} 居中
+    # 3. {<text<} 左对齐
+
+    enableTextAlignRight = true
+    enableTextAlignCenter = true
+    enableTextAlignLeft = true
 
 ##########################################
 # 自行添加的多语言站点设置

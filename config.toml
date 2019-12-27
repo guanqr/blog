@@ -1,7 +1,7 @@
 ##########################################
 # 站点配置
 
-baseURL = "https://blog.guanqr.com/"
+baseURL = "https://guanqr.com/"
 title = "荷戟独彷徨"
 languageCode = "zh-CN"
 hasCJKLanguage = true
@@ -87,7 +87,7 @@ uglyURLs = false
     # 头像
     avatar = "/icons/apple-touch-icon.png"
     # 网站（默认值：baseURL）
-    website = "https://blog.guanqr.com/"
+    website = "https://guanqr.com/"
     # 推特
     twitter = ""
 

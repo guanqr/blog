@@ -1,0 +1,25 @@
+<!-- New Markdown Syntax: Text Align `{>text>}`, `{>text<}`, `{<text<}` -->
+
+{{- $Content := .Scratch.Get "Content" -}}
+{{- if .Site.Params.enableTextAlignRight -}}
+    {{- $regexPatternTextAlignRight := `<p>\{&gt;(.+)&gt;\}</p>` -}}
+    {{- $regexReplacementTextAlignRight := `<p style="text-align:right">$1</p>` -}}
+    {{- $Content := $Content | replaceRE $regexPatternTextAlignRight $regexReplacementTextAlignRight | safeHTML -}}
+    {{- .Scratch.Set "Content" $Content -}}
+{{- end -}}
+
+{{- $Content := .Scratch.Get "Content" -}}
+{{- if .Site.Params.enableTextAlignCenter -}}
+    {{- $regexPatternTextAlignCenter := `<p>\{&gt;(.+)&lt;\}</p>` -}}
+    {{- $regexReplacementTextAlignCenter := `<p style="text-align:center">$1</p>` -}}
+    {{- $Content := $Content | replaceRE $regexPatternTextAlignCenter $regexReplacementTextAlignCenter | safeHTML -}}
+    {{- .Scratch.Set "Content" $Content -}}
+{{- end -}}
+
+{{- $Content := .Scratch.Get "Content" -}}
+{{- if .Site.Params.enableTextAlignLeft -}}
+    {{- $regexPatternTextAlignLeft := `<p>\{&lt;(.+)&lt;\}</p>` -}}
+    {{- $regexReplacementTextAlignLeft := `<p style="text-align:left">$1</p>` -}}
+    {{- $Content := $Content | replaceRE $regexPatternTextAlignLeft $regexReplacementTextAlignLeft | safeHTML -}}
+    {{- .Scratch.Set "Content" $Content -}}
+{{- end -}} 

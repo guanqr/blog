@@ -21,15 +21,7 @@ comments = false
 
 ### 基本信息
 
-本站采用 [Hugo](https://gohugo.io/) 博客框架，主题为 [MemE](https://github.com/reuixiy/hugo-theme-meme)，源码存放于 [GitHub](https://github.com/guanqr/blog)，通过 [Netlify](https://www.netlify.com/) 进行构建，部署在星际文件系统 [IPFS](https://ipfs.io/) 上。
-
-你可以通过以下任一方式访问本站：
-
-1. https://blog.guanqr.com/
-2. https://ipfs.io/ipns/blog.guanqr.com/
-3. https://cloudflare-ipfs.com/ipns/blog.guanqr.com/
-4. https://gateway.pinata.cloud/ipns/blog.guanqr.com/
-5. 其他的 [IPFS 公共网关](https://ipfs.github.io/public-gateway-checker/)……
+本站采用 [Hugo](https://gohugo.io/) 博客框架，主题为 [MemE](https://github.com/reuixiy/hugo-theme-meme)，源码存放于 [GitHub](https://github.com/guanqr/blog)，构建并部署在 [Netlify](https://www.netlify.com/) 上。
 
 本站启用了 PWA 技术，你可以通过浏览器添加本站到你的手机主屏或计算机桌面，随时随地进行浏览。如果你想订阅本博客，推荐 <a href="/atom.xml" target="_blank">Atom</a> / <a href="/rss.xml" target="_blank">RSS</a>，我还会在<a href="/images/wechat-official-accounts.svg" target="_blank">微信公众号</a>和 [Telegram Channel](https://t.me/guanqr) 上推送文章，不过因为个人时间有限，推送会滞后一些。
 

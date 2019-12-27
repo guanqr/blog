@@ -6,10 +6,23 @@
 [build]
   base = "/"
   publish = "public/"
-  command = "npm run build && npm run ipfs-deploy"
+  command = "npm run build"
+  # command = "npm run build && npm run ipfs-deploy"
 
 [[redirects]]
   from = "https://guanqr.netlify.com/*"
   to = "https://blog.guanqr.com/:splat"
   status = 301
+  force = true
+
+[[redirects]]	
+  from = "https://www.guanqr.com/*"	
+  to = "https://guanqr.com/:splat"	
+  status = 301	
+  force = true
+
+[[redirects]]	
+  from = "https://blog.guanqr.com/*"	
+  to = "https://guanqr.com/:splat"	
+  status = 301	
   force = true

@@ -335,12 +335,12 @@ uglyURLs = false
     # 说明：用于 JSON-LD、Open Graph
 
     # 站点的描述
-    siteDescription = "The Sound of Silence"
+    siteDescription = "Guanqr's Blog"
     # 说明：用于 HTML 的头部元数据、JSON-LD、
     #      Open Graph、Atom、RSS
 
     # 站点的关键词
-    siteKeywords = []
+    siteKeywords = ["博客","生活","悦读","品影","旅行","青春","幻想","科学","技术","光学","计算机"]
     # 说明：如果留空（[]），则会取站点的所有类别名、分
     #      区名（如果按分区分类）作为默认值
 
@@ -1198,6 +1198,20 @@ uglyURLs = false
     enableTextAlignRight = true
     enableTextAlignCenter = true
     enableTextAlignLeft = true
+
+    # 1. {(default)(text)} 灰色
+    # 2. {(primary)(text)} 紫色
+    # 3. {(success)(text)} 绿色
+    # 4. {(info)(text)} 蓝色
+    # 5. {(warning)(text)} 黄色
+    # 6. {(danger)(text)} 红色
+
+    enableTextNoteDefault = true
+    enableTextNotePrimary = true
+    enableTextNoteSuccess = true
+    enableTextNoteInfo = true
+    enableTextNoteWarning = true
+    enableTextNoteDanger = true
 
 ##########################################
 # 自行添加的多语言站点设置

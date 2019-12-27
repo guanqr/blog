@@ -19,6 +19,12 @@
     --color-label-danger: hsl(352, 90%, 95%);
 }
 [data-theme="dark"] {
+    --color-div-default: hsl(0, 0%, 55%);
+    --color-div-primary: hsl(270, 25%, 55%);
+    --color-div-success: hsl(120, 25%, 55%);
+    --color-div-info: hsl(200, 25%, 55%);
+    --color-div-warning: hsl(40, 25%, 55%);
+    --color-div-danger: hsl(0, 25%, 55%);
     --color-div-default-bg: hsl(0, 0%, 15%);
     --color-div-primary-bg: hsl(270, 5%, 15%);
 	--color-div-success-bg: hsl(120, 5%, 15%);

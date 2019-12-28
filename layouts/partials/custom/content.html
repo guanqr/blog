@@ -24,11 +24,11 @@
     {{- .Scratch.Set "Content" $Content -}}
 {{- end -}} 
 
-<!-- New Markdown Syntax: Text Note `{(default)(text)}`, `{(primary)(text)}`, `{(success)(text)}`, `{(info)(text)}`, `{(warning)(text)}`, `{(danger)(text)}` -->
+<!-- New Markdown Syntax: Text Note `{(default){text}}`, `{(primary){text}}`, `{(success){text}}`, `{(info){text}}`, `{(warning){text}}`, `{(danger){text}}` -->
 
 {{- $Content := .Scratch.Get "Content" -}}
 {{- if .Site.Params.enableTextNoteDefault -}}
-    {{- $regexPatternTextNoteDefault := `<p>\{\(default\)\((.+)\)\}</p>` -}}
+    {{- $regexPatternTextNoteDefault := `<p>\{\(default\)\{(.+)\}\}</p>` -}}
     {{- $regexReplacementTextNoteDefault := `<p id="div-default">$1</p>` -}}
     {{- $Content := $Content | replaceRE $regexPatternTextNoteDefault $regexReplacementTextNoteDefault | safeHTML -}}
     {{- .Scratch.Set "Content" $Content -}}
@@ -36,7 +36,7 @@
 
 {{- $Content := .Scratch.Get "Content" -}}
 {{- if .Site.Params.enableTextNotePrimary -}}
-    {{- $regexPatternTextNotePrimary := `<p>\{\(primary\)\((.+)\)\}</p>` -}}
+    {{- $regexPatternTextNotePrimary := `<p>\{\(primary\)\{(.+)\}\}</p>` -}}
     {{- $regexReplacementTextNotePrimary := `<p id="div-primary">$1</p>` -}}
     {{- $Content := $Content | replaceRE $regexPatternTextNotePrimary $regexReplacementTextNotePrimary | safeHTML -}}
     {{- .Scratch.Set "Content" $Content -}}
@@ -44,7 +44,7 @@
 
 {{- $Content := .Scratch.Get "Content" -}}
 {{- if .Site.Params.enableTextNoteSuccess -}}
-    {{- $regexPatternTextNoteSuccess := `<p>\{\(success\)\((.+)\)\}</p>` -}}
+    {{- $regexPatternTextNoteSuccess := `<p>\{\(success\)\{(.+)\}\}</p>` -}}
     {{- $regexReplacementTextNoteSuccess := `<p id="div-success">$1</p>` -}}
     {{- $Content := $Content | replaceRE $regexPatternTextNoteSuccess $regexReplacementTextNoteSuccess | safeHTML -}}
     {{- .Scratch.Set "Content" $Content -}}
@@ -52,7 +52,7 @@
 
 {{- $Content := .Scratch.Get "Content" -}}
 {{- if .Site.Params.enableTextNoteInfo -}}
-    {{- $regexPatternTextNoteInfo := `<p>\{\(info\)\((.+)\)\}</p>` -}}
+    {{- $regexPatternTextNoteInfo := `<p>\{\(info\)\{(.+)\}\}</p>` -}}
     {{- $regexReplacementTextNoteInfo := `<p id="div-info">$1</p>` -}}
     {{- $Content := $Content | replaceRE $regexPatternTextNoteInfo $regexReplacementTextNoteInfo | safeHTML -}}
     {{- .Scratch.Set "Content" $Content -}}
@@ -60,7 +60,7 @@
 
 {{- $Content := .Scratch.Get "Content" -}}
 {{- if .Site.Params.enableTextNoteInfo -}}
-    {{- $regexPatternTextNoteInfo := `<p>\{\(info\)\((.+)\)\}</p>` -}}
+    {{- $regexPatternTextNoteInfo := `<p>\{\(info\)\{(.+)\}\}</p>` -}}
     {{- $regexReplacementTextNoteInfo := `<p id="div-info">$1</p>` -}}
     {{- $Content := $Content | replaceRE $regexPatternTextNoteInfo $regexReplacementTextNoteInfo | safeHTML -}}
     {{- .Scratch.Set "Content" $Content -}}
@@ -68,7 +68,7 @@
 
 {{- $Content := .Scratch.Get "Content" -}}
 {{- if .Site.Params.enableTextNoteWarning -}}
-    {{- $regexPatternTextNoteWarning := `<p>\{\(warning\)\((.+)\)\}</p>` -}}
+    {{- $regexPatternTextNoteWarning := `<p>\{\(warning\)\{(.+)\}\}</p>` -}}
     {{- $regexReplacementTextNoteWarning := `<p id="div-warning">$1</p>` -}}
     {{- $Content := $Content | replaceRE $regexPatternTextNoteWarning $regexReplacementTextNoteWarning | safeHTML -}}
     {{- .Scratch.Set "Content" $Content -}}
@@ -76,7 +76,7 @@
 
 {{- $Content := .Scratch.Get "Content" -}}
 {{- if .Site.Params.enableTextNoteDanger -}}
-    {{- $regexPatternTextNoteDanger := `<p>\{\(danger\)\((.+)\)\}</p>` -}}
+    {{- $regexPatternTextNoteDanger := `<p>\{\(danger\)\{(.+)\}\}</p>` -}}
     {{- $regexReplacementTextNoteDanger := `<p id="div-danger">$1</p>` -}}
     {{- $Content := $Content | replaceRE $regexPatternTextNoteDanger $regexReplacementTextNoteDanger | safeHTML -}}
     {{- .Scratch.Set "Content" $Content -}}

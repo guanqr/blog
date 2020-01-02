@@ -1188,6 +1188,13 @@ uglyURLs = false
 
 
     ######################################
+    # 图片缩放
+
+    enableMediumZoom = true
+    # 说明：https://github.com/francoischalifour/medium-zoom
+
+
+    ######################################
     # 404 页面
 
     # 视频封面

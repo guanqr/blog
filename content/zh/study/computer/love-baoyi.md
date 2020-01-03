@@ -18,7 +18,7 @@ gitinfo = true
 具体的操作步骤：
 
 1. 点击「选择文件」，从本地选择任意图片，最好是 1:1 比例的图片，而且图片不要太大。
-2. 点击「生成」，则会在下方生成添加 “宝一必胜” 水印的图片。
+2. 点击「生成」，则会在下方生成添加「宝一必胜」水印的图片。
 3. 总共有 12 种颜色供用户选择，挑选喜欢的颜色，图片上的水印即可更换为对应颜色。
 4. 右键点击图片，选择「图片另存为」，保存图片到本地。
 
@@ -26,20 +26,19 @@ gitinfo = true
 
 ### 网站图标
 
-直接引入我的博客网站图标。
+使用宝坻一中的校徽作为网站的图标。
 
 ```html
-<link rel="shortcut icon" href="https://www.guanqr.com/images/favicon-200x200.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.guanqr.com/images/apple-touch-icon.png">
+<link rel="shortcut icon" href="./icons/baoyi-logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/baoyi-logo.png">
 ```
 
 ### 字体
 
-主要用到了三种字体，标题汉字使用的是 Ma Shan Zheng，正文汉字使用的是 Noto Serif SC，英文使用的是 EB Garamond。这三种字体的实现是通过在 `<head>` 中引入 [Google Fonts](https://fonts.google.com/)。由于国内对 Google 的域名访问速度有些慢，这里使用的是[烧饼博客](https://sb.sb/)提供的镜像 `loli.net`。
+主要用到了三种字体，标题汉字使用的是 Zhi Mang Xing，正文汉字使用的是 Noto Serif SC，英文使用的是 EB Garamond。这三种字体的实现是通过在 `<head>` 中引入 [Google Fonts](https://fonts.google.com/)。
 
 ```html
-<link href="https://fonts.loli.net/css?family=EB+Garamond:400,400i,500,700,700i|Noto+Serif+SC:400,500,700&display=swap&subset=chinese-simplified" rel="stylesheet">
-<link href="https://fonts.loli.net/css?family=Ma+Shan+Zheng&display=swap&subset=chinese-simplified" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Noto+Serif+SC:400,700|Zhi+Mang+Xing&display=swap&subset=chinese-simplified" rel="stylesheet">
 ```
 
 ### 浏览统计
@@ -95,13 +94,8 @@ gitinfo = true
 
 直接将其替换，然后将代码中的 `st0` 替换为 `cls-1` 即可。
 
-### 网站背景
-
-由于我尚未找到较好的校园大门图片，暂时以这个低画质的图片为背景。图片存放于阿里云 OSS，如果有好的照片请联系我更换，谢谢。
-
-网站源码放在了 GitHub [仓库](https://github.com/omniversemind/qingxibaoyi)中，供读者参考。
-
 ## 关于该网站
 
-+ 网站地址：<https://omni.guanqr.com/qingxibaoyi> 。
-+ 希望宝坻一中的同学们多多宣传这个网站。如果网站样式在设计上有什么不足之处，或者希望能生成什么样的水印，请积极提出，我会改进的。
++ 网站地址：<a href="../../../love-baoyi.html" target="_blank">情系宝一</a>。
++ 2020 年是宝坻一中建校 100 周年，我想制作这一网站来纪念我在宝坻一中挥洒汗水的三年时光。
++ 希望宝一学子多多宣传这个网站。如果网站样式在设计上有什么不足之处，或者希望能生成什么样的水印，请积极提出，我会改进的。

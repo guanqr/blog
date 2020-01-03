@@ -1104,7 +1104,7 @@ uglyURLs = false
     displayCopyrightSymbol = true
 
     # 是否显示站点的创建年份
-    displaySiteCreatedYear = false
+    displaySiteCreatedYear = true
 
     # 年份与作者之间的图标
     iconBetweenYearAndAuthor = "heart"

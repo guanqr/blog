@@ -707,7 +707,7 @@ uglyURLs = false
     # 分类的图标
     categoryIcon = "folder"
     # 分类之间的分隔符
-    categoryDelimiter = " / "
+    categoryDelimiter = "╱"
 
     # 是否显示字数统计
     displayWordCount = true

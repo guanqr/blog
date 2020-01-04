@@ -145,23 +145,23 @@ span#inline-toc {
     border-radius:4px;   
 }
 // 自定义的页脚微信订阅号样式
-.wechat-box {
+.subscription-box {
     position: absolute;
     bottom: 1em;
     left: 1em;
     border-radius: 5px;
 }
-.wechat-menu {
+.subscription-menu {
     position: relative;
     height: 24px;
     width: 24px;
     cursor: pointer;
 }
-.wechat-logo {
+.subscription-icon {
     height: 100%;
     width: 100%;
 }
-.wechat-hover {
+.subscription-hover {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -174,21 +174,21 @@ span#inline-toc {
     z-index: 1024;
     opacity: 0;
 }
-.wechat-qrcode {
+.subscription-qrcode {
     height: 100%;
     width: 100%;
     position: absolute;
     bottom: 10px;
     left: 0px;
 }
-.wechat-menu:hover .wechat-hover {
+.subscription-menu:hover .subscription-hover {
     bottom: 24px;
     left: 24px;
     height: 170px;
     width: 150px;
     opacity: 1;
 }
-.wechat-description {
+.subscription-description {
     position: absolute;
     bottom: 1%;
     left: 5%;
@@ -197,7 +197,7 @@ span#inline-toc {
     transition: all 0.35s cubic-bezier(1, 0, 0, 1);
     opacity: 0;
 }
-.wechat-menu:hover .wechat-description {
+.subscription-menu:hover .subscription-description {
     opacity: 1;
 }
 // 段落样式

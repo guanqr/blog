@@ -1,10 +1,10 @@
-{{ if .Site.Params.weChatSubscription }}
-    <div class="wechat-box">
-        <div class="wechat-menu">
-            <img class="wechat-logo" src="{{ .Site.Params.weChatLogo }}" />
-            <div class="wechat-hover">
-                <img class="wechat-qrcode" src="{{ .Site.Params.weChatQrCode }}" />
-                <div class="wechat-description">{{ .Site.Params.weChatDescription }}</div>
+{{ if .Site.Params.footerSubscription }}
+    <div class="subscription-box">
+        <div class="subscription-menu">
+            <div class="subscription-brands">{{ replace (index $.Site.Data.SVG $.Site.Params.subscriptionIcon) "icon" "icon subscription-icon" | safeHTML }}</div>
+            <div class="subscription-hover">
+                <img class="subscription-qrcode" src="{{ .Site.Params.subscriptionQrCode }}" />
+                <div class="subscription-description">{{ .Site.Params.subscriptionDescription }}</div>
             </div>
         </div>
     </div>

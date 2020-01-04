@@ -1132,10 +1132,10 @@ uglyURLs = false
     #      https://busuanzi.ibruce.info/
 
     # 自定义页脚微信订阅功能
-    weChatSubscription = true
-    weChatLogo = "/images/wechat.svg"
-    weChatQrCode = "/images/wechat-official-accounts.svg"
-    weChatDescription = "微信扫一扫，订阅本博客"
+    footerSubscription = true
+    subscriptionIcon = "wechat-brands"
+    subscriptionQrCode = "/images/wechat-official-accounts.svg"
+    subscriptionDescription = "微信扫一扫，订阅本博客"
 
     ######################################
     # 多语言
@@ -1340,7 +1340,5 @@ uglyURLs = false
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1
     # 自定义页脚微信订阅功能
-    weChatSubscription = true
-    weChatLogo = "/images/wechat.svg"
-    weChatQrCode = "/images/wechat-official-accounts.svg"
-    weChatDescription = "WeChat Subscription"
+    footerSubscription = true
+    subscriptionDescription = "WeChat Subscription"

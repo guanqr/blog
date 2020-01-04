@@ -6,6 +6,7 @@ aliases = ["/2019/10/03/just-my-socks/"]
 dropCap = true
 displayCopyright = true
 gitinfo = true
+draft = true
 +++
 
 最近一段时间，我在 Vultr 租用的服务器很不稳定，之前用来建 WordPress 博客的服务器也挂掉了，连续更换几个 IP 都是被封状态。搬瓦工的服务器更不用说，现在新的服务器价格极高，美元汇率也高，而且如果 IP 被封换 IP 也很困难。之前被封第一批的时候我还高兴地说，我用 V2ray 搭建的梯子没被封，我还有个域名解析到这个 IP 上，谁知道第二天就凉了。

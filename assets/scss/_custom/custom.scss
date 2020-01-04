@@ -60,6 +60,9 @@ p#div-info {
     background: var(--color-div-info-bg);
     border-left-color: var(--color-div-info);
 }
+p#div-info::before {
+    background-image: "/images/wechat.svg"
+}
 p#div-primary {
     background: var(--color-div-primary-bg);
     border-left-color: var(--color-div-primary);

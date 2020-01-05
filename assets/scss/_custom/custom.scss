@@ -260,3 +260,9 @@ span#inline-toc {
         background-image: none;
     }
 }
+.category-item {
+    color: var(--color-contrast-high);
+    &:hover {
+        color: var(--color-primary);
+    }
+}

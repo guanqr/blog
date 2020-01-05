@@ -1,75 +1,97 @@
-:root {
-    --color-div-default: hsl(0, 0%, 55%);
-    --color-div-primary: hsl(270, 75%, 55%);
-    --color-div-success: hsl(120, 75%, 55%);
-    --color-div-info: hsl(200, 75%, 55%);
-    --color-div-warning: hsl(40, 75%, 55%);
-    --color-div-danger: hsl(0, 75%, 55%);
-    --color-div-default-bg: hsl(0, 0%, 95%);
-    --color-div-primary-bg: hsl(270, 75%, 95%);
-	--color-div-success-bg: hsl(120, 75%, 95%);
-    --color-div-info-bg: hsl(200, 75%, 95%);
-    --color-div-warning-bg: hsl(40, 75%, 95%);
-    --color-div-danger-bg: hsl(0, 75%, 95%);  
-    --color-label-default: hsl(0, 0%, 95%);
-    --color-label-primary: hsl(270, 90%, 95%);
-    --color-label-success: hsl(128, 90%, 95%);
-    --color-label-info: hsl(198, 90%, 95%);
-    --color-label-warning: hsl(45, 90%, 95%);
-    --color-label-danger: hsl(352, 90%, 95%);
-}
-[data-theme="dark"] {
-    --color-div-default: hsl(0, 0%, 55%);
-    --color-div-primary: hsl(270, 25%, 55%);
-    --color-div-success: hsl(120, 25%, 55%);
-    --color-div-info: hsl(200, 25%, 55%);
-    --color-div-warning: hsl(40, 25%, 55%);
-    --color-div-danger: hsl(0, 25%, 55%);
-    --color-div-default-bg: hsl(0, 0%, 15%);
-    --color-div-primary-bg: hsl(270, 5%, 15%);
-	--color-div-success-bg: hsl(120, 5%, 15%);
-    --color-div-info-bg: hsl(200, 5%, 15%);
-    --color-div-warning-bg: hsl(40, 5%, 15%);
-    --color-div-danger-bg: hsl(0, 5%, 15%); 
-    --color-label-default: hsl(0, 0%, 35%);
-    --color-label-primary: hsl(270, 35%, 35%);
-    --color-label-success: hsl(128, 35%, 35%);
-    --color-label-info: hsl(198, 35%, 35%);
-    --color-label-warning: hsl(45, 35%, 35%);
-    --color-label-danger: hsl(352, 35%, 35%);
-}
 // 自定义引用边框
 p#div-danger, p#div-warning, p#div-success, p#div-info, p#div-primary, p#div-default {
     padding: 0.5em 1em;
     border-left: 3px solid;
     font-family: 'EB Garamond', 'STKaiti', 'KaiTi', 'SimKai', 'Noto Serif SC', serif;
 }
-p#div-danger {
-    background: var(--color-div-danger-bg);
-    border-left-color: var(--color-div-danger);
-}
-p#div-warning {
-    background: var(--color-div-warning-bg);
-    border-left-color: var(--color-div-warning);
-}
-p#div-success {
-    background: var(--color-div-success-bg);
-    border-left-color: var(--color-div-success);
-}
-p#div-info {
-    background: var(--color-div-info-bg);
-    border-left-color: var(--color-div-info);
-}
-p#div-info::before {
-    background-image: "/images/wechat.svg"
+p#div-default {
+    background: hsl(0, 0%, 95%);
+    border-left-color: hsl(0, 0%, 55%);
 }
 p#div-primary {
-    background: var(--color-div-primary-bg);
-    border-left-color: var(--color-div-primary);
+    background: hsl(270, 75%, 95%);
+    border-left-color: hsl(270, 75%, 55%);
 }
-p#div-default {
-    background: var(--color-div-default-bg);
-    border-left-color: var(--color-div-default);
+p#div-success {
+    background: hsl(120, 75%, 95%);
+    border-left-color: hsl(120, 75%, 55%);
+}
+p#div-info {
+    background: hsl(200, 75%, 95%);
+    border-left-color: hsl(200, 75%, 55%);
+}
+p#div-warning {
+    background: hsl(40, 75%, 95%);
+    border-left-color: hsl(40, 75%, 55%);
+}
+p#div-danger {
+    background: hsl(0, 75%, 95%);
+    border-left-color: hsl(0, 75%, 55%);
+}
+span.label {
+    padding: 0 2px 4px;
+}
+span.label.default {
+    background: hsl(0, 0%, 95%);
+}
+span.label.primary {
+    background: hsl(270, 90%, 95%);
+}
+span.label.success {
+    background: hsl(128, 90%, 95%);
+}
+span.label.info {
+    background: hsl(198, 90%, 95%);
+}
+span.label.warning {
+    background: hsl(45, 90%, 95%);
+}
+span.label.danger {
+    background: hsl(352, 90%, 95%);
+}
+[data-theme="dark"] {
+    p#div-default {
+        background: hsl(0, 0%, 15%);
+        border-left-color: hsl(0, 0%, 55%);
+    }
+    p#div-primary {
+        background: hsl(270, 5%, 15%);
+        border-left-color: hsl(270, 25%, 55%);
+    }
+    p#div-success {
+        background: hsl(120, 5%, 15%);
+        border-left-color: hsl(120, 25%, 55%);
+    }
+    p#div-info {
+        background: hsl(200, 5%, 15%);
+        border-left-color: hsl(200, 25%, 55%);
+    }
+    p#div-warning {
+        background: hsl(40, 5%, 15%);
+        border-left-color: hsl(40, 25%, 55%);
+    }
+    p#div-danger {
+        background: hsl(0, 5%, 15%);
+        border-left-color: hsl(0, 25%, 55%);
+    }
+    span.label.default {
+        background: hsl(0, 0%, 35%);
+    }
+    span.label.primary {
+        background: hsl(270, 35%, 35%);
+    }
+    span.label.success {
+        background: hsl(128, 35%, 35%);
+    }
+    span.label.info {
+        background: hsl(198, 35%, 35%);
+    }
+    span.label.warning {
+        background: hsl(45, 35%, 35%);
+    }
+    span.label.danger {
+        background: hsl(352, 35%, 35%);
+    }
 }
 .blockquote-center::after, .blockquote-center::before {
     background-repeat: no-repeat;
@@ -78,7 +100,6 @@ p#div-default {
     display: block;
     height: 24px;
     opacity: .2;
-    //position: absolute;
     width: 100%;
 }
 .blockquote-center::before {

@@ -2283,37 +2283,37 @@ label: true
 
 效果如下（`@` 前面的是 `label` 的名字，后面的是要显示的文字）：
 
-<span class="label default" style="background: var(--color-label-default); padding: 0 2px 4px;">default</span>
+<span class="label default">default</span>
 
 ```
 {% label default@default %}
 ```
 
-<span class="label primary" style="background: var(--color-label-primary); padding: 0 2px 4px;">primary</span>
+<span class="label primary">primary</span>
 
 ```
 {% label primary@primary %}
 ```
 
-<span class="label success" style="background: var(--color-label-success); padding: 0 2px 4px;">success</span>
+<span class="label success">success</span>
 
 ```
 {% label success@success %}
 ```
 
-<span class="label info" style="background: var(--color-label-info); padding: 0 2px 4px;">info</span>
+<span class="label info">info</span>
 
 ```
 {% label info@info %}
 ```
 
-<span class="label warning" style="background: var(--color-label-warning); padding: 0 2px 4px;">warning</span>
+<span class="label warning">warning</span>
 
 ```
 {% label warning@warning %}
 ```
 
-<span class="label danger" style="background: var(--color-label-danger); padding: 0 2px 4px;">danger</span>
+<span class="label danger">danger</span>
 
 ```
 {% label danger@danger %}

@@ -249,6 +249,7 @@ span#inline-toc {
 .site-brand {
     overflow: auto hidden;
 }
+// 分类页
 .categories .tree {
     background-image: url(../images/categories-background.svg);
     background-size: 60%;
@@ -265,4 +266,11 @@ span#inline-toc {
     &:hover {
         color: var(--color-primary);
     }
+}
+// 修复图像放大的元素覆盖问题
+.medium-zoom-overlay {
+    z-index: 5;
+}
+.medium-zoom-image {
+    z-index: 6;
 }

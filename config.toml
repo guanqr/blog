@@ -1222,19 +1222,6 @@ uglyURLs = false
     enableTextAlignCenter = true
     enableTextAlignLeft = true
 
-    # 1. {(default){text}} 灰色
-    # 2. {(primary){text}} 紫色
-    # 3. {(success){text}} 绿色
-    # 4. {(info){text}} 蓝色
-    # 5. {(warning){text}} 黄色
-    # 6. {(danger){text}} 红色
-
-    enableTextNoteDefault = true
-    enableTextNotePrimary = true
-    enableTextNoteSuccess = true
-    enableTextNoteInfo = true
-    enableTextNoteWarning = true
-    enableTextNoteDanger = true
 
 ##########################################
 # 自行添加的多语言站点设置

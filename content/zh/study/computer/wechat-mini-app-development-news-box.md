@@ -6,7 +6,6 @@ tags = ["wechat","typography","zju"]
 dropCap = true
 displayCopyright = true
 gitinfo = true
-draft = true
 toc = false
 +++
 

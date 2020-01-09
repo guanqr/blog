@@ -15,7 +15,7 @@ gitinfo = true
 
 ## 作者简介
 
-[^1]![Gabriel-Garcia-Marquez.jpg](/images/Gabriel-Garcia-Marquez.jpg "加西亚·马尔克斯")
+[^1]![gabriel-garcia-marquez.jpg](/images/gabriel-garcia-marquez.jpg "加西亚·马尔克斯")
 
 加西亚·马尔克斯，哥伦比亚作家、记者和社会活动家，拉丁美洲魔幻现实主义文学的代表人物，20 世纪最有影响力的作家之一，1982 年诺贝尔文学奖得主。作为一个天才的、赢得广泛赞誉的小说家，被誉为「二十世纪文学标杆」，加西亚·马尔克斯将现实主义与幻想结合起来，创造了一部风云变幻的哥伦比亚和整个南美大陆的神话般的历史。代表作有《百年孤独》（1967年）《霍乱时期的爱情》（1985年）。
 
@@ -37,4 +37,4 @@ gitinfo = true
 
 然而，..文明终究是不会彻底消亡的，它终将丰满自己的双翅，飞向需要他的地方..。「埃丽森达眼看着他用他那兀鹰的翅膀扇动着，飞过最后一排房子的上空。她放心地舒了一口气，为了她自己，也是为了他。」当生活中的障碍物消逝的那一刻，埃丽森达作为他的发现者长舒了一口气，她的内心或许希望他在其他地方被人所接纳，这个曾经带给她财富和忧愁的「文明」的种子，现在已经「是水天相交处的虚点」，变同了一个遥远的梦，又或者是水与天融合的契机。
 
-[^1]: 图源：<https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez>。
+[^1]: 图源：[Gabriel García Márquez | Wikipedia](https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez)

@@ -21,7 +21,7 @@ gitinfo = true
 InstantClick 使用的正是 pushState + Ajax 的技术，即 PJAX。最新版本的 NexT 主题已经支持 PJAX，因此你可以不再考虑使用 InstantClick。
 </p>
 
-下面主要说明如何配置 hexo-service-worker 和 hexo-filter-optimize 这两款插件。
+下面主要说明如何配置 hexo-service-worker 和 hexo-filter-optimize 这两款插件[^1]。
 
 ### 插件的安装与配置
 
@@ -181,8 +181,4 @@ aplayer:
 
 如果你觉得这样设置繁琐的话，也可以采用 CDN。不过，由于这个 BUG 引发了太多的问题，我目前已经放弃使用这款插件了。
 
-## 参考
-
-1. [加速 Hexo 博客 | reuixiy](https://io-oi.me/tech/speed-up-hexo/)。
-2. [Hexo 博客简单支持 PWA | 木子星兮](https://juejin.im/post/5b8ff410e51d450e7b16d7ba)。
-3. [Hexo 博客支持 PWA 和压缩博文 | Ryan Miao](https://blog.rmiao.top/hexo-grup-pwa/)。
+[^1]: 参考①：[Hexo 博客简单支持 PWA | 木子星兮](https://juejin.im/post/5b8ff410e51d450e7b16d7ba)<br>参考②：[Hexo 博客支持 PWA 和压缩博文 | Ryan Miao](https://blog.rmiao.top/hexo-grup-pwa/)

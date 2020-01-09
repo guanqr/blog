@@ -11,7 +11,7 @@ gitinfo = true
 
 ![deploy-blog-to-netlify-0.jpg](/images/deploy-blog-to-netlify-0.jpg)
 
-一般在部署 Hexo 或 Hugo 博客的时候，需要将写好的 Markdown 文件通过命令转化为 HTML 文件，然后将生成的 `/public/` 文件夹部署到 GitHub Pages 上。这样的方法是比较简单的方法，我之前也是用的这种方法。但这样的部署方式有一个弊端：直接将生成的可以运行的实际代码（生产版）发布到 GitHub 上，而不是源码（开发版）。没有利用 GitHub 来对源码进行版本控制，这就不利于博客未来的维护、更新、开发，以及可能的开源开发。也就是说，如果你想要退回之前的某一版本是很困难的。有些博主似乎注意到了这样的问题，直接在 GitHub 上新建一个分支或者新建一个仓库来存放原始文件。这种方法需要你在每次部署的时候提交两次代码，很繁琐。
+一般在部署 Hexo 或 Hugo 博客的时候，需要将写好的 Markdown 文件通过命令转化为 HTML 文件，然后将生成的 `public` 文件夹部署到 GitHub Pages 上。这样的方法是比较简单的方法，我之前也是用的这种方法。但这样的部署方式有一个弊端：直接将生成的可以运行的实际代码（生产版）发布到 GitHub 上，而不是源码（开发版）。没有利用 GitHub 来对源码进行版本控制，这就不利于博客未来的维护、更新、开发，以及可能的开源开发。也就是说，如果你想要退回之前的某一版本是很困难的。有些博主似乎注意到了这样的问题，直接在 GitHub 上新建一个分支或者新建一个仓库来存放原始文件。这种方法需要你在每次部署的时候提交两次代码，很繁琐。
 
 直到后来，我在浏览 Next 主题的官方文档网站的时候，发现他们并没有将网站部署在 Github Pages 上，而是部署到了 Netlify 上面，他们只将源码存放在了一个仓库中。当你需要修改某些文章内容的时候，直接在仓库中编辑 Markdown 文件，随后网站会自动更新修改的内容。显而易见，这是再好不过的办法，实现博客的持续集成（Continuous Integration，CI）和自动部署，节省了自己操作的时间。
 
@@ -41,7 +41,7 @@ public/
 
 这里面比较重要的就是 `node_modules` 和 `public` 这两个文件夹。前者存放的是你在执行 `hexo g` 的时候所需的全部工具插件，后者即是需要部署的文件夹。那么为什么不需要上传这两个文件夹内的文件呢？
 
-对于 `/public/` 文件夹，由于 Netlify 会在线执行 `hexo g` 的命令，实现在线部署，所以不再需要它。对于 `node_modules` 文件夹，在你的博客源码存放的文件夹根目录下，还有一个 `package.json` 文件，每当你安装插件的时候，会执行一个命令：`npm install xxx --save`，这样就将该插件的信息存放在了 `package.json` 文件中。上传的时候就不需要将全部插件一同上传，节省了仓库的空间。而 Netlify 的持续集成服务会自动检查 `package.json` 的改动并在它的容器上安装或移除相应模块。
+对于 `public` 文件夹，由于 Netlify 会在线执行 `hexo g` 的命令，实现在线部署，所以不再需要它。对于 `node_modules` 文件夹，在你的博客源码存放的文件夹根目录下，还有一个 `package.json` 文件，每当你安装插件的时候，会执行一个命令：`npm install xxx --save`，这样就将该插件的信息存放在了 `package.json` 文件中。上传的时候就不需要将全部插件一同上传，节省了仓库的空间。而 Netlify 的持续集成服务会自动检查 `package.json` 的改动并在它的容器上安装或移除相应模块。
 
 当然这里还需要说明一点，如果你在存放于 `node_modules` 的任何插件中修改了代码，由于 Netlify 读取的是 `package.json` 的信息，只会安装原插件的内容，并不知道你的修改内容，所以你需要将修改后的插件自行上传，然后再修改 `package.json` 中该插件的路径到你的仓库。由于我并没有遇到这种问题，这里便不再赘述，如有任何问题还请自行谷歌。
 
@@ -129,7 +129,7 @@ hexo clean && hexo generate && gulp build && gulp
 
 NexT 主题已经在主题配置文件中提供了在线编辑的功能。即：
 
-```
+```yml
 post_edit:
   enable: true
   url: https://github.com/guanqr/guanqr.com/edit/master/source/
@@ -156,8 +156,3 @@ Netlify 提供了自定义页面重定向的功能。如果你的域名或者文
 ```
 
 ![deploy-blog-to-netlify-8.jpg](/images/deploy-blog-to-netlify-8.jpg "页面重定向")
-
-## 参考
-
-1. [File-based configuration | netlify docs](https://www.netlify.com/docs/netlify-toml-reference/)。
-2. [Hexo + GitHub + Netlify 一站式搭建属于自己的博客网站 | 我在马路边](https://www.cnblogs.com/kerbside/p/10130606.html)。

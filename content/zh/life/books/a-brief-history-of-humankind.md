@@ -95,4 +95,4 @@ toc = true
 
 ![ice-age.jpg](/images/ice-age.jpg "电影《冰河世纪》")
 
-[^1]: 图源：<https://en.wikipedia.org/wiki/Chauvet_Cave>。
+[^1]: 图源：[Chauvet Cave | Wikipedia](https://en.wikipedia.org/wiki/Chauvet_Cave)

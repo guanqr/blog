@@ -8,21 +8,21 @@ gitinfo = true
 toc = true
 +++
 
-[^1]![denyhosts.png](/images/denyhosts.png)
+![denyhosts.png](/images/denyhosts.png)
 
-此前用 Wordpress 做网站的时候，租了一个 Vultr 服务器，通过 Xshell 远程登录终端后，系统发出警告，提示在此次成功登录前有 xxxx 次登录失败的记录，并且发现是某一个固定的 IP 地址在不断的尝试登陆。在网上找了许多有关这种问题的解决方法，基本都是通过利用 hosts.deny 文件屏蔽此 IP 地址即可。除此之外，为了安全起见，最好在租好新的服务器后修改默认端口。
+此前用 WordPress 做网站的时候，租了一个 Vultr 服务器，通过 Xshell 远程登录终端后，系统发出警告，提示在此次成功登录前有 xxxx 次登录失败的记录，并且发现是某一个固定的 IP 地址在不断的尝试登陆。在网上找了许多有关这种问题的解决方法，基本都是通过利用 hosts.deny 文件屏蔽此 IP 地址即可。除此之外，为了安全起见，最好在租好新的服务器后修改默认端口。
 
-Denyhosts 是一个以 Python2.3 编写的程序，它主要根据系统日志文件`/var/log/secure`文件分析，当发现同一 IP 在进行多次 SSH 密码尝试时就会记录 IP 到`/etc/hosts.deny`文件，从而达到自动屏蔽该 IP 的目的。下面总结一下 Denyhosts 的安装方法。
+Denyhosts 是一个以 Python2.3 编写的程序，它主要根据系统日志文件 `/var/log/secure` 文件分析，当发现同一 IP 在进行多次 SSH 密码尝试时就会记录 IP 到 `/etc/hosts.deny` 文件，从而达到自动屏蔽该 IP 的目的。下面总结一下 Denyhosts 的安装方法[^1]。
 
 ## 检查安装环境
 
-首先判断系统安装的 sshd是否支持 tcp_wrappers（默认都支持），如果有输出：`libwrap.so.0 => /lib64/libwrap.so.0 `则为支持，命令如下
+首先判断系统安装的 sshd 是否支持 tcp_wrappers（默认都支持），如果有输出：`libwrap.so.0 => /lib64/libwrap.so.0` 则为支持，命令如下
 
 ```
 ldd /usr/sbin/sshd |grep libwrap.so.0
 ```
 
-其次判断是否有 Python（CentOS默认都有）,只要系统 Python 版本不小于 2.3 版本即可。
+其次判断是否有 Python（CentOS 默认都有）,只要系统 Python 版本不小于 2.3 版本即可。
 
 ```
 python -V
@@ -207,8 +207,4 @@ iptables -nL --line-number
 systemctl restart sshd.service
 ```
 
-## 参考
-
-1. <https://www.cnblogs.com/rwxwsblog/p/4590608.html>
-
-[^1]: 图源：<http://denyhosts.sourceforge.net/>。
+[^1]: 参考：[Linux 防止 sshd 被爆破（安装 Denyhosts）| 一葉知秋](https://www.cnblogs.com/rwxwsblog/p/4590608.html)

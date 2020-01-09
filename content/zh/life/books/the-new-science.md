@@ -10,7 +10,7 @@ gitinfo = true
 
 ## 作者简介
 
-[^1]![Giambattista-Vico.jpg](/images/Giambattista-Vico.jpg "维柯")
+[^1]![giambattista-vico.jpg](/images/giambattista-vico.jpg "维柯")
 
 维柯 1668 年出生于那不勒斯，自幼勤奋好学，尤着力于在语言学、法学、历史学和哲学上的修为，毕生以追求最高智慧为生命之旨圭，在诸多古典学者中，尤为钦佩柏拉图和塔西伦，认为前者代表了一种玄奥智慧，后者代表了一种普通智慧，并认为一个真正的哲人就必须兼备这两种智慧，近代哲学家培根则是这种二者兼备的代表。正是在培根的《新工具》的影响和启发之下，1725 年，他出版了《关于各民族的本性的一门新科学的原则，凭这些原则见出部落自然法的另一体系的原则》一书，这就是后来以《新科学》一名扬世的著作的第一版，这本书在 1744 年第三版的标题被改为《关于各民族的共同性的新科学的一些原则》。
 
@@ -28,7 +28,7 @@ gitinfo = true
 
 但是，这是否就是说维柯否定了自然科学的方法呢？其实并没有，他反对的只是那种把自然规律当作认识世界的万能钥匙的做法。在维柯看来，..自然界是由上帝创造的，历史是由人类创造的..，因此，维柯认为..对自然界的认识是上帝的事，对历史的认识才是人类自己的事..。而且，由于历史是人类的创造物，它远比数学和物理的研究对象更复杂，它需要一种自己的科学体系。维科提出的「新科学」，它主要研究的还是历史科学，社会科学。研究的是人类各民族的共同性原则，这是一门全新的研究。从人类历史是由人类自己创造的，这一个基本原则出发，论证了人类社会制度的进展和人类心智功能的进展是并驾齐驱的。
 
-[^2]![Vico-La-scienza-nuova.gif](/images/Vico-La-scienza-nuova.gif "《新科学》")
+[^2]![vico-la-scienza-nuova.gif](/images/vico-la-scienza-nuova.gif "《新科学》")
 
 ## 维柯眼中的「人」
 
@@ -60,5 +60,5 @@ gitinfo = true
 
 维柯试图探索的却是在神的意志之外的人类活动的规律性。但他仍摆脱不了基督教神学统治的社会大环境，在前有伽利略受教会迫害的事实面前，维柯也很难彻底放弃有神论。
 
-[^1]: 图源：<https://en.wikipedia.org/wiki/Giambattista_Vico>。
-[^2]: 图源：<https://en.wikipedia.org/wiki/The_New_Science>。
+[^1]: 图源：[Giambattista Vico | Wikipedia](https://en.wikipedia.org/wiki/Giambattista_Vico)
+[^2]: 图源：[*The New Science* | Wikipedia](https://en.wikipedia.org/wiki/The_New_Science)

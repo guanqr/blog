@@ -9,7 +9,7 @@ displayCopyright = true
 gitinfo = true
 +++
 
-[^1]![gulp.jpg](/images/gulp.jpg)
+![gulp.jpg](/images/gulp.jpg)
 
 网站的访问速度是影响网站阅读量的一个重要因素，因此加速网页的访问速度十分重要。对于加速博客访问速度的方法，可以使用将浏览器第一次加载的数据存入缓存，第二次访问时就能够节省很多时间，这一种方法以及所需的插件，可以参见我之前的文章「[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)」，在此不再赘述。在本文中，我主要讲述使用 Gulp 压缩网页源码的方法，这一种方法也可以提升一定的网站访问速度。
 
@@ -113,13 +113,8 @@ $ gulp
 [13:08:18] Finished 'default' after 4.79 s
 ```
 
-然后你就可以从站点中的 `/public/` 文件夹中检查这些文件是否被压缩。
+然后你就可以从站点中的 `public` 文件夹中检查这些文件是否被压缩[^1]。
 
 除了上述方法外，Hexo 还有一个插件（[hexo-neat](https://github.com/rozbo/hexo-neat)）能够压缩静态资源。不过我并没有使用过，如果你想要使用这个插件也可以试一试。另外，我还使用 Gulp 结合 workbox-build 实现了博客的 PWA 功能，具体的介绍可以看[这篇文章](/study/blog/realize-pwa/)。
 
-## 参考
-
-1. [基于 Hexo 搭建个人博客优化（五）——压缩篇（gulp 4.0 压缩静态资源）| illusorycloud](https://blog.csdn.net/java_1996/article/details/86499625)。
-2. [打造个性超赞博客 Hexo + NexT + GitHub Pages 的超深度优化 | reuixiy](https://io-oi.me/tech/hexo-next-optimization/)。
-
-[^1]: 图源：<https://gulpjs.com/>。
+[^1]: [基于 Hexo 搭建个人博客优化（五）——压缩篇（gulp 4.0 压缩静态资源）| illusorycloud](https://blog.csdn.net/java_1996/article/details/86499625)。

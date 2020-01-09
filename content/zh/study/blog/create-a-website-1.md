@@ -6,7 +6,7 @@ displayCopyright = true
 gitinfo = true
 +++
 
-[^1]![bt-linux-pc-free.png](/images/bt-linux-pc-free.png "宝塔面板")
+![bt-linux-pc-free.png](/images/bt-linux-pc-free.png "宝塔面板")
 
 宝塔面板是当前国内使用最多的 Linux 系统网站面板之一。安装宝塔面板之前，你需要先租一个 VPS 虚拟专用服务器。
 
@@ -61,5 +61,3 @@ Do you want to install Bt-Panel to the /www directory now?(y/n): y
 等待安装完毕即可。
 
 <p id="div-warning">为了网站的安全，别忘了更改用户名、密码以及端口号。</p>
-
-[^1]: 图源：<https://www.bt.cn/>。

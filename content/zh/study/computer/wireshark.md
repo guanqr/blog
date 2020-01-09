@@ -10,7 +10,7 @@ toc = true
 
 ## Wireshark 简介
 
-[^1]![wireshark-logo.png](/images/wireshark-logo.png)
+![wireshark-logo.png](/images/wireshark-logo.png)
 
 [Wireshark](https://www.wireshark.org/) 是一个免费开源的网络数据包分析软件。网络数据包分析软件的功能是截取网络数据包，并尽可能显示出最为详细的网络数据包数据。
 
@@ -159,5 +159,3 @@ http and ip.addr==10.10.98.98 and tcp.port==80
 ## 总结
 
 Wireshark 作为一款网络分析工具，功能很强大，当然也有一些不法分子利用这一类的网络分析工具获取接入同一网络的用户的个人信息，入侵你的通信设备。我接触到这个工具是源于本学期上的一门专业选修课程「数据通信与计算机网络」的实验。通过 Wireshark，我对网络通信的知识有了深入的理解，因此我认为 Wireshark 是一个学习计算机网络通信原理的利器。
-
-[^1]: 图源：<https://www.wireshark.org/>。

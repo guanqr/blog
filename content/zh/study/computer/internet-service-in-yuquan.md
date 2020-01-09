@@ -143,11 +143,8 @@ $ rm mac-addr*
 
 ![internet-service-in-yuquan-18.jpg](/images/internet-service-in-yuquan-18.jpg)
 
-然后，你就可以在网络连接里输入用户名和密码进行连接了。
+然后，你就可以在网络连接里输入用户名和密码进行连接了[^1]。
 
 ![internet-service-in-yuquan-19.jpg](/images/internet-service-in-yuquan-19.jpg)
 
-## 参考
-
-1. [玉泉寝室无线路由器（荣耀路由）上网 | Fenghe's Blog](https://fenghe.us/yq-honor-wireless-router-tutorial/)。
-2. 浙江大学 e 志者协会 ZJUVPN 自建教程 | Xero Essential。
+[^1]: 参考①：[玉泉寝室无线路由器（荣耀路由）上网 | Fenghe's Blog](https://fenghe.us/yq-honor-wireless-router-tutorial/)<br>参考②：浙江大学 e 志者协会 ZJUVPN 自建教程 | Xero Essential

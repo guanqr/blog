@@ -2956,12 +2956,12 @@ custom_file_path:
 
 写这篇文章的初衷是为了记录我对博客主题的一些优化，通过对主题的优化我也学习了很多前端的知识。NexT 主题更新的速度实在是太快了，目前网上很多关于 NexT 主题的优化方法都是过时的。所以我就想借助这篇文章汇总一些可以在新版主题中使用的优化方法。另外，我还推荐你阅读我的其他几篇和博客搭建有关的文章，或许能够引发你对博客更深入的探索。如果你喜欢这一篇文章，请多多分享。
 
-[^1]: 图源：<https://github.com/theme-next/hexo-theme-next>。
+[^1]: 图源：[hexo-theme-next | GitHub](https://github.com/theme-next/hexo-theme-next)
 [^2]: 官方网站的 News 中会对每一个发行版相对上一版本的修改进行说明，Docs 中有主题配置的详细说明。
 [^3]: 我就是从这个事件起停止使用评论系统了，一方面是因为 Leancloud 的实名与备案，另一方面是我的博客访客比较少，基本没有什么评论，加载评论还会影响一定的访问速度。
-[^4]: 参考：[前端开发你该知道的字体 font-family | fly63 前端网](http://www.fly63.com/article/detial/1114)。
-[^5]: 参考：[衬线体的进化：从纸面到屏幕 | 方正字库](https://zhuanlan.zhihu.com/p/49470735)。
-[^6]: 图源：<https://www.fontke.com/family/290108/>。
-[^7]: 参考：[Hexo 博客 NexT 主题自定义友情链接页面 | Sanarous](https://bestzuo.cn/posts/2016690040.html)。
-[^8]: 参考：[样式汇总 | 千灵](https://qianling.pw/style/)。
-[^9]: 参考：[在 Hexo 中插入 ECharts 动态图表 | KChen's Blog](https://kchen.cc/2016/11/05/echarts-in-hexo/)。
+[^4]: 参考：[前端开发你该知道的字体 font-family | fly63 前端网](http://www.fly63.com/article/detial/1114)
+[^5]: 参考：[衬线体的进化：从纸面到屏幕 | 方正字库](https://zhuanlan.zhihu.com/p/49470735)
+[^6]: 图源：[Linux Biolinum | Fontke](https://www.fontke.com/family/290108/)
+[^7]: 参考：[Hexo 博客 NexT 主题自定义友情链接页面 | Sanarous](https://bestzuo.cn/posts/2016690040.html)
+[^8]: 参考：[样式汇总 | 千灵](https://qianling.pw/style/)
+[^9]: 参考：[在 Hexo 中插入 ECharts 动态图表 | KChen's Blog](https://kchen.cc/2016/11/05/echarts-in-hexo/)

@@ -10,7 +10,7 @@ gitinfo = true
 
 ## 作者简介
 
-[^1]![Robin-G-Collingwood.jpg](/images/Robin-G-Collingwood.jpg "柯林武德")
+[^1]![robin-g-collingwood.jpg](/images/robin-g-collingwood.jpg "柯林武德")
 
 柯林武德，英国哲学家，历史学家和美学家，毕业于牛津大学哲学系，后留校研究和任教。主要著作有《宗教与哲学》、《心灵的思辨》、《艺术原理》、《历史的观念》。
 
@@ -63,4 +63,4 @@ gitinfo = true
 
 历史哲学就是要借助历史思维去认识历史、思想、理性和人性之间的内在统一性，从而获得对人性的真正理解。从卢梭到马克思，这些哲学家历史学家们都对历史的规律以及历史的驱动力做出了自己的回答。在科学历史学有了初步的萌芽后，十九世纪末，在西方各国，历史学家们开始协调历史学与科学之间的关系，这也是当时历史学很重要的一项任务，通过对历史与自然科学之间关系的协调，历史学得到了显著地发展。至此，历史的观念完成了从古代人文到近代理性再到科学的转变。
 
-[^1]: 图源：<https://en.wikipedia.org/wiki/R._G._Collingwood>。
+[^1]: 图源：[R. G. Collingwood | Wikipedia](https://en.wikipedia.org/wiki/R._G._Collingwood)

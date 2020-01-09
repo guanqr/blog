@@ -36,12 +36,6 @@ enableRobotsTXT = true
 # 每一分页的文章数（仅对「文章摘要」首页布局有效）
 paginate = 10
 
-# 代码高亮
-pygmentsCodefences = true
-pygmentsUseClasses = true
-pygmentsCodefencesGuessSyntax = true
-pygmentsOptions = "linenos=table"
-
 # URL 相关
 disablePathToLower = false
 relativeURLs = true
@@ -63,18 +57,36 @@ uglyURLs = false
 [frontmatter]
     lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 
-# v0.60.0
-[markup]
-    defaultMarkdownHandler = "blackfriday"
-
 # Markdown 渲染器
-[blackfriday]
-    # 是否开启智能标点符号替换
-    smartypants = false
-    # 是否在新标签页打开外链
-    hrefTargetBlank = true
-    # 屏蔽的扩展
-    extensionsmask = ["hardLineBreak", "backslashLineBreak"]
+[markup]
+    defaultMarkdownHandler = "goldmark"
+    [markup.goldmark]
+        [markup.goldmark.extensions]
+            definitionList = true
+            footnote = true
+	        linkify = true
+            strikethrough = true
+            table = true
+            taskList = true
+            typographer = false
+        [markup.goldmark.parser]
+            attribute = true
+            autoHeadingID = true
+            autoHeadingIDType = "github"
+        [markup.goldmark.renderer]
+            hardWraps = false
+            unsafe = true
+            xHTML = false
+    [markup.highlight]
+        codeFences = true
+        guessSyntax = false
+        lineNos = true
+        lineNumbersInTable = true
+        noClasses = false
+    [markup.tableOfContents]
+        startLevel = 2
+        endLevel = 6
+        ordered = true
 
 # 作者信息
 [author]
@@ -574,6 +586,9 @@ uglyURLs = false
     # 说明：文章的 Front Matter 中的 `mathjax`
     #      的优先级高于此处
 
+    # 是否禁用 MathJax 的右键菜单
+    disableMathJaxMenu = false
+
 
     ######################################
     # 评论
@@ -726,6 +741,16 @@ uglyURLs = false
     # 说明：仅在生产环境（production）下渲染
     #      首页暂不支持
     #      https://busuanzi.ibruce.info/
+
+
+    ######################################
+    # Markdown 相关
+
+    # 在新标签页打开外链？
+    hrefTargetBlank = true
+
+    # 与 LaTeX 的兼容性？
+    compatibleWithLaTeX = true
 
 
     ######################################

@@ -9,9 +9,9 @@ displayCopyright = true
 gitinfo = true
 +++
 
-[^1]![pwa.png](/images/pwa.png)
+![pwa.png](/images/pwa.png)
 
-渐进式网络应用程序（Progressive Web Apps，PWA）是一种运用现代的 Web API 以及传统的渐进式增强策略创建的跨平台 Web 应用程序。这种应用程序将目前最为现代化的浏览器提供的功能与移动设备的体验优势相结合，使其具有与原生应用相同的用户体验优势。[^2]
+渐进式网络应用程序（Progressive Web Apps，PWA）是一种运用现代的 Web API 以及传统的渐进式增强策略创建的跨平台 Web 应用程序。这种应用程序将目前最为现代化的浏览器提供的功能与移动设备的体验优势相结合，使其具有与原生应用相同的用户体验优势。[^1]
 
 当你的网站实现了 PWA 功能后，使用 Google Chrome 浏览器访问时，就会发现浏览器地址栏右侧有一个 `+` 号，并会提醒你安装此网页到桌面。当然，如果你是用手机访问的话，Chrome 就会在页面的底部提醒你安装。
 
@@ -25,7 +25,7 @@ PWA 的特点：
 
 第一点：对于读者，博客可一触即达，且无浏览器的地址栏、菜单栏等「无关」干扰；对于博客，非常有利于博客的用户留存率，也利于博客的品牌形象。第二点：可以利用 Service Worker 的缓存特点，极大地加速你的博客。第三点：能让你的博客更贴近 APP 的形象。
 
-PWA 有很多要求，比如：HTTPS、响应式布局等等，可参考这个 [Checklist](https://developers.google.com/web/progressive-web-apps/checklist)，可用 [Lighthouse](https://developers.google.com/web/tools/lighthouse)[^3] 检查你的网站是否满足 PWA 的所有要求。
+PWA 有很多要求，比如：HTTPS、响应式布局等等，可参考这个 [Checklist](https://developers.google.com/web/progressive-web-apps/checklist)，可用 [Lighthouse](https://developers.google.com/web/tools/lighthouse)[^2] 检查你的网站是否满足 PWA 的所有要求。
 
 ![lighthouse-pwa.png](/images/lighthouse-pwa.png "Lighthouse 检测结果")
 
@@ -341,38 +341,9 @@ gulp build
 
 如果你完成了上述配置，将网站部署后，就可以实现 PWA 了。
 
-## 参考
-
 <p id="div-info">
-本文主要参考了「<a href="https://io-oi.me/tech/pwa-via-workbox/" target="_blank">利用 Workbox 实现博客的 PWA</a>」这一篇文章，在此特别感谢作者的技术分享。
+本文主要参考了「<a href="https://io-oi.me/tech/pwa-via-workbox/" target="_blank">利用 Workbox 实现博客的 PWA</a>」这一篇文章，内容结合个人实际情况有所改动。
 </p>
 
-Workbox：
-
-1. [Service Workers With Workbox In A Hugo Static Generated Site | The Polyglot Developer](https://www.thepolyglotdeveloper.com/2019/03/service-workers-workbox-hugo-static-generated-site/)
-2. [Using Custom Workbox Service Workers with Create-React-App (without ejecting) | Karan NA Gupta](https://karannagupta.com/using-custom-workbox-service-workers-with-create-react-app/)
-3. [Workbox, not sw-toolbox & sw-precache | Sukka’s Blog](https://blog.skk.moe/post/hello-workbox/)
-4. [Precache Files with workbox-build | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/precache-files/workbox-build)
-5. [Common Recipes | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/guides/common-recipes)
-6. [Workbox Window | Workbox | Google Developers](https://developers.google.com/web/tools/workbox/modules/workbox-window)
-7. [神奇的 Workbox 3.0 | zoumiaojiang](https://zoumiaojiang.com/article/amazing-workbox-3/)
-
-Notification：
-
-1. [bible-app/sw-installer.js | craigjennings11/bible-app | GitHub](https://github.com/craigjennings11/bible-app/blob/master/src/service-worker/sw-installer.js)
-2. [arnellebalane.com/main.mjs | arnellebalane/arnellebalane.com | GitHub](https://github.com/arnellebalane/arnellebalane.com/blob/master/source/static/javascripts/main.mjs)
-3. [hexo-service-worker/sw-register.tpl.js | zoumiaojiang/hexo-service-worker | GitHub](https://github.com/zoumiaojiang/hexo-service-worker/blob/master/src/templates/sw-register.tpl.js)
-4. [hugo-theme-refine/service-worker.html | fredliang44/hugo-theme-refine | GitHub](https://github.com/fredliang44/hugo-theme-refine/blob/master/layouts/partials/service-worker.html)
-5. [Workbox 4: Implementing refresh-to-update-version flow using the workbox-window module | Medium](https://medium.com/@webmaxru/workbox-4-implementing-refresh-to-update-version-flow-using-the-workbox-window-module-41284967e79c)
-6. [Lessons learned on offline capabilities with service workers using Workbox | Sam Vloeberghs](https://samvloeberghs.be/posts/lessons-learned-on-offline-capabilities-with-service-workers-using-workbox-the-sequel)
-7. [hugo-theme-meme/service-worker.html | reuixiy/hugo-theme-meme | GitHub](https://github.com/reuixiy/hugo-theme-meme/blob/master/layouts/partials/third-party/service-worker.html)
-
-PWA：
-
-1. [立即使用 Service Worker！ | Harttle Land](https://harttle.land/2017/04/09/service-worker-now.html)
-2. [从 SPA 到 PWA | Harttle Land](https://harttle.land/2019/03/27/from-spa-to-pwa.html)
-3. [小程序标准化 & PWA | Fred’s Blog](https://blog.fredliang.cn/posts/2019-05-16-mini-program-vs-pwa/)
-
-[^1]: 图源：<https://developers.google.com/web/tools/workbox>。
-[^2]: 参考①：<https://zh.wikipedia.org/wiki/渐进式网络应用程序>；<br>参考②：<https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps>。
-[^3]: 这里一个提供在线测试的网站：<https://www.webpagetest.org/lighthouse>。
+[^1]: 参考①：[渐进式网络应用程序 | 维基百科](https://zh.wikipedia.org/wiki/渐进式网络应用程序)<br>参考②：[渐进式 Web 应用（PWA） | MDN web docs](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps)
+[^2]: 这里一个提供在线测试的网站：<https://www.webpagetest.org/lighthouse>

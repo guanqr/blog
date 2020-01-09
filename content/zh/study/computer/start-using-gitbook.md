@@ -9,7 +9,7 @@ gitinfo = true
 katex = true
 +++
 
-[^1]![gitbook-logo.png](/images/gitbook-logo.png)
+![gitbook-logo.png](/images/gitbook-logo.png)
 
 在上个月的期末考试周前，我正使用 Chris Wu 的 [Note-by-LaTeX 手册](https://github.com/wklchris/Note-by-LaTeX)对 LaTeX 排版进行系统性的学习，无意间瞥见其使用 GitBook 编写的电子书项目，便点进去一探究竟。Chris Wu 将其学习的课程笔记很有条理地记录在 GitBook 中，每一章节的结构在左侧显示，清晰明了。你还可以调整阅读的字体、文字大小、背景的亮暗主题。GitBook 还支持很多的插件使用，你可以在文章中优雅地插入数学公式、图表等等。当然，GitBook 的书写也离不开 Markdown。
 
@@ -1187,5 +1187,3 @@ git clone -b gh-pages git@github.com:USERNAME/book.git book-end
 - 将 `book-end` 文件夹 push 到仓库。
 
 这样，你的一本 GitBook 电子书就诞生了。
-
-[^1]: 图源：<https://docs.gitbook.com/>。

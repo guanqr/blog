@@ -6,7 +6,7 @@ displayCopyright = true
 gitinfo = true
 +++
 
-[^1]![wordpress-screen-themes.png](/images/wordpress-screen-themes.png "WordPress 控制面板")
+![wordpress-screen-themes.png](/images/wordpress-screen-themes.png "WordPress 控制面板")
 
 在依照以下方式进行 WordPress 网站建立之前，你需要安装好宝塔面板。具体操作过程请看我的另一篇文章《[Linux 系统安装宝塔面板建站](/study/blog/create-a-website-1/)》。
 
@@ -42,5 +42,3 @@ gitinfo = true
 输入密码，等待安装成功后，进入控制面板，就可以开始写你的第一篇文章啦。
 
 <p id="div-warning">在进行建站的过程中，各位一定要保护好自己的账号密码，最好在设定完成之后进行更改！</p>
-
-[^1]: 图源：<https://wordpress.org/>。

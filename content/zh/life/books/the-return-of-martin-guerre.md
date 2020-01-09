@@ -8,7 +8,7 @@ displayCopyright = true
 gitinfo = true
 +++
 
-[^1]![Le-retour-de-Martin-Guerre.jpg](/images/Le-retour-de-Martin-Guerre.jpg "马丁·盖尔归来")
+[^1]![le-retour-de-martin-guerre.jpg](/images/le-retour-de-martin-guerre.jpg "马丁·盖尔归来")
 
 这是迄今为止对这个独特故事的最细致的描述。娜塔莉·戴维斯建构了一部社会史杰作，我们由此可以看到那些不懂读写、因而也没有留下记载的 16 世纪农民的生活。[^2]
 
@@ -20,7 +20,7 @@ gitinfo = true
 
 ## 作者简介
 
-[^3]![Natalie-Zemon-Davis.jpg](/images/Natalie-Zemon-Davis.jpg "娜塔莉·泽蒙·戴维斯")
+[^3]![natalie-zemon-davis.jpg](/images/natalie-zemon-davis.jpg "娜塔莉·泽蒙·戴维斯")
 
 这部著作的作者是娜塔莉·泽蒙·戴维斯。她出生于一个富裕的犹太家庭，年轻时她十分叛逆，充满个性，十九岁时不顾家庭反对与恋人私奔。她在生养三个孩子的同时获得了密歇根大学的博士学位，先后在多伦多大学政治经济系和历史系任教，一九七一年被聘为伯克利加州大学历史系教授，接触到了让·德克拉斯的著作，她先是作为顾问参与了《马丁·盖尔归来》电影的制作，然后在进一步研究的基础上，完成了同名著作。戴维斯早期从事社会史研究，后来开始研究社会文化学，后期在历史编纂学方面进行民族志、微观史学、历史叙事的实践。
 
@@ -44,6 +44,6 @@ gitinfo = true
 
 真假马丁的故事再这么长的时间里反反复复被人们议论，并引起人文主义者的浓厚兴趣。这个故事中涉及了三个讲述故事的人：写下《难忘的判决》的法官让·科拉斯、著有《图卢兹冒牌马丁的奇妙故事》的纪尧姆·勒叙厄尔、写下《论瘸子》的米歇尔·德·蒙田。这三位来自不同职业，拥有不同的社会地位，但他们都属于人文主义者。他们表现出了对社会下层普通群众的关注与同情。尽管当时社会等级分明，农民和政治生活似乎并没有联系，但那些人文主义者确确实实表现出来了对他们的关注。作者以一个小村庄的故事对一个时代的社会状况进行分析，以小见大，是微观史学研究的典范之作。
 
-[^1]: 图源：<https://en.wikipedia.org/wiki/The_Return_of_Martin_Guerre>。
-[^2]: 琼·斯特劳斯，《新闻周刊》。
-[^3]: 图源：<https://en.wikipedia.org/wiki/Natalie_Zemon_Davis>。
+[^1]: 图源：[*The Return of Martin Guerre* | Wikipedia](https://en.wikipedia.org/wiki/The_Return_of_Martin_Guerre)
+[^2]: 来源：琼·斯特劳斯，《新闻周刊》
+[^3]: 图源：[Natalie Zemon Davis | Wikipedia](https://en.wikipedia.org/wiki/Natalie_Zemon_Davis)

@@ -515,9 +515,9 @@ void time0()interrupt 1
 
 ULN2003 模块电路图以及所用到的大功率 LED 如下图所示。
 
-![ULN2003.jpg](/images/ULN2003.jpg "ULN2003 模块电路图")
+![uln2003.jpg](/images/uln2003.jpg "ULN2003 模块电路图")
 
-![high-power-LED.jpg](/images/high-power-LED.jpg "大功率 LED")
+![high-power-led.jpg](/images/high-power-led.jpg "大功率 LED")
 
 ```c
 #include"reg52.h"
@@ -1096,7 +1096,7 @@ void time0()interrupt 1
 
 DS18B20 原理图：
 
-![DS18B20.jpg](/images/DS18B20.jpg "DS18B20")
+![ds18b20.jpg](/images/ds18b20.jpg "DS18B20")
 
 ```c
 #include<reg51.h>
@@ -1220,7 +1220,7 @@ void Delay10ms(unsigned int c)
 
 PCF8591 原理图：
 
-![PCF8591.jpg](/images/PCF8591.jpg "PCF8591")
+![pcf8591.jpg](/images/pcf8591.jpg "PCF8591")
 
 这个程序足足坑了我半天的时间，无奈之下用室友在网上花 2 元钱购买的资料蒙混过关。
 

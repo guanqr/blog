@@ -250,6 +250,9 @@ span#inline-toc {
     overflow: auto hidden;
 }
 // 分类页
+.category-background {
+    display: flex;
+}
 .categories .tree {
     background-image: url(../images/categories-background.svg);
     background-size: 60%;

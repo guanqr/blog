@@ -400,7 +400,7 @@ uglyURLs = false
     # `sections`，则无法关闭树状布局
 
     # 是否显示文章标题
-    displayPosts = false
+    displayPosts = true
 
     # 是否显示每一分类下的文章数
     displayPostsCount = true

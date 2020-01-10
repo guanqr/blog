@@ -580,4 +580,4 @@ Page({
 
 ![wechat-mini-app-comment.png](/images/wechat-mini-app-comment.png "评论功能")
 
-本来我考虑过使用小程序的云开发功能存放评论，但是依然是因为时间有限没有实现预期目标。为了能够实现评论功能，我在 GitHub 上找到了一个微信小程序评论组件：[NewWxComment](https://github.com/yicm/NewWxComment)，该组件模仿博客的 Valine 评论，使用第三方 LeanCloud 存储评论。按照作者的使用说明引用该组件即可。不过由于目前 LeanCloud 国内版需要绑定备案的域名才能使用，所以我建议使用国际版。
+本来我考虑过使用小程序的云开发功能存放评论，但是依然是因为时间有限没有实现预期目标。为了能够实现评论功能，我在 GitHub 上找到了一个微信小程序评论组件：[NewWxComment](https://github.com/yicm/NewWxComment)（新版）/ [WxComment](https://github.com/yicm/WxComment)，该组件模仿博客的 Valine 评论，使用第三方 LeanCloud 存储评论。按照作者的使用说明引用该组件即可。不过由于目前 LeanCloud 国内版需要绑定备案的域名才能使用，所以我建议使用国际版。

@@ -1,7 +1,6 @@
 +++
-title = "一个失败的课程设计作业"
-subtitle = "微信小程序「新闻盒子」设计"
-description = "「微信小程序开发实践」课程回顾与总结"
+title = "一个失败的课程设计"
+description = "微信小程序「新闻盒子」设计，「微信小程序开发实践」课程回顾与总结"
 date = "2020-01-07T22:37:21+08:00"
 tags = ["wechat","typography","zju"]
 dropCap = true

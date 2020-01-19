@@ -565,12 +565,12 @@ wx-button {
 
 ```diff
 {
-+"miniprogramRoot": "miniprogram/",
-+"cloudfunctionRoot": "cloudfunctions/",
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	}
++ "miniprogramRoot": "miniprogram/",
++ "cloudfunctionRoot": "cloudfunctions/",
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  }
 }
 ```
 

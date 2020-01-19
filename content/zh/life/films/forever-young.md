@@ -2,7 +2,7 @@
 title = "立德立言，无问西东"
 description = "《无问西东》不仅仅是一部献礼清华大学百年校庆的电影。"
 date = "2019-04-22T10:17:51+08:00"
-tags = ["youth","thu","love"]
+tags = ["love","thu","youth"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

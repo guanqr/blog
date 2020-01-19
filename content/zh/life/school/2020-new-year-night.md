@@ -1,7 +1,7 @@
 +++
 title = "新年夜不狂欢"
 date = "2020-01-03T12:01:17+08:00"
-tags = ["zju","youth","essay","choice"]
+tags = ["choice","essay","research","youth","zju"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

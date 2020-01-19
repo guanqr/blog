@@ -1,7 +1,7 @@
 +++
 title = "赛博朋克：一个独特的科幻世界"
 date = "2019-07-16T16:17:15+08:00"
-tags = ["sci-fi","cyberpunk"]
+tags = ["cyberpunk","sci-fi"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

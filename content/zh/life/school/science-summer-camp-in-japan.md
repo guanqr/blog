@@ -1,7 +1,7 @@
 +++
 title = "记 2018 年暑期日本科研夏令营"
 date = "2019-04-03T10:00:01+08:00"
-tags = ["zju","optics","japan"]
+tags = ["japan","research","zju"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

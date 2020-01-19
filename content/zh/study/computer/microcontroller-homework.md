@@ -1,7 +1,7 @@
 +++
 title = "单片机基础操作"
 date = "2019-06-14T19:12:11+08:00"
-tags = ["microcontroller","asm"]
+tags = ["asm","microcontroller"]
 series = ["major-courses"]
 dropCap = true
 displayCopyright = true

@@ -2,7 +2,7 @@
 title = "浅谈微信推文编辑"
 description = "由微信推文编辑的反人类操作引发的对文章排版格式的思考"
 date = "2019-11-30T17:02:06+08:00"
-tags = ["wechat","typography"]
+tags = ["typography","wechat"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

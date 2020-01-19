@@ -2,7 +2,7 @@
 title = "微信小程序课程后记"
 description = "微信小程序「生活工具箱」设计"
 date = "2020-01-18T19:52:44+08:00"
-tags = ["wechat","typography","zju"]
+tags = ["typography","wechat","zju"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

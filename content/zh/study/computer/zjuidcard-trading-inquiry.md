@@ -1,7 +1,7 @@
 +++
 title = "使用 Excel 对校园卡流水对账"
 date = "2019-06-30T09:11:32+08:00"
-tags = ["zju","idcard"]
+tags = ["idcard","zju"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

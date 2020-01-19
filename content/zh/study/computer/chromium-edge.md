@@ -1,7 +1,7 @@
 +++
 title = "尝鲜：微软新版 Edge 浏览器"
 date = "2019-06-25T19:19:16+08:00"
-tags = ["microsoft","google"]
+tags = ["google","microsoft"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

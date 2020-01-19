@@ -1,7 +1,7 @@
 +++
 title = "我的学生工作经历"
 date = "2019-11-18T20:27:18+08:00"
-tags = ["wechat","zju","youth"]
+tags = ["wechat","youth","zju"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

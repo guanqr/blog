@@ -2,7 +2,7 @@
 title = "致疯狂的人"
 description = "我高中时期语文课堂上的一次演讲。"
 date = "2019-04-17T12:24:01+08:00"
-tags = ["apple","humankind","education"]
+tags = ["apple","education","humankind"]
 dropCap = true
 displayCopyright = true
 gitinfo = true
@@ -41,8 +41,6 @@ gitinfo = true
 ![steve-jobs-1.jpg](/images/steve-jobs-1.jpg "史蒂夫·乔布斯")
 
 我们追述伟人的事迹，探索成功的秘诀，往往忘记了他们的不可复制性，如果说有什么共性，我想就是对成功的热望和不懈的追求。没有那些非凡的生涯，只是单纯地追求处事方式的相似，往往不能做出相似的成就。上帝给了乔布斯一个苹果，可是它有一个缺口。对于现在社会倡导的创新仅仅停留在口头上的硬伤，乔布斯绝对是创新的先行者。伟人最大的价值不是他们为当时的年代创造了多少利益，而是让我们可以看到人的一生应该怎样度过。[^2]
-
-
 
 [^1]: 苹果公司 1997 年 《非同凡想》（*Think Different*）广告词。
 [^2]: 文章内容参考自沃尔特·艾萨克森的《史蒂夫·乔布斯传》。

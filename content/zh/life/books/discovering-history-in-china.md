@@ -2,7 +2,7 @@
 title = "中国中心观的兴起"
 description = "《在中国发现历史》书评"
 date = "2019-05-11T09:18:46+08:00"
-tags = ["history","religion","game"]
+tags = ["game","history","religion"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

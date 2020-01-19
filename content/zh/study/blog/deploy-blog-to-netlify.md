@@ -1,7 +1,7 @@
 +++
 title = "博客通过 Netlify 实现持续集成"
 date = "2019-10-05T00:04:30+08:00"
-tags = ["netlify","hexo"]
+tags = ["hexo","netlify"]
 series = ["create-a-blog"]
 aliases = ["/2019/10/04/deploy-blog-to-netlify/"]
 dropCap = true

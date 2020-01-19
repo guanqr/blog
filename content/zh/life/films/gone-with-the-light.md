@@ -2,7 +2,7 @@
 title = "那些没有被光抓走的人"
 description = "如果有一道神秘的光把一部分人抓走，社会的平静与法则被打破，我们该怎么办？"
 date = "2019-12-17T12:48:12+08:00"
-tags = ["love","death","magical-realism","family"]
+tags = ["death","family","love","magical-realism"]
 dropCap = true
 displayCopyright = true
 gitinfo = true

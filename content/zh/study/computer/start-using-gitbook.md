@@ -1,7 +1,7 @@
 +++
 title = "使用 GitBook 打造独一无二的电子书"
 date = "2019-07-22T10:05:12+08:00"
-tags = ["gitBook","git"]
+tags = ["git","typography"]
 aliases = ["/2019/07/22/start-using-gitbook/"]
 dropCap = true
 displayCopyright = true

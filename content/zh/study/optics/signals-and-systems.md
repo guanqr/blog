@@ -194,7 +194,7 @@ t=-1.5:Ts:6;
 x=exp(-t-1).^(t>=-1);
 ```
 
-如果系统的单位冲激响应为 $h(t)=u(t−2)−u(t−3)，可表示为（取样间隔和时间范围与输入信号相同）：
+如果系统的单位冲激响应为 $h(t)=u(t-2)-u(t-3)$，可表示为（取样间隔和时间范围与输入信号相同）：
 
 ```matlab
 h=(t>=2)-(t>=3);
@@ -382,10 +382,10 @@ legend('Zero Input Response','Zero State Response','Total Response');
 `lsim` 函数也可以求解离散时间系统的响应，已知系统的前向差分方程为：
 
 $$
-y[n+2]−0.7y[n+1]+0.1y[n]=7x[n+2]−2x[n+1]
+y[n+2]-0.7y[n+1]+0.1y[n]=7x[n+2]-2x[n+1]
 $$
 
-输入信号为 $x[n]=0.8^nu[n]$，系统的初始条件为 $y[−1]=10$，$y[−2]=−10$，求系统的零输入相应、零状态响应和全响应。
+输入信号为 $x[n]=0.8^nu[n]$，系统的初始条件为 $y[-1]=10$，$y[-2]=-10$，求系统的零输入相应、零状态响应和全响应。
 
 ```matlab
 a=[1 -0.7 0.1];
@@ -559,3 +559,218 @@ legend('u_c','u_r','u_{in}')
 ```
 
 ![signals-and-systems-14.png](/images/signals-and-systems-14.png)
+
+## 连续时间信号的时域采样和重建
+
+在数字信号处理系统中，通常首先要通过采样和量化过程将模拟信号转换为离散信号（合起来称为模数转换，或 ADC），然后是数字信号处理器对离散信号进行处理，最后要通过重建（或恢复）过程将处理后的离散信号转换为模拟信号（称为数模转换，或 DAC）。
+
+采样定理：如果信号带宽小于奈奎斯特频率（即采样频率的二分之一），那么采样得到的离散样本值能够完全表示原信号。频率大于等于奈奎斯特频率的信号分量会发生混叠现象，在重建时将会重建成频率低于奈奎斯特频率的信号，因此在实际应用中一般都要求避免混叠。通过采样定理可以得出以下的结论：
+
+1. 如果已知信号的最高频率 $\omega_m$，采样定理给出了保证完全重建信号的最低采样频率 $\omega_s$；
+2. 反之，如果已知采样频率 $\omega_s$，采样定理给出了保证完全重建信号的带限信号的最高频率 $\omega_m$;
+3. 被采样的信号必须是带限的。信号中高于某频率的成分必须为零，或者非常接近于零，这样在重建信号时这些频率成分的影响可忽略不计。
+
+采样定理是在理想化的条件下得出的，它假设信号是非时限的（因为只有持续时间无限长的信号的频谱才是完全带限的），而在实际应用中绝大多数信号都是时限的。因此采样信号的完全重建只是对理想化的数学模型是可能的，在实际应用中，信号采样、重建得到的一般都是原信号的近似。
+
+从采样定理可知，如果以超过奈奎斯特率的频率对带限信号进行采样，那么就能从其样本完全重建信号。重建过程可以看成是一个分为两步的过程：首先是将离散时间样本 $x[n]$ 转换为加权冲激串信号：
+
+$$
+s_p(t)=\sum\limits_{n=-\infty}^{\infty}x[n]\delta(t-nT_s)
+$$
+
+然后将该冲激串信号输入到一个理想低通滤波器即可完全恢复原信号，理想低通滤波器的带宽限制在 $(-\omega_s/2,\omega_s/2)$，增益为 $2\pi/\omega_s$。根据上述的重建过程，不难得出重建信号 $x_a(t)$ 的内插公式为：
+
+$$
+x_a(t)=\sum\limits_{n=-\infty}^{\infty}x[n]sinc\bigg(\frac{1}{T_s}(t-nT_s)\bigg)
+$$
+
+实际上这种理想低通滤波器和内插通常是不可行的（因为系统是非因果的，且严格来说，只对非时限信号有效）。在实际应用中，我们常用比较低阶的内插来近似地重建信号，如：零阶保持、一阶保持、三次样条。
+
+```matlab
+a=[0 0.2 -1.2 1.2];
+t=0:1e-3:0.2;
+y=cos(2*pi*10*t);
+subplot(3,1,1); plot(t,y); axis(a);
+title('Continuous-time Signal');
+subplot(3,1,2); plot(t,y,'r:'); axis(a);
+hold on;
+t1=0:1/120:0.2;
+y1=cos(2*pi*10*t1);
+stem(t1,y1);
+title('Discrete-time Signal');
+subplot(3,1,3); plot(t,y,'r:'); axis(a);
+hold on;
+stairs(t1,y1);
+title('Zero-order Hold Signal')
+xlabel('Time (s)');
+hold off;
+```
+
+运行上述代码得到下图：
+
+![signals-and-systems-15.png](/images/signals-and-systems-15.png)
+
+如图所示，在 MATLAB 中我们可以用零阶保持信号来近似地表示连续信号。 零阶保持和一阶保持的优点是在实际应用中很容易实现。从图中可以看出，采样间隔越小（相应地采样频率越高），所得到的零阶保持近似与原信号就越接近。
+
+### 采样信号的时域频域分析
+
+已知信号：
+
+$$
+x(t)=5+3\cos\bigg(400\pi t+\frac{\pi}{4}\bigg)+4\cos\bigg(600\pi t-\frac{\pi}{2}\bigg)
+$$
+
+作出采样频率分别为 $700Hz$、$600Hz$ 和 $500Hz$ 时，信号采样值的波形及其频谱。
+
+首先定义两个函数：
+
+`mydft`：
+
+```matlab
+function y=mydft(x,t,f) 
+Ts=t(2)-t(1);
+y=Ts*x*exp(-1i*2*pi*t'*f);
+end
+```
+
+`myidft`：
+
+```matlab
+function x=myidft(y, f, t) 
+Fs=f(2)-f(1);
+x=Fs*y*exp(1i*2*pi*f'*t);
+end
+```
+
+为了较清楚地显示频谱混叠现象，分别设置采样率为 $700Hz$、$650Hz$、$600Hz$、$550Hz$、$500Hz$ 和 $450Hz$。
+
+```matlab
+Fs=[700,650,600,550,500,450];
+f=-1000:0.5:1000;
+tc=0:1/12000:0.03;
+xc=5+3*cos(400*pi*tc+pi/4)+4*cos(600*pi*tc-pi/2);
+at=[0,20,0,8];
+af=[-900,900,-0.05,1.5];
+for k=1:6
+    t=0:1/Fs(k):1;
+    x=5+3*cos(400*pi*t+pi/4)+4*cos(600*pi*t-pi/2);
+    y=mydft(x,t,f);
+    subplot(6,2,2*k-1);stem(t*1000,x); xlabel('Time (ms)');
+    hold on; plot(tc*1000,xc,'g:');axis([0 20 -3 13]); hold off;
+    subplot(6,2,2*k);plot(f/1000,abs(y)); axis([0 1 0 6]); xlabel('Frequency (kHz)');
+end
+```
+
+![signals-and-systems-16.png](/images/signals-and-systems-16.png)
+
+采样得到的离散时间信号的频谱是周期的，周期为采样率 $f_s$，因此如果原信号的最高频率 $f_m\geq f_s/2$，采样得到的信号的频谱将发生混叠。由于信号的最高频率为 $300Hz$，所以图中只有采样率为 $700Hz$ 和 $650Hz$ 时得到的采样信号未发生混叠现象。
+
+如果设计一个增益为 $1$、截止频率为采样频率的一半的理想低通滤波器，近似地求出当采样频率为 $1KHz$ 时，采样得到的零阶保持信号经过该理想低通滤波器后的输出。
+
+```matlab
+Fs=[1000,10000]; 
+t=0:1/Fs(1):1-1/Fs(1);
+tc=0:1/Fs(2):1-1/Fs(2);
+f=-1000:0.5:1000;
+% Sampled signal
+x=5+3*cos(400*pi*t+pi/4)+cos(800*pi*t-pi/2);
+% Over-sampled signal representing the continous-time signal
+xc=5+3*cos(400*pi*tc+pi/4)+cos(800*pi*tc-pi/2);
+% 'Continous-time' zero order hold signal
+xzoh=zeros(Fs(2)/Fs(1),length(t));
+for k=1:Fs(2)/Fs(1)
+    xzoh(k,:)=x;
+end
+xzoh=xzoh(:)'; 
+% Fourier transform of the 'continous-time' signal
+yc = mydft(xc,tc,f);
+% Fourier transform of the sampled signal 
+y = mydft(x,t,f);
+% Fourier transform of the zero order hold signal 
+yzoh = mydft(xzoh,tc,f);
+% Low-pass filtering
+ylpf = yzoh.*((f>=-500)-(f>=500));
+% Inverse Fourier transform the low-pass filtered signal
+xlpf = myidft(ylpf,f,tc);
+% The plottings
+at = [10 30 0 8];
+af = [-900 900 -0.05 6];
+subplot(421); plot(tc*1000,xc); axis(at);
+title('Continous-time Signal');
+subplot(423); stem(t*1000,x); axis(at);
+title('Sampled Discrete-time Signal');
+subplot(425); plot(tc*1000,xzoh); axis(at);
+title('Zero Order Hold Signal');
+subplot(422); plot(f,abs(yc));  axis(af);
+subplot(424); plot(f,abs(y));  axis(af);
+subplot(426); plot(f,abs(yzoh)); axis(af);
+subplot(428); plot(f,abs(ylpf)); axis(af);
+xlabel('Frequency (Hz)');
+subplot(427); plot(tc*1000,real(xlpf)); axis(at);
+xlabel('Time (ms)');
+title('Low-pass filtered Signal');
+```
+
+![signals-and-systems-17.png](/images/signals-and-systems-17.png)
+
+从图中可以看出，采样得到的零阶保持信号虽然在时域上波形与原始信号有较大的差别，但经低通滤波器滤除高次谐波后，更接近于原信号。
+
+### 采样信号的时域重建
+
+已知时限信号：
+
+$$
+x(t)=\sin(20\pi t+\pi/4),\quad 0\leq t\leq 1
+$$
+
+用采样频率 $f_s=20Hz$ 对信号进行采样得到离散时间信号 $x[n]$。画出 $x[n]$ 用以下不同重建方式得到的模拟信号并叠加在原信号上进行比较：
+
+1. 零阶保持；
+2. 一阶保持；
+3. 三次样条内插；
+4. $sinc$ 函数内插。
+
+```matlab
+Fs=[20,1000]; 
+t=0:1/Fs(1):3;
+tc=0:1/Fs(2):2.5;
+f=-1000:0.5:1000;
+% Sampled signal
+x=sin(20*pi*t+pi/4);
+% Over-sampled signal representing the continous-time signal
+xc=sin(20*pi*tc+pi/4);
+
+% Zero order hold signal
+xzoh=zeros(size(tc));
+for k=1:length(tc)
+    l=ceil(k*Fs(1)/Fs(2));
+    xzoh(k)=x(l);
+end
+
+%First order hold signal
+xfoh=zeros(size(tc));
+for k=1:length(tc)
+    l=ceil(k*Fs(1)/Fs(2));
+    r=k*Fs(1)/Fs(2)+1-l;
+    xfoh(k)=r*x(l+1)+(1-r)*x(l);
+end
+
+% Spline interpolation
+xspi=spline(t,x,tc);
+
+% Sinc interpolation
+xssi=x*(sinc(Fs(1)*(ones(size(t'))*tc-t'*ones(size(tc)))));
+
+ax=[1,1.5,-1.2 1.2];
+subplot(4,1,1); plot(tc,xzoh,tc,xc,'r:'); axis(ax);
+title('Zero Order Hold');
+subplot(4,1,2); plot(tc,xfoh,tc,xc,'r:'); axis(ax);
+title('Linear');
+subplot(4,1,3); plot(tc,xspi,tc,xc,'r:'); axis(ax);
+title('Spline');
+subplot(4,1,4); plot(tc,xssi,tc,xc,'r:'); axis(ax);
+title('Sinc')
+xlabel('Time (s)');
+```
+
+![signals-and-systems-18.png](/images/signals-and-systems-18.png)

@@ -101,7 +101,7 @@ title('$x_2[n]=\sum\limits_{k=-\infty}^n{x[k]}$','interpreter','latex');
 
 #### 离散时间序列的卷积和
 
-如果两个序列的自变量 $n$ 分别开始于 $n_1$ 和 $n_2$，则它们的卷积开始于 $n_1+n_2$。计算 $x_1[n]=0.5^nu[n]$ 和 $x_2[n]=u[n-1]-u[n_6]$ 的卷积，程序如下：
+如果两个序列的自变量 $n$ 分别开始于 $n_1$ 和 $n_2$，则它们的卷积开始于 $n_1+n_2$。计算 $x_1[n]=0.5^nu[n]$ 和 $x_2[n]=u[n-1]-u[n-6]$ 的卷积，程序如下：
 
 ```matlab
 n1=0:10; x1=0.5.^n1;
@@ -774,3 +774,233 @@ xlabel('Time (s)');
 ```
 
 ![signals-and-systems-18.png](/images/signals-and-systems-18.png)
+
+## 连续时间信号和系统的复频域分析
+
+已知单边信号：
+
+$$
+x(t)=e^{-3t}\cos(2t+\pi/3)u(t)
+$$
+
+计算其拉普拉斯变换的解析式。
+
+```matlab
+syms t s;
+xt=exp(-3*t)*cos(2*t+pi/3);
+Xs=laplace(xt);
+pretty(Xs)
+```
+
+得到其拉普拉斯变换为：
+
+$$
+X(s)=\frac{\frac{1}{2}(s+3)-\sqrt{3}}{(s+3)^2+4}
+$$
+
+求：
+
+$$
+X(s)=\frac{4s^3-6s^2-3s+4}{s^4-4s^3+5s^2-2s},\quad Re\{s\}>0
+$$
+
+的拉普拉斯反变换。
+
+```matlab
+syms t s;
+Xs=(4*s^3-6*s^2-3*s+4)/(s^4-4*s^3+5*s^2-2*s);
+xt=ilaplace(Xs);
+pretty(xt)
+```
+得到其拉普拉斯反变换为：
+
+$$
+x(t)=(3e^{2t}+3e^t+te^t-2)u(t)
+$$
+
+已知两个因果 LTI 系统的系统函数为：
+
+$$
+H(s)=\frac{2s+1}{s^3+(3/2)s^2+(13/16)s+(5/16)}
+$$
+
+和
+
+$$
+G(s)=\frac{s(2s+1)}{s^3+(3/2)s^2+(13/16)s+(5/16)}
+$$
+
+分别对系统函数进行部分分式展开，求出系统的单位冲激响应 $h(t)$ 和 $g(t)$，作出其时域波形。
+
+与上一问题类似，通过符号运算工具箱和 `ilaplace` 函数可得：
+
+$$
+h(t)=\bigg(-\frac{16}{13}e^{-t}+\frac{16}{13}e^{-\frac{t}{4}}\cos\bigg(\frac{t}{2}\bigg)+\frac{28}{13}e^{-\frac{t}{4}}\sin\bigg(\frac{t}{2}\bigg)\bigg)u(t)
+$$
+
+和
+
+$$
+g(t)=\bigg(\frac{16}{13}e^{-t}+\frac{10}{13}e^{-\frac{t}{4}}\cos\bigg(\frac{t}{2}\bigg)-\frac{15}{13}e^{-\frac{t}{4}}\sin\bigg(\frac{t}{2}\bigg)\bigg)u(t)
+$$
+
+通过程序：
+
+```matlab
+b0=[2 1];
+b1=[2 1 0];
+a=[1 3/2 13/16 5/16];
+sys0=tf(b0,a); sys1=tf(b1,a);
+t=0:0.01:20;
+subplot(2,2,1); plot(t,impulse(sys0,t));
+xlabel('Time (seconds)'); ylabel('Amplitude');
+ht=-16/13*exp(-t)+1/13*exp(-t/4).*(16*cos(t/2)+28*sin(t/2));
+subplot(2,2,2); plot(t,ht); title('h(t)');
+xlabel('Time (seconds)'); ylabel('Amplitude');
+subplot(2,2,3); plot(t,impulse(sys1,t));
+xlabel('Time (seconds)'); ylabel('Amplitude');
+gt=16/13*exp(-t)+1/13*exp(-t/4).*(10*cos(t/2)-15*sin(t/2));
+subplot(2,2,4); plot(t,gt); title('g(t)');
+xlabel('Time (seconds)'); ylabel('Amplitude');
+```
+
+得到下图：
+
+![signals-and-systems-19.png](/images/signals-and-systems-19.png)
+
+图中左边为直接用 `impulse` 函数得到的结果，右边为拉普拉斯反变换得到 $h(t)$ 和 $g(t)$，两者相同。由于 $G(s)=sH(s)$，所以 $h(t)$ 和 $g(t)$ 有：
+
+$$
+g(t)=\frac{d}{dt}h(t)
+$$
+
+作出系统的零、极点分布图。
+
+```matlab
+subplot(121);
+pzmap(sys0);
+subplot(122);
+pzmap(sys1);
+```
+
+![signals-and-systems-20.png](/images/signals-and-systems-20.png)
+
+由于这两个因果系统的极点均分布在 $S$ 平面的左半平面（即所有极点的实部均小于零），因此系统是稳定的。
+
+## 离散时间信号和系统的 Z 域分析
+
+求出以下序列的 Z 变换：
+
+1. $x[n]=a^n\cos(n\pi/2)u[n]$
+2. $x[n]=n(n-1)/2u[n]$
+
+```matlab
+syms a n;
+x0=a^n*cos(n*pi/2);
+x1=n*(n-1)/2;
+X0 = simple(ztrans(x0));
+X1 = simple(ztrans(x1));
+pretty(X0);
+pretty(X1);
+```
+
+求得 Z 变换为：
+
+$$
+\begin{aligned}
+x(z)&=\frac{z^2}{a^2+z^2}\\
+x(z)&=\frac{z}{(z-1)^3}
+\end{aligned}
+$$
+
+用 Z 域分析法求出以下离散时间 LTI 系统的零状态响应。
+
+1. 系统单位脉冲响应为 $h[n]=(\frac{1}{3}(-1)^n+\frac{2}{3}3^n)u[n]$，输出信号为 $x[n]=(-1)^nu[n]$；
+2. 系统函数为 $H(z)=\frac{z(7z-2)}{(z-0.2)(z-0.5)}$，输入信号为 $x[n]=\cos(\frac{n\pi}{2})u[n]$。
+
+通过：
+
+```matlab
+syms n;
+h=(-1)^n/3+2*3^n/3; H=ztrans(h);
+x=(-1)^n; X=ztrans(x);
+Y=H*X;
+y=simple(iztrans(Y));
+```
+
+可得系统的零状态响应为：
+
+$$
+y[n]=\bigg(\frac{1}{3}(-1)^nn+\frac{1}{2}(-1)^n+\frac{1}{2}3^n\bigg)u[n]
+$$
+
+通过：
+
+```matlab
+syms n z;
+H=z*(7*z-2)/(z-1/5)/(z-1/2);
+x=cos(n*pi/2); X=ztrans(x);
+Y=H*X;
+y=simple(iztrans(Y));
+pretty(y);
+```
+
+得到：
+
+$$
+\begin{aligned}
+&y[n]=\\
+&\bigg(\bigg(\frac{1}{2}\bigg)^n+\frac{1}{13}\bigg(\frac{1}{5}\bigg)^n+j^n\bigg(\frac{77}{26}-j\frac{31}{26}\bigg)+(-j)^n\bigg(\frac{77}{26}+j\frac{31}{26}\bigg)\bigg)u[n]
+\end{aligned}
+$$
+
+用欧拉公式可化简为：
+
+$$
+y[n]=\bigg(\bigg(\frac{1}{2}\bigg)^n+\frac{1}{13}\bigg(\frac{1}{5}\bigg)^n+\frac{77}{13}\cos\bigg(\frac{n\pi}{2}\bigg)-\frac{31}{13}\sin\bigg(\frac{n\pi}{2}\bigg)\bigg)u[n]
+$$
+
+读取计算机中的系统提示音文件 `Windows Logon.wav`（文件位置：`C:\Windows\Media\`），作出声音的时域波形和频谱。
+
+```matlab
+[xi,Fs]=audioread('Windows Logon.wav');
+x=xi(:,1);
+N=length(x);
+t=(0:N-1)/Fs;
+f=(0:N-1)/N*Fs;
+y=fft(x)/Fs;
+figure(1);
+subplot(2,1,1); plot(t,x)
+xlabel('Time (seconds)');
+subplot(2,1,2); plot(f(1:floor(N/2))/1000,abs(y(1:floor(N/2))));
+xlabel('Frequency (KHz)');
+axis([0 2 0 0.02]);
+```
+
+![signals-and-systems-21.png](/images/signals-and-systems-21.png "系统音频的时域波形和频谱图")
+
+让声音通过一滤波器，传递函数为：
+
+$$
+H(z)=1+az^{-D}+a^2z^{-2D}+a^3z^{-3D}
+$$
+
+其中 $D$ 的值为采样率的 $0.2$ 倍，$a=0.2$，改变参数值，可观察到不同的回声效果。
+
+```matlab
+D=floor(0.2*Fs);
+a=0.2;
+zt=zeros(1,3*D+N);
+zt(1:N)=x;
+z=zt;
+zt=zeros(1,3*D+N);
+zt(D+1:D+N)=a*x;
+z=z+zt;
+zt=zeros(1,3*D+N);
+zt(2*D+1:2*D+N)=a*a*x;
+z=z+zt;
+zt=zeros(1,3*D+N);
+zt(3*D+1:3*D+N)=a*a*a*x;
+z=z+zt;
+audiowrite('output.wav',z,Fs)
+```

@@ -1,6 +1,6 @@
 +++
 title = "友情链接"
-description = "感谢您的关注与支持 ~"
+description = "感谢你的关注与支持 ~"
 date = "2019-05-01T08:41:47+08:00"
 badge = false
 meta = false
@@ -12,6 +12,16 @@ blogroll = true
 
 以上友链按添加时间先后排序。
 
+## 网站收藏
+
++ [CC98](https://www.cc98.org/)：浙江大学 CC98 论坛
++ [查老师](https://chalaoshi.qiushi.ac.cn/)：查询学生对授课教师的匿名打分与评价
++ [选课助手](https://enroll.zjuqsc.com/)：一款帮助浙大学生选课的浏览器插件
++ [空余教室查询系统](https://app.zjuqsc.com/classroom/)：查询可以自习的空闲教室
++ [浙江大学课程攻略共享计划](https://github.com/QSCTech/zju-icicles/)：收录有历年试卷与复习资料
++ [日本の伝統色](http://nipponcolors.com/)：一个设计精美的配色网站
++ [懒得勤快](https://masuit.com/)：一个免费分享各类办公软件的网站
+
 ## 申请条件
 
 + 网站为个人博客。
@@ -21,7 +31,7 @@ blogroll = true
 
 ## 申请方式
 
-+ 首先将本站链接添加至您的网站，信息如下：
++ 首先将本站链接添加至你的网站，信息如下：
 
 <p id="div-default" style="text-align: left;">
 网站名称：荷戟独彷徨<br>
@@ -29,4 +39,4 @@ blogroll = true
 网站标志：<a href="../icons/android-chrome-512x512.png" target="_blank">https://guanqr.com/icons/android-chrome-512x512.png</a><br>
 网站描述：The Sound of Silence</p>
 
-+ 将您的网站信息按照上述格式在[这里](https://github.com/guanqr/blog/issues/5)留言或发送电子邮件至 [guanqirui@zju.edu.cn](mailto:guanqirui@zju.edu.cn)，审核通过后将会添加至该页面中。
++ 将你的网站信息按照上述格式在[这里](https://github.com/guanqr/blog/issues/5)留言或发送电子邮件至：<br>[guanqirui@zju.edu.cn](mailto:guanqirui@zju.edu.cn)，审核通过后将会添加至该页面中。

@@ -1,4 +1,4 @@
 +++
-title = "建立静态博客"
+title = "博客搭建"
 slug = "create-a-blog"
 +++

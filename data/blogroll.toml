@@ -48,15 +48,8 @@
   weight = 7
 
 [[blogroll]]
-  name = "懒得勤快"
-  url = "https://masuit.com/"
-  avatar = "/images/friends/masuit.png"
-  description = "互联网分享精神，勤于发现，乐于分享"
-  weight = 8
-
-[[blogroll]]
   name = "天涯共此时"
   url = "https://ztygcs.github.io/"
   avatar = "/images/friends/ztygcs.png"
   description = "技术博文，生活杂碎，哲理人生"
-  weight = 9
+  weight = 8

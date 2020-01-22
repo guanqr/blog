@@ -2,6 +2,7 @@
 title = "信号与系统：MATLAB 信号处理"
 date = "2020-01-20T08:38:19+08:00"
 tags = ["matlab"]
+series = ["major-courses"]
 katex = true
 dropCap = true
 displayCopyright = true

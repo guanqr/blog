@@ -288,7 +288,8 @@ uglyURLs = false
     # 背景色
     # siteBrandBackgroundColor = "hsl(240, 8%, 12%)"
     # 背景图片
-    siteBrandBackgroundImage = "linear-gradient(to right, #ef4e7b, #aa96da, #facad3)"
+    siteBrandBackgroundImage = "url(/images/site-brand.jpg)"
+    # "linear-gradient(to right, #ef4e7b, #aa96da, #facad3)"
     # "linear-gradient(90deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%)"
     # 注意：背景色和背景图片只能二选一
 

@@ -248,7 +248,19 @@ span#inline-toc {
 // 品牌栏自动隐藏
 .site-brand {
     overflow: auto hidden;
-    background-size: 150em;
-    background-position-x: 0%;
-    background-position-y: 25%;
+    background-size: cover;
+    background-position-x: 0;
+    background-position-y: 0;
+}
+@media screen and (min-width: 1920px) {
+    .site-brand {
+        background-size: 2560px;
+        background-position-y: -36px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .site-brand {
+        background-size: calc(1000px + 1560 * (100vw - 1000px) / 920);
+        background-position-y: calc(-36 * (100vw - 1000px) / 920);
+    }
 }

@@ -1,30 +1,30 @@
 // 自定义引用边框
-p#div-danger, p#div-warning, p#div-success, p#div-info, p#div-primary, p#div-default {
+.note-danger, .note-warning, .note-success, .note-info, .note-primary, .note-default {
     padding: 0.5em 1em;
     border-left: 3px solid;
     font-family: 'EB Garamond', 'STKaiti', 'KaiTi', 'SimKai', 'Noto Serif SC', serif;
 }
-p#div-default {
+.note-default {
     background: hsl(0, 0%, 95%);
     border-left-color: hsl(0, 0%, 55%);
 }
-p#div-primary {
+.note-primary {
     background: hsl(270, 75%, 95%);
     border-left-color: hsl(270, 75%, 55%);
 }
-p#div-success {
+.note-success {
     background: hsl(120, 75%, 95%);
     border-left-color: hsl(120, 75%, 55%);
 }
-p#div-info {
+.note-info {
     background: hsl(200, 75%, 95%);
     border-left-color: hsl(200, 75%, 55%);
 }
-p#div-warning {
+.note-warning {
     background: hsl(40, 75%, 95%);
     border-left-color: hsl(40, 75%, 55%);
 }
-p#div-danger {
+.note-danger {
     background: hsl(0, 75%, 95%);
     border-left-color: hsl(0, 75%, 55%);
 }
@@ -50,27 +50,27 @@ span.label.danger {
     background: hsl(352, 90%, 95%);
 }
 [data-theme="dark"] {
-    p#div-default {
+    .note-default {
         background: hsl(0, 0%, 15%);
         border-left-color: hsl(0, 0%, 55%);
     }
-    p#div-primary {
+    .note-primary {
         background: hsl(270, 5%, 15%);
         border-left-color: hsl(270, 25%, 55%);
     }
-    p#div-success {
+    .note-success {
         background: hsl(120, 5%, 15%);
         border-left-color: hsl(120, 25%, 55%);
     }
-    p#div-info {
+    .note-info {
         background: hsl(200, 5%, 15%);
         border-left-color: hsl(200, 25%, 55%);
     }
-    p#div-warning {
+    .note-warning {
         background: hsl(40, 5%, 15%);
         border-left-color: hsl(40, 25%, 55%);
     }
-    p#div-danger {
+    .note-danger {
         background: hsl(0, 5%, 15%);
         border-left-color: hsl(0, 25%, 55%);
     }

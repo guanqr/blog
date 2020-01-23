@@ -14,12 +14,12 @@ toc = true
 
 ## 写在前面
 
-从最初建立该博客到现在，我参考了许多使用 NexT 主题的博主们的文章，对 NexT.Muse 主题进行了一次又一次的优化与深层次的魔改。在此感谢这些分享自己建站教程的博主们。秉承着开源共享精神，我也将我在优化博客主题时使用到的方法分享出来。这些内容大都是我从互联网搜集汇总的优化方法，也有一小部分是我个人的修改。文中所讲的一些东西，可能随着 NexT 主题的更新，成为主题自带的一部分，或被主题抛弃；也可能自身就存在一定的错误。望各位读者能及时指出问题，让这篇文章能够更加完善，紧跟主题更新的步伐。
+从最初建立该博客到现在，我参考了许多使用 NexT 主题的博主们的文章，对 NexT.Muse 主题进行了一次又一次的优化与深层次的魔改。在此感谢这些分享自己建站教程的博主们。秉承着开源共享精神，我也将我在优化博客主题时使用到的方法分享出来。这些内容大都是我从互联网搜集汇总的优化方法，也有一小部分是我个人的修改。
 
 在本文中，我将会全面讲解 Hexo 博客的搭建，NexT 主题的安装和配置，以及个性优化的内容。本文文章篇幅较长，为了方便阅读，在开头添加了文章目录，目录与各段落标题之间相互链接，可双向跳转。
 
-<p id="div-success">
-[2019/11/09] 更新：目前我的博客已经从 Hexo 迁移到了 Hugo，但是出于对 NexT 主题的喜爱，我今后有空的时候会继续维持更新这篇文章。在此前我共分为两篇文章讲解主题的个性优化：《Hexo-NexT 主题：文章内容美化》与《Hexo-NexT 主题：网站页面优化》，但内容分散不利于阅读，所以在本次更新中我决定将这两篇文章合二为一，并精简规范了文章内容和操作步骤。
+<p class="note-warning">
+注意：目前我的博客已经从 Hexo 迁移到了 Hugo，因此我并没有过多地关注 Next 主题在 2019 年 11 月后的更新内容。文中所讲的一些东西，可能随着 NexT 主题的更新，成为主题自带的一部分，或被主题抛弃；也可能自身就存在一定的错误。望各位读者能及时指出问题，让这篇文章能够更加完善，紧跟主题更新的步伐。
 </p>
 
 ## 搭建 Hexo 博客
@@ -137,7 +137,7 @@ timezone: Asia/Shanghai
 ## 博客的网址及文章 URL 结构，默认在根目录
 ## 如果你想要将博客设定在一个子目录，如 'http://yoursite.com/blog'，则将 root 设定为该子目录的名称 '/child/'
 ## 建议博客的 URL 结构在博客建立初期就规划好，因为当你写的文章被搜索引擎收录以及被读者收藏后，再更改结构，会对你的网站访问造成一定影响
-url: https://blog.guanqr.com/
+url: https://guanqr.com/
 root: /
 ## 详细参数请查看：https://hexo.io/docs/permalinks.html
 ## 这里默认的路径太不利于 SEO，建议修改成较短的链接。比如 'year:month:day/:title/'
@@ -210,8 +210,6 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
-# 以下为我额外添加的参数设定
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 ## Dependency: https://github.com/hexojs/hexo-deployer-git
@@ -220,64 +218,17 @@ deploy:
   type: git
   repo: https://github.com/guanqr/guanqr.github.io.git
   branch: master
-  
-# 推荐文章功能插件，需要同主题配置文件一起设定
-## Dependency: https://github.com/huiwang/hexo-recommended-posts
-recommended_posts:
-  server: https://api.truelaurel.com #后端推荐服务器地址
-  timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
-  internalLinks: 5 #内部文章数量
-  externalLinks: 0 #外部文章数量
-  fixedNumber: true
-  autoDisplay: false
-
-# Aplayer 音乐播放器插件
-## Dependency: https://github.com/MoePlayer/hexo-tag-aplayer
-aplayer:
-  script_dir: js # Public 目录下脚本目录路径，默认: 'assets/js'
-  style_dir: css # Public 目录下样式目录路径，默认: 'assets/css'
-  #cdn: http://xxx/aplayer.min.js # 引用 APlayer.js 外部 CDN 地址 (默认不开启)
-  #style_cdn: http://xxx/aplayer.min.css # 引用 APlayer.css 外部 CDN 地址 (默认不开启)
-  meting: true # MetingJS 支持
-  #meting_api: http://xxx/api.php # 自定义 Meting API 地址
-  #meting_cdn: http://xxx/Meing.min.js # 引用 Meting.js 外部 CDN 地址 (默认不开启)
-  asset_inject: true # 自动插入 Aplayer.js 与 Meting.js 资源脚本, 默认开启
-  #externalLink: http://xxx/aplayer.min.js # 老版本参数，功能与参数 cdn 相同
-
-# NexT 主题统计文章字数与阅读时长功能，需要同主题配置文件一起设定
-symbols_count_time:
-  symbols: true
-  time: true
-  total_symbols: true
-  total_time: true
-  exclude_codeblock: false
 ```
 
 ### 主题配置文件
 
-NexT 主题的配置文件内容有很多，因为该主题有很多扩展功能。在配置主题各项功能之前，我建议先阅读 [NexT 官方网站](https://theme-next.org/)[^2]的相关文档说明。主题配置文件内容过长，为了排版美观以及阅读方便，这里我将分功能对主题的设定进行较为详细的说明，一些我认为不太重要的配置就不再说明。这里我的 NexT 版本为 v7.4.2，不同版本之间的配置文件可能有微小变化，这里仅供参考。我的完整的主题配置文件可在这里下载：[hexo-theme-next-config.zip](/uploads/hexo-theme-next-config.zip)。
+NexT 主题的配置文件内容有很多，因为该主题有很多扩展功能。在配置主题各项功能之前，我建议先阅读 [NexT 官方网站](https://theme-next.org/)[^2]的相关文档说明。主题配置文件内容过长，为了排版美观以及阅读方便，这里我只对一些关键配置和容易出现问题地方进行说明，一些我认为不太重要的配置就不再提及。这里我的 NexT 版本为 v7.4.2，不同版本之间的配置文件可能有微小变化，这里仅供参考。
 
 #### 自定义配置
 
 对应配置文件中的 `custom_file_path` 内容，如果你需要在网站的 `<head>`、`<body>` 等部位添加自己的代码，无需直接修改主题文件，NexT 主题拥有多样自由的注入功能，这一部分的说明参见下一章节「[网页样式布局](#网页样式布局)」
 
-#### 基本信息配置
-
-##### 站点图标
-
-主题自带的站点图标是 NexT 主题的 LOGO，图片存放位置位于..主题文件夹..下的 `/source/images/` 文件夹。如果你想要自定义图标，可以不用修改该文件夹的内容，直接在..博客根目录..下的 `source` 文件夹下创建一个名为 `images` 的文件夹，将对应的图片存放于该文件夹下即可。注意，图片的大小及文件格式最好与原主题保持一致。
-
-```yml
-favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
-  #android_manifest: /images/manifest.json
-  #ms_browserconfig: /images/browserconfig.xml
-```
-
-##### RSS 订阅
+#### RSS 订阅
 
 开启博客的订阅功能，需要安装 hexo-generator-feed 插件，然后在 `rss: ` 后添加 `/atom.xml`，如下所示：
 
@@ -287,7 +238,7 @@ favicon:
 + rss: /atom.xml
 ```
 
-##### 页脚信息
+#### 页脚信息
 
 在网页的底部显示版权信息，包括年份、图标、作者信息，是否显示 Hexo 及其版本、NexT 及其版本，还有备案信息。这里的图标我设置成了心形，颜色为红色（`#ff0000`），并且添加了动画效果：`animated: true`。这里的图标名称需要填写 [Font Awesome](https://fontawesome.com/) 中提供的图标名称。如果你想要添加任何自定义内容，比如添加一句话，可以考虑在 `~/source/_data/` 路径下建立 `footer.swig` 文件，在该文件下添加内容。
 
@@ -333,7 +284,7 @@ footer:
     gongan_icon_url:
 ```
 
-##### 版权声明
+#### 版权声明
 
 此处的版权声明可以选择在侧栏和文章的末尾两处显示。在侧栏显示版权声明我觉得有些突兀，所以我选择在文章末尾显示。
 
@@ -497,73 +448,7 @@ Docs:
 
 同样，创建三级目录的时候，需要将对应的二级目录默认页面改为 `default`，然后在同级下添加同样格式的内容，在此不再赘述。如果你还没有明白是怎么设定的，可以研究一下 NexT 官方网站的源码[仓库](https://github.com/theme-next/theme-next.org)文件的存放位置。
 
-#### 侧栏配置
-
-##### 侧栏样式
-
-目前侧栏四个主题风格..都支持..选择在左侧还是右侧显示。旧版本中这一功能仅有 Pisces 和 Gemini 支持，Muse 和 Mist 只能显示在右侧，因此网上出现了一些教程教你如何修改 Muse 和 Mist 的侧边栏到左侧，不过这些教程中的方法并不完美，会在动画显示等方面出现 BUG。你也可以在该项配置中配置在移动端显示侧边栏，这是我很喜欢的一个功能，毕竟侧边栏中含有很多博客的基本信息，比如你的头像、联系方式等等，如果在移动端不能显示这些内容，总觉得缺少某些东西……不过这项功能目前..仅支持.. Muse 和 Mist。
-
-```yml
-sidebar:
-  # Sidebar Position.
-  #position: left
-  position: right
-
-  # Manual define the sidebar width. If commented, will be default for:
-  # Muse | Mist: 320
-  # Pisces | Gemini: 240
-  #width: 300
-
-  # Sidebar Display (only for Muse | Mist), available values:
-  #  - post    expand on posts automatically. Default.
-  #  - always  expand for all pages automatically.
-  #  - hide    expand only when click on the sidebar toggle icon.
-  #  - remove  totally remove sidebar including sidebar toggle.
-  display: hide
-
-  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
-  offset: 12
-  # Enable sidebar on narrow view (only for Muse | Mist).
-  onmobile: true
-```
-
-##### 个人头像
-
-这里的设定不是博客标识，而是显示在侧栏的个人标识，即作者头像。你可以设定头像的边框为正方向还是圆形，设定鼠标停靠在头像上时是否旋转。
-
-```yml
-# Sidebar Avatar
-avatar:
-  # In theme directory (source/images): /images/avatar.gif
-  # In site directory (source/uploads): /uploads/avatar.gif
-  # You can also use other linking images.
-  url: /images/guanqr-avatar.jpg
-  # If true, the avatar would be dispalyed in circle.
-  rounded: true
-  # If true, the avatar would be rotated with the cursor.
-  rotated: true
-```
-
-##### 社交链接
-
-在侧栏中添加你的社交链接，格式与[上文](#导航目录)中目录的设定相同，即：`名称: 链接 || 图标`。你也可以在这里设定是图标和名称一起显示还是只显示图标。
-
-```yml
-social:
-  GitHub: https://github.com/guanqr || github
-  Telegram: https://t.me/guanqr || telegram
-  CC98: https://www.cc98.org/user/id/583696 || graduation-cap
-  E-Mail: mailto:guanqirui@zju.edu.cn || envelope
-
-social_icons:
-  enable: true
-  icons_only: false
-  transition: true
-```
-
-#### 文章页面配置
-
-##### 首页文章摘要
+#### 首页文章摘要
 
 如果这一部分内容选择默认配置的话，你会发现你的主页所有的文章都是默认全部展开的，这对于网页的阅读效率影响很大，最佳的阅读体验应该是，在首页只能看到这篇文章的摘要，只有点击该篇文章才可阅读全文。这一部分的配置就是实现该功能的。
 
@@ -587,7 +472,7 @@ auto_excerpt:
 2. 第二项配置即为添加 `description` 描述。如果你的文章中有添加对该文章的描述内容，如 `description: This is a test.`，那么在生成网页的时候，Hexo 会自动截取描述的内容作为文章的摘要，其优先级大于 `<!-- more -->` 标记。
 3. 第三项配置即为自动截取文章前段内容作为摘要，这一项需要自己配置自动截取的字数。这一项的优先级最低。
 
-##### 文章元数据
+#### 文章元数据
 
 即每一篇文章标题下的写作时间、更新时间等信息。
 
@@ -624,18 +509,9 @@ symbols_count_time:
 
 如果没有添加上述内容，则无法显示统计信息。
 
-##### 标签图标
+#### 微信订阅
 
-主题默认的标签图标是一个 `#` ，这里可以将其修改为标签对应的 Font Awesome 图标。目前网络上有很多关于此的教程，不过那都是针对旧版本主题的，新版本主题直接在这里修改即可。
-
-```yml
-# Use icon instead of the symbol # to indicate the tag at the bottom of the post
-tag_icon: true
-```
-
-##### 微信订阅
-
-开启微信订阅功能的时候不要忘记填写二维码所在路径。这里的微信订阅功能开启后，会在文章的末尾显示二维码，个人认为这个设计有些丑陋，你也可以选择像我一样在页脚放置一个二维码链接。只有鼠标停靠在图标上时才会弹出二维码。关于该项功能的实现请看下文。
+开启微信订阅功能的时候不要忘记填写二维码所在路径。这里的微信订阅功能开启后，会在文章的末尾显示二维码，个人认为这个设计有些丑陋，你也可以选择像我一样在页脚放置一个二维码链接。只有鼠标停靠在图标上时才会弹出二维码。关于该项功能的实现请看[下文](#添加页脚微信关注)。
 
 ```yml
 # Wechat Subscriber
@@ -645,28 +521,9 @@ wechat_subscriber:
   #description: Subscribe to my blog by scanning my public wechat account.
 ```
 
-##### 赞赏功能
+#### 相关文章
 
-在文章的末尾开启赞赏，不要忘记填写二维码所在路径。该功能实现后会有一个红色按钮，点击按钮则会弹出赞赏二维码。个人不太建议使用此处的动画效果，因为这里的「晃动」效果有些突兀。
-
-```yml
-# Reward (Donate)
-reward_settings:
-  # If true, reward would be displayed in every article by default.
-  # You can show or hide reward in a specific article throuth `reward: true | false` in Front-matter.
-  enable: false
-  animation: false
-  #comment: Donate comment here.
-
-reward:
-  #wechatpay: /images/wechatpay.png
-  #alipay: /images/alipay.png
-  #bitcoin: /images/bitcoin.png
-```
-
-##### 相关文章
-
-在文章的末尾添加相关（推荐）文章。因为我使用的并不是这一款插件，而是 [hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts)，关于该项功能的设置我并没有研究过，所以此处的具体设置请看[官方说明](https://github.com/tea3/hexo-related-popular-posts)。如果想要使用 hexo-recommended-posts 插件请看下文。
+在文章的末尾添加相关（推荐）文章。因为我使用的并不是这一款插件，而是 [hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts)，关于该项功能的设置我并没有研究过，所以此处的具体设置请看[官方说明](https://github.com/tea3/hexo-related-popular-posts)。如果想要使用 hexo-recommended-posts 插件请看[下文](#文末添加相关文章)。
 
 ```yml
 # Related popular posts
@@ -683,7 +540,7 @@ related_posts:
     #isExcerpt: false
 ```
 
-##### 在线编辑
+#### 在线编辑
 
 因为 Hexo 博客并没有后端数据库，正常情况下无法在线编辑，这里的在线编辑功能需要借助 GitHub 与提供自动部署博客服务以实现持续集成的平台，这里我推荐使用 GitHub 与 Netlify 的组合。即你只需要将你的博客文件夹上传至代码仓库（因为在线编辑功能编辑的是你的原始 Markdown 文件），不用自己执行 `hexo generate && hexo deploy` 命令，而是让 Netlify 帮助你进行自动部署。有关使用 Netlify 实现博客持续集成的方法请看我的这一篇[文章](/study/blog/deploy-blog-to-netlify/)。
 
@@ -698,18 +555,7 @@ post_edit:
 
 该项功能的具体效果可以参考 [NexT 官方网站](https://theme-next.org/)，每一篇文章的右上角都有一个「笔头」图标，点击就会跳转到你的 GitHub 仓库的该篇文章的位置，实现在线编辑。
 
-#### 个性页面配置
-
-##### 归档页面「cheers」
-
-归档页面的顶部会有一句鼓励的话，类似「嗯..! 目前共计 3 篇日志。 继续努力。」，我不太喜欢这句话，觉得有些多余。如果你想要去掉，可以直接设置：
-
-```yml
-# Enable "cheers" for archive page.
-cheers: false
-```
-
-##### 标签页面「标签云」
+#### 标签页面
 
 标签页面的标签云可以自己设定最大和最小的字号，以及颜色的过渡。这里我给出适合我的主题的配色方案：
 
@@ -724,27 +570,9 @@ tagcloud:
   amount: 200 # Amount of tags, change it if you have more than 200 tags
 ```
 
-##### 标题栏颜色
+#### 代码框主题
 
-我们使用安卓系统的谷歌 Chrome 浏览器的时候，会发现访问不同的网站，浏览器标题栏的颜色也不同。NexT 主题默认的颜色为黑色 `#222`，如果你想要修改成其他颜色，直接在如下所示的位置修改即可：
-
-```yml
-# Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
-android_chrome_color: "#222"
-```
-
-##### 彩虹标题栏
-
-开启此项功能，使用 Safari 浏览器浏览你的网站的时候，标题栏会出现绚丽的彩虹配色。
-
-```yml
-# Hide sticky headers and color the menu bar on Safari (iOS / macOS).
-safari_rainbow: true
-```
-
-##### 代码框主题
-
-大部分人写博客文章的时候都会插入代码。选用一个适合自己风格的代码框主题必不可少。NexT 主题提供了多种风格的代码框供你选择。我个人推荐的是最简洁的 `normal` 亮色主题和 `night` 暗色主题。另外，你也可以设置是否启用「复制」按钮，「复制」按钮也可选择不同的风格。我推荐使用默认的 `default` 和 Mac 主题风格 `mac`。
+大部分人写博客文章的时候都会插入代码。选用一个适合自己风格的代码框主题必不可少。NexT 主题提供了多种风格的代码框供你选择。我个人推荐的是最简洁的 `normal` 亮色主题和 `night` 暗色主题。另外，你也可以设置是否启用「复制」按钮，「复制」按钮也可选择不同的风格。我推荐使用默认的 `default` 和 Mac 主题风格 `mac`。不过貌似 `mac` 风格对于一些 NexT 主题代码框特有样式支持地并不太完美，需要自己添加 CSS 样式。
 
 ```yml
 codeblock:
@@ -761,55 +589,7 @@ codeblock:
     style: default
 ```
 
-##### 返回顶部
-
-你可以设定返回顶部按钮的位置和是否显示当前浏览位置的百分比。返回顶部按钮默认显示在页脚，如果你使用的是 Pisces 或者 Gemini 主题，设定 `sidebar: true`，则可显示在侧栏的底部。
-
-```yml
-back2top:
-  enable: true
-  # Back to top in sidebar.
-  sidebar: false
-  # Scroll percent label in b2t button.
-  scrollpercent: true
-```
-
-##### 阅读进程
-
-在页面顶部或底部边缘位置显示一个阅读进程的进度条，你可以自定义进度条的颜色和粗细。
-
-```yml
-# Reading progress bar
-reading_progress:
-  enable: true
-  # Available values: top | bottom
-  position: top
-  color: "#37c6c0"
-  height: 3px
-```
-
-##### 书签标记
-
-在页面左上角添加一个书签图标，可以记录你阅读每一篇文章的位置，在你下次浏览该页面的时候，直接跳转到上一次浏览到的位置。旧版本中点击该该图标会自动跳转到最后浏览的文章页面，但目前已取消该项功能。
-
-```yml
-# Bookmark Support
-bookmark:
-  enable: true
-  # Customize the color of the bookmark.
-  color: "#222"
-  # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
-  # If manual, only save it by clicking the bookmark-icon.
-  save: auto
-```
-
-#### 字体配置
-
-该项配置的详细说明请参考[下文](#修改字体)。
-
-#### 第三方功能配置
-
-##### 数学公式
+#### 数学公式
 
 支持 MathJax 和 KaTeX 两种加载数学公式的方法，使用语法都是 LaTeX 语法。不过 MathJax 的功能比较全面，KaTeX 的加载速度比较快。不过有一点要注意，不论是用哪一个方式，我都推荐替换默认渲染器。
 
@@ -840,7 +620,7 @@ math:
     copy_tex: false
 ```
 
-##### PJAX
+#### PJAX
 
 该项功能的作用是：跳转到同网站另一个页面的时候，前后两个页面相同的元素不再重复加载，进而节省了加载的时间，加快访问速度。该项功能依赖官方提供的 [PJAX 插件](https://github.com/theme-next/theme-next-pjax)。开启 PJAX 后或多或少会出现出现浏览上的 BUG，特别是一些使用 JavaScript 的地方。我没有深入研究过该项功能的原理，所以也无法修复一些出现的 BUG。
 
@@ -851,9 +631,9 @@ math:
 pjax: true
 ```
 
-##### 图片浏览
+#### 图片浏览
 
-实现该功能的基础是在文章中[插入图片](#图片)。该项功能的效果是：点击文中插图，图片能够放大，有幻灯片的效果。目前 NexT 提供了两款插件 fancybox 和 mediumzoom，两款插件开启一个即可。两款插件的效果不同，各有各的特点，请自行选择。
+实现该功能的基础是在文章中[插入图片](#图片)。该项功能的效果是：点击文中插图，图片能够放大，有幻灯片的效果。目前 NexT 提供了两款插件 fancybox 和 mediumzoom，两款插件开启一个即可。两款插件的效果不同，各有各的特点，我推荐使用 mediumzoom。
 
 ```yml
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
@@ -866,7 +646,7 @@ fancybox: false
 mediumzoom: false
 ```
 
-##### 评论系统
+#### 评论系统
 
 NexT 主题支持 Disqus、Valine、Gitalk 等多种第三方评论系统。我推荐使用 Valine 或者 Disqus（加载评论需科学上网）。Valine 评论系统借助于 LeanCloud 存储数据，LeanCloud 的[国内版本](https://leancloud.cn/)需要绑定域名和备案，这对于很多人来说不太方便，所以可以选择使用[国际版](https://leancloud.app/)。目前 NexT 主题支持多评论系统，不过我认为这项功能有些多余，有谁会无聊使用多种评论系统呢？不方便管理评论，将简单的管理变得更加复杂。
 
@@ -895,7 +675,7 @@ comments:
 
 下面我将对 Disqus、Valine、Gitalk 三种评论系统的单独配置进行详细说明。
 
-###### Disqus
+##### Disqus
 
 ![hexo-theme-next-disqus.png](/images/hexo-theme-next-disqus.png "Disqus 官网主页")
 
@@ -953,7 +733,7 @@ disqusjs:
   shortname: # See: https://disqus.com/admin/settings/general/
 ```
 
-###### Valine
+##### Valine
 
 ![hexo-theme-next-valine.png](/images/hexo-theme-next-valine.png "Valine 官方主页")
 
@@ -995,7 +775,7 @@ valine:
   #post_meta_order: 0
 ```
 
-###### Gitalk
+##### Gitalk
 
 Gitalk 评论系统借助 GitHub 平台，将评论的数据存储在仓库的 Issues 中。另一款评论系统 Gitment 与之类似，不过由于 Gitment 已停止维护，目前已经从 NexT 主题中删除。
 
@@ -1024,9 +804,9 @@ gitalk:
 
 ```
 
-##### 访客统计
+#### 访客统计
 
-###### Leancloud
+##### Leancloud
 
 访客统计功能使用的也是 Leancloud。创建应用的过程与[上文](#valine) Valine 评论系统相同，只不过创建的 Class 名称要改为 Counter。这里有一个 [hexo-leancloud-counter-security](https://github.com/theme-next/hexo-leancloud-counter-security) 插件用来修复访客统计的一个漏洞，使访客统计更安全准确，因为我并没有使用该项功能，所以在此不再做详细说明。
 
@@ -1044,7 +824,7 @@ leancloud_visitors:
   betterPerformance: false
 ```
 
-###### 不蒜子
+##### 不蒜子
 
 ![hexo-theme-next-busuanzi.png](/images/hexo-theme-next-busuanzi.png)
 
@@ -1062,137 +842,6 @@ busuanzi_count:
   post_views: true
   post_views_icon: eye
 
-```
-
-##### 本地搜索
-
-本地搜索借助于搜索插件 [hexo-generator-searchdb](https://github.com/theme-next/hexo-generator-searchdb)。
-
-```yml
-# Local Search
-# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
-local_search:
-  enable: true
-  # If auto, trigger search by changing input.
-  # If manual, trigger search by pressing enter key or search button.
-  trigger: auto
-  # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
-  # Unescape html strings to the readable one.
-  unescape: false
-  # Preload the search data when the page loads.
-  preload: false
-```
-
-#### 注释标签配置
-
-这里的注释标签（note tag）指的是文中带颜色背景的段落注释，具体的配置见[下文](#note-标签)。
-
-#### 动画配置
-
-由于我目前已经将博客从 Hexo 迁移至 Hugo，页面载入后不会有这些 NexT 主体动画的效果，这里给出的是我以前的设定，个人认为效果是不错的。
-
-##### 页面移动动画
-
-这里的动画指的是加载页面时，每一部分元素（标题、文章主体等等）加载的效果。有多种样式可以选择，究竟要选择哪种样式，最好自己一个一个尝试。
-
-```yml
-# Use velocity to animate everything.
-# For more information: http://velocityjs.org
-motion:
-  enable: true
-  async: false
-  transition:
-    # Transition variants:
-    # fadeIn | flipXIn | flipYIn | flipBounceXIn | flipBounceYIn
-    # swoopIn | whirlIn | shrinkIn | expandIn
-    # bounceIn | bounceUpIn | bounceDownIn | bounceLeftIn | bounceRightIn
-    # slideUpIn | slideDownIn | slideLeftIn | slideRightIn
-    # slideUpBigIn | slideDownBigIn | slideLeftBigIn | slideRightBigIn
-    # perspectiveUpIn | perspectiveDownIn | perspectiveLeftIn | perspectiveRightIn
-    post_block: fadeIn
-    post_header: slideDownIn
-    post_body: slideDownIn
-    coll_header: slideLeftIn
-    # Only for Pisces | Gemini.
-    sidebar: slideUpIn
-```
-
-##### 页面加载动画
-
-页面加载动画指的是刚访问页面，各元素还没有加载完成时，显示的加载进度动画。这里的配置最好也是自己一个一个尝试，选出适合自己的动画效果。另外，这个加载动画需要安装[依赖](https://github.com/theme-next/theme-next-pace)。
-
-安装：
-
-```bash
-cd themes/next
-git clone https://github.com/theme-next/theme-next-pace source/lib/pace
-```
-配置：
-
-```yml
-# Progress bar in the top during page loading.
-# Dependencies: https://github.com/theme-next/theme-next-pace
-# For more information: https://github.com/HubSpot/pace
-pace:
-  enable: true
-  # Themes list:
-  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
-  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-  theme: flash
-```
-
-##### 页面背景动画
-
-NexT 主题提供了多种背景动画配置，`three` 的动画是线和点的组合，随鼠标位置的移动而变化。`canvas_nest` 是自由移动的线条，当你的鼠标移动时，线条汇聚在你的鼠标位置上，形成多边形，个人认为这是很炫酷的背景效果。`canvas_ribbon` 是随鼠标点击而变化颜色的彩带。
-
-如果你想要打造很炫酷的博客，可以考虑加载这些动画中的..一个..，同时加载多个动画是没有效果的。你只需要通过下载 `dependencies` 链接中的动画库到 `~/themes/next/source/lib/` 文件夹中。
-
-```bash
-JavaScript 3D library:
-cd themes/next
-git clone https://github.com/theme-next/theme-next-three source/lib/three
-
-Canvas-nest:
-cd themes/next
-git clone https://github.com/theme-next/theme-next-canvas-nest source/lib/canvas-nest
-
-canvas_ribbon:
-cd themes/next
-git clone https://github.com/theme-next/theme-next-canvas-ribbon source/lib/canvas-ribbon
-```
-
-另外，由于这些动画都是用过 JavaScript 控制的，所以播放动画可能会造成页面加载缓慢、卡顿的现象。
-
-```yml
-# JavaScript 3D library.
-# Dependencies: https://github.com/theme-next/theme-next-three
-three:
-  enable: false
-  # 只能选择加载其中的一个
-  three_waves: false
-  canvas_lines: false
-  canvas_sphere: false
-
-# Canvas-nest
-# Dependencies: https://github.com/theme-next/theme-next-canvas-nest
-# For more information: https://github.com/hustcc/canvas-nest.js
-canvas_nest:
-  enable: false
-  onmobile: true # Display on mobile or not
-  color: "0,0,255" # RGB values, use `,` to separate
-  opacity: 0.5 # The opacity of line: 0~1
-  zIndex: -1 # z-index property of the background
-  count: 99 # The number of lines
-
-# Canvas-ribbon
-# Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
-# For more information: https://github.com/zproo/canvas-ribbon
-canvas_ribbon:
-  enable: false
-  size: 300 # The width of the ribbon
-  alpha: 0.6 # The transparency of the ribbon
-  zIndex: -1 # The display level of the ribbon
 ```
 
 ## 网页样式布局
@@ -1299,11 +948,11 @@ $font-family-icons        = 'FontAwesome';
 
 ![hexo-theme-next-fonts-serif.jpg](/images/hexo-theme-next-fonts-serif.jpg "石碑与屏幕上的字体")
 
-#### 方法一：直接使用本地字体
+#### 直接使用本地字体
 
 直接在上文提到的 `base.styl` 文件中修改默认字体即可，比如你想使用楷体，就在 `font-family-chinese` 的开头添加 `'STKaiti'`。最好不要删除主题默认的字体，而是直接在最前端添加字体，因为如果你的计算机中并没有这个字体，也能优先显示第二种字体，而不是显示最后的  `sans-serif`。不过这种设定方法的缺陷正是在这里，你设定的字体或许在你的计算机中安装了，但并不能保证在别人的计算机中安装了，所以就会出现你设定的字体在别人浏览你的博客的时候无法显示出来。目前 NexT 主题的代码默认字体（font-family-monospace）就存在这样的问题，你在 PC 端浏览博客，看到的代码区域字体为等宽字体，但在手机端浏览，却只能显示无衬线字体。
 
-#### 方法二：上传字体至博客目录
+#### 上传字体至博客目录
 
 因为直接使用本地字体存在很大的缺陷，所以我们可以考虑上传自己想要的字体至博客中，这样，在别人浏览博客的时候，浏览器会优先加载并显示你上传的字体，而不是使用本地字体。这种方法最大的缺点就是中文字体的使用，因为中文字体不像英文那样只有 26 个字母，我们平时经常使用到的汉字有数千个，如果把这些汉字字体全部上传至博客中，占用的空间很大，加载速度也是一个问题。不过我们可以考虑使用这种方法来显示英文字体。
 
@@ -1356,7 +1005,7 @@ $font-family-icons        = 'FontAwesome';
 
 这样优先显示的就是该英文字体了。
 
-#### 方法三：使用 Google Fonts
+#### 使用 Google Fonts
 
 我的博客字体就是使用了这一种方法进行加载的。[Google Fonts](https://fonts.google.com/) 提供了数百种高质量英文字体的 API，你可以通过调用 Google Fonts 免费使用其提供的字体服务。目前 Google Fonts 提供了几种中文简体字体，其中就有思源宋体。
 
@@ -1667,7 +1316,7 @@ title_change:
 
 具体样式根据自己的喜好进行设定即可。
 
-<p id="div-danger">
+<p class="note-danger">
 旧方法
 </p>
 
@@ -2202,7 +1851,7 @@ note:
 
 如果你是用的风格 `style: flat`，且选择不加载图标，那么显示的效果与源码为：
 
-<p id="div-default">
+<p class="note-default">
 default
 </p>
 
@@ -2212,7 +1861,7 @@ default
 {% endnote %}
 ```
 
-<p id="div-primary">
+<p class="note-primary">
 primary
 </p>
 
@@ -2222,7 +1871,7 @@ primary
 {% endnote %}
 ```
 
-<p id="div-success">
+<p class="note-success">
 success
 </p>
 
@@ -2232,7 +1881,7 @@ success
 {% endnote %}
 ```
 
-<p id="div-info">
+<p class="note-info">
 info
 </p>
 
@@ -2242,7 +1891,7 @@ info
 {% endnote %}
 ```
 
-<p id="div-warning">
+<p class="note-warning">
 warning
 </p>
 
@@ -2252,7 +1901,7 @@ warning
 {% endnote %}
 ```
 
-<p id="div-danger">
+<p class="note-danger">
 danger
 </p>
 
@@ -2384,9 +2033,7 @@ span#inline-toc {
 <span id="inline-toc">1.</span>
 ```
 
-### 插入图片 / 音乐 / 视频
-
-#### 图片
+### 插入图片
 
 图片可以选择通过上传到图床再引入图床链接的方式载入，或者直接将图片存放在博客文件夹中载入。如果想将图片上传到图床，我不推荐使用一些免费的图床，因为这些图床可能不太稳定，图片很可能会挂掉，我推荐使用[阿里云储存对象 OSS 服务](https://www.aliyun.com/product/oss/)。如果选择直接将图片存放至博客文件夹中，我建议你在 `~/source/` 文件夹内新建一个 `images` 文件夹来存放图片，或者在每一篇文章存放的 `~/source/_posts` 文件夹下存放图片。
 
@@ -2480,7 +2127,7 @@ Renderer.prototype.image = function(href, title, text) {
 
 最终呈现的效果就和我的博客图片说明文字效果一样。
 
-#### 音乐
+### 插入音乐
 
 首先，你可以直接使用 HTML 的标签，比如：
 
@@ -2538,7 +2185,7 @@ npm install hexo-tag-aplayer --save
 
 另外，该插件与 [hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize) 插件共同使用会出现 BUG，对该问题的具体分析可参见我的文章《[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)》。
 
-#### 视频
+### 插入视频
 
 可以直接用 HTML 的标签，写法如下：
 
@@ -2916,6 +2563,8 @@ custom_file_path:
 
 也就是说插入的标签不应该使用之前的 `jinrishici-sentence`，需要重新命名。参考上一节配置的两个文件，把内容修改一下即可：
 
+`body-end.swig`：
+
 ```html
 <!-- 文件位置：~/source/_data/body-end.swig -->
 
@@ -2945,6 +2594,8 @@ custom_file_path:
   });
 </script>
 ```
+
+`post-body-end.swig`：
 
 ```html
 <!-- 文件位置：~/source/_data/post-body-end.swig -->

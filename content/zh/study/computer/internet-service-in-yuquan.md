@@ -79,7 +79,7 @@ $ rm mac-addr*
 
 ### 网络属性设置
 
-<p id="div-warning">
+<p class="note-warning">
 由于我使用的是 Win10，下面的操作只适用于 Windows 系统，Mac OS X 请自行设定。
 </p>
 
@@ -105,7 +105,7 @@ $ rm mac-addr*
 
 ## 自建 VPN
 
-<p id="div-warning">
+<p class="note-warning">
 同样，这里仅给出的是 Win10 系统的设置方法。
 </p>
 

@@ -33,7 +33,7 @@ blogroll = true
 
 + 首先将本站链接添加至你的网站，信息如下：
 
-<p id="div-default" style="text-align: left;">
+<p class="note-default" style="text-align: left;">
 网站名称：荷戟独彷徨<br>
 网站地址：<a href="../" target="_blank">https://guanqr.com/</a><br>
 网站标志：<a href="../icons/android-chrome-512x512.png" target="_blank">https://guanqr.com/icons/android-chrome-512x512.png</a><br>

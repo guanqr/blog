@@ -60,4 +60,4 @@ Do you want to install Bt-Panel to the /www directory now?(y/n): y
 
 等待安装完毕即可。
 
-<p id="div-warning">为了网站的安全，别忘了更改用户名、密码以及端口号。</p>
+<p class="note-warning">为了网站的安全，别忘了更改用户名、密码以及端口号。</p>

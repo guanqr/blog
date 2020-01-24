@@ -1167,11 +1167,6 @@ uglyURLs = false
     #      文本或图标，留空（""）则无
     #      https://busuanzi.ibruce.info/
 
-    # 自定义页脚微信订阅功能
-    footerSubscription = true
-    subscriptionIcon = "wechat-brands"
-    subscriptionQrCode = "/images/wechat-official-accounts.svg"
-    subscriptionDescription = "微信扫一扫，订阅本博客"
 
     ######################################
     # 多语言
@@ -1252,6 +1247,13 @@ uglyURLs = false
     enableTextAlignRight = true
     enableTextAlignCenter = true
     enableTextAlignLeft = true
+
+
+    # 自定义页脚微信订阅功能
+    footerSubscription = true
+    subscriptionIcon = "wechat-brands"
+    subscriptionQrCode = "/images/wechat-official-accounts.svg"
+    subscriptionDescription = "微信扫一扫，订阅本博客"
 
 
 ##########################################

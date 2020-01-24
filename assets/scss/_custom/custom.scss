@@ -144,29 +144,29 @@ span#inline-toc {
     border: 2px solid transparent;
     border-bottom: 1px dashed var(--color-contrast-low);
     display: flex;
-}
-.blogroll .friend {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-.blogroll .name {
-    font-weight: bold;
-    margin-bottom: 6px;
-    margin-top: 6px;
-}
-.blogroll .excerpt {
-    font-size:14px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-.blogroll .avatar {
-    width: 4em !important;
-    height: 4em !important;
-    margin:0 !important;
-    margin-right: 1em !important;
-    border-radius:4px;   
+    .friend {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .name {
+        font-weight: bold;
+        margin-bottom: 6px;
+        margin-top: 6px;
+    }
+    .excerpt {
+        font-size:14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .avatar {
+        width: 4em !important;
+        height: 4em !important;
+        margin:0 !important;
+        margin-right: 1em !important;
+        border-radius:4px;   
+    }
 }
 // 自定义的页脚微信订阅号样式
 .subscription-box {
@@ -225,25 +225,29 @@ span#inline-toc {
     opacity: 1;
 }
 // 段落样式
-.post-body h2 {
-    border-bottom: 1px solid var(--color-contrast-lower);
-}
-.post-body h3 {
-    border-bottom: 1px dotted var(--color-contrast-lower);
-}
+.post-body {
+    h2 {
+        border-bottom: 1px solid var(--color-contrast-lower);
+    }
+    h3 {
+        border-bottom: 1px dotted var(--color-contrast-lower);
+    }
+} 
 // 主页底部图标
-.home .poetry {
-    padding: 5em 1em 10em 1em;
-    margin: 0 auto 0;
-}
-.home .life {
-    color: hsl(260, 75%, 75%);
-}
-.home .study {
-    color: hsl(220, 75%, 60%);
-}
-.home .series {
-    color: hsl(180, 75%, 45%);
+.home {
+    .poetry {
+        padding: 5em 1em 10em 1em;
+        margin: 0 auto 0;
+    }
+    .life {
+        color: hsl(260, 75%, 75%);
+    }
+    .study {
+        color: hsl(220, 75%, 60%);
+    }
+    .series {
+        color: hsl(180, 75%, 45%);
+    }
 }
 // 品牌栏自动隐藏
 .site-brand {

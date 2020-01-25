@@ -1,5 +1,6 @@
 +++
-title = "我的学生工作经历"
+title = "回首过去，展望未来"
+description = "回顾大学两年来我参与过的学生工作"
 date = "2019-11-18T20:27:18+08:00"
 tags = ["wechat","youth","zju"]
 dropCap = true

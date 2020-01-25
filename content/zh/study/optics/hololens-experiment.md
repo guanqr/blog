@@ -3,8 +3,7 @@ title = "物理光学：全息透镜与数字全息技术"
 date = "2020-01-16T16:21:40+08:00"
 tags = ["fourier-optics","hololens","slm"]
 series = ["major-courses"]
-displayCopyright = true
-gitinfo = true
+dropCap = false
 katex = true
 toc = true
 +++

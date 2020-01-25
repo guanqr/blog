@@ -2,8 +2,7 @@
 title = "水之坚韧"
 date = "2019-05-01T11:11:55+08:00"
 tags = ["essay","philosophy"]
-displayCopyright = true
-gitinfo = true
+dropCap = false
 +++
 
 >泉眼无声惜细流，树阴照水爱晴柔

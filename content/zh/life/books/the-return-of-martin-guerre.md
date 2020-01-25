@@ -3,9 +3,6 @@ title = "真假马丁"
 description ="《马丁·盖尔归来》书评"
 date = "2019-05-27T16:52:56+08:00"
 tags = ["history","novel"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
 +++
 
 [^1]![le-retour-de-martin-guerre.jpg](/images/le-retour-de-martin-guerre.jpg "马丁·盖尔归来")

@@ -4,8 +4,7 @@ description = "《人类简史：从动物到上帝》读书笔记"
 date = "2019-09-07T16:38:49+08:00"
 tags = ["history","humankind"]
 aliases = ["/2019/09/07/a-brief-history-of-humankind/"]
-displayCopyright = true
-gitinfo = true
+dropCap = false
 toc = true
 +++
 

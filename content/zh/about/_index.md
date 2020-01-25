@@ -2,6 +2,9 @@
 title = "关于"
 description = "关于我，关于本站，还有其他一些事……"
 date = "2019-05-01T08:41:47+08:00"
+dropCap = false
+displayCopyright = false
+gitinfo = false
 badge = false
 meta = false
 comments = false

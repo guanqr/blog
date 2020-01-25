@@ -3,9 +3,6 @@ title = "竺老校长的两个问题"
 date = "2019-12-07T23:09:03+08:00"
 tags = ["choice","essay","research","youth","zju"]
 dropCap = false
-displayCopyright = true
-gitinfo = true
-toc = false
 +++
 
 > 诸位在校，有两个问题应该自己问问，第一，到浙大来做什么？第二，将来毕业后要做什么样的人？[^1]

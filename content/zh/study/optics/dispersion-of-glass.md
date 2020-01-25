@@ -5,9 +5,6 @@ tags = ["dispersion","geometric-optics","prism"]
 series = ["major-courses"]
 aliases = ["/2019/05/18/applied-optics-1/","/study/optics/applied-optics-1/"]
 katex = true
-dropCap = true
-displayCopyright = true
-gitinfo = true
 toc = true
 +++
 

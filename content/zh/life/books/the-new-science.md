@@ -3,9 +3,7 @@ title = "维柯眼中的「人」与「神」"
 description = "《新科学》探求的正是人类文化起源和发展的规律，既有科学实证,又充满激情和幻想。"
 date = "2019-05-06T17:08:39+08:00"
 tags = ["history","philosophy","religion"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
+dropCap = false
 +++
 
 ## 作者简介

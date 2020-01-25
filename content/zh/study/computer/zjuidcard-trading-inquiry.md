@@ -2,9 +2,6 @@
 title = "使用 Excel 对校园卡流水对账"
 date = "2019-06-30T09:11:32+08:00"
 tags = ["idcard","zju"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
 +++
 
 近日看到很多同学都在对校园卡未消费却一直在扣费的问题感到困惑和愤怒。以下评论搬运自 CC98。

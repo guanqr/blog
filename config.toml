@@ -588,7 +588,7 @@ uglyURLs = false
     #      的优先级高于此处
 
     # 是否禁用 MathJax 的右键菜单
-    disableMathJaxMenu = false
+    disableMathJaxMenu = true
 
 
     ######################################
@@ -945,7 +945,7 @@ uglyURLs = false
     ## 首字下沉
 
     # 是否开启（全局设置）
-    enableDropCap = false
+    enableDropCap = true
     # 说明：文章的 Front Matter 中的 `dropCap`
     #      的的优先级高于此处
 
@@ -991,7 +991,7 @@ uglyURLs = false
     enablePostCopyright = true
 
     # 是否显示（全局设置）
-    displayPostCopyright = false
+    displayPostCopyright = true
     # 说明：文章的 Front Matter 中的 `displayCopyright`
     #      的的优先级高于此处
 
@@ -1020,7 +1020,7 @@ uglyURLs = false
     enablePostGitInfo = true
 
     # 是否显示（全局设置）
-    displayPostGitInfo = false
+    displayPostGitInfo = true
     # 说明：文章的 Front Matter 中的 `gitinfo`
     #      的的优先级高于此处
 

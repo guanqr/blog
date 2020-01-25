@@ -4,9 +4,6 @@ date = "2020-01-20T08:38:19+08:00"
 tags = ["matlab"]
 series = ["major-courses"]
 katex = true
-dropCap = true
-displayCopyright = true
-gitinfo = true
 toc = true
 +++
 
@@ -255,7 +252,7 @@ xlabel('t'); title('$x(t)*(t({u(t)-u({t-1})}))$','interpreter','latex');
 
 ### 连续时间 LTI 系统
 
-单位冲激响应 $h(t)$ 是描述连续时间 LTI 系统的重要函数，MATLAB 的 control system 工具箱提供了 `impulse` 函数，只要提供描述系统的微分方程的系数 $a_k$ 和 $b_k$，或者说，系统传递函数 $H(s)$ 或频率响应 $H(jω)$，
+单位冲激响应 $h(t)$ 是描述连续时间 LTI 系统的重要函数，MATLAB 的 control system 工具箱提供了 `impulse` 函数，只要提供描述系统的微分方程的系数 $a_k$ 和 $b_k$，或者说，系统传递函数 $H(s)$ 或频率响应 $H(j\omega)$，
 
 $$
 H(s)=\frac{\sum\limits_{k=0}^Nb_ks^k}{\sum\limits_{k=0}^Ma_ks^k}
@@ -666,7 +663,7 @@ end
 
 采样得到的离散时间信号的频谱是周期的，周期为采样率 $f_s$，因此如果原信号的最高频率 $f_m\geq f_s/2$，采样得到的信号的频谱将发生混叠。由于信号的最高频率为 $300Hz$，所以图中只有采样率为 $700Hz$ 和 $650Hz$ 时得到的采样信号未发生混叠现象。
 
-如果设计一个增益为 $1$、截止频率为采样频率的一半的理想低通滤波器，近似地求出当采样频率为 $1KHz$ 时，采样得到的零阶保持信号经过该理想低通滤波器后的输出。
+如果设计一个增益为 $1$、截止频率为采样频率的一半的理想低通滤波器，近似地求出当采样频率为 $1kHz$ 时，采样得到的零阶保持信号经过该理想低通滤波器后的输出。
 
 ```matlab
 Fs=[1000,10000]; 

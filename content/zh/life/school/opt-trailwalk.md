@@ -2,10 +2,6 @@
 title = "冬季，雨，北高峰"
 date = "2019-12-21T18:16:40+08:00"
 tags = ["essay","hangzhou","youth","zju"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
-toc = false
 +++
 
 毅行是浙大人的朝圣之旅。我曾参与过一次校友会组织的春季毅行，三千人的队伍，从玉泉老和山出发，徒步翻山越岭，终点是之江钟楼。沿途可以欣赏到幽静的山涧、寺庙钟声和茶园风光。冬至前日，我和学院里的一些同学一起，进行了一次短程的毅行，目的地是北高峰。

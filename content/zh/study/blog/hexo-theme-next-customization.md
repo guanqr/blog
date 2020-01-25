@@ -5,8 +5,6 @@ tags = ["git","hexo","next","typography"]
 series = ["create-a-blog"]
 aliases = ["/2019/05/04/hexo-next-1/","/2019/05/08/hexo-next-2/"]
 dropCap = false
-displayCopyright = true
-gitinfo = true
 toc = true
 +++
 

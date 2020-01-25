@@ -1,10 +1,11 @@
 +++
 title = "{{ replace .Name "-" " " | title }}"
+description = ""
 date = "{{ .Date }}"
 tags = [""]
-dropCap = true
-displayCopyright = true
-gitinfo = true
+dropCap = false
+displayCopyright = false
+gitinfo = false
 toc = false
 +++
 

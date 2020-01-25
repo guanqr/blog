@@ -3,9 +3,6 @@ title = "致疯狂的人"
 description = "我高中时期语文课堂上的一次演讲。"
 date = "2019-04-17T12:24:01+08:00"
 tags = ["apple","education","humankind"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
 +++
 
 乔布斯，一个无数青年人心中的偶像，一位引发世界潮流的大师。他创造的一个又一个商业奇迹，让旁人为之惊羡，Mac 电脑，皮克斯电影，iPod，iPhone，iPad……所以人们评价乔布斯改变了人们对电脑，出版，电影，音乐，手机和个人电脑的认识。曾经作为一个「果粉」，我将苹果的一系列产品都看作是珍贵的艺术品，这些艺术品的创造离不开乔布斯极度追求完美的思想。

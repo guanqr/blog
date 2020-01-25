@@ -5,9 +5,6 @@ tags = ["color","fourier-optics","grayscale","white-balance"]
 series = ["major-courses"]
 aliases = ["/2019/06/17/applied-optics-2/","/study/optics/applied-optics-2/"]
 katex = true
-dropCap = true
-displayCopyright = true
-gitinfo = true
 toc = true
 +++
 

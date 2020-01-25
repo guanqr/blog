@@ -3,9 +3,6 @@ title = "再见了，天天美剧"
 date = "2019-05-16T00:49:31+08:00"
 tags = ["essay","tv-series"]
 aliases = ["/2019/05/16/say-goodbye-to-ttmeiju/"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
 +++
 
 五月二日晚，在「酸梅电影」微信公众号上，站长推送了一篇文章，叫《站长最后教你一次，怎么能舒舒服服地看美剧》。我才意识到，原来这一次，真的要和天天美剧告别了。

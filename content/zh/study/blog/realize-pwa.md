@@ -4,9 +4,6 @@ date = "2019-10-04T07:15:43+08:00"
 tags = ["gulp","hugo","next","pwa"]
 series = ["create-a-blog"]
 aliases = ["/2019/10/03/realize-pwa/"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
 +++
 
 ![pwa.png](/images/pwa.png)

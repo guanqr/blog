@@ -2,9 +2,6 @@
 title = "Linux 安装 Denyhosts 与修改服务器端口"
 date = "2019-04-05T16:13:00+08:00"
 tags = ["linux","security"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
 toc = true
 +++
 

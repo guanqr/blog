@@ -2,10 +2,6 @@
 title = "DafToys 贝恩配件测评"
 date = "2019-12-14T20:49:45+08:00"
 tags = ["action-figure"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
-toc = false
 +++
 
 ![the-dark-knight-rises-bane.jpg](/images/the-dark-knight-rises-bane.jpg "电影《黑暗骑士崛起》")

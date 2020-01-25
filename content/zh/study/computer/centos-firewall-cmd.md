@@ -2,9 +2,6 @@
 title = "CentOS 打开关闭防火墙与端口"
 date = "2019-05-10T22:44:44+08:00"
 tags = ["linux","security"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
 toc = true
 +++
 

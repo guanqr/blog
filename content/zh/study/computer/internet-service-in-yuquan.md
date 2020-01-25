@@ -3,9 +3,6 @@ title = "玉泉校区上网指南"
 date = "2019-09-04T15:39:44+08:00"
 tags = ["google","ip","zju"]
 aliases = ["/2019/09/04/internet-service-in-yuquan/"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
 toc = true
 +++
 

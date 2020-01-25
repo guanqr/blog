@@ -3,8 +3,7 @@ title = "MATLAB 光学仿真入门"
 date = "2020-01-19T12:29:36+08:00"
 tags = ["electromagnetic-wave","matlab","photonics"]
 katex = true
-displayCopyright = true
-gitinfo = true
+dropCap = false
 toc = true
 +++
 

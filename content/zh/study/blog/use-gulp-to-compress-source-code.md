@@ -4,9 +4,6 @@ date = "2019-10-02T13:24:25+08:00"
 tags = ["gulp","hexo","next"]
 series = ["create-a-blog"]
 aliases = ["/2019/10/02/use-gulp-to-compress-source-code/"]
-dropCap = true
-displayCopyright = true
-gitinfo = true
 +++
 
 ![gulp.jpg](/images/gulp.jpg)

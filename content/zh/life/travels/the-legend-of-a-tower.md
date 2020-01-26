@@ -3,6 +3,8 @@ title = "铁塔传奇"
 date = "2019-04-02T13:46:00+08:00"
 tags = ["essay","history","kaifeng"]
 dropCap = false
+indent = true
+indentFirstParagraph = true
 +++
 
 > 河伯说，大河是母亲滚烫的柔肠，黄花说，铁塔是父亲挺拔的脊梁；河伯说，大河是奔流的紫电青霜，黄花说，铁塔是屹立的钨亮锋芒。

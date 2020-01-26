@@ -3,7 +3,12 @@ title = "Python 自动识别验证码破解上学吧题目答案"
 date = "2019-05-05T12:13:17+08:00"
 tags = ["python"]
 aliases = ["/2019/05/05/shangxueba-crack/"]
+dropCap = false
 toc = true
+original = false
+author = "Tsing"
+link = "https://zhuanlan.zhihu.com/p/60502527"
+copyright = "文章转载自「科研利器」作者 Tsing 的知乎专栏，内容有删改。"
 +++
 
 ## 初步解决方法
@@ -436,7 +441,7 @@ def check_opt_match(img): # 检查运算符号的匹配程度
 		return('*')
 ```
 
-综合上述代码，另外还加入了多线程，一个不需要手动输入验证码的全程自动化的「上学吧答案神器」脚本就诞生了。运行速度非常快，基本在 0.6 秒左右。[^3][^4]
+综合上述代码，另外还加入了多线程，一个不需要手动输入验证码的全程自动化的「上学吧答案神器」脚本就诞生了。运行速度非常快，基本在 0.6 秒左右。[^3]
 
 ![shangxueba-crack-source-code.jpg](/images/shangxueba-crack-source-code.jpg "部分源代码")
 
@@ -444,5 +449,4 @@ def check_opt_match(img): # 检查运算符号的匹配程度
 
 [^1]: 原文链接：[Python 突破上学吧的 IP 限制](https://blog.csdn.net/qq_41861526/article/details/85573479)（目前已被删除）。
 [^2]: 完整的匹配识别代码点击此处下载：[shangxueba-number-recognition.zip](/uploads/shangxueba-number-recognition.zip)。
-[^3]: 本文转载自「科研利器」作者 Tsing 的[知乎专栏](https://zhuanlan.zhihu.com/p/60502527)，内容有删改。
-[^4]: 上学吧网站已对该漏洞进行了修复，取消了三次免费看答案的功能，不再开放免费查看答案的入口，导致获取不到最佳答案返回值，目前此方法已失效，仅作参考学习使用，这里不再提供脚本的下载地址。
+[^3]: 上学吧网站已对该漏洞进行了修复，取消了三次免费看答案的功能，不再开放免费查看答案的入口，导致获取不到最佳答案返回值，目前此方法已失效，仅作参考学习使用，这里不再提供脚本的下载地址。

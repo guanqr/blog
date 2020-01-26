@@ -82,7 +82,7 @@ hexo clean && hexo g && hexo d
 
 ## 基本功能配置
 
-博客的建立最关键的就是选择主题，NexT 主题是目前使用人数最多的 Hexo 博客主题。如果你想要尝试其他主题，可以去 Hexo Themes 慢慢找。对于在 GitHub 上 Star 较多的几个主题，我都有尝试过，对于这些主题的简要分析可以参考我的这一篇[文章](/study/blog/blog-theme/)。最终我选择 NexT 的原因正是它简洁、功能齐全、更新维护速度快。
+博客的建立最关键的就是选择主题，NexT 主题是目前使用人数最多的 Hexo 博客主题。如果你想要尝试其他主题，可以去 Hexo Themes 慢慢找。对于在 GitHub 上 Star 较多的几个主题，我都有尝试过，对于这些主题的简要分析可以参考我的这一篇[文章](/study/blog/hexo-theme/)。最终我选择 NexT 的原因正是它简洁、功能齐全、更新维护速度快。
 
 ### 安装 NexT 主题
 
@@ -300,7 +300,7 @@ creative_commons:
 
 #### 主题风格配置
 
-NexT 主题最大的特点就是提供了四套风格的主题，其中 Muse 和 Mist 两款风格相近，Pisces 和 Gemini 两款风格相近。我的博客主题是基于 Muse 主题进行修改的，对于这四款主题的选择，仁者见仁，智者见智。我在这篇[文章](/study/blog/blog-theme/)中分析了我对这四种风格的看法，可供参考。
+NexT 主题最大的特点就是提供了四套风格的主题，其中 Muse 和 Mist 两款风格相近，Pisces 和 Gemini 两款风格相近。我的博客主题是基于 Muse 主题进行修改的，对于这四款主题的选择，仁者见仁，智者见智。我在这篇[文章](/study/blog/hexo-theme/)中分析了我对这四种风格的看法，可供参考。
 
 ```yml
 # Schemes

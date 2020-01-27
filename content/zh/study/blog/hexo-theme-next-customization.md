@@ -854,7 +854,7 @@ custom_file_path:
 
 如果需要自定义 CSS 样式，需要将上述代码中 `custom_file_path:` 下的 `#style: source/_data/styles.styl` 注释取消，然后根据该自定义文件存放路径创建相应文件 `styles.styl`，在该文件中添加自定义内容。同样，如果需要在 `<head>` 中添加内容，比如修改字体时引入 Google Fonts 以及分析博客数据时引入 Google Analytics，则需要新建 `head.swig` 文件，在其中添加自定义内容即可。在 `post.swig` 中添加的文章结尾样式，可以直接添加在 `post-body-end.swig` 文件中。如果你在这里还没有明白到底该如何设定，没关系，下面的具体教程中我会详细地说明。
 
-除了 `custom_file_path`，NexT 主题还提供了更加灵活的自定义方式（`theme_inject`），更多可以阅读[文档](https://theme-next.org/docs/advanced-settings#Injects)。如果你需要在主题目录下的自定义文件，可以尝试下载 [`theme-custom-file.js` 脚本](https://gist.github.com/jiangtj/016596bbf9c49f3bd1afbc408d499127)，并将它放在 Hexo 或者主题的 `scripts` 下，该脚本会将你的同名自定义文件替换掉主题中的原文件。
+除了 `custom_file_path`，NexT 主题还提供了更加灵活的自定义方式（`theme_inject`），更多可以阅读[文档](https://theme-next.org/docs/advanced-settings#Injects)。如果你需要在主题目录下自定义文件，可以尝试下载 [hexo-theme-plus](https://github.com/jiangtj/hexo-theme-plus) 插件，该插件会将你的自定义文件替换主题文件夹内的同目录同名文件。具体使用方法可以参考这篇[文章](https://www.dnocm.com/articles/beechnut/hexo-git-submodule/)。
 
 目前网络中的大部分优化教程都是依据旧版主题进行设定的，因此，一些使用最新版本主题的读者根据旧版设定进行操作的话，可能会报错。为了体现本文的与时俱进，本文中采用的即为..新版的设定方式..，旧版的设定方式在这里不再提及，请采用旧版主题的读者参考过去版本的官方说明文档。
 

@@ -507,18 +507,6 @@ symbols_count_time:
 
 如果没有添加上述内容，则无法显示统计信息。
 
-#### 微信订阅
-
-开启微信订阅功能的时候不要忘记填写二维码所在路径。这里的微信订阅功能开启后，会在文章的末尾显示二维码，个人认为这个设计有些丑陋，你也可以选择像我一样在页脚放置一个二维码链接。只有鼠标停靠在图标上时才会弹出二维码。关于该项功能的实现请看[下文](#添加页脚微信关注)。
-
-```yml
-# Wechat Subscriber
-wechat_subscriber:
-  enable: false
-  qcode: #/uploads/wechat-qcode.jpg
-  #description: Subscribe to my blog by scanning my public wechat account.
-```
-
 #### 相关文章
 
 在文章的末尾添加相关（推荐）文章。因为我使用的并不是这一款插件，而是 [hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts)，关于该项功能的设置我并没有研究过，所以此处的具体设置请看[官方说明](https://github.com/tea3/hexo-related-popular-posts)。如果想要使用 hexo-recommended-posts 插件请看[下文](#文末添加相关文章)。
@@ -844,7 +832,7 @@ busuanzi_count:
 
 ## 网页样式布局
 
-在对 NexT 主题的个性优化中，如果想要添加一些个性化的内容，就需要对内部代码进行修改。主题提供了许多注入点，可以通过注入点插入自己想要的东西，而不会对原有的主题内部文件进行大量的修改。这样便于以后主题的升级，避免一系列的错误发生。NexT 主题更新到 v7.2.0 后，简化了自定义内容的添加方法，删除了以前版本中所用的 `css/_custom.styl` 自定义 CSS 样式文件。如果想要修改样式或者在 HTML 中的 `<head>`、`<body>` 等部位插入代码。即直接在博客 `sourse` 资源文件夹下新建自定义文件 `_data/xxx` 实现该功能。
+在对 NexT 主题的个性优化中，如果想要添加一些个性化的内容，就需要对内部代码进行修改。主题提供了许多注入点，可以通过注入点插入自己想要的东西，而不会对原有的主题内部文件进行大量的修改。这样便于以后主题的升级，避免一系列的错误发生。NexT 主题更新到 v7.2.0 后，[PR #868](https://github.com/theme-next/hexo-theme-next/pull/868) 简化了自定义内容的添加方法，删除了以前版本中所用的 `css/_custom.styl` 自定义 CSS 样式文件。如果想要修改样式或者在 HTML 中的 `<head>`、`<body>` 等部位插入代码。即直接在博客 `sourse` 资源文件夹下新建自定义文件 `_data/xxx` 实现该功能。
 
 在主题配置文件 `_config.yml` 中，写道：
 
@@ -866,7 +854,9 @@ custom_file_path:
 
 如果需要自定义 CSS 样式，需要将上述代码中 `custom_file_path:` 下的 `#style: source/_data/styles.styl` 注释取消，然后根据该自定义文件存放路径创建相应文件 `styles.styl`，在该文件中添加自定义内容。同样，如果需要在 `<head>` 中添加内容，比如修改字体时引入 Google Fonts 以及分析博客数据时引入 Google Analytics，则需要新建 `head.swig` 文件，在其中添加自定义内容即可。在 `post.swig` 中添加的文章结尾样式，可以直接添加在 `post-body-end.swig` 文件中。如果你在这里还没有明白到底该如何设定，没关系，下面的具体教程中我会详细地说明。
 
-目前网络中的大部分优化教程都是依据旧版主题进行设定的，因此，一些使用最新版本主题的读者根据旧版设定进行操作的话，可能会报错。为了体现本文的与时俱进，本文中采用的即为..最新版本的设定方式..，旧版的设定方式在这里不再提及，请采用旧版主题的读者参考过去版本的官方说明文档。
+除了 `custom_file_path`，NexT 主题还提供了更加灵活的自定义方式（`theme_inject`），更多可以阅读[文档](https://theme-next.org/docs/advanced-settings#Injects)。如果你需要在主题目录下的自定义文件，可以尝试下载 [`theme-custom-file.js` 脚本](https://gist.github.com/jiangtj/016596bbf9c49f3bd1afbc408d499127)，并将它放在 Hexo 或者主题的 `scripts` 下，该脚本会将你的同名自定义文件替换掉主题中的原文件。
+
+目前网络中的大部分优化教程都是依据旧版主题进行设定的，因此，一些使用最新版本主题的读者根据旧版设定进行操作的话，可能会报错。为了体现本文的与时俱进，本文中采用的即为..新版的设定方式..，旧版的设定方式在这里不再提及，请采用旧版主题的读者参考过去版本的官方说明文档。
 
 ### 基本修改方法
 
@@ -901,7 +891,7 @@ custom_file_path:
 
 ### 我的 styles.styl
 
-在这里附上我的 `styles.styl` 文件：[styles.zip](/uploads/styles.zip)。虽然目前我的博客是用 Hugo 搭建的，但我依然会根据 NexT 的主题维持 `styles.styl` 的内容更新。建议你不要完全复制我的样式，因为有可能我的博客主题版本与你的不同，不同版本的主题之间有些元素的名称不同，直接使用我的代码可能会出现错误。一步一步耐心地边调试边修改才能达到最佳效果。
+在这里附上我的 `styles.styl` 文件：[styles.zip](/uploads/styles.zip)。建议你不要完全复制我的样式，因为我已经从 Hexo 迁移到了 Hugo，对 NexT 主题的样式修改仅停留在了 `v7.4.1` 版本前后。有可能我的博客主题版本与你的不同，不同版本的主题之间有些元素的名称不同，直接使用我的代码可能会出现错误。一步一步耐心地边调试边修改才能达到最佳效果。
 
 ### 修改字体
 
@@ -1389,9 +1379,42 @@ POWERMODE.colorful = true;  // 控制开启 / 开启礼花特效
 POWERMODE.shake = false;  // 控制开启 / 关闭屏幕震动特效
 ```
 
-### 添加页脚微信关注
+### 添加页脚微信订阅
 
-主题默认的微信订阅功能显示在文章的末尾，二维码有些大，个人感觉不美观。看到很多网站都是在页脚有个微信的 LOGO，鼠标移动到上面便会显示二维码，这样感觉很棒
+主题默认的微信订阅功能显示在文章的末尾，目前版本的主题已经取消该功能，需要自行添加。具体的添加方法见 [Issue #1217](https://github.com/theme-next/hexo-theme-next/issues/1217)：
+
+> 为了推行 `custom_file_path` 和 `theme_inject` 方法，部分通过修改数行 CSS 或 HTML 即可实现的功能被移除。我们建议用户自行实现。以 `wechat subscriber` 为例：
+>
+> 在配置文件中，取消 `custom_file_path.postBodyEnd` 前的注释：
+>
+> ```yaml
+> custom_file_path:
+>   postBodyEnd: source/_data/post-body-end.swig
+> ```
+>
+> 在 Hexo 根目录下，进入（若不存在则创建）`source/_data` 目录，在该目录下创建 `post-body-end.swig` 文件。
+>
+> 在此文件中，写入如下内容：
+>
+> ```html
+> <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+>   <img id="wechat_subscriber_qcode" src="{{ url_for(theme.wechat_subscriber.qcode) }}" alt="{{ author }} wechat" >style="width: 200px; max-width: 100%;">
+>   <div>{{ theme.wechat_subscriber.description }}</div>
+> </div>
+> ```
+
+根据上述教程，在主题配置文件中添加：
+
+```yaml
+# Wechat Subscriber
+wechat_subscriber:
+  qcode: #/uploads/wechat-qcode.jpg
+  description: #Subscribe to my blog by scanning my public wechat account.
+```
+
+填写二维码所在地址和订阅的描述信息即可。
+
+我并没有使用该方法，而是将微信订阅的二维码放在了页脚。因为看到很多网站都是在页脚有个微信的 LOGO，鼠标移动到上面便会显示二维码，这样感觉很棒。
 
 首先需要在 `~/sourse/_data/footer.swig` 中添加以下代码：
 
@@ -2559,7 +2582,7 @@ custom_file_path:
 
 > 使用定制加载时，不要将标签的 `id` 或者 `class` 设置为 `jinrishici-sentence`，否则 SDK 会自动加载一次。
 
-也就是说插入的标签不应该使用之前的 `jinrishici-sentence`，需要重新命名。参考上一节配置的两个文件，把内容修改一下即可：
+也就是说插入的标签不应该使用之前的 `jinrishici-sentence`，需要重新命名。参考上一节配置的两个文件，把内容修改一下即可[^10]：
 
 `body-end.swig`：
 
@@ -2614,3 +2637,4 @@ custom_file_path:
 [^7]: 参考：[Hexo 博客 NexT 主题自定义友情链接页面 | Sanarous](https://bestzuo.cn/posts/2016690040.html)
 [^8]: 参考：[样式汇总 | 千灵](https://qianling.pw/style/)
 [^9]: 参考：[在 Hexo 中插入 ECharts 动态图表 | KChen's Blog](https://kchen.cc/2016/11/05/echarts-in-hexo/)
+[^10]: 参考：[NexT 添加今日诗词 | 1v9's Blog](https://1v9.io/post/add-today-poetry-for-theme-next.html)

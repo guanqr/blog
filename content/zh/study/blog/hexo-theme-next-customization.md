@@ -328,7 +328,7 @@ menu:
   #commonweal: /404/ || heartbeat
 ```
 
-以 `home: / || home` 为例，第一个 `home` 为该目录选项的名称，此处可以先设置成英文，然后在 `~/themes/next/languages/zh-CN.yml` 下对应的 `menu:` 下添加对应的中文，格式为 `home: 首页`。`home: `后填写的是该页面的文件夹位置，`/` 即为网站的根目录。`||` 后的 `home` 即为图标名称。
+以 `home: / || home` 为例，第一个 `home` 为该目录选项的名称，此处可以先设置成英文，然后在 `~/themes/next/languages/zh-CN.yml` 下对应的 `menu:` 下添加对应的中文，格式为 `home: 首页`。`home:` 后填写的是该页面的文件夹位置，`/` 即为网站的根目录。`||` 后的 `home` 即为图标名称。
 
 如果你要建立标签页面和分类页面，首先需要去掉 `tags` 和 `categories` 前的注释，然后在 `~/source/` 文件夹下建立该页面，对应名称为 `tags` 和 `categories`。可以执行以下命令生成：
 

@@ -54,7 +54,7 @@ toc = true
 
 > 智人发明出了许许多多的想象现实，也因而发展出许许多多的行为模式，而这正是我们所谓「文化」的主要成分。等到文化出现，就再也无法停止改变和发展，这些无法阻挡的变化，就成了我们说的「历史」。
 
-![tree-of-the-knowledge-of-good-and-evil.jpg](/images/tree-of-the-knowledge-of-good-and-evil.jpg "知善恶树")
+[^2]![adam-and-eve-theodore-de-bry.jpg](/images/adam-and-eve-theodore-de-bry.jpg "知善恶树，亚当和夏娃")
 
 ### 亚当和夏娃的一天
 
@@ -95,3 +95,4 @@ toc = true
 ![ice-age.jpg](/images/ice-age.jpg "电影《冰河世纪》")
 
 [^1]: 图源：[Chauvet Cave | Wikipedia](https://en.wikipedia.org/wiki/Chauvet_Cave)
+[^2]: 图源：[Adam And Eve | Fine Art America](https://fineartamerica.com/featured/adam-and-eve-theodore-de-bry.html)

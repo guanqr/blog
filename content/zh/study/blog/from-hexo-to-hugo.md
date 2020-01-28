@@ -1,5 +1,5 @@
 +++
-title = "从 Hexo 到 Hugo"
+title = "博客迁移，从 Hexo 到 Hugo"
 date = "2020-01-26T14:35:40+08:00"
 tags = ["hexo","hugo","typography"]
 +++

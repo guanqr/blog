@@ -38,7 +38,7 @@ paginate = 10
 
 # URL 相关
 disablePathToLower = false
-relativeURLs = true
+relativeURLs = false
 uglyURLs = false
 
 # URL 结构
@@ -288,9 +288,9 @@ uglyURLs = false
     # 背景色
     # siteBrandBackgroundColor = "hsl(240, 8%, 12%)"
     # 背景图片
-    siteBrandBackgroundImage = "url(/images/site-brand.jpg)"
-    # "linear-gradient(to right, #ef4e7b, #aa96da, #facad3)"
-    # "linear-gradient(90deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%)"
+    siteBrandBackgroundImage = "url(../images/site-brand.jpg)"
+    # siteBrandBackgroundImage = "linear-gradient(to right, #ef4e7b, #aa96da, #facad3)"
+    # siteBrandBackgroundImage = "linear-gradient(90deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%)"
     # 注意：背景色和背景图片只能二选一
 
 
@@ -1364,6 +1364,8 @@ uglyURLs = false
     homePoetry = ["*To see a world in a grain of sand*","*And a heaven in a wild flower*","*Hold infinity in the palm of your hand*","*And eternity in an hour*"]
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1
+    # 背景图片
+    siteBrandBackgroundImage = "url(../../images/site-brand.jpg)"
     # 自定义页脚微信订阅功能
     footerSubscription = true
     subscriptionDescription = "WeChat Subscription"

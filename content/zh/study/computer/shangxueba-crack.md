@@ -1,5 +1,5 @@
 +++
-title = "Python 自动识别验证码破解上学吧题目答案"
+title = "自动识别验证码破解上学吧题目答案"
 date = "2019-05-05T12:13:17+08:00"
 tags = ["python"]
 aliases = ["/2019/05/05/shangxueba-crack/"]

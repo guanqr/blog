@@ -215,15 +215,15 @@ if __name__ == '__main__':
 
 ![draw-the-map-of-2019-ncov-epidemic-distribution-2.png](/images/draw-the-map-of-2019-ncov-epidemic-distribution-2.png "圆柱投影疫情地图")
 
-上图为圆柱投影，这也是 `basemap` 默认的投影模式，我们还可以换用其他投影模式，比如兰勃托等角投影，只需要将 `99` 行代码改为：
+上图为圆柱投影，这也是 `basemap` 默认的投影模式，我们还可以换用其他投影模式，比如兰勃特等角投影，只需要将 `99` 行代码改为：
 
 ```python
 m = Basemap(projection='lcc', width=5000000, height=5000000, lat_0=36, lon_0=102, resolution='l', ax=axes)
 ```
 
-兰勃托投影效果如下：
+兰勃特投影效果如下：
 
-![draw-the-map-of-2019-ncov-epidemic-distribution-3.png](/images/draw-the-map-of-2019-ncov-epidemic-distribution-3.png "兰勃托投影疫情地图")
+![draw-the-map-of-2019-ncov-epidemic-distribution-3.png](/images/draw-the-map-of-2019-ncov-epidemic-distribution-3.png "兰勃特投影疫情地图")
 
 还可以使用正射投影：
 
@@ -234,3 +234,7 @@ m = Basemap(projection='ortho', lat_0=30, lon_0=105, resolution='l', ax=axes)
 效果如下：
 
 ![draw-the-map-of-2019-ncov-epidemic-distribution-4.png](/images/draw-the-map-of-2019-ncov-epidemic-distribution-4.png "正射投影疫情地图")
+
+<p class="note-warning">
+注：以上数据采集时间为 2020 年 1 月 29 日 20 时。
+</p>

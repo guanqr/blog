@@ -114,11 +114,27 @@ preload:
 
 首先依然是设定你的 `manifest.json` 文件，直接参考「[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)」中的「将博客添加至桌面」这一章节即可。
 
-由于需要使用 Node 的模块，因此我们的电脑必须安装 [Node.js](https://nodejs.org/zh-cn/download/)。如果你使用的是 Hexo，那么是已经安装过的；如果你使用的并非基于 Node.js 的博客框架，那么请自行安装一下。然后，我们安装模块：
+由于需要使用 Node 的模块，因此我们的电脑必须安装 [Node.js](https://nodejs.org/zh-cn/download/)。如果你使用的是 Hexo，那么是已经安装过的；如果你使用的并非基于 Node.js 的博客框架，比如 Hugo，那么请自行安装一下。然后，我们安装模块：
 
 ```
 npm install workbox-build gulp gulp-uglify readable-stream uglify-es --save-dev
 ```
+
+> 如何将安装的模块更新到最新版本呢？
+>
+> ```
+> npm update
+> ```
+>
+> 如果不生效，可继续尝试（下方以 `workbox-build` 为例）：
+>
+> ```
+> npm outdated
+> Package        Current  Wanted  Latest  Location
+> workbox-build    4.3.1   4.3.1   5.0.0  blog
+>
+> npm install workbox-build@latest
+> ```
 
 这里便需要依靠 Gulp 生成 `sw.js` 文件。对于 Gulp 这一款工具的使用，也可以参考我的另一篇文章「[使用 Gulp 压缩博客静态资源](/study/blog/use-gulp-to-compress-source-code/)」进行初步的了解。
 
@@ -164,13 +180,9 @@ gulp.task("build", gulp.series("generate-service-worker", "uglify"));
 然后，再在站点根目录下新建一个 `sw-template.js` 文件：
 
 ```javascript
-const workboxVersion = '4.3.1';
+const workboxVersion = '5.0.0';
 
-importScripts(`https://cdn.jsdelivr.net/npm/workbox-cdn@${workboxVersion}/workbox/workbox-sw.js`);
-
-workbox.setConfig({
-    modulePathPrefix: `https://cdn.jsdelivr.net/npm/workbox-cdn@${workboxVersion}/workbox/`
-});
+importScripts(`https://storage.googleapis.com/workbox-cdn/releases/${workboxVersion}/workbox-sw.js`);
 
 workbox.core.setCacheNameDetails({
     prefix: "Guanqr"
@@ -180,7 +192,7 @@ workbox.core.skipWaiting();
 
 workbox.core.clientsClaim();
 
-workbox.precaching.precacheAndRoute([]);
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
 
 workbox.precaching.cleanupOutdatedCaches();
 
@@ -190,11 +202,11 @@ workbox.routing.registerRoute(
     new workbox.strategies.CacheFirst({
         cacheName: "images",
         plugins: [
-            new workbox.expiration.Plugin({
+            new workbox.expiration.ExpirationPlugin({
                 maxEntries: 1000,
                 maxAgeSeconds: 60 * 60 * 24 * 30
             }),
-            new workbox.cacheableResponse.Plugin({
+            new workbox.cacheableResponse.CacheableResponsePlugin({
                 statuses: [0, 200]
             })
         ]
@@ -207,11 +219,11 @@ workbox.routing.registerRoute(
     new workbox.strategies.CacheFirst({
         cacheName: "fonts",
         plugins: [
-            new workbox.expiration.Plugin({
+            new workbox.expiration.ExpirationPlugin({
                 maxEntries: 1000,
                 maxAgeSeconds: 60 * 60 * 24 * 30
             }),
-            new workbox.cacheableResponse.Plugin({
+            new workbox.cacheableResponse.CacheableResponsePlugin({
                 statuses: [0, 200]
             })
         ]
@@ -230,11 +242,11 @@ workbox.routing.registerRoute(
     new workbox.strategies.CacheFirst({
         cacheName: 'google-fonts-webfonts',
         plugins: [
-            new workbox.expiration.Plugin({
+            new workbox.expiration.ExpirationPlugin({
                 maxEntries: 1000,
                 maxAgeSeconds: 60 * 60 * 24 * 30
             }),
-            new workbox.cacheableResponse.Plugin({
+            new workbox.cacheableResponse.CacheableResponsePlugin({
                 statuses: [0, 200]
             })
         ]
@@ -247,21 +259,38 @@ workbox.routing.registerRoute(
     new workbox.strategies.CacheFirst({
         cacheName: "static-libs",
         plugins: [
-            new workbox.expiration.Plugin({
+            new workbox.expiration.ExpirationPlugin({
                 maxEntries: 1000,
                 maxAgeSeconds: 60 * 60 * 24 * 30
             }),
-            new workbox.cacheableResponse.Plugin({
+            new workbox.cacheableResponse.CacheableResponsePlugin({
                 statuses: [0, 200]
             })
         ]
     })
 );
 
-workbox.googleAnalytics.initialize({});
+// External Images
+workbox.routing.registerRoute(
+    /^https:\/\/raw\.githubusercontent\.com\/reuixiy\/hugo-theme-meme\/master\/static\/icons\/.*/,
+    new workbox.strategies.CacheFirst({
+        cacheName: "external-images",
+        plugins: [
+            new workbox.expiration.ExpirationPlugin({
+                maxEntries: 1000,
+                maxAgeSeconds: 60 * 60 * 24 * 30
+            }),
+            new workbox.cacheableResponse.CacheableResponsePlugin({
+                statuses: [0, 200]
+            })
+        ]
+    })
+);
+
+workbox.googleAnalytics.initialize();
 ```
 
-其中，请将 `prefix` 修改为你博客的名字（英文），请查看 Workbox 的 [Releases](https://github.com/GoogleChrome/workbox/releases) 页面和 [workbox-cdn](https://github.com/nuxt-community/workbox-cdn) 的 GitHub 页面以修改 `workboxVersion` 为最新版，其它项也请务必结合你的情况自行修改。如果你想用其它缓存策略，请自行查看[相关文档](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)。同时，提醒一下，绝对不要缓存视频。
+其中，请将 `prefix` 修改为你博客的名字（英文），请查看 Workbox 的 [Releases](https://github.com/GoogleChrome/workbox/releases) 页面并务必视..版本说明..修改 `workboxVersion` 为最新版，其它项也请务必结合你的情况自行修改。如果你想用其它缓存策略，请自行查看[相关文档](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)。同时，提醒一下，..绝对不要..缓存视频或者预缓存图片。
 
 设置完成后，运行命令：
 
@@ -283,22 +312,18 @@ gulp build
 </div>
 
 <script>
-    if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js')
-        .then(reg => {
-            reg.addEventListener('updatefound', () => {
-                newWorker = reg.installing;
-                newWorker.addEventListener('statechange', () => {
-                    if (newWorker.state === 'installed') {
-                        if (navigator.serviceWorker.controller) {
-                            showNotification();
-                        }
-                    }
-                });
+    if ('serviceWorker' in navigator) {
+        if (navigator.serviceWorker.controller) {
+            navigator.serviceWorker.addEventListener('controllerchange', function() {
+                showNotification();
             });
+        }
+
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js');
         });
     }
-    
+
     function showNotification() {
         document.querySelector('meta[name=theme-color]').content = '#000';
         document.getElementById('app-refresh').className += ' app-refresh-show';

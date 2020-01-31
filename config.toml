@@ -830,8 +830,11 @@ uglyURLs = false
 
     # 说明：仅在生产环境（production）下渲染
     #
-    #      只支持相对于站点根目录的绝对链接
+    #      只支持相对于网站根目录的绝对链接
     #      比如：/videos/meme.mp4
+    #
+    #      且你添加的 HTML 代码必需以以下开头：
+    #      `<video src="`
 
     # 是否开启
     enableVideoHost = false

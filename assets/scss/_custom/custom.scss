@@ -270,3 +270,8 @@ span#inline-toc {
         background-position-y: calc(-36 * (100vw - 1000px) / 920);
     }
 }
+// 首字下沉
+.drop-cap {
+    margin-top: 18px !important;
+    margin-right: 14px;
+}

@@ -235,6 +235,4 @@ m = Basemap(projection='ortho', lat_0=30, lon_0=105, resolution='l', ax=axes)
 
 ![draw-the-map-of-2019-ncov-epidemic-distribution-4.png](/images/draw-the-map-of-2019-ncov-epidemic-distribution-4.png "正射投影疫情地图")
 
-<p class="note-warning">
-注：以上数据采集时间为 2020 年 1 月 29 日 20 时。
-</p>
+注意：以上数据采集时间为 2020 年 1 月 29 日 20 时。此后腾讯在数据源的结构上做了一些改动，数据源链接与对应的结构名都需要做相应的改动，否则运行程序会出现错误。

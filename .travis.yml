@@ -1,0 +1,28 @@
+language: node_js
+node_js: stable
+
+install:
+    - npm install
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.64.0/hugo_extended_0.64.0_Linux-64bit.deb
+    - sudo dpkg -i hugo*.deb
+
+script:
+    - npm run build
+    - echo 'Hugo build done!'
+
+after_script:
+    - cd ./public
+    - git init
+    - git config user.name "guanqr"
+    - git config user.email "guanqirui@zju.edu.cn"
+    - git add .
+    - git commit -m "Travis CI Auto Builder"
+    - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master # GH_TOKEN是在Travis中配置token的名称
+
+branches:
+    only:
+        - master
+
+env:
+    global:
+        - GH_REF: github.com/guanqr/guanqr.github.io.git

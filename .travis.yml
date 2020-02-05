@@ -11,13 +11,18 @@ script:
     - echo 'Hugo build done!'
 
 after_script:
+    - git clone https://${GH_REF} .deploy_git
+    - cd .deploy_git
+    - git checkout master
+    - cd ../
+    - mv .deploy_git/.git/ ./public/
     - cd ./public
     - git init
     - git config user.name "guanqr"
     - git config user.email "guanqirui@zju.edu.cn"
     - git add .
     - git commit -m "Travis CI Auto Builder"
-    - git push --force --quiet "https://${Travis_Token}@${GH_REF}" master:master # GH_TOKEN是在Travis中配置token的名称
+    - git push --force --quiet "https://${Travis_Token}@${GH_REF}" master:master
 
 branches:
     only:

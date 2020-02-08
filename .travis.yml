@@ -28,4 +28,4 @@ branches:
 
 env:
     global:
-        - GH_REF: github.com/guanqr/guanqr.github.io.git
+        - GH_REF: github.com/guanqr/blog-build.git

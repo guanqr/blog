@@ -53,3 +53,10 @@
   avatar = "/images/friends/ztygcs.png"
   description = "技术博文，生活杂碎，哲理人生"
   weight = 8
+
+[[blogroll]]
+  name = "林深时见璐"
+  url = "https://linwhitehat.github.io/"
+  avatar = "/images/friends/linwhitehat.png"
+  description = "Wonderful U - AGA"
+  weight = 9

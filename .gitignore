@@ -2,5 +2,3 @@ node_modules/
 public/
 resources/
 .env
-.travis.yml
-gh-pages.sh

@@ -241,27 +241,6 @@ span#inline-toc {
         color: hsl(180, 75%, 45%);
     }
 }
-// 品牌栏自动隐藏
-/*.site-brand {
-    overflow: auto hidden;
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: 0;
-}
-@media screen and (min-width: 1920px) {
-    .site-brand {
-        background-size: 2560px;
-        background-position-x: 0;
-        background-position-y: -36px;
-    }
-}
-@media screen and (min-width: 1000px) {
-    .site-brand {
-        background-size: calc(1000px + 1560 * (100vw - 1000px) / 920);
-        background-position-x: 0;
-        background-position-y: calc(-36 * (100vw - 1000px) / 920);
-    }
-}*/
 // 首字下沉
 .drop-cap {
     margin-top: 18px !important;

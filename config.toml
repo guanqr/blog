@@ -288,8 +288,6 @@ uglyURLs = false
     # 背景色
     # siteBrandBackgroundColor = "hsl(240, 8%, 12%)"
     # 背景图片
-    # siteBrandBackgroundImage = "url(../images/site-brand.jpg)"
-    # siteBrandBackgroundImage = "linear-gradient(to right, #ef4e7b, #aa96da, #facad3)"
     siteBrandBackgroundImage = "linear-gradient(90deg, #ef4e7b 0, #a166ab 25%, #5073b8 50%, #1098ad 75%, #07b39b 100%)"
     # 注意：背景色和背景图片只能二选一
 
@@ -1367,8 +1365,6 @@ uglyURLs = false
     homePoetry = ["*To see a world in a grain of sand*","*And a heaven in a wild flower*","*Hold infinity in the palm of your hand*","*And eternity in an hour*"]
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1
-    # 背景图片
-    siteBrandBackgroundImage = "url(../../images/site-brand.jpg)"
     # 自定义页脚微信订阅功能
     footerSubscription = true
     subscriptionDescription = "WeChat Subscription"

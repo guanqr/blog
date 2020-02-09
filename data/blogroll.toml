@@ -6,57 +6,64 @@
   weight = 1
 
 [[blogroll]]
-  name = "Dnocm ☀"
+  name = "Dnocm"
   url = "https://www.dnocm.com/"
   avatar = "/images/friends/dnocm.jpg"
   description = "若白驹过隙，忽然而已"
   weight = 2
 
 [[blogroll]]
-  name = "游鱼星"
-  url = "https://blog.fishstar.xyz/"
-  avatar = "/images/friends/fishstar.jpg"
-  description = "享受生活，享受代码"
-  weight = 3
-
-[[blogroll]]
   name = "zzzain46's Blog"
   url = "https://www.52debug.cn/"
   avatar = "/images/friends/zzzain46.jpg"
   description = "能全力以赴不尽力而为"
-  weight = 4
+  weight = 3
 
 [[blogroll]]
   name = "RidiQulous"
   url = "https://ridiqulous.com/"
   avatar = "/images/friends/ridiqulous.png"
   description = "计算摄影，图像处理，颜色科学"
-  weight = 5
+  weight = 4
 
 [[blogroll]]
   name = "DingZhi's Blog"
   url = "https://dingzhi.ga/"
   avatar = "/images/friends/dingzhi.jpg"
   description = "路在脚下，心向远方"
-  weight = 6
+  weight = 5
 
 [[blogroll]]
   name = "三个技术小站"
   url = "https://qsctech-sange.github.io/"
   avatar = "/images/friends/sange.png"
   description = "金融、计算机与数据科学"
-  weight = 7
+  weight = 6
 
 [[blogroll]]
   name = "天涯共此时"
   url = "https://ztygcs.github.io/"
   avatar = "/images/friends/ztygcs.png"
   description = "技术博文，生活杂碎，哲理人生"
-  weight = 8
+  weight = 7
 
 [[blogroll]]
   name = "林深时见璐"
   url = "https://linwhitehat.github.io/"
   avatar = "/images/friends/linwhitehat.png"
   description = "Wonderful U - AGA"
+  weight = 8
+
+[[blogroll]]
+  name = "谁把钱丢了"
+  url = "https://jmyblog.top/"
+  avatar = "/images/friends/jmyblog.jpg"
+  description = "Everyday struggle"
   weight = 9
+
+[[blogroll]]
+  name = "黎璃的个人博客"
+  url = "https://xiaotong-sun.github.io/"
+  avatar = "/images/friends/xiaotongsun.jpg"
+  description = "不困于物，不乱于心"
+  weight = 10

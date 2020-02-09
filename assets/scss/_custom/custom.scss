@@ -242,7 +242,7 @@ span#inline-toc {
     }
 }
 // 品牌栏自动隐藏
-.site-brand {
+/*.site-brand {
     overflow: auto hidden;
     background-size: cover;
     background-position-x: center;
@@ -261,7 +261,7 @@ span#inline-toc {
         background-position-x: 0;
         background-position-y: calc(-36 * (100vw - 1000px) / 920);
     }
-}
+}*/
 // 首字下沉
 .drop-cap {
     margin-top: 18px !important;

@@ -586,7 +586,7 @@ uglyURLs = false
     #      的优先级高于此处
 
     # 是否禁用 MathJax 的右键菜单
-    disableMathJaxMenu = true
+    disableMathJaxMenu = false
 
 
     ######################################

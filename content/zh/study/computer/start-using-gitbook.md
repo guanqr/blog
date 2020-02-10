@@ -3,7 +3,6 @@ title = "使用 GitBook 打造独一无二的电子书"
 date = "2019-07-22T10:05:12+08:00"
 tags = ["git","typography"]
 aliases = ["/2019/07/22/start-using-gitbook/"]
-katex = true
 +++
 
 ![gitbook-logo.png](/images/gitbook-logo.png)
@@ -527,9 +526,9 @@ editor.renderer.updateFontSize();
 }
 ```
 
-#### $\KaTeX$
+#### KaTeX
 
-为了支持数学公式, 我们可以使用 $\KaTeX$ 和 MathJax 插件,  $\KaTeX$ 的渲染速度要快于 MathJax，但 MathJax 支持的语法更多。
+为了支持数学公式, 我们可以使用 KaTeX 和 MathJax 插件,  KaTeX 的渲染速度要快于 MathJax，但 MathJax 支持的语法更多。
 
 ```json
 {

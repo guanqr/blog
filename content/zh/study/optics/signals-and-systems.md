@@ -3,7 +3,7 @@ title = "信号与系统：MATLAB 信号处理"
 date = "2020-01-20T08:38:19+08:00"
 tags = ["matlab"]
 series = ["major-courses"]
-katex = true
+mathjax = true
 toc = true
 +++
 
@@ -130,8 +130,8 @@ $$
 
 $$
 \begin{aligned}
-x_e[n]=\frac{1}{2}(x[n]+x*[-n]),\\
-x_o[n]=\frac{1}{2}(x[n]-x*[-n])
+x_e[n]&=\frac{1}{2}(x[n]+x*[-n]),\\
+x_o[n]&=\frac{1}{2}(x[n]-x*[-n])
 \end{aligned}
 $$
 
@@ -216,7 +216,7 @@ ty=t0+(0:length(y)-1)*Ts;
 
 1. $x(2-t)$
 2. $x(t/2-1)u(-t+4)$
-3. $\frac{dx(t)}{dt}$
+3. $dx(t)/{dt}$
 4. $\int_{-\infty}^t x(\tau)d\tau$
 5. $x(t)$ 与信号 $t(u(t)-u(t-1))$ 的卷积
 

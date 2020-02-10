@@ -184,6 +184,10 @@ span#inline-toc {
 .subscription-icon {
     height: 100%;
     width: 100%;
+    transition: fill .5s;
+    &:hover {
+        fill: var(--color-primary);
+    }
 }
 .subscription-hover {
     position: absolute;
@@ -229,6 +233,13 @@ span#inline-toc {
         border-bottom: 1px dotted var(--color-contrast-lower);
     }
 } 
+// 品牌栏自动隐藏	
+.site-brand {	
+    overflow: auto hidden;	
+    background-size: cover;	
+    background-position-x: center;	
+    background-position-y: 0;	
+}
 // 主页底部图标
 .home {
     .life {

@@ -7,6 +7,7 @@ displayCopyright = false
 gitinfo = false
 badge = false
 meta = false
+share = false
 comments = false
 blogroll = true
 +++

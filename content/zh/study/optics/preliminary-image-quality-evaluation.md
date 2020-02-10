@@ -4,7 +4,7 @@ date = "2019-06-17T01:11:55+08:00"
 tags = ["color","fourier-optics","grayscale","white-balance"]
 series = ["major-courses"]
 aliases = ["/2019/06/17/applied-optics-2/","/study/optics/applied-optics-2/"]
-katex = true
+mathjax = true
 toc = true
 +++
 

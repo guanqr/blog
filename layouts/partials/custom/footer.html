@@ -1,11 +1,9 @@
 {{ if .Site.Params.footerSubscription }}
     <div class="subscription-box">
-        <div class="subscription-menu">
-            <div class="subscription-brands">{{ replace (index $.Site.Data.SVG $.Site.Params.subscriptionIcon) "icon" "icon subscription-icon" | safeHTML }}</div>
-            <div class="subscription-hover">
-                <img class="subscription-qrcode" src="{{ .Site.Params.subscriptionQrCode }}" />
-                <div class="subscription-description">{{ .Site.Params.subscriptionDescription }}</div>
-            </div>
+        {{ replace (index $.Site.Data.SVG $.Site.Params.subscriptionIcon) "icon" "icon subscription-icon" | safeHTML }}
+        <div class="subscription-hover">
+            <img class="subscription-qrcode" src="{{ .Site.Params.subscriptionQrCode }}" />
+            <div class="subscription-description">{{ i18n "subscription" }}</div>
         </div>
     </div>
 {{ end }}

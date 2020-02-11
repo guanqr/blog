@@ -2,8 +2,8 @@
 
 ## 博客
 
-[![Home](https://img.shields.io/badge/Home-Guanqr-aa96da.svg)](https://guanqr.com)
-[![Generator](https://img.shields.io/badge/Generator-Hugo-ff4088?&logo=hugo.svg)](https://gohugo.io/)
+[![Home](https://img.shields.io/badge/Home-Guanqr-aa96da)](https://guanqr.com)
+[![Generator](https://img.shields.io/badge/Generator-Hugo-ff4088?&logo=hugo)](https://gohugo.io/)
 [![Theme](https://img.shields.io/badge/Theme-MemE-2a6df4?&logo=meme)](https://github.com/reuixiy/hugo-theme-meme)
 [![Source](https://img.shields.io/badge/Source-GitHub-181717?&logo=github)](https://github.com/guanqr/blog)
 [![Deploy](https://img.shields.io/badge/Deploy-Netlify-00c7b7?&logo=netlify)](https://www.netlify.com/)

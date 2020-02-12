@@ -1,4 +1,4 @@
 +++
-title = "ZEMAX"
+title = "Zemax"
 slug = "zemax"
 +++

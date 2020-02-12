@@ -2,7 +2,6 @@
 title = "I Heard You Paint Houses"
 date = "2020-02-12T10:27:30+08:00"
 tags = ["crime","gangster"]
-dropCap = false
 +++
 
 ![the-irishman-0.jpg](/images/the-irishman-0.jpg)

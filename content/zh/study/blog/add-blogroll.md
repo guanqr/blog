@@ -67,20 +67,20 @@ series = ["create-a-blog"]
 ```toml
 [[blogroll]]
   name = "荷戟独彷徨"
-  url = "https://blog.guanqr.com"
-  avatar = "https://blog.guanqr.com/icons/android-chrome-512x512.png"
+  url = "https://guanqr.com"
+  avatar = "https://guanqr.com/icons/android-chrome-512x512.png"
   description = "The Sound of Silence"
   weight = 1
 
 [[blogroll]]
   name = "荷戟独彷徨"
-  url = "https://blog.guanqr.com"
-  avatar = "https://blog.guanqr.com/icons/android-chrome-512x512.png"
+  url = "https://guanqr.com"
+  avatar = "https://guanqr.com/icons/android-chrome-512x512.png"
   description = "The Sound of Silence"
   weight = 2
 ```
 
-然后当然是需要新建一个友链页面，运行命令 `hugo new friends/_index.md`。在该文件的配置信息中，添加 `blogroll = true` 引入友链模板：
+其中，`weight` 表示该友链的权重，用来排序。然后当然是需要新建一个友链页面，运行命令 `hugo new friends/_index.md`。在该文件的配置信息中，添加 `blogroll = true` 引入友链模板：
 
 ```diff
 title = "友情链接"

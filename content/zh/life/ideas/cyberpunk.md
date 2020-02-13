@@ -1,7 +1,7 @@
 +++
 title = "赛博朋克：一个独特的科幻世界"
 date = "2019-07-16T16:17:15+08:00"
-tags = ["cyberpunk","sci-fi"]
+tags = ["class-struggle","cyberpunk","sci-fi"]
 +++
 
 ![cyberpunk2077.jpg](/images/cyberpunk2077.jpg "游戏《赛博朋克 2077》 基努·里维斯")

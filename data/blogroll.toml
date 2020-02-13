@@ -67,3 +67,10 @@
   avatar = "/images/friends/xiaotongsun.jpg"
   description = "不困于物，不乱于心"
   weight = 10
+
+[[blogroll]]
+  name = "数学小兵儿"
+  url = "https://matnoble.me/"
+  avatar = "/images/friends/matnoble.png"
+  description = "数学＆计算机 我都爱"
+  weight = 11

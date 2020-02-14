@@ -1,13 +1,14 @@
 +++
-title = "一键快速部署 WordPress 博客程序"
+title = "宝塔面板快速部署 WordPress 博客"
 date = "2019-04-16T00:19:35+08:00"
 tags = ["linux","wordpress"]
 dropCap = false
+aliases = ["/study/blog/create-a-website-2/"]
 +++
 
 ![wordpress-screen-themes.png](/images/wordpress-screen-themes.png "WordPress 控制面板")
 
-在依照以下方式进行 WordPress 网站建立之前，你需要安装好宝塔面板。具体操作过程请看我的另一篇文章《[Linux 系统安装宝塔面板建站](/study/blog/create-a-website-1/)》。
+在依照以下方式进行 WordPress 网站建立之前，你需要安装好宝塔面板。具体操作过程请看我的另一篇文章《[Linux 服务器安装宝塔面板](/study/blog/install-baota-in-linux/)》。
 
 ## 准备工作
 

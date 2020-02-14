@@ -3,6 +3,7 @@ title = "使用 Linux 服务器检测脚本工具测试性能"
 date = "2019-04-14T16:05:26+08:00"
 tags = ["linux"]
 dropCap = false
+draft = true
 +++
 
 ## Superbench.sh

@@ -1,8 +1,9 @@
 +++
-title = "Linux 系统安装宝塔面板建站"
+title = "Linux 服务器安装宝塔面板"
 date = "2019-04-15T00:00:00+08:00"
 tags = ["linux","wordpress"]
 dropCap = false
+aliases = ["/study/blog/create-a-website-1/"]
 +++
 
 ![bt-linux-pc-free.png](/images/bt-linux-pc-free.png "宝塔面板")

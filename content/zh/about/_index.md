@@ -19,6 +19,6 @@ comments = false
 
 目前我的博客采用 [Hugo](https://gohugo.io/) 框架，主题为 [MemE](https://github.com/reuixiy/hugo-theme-meme)，源码存放于 [GitHub](https://github.com/guanqr/blog)，构建并部署在 [Netlify](https://www.netlify.com/) 上。本博客启用了 PWA 技术，你可以通过浏览器添加本站到你的手机主屏或计算机桌面，随时随地进行浏览。如果你想订阅本博客，推荐 <a href="/atom.xml" target="_blank">Atom</a> / <a href="/rss.xml" target="_blank">RSS</a>。另外，我还会在<a href="/images/wechat-official-accounts.svg" target="_blank">微信公众号</a>上推送文章，不过因为个人时间有限，推送会滞后一些。
 
-博客的名字取自鲁迅的诗作《题〈彷徨〉》的最后一句。副标题 *The Sound of Silence* 是 Simon 和 Garfunkel 合作的一首歌曲的名字。博客的文章主要分为两大类：「[生活感悟](/life/)」与「[学海无涯](/study/)」。前者主要是我平时的所见所想；后者涵盖了我的专业（光学工程）知识、计算机技术等，也有一些经过我的个人实践进行适当修改的搬运的文章。除了这两类文章，我还开启了一个「[专栏](/series/)」，目前归纳了我写过的建立静态博客和专业课程学习两个类别的文章。如非特别说明，博客中的文章均采用 [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，如果想要转载的话，请注明出处。
+博客的名字取自鲁迅的诗作《题〈彷徨〉》的最后一句。副标题 *The Sound of Silence* 是 Simon 和 Garfunkel 合作的一首歌曲的名字。博客的文章主要分为两大类：「[生活感悟](/life/)」与「[科学技术](/tech/)」。前者主要是我平时的所见所想；后者涵盖了我的专业（光学工程）知识、计算机技术等，也有一些经过我的个人实践进行适当修改的搬运的文章。除了这两类文章，我还开启了一个「[专栏](/series/)」，目前归纳了我写过的建立静态博客和专业课程学习两个类别的文章。如非特别说明，博客中的文章均采用 [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，如果想要转载的话，请注明出处。
 
 如果你在浏览博客的过程中发现了任何问题，欢迎前往 GitHub 的[代码仓库](https://github.com/guanqr/blog)提交 Issues 或直接修改相关文件后提交 Pull Requests。如果你有其他事情想要咨询，可以通过电子邮箱联系我，邮箱地址：[guanqirui@zju.edu.cn](mailto:guanqirui@zju.edu.cn)。

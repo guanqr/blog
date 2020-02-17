@@ -1,0 +1,44 @@
+{{ define "main" }}
+    {{- $Deliver := . -}}
+    <main class="main single" id="main">
+        <div class="main-inner">
+
+            <article class="content post">
+
+                <h1 class="post-title">{{ .Title }}</h1>
+
+                {{ if .Site.Params.displayPostDescription }}
+                    {{ with .Params.description }}
+                        {{- $raw := . -}}
+                        {{- partial "components/markdownify.html" (dict "Deliver" $Deliver "raw" $raw "isContent" false) -}}
+                        {{- $Content := $Deliver.Scratch.Get "Content" -}}
+                        <div class="post-description">{{ $Content | safeHTML }}</div>
+                    {{ end }}
+                {{ end }}
+
+                {{- partial "components/content.html" . -}}
+                {{- $Content := .Scratch.Get "Content" -}}
+                <div class="post-body">
+                    {{ range .Site.Data.blogroll }}
+                        {{ range sort . "weight" }}
+                            <a class="blogroll" href="{{ .url }}" target="_blank">
+                                
+                                    <img class="avatar" src="{{ .avatar }}"/>
+                                    <div class="friend">
+                                        <div class="name">{{ .name }}</div>
+                                        <div class="excerpt">{{ .description }}</div>
+                                    </div>
+                               
+                            </a>
+                        {{ end }}
+                    {{ end }}
+                    {{- $Content -}}
+                </div>
+
+            </article>
+
+            {{ partial "comments.html" . }}
+
+        </div>
+    </main>
+{{ end }} 

@@ -201,7 +201,7 @@ uglyURLs = false
         pre = "internal"
         post = "archive"
     [[menu.main]]
-        url = "/friends/"
+        url = "/blogroll/"
         name = "友链"
         weight = 5
         pre = "internal"

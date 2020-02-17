@@ -140,9 +140,10 @@ span#inline-toc {
 }
 // 友链样式
 .blogroll {
-    padding: 1rem 0;
+    padding: 1em 0;
     border: 2px solid transparent;
     border-bottom: 1px dashed var(--color-contrast-low);
+    text-decoration: none !important;
     display: flex;
     .friend {
         text-overflow: ellipsis;
@@ -151,11 +152,10 @@ span#inline-toc {
     }
     .name {
         font-weight: bold;
-        margin-bottom: 6px;
-        margin-top: 6px;
+        margin: 0.375em 0;  
     }
     .excerpt {
-        font-size:14px;
+        font-size: 0.875em;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
@@ -163,9 +163,7 @@ span#inline-toc {
     .avatar {
         width: 4em !important;
         height: 4em !important;
-        margin: 0 !important;
-        margin-right: 1em !important;
-        border-radius: 4px;   
+        margin: 0 1em 0 0 !important; 
     }
 }
 // 自定义的页脚微信订阅号样式

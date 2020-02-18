@@ -46,11 +46,6 @@ tags = ["crime","gangster"]
 
 ![the-irishman-7.jpg](/images/the-irishman-7.jpg "电影的结尾镜头")
 
-> Hey, Father?<br>
-> C...could you do me a favor?<br>
-> Don't shut the door all the way.<br>
-> I don't like that.<br>
-> Just...<br>
-> Leave it open a little bit.
+> Hey, Father? C...could you do me a favor? Don't shut the door all the way. I don't like that. Just... Leave it open a little bit.
 
 曾经，弗兰克和吉米两人住一个套间。临睡的时候，吉米会留一条门缝——他也许以此在圣诞节时怀念自己的好朋友吉米。或许，他也同时希望自己的女儿能够回来，原谅自己。弗兰克为自己选择了一个棺材，颜色是代表爱尔兰人的绿色。他不愿意选择火葬，也不愿意葬入地下。和他同时代的所有人都已经去世——再也不会有任何人来了。这个房间，就是他的墓地。在刚认识罗素的时候，他讲述自己让两个战俘自掘坟墓的故事，而他自己的一生，也是在给自己挖掘坟墓。

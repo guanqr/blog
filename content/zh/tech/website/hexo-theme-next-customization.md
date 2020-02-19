@@ -220,21 +220,11 @@ deploy:
 
 ### 主题配置文件
 
-NexT 主题的配置文件内容有很多，因为该主题有很多扩展功能。在配置主题各项功能之前，我建议先阅读 [NexT 官方网站](https://theme-next.org/)[^2]的相关文档说明。主题配置文件内容过长，为了排版美观以及阅读方便，这里我只对一些关键配置和容易出现问题地方进行说明，一些我认为不太重要的配置就不再提及。这里我的 NexT 版本为 v7.4.2，不同版本之间的配置文件可能有微小变化，这里仅供参考。
+NexT 主题的配置文件内容有很多，因为该主题有很多扩展功能。在配置主题各项功能之前，我建议先阅读 [NexT 官方网站](https://theme-next.org/)[^2]的相关文档说明。主题配置文件内容过长，为了排版美观以及阅读方便，这里我只对一些关键配置和容易出现问题地方进行说明，一些我认为不太重要的配置就不再提及。不同版本之间的配置文件可能有微小变化，这里仅供参考。
 
 #### 自定义配置
 
 对应配置文件中的 `custom_file_path` 内容，如果你需要在网站的 `<head>`、`<body>` 等部位添加自己的代码，无需直接修改主题文件，NexT 主题拥有多样自由的注入功能，这一部分的说明参见下一章节「[网页样式布局](#网页样式布局)」
-
-#### RSS 订阅
-
-开启博客的订阅功能，需要安装 hexo-generator-feed 插件，然后在 `rss: ` 后添加 `/atom.xml`，如下所示：
-
-```diff
-# hexo-generator-feed required for rss support. Leave rss as blank to use site's feed link.
-# Set rss to false to disable feed link. Set rss to specific value if you have burned your feed already.
-+ rss: /atom.xml
-```
 
 #### 页脚信息
 
@@ -1381,40 +1371,7 @@ POWERMODE.shake = false;  // 控制开启 / 关闭屏幕震动特效
 
 ### 添加页脚微信订阅
 
-主题默认的微信订阅功能显示在文章的末尾，目前版本的主题已经取消该功能，需要自行添加。具体的添加方法见 [Issue #1217](https://github.com/theme-next/hexo-theme-next/issues/1217)：
-
-> 为了推行 `custom_file_path` 和 `theme_inject` 方法，部分通过修改数行 CSS 或 HTML 即可实现的功能被移除。我们建议用户自行实现。以 `wechat subscriber` 为例：
->
-> 在配置文件中，取消 `custom_file_path.postBodyEnd` 前的注释：
->
-> ```yaml
-> custom_file_path:
->   postBodyEnd: source/_data/post-body-end.swig
-> ```
->
-> 在 Hexo 根目录下，进入（若不存在则创建）`source/_data` 目录，在该目录下创建 `post-body-end.swig` 文件。
->
-> 在此文件中，写入如下内容：
->
-> ```html
-> <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
->   <img id="wechat_subscriber_qcode" src="{{ url_for(theme.wechat_subscriber.qcode) }}" alt="{{ author }} wechat" >style="width: 200px; max-width: 100%;">
->   <div>{{ theme.wechat_subscriber.description }}</div>
-> </div>
-> ```
-
-根据上述教程，在主题配置文件中添加：
-
-```yaml
-# Wechat Subscriber
-wechat_subscriber:
-  qcode: #/uploads/wechat-qcode.jpg
-  description: #Subscribe to my blog by scanning my public wechat account.
-```
-
-填写二维码所在地址和订阅的描述信息即可。
-
-我并没有使用该方法，而是将微信订阅的二维码放在了页脚。因为看到很多网站都是在页脚有个微信的 LOGO，鼠标移动到上面便会显示二维码，这样感觉很棒。
+主题默认的微信订阅功能显示在文章的末尾，个人感觉有些难看，所以我并没有使用主题提供的微信订阅功能，而是将微信订阅的二维码放在了页脚。因为看到很多网站都是在页脚有个微信的 LOGO，鼠标移动到上面便会显示二维码，这样感觉很棒。
 
 首先需要在 `~/sourse/_data/footer.swig` 中添加以下代码：
 

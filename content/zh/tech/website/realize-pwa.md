@@ -26,7 +26,7 @@ PWA 有很多要求，比如：HTTPS、响应式布局等等，可参考这个 [
 
 ![lighthouse-pwa.png](/images/lighthouse-pwa.png "Lighthouse 检测结果")
 
-我在之前的文章「[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)」中提到过如何实现 PWA 功能。在那一篇文章中，我使用的是 Hexo 的一款插件 hexo-service-worker。但最近几个月，通过这款插件生成的 `sw.js` 文件无法被浏览器识别，且网页停止自动更新，需要手动清理缓存才可以看到最新的内容。这显然是与我们的意愿相违背的。
+我在之前的文章《[加速 Hexo 博客的方法及遇到的问题](/tech/website/speed-up-hexo/)》中提到过如何实现 PWA 功能。在那一篇文章中，我使用的是 Hexo 的一款插件 hexo-service-worker。但最近几个月，通过这款插件生成的 `sw.js` 文件无法被浏览器识别，且网页停止自动更新，需要手动清理缓存才可以看到最新的内容。这显然是与我们的意愿相违背的。
 
 那么该如何改进呢，还有别的插件能提供这样的功能吗？
 
@@ -40,7 +40,7 @@ PWA 有很多要求，比如：HTTPS、响应式布局等等，可参考这个 [
 
 ## 三款插件
 
-hexo-service-worker 和 hexo-offline 插件的设定方法几乎相同，hexo-service-worker 的作者也说他的这款插件是根据 hexo-offline 插件进行的一些魔改。多出来的一项功能就是，当你的博客更新后，网页上方会弹出一个提示，提醒你网站已经更新完成，请刷新网页。因此这两款插件的使用方法我不再做过多的讲解，直接参考我的文章「[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)」以及官方文档进行配置即可。
+hexo-service-worker 和 hexo-offline 插件的设定方法几乎相同，hexo-service-worker 的作者也说他的这款插件是根据 hexo-offline 插件进行的一些魔改。多出来的一项功能就是，当你的博客更新后，网页上方会弹出一个提示，提醒你网站已经更新完成，请刷新网页。因此这两款插件的使用方法我不再做过多的讲解，直接参考我的文章《[加速 Hexo 博客的方法及遇到的问题](/tech/website/speed-up-hexo/)》以及官方文档进行配置即可。
 
 这里还要特别提醒一点，上述两款插件在站点配置文件中的配置内容仅有一处不同：
 
@@ -112,7 +112,7 @@ preload:
 
 我目前采用的就是通过 Workbox 实现博客的 PWA，个人感觉效果要比使用上述三种插件要好很多。
 
-首先依然是设定你的 `manifest.json` 文件，直接参考「[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)」中的「将博客添加至桌面」这一章节即可。
+首先依然是设定你的 `manifest.json` 文件，直接参考《[加速 Hexo 博客的方法及遇到的问题](/tech/website/speed-up-hexo/)》中的「将博客添加至桌面」这一章节即可。
 
 由于需要使用 Node 的模块，因此我们的电脑必须安装 [Node.js](https://nodejs.org/zh-cn/download/)。如果你使用的是 Hexo，那么是已经安装过的；如果你使用的并非基于 Node.js 的博客框架，比如 Hugo，那么请自行安装一下。然后，我们安装模块：
 
@@ -136,7 +136,7 @@ npm install workbox-build gulp gulp-uglify readable-stream uglify-es --save-dev
 > npm install workbox-build@latest
 > ```
 
-这里便需要依靠 Gulp 生成 `sw.js` 文件。对于 Gulp 这一款工具的使用，也可以参考我的另一篇文章「[使用 Gulp 压缩博客静态资源](/study/blog/use-gulp-to-compress-source-code/)」进行初步的了解。
+这里便需要依靠 Gulp 生成 `sw.js` 文件。对于 Gulp 这一款工具的使用，也可以参考我的另一篇文章《[使用 Gulp 压缩博客静态资源](/tech/website/use-gulp-to-compress-source-code/)》进行初步的了解。
 
 接下来，我们在博客站点根目录下新建一个 `gulpfile.js` 文件：
 

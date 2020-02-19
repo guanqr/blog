@@ -7,7 +7,7 @@ aliases = ["/study/blog/from-hexo-to-hugo/"]
 
 ![hugo-theme-meme.png](/images/hugo-theme-meme.png)
 
-去年 11 月初的时候，我将我的博客迁移到了 [Hugo](https://github.com/gohugoio/hugo)，主题是 [MemE](https://github.com/reuixiy/hugo-theme-meme)。尽管我的博客才刚刚创建没多长时间，为了满足自己对博客功能的需求，我还在 [NexT](https://github.com/theme-next/hexo-theme-next) 主题的基础上进行了[很多个性化的修改](/study/blog/hexo-theme-next-customization/)，但我最终还是抛弃了 Hexo。
+去年 11 月初的时候，我将我的博客迁移到了 [Hugo](https://github.com/gohugoio/hugo)，主题是 [MemE](https://github.com/reuixiy/hugo-theme-meme)。尽管我的博客才刚刚创建没多长时间，为了满足自己对博客功能的需求，我还在 [NexT](https://github.com/theme-next/hexo-theme-next) 主题的基础上进行了[很多个性化的修改](/tech/website/hexo-theme-next-customization/)，但我最终还是抛弃了 Hexo。
 
 NexT 主题确实是 Hexo 中可定制程度最高的主题，我折腾了很久，但是这种高度自由的定制也带来了不少麻烦：每一次我对主题进行更新的时候，都要小心翼翼地操作，因为该主题的开源团队会时不时地对主题部分页面的结构进行大改，而我对页面的美化恰恰是基于结构的，这就导致了各种各样的报错。每一次为了解决这些错误，我都要认真对主题的源代码进行研究，看一看两个版本之间到底哪里发生了改变，这花费了不少的时间精力。另外，不得不吐槽的是，Hexo 生成页面的速度远不如 Hugo 迅速，这也是我选择 Hugo 的原因。
 

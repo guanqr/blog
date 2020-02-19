@@ -91,7 +91,7 @@ filter_optimize:
 <link rel="manifest" href="/manifest.json">
 ```
 
-如果不知道如何引入自定义文件的话，可以参考我的文章《[Hexo-NexT 主题个性优化](/study/blog/hexo-theme-next-customization/)》的「网页样式布局」部分。
+如果不知道如何引入自定义文件的话，可以参考我的文章《[Hexo-NexT 主题个性优化](/tech/website/hexo-theme-next-customization/)》的「网页样式布局」部分。
 
 部署完成后，在 Chrome 浏览器中按 `F12` 进入元素审查界面，选择进入 `Application` 一栏，即可看到你的 App Manifest 设定以及缓存文件的大小。
 
@@ -122,7 +122,7 @@ filter_optimize:
 
 ### 文本居中引用标签
 
-我在《[Hexo-NexT 主题个性优化](/study/blog/hexo-theme-next-customization/)》一文中所列举的「文本居中引用」中的样式：
+我在《[Hexo-NexT 主题个性优化](/tech/website/hexo-theme-next-customization/)》一文中所列举的「文本居中引用」中的样式：
 
 <blockquote class="blockquote-center"><p>
 人生乃是一面镜子，<br>

@@ -104,7 +104,7 @@ hexo generate
 hexo clean && hexo generate && gulp build && gulp
 ```
 
-因为我使用了 Gulp 进行了[静态资源的压缩](/study/blog/use-gulp-to-compress-source-code/)以及[实现 PWA 功能](/study/blog/realize-pwa/)，需要额外的命令。所以具体的命令内容需要根据自己的情况进行设定。
+因为我使用了 Gulp 进行了[静态资源的压缩](/tech/website/use-gulp-to-compress-source-code/)以及[实现 PWA 功能](/tech/website/realize-pwa/)，需要额外的命令。所以具体的命令内容需要根据自己的情况进行设定。
 
 ![deploy-blog-to-netlify-5.jpg](/images/deploy-blog-to-netlify-5.jpg "设定详细信息")
 

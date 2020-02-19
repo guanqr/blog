@@ -78,11 +78,11 @@ hexo clean && hexo g && hexo d
 
 #### Netlify
 
-除此之外，你也可以考虑通过 Netlify 实现博客的自动部署和持续集成，具体的做法请参考我的文章《[博客通过 Netlify 实现持续集成](/study/blog/deploy-blog-to-netlify/)》。
+除此之外，你也可以考虑通过 Netlify 实现博客的自动部署和持续集成，具体的做法请参考我的文章《[博客通过 Netlify 实现持续集成](/tech/website/deploy-blog-to-netlify/)》。
 
 ## 基本功能配置
 
-博客的建立最关键的就是选择主题，NexT 主题是目前使用人数最多的 Hexo 博客主题。如果你想要尝试其他主题，可以去 Hexo Themes 慢慢找。对于在 GitHub 上 Star 较多的几个主题，我都有尝试过，对于这些主题的简要分析可以参考我的这一篇[文章](/study/blog/hexo-theme/)。最终我选择 NexT 的原因正是它简洁、功能齐全、更新维护速度快。
+博客的建立最关键的就是选择主题，NexT 主题是目前使用人数最多的 Hexo 博客主题。如果你想要尝试其他主题，可以去 Hexo Themes 慢慢找。对于在 GitHub 上 Star 较多的几个主题，我都有尝试过，对于这些主题的简要分析可以参考我的这一篇[文章](/tech/website/hexo-theme/)。最终我选择 NexT 的原因正是它简洁、功能齐全、更新维护速度快。
 
 ### 安装 NexT 主题
 
@@ -290,7 +290,7 @@ creative_commons:
 
 #### 主题风格配置
 
-NexT 主题最大的特点就是提供了四套风格的主题，其中 Muse 和 Mist 两款风格相近，Pisces 和 Gemini 两款风格相近。我的博客主题是基于 Muse 主题进行修改的，对于这四款主题的选择，仁者见仁，智者见智。我在这篇[文章](/study/blog/hexo-theme/)中分析了我对这四种风格的看法，可供参考。
+NexT 主题最大的特点就是提供了四套风格的主题，其中 Muse 和 Mist 两款风格相近，Pisces 和 Gemini 两款风格相近。我的博客主题是基于 Muse 主题进行修改的，对于这四款主题的选择，仁者见仁，智者见智。我在这篇[文章](/tech/website/hexo-theme/)中分析了我对这四种风格的看法，可供参考。
 
 ```yml
 # Schemes
@@ -518,7 +518,7 @@ related_posts:
 
 #### 在线编辑
 
-因为 Hexo 博客并没有后端数据库，正常情况下无法在线编辑，这里的在线编辑功能需要借助 GitHub 与提供自动部署博客服务以实现持续集成的平台，这里我推荐使用 GitHub 与 Netlify 的组合。即你只需要将你的博客文件夹上传至代码仓库（因为在线编辑功能编辑的是你的原始 Markdown 文件），不用自己执行 `hexo generate && hexo deploy` 命令，而是让 Netlify 帮助你进行自动部署。有关使用 Netlify 实现博客持续集成的方法请看我的这一篇[文章](/study/blog/deploy-blog-to-netlify/)。
+因为 Hexo 博客并没有后端数据库，正常情况下无法在线编辑，这里的在线编辑功能需要借助 GitHub 与提供自动部署博客服务以实现持续集成的平台，这里我推荐使用 GitHub 与 Netlify 的组合。即你只需要将你的博客文件夹上传至代码仓库（因为在线编辑功能编辑的是你的原始 Markdown 文件），不用自己执行 `hexo generate && hexo deploy` 命令，而是让 Netlify 帮助你进行自动部署。有关使用 Netlify 实现博客持续集成的方法请看我的这一篇[文章](/tech/website/deploy-blog-to-netlify/)。
 
 ```yml
 # Post edit
@@ -1803,7 +1803,7 @@ mylinks:
 {% endcq %}
 ```
 
-如果你使用了插件  [hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize) 为博客加速，那么可能会对该功能的效果造成一定的影响，对该问题的具体分析可参见我的文章《[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)》。
+如果你使用了插件  [hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize) 为博客加速，那么可能会对该功能的效果造成一定的影响，对该问题的具体分析可参见我的文章《[加速 Hexo 博客的方法及遇到的问题](/tech/website/speed-up-hexo/)》。
 
 #### note 标签
 
@@ -2161,7 +2161,7 @@ npm install hexo-tag-aplayer --save
 
 具体的参数设置可以参考该插件的 [README](https://web.archive.org/web/20190226111008/https://github.com/MoePlayer/hexo-tag-aplayer) 和这插件的 Aplayer 的[官方文档](https://web.archive.org/web/20190226111008/https://aplayer.js.org/)。
 
-另外，该插件与 [hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize) 插件共同使用会出现 BUG，对该问题的具体分析可参见我的文章《[加速 Hexo 博客的方法及遇到的问题](/study/blog/speed-up-hexo/)》。
+另外，该插件与 [hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize) 插件共同使用会出现 BUG，对该问题的具体分析可参见我的文章《[加速 Hexo 博客的方法及遇到的问题](/tech/website/speed-up-hexo/)》。
 
 ### 插入视频
 

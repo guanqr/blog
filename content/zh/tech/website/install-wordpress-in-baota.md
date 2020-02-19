@@ -8,7 +8,7 @@ dropCap = false
 
 ![wordpress-screen-themes.png](/images/wordpress-screen-themes.png "WordPress 控制面板")
 
-在依照以下方式进行 WordPress 网站建立之前，你需要安装好宝塔面板。具体操作过程请看我的另一篇文章《[Linux 服务器安装宝塔面板](/study/blog/install-baota-in-linux/)》。
+在依照以下方式进行 WordPress 网站建立之前，你需要安装好宝塔面板。具体操作过程请看我的另一篇文章《[Linux 服务器安装宝塔面板](/tech/website/install-baota-in-linux/)》。
 
 ## 准备工作
 

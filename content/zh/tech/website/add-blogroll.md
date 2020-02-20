@@ -24,41 +24,68 @@ aliases = ["/study/blog/add-blogroll/"]
 
 这次我对友链页面的重构，适配了目前我采用的 Hugo 博客框架与 MemE 博客主题。而且可以采用添加网站信息至独立的 TOML 文件中，通过页面调取文件中的各项信息生成友链。比之前的傻瓜方式便捷了很多，而且文件结构层次分明，方便管理🍻。
 
-首先是添加友链模板。为了避免因对原主题文件进行大规模修改而进行文件的大量替换，首先在主题中的 `post.html` 文件插入一句代码：
-
-```diff
-{{ if .Params.meta | default .Site.Params.enablePostMeta }}
-    {{ partial "post-meta.html" . }}
-{{ end }}
-
-+{{ partial "blogroll.html" . }}
-
-{{ $enableTOC := .Params.toc | default .Site.Params.enableTOC -}}
-{{- if $enableTOC -}}
-    {{- partial "components/toc.html" . -}}
-    {{- $toc := .Scratch.Get "toc" }}
-    {{ $toc -}}
-{{- end -}}
-```
-
-然后就可以在 `~/data/layout/partials/` 下新建 `blogroll.html` 文件，添加友链的模板。
+首先是添加友链模板。为了避免因对原主题文件进行大规模修改而进行文件的大量替换，方面以后的主题更新，这里为友链创建一个全新的页面模板。首先在博客根目录下的 `layouts` 文件夹（没有该文件夹请自建）下创建一个名为 `blogroll` 的文件夹，在该文件夹下创建名为 `blogroll.html` 的模板文件。主题中的页面模板为 `~/themes/meme/layouts/partials/pages/` 目录下的 `post.html` 文件，可参照该文件内容进行添加。具体内容如下所示：
 
 ```html
-<!-- 文件位置：~/data/layout/partials/blogroll.html -->
+<!-- 文件位置：~/layouts/blogroll/blogroll.html -->
 
-{{ if .Params.blogroll }}
-    {{ range .Site.Data.blogroll }}
-        {{ range sort . "weight" }}
-            <a href="{{ .url }}" target="_blank">
-                <div class="blogroll">
-                    <img class="avatar" src="{{ .avatar }}"/>
-                    <div class="friend">
-                        <div class="name">{{ .name }}</div>
-                        <div class="excerpt">{{ .description }}</div>
-                    </div>
+{{ define "main" }}
+    {{- $Deliver := . -}}
+    <main class="main single" id="main">
+        <div class="main-inner">
+            <article class="content post">
+                
+                <h1 class="post-title">{{ .Title }}</h1>
+
+                {{ if .Site.Params.displayPostDescription }}
+                    {{ with .Params.description }}
+                        {{- $raw := . -}}
+                        {{- partial "utils/markdownify.html" (dict "Deliver" $Deliver "raw" $raw "isContent" false) -}}
+                        {{- $Content := $Deliver.Scratch.Get "Content" -}}
+                        <div class="post-description">{{ $Content | safeHTML }}</div>
+                    {{ end }}
+                {{ end }}
+
+                {{- partial "utils/content.html" . -}}
+                {{- $Content := .Scratch.Get "Content" -}}
+                <div class="post-body">
+                    {{ range .Site.Data.blogroll }}
+                        {{ range sort . "weight" }}
+                            <a class="blogroll" href="{{ .url }}" target="_blank">
+                                <img class="avatar" src="{{ .avatar }}"/>
+                                <div class="friend">
+                                    <div class="name">{{ .name }}</div>
+                                    <div class="excerpt">{{ .description }}</div>
+                                </div>  
+                            </a>
+                        {{ end }}
+                    {{ end }}
+                    {{- $Content -}}
                 </div>
-            </a>
-        {{ end }}
+
+            </article>
+
+            {{ partial "components/comments.html" . }}
+
+        </div>
+    </main>
+{{ end }} 
+```
+
+这里我删减了许多没有用到的组件。代码中的核心部分如下：
+
+```html
+{{ range .Site.Data.blogroll }}
+    {{ range sort . "weight" }}
+        <a href="{{ .url }}" target="_blank">
+            <div class="blogroll">
+                <img class="avatar" src="{{ .avatar }}"/>
+                <div class="friend">
+                    <div class="name">{{ .name }}</div>
+                    <div class="excerpt">{{ .description }}</div>
+                </div>
+            </div>
+        </a>
     {{ end }}
 {{ end }}
 ```
@@ -81,23 +108,17 @@ aliases = ["/study/blog/add-blogroll/"]
   weight = 2
 ```
 
-其中，`weight` 表示该友链的权重，用来排序。然后当然是需要新建一个友链页面，运行命令 `hugo new friends/_index.md`。在该文件的配置信息中，添加 `blogroll = true` 引入友链模板：
-
-```diff
-title = "友情链接"
-+ blogroll = true
-```
-
-然后运行 `Hugo server -D` 检查友链是否显示出来，如果显示正常，那么就可以继续添加 CSS 样式。在自定义 CSS 样式的文件 `custom.scss` 中添加下面的样式：
+其中，`weight` 表示该友链的权重，用来排序。然后当然是需要新建一个友链页面，运行命令 `hugo new blogroll/_index.md`。接着运行 `Hugo server -D` 检查友链是否显示出来，如果显示正常，那么就可以继续添加 CSS 样式。在自定义 CSS 样式的文件 `custom.scss` 中添加下面的样式：
 
 ```css
-/* 文件位置：~/assets/scss/_custom/custom.scss */
+/* 文件位置：~/assets/scss/custom/_custom.scss */
 
 /* 友链样式 */
 .blogroll {
-    padding: 1rem 0;
+    padding: 1em 0;
     border: 2px solid transparent;
     border-bottom: 1px dashed var(--color-contrast-low);
+    text-decoration: none !important;
     display: flex;
 }
 .blogroll .friend {
@@ -107,11 +128,10 @@ title = "友情链接"
 }
 .blogroll .name {
     font-weight: bold;
-    margin-bottom: 6px;
-    margin-top: 6px;
+    margin: 0.375em 0;  
 }
 .blogroll .excerpt {
-    font-size:14px;
+    font-size: 0.875em;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -119,9 +139,7 @@ title = "友情链接"
 .blogroll .avatar {
     width: 4em !important;
     height: 4em !important;
-    margin:0 !important;
-    margin-right: 1em !important;
-    border-radius:4px;   
+    margin: 0 1em 0 0 !important; 
 }
 ```
 

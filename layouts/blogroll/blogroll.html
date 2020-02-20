@@ -9,13 +9,13 @@
                 {{ if .Site.Params.displayPostDescription }}
                     {{ with .Params.description }}
                         {{- $raw := . -}}
-                        {{- partial "components/markdownify.html" (dict "Deliver" $Deliver "raw" $raw "isContent" false) -}}
+                        {{- partial "utils/markdownify.html" (dict "Deliver" $Deliver "raw" $raw "isContent" false) -}}
                         {{- $Content := $Deliver.Scratch.Get "Content" -}}
                         <div class="post-description">{{ $Content | safeHTML }}</div>
                     {{ end }}
                 {{ end }}
 
-                {{- partial "components/content.html" . -}}
+                {{- partial "utils/content.html" . -}}
                 {{- $Content := .Scratch.Get "Content" -}}
                 <div class="post-body">
                     {{ range .Site.Data.blogroll }}
@@ -34,7 +34,7 @@
 
             </article>
 
-            {{ partial "comments.html" . }}
+            {{ partial "components/comments.html" . }}
 
         </div>
     </main>

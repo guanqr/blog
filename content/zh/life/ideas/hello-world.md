@@ -2,6 +2,7 @@
 title = "Hello World!"
 date = "2019-03-31T19:35:30+08:00"
 tags = ["essay","youth"]
+dropCap = false
 +++
 
 ![hello-world.jpg](/images/hello-world.jpg)

@@ -1,5 +1,5 @@
 +++
-title = "应用光学：初识成像系统的像质评价"
+title = "初识成像系统的像质评价"
 date = "2019-06-17T01:11:55+08:00"
 tags = ["color","fourier-optics","grayscale","white-balance"]
 series = ["major-courses"]

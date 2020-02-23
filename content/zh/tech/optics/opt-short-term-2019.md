@@ -1,5 +1,6 @@
 +++
-title = "光电学院短学期结束！"
+title = "光电学院短学期结束"
+description = "《光学系统设计》和《电子系统设计》课程回顾与总结"
 date = "2019-07-29T09:10:03+08:00"
 tags = ["geometric-optics","microcontroller","modeling","solidworks","zemax","zju"]
 series = ["major-courses"]

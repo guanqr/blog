@@ -324,8 +324,8 @@ uglyURLs = false
 
     ## 「视频片段」
     homePoster = ""
-    homeVideoWebm = "https://gateway.pinata.cloud/ipns/yixiuer.me/videos/reflection-of-tree-at-night-10s-720p.webm"
-    homeVideoMp4 = "https://gateway.pinata.cloud/ipns/yixiuer.me/videos/reflection-of-tree-at-night-10s-720p.mp4"
+    homeVideoWebm = ""
+    homeVideoMp4 = ""
     homeLogo = "/icons/android-chrome-512x512.png"
     homeLogoLink = "/home/"
     homeTitle = "荷戟独彷徨"
@@ -346,11 +346,6 @@ uglyURLs = false
     siteDescription = "Guanqr's Blog"
     # 说明：用于 HTML 的头部元数据、JSON-LD、
     #      Open Graph、Atom、RSS
-
-    # 站点的关键词
-    siteKeywords = ["博客","生活","悦读","品影","旅行","青春","幻想","科学","技术","光学","计算机"]
-    # 说明：如果留空（[]），则会取站点的所有类别名、分
-    #      区名（如果按分区分类）作为默认值
 
     # 站点的创建时间
     siteCreatedTime = "2019-03-31T19:35:30+08:00"

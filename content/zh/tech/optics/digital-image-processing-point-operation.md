@@ -272,9 +272,9 @@ I = imread('img.jpg');
 thresh = graythresh(I);
 bw1 = im2bw(I,thresh);
 bw2 = im2bw(I,130/255);
-subplot(1,3,1); imshow(I);title('原图像');
-subplot(1,3,2); imshow(bw1);title('自动选择阈值');
-subplot(1,3,3); imshow(bw2);title('阈值 130');
+subplot(1,3,1); imshow(I); title('原图像');
+subplot(1,3,2); imshow(bw1); title('自动选择阈值');
+subplot(1,3,3); imshow(bw2); title('阈值 130');
 ```
 
 ![digital-image-processing-7.png](/images/digital-image-processing-7.png "灰度阈值变换")

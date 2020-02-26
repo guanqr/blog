@@ -12,6 +12,8 @@ $$
 g(x,y)=T[f(x,y)]
 $$
 
+本文所用的原始图片为 RGB 图像，为了统一图像，所有程序均使用了 `rgb2gray` 将其转换为灰度图像再进行处理。
+
 ## 空间域滤波
 
 MATLAB 中与滤波相关的函数主要有 `imfilter` 和 `fspecial`。`imfilter` 完成滤波操作，而 `fspecial` 为使用者创建一些预定义的二维滤波器，直接供 `imfilter` 函数使用。
@@ -62,12 +64,17 @@ $$
 
 ```matlab
 f = imread('img.jpg');
+f = rgb2gray(f);
+
 subplot(1,2,1);
 imshow(f);
+title('(a) 原图像');
+
 w = [1 1 1; 1 1 1; 1 1 1]/9;
 g = imfilter(f,w,'corr','replicate');
 subplot(1,2,2);
 imshow(g);
+title('(b) 滤波后图像');
 ```
 
 运行结果如下图所示。
@@ -379,17 +386,17 @@ $$
 
 $$
 \begin{aligned}
-W1&=\begin{bmatrix}
+w1&=\begin{bmatrix}
 0&-1&0\\
 -1&4&-1\\
 0&-1&0
 \end{bmatrix},\\
-W2&=\begin{bmatrix}
+w2&=\begin{bmatrix}
 -1&-1&-1\\
 -1&8&-1\\
 -1&-1&-1
 \end{bmatrix},\\
-W3&=\begin{bmatrix}
+w3&=\begin{bmatrix}
 1&4&1\\
 4&-20&4\\
 1&4&1

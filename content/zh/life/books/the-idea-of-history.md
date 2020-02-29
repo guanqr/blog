@@ -1,7 +1,7 @@
 +++
 title = "科学的历史观念"
 description = "大一春夏学期的时候，我选修了「西方思想经典研读」课程，我想在此分享一下我在课程学习中阅读的一些书籍以及感想。"
-date = "2019-05-03T00:01:27+08:00"
+date = "2019-04-24T00:01:27+08:00"
 tags = ["history","philosophy","religion"]
 dropCap = false
 +++

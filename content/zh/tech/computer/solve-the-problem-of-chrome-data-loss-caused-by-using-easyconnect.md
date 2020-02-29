@@ -1,5 +1,5 @@
 +++
-title = "解决使用 EasyConnect 造成的 Chrome 浏览器数据丢失问题"
+title = "解决 EasyConnect 造成的浏览器数据丢失问题"
 date = "2020-02-29T14:29:48+08:00"
 tags = ["chrome","network","zju"]
 +++

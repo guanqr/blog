@@ -43,14 +43,3 @@ tags = ["chrome","google","microsoft"]
 进入[官网](https://www.microsoftedgeinsider.com/en-us/download/)，挑选你需要的版本进行下载安装即可。目前新版 Edge 浏览器默认安装在系统盘 C 盘中，无法更改安装路径。
 
 在刚刚发布新版 Edge 浏览器的时候，这一款浏览器还不支持设置成中文版本，目前新版本已经支持中文。在设置中添加语言设置，添加中文简体文字包即可。注意，此处操作要三思，无法逆转，亲测更换为中文后无法换回英文，因此你会在「Personalized news & more」当中面对大量垃圾新闻。
-
-
-
-
-
-
-
-
-
-
-

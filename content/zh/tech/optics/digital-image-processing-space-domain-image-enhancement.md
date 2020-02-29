@@ -2,6 +2,7 @@
 title = "数字图像处理：空间域图像增强"
 date = "2020-02-25T10:52:01+08:00"
 tags = ["color","grayscale","matlab"]
+series = ["major-courses"]
 mathjax = true
 toc = true
 +++

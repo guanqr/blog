@@ -6,6 +6,7 @@ aliases = ["/study/computer/draw-the-map-of-2019-ncov-epidemic-distribution/"]
 toc = false
 original = false
 author = "天元浪子"
+website = "https://blog.csdn.net/xufive"
 link = "https://blog.csdn.net/xufive/article/details/104093197"
 copyright = "原文采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh) 许可协议，内容结合个人情况有删改。"
 +++

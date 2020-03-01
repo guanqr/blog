@@ -6,7 +6,8 @@ aliases = ["/study/computer/chinese-population-analysis/"]
 dropCap = false
 toc = true
 original = false
-author = "裸睡的猪"
+author = "猪哥 66"
+website = "https://blog.csdn.net/u014044812"
 link = "https://mp.weixin.qq.com/s/zG_99NFbGzaWK_7ytd5-cw"
 copyright = "文章转载自「裸睡的猪」微信公众号，内容结合个人情况有删改。"
 +++

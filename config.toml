@@ -880,7 +880,7 @@ uglyURLs = false
     # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚、不蒜子站点浏览统计
     fontFamilyCode = "'Source Code Pro', 'Noto Serif SC', monospace"
     # 引用
-    fontFamilyQuote = "Amstelvar, STKaiti, KaiTi, SimKai, 'Noto Serif SC', serif"
+    fontFamilyQuote = "Amstelvar, 'Noto Serif SC', serif"
     # 文章目录
     fontFamilyTOC = ""
     # 说明文字

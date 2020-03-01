@@ -876,11 +876,11 @@ uglyURLs = false
     # 文章标题、文章副标题、列表标题、列表的年份和月份标题、相关文章标题、文章上下篇标题
     fontFamilyTitle = "'Cinzel Decorative', 'Noto Serif SC', serif"
     # 分节标题、目录标题
-    fontFamilyHeadings = "'EB Garamond', 'Noto Serif SC', serif"
+    fontFamilyHeadings = "Amstelvar, 'Noto Serif SC', serif"
     # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚、不蒜子站点浏览统计
     fontFamilyCode = "'Source Code Pro', 'Noto Serif SC', monospace"
     # 引用
-    fontFamilyQuote = "'EB Garamond', 'STKaiti', 'KaiTi', 'SimKai', 'Noto Serif SC', serif"
+    fontFamilyQuote = "Amstelvar, STKaiti, KaiTi, SimKai, 'Noto Serif SC', serif"
     # 文章目录
     fontFamilyTOC = ""
     # 说明文字
@@ -888,10 +888,10 @@ uglyURLs = false
     # 页脚
     fontFamilyFooter = ""
     # 主体
-    fontFamilyBody = "'EB Garamond', 'Noto Serif SC', serif"
+    fontFamilyBody = "Amstelvar, 'Noto Serif SC', serif"
 
     # 网络字体链接
-    fontsLink = 'https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,700,700i|Noto+Serif+SC:400,500,700|Source+Code+Pro:400,400i,700,700i|Cinzel+Decorative:700&display=swap&subset=chinese-simplified'
+    fontsLink = 'https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,500,700|Source+Code+Pro:400,400i,700,700i|Cinzel+Decorative:700&display=swap&subset=chinese-simplified'
     # 说明：要想读者一定体验到你设置的字体，最好
     #      采用网络字体。MemE 主题目前仅支持
     #      Google Fonts 的链接，请前往
@@ -1366,11 +1366,11 @@ uglyURLs = false
     siteDescription = "Blog of Guanqr in English."
     listDateFormat = "January 2"
     postWidth = 36
-    fontFamilyTitle = "'Comfortaa', serif"
-    fontFamilyHeadings = "'Comfortaa', serif"
+    fontFamilyTitle = "Comfortaa, serif"
+    fontFamilyHeadings = "Comfortaa, serif"
     fontFamilyCode = "'Source Code Pro', monospace"
-    fontFamilyBody = "'IBM Plex Serif', serif"
-    fontsLink = 'https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,500,700,700i|Source+Code+Pro:400,400i,700,700i|Comfortaa:700&display=swap'
+    fontFamilyBody = "Amstelvar, serif"
+    fontsLink = 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,400i,700,700i|Comfortaa:700&display=swap'
     lineHeight = 2
     fontSize = 16
     enableJustify = false

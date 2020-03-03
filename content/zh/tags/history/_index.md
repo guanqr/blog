@@ -1,4 +1,4 @@
 +++
-title = "历史学"
+title = "历史"
 slug = "history"
 +++

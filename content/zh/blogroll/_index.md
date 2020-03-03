@@ -37,4 +37,4 @@ comments = false
 网站标志：<a href="../icons/android-chrome-512x512.png" target="_blank">https://guanqr.com/icons/android-chrome-512x512.png</a><br>
 网站描述：The Sound of Silence</p>
 
-+ 将你的网站信息按照上述格式在[这里](https://github.com/guanqr/blog/issues/5)留言或发送至我的电子邮箱，审核通过后将会添加至该页面中。邮箱地址：[guanqirui@zju.edu.cn](mailto:guanqirui@zju.edu.cn)。
++ 将你的网站信息按照上述格式在「[这里](https://github.com/guanqr/blog/issues/5)」留言，审核通过后将会添加至该页面中。

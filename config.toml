@@ -1339,29 +1339,19 @@ uglyURLs = false
         weight = 1
         pre = "external"
     [[languages.en-us.menu.socials]]
-        url = "https://t.me/guanqr"
-        name = "Telegram"
-        weight = 2
-        pre = "external"
-    [[languages.en-us.menu.socials]]
         url = "https://www.cc98.org/user/id/583696"
         name = "CC98"
-        weight = 3
+        weight = 2
         pre = "external"
     [[languages.en-us.menu.links]]
         url = "/en-us/"
-        name = "HOME"
+        name = "Home"
         weight = 1
         pre = "internal"
-    #[[languages.en-us.menu.links]]
-        #url = "/en-us/series/"
-        #name = "Series"
-        #weight = 2
-        #pre = "internal"
     [[languages.en-us.menu.links]]
         url = "/en-us/atom.xml"
         name = "Feed"
-        weight = 3
+        weight = 2
         pre = "external"
 [languages.en-us.params]
     siteDescription = "Blog of Guanqr in English."

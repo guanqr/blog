@@ -448,6 +448,6 @@ def check_opt_match(img): # 检查运算符号的匹配程度
 
 ![shagnxueba-crack-script.jpg](/images/shagnxueba-crack-script.jpg "脚本运行效果")
 
-[^1]: 原文链接：[Python 突破上学吧的 IP 限制](https://blog.csdn.net/qq_41861526/article/details/85573479)（目前已被删除）。
-[^2]: 完整的匹配识别代码点击此处下载：[shangxueba-number-recognition.zip](/uploads/shangxueba-number-recognition.zip)。
+[^1]: 原文链接：[Python 突破上学吧的 IP 限制](https://blog.csdn.net/qq_41861526/article/details/85573479)。
+[^2]: 完整的匹配识别代码下载地址：[shangxueba-number-recognition.zip](/uploads/shangxueba-number-recognition.zip)。
 [^3]: 上学吧网站已对该漏洞进行了修复，取消了三次免费看答案的功能，不再开放免费查看答案的入口，导致获取不到最佳答案返回值，目前此方法已失效，仅作参考学习使用，这里不再提供脚本的下载地址。

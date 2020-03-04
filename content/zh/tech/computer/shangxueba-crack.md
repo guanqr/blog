@@ -7,6 +7,7 @@ dropCap = false
 toc = true
 original = false
 author = "Tsing"
+website = "https://zhuanlan.zhihu.com/tsing"
 link = "https://zhuanlan.zhihu.com/p/60502527"
 copyright = "文章转载自「科研利器」作者 Tsing 的知乎专栏，内容有删改。"
 +++

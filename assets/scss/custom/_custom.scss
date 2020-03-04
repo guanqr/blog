@@ -150,9 +150,9 @@ span#inline-toc {
     padding: 1em 0;
     border: 2px solid transparent;
     border-bottom: 1px dashed var(--color-contrast-low);
-    text-decoration: none !important;
     display: flex;
     .friend {
+        text-decoration: none;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
@@ -170,7 +170,8 @@ span#inline-toc {
     .avatar {
         width: 4em !important;
         height: 4em !important;
-        margin: 0 1em 0 0 !important; 
+        margin: 0 1em 0 0 !important;
+        z-index: 0;
     }
 }
 
@@ -185,7 +186,6 @@ span#inline-toc {
         fill: #7BB32E;
     }
 }
-
 .subscription-hover {
     position: absolute;
     bottom: 0;
@@ -199,7 +199,6 @@ span#inline-toc {
     z-index: 5;
     opacity: 0;
 }
-
 .subscription-box {
     position: absolute;
     bottom: 1em;
@@ -214,7 +213,6 @@ span#inline-toc {
         }
     }
 }
-
 .subscription-qrcode {
     position: absolute;
     bottom: 0.7em;
@@ -222,7 +220,6 @@ span#inline-toc {
     height: 100%;
     width: 100%;
 }
-
 .subscription-description {
     position: absolute;
     bottom: 1%;
@@ -278,7 +275,6 @@ span#inline-toc {
     font-stretch: 50% 125%;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Amstelvar';
     font-display: swap;
@@ -288,20 +284,48 @@ span#inline-toc {
     font-stretch: 50% 125%;
     font-style: italic;
 }
-
 :root {
     --text-wdth: 90;
     --text-opsz: 80;
     --text-YTLC: 460;
 }
-
 body {
     font-variation-settings:
         'wdth' var(--text-wdth),
         'opsz' var(--text-opsz),
         'YTLC' var(--text-YTLC);
 }
-
 .list-item-time {
     font-feature-settings: 'tnum';
+}
+
+.brand {
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.nav {
+    font-size: 1em;
+}
+
+.home .poetry {
+    padding: 10em 1em;
+}
+
+.menu-item .icon {
+    display: none;
+}
+
+@media (max-width: $maxWidth) {
+    .menu {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .menu-item .icon {
+        display: inline-block;
+    }
+}
+
+.nav-toggle {
+    transform: translateY(0.4em);
 }

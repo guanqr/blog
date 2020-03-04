@@ -20,13 +20,13 @@
                 <div class="post-body">
                     {{ range .Site.Data.blogroll }}
                         {{ range sort . "weight" }}
-                            <a class="blogroll" href="{{ .url }}" target="_blank">
+                            <div class="blogroll">
                                 <img class="avatar" src="{{ .avatar }}"/>
-                                <div class="friend">
+                                <a class="friend" href="{{ .url }}" target="_blank">
                                     <div class="name">{{ .name }}</div>
                                     <div class="excerpt">{{ .description }}</div>
-                                </div>  
-                            </a>
+                                </a>  
+                            </div>
                         {{ end }}
                     {{ end }}
                     {{- $Content -}}

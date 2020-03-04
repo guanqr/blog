@@ -51,13 +51,13 @@ aliases = ["/study/blog/add-blogroll/"]
                 <div class="post-body">
                     {{ range .Site.Data.blogroll }}
                         {{ range sort . "weight" }}
-                            <a class="blogroll" href="{{ .url }}" target="_blank">
+                            <div class="blogroll">
                                 <img class="avatar" src="{{ .avatar }}"/>
-                                <div class="friend">
+                                <a class="friend" href="{{ .url }}" target="_blank">
                                     <div class="name">{{ .name }}</div>
                                     <div class="excerpt">{{ .description }}</div>
-                                </div>  
-                            </a>
+                                </a>  
+                            </div>
                         {{ end }}
                     {{ end }}
                     {{- $Content -}}
@@ -118,10 +118,10 @@ aliases = ["/study/blog/add-blogroll/"]
     padding: 1em 0;
     border: 2px solid transparent;
     border-bottom: 1px dashed var(--color-contrast-low);
-    text-decoration: none !important;
     display: flex;
 }
 .blogroll .friend {
+    text-decoration: none;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -139,7 +139,8 @@ aliases = ["/study/blog/add-blogroll/"]
 .blogroll .avatar {
     width: 4em !important;
     height: 4em !important;
-    margin: 0 1em 0 0 !important; 
+    margin: 0 1em 0 0 !important;
+    z-index: 0;
 }
 ```
 

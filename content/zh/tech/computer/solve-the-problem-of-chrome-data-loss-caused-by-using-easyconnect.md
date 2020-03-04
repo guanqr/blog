@@ -12,7 +12,7 @@ tags = ["chrome","network","zju"]
 
 对于账户暂停服务的问题，我花了很长时间找原因，现在才发现，原来造成该问题的罪魁祸首，就是 EasyConnect。也就是说，如果你使用了 EasyConnect，在退出该程序后，该程序会自动清除浏览器的 cookie，你的账户会掉线，你的浏览历史记录也不复存在。目前该问题只发生在 Chrome 浏览器中，Edge 和 Firefox 并未出现。
 
-有些同学在退出 EasyConnect 的时候，该软件会提示正在清除浏览历史记录，不过我在使用中并没有出现该提示。
+有些同学在退出 EasyConnect 的时候，该软件会提示正在清除浏览历史记录，这应该是最近软件自动更新后出现的提示框。
 
 [^1]![chrome-data-loss-caused-by-using-easyconnect-1.jpg](/images/chrome-data-loss-caused-by-using-easyconnect-1.jpg "软件提示删除历史数据")
 
@@ -20,7 +20,7 @@ tags = ["chrome","network","zju"]
 
 ![chrome-data-loss-caused-by-using-easyconnect-2.png](/images/chrome-data-loss-caused-by-using-easyconnect-2.png "EasyConnect 系统设置")
 
-还有一种解决方法，就是把计算机默认浏览器改成你不经常用的浏览器。让 EasyConnect 去清理你不用的那个浏览器的 Cookie……
+还有一种解决方法，就是把计算机默认浏览器改成你不经常用的浏览器。让 EasyConnect 去清理你不用的那个浏览器的 Cookie。如果你在某个浏览器输入 <https://rvpn.zju.edu.cn> 直接通过网站进行网络连接，则 EasyConnect 一定会清理该浏览器的 Cookie——因此使用某个不经常用的浏览器进行在线连接即可。
 
 有个同学在网上看到一个帖子，说管理员可以设置开启了自动清理的功能，学校信息中心的管理员给的回复是：
 

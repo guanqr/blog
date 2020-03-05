@@ -203,7 +203,7 @@ uglyURLs = false
         name = "专栏"
         weight = 3
         pre = "internal"
-        post = "globe-asia"  
+        post = "feather-alt"  
     [[menu.main]]
         url = "/archives/"
         name = "归档"

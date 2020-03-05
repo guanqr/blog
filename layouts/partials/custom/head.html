@@ -1,1 +1,4 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap&text=Guanqr'sBlog荷戟独彷徨" />
+{{ $link := "https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&text=Guanqr'sBlog荷戟独彷徨&display=swap" }}
+
+<link rel="preload" href="{{ $link }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="{{ $link }}" /></noscript>

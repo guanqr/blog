@@ -1,6 +1,5 @@
 +++
-title = "About"
-description = "About my blog, personal introduction, and some other things…"
+title = "ABOUT"
 date = "2019-05-01T08:41:47+08:00"
 dropCap = false
 displayCopyright = false

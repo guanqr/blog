@@ -307,6 +307,7 @@ body {
 
 .nav {
     font-size: 1em;
+    margin-top: 0.4em;
 }
 
 .home .poetry {
@@ -318,11 +319,17 @@ body {
 }
 
 @media (max-width: $maxWidth) {
+    .nav {
+        margin: 2em 0;
+    }
     .menu {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     .menu-item .icon {
         display: inline-block;
+    }
+    .menu-item-name {
+        font-size: 80%;
     }
 }
 

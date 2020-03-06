@@ -352,7 +352,7 @@ uglyURLs = false
     # 3. posts     文章摘要
     # 4. page      普通页面
 
-    homeLayout = "poetry"
+    homeLayout = "posts"
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
@@ -1401,11 +1401,11 @@ uglyURLs = false
 [languages.en-us.params]
     siteDescription = "Guanqr's Blog in English."
     listDateFormat = "January 2"
-    fontFamilyTitle = "'Comfortaa', serif"
-    fontFamilyHeadings = "'Comfortaa', serif"
+    fontFamilyTitle = "'Amstelvar', serif"
+    fontFamilyHeadings = "'Amstelvar', serif"
     fontFamilyCode = "'Source Code Pro', monospace"
     fontFamilyBody = "'Amstelvar', serif"
-    fontsLink = "https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@700&display=swap"
+    fontsLink = "https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     enableJustify = false
     enableSmallCap = true
     enableEmphasisPoint = false

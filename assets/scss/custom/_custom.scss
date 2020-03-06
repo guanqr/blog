@@ -94,33 +94,37 @@ span.label.danger {
         background: hsl(352, 35%, 35%);
     }
 }
-.blockquote-center::after, .blockquote-center::before {
-    background-repeat: no-repeat;
-    background-size: 22px 22px;
-    content: ' ';
-    display: block;
-    height: 24px;
-    opacity: .2;
-    width: 100%;
-}
-.blockquote-center::before {
-    background-image: url(../images/quote-l.svg);
-    background-position: 0 -6px;
-    border-top: 1px solid var(--color-contrast-low);
-    top: -20px;
-}
-.blockquote-center::after {
-    background-image: url(../images/quote-r.svg);
-    background-position: 100% 8px;
-    border-bottom: 1px solid var(--color-contrast-low);
-    bottom: -20px;
-}
-.blockquote-center div, .blockquote-center p {
-    text-align: center !important;
-    margin: 0;
-}
+
+// 自定义居中对齐引用样式
+
 .blockquote-center {
     border-left: 0;
+    p{
+        text-align: center !important;
+        margin: 0;
+    }
+    &::before {
+        background-image: url(../images/quote-l.svg);
+        background-position: 0 -6px;
+        border-top: 1px solid var(--color-contrast-low);
+        background-repeat: no-repeat;
+        background-size: 1.5em;
+        content: ' ';
+        display: block;
+        height: 1.5em;
+        opacity: .2;
+    }
+    &::after {
+        background-image: url(../images/quote-r.svg);
+        background-position: 100% 6px;
+        border-bottom: 1px solid var(--color-contrast-low);
+        background-repeat: no-repeat;
+        background-size: 1.5em;
+        content: ' ';
+        display: block;
+        height: 1.5em;
+        opacity: .2;
+    }
 }
 
 // 自定义的引用样式
@@ -264,6 +268,41 @@ span#inline-toc {
     }
 }
 
+// 弹性布局调整
+
+.brand {
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-weight: bold;
+    line-height: 1;
+}
+.nav {
+    font-size: 1em;
+    margin-top: 0.4em;
+}
+.home .poetry {
+    padding: 10em 1em;
+}
+.menu-item .icon {
+    display: none;
+}
+@media (max-width: $maxWidth) {
+    .nav {
+        margin: 2em 0;
+    }
+    .menu {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .menu-item .icon {
+        display: inline-block;
+    }
+    .menu-item-name {
+        font-size: 80%;
+    }
+}
+.nav-toggle {
+    transform: translateY(0.4em);
+}
+
 // 可变字体 https://github.com/TypeNetwork/Amstelvar
 
 @font-face {
@@ -297,42 +336,4 @@ body {
 }
 .list-item-time {
     font-feature-settings: 'tnum';
-}
-
-.brand {
-    font-family: 'ZCOOL XiaoWei', serif;
-    font-weight: bold;
-    line-height: 1;
-}
-
-.nav {
-    font-size: 1em;
-    margin-top: 0.4em;
-}
-
-.home .poetry {
-    padding: 10em 1em;
-}
-
-.menu-item .icon {
-    display: none;
-}
-
-@media (max-width: $maxWidth) {
-    .nav {
-        margin: 2em 0;
-    }
-    .menu {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    .menu-item .icon {
-        display: inline-block;
-    }
-    .menu-item-name {
-        font-size: 80%;
-    }
-}
-
-.nav-toggle {
-    transform: translateY(0.4em);
 }

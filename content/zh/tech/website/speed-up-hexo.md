@@ -135,8 +135,8 @@ filter_optimize:
 
 我的解决方案是，在自定义 CSS 样式中添加：
 
-```stylus
-// 修复文字居中图片显示 BUG
+```css
+/* 修复文字居中图片显示 BUG */
 .blockquote-center::before, .page-home .post-type-quote blockquote::before, .page-post-detail .post-type-quote blockquote::before {
     background-image: url(../../../../images/quote-l.svg);
 }

@@ -678,7 +678,7 @@ custom_file_path:
 
 ### 修改字体
 
-参见文章《[网站字体优化方案](/tech/website/web-font-guide/)》
+参见文章《[网站字体优化方案](/tech/website/web-font-guide/)》。
 
 ### 归档页面添加十二生肖
 

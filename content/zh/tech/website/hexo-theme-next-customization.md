@@ -272,34 +272,6 @@ footer:
     gongan_icon_url:
 ```
 
-#### 版权声明
-
-此处的版权声明可以选择在侧栏和文章的末尾两处显示。在侧栏显示版权声明我觉得有些突兀，所以我选择在文章末尾显示。
-
-```yml
-creative_commons:
-  # 版权协议
-  license: by-nc-sa
-  # 侧栏显示
-  sidebar: false
-  # 文章末尾显示
-  post: true
-  # 语言
-  language:
-```
-
-#### 主题风格配置
-
-NexT 主题最大的特点就是提供了四套风格的主题，其中 Muse 和 Mist 两款风格相近，Pisces 和 Gemini 两款风格相近。我的博客主题是基于 Muse 主题进行修改的，对于这四款主题的选择，仁者见仁，智者见智。我在这篇[文章](/tech/website/hexo-theme/)中分析了我对这四种风格的看法，可供参考。
-
-```yml
-# Schemes
-scheme: Muse
-#scheme: Mist
-#scheme: Pisces
-#scheme: Gemini
-```
-
 #### 导航目录配置
 
 ##### 一级目录
@@ -436,33 +408,9 @@ Docs:
 
 同样，创建三级目录的时候，需要将对应的二级目录默认页面改为 `default`，然后在同级下添加同样格式的内容，在此不再赘述。如果你还没有明白是怎么设定的，可以研究一下 NexT 官方网站的源码[仓库](https://github.com/theme-next/theme-next.org)文件的存放位置。
 
-#### 首页文章摘要
-
-如果这一部分内容选择默认配置的话，你会发现你的主页所有的文章都是默认全部展开的，这对于网页的阅读效率影响很大，最佳的阅读体验应该是，在首页只能看到这篇文章的摘要，只有点击该篇文章才可阅读全文。这一部分的配置就是实现该功能的。
-
-```yml
-# Automatically scroll page to section which is under <!-- more --> mark.
-scroll_to_more: true
-
-# Automatically excerpt description in homepage as preamble text.
-excerpt_description: true
-
-# Automatically excerpt (Not recommend).
-# Use <!-- more --> in the post to control excerpt accurately.
-auto_excerpt:
-  enable: true
-  length: 150
-```
-
-我们不妨把这三部分的配置都设定为 `true`，下面我对这三项配置逐一解释。
-
-1. 第一项配置需要我们在文章中..手动..添加 `<!-- more -->` 标记，在网页生成的时候，如果文中有该标记，那么 Hexo 就可以自动截取该标记前的内容作为文章摘要。
-2. 第二项配置即为添加 `description` 描述。如果你的文章中有添加对该文章的描述内容，如 `description: This is a test.`，那么在生成网页的时候，Hexo 会自动截取描述的内容作为文章的摘要，其优先级大于 `<!-- more -->` 标记。
-3. 第三项配置即为自动截取文章前段内容作为摘要，这一项需要自己配置自动截取的字数。这一项的优先级最低。
-
 #### 文章元数据
 
-即每一篇文章标题下的写作时间、更新时间等信息。
+文章元数据即每一篇文章标题下的写作时间、更新时间等信息。
 
 ```yml
 # Post meta display settings
@@ -499,7 +447,7 @@ symbols_count_time:
 
 #### 相关文章
 
-在文章的末尾添加相关（推荐）文章。因为我使用的并不是这一款插件，而是 [hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts)，关于该项功能的设置我并没有研究过，所以此处的具体设置请看[官方说明](https://github.com/tea3/hexo-related-popular-posts)。如果想要使用 hexo-recommended-posts 插件请看[下文](#文末添加相关文章)。
+在文章的末尾添加相关（推荐）文章。因为我使用的并非是 [hexo-related-popular-posts](https://github.com/tea3/hexo-related-popular-posts) 这一款插件，而是 [hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts)，关于该项功能的设置我并没有研究过，所以此处的具体设置请看官方说明。如果想要使用 hexo-recommended-posts 插件请看[下文](#文末添加相关文章)。
 
 ```yml
 # Related popular posts
@@ -624,161 +572,7 @@ mediumzoom: false
 
 #### 评论系统
 
-NexT 主题支持 Disqus、Valine、Gitalk 等多种第三方评论系统。我推荐使用 Valine 或者 Disqus（加载评论需科学上网）。Valine 评论系统借助于 LeanCloud 存储数据，LeanCloud 的[国内版本](https://leancloud.cn/)需要绑定域名和备案，这对于很多人来说不太方便，所以可以选择使用[国际版](https://leancloud.app/)。目前 NexT 主题支持多评论系统，不过我认为这项功能有些多余，有谁会无聊使用多种评论系统呢？不方便管理评论，将简单的管理变得更加复杂。
-
-下面这一部分是设定多评论系统，首先设定默认的评论系统，然后是其他评论系统的优先级等等配置，由于我没有使用该项功能，所以不再做过多说明：
-
-```yml
-# Multiple Comment System Support
-comments:
-  # Available values: tabs | buttons
-  style: tabs
-  # Choose a comment system to be displayed by default.
-  # Available values: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
-  active:
-  # Setting `true` means remembering the comment system selected by the visitor.
-  storage: true
-  # Modify texts or order for any navs, here are some examples.
-  nav:
-    #disqus:
-    #  text: Load Disqus
-    #  order: -1
-    #facebook_comments_plugin:
-    #  text: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
-    #gitalk:
-    #  order: -2
-```
-
-下面我将对 Disqus、Valine、Gitalk 三种评论系统的单独配置进行详细说明。
-
-##### Disqus
-
-![hexo-theme-next-disqus.png](/images/hexo-theme-next-disqus.png "Disqus 官网主页")
-
-[Disqus](https://disqus.com/) 评论系统我认为是重多评论系统中最好的一个，无奈需要科学上网才能访问。首先是到官网注册一个用户，然后在官网的主页，有一个「GET STARTED」按钮，点击进入，可以看到如下界面：
-
-![hexo-theme-next-disqus-install-site.png](/images/hexo-theme-next-disqus-install-site.png)
-
-选择「I want to install Disqus on my site」，就会跳转到信息设定页面。在信息设定页面，设定你的网站名称，比如我在这里填写的是「guanqr」，那么「guanqr」就是你的一个 shortname，记住这个名字。相应的，你的聊天系统的控制台对应的网址就是 `guanqr.disqus.com`。你还需要在这里填写你的网站类别和语言，这里我填写的是技术类「Tech」，语言是中文。
-
-![hexo-theme-next-disqus-setting.png](/images/hexo-theme-next-disqus-setting.png)
-
-这些设定完成后，回到主题配置文件中，找到 Disqus 评论系统的配置，开启 Disqus 评论，`shortname` 填写之前你设定的网站名称，如下所示：
-
-```yml
-# Disqus
-disqus:
-  enable: true
-  shortname: 
-  count: true
-  lazyload: false
-  #post_meta_order: 0
-
-```
-
-到此，Disqus 评论系统的配置就完成了。如果你想实现在国内网络环境下也能访问 Disqus 评论的内容，则需要借助 Disqus API，这就用到了 [DisqusJS](https://github.com/SukkaW/DisqusJS)。这里需要注意，目前 DisqusJS 仅支持评论的「读」操作，不支持「写」操作。
-
-配置 DisqusJS 的时候，首先要到 [Disqus API Application](https://disqus.com/api/applications/) 处注册一个 Application，如下图所示，点击右边的「Register new application」。
-
-![hexo-theme-next-disqus-api.png](/images/hexo-theme-next-disqus-api.png)
-
-然后进行网站的基本信息设定，将信息提交后，网站会提供给你一个 API Key，将这一长串字符记下来。
-
-![hexo-theme-next-disqus-api-key.png](/images/hexo-theme-next-disqus-api-key.png)
-
-进入 [Settings] 页面，设置你的域名，Disqus 会检查 API 请求的 Referrer。
-
-![hexo-theme-next-disqus-api-domains.png](/images/hexo-theme-next-disqus-api-domains.png)
-
-在这些都设定完成后，回到主题配置文件，进行 DisqusJS 的配置。开启 DisqusJS，这里的 `api` 是 DisqusJS 请求的 API Endpoint，通常情况下你应该配置一个 Disqus API 的反代并填入反代的地址。你也可以直接使用 Disqus 官方 API 的 Endpoint：`https://disqus.com/api/`。如果不填写，则默认为该插件的作者自己搭建的 Disqus API 反代 Endpoint：`https://disqus.skk.moe/disqus/`。`apikey` 就是上文中让你记下的那一串字符。`shortname` 即上文配置 Disqus 评论系统时记下的网站名称。
-
-```yml
-# DisqusJS
-# Alternative Disqus - Render comment component using Disqus API.
-# Demo: https://suka.js.org/DisqusJS/
-# For more information: https://github.com/SukkaW/DisqusJS
-disqusjs:
-  enable: true
-  # API Endpoint of Disqus API (https://disqus.com/api/).
-  # Leave api empty if you are able to connect to Disqus API.
-  # Otherwise you need a reverse proxy for Disqus API.
-  # For example:
-  # api: https://disqus.skk.moe/disqus/
-  api:
-  apikey: # Register new application from https://disqus.com/api/applications/
-  shortname: # See: https://disqus.com/admin/settings/general/
-```
-
-##### Valine
-
-![hexo-theme-next-valine.png](/images/hexo-theme-next-valine.png "Valine 官方主页")
-
-[Valine](https://valine.js.org/) 评论系统是我认为的在国内网络环境下最好用的评论系统，可通过 Leancloud 管理评论，无广告，简洁美观。不过缺点就是，Leancloud 平台的不稳定性，在 2019 年夏季的时候，出现了一次域名停止解析的事故，原因是有人利用 Leancloud 进行一些非法行为，而平台管理人员并没有监管到位。在那次事故之后，Leancloud 加强了监管，国内用户必须进行实名注册，每一个服务器必须绑定一个备案的域名[^3]。如果你不想备案，可以选择使用 Leancloud 国际版。但谁也无法确保 Leancloud 国际版会发生什么事情。
-
-Leancloud 国内版和国际版的配置相同，这里以国际版为例进行说明。首先进入[官网](https://leancloud.app/)进行用户注册，注册完成后点击「创建应用」，填写应用的名称，选择「开发版」进行创建。
-
-![hexo-theme-next-leancloud-create-app.png](/images/hexo-theme-next-leancloud-create-app.png)
-
-进入刚才创建好的应用，在「储存」中选择「创建 Class」，设定 Class 名称为 Comment，设定 ACL 权限为创建者可读可写，其他人可读不可写。
-
-![hexo-theme-next-leancloud-comment.png](/images/hexo-theme-next-leancloud-comment.png)
-
-然后进入「设置」中的「安全中心」，添加 Web 安全域名，防止其他用户盗用你的 Keys 存储个人数据。
-
-![hexo-theme-next-leancloud-safe.png](/images/hexo-theme-next-leancloud-safe.png)
-
-再进入「设置」中的「应用 Keys」，记录 AppID 和 AppKey 的值。回到主题配置文件中，开启 Valine，在 Valine 配置中填写 AppID 和 AppKey 即可。在该项配置中，你也可以设置评论框中的提示语，默认是「Just go go」。当你将 `visitor` 选项设置为 `true` 时，可以记录当前页面的访客数。下文中的「[访客统计](#访客统计)」用到的也是 Leancloud。
-
-```yml
-# Valine
-# You can get your appid and appkey from https://leancloud.cn
-# For more information: https://valine.js.org, https://github.com/xCss/Valine
-valine:
-  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
-  appid: # Your leancloud application appid
-  appkey: # Your leancloud application appkey
-  notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
-  placeholder: Just go go # Comment box placeholder
-  avatar: mm # Gravatar style
-  guest_info: nick,mail,link # Custom comment header
-  pageSize: 10 # Pagination size
-  language: # Language, available values: en, zh-cn
-  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
-  comment_count: true # If false, comment count will only be displayed in post page, not in home page
-  recordIP: false # Whether to record the commenter IP
-  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
-  #post_meta_order: 0
-```
-
-##### Gitalk
-
-Gitalk 评论系统借助 GitHub 平台，将评论的数据存储在仓库的 Issues 中。另一款评论系统 Gitment 与之类似，不过由于 Gitment 已停止维护，目前已经从 NexT 主题中删除。
-
-![hexo-theme-next-gitalk.png](/images/hexo-theme-next-gitalk.png)
-
-首先，你需要在 GitHub 上创建一个仓库，用来存放评论，用你存放博客源代码的仓库即可。然后创建一个 Github Application 用来授权登录。点击[这里](https://github.com/settings/applications/new)申请，「Authorization callback URL」（回调地址）填写你主页地址，完成后会生成相应的 clientID 和 clientSecret，记录这两项的值，回到主题配置文件的 Gitalk 设定中，开启 Gitalk，填写你的 GitHub 用户名，以及之前记录的 lientID 和 clientSecret 的值即可。
-
-每一篇文章在你登录评论系统前都未开启评论功能，所以在你发布文章后，需要先浏览文章，在评论系统中登录你的账号，此时，Gitalk 就会将该篇文章的标题作为一个 Issue 记录在仓库的 Issues 中。如果 Gitalk 评论系统配置异常，请查看你的网站地址（回调地址）是否填写正确。
-
-```yml
-# Gitalk
-# Demo: https://gitalk.github.io
-# For more information: https://github.com/gitalk/gitalk
-gitalk:
-  enable: true
-  github_id: # GitHub repo owner
-  repo: # Repository name to store issues
-  client_id: # GitHub Application Client ID
-  client_secret: # GitHub Application Client Secret
-  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
-  distraction_free_mode: true # Facebook-like distraction free mode
-  # Gitalk's display language depends on user's browser or system environment
-  # If you want everyone visiting your site to see a uniform language, you can set a force language value
-  # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-  language:
-
-```
+参见文章《[Hexo-NexT 主题添加评论系统](/tech/website/hexo-theme-next-comments/)》。
 
 #### 访客统计
 
@@ -884,197 +678,7 @@ custom_file_path:
 
 ### 修改字体
 
-就 Web 常用的一些字体而言，经常听说的字体类型大致可以分为这几种：
-
-+ serif（衬线）
-+ sans-serif（无衬线）
-+ monospace（等宽）
-+ fantasy（梦幻）
-+ cuisive（草体）
-
-这 5 个分类是 `font-family` 的 5 个可用字体系列取值。也就是说，上述 5 个名字，代表的并非某个特定字体，而是一系列字体，这些通用的名称允许用户代理从相应集合中选择一款字体[^4]。
-
-我们可以在博客主题文件夹下的 `~/source/css/_variables/base.styl` 文件中找到 NexT 主题的字体设定：
-
-```css
-/* 文件位置：~/themes/next/source/css/_variables/base.styl */
-
-$font-family-chinese      = "PingFang SC", "Microsoft YaHei";
-
-$font-family-base         = $font-family-chinese, sans-serif;
-$font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global');
-
-$font-family-logo         = $font-family-base;
-$font-family-logo         = get_font_family('title'), $font-family-base if get_font_family('title');
-
-$font-family-headings     = $font-family-base;
-$font-family-headings     = get_font_family('headings'), $font-family-base if get_font_family('headings');
-
-$font-family-posts        = $font-family-base;
-$font-family-posts        = get_font_family('posts'), $font-family-base if get_font_family('posts');
-
-$font-family-monospace    = consolas, Menlo, monospace, $font-family-chinese;
-$font-family-monospace    = get_font_family('codes'), consolas, Menlo, monospace, $font-family-chinese if get_font_family('codes');
-
-$font-family-icons        = 'FontAwesome';
-```
-
-从这一部分的代码可以看出，NexT 默认的中文字体（font-family-chinese）是 `PingFang SC` 和 `Microsoft YaHei`，同时设定两个字体，在浏览网站的时候，浏览器会优先选取放在第一位的字体 `PingFang SC`，这是苹果系统的苹方字体。而如果你使用的是 Windows 系统，计算机中并未安装 `PingFang SC`，那么浏览器就会选择排在其后的 `Microsoft YaHei`，也就是微软雅黑字体。而博客中的基础字体（font-family-base）设定中，先是选用中文字体，在中文字体后添加了一个 `sans-serif`，也就是无衬线字作为最后的设定。也就是说，如果你的计算机系统中，苹方字体和微软雅黑都没有安装，那么浏览器就会选择你计算机系统中带有的基本无衬线字体。除此之外，这一部分代码也包含博客中的标题、文章主体、以及代码区域的字体设定。
-
-目前，电子显示屏上使用的字体普遍是无衬线体，比如黑体。在过去，因为屏幕技术的限制，想要在屏幕上展现出好看的衬线字角非常困难。如今高清显示屏的普及，在同质化的屏幕界面上使用衬线体为读者提供了另一种阅读选择。合适的衬线字体被引入到屏幕中，为单调的无衬线字体世界带来了新鲜的阅读体验。[^5]对于中文来说，宋体就是一种标准的衬线字体，衬线的特征非常明显。我们可以考虑将博客的中文默认字体更换为宋体，这样可以增强读者的阅读体验。
-
-![hexo-theme-next-fonts-serif.jpg](/images/hexo-theme-next-fonts-serif.jpg "石碑与屏幕上的字体")
-
-#### 直接使用本地字体
-
-直接在上文提到的 `base.styl` 文件中修改默认字体即可，比如你想使用楷体，就在 `font-family-chinese` 的开头添加 `'STKaiti'`。最好不要删除主题默认的字体，而是直接在最前端添加字体，因为如果你的计算机中并没有这个字体，也能优先显示第二种字体，而不是显示最后的  `sans-serif`。不过这种设定方法的缺陷正是在这里，你设定的字体或许在你的计算机中安装了，但并不能保证在别人的计算机中安装了，所以就会出现你设定的字体在别人浏览你的博客的时候无法显示出来。目前 NexT 主题的代码默认字体（font-family-monospace）就存在这样的问题，你在 PC 端浏览博客，看到的代码区域字体为等宽字体，但在手机端浏览，却只能显示无衬线字体。
-
-#### 上传字体至博客目录
-
-因为直接使用本地字体存在很大的缺陷，所以我们可以考虑上传自己想要的字体至博客中，这样，在别人浏览博客的时候，浏览器会优先加载并显示你上传的字体，而不是使用本地字体。这种方法最大的缺点就是中文字体的使用，因为中文字体不像英文那样只有 26 个字母，我们平时经常使用到的汉字有数千个，如果把这些汉字字体全部上传至博客中，占用的空间很大，加载速度也是一个问题。不过我们可以考虑使用这种方法来显示英文字体。
-
-举个例子，比如你想使用 Linux Biolinum 字体。
-
-[^6]![hexo-theme-next-fonts-linux-biolinum.png](/images/hexo-theme-next-fonts-linux-biolinum.png "Linux Biolinum 字体")
-
-首先，下载 Linux Biolinum 字体，这里我提供一个下载地址：[linux-biolinum.zip](/uploads/linux-biolinum.zip)。下载该压缩文件后，将里面的文件解压至博客根目录下的 `~/source/fonts/` 文件夹中，若无 `fonts` 文件夹请自建。
-
-然后在 `styles.styl` 文件中添加以下内容：
-
-```css
-/* 文件位置：~/source/_data/styles.styl */
-
-@font-face {
-  font-family: 'Linux Biolinum';
-  src: url("/fonts/LinBiolinum_Rah.eot");
-  font-display: swap;
-  src: url("/fonts/LinBiolinum_Rah.eot") format('embedded-opentype'), url("/fonts/LinBiolinum_Rah.woff2") format('woff2'), url("/fonts/LinBiolinum_Rah.woff") format('woff'), url("/fonts/LinBiolinum_Rah.ttf") format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Linux Biolinum';
-  src: url("/fonts/LinBiolinum_RBah.eot");
-  font-display: swap;
-  src: url("/fonts/LinBiolinum_RBah.eot") format('embedded-opentype'), url("/fonts/LinBiolinum_RBah.woff2") format('woff2'), url("/fonts/LinBiolinum_RBah.woff") format('woff'), url("/fonts/LinBiolinum_RBah.ttf") format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Linux Biolinum';
-  src: url("/fonts/LinBiolinum_RIah.eot");
-  font-display: swap;
-  src: url("/fonts/LinBiolinum_RIah.eot") format('embedded-opentype'), url("/fonts/LinBiolinum_RIah.woff2") format('woff2'), url("/fonts/LinBiolinum_RIah.woff") format('woff'), url("/fonts/LinBiolinum_RIah.ttf") format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-```
-
-最后，在 `base.styl` 文件中修改：
-
-```diff
-# 文件位置：~/themes/next/source/css/_variables/base.styl
-
-// Font families.
--$font-family-chinese      = "PingFang SC", "Microsoft YaHei"
-+$font-family-chinese      = "Linux Biolinum", "PingFang SC", "Microsoft YaHei"
-```
-
-这样优先显示的就是该英文字体了。
-
-#### 使用 Google Fonts
-
-我的博客字体就是使用了这一种方法进行加载的。[Google Fonts](https://fonts.google.com/) 提供了数百种高质量英文字体的 API，你可以通过调用 Google Fonts 免费使用其提供的字体服务。目前 Google Fonts 提供了几种中文简体字体，其中就有思源宋体。
-
-![hexo-theme-next-google-fonts-chinese-simplified.png](/images/hexo-theme-next-google-fonts-chinese-simplified.png "Google Fonts 提供的中文简体字体")
-
-面对电子显示屏上千篇一律的黑体字，当读者看到一个显示宋体字的网页自然会眼前一亮。再加上合理的排版，你的博客必然会脱颖而出。宋体的衬线更适合长时间阅读，这也是目前各类阅读器或者浏览器上的阅读模式都会使用衬线字的原因。使用 Google Fonts 字体的方法很简单，NexT 主题配置文件中已经提供了设置：
-
-```yaml
-# 文件位置：~/themes/next/_config.yml
-
-font:
-  # Use custom fonts families or not.
-  # Depended options: `external` and `family`.
-  enable: false
-
-  # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
-  host:
-
-  # Font options:
-  # `external: true` will load this font family from `host` above.
-  # `family: Times New Roman`. Without any quotes.
-  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
-
-  # Global font settings used for all elements inside <body>.
-  global:
-    external: true
-    family: Lato
-    size:
-
-  # Font settings for site title (.site-title).
-  title:
-    external: true
-    family:
-    size:
-
-  # Font settings for headlines (<h1> to <h6>).
-  headings:
-    external: true
-    family:
-    size:
-
-  # Font settings for posts (.post-body).
-  posts:
-    external: true
-    family:
-
-  # Font settings for <code> and code blocks.
-  codes:
-    external: true
-    family:
-```
-
-首先将 `enable:` 的 `false` 改为 `true`，然后在 `host:` 后添加 Google Fonts API 地址：`fonts.googleapis.com`。考虑到国内的网络对 Google 的域名并不友好，建议将 `googleapis.com` 修改为烧饼博客提供的镜像 `loli.net`。
-
-然后，设置中下面的一些选项，就是设定博客各区域的字体，比如网站标题 `title`，文章内容 `posts`……这些都可以进行修改，你要做的只是到 Google Fonts 上找到适合的字体，然后将字体的名字填写到 `family:` 中。最关键的是 `global` 字体的设定，这里的字体将会是你网站的基本（全局）字体。个人建议不要在这里填思源宋体的名字 `Noto Serif SC`，而是选取一款英文字体进行填写。因为中文字体往往携带同样的英文字体，如果将中文字体优先级设置为第一位，那么英文字体必将也会是中文字体的样式。如果你在这里设置的是 `Noto Serif SC`，那么英文字体也会是 `Noto Serif SC`。那么，中文字体到哪里去设置呢？当然还是要到 `base.styl` 文件中，直接这样修改：
-
-```diff
-# 文件位置：~/themes/next/source/css/_variables/base.styl
-
-// Font families.
--$font-family-chinese      = "PingFang SC", "Microsoft YaHei"
-+$font-family-chinese      = "Noto Serif SC"
-```
-
-然后进入 [Google Fonts](https://fonts.google.com/)，搜索 Noto Serif SC，点 `+` 号选择，选择好后底部会弹出一个提示框，里面有使用说明。还可以点击提示框中的 `CUSTOMIZE` 定制要加载的字重与语言。之后，点击 `EMBED`，复制生成的 `<link>` 代码，添加到博客的 `<head>` 标签内，NexT 主题可直接添加到 `~/source/_data/head.swig` 文件中。如果你想使用上文中提到的烧饼博客镜像，就将代码中的将 `googleapis.com` 修改为 `loli.net`。
-
-![hexo-theme-next-google-fonts-select.png](/images/hexo-theme-next-google-fonts-select.png "定制字体")
-
-为了方便，我在这里直接给出代码：
-
-```html
-<!-- 文件位置：~/source/_data/head.swig -->
-
-<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,500,700&display=swap&subset=chinese-simplified" rel="stylesheet">
-```
-
-考虑到宋体的笔画要比黑体细，因此建议通过自定义 CSS 将字体的颜色加深，比如修改为 `#333`，以达到较好的阅读效果。
-
-```css
-/* 文件位置：~/source/_data/styles.styl */
-
-.post-body {
-    color: #333;
-}
-```
-
-这种先在 `<head>` 中引入字体，再通过 CSS 设定字体显示部位的方式适用于各种网页的设计，不局限于 NexT 主题。另外，我在这里给出我的博客字体设定：
-
-+ 中文字体：Noto Serif SC
-+ 英文字体：EB Garamond
-+ 标题字体：Cinzel Decorative
-+ 代码字体：Source Code Pro
+参见文章《[网站字体优化方案](/tech/website/web-font-guide/)》
 
 ### 归档页面添加十二生肖
 
@@ -1498,7 +1102,7 @@ social:
 
 ![blogroll-old-style.png](/images/blogroll-old-style.png)
 
-NexT 主题自带的友情链接的位置是在侧栏的 Social Link 中，位置不太明显，而且容量比较小，不美观。因此可以自定义一个特定的页面，单独显示友情链接[^7]。
+NexT 主题自带的友情链接的位置是在侧栏的 Social Link 中，位置不太明显，而且容量比较小，不美观。因此可以自定义一个特定的页面，单独显示友情链接[^3]。
 
 首先，在 `~/themes/next/layout/` 目录下新建一个 `links.swig` 文件，并写入以下内容：
 
@@ -1783,175 +1387,13 @@ mylinks:
 
 ### 主题自带样式
 
-主题自带的一些标签功能在[官方文档](https://theme-next.org/docs/tag-plugins/)中有详细的说明。推荐仔细阅读官方文档进行配置与使用。
+主题自带的一些标签功能如 Note、Tabs、Button 等在官方文档的 [Tag Plugins](https://theme-next.org/docs/tag-plugins/) 中有详细的说明。请仔细阅读官方文档进行配置与使用。由于目前本博客从 Hexo 迁移到了 Hugo，主题也不再是 NexT，因此主题部分自带功能的展示效果受到一定限制，这里不再进行详细说明和展示。
 
-#### 文本居中引用
-
-效果：
-
-<blockquote class="blockquote-center"><p>人生乃是一面镜子，<br>从镜子里认识自己，<br>我要称之为头等大事，<br>也只是我们追求的目的！</p></blockquote>
-
-源码：
-
-```
-{% cq %}
-人生乃是一面镜子，
-从镜子里认识自己，
-我要称之为头等大事，
-也只是我们追求的目的！
-{% endcq %}
-```
-
-如果你使用了插件  [hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize) 为博客加速，那么可能会对该功能的效果造成一定的影响，对该问题的具体分析可参见我的文章《[加速 Hexo 博客的方法及遇到的问题](/tech/website/speed-up-hexo/)》。
-
-#### note 标签
-
-在主题配置文件 `_config.yml` 里有一个关于该功能的配置：
-
-```yaml
-# 文件位置：~/themes/next/_config.yml
-
-# Note tag (bs-callout)
-note:
-  # Note tag style values:
-  #  - simple    bs-callout old alert style. Default.
-  #  - modern    bs-callout new (v2-v3) alert style.
-  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
-  #  - disabled  disable all CSS styles import of note tag.
-  style: flat
-  icons: true
-  border_radius: 3
-  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
-  # Offset also applied to label tag variables. This option can work with disabled note tag.
-  light_bg_offset: 0
-```
-
-如果你是用的风格 `style: flat`，且选择不加载图标，那么显示的效果与源码为：
-
-<p class="note-default">
-default
-</p>
-
-```
-{% note default %}
-default
-{% endnote %}
-```
-
-<p class="note-primary">
-primary
-</p>
-
-```
-{% note primary %}
-primary
-{% endnote %}
-```
-
-<p class="note-success">
-success
-</p>
-
-```
-{% note success %}
-success
-{% endnote %}
-```
-
-<p class="note-info">
-info
-</p>
-
-```
-{% note info %}
-info
-{% endnote %}
-```
-
-<p class="note-warning">
-warning
-</p>
-
-```
-{% note warning %}
-warning
-{% endnote %}
-```
-
-<p class="note-danger">
-danger
-</p>
-
-```
-{% note danger %}
-danger
-{% endnote %}
-```
-
-如果你选择加载图标，也可以在标签中添加 `no-icon` 来对个别标签设置不加载图标：
-
-```
-{% note default no-icon %}
-default
-{% endnote %}
-```
-
-#### label 标签
-
-首先可以在主题配置文件中进行配置：
-
-```yaml
-# 文件位置：~/themes/next/_config.yml
-
-# Label tag.
-label: true
-```
-
-效果如下（`@` 前面的是 `label` 的名字，后面的是要显示的文字）：
-
-<span class="label default">default</span>
-
-```
-{% label default@default %}
-```
-
-<span class="label primary">primary</span>
-
-```
-{% label primary@primary %}
-```
-
-<span class="label success">success</span>
-
-```
-{% label success@success %}
-```
-
-<span class="label info">info</span>
-
-```
-{% label info@info %}
-```
-
-<span class="label warning">warning</span>
-
-```
-{% label warning@warning %}
-```
-
-<span class="label danger">danger</span>
-
-```
-{% label danger@danger %}
-```
-
-#### 其他标签
-
-NexT 主题还提供了 [tabs 标签](https://theme-next.org/docs/tag-plugins/tabs)、[botton 标签](https://theme-next.org/docs/tag-plugins/button)等等各式各样的标签，由于目前本博客从 Hexo 迁移到了 Hugo，主题也不再是 NexT，因此主题部分自带功能的展示效果受到一定限制，这里不再进行展示，请到官方文档中查看具体使用方法与效果。
+请注意，在你使用 Centered Quote 文本居中引用标签功能的时候，如果你使用了插件  [hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize) 为博客加速，那么可能会对该功能的效果造成一定的影响，对该问题的具体分析可参见我的文章《[加速 Hexo 博客的方法及遇到的问题](/tech/website/speed-up-hexo/)》。
 
 ### 自定义样式
 
-由于是自定义的样式，故要自己将 CSS 代码加到 `styles.styl` 中，下文的自定义样式都是如此。点击[这里](http://www.divcss5.com/rumen/r3.shtml)了解一些 CSS 中 `id` 和 `class` 的知识[^8]。
+由于是自定义的样式，故要自己将 CSS 代码加到 `styles.styl` 中，下文的自定义样式都是如此。点击[这里](http://www.divcss5.com/rumen/r3.shtml)了解一些 CSS 中 `id` 和 `class` 的知识[^4]。
 
 #### 引用样式
 
@@ -2216,7 +1658,7 @@ npm install hexo-reference --save
 
 ### 插入动态图表
 
-[ECharts](http://echarts.baidu.com/index.html)，一个纯 JavaScript 的图表库，可以流畅的运行在 PC 和移动设备上。ECharts 作为国产工具，在语言上对中文开发者有着天然的优势，官方文档对每一个细节、参数、配置都有详尽的说明，对于新手非常的友好。另外一个重要的方面，就是 ECharts 的图表颜值很高，默认的主题和配色可以呈现出优雅漂亮的图表[^9]。
+[ECharts](http://echarts.baidu.com/index.html)，一个纯 JavaScript 的图表库，可以流畅的运行在 PC 和移动设备上。ECharts 作为国产工具，在语言上对中文开发者有着天然的优势，官方文档对每一个细节、参数、配置都有详尽的说明，对于新手非常的友好。另外一个重要的方面，就是 ECharts 的图表颜值很高，默认的主题和配色可以呈现出优雅漂亮的图表[^5]。
 
 Hexo 的 [ECharts 插件](https://github.com/kchen0x/hexo-tag-echarts3)是博主 [KChen](https://kchen.cc/) 根据周旅军的原型插件开发的。进入博客根目录安装插件：
 
@@ -2538,7 +1980,7 @@ custom_file_path:
 
 > 使用定制加载时，不要将标签的 `id` 或者 `class` 设置为 `jinrishici-sentence`，否则 SDK 会自动加载一次。
 
-也就是说插入的标签不应该使用之前的 `jinrishici-sentence`，需要重新命名。参考上一节配置的两个文件，把内容修改一下即可[^10]：
+也就是说插入的标签不应该使用之前的 `jinrishici-sentence`，需要重新命名。参考上一节配置的两个文件，把内容修改一下即可[^6]：
 
 `body-end.swig`：
 
@@ -2586,11 +2028,7 @@ custom_file_path:
 
 [^1]: 图源：[hexo-theme-next | GitHub](https://github.com/theme-next/hexo-theme-next)
 [^2]: 官方网站的 News 中会对每一个发行版相对上一版本的修改进行说明，Docs 中有主题配置的详细说明。
-[^3]: 我就是从这个事件起停止使用评论系统了，一方面是因为 Leancloud 的实名与备案，另一方面是我的博客访客比较少，基本没有什么评论，加载评论还会影响一定的访问速度。
-[^4]: 参考：[前端开发你该知道的字体 font-family | fly63 前端网](http://www.fly63.com/article/detial/1114)
-[^5]: 参考：[衬线体的进化：从纸面到屏幕 | 方正字库](https://zhuanlan.zhihu.com/p/49470735)
-[^6]: 图源：[Linux Biolinum | Fontke](https://www.fontke.com/family/290108/)
-[^7]: 参考：[Hexo 博客 NexT 主题自定义友情链接页面 | Sanarous](https://bestzuo.cn/posts/2016690040.html)
-[^8]: 参考：[样式汇总 | 千灵](https://qianling.pw/style/)
-[^9]: 参考：[在 Hexo 中插入 ECharts 动态图表 | KChen's Blog](https://kchen.cc/2016/11/05/echarts-in-hexo/)
-[^10]: 参考：[NexT 添加今日诗词 | 1v9's Blog](https://1v9.io/post/add-today-poetry-for-theme-next.html)
+[^3]: 参考：[Hexo 博客 NexT 主题自定义友情链接页面 | Sanarous](https://bestzuo.cn/posts/2016690040.html)
+[^4]: 参考：[样式汇总 | 千灵](https://qianling.pw/style/)
+[^5]: 参考：[在 Hexo 中插入 ECharts 动态图表 | KChen's Blog](https://kchen.cc/2016/11/05/echarts-in-hexo/)
+[^6]: 参考：[NexT 添加今日诗词 | 1v9's Blog](https://1v9.io/post/add-today-poetry-for-theme-next.html)

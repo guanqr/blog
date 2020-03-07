@@ -1,6 +1,5 @@
 +++
 title = "Win10 和 Python 3.7 环境下安装 TensorFlow"
-description = ""
 date = "2020-03-07T00:03:29+08:00"
 tags = ["python","tensorflow"]
 +++
@@ -21,7 +20,7 @@ Anaconda 是一个开源的 Python 发行版本，请前往[官网](https://www.
 
 ## 安装 CUDA
 
-这里需要注意，你的计算机显卡必须是 NVIDIA 显卡才可以选择安装 CUDA，否则请跳过以下步骤直接安装 TensorFlow。在[官网](https://developer.nvidia.com/cuda-toolkit-archive)挑选你要安装的 CUDA 版本，这里我选择的是 CUDA 10.0 版本。不一定最新版本的最好，因为很有可能 TensorFlow 的版本并没有与最新版本的 CUDA 相对应。
+你的计算机显卡必须是 NVIDIA 显卡才可以选择安装 CUDA，否则请跳过以下步骤直接安装 TensorFlow。在[官网](https://developer.nvidia.com/cuda-toolkit-archive)挑选你要安装的 CUDA 版本。这里因为我安装的时间较早，安装的是 CUDA 10.0 版本，最新的 TensorFlow 2.1 对应的 CUDA 是 10.1 版本。但是要注意，不一定最新版本的最好，因为很有可能 TensorFlow 的版本并没有与最新版本的 CUDA 相对应。
 
 运行安装包的时候需要注意，需要选择「自定义」安装，在选择「自定义安装选项」的时候，建议只勾选安装 CUDA，Driver components 等组件你的计算机系统中应该原本就有，而且很有可能已有的版本与其要安装的版本不一致，要安装的版本比你已有的版本高，可以选择安装，如果比已有版本低，安装的话会出现错误。另外，CUDA 选项中的 Visual Studio Integration 也可选择不安装，因为我们并没有用到 Visual Studio。
 
@@ -42,7 +41,7 @@ Anaconda 是一个开源的 Python 发行版本，请前往[官网](https://www.
 3. D:\NVIDIA GPU Computing Toolkit\CUDA\v10.0\extras\CUPTI\libx64
 4. D:\NVIDIA GPU Computing Toolkit\CUDA\v10.0\cudnn\bin
 
-注意，这里添加的是你的 CUDA 所在目录中的部分文件夹，请检查是否存在该文件夹目录。我的 CUDA 安装在了 D 盘，请根据自己的实际情况进行修改。添加完成后，建议按照以上的顺序将这四个环境变量排序至最顶层。
+注意，这里添加的是你的 CUDA 所在目录中的部分文件夹，请检查是否存在该文件夹目录以及版本号是否正确。我的 CUDA 版本为 10.0 且安装在了 D 盘，请根据自己的实际情况进行修改。添加完成后，建议按照以上的顺序将这四个环境变量排序至最顶层。
 
 ![add-cuda-path.png](/images/add-cuda-path.png)
 
@@ -62,7 +61,7 @@ $ pip install tensorflow
 
 对于第一个问题，可以考虑换一个国内的镜像源进行下载，对于第二个问题，我认为最好的解决方法就是挑选对应版本的安装包，将安装包下载到本地，再在本地进行安装。
 
-首先进入[下载网站](https://pypi.org/project/tensorflow/#files)，选择 Python 3.7、Window 版本的安装包进行下载。
+首先进入[下载网站](https://pypi.org/project/tensorflow/#files)，选择 Python 3.7、Window 版本的安装包进行下载。注意版本号要和 CUDA 相对应。TensorFlow 2.0.0 对应 CUDA 10.0，TensorFlow 2.1.0 对应 CUDA 10.1。
 
 ![download-tensorflow.png](/images/download-tensorflow.png)
 
@@ -74,13 +73,13 @@ $ pip install filename
 
 其中，`filename` 为安装包的名字。
 
-安装完成后，在终端打开 Python，可以输入下列代码，如果运行成功则安装成功。
+安装完成后，在终端打开 Python，可以输入下列代码，检查 TensorFlow 的版本，如果运行顺利则安装成功。
 
 ```python
 >>> import tensorflow as tf
 >>> tf.__version__
 
-'2.1.0'
+'2.0.0'
 ```
 
-如果在运行代码的时候出现报错，提示缺失某些 `dll` 文件，可能是因为安装的 CUDA 版本和 TensorFlow 版本不对应。可以进入 [DLL-FILES](https://www.dll-files.com/)，查找缺失的文件，下载并放置在 `~/NVIDIA GPU Computing Toolkit/CUDA/v10.0/bin` 文件夹下。如果在该网站并没有找到缺失的文件，在 `bin` 文件夹下会有同名不同版本号的同一文件，修改该文件名与报错中出现的文件名一致即可，注意备份修改前的文件。
+如果在运行代码的时候出现报错，提示缺失某些 `dll` 文件，可能是因为安装的 CUDA 版本和 TensorFlow 版本不对应。可以进入 [DLL-FILES](https://www.dll-files.com/)，查找缺失的文件，下载并放置在 `~/NVIDIA GPU Computing Toolkit/CUDA/v10.0/bin` 文件夹下。如果在该网站并没有找到缺失的文件，在 `bin` 文件夹下会有同名不同版本号的同一文件，修改该文件名与报错中出现的文件名一致即可，注意备份修改前的文件。如果依然会报错，那可能就需要寻找对应版本的 CUDA 和 TensorFlow 重新安装了。

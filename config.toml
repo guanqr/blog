@@ -1323,13 +1323,13 @@ uglyURLs = false
 
 # 中文
 [languages.zh]
-    languageName = "cn"
+    languageName = "CN"
     contentDir = "content/zh"
     weight = 1
 
 # 英文
 [languages.en]
-    languageName = "us"
+    languageName = "US"
     contentDir = "content/en"
     weight = 2
     languageCode = "en-US"
@@ -1366,7 +1366,7 @@ uglyURLs = false
         #post = "archive"
         #identifier = "archive"
     [[languages.en.menu.main]]
-        url = "/en-us/about/"
+        url = "/en/about/"
         name = "About"
         weight = 1
         pre = "internal"

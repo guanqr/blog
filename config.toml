@@ -12,7 +12,7 @@ copyright = "本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses
 theme = "meme"
 
 # i18n
-defaultContentLanguage = "zh-cn"
+defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = false
 
 # 是否复数化列表页面的标题
@@ -1322,24 +1322,24 @@ uglyURLs = false
 # 自行添加的多语言站点设置
 
 # 中文
-[languages.zh-cn]
-    languageName = "简体中文"
+[languages.zh]
+    languageName = "cn"
     contentDir = "content/zh"
     weight = 1
 
 # 英文
-[languages.en-us]
-    languageName = "English"
+[languages.en]
+    languageName = "us"
     contentDir = "content/en"
     weight = 2
     languageCode = "en-US"
     hasCJKLanguage = false
 	title = "Guanqr's Blog"
     copyright = "The article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)."
-[languages.en-us.taxonomies]
+[languages.en.taxonomies]
     #category = "categories"
     #tag = "tags"
-[languages.en-us.menu]
+[languages.en.menu]
     #[[languages.en-us.menu.main]]
     #    url = "/en-us/"
     #    name = "Home"
@@ -1365,40 +1365,40 @@ uglyURLs = false
         #pre = "internal"
         #post = "archive"
         #identifier = "archive"
-    [[languages.en-us.menu.main]]
+    [[languages.en.menu.main]]
         url = "/en-us/about/"
         name = "About"
         weight = 1
         pre = "internal"
         post = "user-circle"
         identifier = "about"
-    [[languages.en-us.menu.main]]
+    [[languages.en.menu.main]]
         weight = 2
         identifier = "theme-switcher"
-    [[languages.en-us.menu.main]]
+    [[languages.en.menu.main]]
         weight = 3
         identifier = "lang-switcher"
-    [[languages.en-us.menu.socials]]
+    [[languages.en.menu.socials]]
         url = "https://github.com/guanqr"
         name = "GitHub"
         weight = 1
         pre = "external"
-    [[languages.en-us.menu.socials]]
+    [[languages.en.menu.socials]]
         url = "https://www.cc98.org/user/id/583696"
         name = "CC98"
         weight = 2
         pre = "external"
-    [[languages.en-us.menu.links]]
+    [[languages.en.menu.links]]
         url = "mailto:guanqirui@zju.edu.cn"
         name = "Email"
         weight = 1
         pre = "external"
-    [[languages.en-us.menu.links]]
+    [[languages.en.menu.links]]
         url = "/en-us/atom.xml"
         name = "Feed"
         weight = 2
         pre = "external"
-[languages.en-us.params]
+[languages.en.params]
     siteDescription = "Guanqr's Blog in English."
     listDateFormat = "January 2"
     fontFamilyTitle = "'Amstelvar', serif"

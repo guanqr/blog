@@ -1323,13 +1323,13 @@ uglyURLs = false
 
 # 中文
 [languages.zh]
-    languageName = "CN"
+    languageName = "🇨🇳"
     contentDir = "content/zh"
     weight = 1
 
 # 英文
 [languages.en]
-    languageName = "US"
+    languageName = "🇺🇸"
     contentDir = "content/en"
     weight = 2
     languageCode = "en-US"
@@ -1394,7 +1394,7 @@ uglyURLs = false
         weight = 1
         pre = "external"
     [[languages.en.menu.links]]
-        url = "/en-us/atom.xml"
+        url = "/en/atom.xml"
         name = "Feed"
         weight = 2
         pre = "external"

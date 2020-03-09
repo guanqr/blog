@@ -27,50 +27,50 @@
   weight = 4
 
 [[blogroll]]
-  name = "DingZhi's Blog"
-  url = "https://dingzhi.ga/"
-  avatar = "/images/friends/dingzhi.jpg"
-  description = "路在脚下，心向远方"
-  weight = 5
-
-[[blogroll]]
   name = "三个技术小站"
   url = "https://qsctech-sange.github.io/"
   avatar = "/images/friends/sange.png"
   description = "金融、计算机与数据科学"
-  weight = 6
+  weight = 5
 
 [[blogroll]]
   name = "天涯共此时"
   url = "https://ztygcs.github.io/"
   avatar = "/images/friends/ztygcs.png"
   description = "技术博文，生活杂碎，哲理人生"
-  weight = 7
+  weight = 6
 
 [[blogroll]]
   name = "林深时见璐"
   url = "https://linwhitehat.github.io/"
   avatar = "/images/friends/linwhitehat.png"
   description = "Wonderful U - AGA"
-  weight = 8
+  weight = 7
 
 [[blogroll]]
   name = "谁把钱丢了"
   url = "https://jmyblog.top/"
   avatar = "/images/friends/jmyblog.jpg"
   description = "Everyday struggle"
-  weight = 9
+  weight = 8
 
 [[blogroll]]
   name = "黎璃的个人博客"
   url = "https://xiaotong-sun.github.io/"
   avatar = "/images/friends/xiaotongsun.jpg"
   description = "不困于物，不乱于心"
-  weight = 10
+  weight = 9
 
 [[blogroll]]
   name = "数学小兵儿"
   url = "https://matnoble.me/"
   avatar = "/images/friends/matnoble.png"
   description = "数学＆计算机 我都爱"
+  weight = 10
+
+[[blogroll]]
+  name = "班班碎碎念"
+  url = "https://blog.dlzhang.com/"
+  avatar = "/images/friends/dlzhang.jpg"
+  description = "无曰已是，无曰遂真"
   weight = 11

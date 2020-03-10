@@ -13,10 +13,11 @@ comments = false
 ## 网站收藏
 
 + [CC98](https://www.cc98.org/)：浙江大学 CC98 论坛
-+ [查老师](https://chalaoshi.qiushi.ac.cn/)：查询学生对授课教师的匿名打分与评价
-+ [选课助手](https://enroll.zjuqsc.com/)：一款帮助浙大学生选课的浏览器插件
++ [查老师](https://chalaoshi.qiushi.ac.cn/)：查询学生对授课教师的匿名评价
++ [选课助手](https://enroll.zjuqsc.com/)：一款协助选课的浏览器插件
 + [空余教室查询系统](https://app.zjuqsc.com/classroom/)：查询可以自习的空闲教室
-+ [浙江大学课程攻略共享计划](https://github.com/QSCTech/zju-icicles/)：收录有历年试卷与复习资料
++ [课程攻略共享计划](https://github.com/QSCTech/zju-icicles/)：收录有历年试卷与复习资料
++ [书格](https://new.shuge.org/)：有品格的数字古籍图书馆
 + [日本の伝統色](http://nipponcolors.com/)：一个设计精美的配色网站
 + [懒得勤快](https://masuit.com/)：一个免费分享各类办公软件的网站
 

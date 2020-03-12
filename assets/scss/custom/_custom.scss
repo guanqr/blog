@@ -263,6 +263,13 @@ span#inline-toc {
     transform: translateY(0.4em);
 }
 
+// mermaid
+
+.mermaid {
+    margin: 0 0 1em;
+    overflow: auto hidden;
+}
+
 // 可变字体 https://github.com/TypeNetwork/Amstelvar
 
 @font-face {

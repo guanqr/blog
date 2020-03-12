@@ -6,6 +6,7 @@ tags = ["geometric-optics","microcontroller","modeling","solidworks","zemax","zj
 series = ["major-courses"]
 aliases = ["/study/optics/opt-short-term-2019/"]
 toc = true
+mermaid = true
 +++
 
 随着课程答辩的完成，短学期课程正式结束。我们开始准备跨校区搬迁，从紫金港搬到玉泉。从刚结束数电考试的 7 月 4 日到 7 月 27 日，将近一个月的时间里，我们总共上了两门课程，分别是《光学系统设计》和《电子系统设计》。同信息类的其他专业早已结束课程开始搬迁，我们仍然在骄阳似火中设计着电路，看着一批又一批的外校学生来浙大夏令营。我们拥有全浙大最长的短学期，拥有最不水的短学期。在这里，我对今年短学期课程的成果做个总结。
@@ -48,7 +49,17 @@ toc = true
 
 相差计算方法如下图所示。
 
-![short-term-differ.jpg](/images/short-term-differ.jpg "相差计算")
+<div class="mermaid">
+graph LR
+	A(各类相差计算) --> B[调用 DFC L' 与 I']
+	A --> C[调用 DFC yp' 与 y0']
+	A --> D[调用 xs' 与 xt']
+	A --> E[调用 kt']
+	B --> F[球差与位置色差]
+	C --> G[畸变与倍率色差]
+	D --> H[像散与场曲]
+	E --> I[子午彗差]
+</div>
 
 老师并没有强制要求我们用什么语言，但由于我们只系统地学习过 C，所以我们用 C 语言编写的这个程序，然后使用 Qt 编写图形用户界面。
 

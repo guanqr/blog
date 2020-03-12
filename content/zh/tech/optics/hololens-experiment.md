@@ -15,41 +15,53 @@ toc = true
 
 全息透镜实际上是一张球面波基元全息图（或称点光源的全息图）。它相当于一块菲涅耳波带板，具有类似透镜的会聚作用和成像特性。全息透镜易制成较大的尺寸，造价低，制作方法简单，易复制，重量轻，因而在某些场合具有独特用途。全息透镜可用一束平面光波和一束球面光波的干涉来记录，也可用两束球面光波干涉来记录。全息透镜有同轴全息透镜和离轴全息透镜两种。图 1 ( a ) 所示为同轴全息透镜的记录原理，轴上点源发出的球面波与平面波干涉的结果，在记录面上两相干光波的振幅相等时，则干涉条纹的强度为：
 
+<div>
 $$
 I(x,y)=|E_0|^2+2E_0\cos\big(\frac{\pi\rho^2}{\lambda z_0}\big)
 $$
+</div>
 
 式中，$E_0$ 表示振幅常数。由光强 $I(x,y)$ 线性曝光得到的全息图是一同心圆环干涉图，如图 1 ( b )。第 $m$ 个环带的半径平方：
 
+<div>
 $$
 \rho_m^2=m\lambda z_0 \quad m=1,2,3,\cdots
 $$
+</div>
 
 ![hololens-0.png](/images/hololens-0.png "图 1：同轴全息透镜的记录")
 
 因此，环带沿半径方向由内向外变密，全息图上干涉环带的分布和菲涅耳波带板相同。这种全息图称为全息波带板。全息波带板和菲涅尔波带板的区别在于，线性记录的全息波带板其振幅透射系数是余弦形函数，而菲涅耳波带板的振幅透射系数是矩形函数。如果仍然用参考光R照明这个线性记录的全息图（图 2），全息图只产生 0，±1 级衍射光。1 级衍射光束对参考光束的偏角即衍射角 $\theta'$，满足光栅的衍射公式：
 
+<div>
 $$
 \sin\theta'=\frac{\lambda}{\rho_1}
 $$
+</div>
 
 一方面，根据上面的环带半径的公式，有：
 
+<div>
 $$
 \frac{\lambda}{\rho_1}=\frac{\rho_1}{z_0}
 $$
+</div>
 
 因此：
 
+<div>
 $$
 \sin\theta'=\frac{\rho_1}{z_0}
 $$
+</div>
 
 另一方面，当图 2 中的 $\theta$ 角很小时，有：
 
+<div>
 $$
 \sin\theta\approx\tan\theta=\frac{\rho_1}{z_0}
 $$
+</div>
 
 因此得 $\theta'=\theta$，即衍射角等于记录时的干涉孔径角。又因为全息图的振幅透射系数是圆对称分布，所以通光口径内的 +1 级衍射光束，好像是从 $S_0$ 点射出的发散光束（图 2），所以 $S_0$ 就是全息图再现的虚像点，它和物点 $O$ 的坐标完全相同，这时全息图起着普通负透镜的作用。同理，-1 级衍射光聚集于全息图的另一侧，与 $S_0$ 成镜像位置的 $S$ 处，全息图起着普通正透镜的作用。零级光没有偏折地透过全息图，不参与成像，全息图起着平行平晶的作用。或者说，线性记录的全息图能衍射产生两个像，一个是虚像，另一个是实像。
 
@@ -92,9 +104,11 @@ $$
 
 根据公式：
 
+<div>
 $$
 f=\frac{r_n^2}{2n\lambda}
 $$
+</div>
 
 求得焦距为 $18.12cm$。
 
@@ -129,18 +143,23 @@ $$
 
 设位于 $x_0y_0$ 平面的物光场分布为 $U_0(x_0,y_0)$，传播到全息平面 $xy$ 面记为：
 
+<div>
 $$
 O(x,y)=A_o(x,y)\exp[j\varphi_0(x,y)]
 $$
+</div>
 
 其中，$A_o(x,y)$ 和 $\varphi_0(x,y)$ 分别为物光波的振幅和相位分布。将到达全息平面上的参考光波记为：
 
+<div>
 $$
 R(x,y)=A_r(x,y)\exp[j\varphi_r(x,y)]
 $$
+</div>
 
 其中，$A_r(x,y)$ 和 $\varphi_r(x,y)$ 分别为参考光的振幅和相位分布。则 $xy$ 面上全息图的强度分布为：
 
+<div>
 $$
 \begin{aligned}
 I_H(x,y)=&|U(x,y)|^2=|O(x,y)+R(x,y)|^2\\
@@ -148,14 +167,17 @@ I_H(x,y)=&|U(x,y)|^2=|O(x,y)+R(x,y)|^2\\
 &O(x,y)R^*(x,y)+O^*(x,y)R(x,y)
 \end{aligned}
 $$
+</div>
 
 该式前两项分别是物光和参考光的强度分布，仅与振幅有关，与相位没有关系。第三项是干涉项，包含了物光波的振幅和相位信息。参考光波作为载波，其振幅和相位都受到物光波的调制，干涉条纹则是参考光波的振幅和相位受到物光波调制的结果。
 
 假设全息图经数字化后离散为 $N_x\times N_y$ 个点，记录全息图的 CCD 光敏面尺寸为 $L_x\times L_y$，则通过空间采样后所记录的数字全息图可表示为：
 
+<div>
 $$
 I(u,v)=I_H(x,y)rect\big(\frac{x}{L_x},\frac{y}{L_y}\big)\sum_u\sum_v\delta(x-u\Delta x,y-v\Delta y)
 $$
+</div>
 
 其中，（$u,v=-N/2,-N/2+1,\cdots,N/2-1$）。$\Delta x$ 和 $\Delta y$ 分别是 $x$ 和 $y$ 方向的采样间隔，且 $\Delta x=L_x/N_x$，$\Delta y=L_y/N_y$ ，$\delta$ 表示二维脉冲函数，矩形函数 $rect(x/L_x,y/L_y)$ 表示 CCD 靶面的有效面积。
 
@@ -163,27 +185,35 @@ $$
 
 设物光和参考光在全息图表面上的最大夹角为 $\theta_{\max}$，则摄像机平面上形成最小的条纹间距 $\Delta e_{\min}$ 为：
 
+<div>
 $$
 \Delta e_{\min}=\frac{\lambda}{2\sin(\theta_{\max}/2)}
 $$
+</div>
 
 所以全息图表面上光波的最大空间频率为：
 
+<div>
 $$
 f_{\min}=\frac{2\sin(\theta_{\max}/2)}{\lambda}
 $$
+</div>
 
 一个给定的 CCD 像素大小为 $\Delta x$，根据采样定理，一个条纹周期 $\Delta e$ 至少要等于大于 2 倍像素周期，即 $\Delta e\geq 2\Delta x$，记录信息才不会失真。由于数字全息光路中所允许的物光和参考光夹角 $\theta$ 很小，因此 $\sin\theta\approx\tan\theta\approx\theta$，有：
 
+<div>
 $$
 \theta\leq\frac{\lambda}{2\Delta x}
 $$
+</div>
 
 所以：
 
+<div>
 $$
 \theta_{\max}=\frac{\lambda}{2\Delta x}
 $$
+</div>
 
 在数字全息图的记录光路中，参考光与物光的夹角范围受到摄像机分辨率的限制。由于现有摄像机分辨率较低，因此只有尽可能减小参考光和物光夹角才能保证携带物体信息的物光中的振幅和相位被全息图完整的记录下来。摄像机的像素尺寸一般在 $5\mu m\sim10\mu m$ 微米范围内，故参考光和物光夹角最大值在 $2^\circ\sim4^\circ$ 范围内。
 
@@ -193,39 +223,47 @@ $$
 
 如图 6 所示，$x_Iy_I$ 面是数值再现的成像平面，与全息平面相距 $d$，也称为再现距离。$U_I(x_I,y_I)$ 是再现像的复振幅分布，因为它是一个二维复数矩阵，所以可以同时得到再现像的强度和相位分布。菲涅耳数字全息图再现过程就是一个菲涅耳衍射过程，根据衍射原理和再现距离可得再现平面上的光场分布，即：
 
+<div>
 $$
 \begin{aligned}
 U_I(x_I,y_I)=&\frac{\exp(jkd)}{j\lambda d}\iint_{-\infty}^{\infty}I(u,v)C(u,v)\\
 &\exp\bigg\{\frac{jk}{2d}\big[(x_I-u)^2+(y_I-v)^2\big]\bigg\}dudv
 \end{aligned}
 $$
+</div>
 
 式中，$C(u,v)$ 为计算机模拟的再现光复振幅分布。将上式中二次相位因子 $(x_I-u)^2+(y_I-v)^2$ 展开：
 
+<div>
 $$
 \begin{aligned}
 U_I(x_I,y_I)=&\frac{\exp(jkd)}{j\lambda d}\iint_{-\infty}^{\infty}I(u,v)C(u,v)\exp\bigg[\frac{jk}{2d}(u^2+v^2)\bigg]\\
 &\exp\bigg[-j2\pi\frac{1}{\lambda d}(ux_1+vy_1)\bigg]dudv
 \end{aligned}
 $$
+</div>
 
 在满足菲涅耳衍射的条件下，为了获得清晰的再现像，$|d|$ 必须等于 $d_0$ (记录距离)。当 $d=-d_0<0$ 时，原始像在焦，再现像 $U_I(x_I,y_I)$ 包含物光波原始像的复振幅分布。其中：
 
+<div>
 $$
 \begin{aligned}
 U_I(x_I,y_I)=&\frac{\exp(jkd)}{j\lambda d}\exp\bigg[-2\frac{j\pi}{\lambda d}(x_1^2+y_1^2)\bigg]\times\\
 &F^{-1}\bigg\{I(u,v)C(u,v)\exp\bigg[-\frac{jk}{\lambda d}(u^2)+v^2\bigg]\bigg\}
 \end{aligned}
 $$
+</div>
 
 当 $d=d_0>0$ 时，共轭像在焦，再现像 $U_I(x_I,y_I)$ 包含物光波共轭像的复振幅分布。其中：
 
+<div>
 $$
 \begin{aligned}
 U_I(x_I,y_I)=&\frac{\exp(jkd)}{j\lambda d}\exp\bigg[\frac{j\pi}{\lambda d}(x_1^2+y_1^2)\bigg]\times\\
 &F^{-1}\bigg\{I(u,v)C(u,v)\exp\bigg[\frac{jk}{\lambda d}(u^2)+v^2\bigg]\bigg\}
 \end{aligned}
 $$
+</div>
 
 在菲涅耳数字全息图的数值再现过程中，同样可以根据衍射距离的不同选择 S-FFT 或 D-FFT 方法进行再现计算。
 
@@ -233,12 +271,14 @@ $$
 
 容易看出，再现像的强度分布 $I_I(x_I,y_I)$ 和相位分布 $\Phi_I(x_I,y_I)$ 都可以由复振幅分布 $U_I(x_I,y_I)$ 计算得到（$^*$ 表示共轭）：
 
+<div>
 $$
 \begin{aligned}
 I_I(x_I,y_I)&=U_I(x_I,y_I)U_I^*(x_I,y_I)\\
 \Phi_I(x_I,y_I)&=\arctan\frac{Im[U_I(x_I,y_I)]}{Re[U_I(x_I,y_I)]}
 \end{aligned}
 $$
+</div>
 
 ### 计算模拟全息记录与再现
 
@@ -246,48 +286,60 @@ $$
 
 数字计算机通常只能对离散的数字信号进行处理，并以离散的形式输出。因此，制作计算全息图的第一步是对物波函数进行抽样。设待记录的物波函数为：
 
+<div>
 $$
 f(x,y)=a(x,y)\exp[i\varphi(x,y)]
 $$
+</div>
 
 其傅里叶变换（空间频谱）为：
 
+<div>
 $$
 F(u,v)=A(u,v)\exp[i\varphi(u,v)]
 $$
+</div>
 
 为满足抽样定理的要求，物波函数及其空间频谱函数必须是带限函数，即：
 
+<div>
 $$
 \begin{aligned}
 f(x,y)=0\quad|x|\geq\frac{\Delta x}{2},|y|\geq\frac{\Delta y}{2}\\
 F(u,v)=0\quad|u|\geq\frac{\Delta u}{2},|v|\geq\frac{\Delta v}{2}
 \end{aligned}
 $$
+</div>
 
 在此条件下，根据抽样定理，对物函数及其频谱函数的抽样间隔应为：
 
+<div>
 $$
 \begin{aligned}
 \delta x\geq\frac{1}{\Delta u},\quad\delta y\geq\frac{1}{\Delta v}\\
 \delta u\geq\frac{1}{\Delta x},\quad\delta v\geq\frac{1}{\Delta y}
 \end{aligned}
 $$
+</div>
 
 取式中的等号，抽样单元总数 $M\times N=\Delta x\Delta y \Delta u\Delta v$ 是相同的。对于傅里叶变换全息图，全息图上记录的是物波的空间频谱 $F(u,v)$，因此必须对物波函数进行离散傅里叶变换。为了减少运算时间，通常采用快速傅里叶变换（FFT）算法。计算结果一般为复数：
 
+<div>
 $$
 f(m,n)\stackrel{FFT}{\longrightarrow}F(j,k)=F_r(j,k)=iF_i(j,k)
 $$
+</div>
 
 其振幅和位相可分别表示为：
 
+<div>
 $$
 \begin{aligned}
 A(j,k)=\sqrt{F_r^2(j,k)+F_i^2(j,k)}\\
 \varphi(j,k)=\arctan\bigg[\frac{F_i(j,k)}{F_r(j,k)}\bigg]
 \end{aligned}
 $$
+</div>
 
 #### 全息图再现
 

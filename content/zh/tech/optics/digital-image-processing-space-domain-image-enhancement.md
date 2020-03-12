@@ -9,9 +9,11 @@ toc = true
 
 空间域增强基于图像中每一个小范围（邻域）内的像素进行灰度变换运算，某个点变换之后的灰度由该点邻域之内的那些点的灰度值共同决定，因此空间域增强也称为邻域运算或邻域滤波。空间域变换可使用下式描述：
 
+<div>
 $$
 g(x,y)=T[f(x,y)]
 $$
+</div>
 
 本文所用的原始图片为 RGB 图像，为了统一图像，所有程序均使用了 `rgb2gray` 将其转换为灰度图像再进行处理。
 
@@ -52,6 +54,7 @@ g = imfilter(f,w,option1,option2,...)
 
 读入图像 `f`，用模板：
 
+<div>
 $$
 w=\frac{1}{9}\times
 \begin{bmatrix}
@@ -60,6 +63,7 @@ w=\frac{1}{9}\times
 1&1&1
 \end{bmatrix}
 $$
+</div>
 
 对 `f` 进行相关滤波，采用重复的边界填充方式，相关代码如下。
 
@@ -146,6 +150,7 @@ title('(d) 经7×7的平均模板滤波');
 
 常用的 3×3 高斯模板如下。
 
+<div>
 $$
 w=\frac{1}{16}\times
 \begin{bmatrix}
@@ -154,6 +159,7 @@ w=\frac{1}{16}\times
 1&2&1
 \end{bmatrix}
 $$
+</div>
 
 采用高斯函数中不同的 $\sigma$ 实现高斯平滑的代码如下。
 
@@ -248,6 +254,7 @@ title('(d) 3×3中值滤波效果');
 
 对于连续的二维函数 $f(x,y)$，其在点 $(x,y)$ 处的梯度是下面的二维列向量：
 
+<div>
 $$
 \nabla f=\begin{bmatrix}
 G_x\\
@@ -257,29 +264,37 @@ G_y
 \frac{\partial f}{\partial y}
 \end{bmatrix}
 $$
+</div>
 
 梯度的幅值作为变化率大小的度量，其值为:
 
+<div>
 $$
 |\nabla f(x,y)|=\sqrt{(\frac{\partial f}{\partial x})^2+(\frac{\partial f}{\partial y})^2}
 $$
+</div>
 
 对于二维离散函数 $f(i,j)$，可以用有限差分作为梯度幅值的一个近似：
 
+<div>
 $$
 |\nabla f(i,j)|=\sqrt{[f(i+1,j)-f(i,j)]^2+[f(i,j+1)-f(i,j)]^2}
 $$
+</div>
 
 可近似为 Robert 交叉梯度：
 
+<div>
 $$
 |\nabla f(i,j)|=|f(i+1,j+1)-f(i,j)|+|f(i,j+1)-f(i+1,j)|
 $$
+</div>
 
 #### Robert 交叉梯度
 
 Robert 交叉梯度对应模板为：
 
+<div>
 $$
 w1=\begin{bmatrix}
 -1&0\\
@@ -290,6 +305,7 @@ w2=\begin{bmatrix}
 1&0
 \end{bmatrix}
 $$
+</div>
 
 程序实现如下。
 
@@ -329,6 +345,7 @@ title('(d) w2滤波后取绝对值并重新标定');
 
 Sobel 模板为：
 
+<div>
 $$
 w1=\begin{bmatrix}
 -1&-2&-1\\
@@ -341,6 +358,7 @@ w2=\begin{bmatrix}
 -1&0&1
 \end{bmatrix}
 $$
+</div>
 
 下面的程序计算量图像的竖直和水平梯度，它们的和可以作为完整的 Sobel 梯度。
 
@@ -373,18 +391,23 @@ title('(c) Sobel梯度图像');
 
 二维函数 $f(x,y)$ 的二阶微分定义为：
 
+<div>
 $$
 \nabla^2 f(x,y)=\frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}
 $$
+</div>
 
 用于图像锐化的拉普拉斯算子为：
 
+<div>
 $$
 \nabla^2 f=[f(i+1,j)+f(i-1,j)+f(i,j+1),f(i,j-1)]-4f(i,j)
 $$
+</div>
 
 滤波模板有三种：
 
+<div>
 $$
 \begin{aligned}
 w1&=\begin{bmatrix}
@@ -404,6 +427,7 @@ w3&=\begin{bmatrix}
 \end{bmatrix}
 \end{aligned}
 $$
+</div>
 
 分别使用上述三种拉普拉斯模板的滤波程序如下。
 
@@ -441,9 +465,11 @@ title('(d) w3模板拉普拉斯锐化');
 
 为了在取得更好的锐化效果的同时把噪声干扰降到最低，可以先对带有噪声的原始图像进行平滑滤波，再进行锐化增强边缘和细节。将高斯平滑算子同拉普拉斯锐化结合起来，得到高斯-拉普拉斯算子（Laplacian of a Gaussian，LoG）如下：
 
+<div>
 $$
 \nabla^2 h(r)=-\frac{r^2-\sigma^2}{\sigma^4}\exp(-\frac{r^2}{2\sigma^2})
 $$
+</div>
 
 下面对一幅图分别使用拉普拉斯算子和高斯-拉普拉斯算子进行锐化。
 

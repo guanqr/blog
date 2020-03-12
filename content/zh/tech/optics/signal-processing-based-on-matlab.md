@@ -50,9 +50,11 @@ end
 
 该函数可对信号序列进行排序，并且可以将序列扩展为指定的自变量取值范围。比如，以下程序产生一个信号：
 
+<div>
 $$
 x[n]=\sin\frac{(n+5)\pi}{8}
 $$
+</div>
 
 自变量范围 $n=[-5,3]$，将其分解为偶函数和奇函数，输出结果如下图所示。
 
@@ -123,24 +125,30 @@ subplot(3,1,3); stem(nl,xp); title('x[n]=x_1[n]*x_2[n]');
 
 任何复数值序列 $x[n]$ 都能分解为共轭对称分量 $x_e[n]$ 和共轭反对称分量 $x_o[n]$ 的叠加，即：
 
+<div>
 $$
 x[n]=x_e[n]+x_o[n]
 $$
+</div>
 
 其中：
 
+<div>
 $$
 \begin{aligned}
 x_e[n]&=\frac{1}{2}(x[n]+x*[-n]),\\
 x_o[n]&=\frac{1}{2}(x[n]-x*[-n])
 \end{aligned}
 $$
+</div>
 
 将：
 
+<div>
 $$
 x[n]=10e^{-j0.2\pi n},\quad 0\leq n\leq 10
 $$
+</div>
 
 分解为共轭对称分量和共轭反对称分量。
 
@@ -255,17 +263,21 @@ xlabel('t'); title('$x(t)*(t({u(t)-u({t-1})}))$','interpreter','latex');
 
 单位冲激响应 $h(t)$ 是描述连续时间 LTI 系统的重要函数，MATLAB 的 control system 工具箱提供了 `impulse` 函数，只要提供描述系统的微分方程的系数 $a_k$ 和 $b_k$，或者说，系统传递函数 $H(s)$ 或频率响应 $H(j\omega)$，
 
+<div>
 $$
 H(s)=\frac{\sum\limits_{k=0}^Nb_ks^k}{\sum\limits_{k=0}^Ma_ks^k}
 $$
+</div>
 
 即可求出指定时间范围内 $h(t)$ 的数值解并画出其时域波形。类似的函数还有 `step` 函数，可用来计算和绘制单位阶跃响应 $s(t)$。
 
 描述连续时间系统的微分方程为：
 
+<div>
 $$
 y''(t)+2y'(t)+5y(t)=x'(t)+5x(t)
 $$
+</div>
 
 计算系统的单位冲激响应和单位阶跃响应。
 
@@ -286,9 +298,11 @@ MATLAB 的 signal processing 工具箱中提供了求解离散时间系统（通
 
 已知描述离散时间系统的差分方程为：
 
+<div>
 $$
 y[n]+0.4y[n-1]-0.12y[n-2]=x[n]+2x[n-1]
 $$
+</div>
 
 计算系统的单位冲激响应和单位阶跃响应。
 
@@ -308,14 +322,17 @@ MATLAB 的 control system 工具箱提供的 `lsim` 函数可以仿真连续时�
 
 已知系统的微分方程为：
 
+<div>
 $$
 y''(t)+5y'(t)+6y(t)=x'(t)+5x(t)
 $$
+</div>
 
 输入信号为 $x(t)=5\sin t$，系统的初始条件为 $y(0_-)=27$，$y'(0_-)=-30$，求系统的零输入响应、零状态响应和全响应。
 
 由于 `lsim` 函数关于初始条件的输入参量是系统状态变量（即直接 II 型结构框图各个积分器的输出值）的初始值，所以需要将微分方程转换为一阶常微分方程组的形式（其中系数矩阵 A、B、C 和 D 可通过 `tf2ss` 函数得到）：
 
+<div>
 $$
 \begin{aligned}
 \begin{bmatrix}
@@ -344,9 +361,11 @@ y(t)&=
 \end{bmatrix}
 \end{aligned}
 $$
+</div>
 
 将 $x(0)=0$ 和初始状态 $y(0_-)=27$，$y'(0_-)=-30$ 代入上式，可得状态向量 $\omega$ 的初始值为：
 
+<div>
 $$
 \begin{bmatrix}
 \omega_1(0_-)\\
@@ -357,6 +376,7 @@ $$
 5
 \end{bmatrix}
 $$
+</div>
 
 程序如下：
 
@@ -380,9 +400,11 @@ legend('Zero Input Response','Zero State Response','Total Response');
 
 `lsim` 函数也可以求解离散时间系统的响应，已知系统的前向差分方程为：
 
+<div>
 $$
 y[n+2]-0.7y[n+1]+0.1y[n]=7x[n+2]-2x[n+1]
 $$
+</div>
 
 输入信号为 $x[n]=0.8^nu[n]$，系统的初始条件为 $y[-1]=10$，$y[-2]=-10$，求系统的零输入相应、零状态响应和全响应。
 
@@ -438,9 +460,11 @@ axis([-5.5 5.5 0 1.1]);
 
 求连续时间信号傅里叶变换的逆变换。已知信号 $x(t)$ 的傅里叶变换为：
 
+<div>
 $$
 X(j\omega)=\frac{4e^{-j2\omega}}{4+\omega^2}
 $$
+</div>
 
 作出信号的时域波形和相应的频谱图。
 
@@ -573,15 +597,19 @@ legend('u_c','u_r','u_{in}')
 
 从采样定理可知，如果以超过奈奎斯特率的频率对带限信号进行采样，那么就能从其样本完全重建信号。重建过程可以看成是一个分为两步的过程：首先是将离散时间样本 $x[n]$ 转换为加权冲激串信号：
 
+<div>
 $$
 s_p(t)=\sum\limits_{n=-\infty}^{\infty}x[n]\delta(t-nT_s)
 $$
+</div>
 
 然后将该冲激串信号输入到一个理想低通滤波器即可完全恢复原信号，理想低通滤波器的带宽限制在 $(-\omega_s/2,\omega_s/2)$，增益为 $2\pi/\omega_s$。根据上述的重建过程，不难得出重建信号 $x_a(t)$ 的内插公式为：
 
+<div>
 $$
 x_a(t)=\sum\limits_{n=-\infty}^{\infty}x[n]sinc\bigg(\frac{1}{T_s}(t-nT_s)\bigg)
 $$
+</div>
 
 实际上这种理想低通滤波器和内插通常是不可行的（因为系统是非因果的，且严格来说，只对非时限信号有效）。在实际应用中，我们常用比较低阶的内插来近似地重建信号，如：零阶保持、一阶保持、三次样条。
 
@@ -615,9 +643,11 @@ hold off;
 
 已知信号：
 
+<div>
 $$
 x(t)=5+3\cos\bigg(400\pi t+\frac{\pi}{4}\bigg)+4\cos\bigg(600\pi t-\frac{\pi}{2}\bigg)
 $$
+</div>
 
 作出采样频率分别为 $700Hz$、$600Hz$ 和 $500Hz$ 时，信号采样值的波形及其频谱。
 
@@ -718,9 +748,11 @@ title('Low-pass filtered Signal');
 
 已知时限信号：
 
+<div>
 $$
 x(t)=\sin(20\pi t+\pi/4),\quad 0\leq t\leq 1
 $$
+</div>
 
 用采样频率 $f_s=20Hz$ 对信号进行采样得到离散时间信号 $x[n]$。画出 $x[n]$ 用以下不同重建方式得到的模拟信号并叠加在原信号上进行比较：
 
@@ -778,9 +810,11 @@ xlabel('Time (s)');
 
 已知单边信号：
 
+<div>
 $$
 x(t)=e^{-3t}\cos(2t+\pi/3)u(t)
 $$
+</div>
 
 计算其拉普拉斯变换的解析式。
 
@@ -793,15 +827,19 @@ pretty(Xs)
 
 得到其拉普拉斯变换为：
 
+<div>
 $$
 X(s)=\frac{\frac{1}{2}(s+3)-\sqrt{3}}{(s+3)^2+4}
 $$
+</div>
 
 求：
 
+<div>
 $$
 X(s)=\frac{4s^3-6s^2-3s+4}{s^4-4s^3+5s^2-2s},\quad Re\{s\}>0
 $$
+</div>
 
 的拉普拉斯反变换。
 
@@ -813,35 +851,45 @@ pretty(xt)
 ```
 得到其拉普拉斯反变换为：
 
+<div>
 $$
 x(t)=(3e^{2t}+3e^t+te^t-2)u(t)
 $$
+</div>
 
 已知两个因果 LTI 系统的系统函数为：
 
+<div>
 $$
 H(s)=\frac{2s+1}{s^3+(3/2)s^2+(13/16)s+(5/16)}
 $$
+</div>
 
 和
 
+<div>
 $$
 G(s)=\frac{s(2s+1)}{s^3+(3/2)s^2+(13/16)s+(5/16)}
 $$
+</div>
 
 分别对系统函数进行部分分式展开，求出系统的单位冲激响应 $h(t)$ 和 $g(t)$，作出其时域波形。
 
 与上一问题类似，通过符号运算工具箱和 `ilaplace` 函数可得：
 
+<div>
 $$
 h(t)=\bigg(-\frac{16}{13}e^{-t}+\frac{16}{13}e^{-\frac{t}{4}}\cos\bigg(\frac{t}{2}\bigg)+\frac{28}{13}e^{-\frac{t}{4}}\sin\bigg(\frac{t}{2}\bigg)\bigg)u(t)
 $$
+</div>
 
 和
 
+<div>
 $$
 g(t)=\bigg(\frac{16}{13}e^{-t}+\frac{10}{13}e^{-\frac{t}{4}}\cos\bigg(\frac{t}{2}\bigg)-\frac{15}{13}e^{-\frac{t}{4}}\sin\bigg(\frac{t}{2}\bigg)\bigg)u(t)
 $$
+</div>
 
 通过程序：
 
@@ -869,9 +917,11 @@ xlabel('Time (seconds)'); ylabel('Amplitude');
 
 图中左边为直接用 `impulse` 函数得到的结果，右边为拉普拉斯反变换得到 $h(t)$ 和 $g(t)$，两者相同。由于 $G(s)=sH(s)$，所以 $h(t)$ 和 $g(t)$ 有：
 
+<div>
 $$
 g(t)=\frac{d}{dt}h(t)
 $$
+</div>
 
 作出系统的零、极点分布图。
 
@@ -905,12 +955,14 @@ pretty(X1);
 
 求得 Z 变换为：
 
+<div>
 $$
 \begin{aligned}
 x(z)&=\frac{z^2}{a^2+z^2}\\
 x(z)&=\frac{z}{(z-1)^3}
 \end{aligned}
 $$
+</div>
 
 用 Z 域分析法求出以下离散时间 LTI 系统的零状态响应。
 
@@ -929,9 +981,11 @@ y=simple(iztrans(Y));
 
 可得系统的零状态响应为：
 
+<div>
 $$
 y[n]=\bigg(\frac{1}{3}(-1)^nn+\frac{1}{2}(-1)^n+\frac{1}{2}3^n\bigg)u[n]
 $$
+</div>
 
 通过：
 
@@ -946,18 +1000,22 @@ pretty(y);
 
 得到：
 
+<div>
 $$
 \begin{aligned}
 &y[n]=\\
 &\bigg(\bigg(\frac{1}{2}\bigg)^n+\frac{1}{13}\bigg(\frac{1}{5}\bigg)^n+j^n\bigg(\frac{77}{26}-j\frac{31}{26}\bigg)+(-j)^n\bigg(\frac{77}{26}+j\frac{31}{26}\bigg)\bigg)u[n]
 \end{aligned}
 $$
+</div>
 
 用欧拉公式可化简为：
 
+<div>
 $$
 y[n]=\bigg(\bigg(\frac{1}{2}\bigg)^n+\frac{1}{13}\bigg(\frac{1}{5}\bigg)^n+\frac{77}{13}\cos\bigg(\frac{n\pi}{2}\bigg)-\frac{31}{13}\sin\bigg(\frac{n\pi}{2}\bigg)\bigg)u[n]
 $$
+</div>
 
 读取计算机中的系统提示音文件 `Windows Logon.wav`（文件位置：`C:\Windows\Media\`），作出声音的时域波形和频谱。
 
@@ -980,9 +1038,11 @@ axis([0 2 0 0.02]);
 
 让声音通过一滤波器，传递函数为：
 
+<div>
 $$
 H(z)=1+az^{-D}+a^2z^{-2D}+a^3z^{-3D}
 $$
+</div>
 
 其中 $D$ 的值为采样率的 $0.2$ 倍，$a=0.2$，改变参数值，可观察到不同的回声效果。
 

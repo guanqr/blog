@@ -1,0 +1,105 @@
+<!--https://github.com/martignoni/hugo-notice-->
+{{- $noticeType := .Get 0 -}}
+
+{{- $raw := (markdownify .Inner | chomp) -}}
+
+{{- $block := findRE "(?is)^<(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b" $raw 1 -}}
+
+{{- if not ($.Page.Scratch.Get "noticeCount") -}}
+
+<style type="text/css">
+    .notice {
+        padding: 1em;
+        margin-bottom: 1em;
+        border-radius: 4px;
+    }
+
+    .notice p:last-child {
+        margin-bottom: 0;
+    }
+
+    .notice-title {
+        margin: -1em -1em 0.75em !important;
+        padding: 0.25em 1em;
+        border-radius: 4px 4px 0 0;
+        font-weight: 700;
+        color: hsl(0, 0%, 100%);
+    }
+
+    [data-theme="dark"] .notice-title {
+        color: hsl(0, 0%, 75%);
+    }
+
+    .notice.warning .notice-title {
+        background: hsl(0, 65%, 65%);;
+    }
+
+    [data-theme="dark"] .notice.warning .notice-title {
+        background: hsl(0, 25%, 35%);
+    }
+
+    .notice.warning {
+        background: hsl(0, 75%, 95%);
+    }
+
+    [data-theme="dark"] .notice.warning {
+        background: hsl(0, 15%, 20%);
+    }
+
+    .notice.info .notice-title {
+        background: hsl(30, 80%, 70%);
+    }
+
+    [data-theme="dark"] .notice.info .notice-title {
+        background: hsl(30, 25%, 35%);
+    }
+
+    .notice.info {
+        background: hsl(30, 75%, 95%);
+    }
+
+    [data-theme="dark"] .notice.info {
+        background: hsl(30, 15%, 20%);
+    }
+
+    .notice.note .notice-title {
+        background: hsl(200, 65%, 65%);
+    }
+
+    [data-theme="dark"] .notice.note .notice-title {
+        background: hsl(200, 25%, 35%);
+    }
+
+    .notice.note {
+        background: hsl(200, 75%, 95%);
+    }
+
+    [data-theme="dark"] .notice.note {
+        background: hsl(200, 15%, 20%);
+    }
+
+    .notice.tip .notice-title {
+        background: hsl(140, 65%, 65%);
+    }
+
+    [data-theme="dark"] .notice.tip .notice-title {
+        background: hsl(140, 25%, 35%);
+    }
+
+    .notice.tip {
+        background: hsl(140, 75%, 95%);
+    }
+
+    [data-theme="dark"] .notice.tip {
+        background: hsl(140, 15%, 20%);
+    }
+</style>
+
+{{- end -}}
+
+{{- $.Page.Scratch.Add "noticeCount" 1 -}}
+
+<div class="notice {{ $noticeType }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>
+    <p class="first notice-title">{{- i18n $noticeType -}}</p>
+    {{- if or $block (not $raw) }}{{ $raw }}{{ else }}<p>{{ $raw }}</p>{{ end -}}
+</div>

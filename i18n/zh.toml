@@ -1,2 +1,14 @@
 [subscription]
 other = "微信扫一扫，订阅本博客"
+
+[warning]
+other = "Warning"
+
+[note]
+other = "Note"
+
+[info]
+other = "Info"
+
+[tip]
+other = "Tip"

@@ -1,2 +1,14 @@
 [subscription]
 other = "WeChat Subscription"
+
+[notice-warning]
+other = "Warning"
+
+[notice-note]
+other = "Note"
+
+[notice-info]
+other = "Info"
+
+[notice-tip]
+other = "Tip"

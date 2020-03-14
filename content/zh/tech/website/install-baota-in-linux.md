@@ -54,10 +54,10 @@ Do you want to install Bt-Panel to the /www directory now?(y/n): y
 
 ## 安装 LAMP 或者 LNMP
 
-登入面板之后，我们选择安装 LAMP 或者 LNMP 一键包。这里需要选择 LNMP，将 PHP 改为 7.2 版
+登入面板之后，我们选择安装 LAMP 或者 LNMP 一键包。这里需要选择 LNMP，将 PHP 改为 7.2 版，等待安装完毕即可。
 
 ![bt-install-lnmp.png](/images/bt-install-lnmp.png)
 
-等待安装完毕即可。
-
-<p class="note-warning">为了网站的安全，别忘了更改用户名、密码以及端口号。</p>
+{{< notice notice-tip >}}
+为了网站的安全，别忘了更改用户名、密码以及端口号。
+{{< /notice >}}

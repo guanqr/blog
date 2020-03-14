@@ -14,9 +14,9 @@ aliases = ["/2019/08/20/speed-up-hexo/","/study/blog/speed-up-hexo/"]
 
 我在网上找到的方法是使用 [InstantClick](https://github.com/dieulot/instantclick/) 和使用 Hexo 的两个插件 [hexo-service-worker](https://github.com/zoumiaojiang/hexo-service-worker)、[hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize)。InstantClick 对网站的提速很明显，但它最大的问题就是会与 FancyBox、Google Analytics 等等不兼容，这些问题如果想解决的话肯定能解决的，网上应该可以找得到解决方法，但我目前没有太多精力去折腾。
 
-<p class="note-warning">
+{{< notice notice-note >}}
 InstantClick 使用的正是 pushState + Ajax 的技术，即 PJAX。最新版本的 NexT 主题已经支持 PJAX，因此你可以不再考虑使用 InstantClick。
-</p>
+{{< /notice >}}
 
 下面主要说明如何配置 hexo-service-worker 和 hexo-filter-optimize 这两款插件[^1]。
 

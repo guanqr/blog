@@ -76,9 +76,9 @@ $ rm mac-addr*
 
 ### 网络属性设置
 
-<p class="note-warning">
+{{< notice notice-note >}}
 由于我使用的是 Win10，下面的操作只适用于 Windows 系统，Mac OS X 请自行设定。
-</p>
+{{< /notice >}}
 
 回到「“网络和 Internet” 设置」界面，进入「更改适配器选项」。
 
@@ -102,9 +102,9 @@ $ rm mac-addr*
 
 ## 自建 VPN
 
-<p class="note-warning">
+{{< notice notice-note >}}
 同样，这里仅给出的是 Win10 系统的设置方法。
-</p>
+{{< /notice >}}
 
 依旧是「“网络和 Internet” 设置」界面，进入「网络和共享中心」。
 

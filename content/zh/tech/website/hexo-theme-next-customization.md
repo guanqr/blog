@@ -16,9 +16,9 @@ toc = true
 
 在本文中，我将会全面讲解 Hexo 博客的搭建，NexT 主题的安装和配置，以及个性优化的内容。本文文章篇幅较长，为了方便阅读，在开头添加了文章目录，目录与各段落标题之间相互链接，可双向跳转。
 
-<p class="note-warning">
-注意：目前我的博客已经从 Hexo 迁移到了 Hugo，因此我并没有过多地关注 NexT 主题在 2019 年 11 月后的更新内容。文中所讲的一些东西，可能随着 NexT 主题的更新，成为主题自带的一部分，或被主题抛弃；也可能自身就存在一定的错误，因此本文的内容仅供参考。如果在搭建博客的过程中遇到问题，请参考<a href="https://theme-next.org/" target="_blank">官方文档</a>的相关说明或者在<a href="https://github.com/theme-next/hexo-theme-next" target="_blank">主题仓库</a>提交 Issues。另外，我也希望各位读者能及时指出本文出现的问题，让文章能够更加完善，紧跟主题更新的步伐。
-</p>
+{{< notice notice-note >}}
+目前我的博客已经从 Hexo 迁移到了 Hugo，因此我并没有过多地关注 NexT 主题在 2019 年 11 月后的更新内容。文中所讲的一些东西，可能随着 NexT 主题的更新，成为主题自带的一部分，或被主题抛弃；也可能自身就存在一定的错误，因此本文的内容仅供参考。如果在搭建博客的过程中遇到问题，请参考[官方文档](https://theme-next.org/)的相关说明或者在[主题仓库](https://github.com/theme-next/hexo-theme-next)提交 Issues。另外，我也希望各位读者能及时指出本文出现的问题，让文章能够更加完善，紧跟主题更新的步伐。
+{{< /notice >}}
 
 ## 搭建 Hexo 博客
 
@@ -897,8 +897,7 @@ title_change:
 
 具体样式根据自己的喜好进行设定即可。
 
-<p class="note-danger">
-旧方法
+如果你不想使用插件的话，下面是直接修改主题文件的方法。
 </p>
 
 首先在 `~/theme/next/source/js/` 文件夹下创建 `crash_cheat.js`，添加代码：
@@ -911,7 +910,7 @@ var OriginTitle = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        $('[rel="icon"]').attr('href', "/img/TEP.ico");
+        $('[rel="icon"]').attr('href', "/images/favicon_1.ico");
         document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
         clearTimeout(titleTime);
     }
@@ -2025,6 +2024,24 @@ custom_file_path:
 ## 结尾
 
 写这篇文章的初衷是为了记录我对博客主题的一些优化，通过对主题的优化我也学习了很多前端的知识。NexT 主题更新的速度实在是太快了，目前网上很多关于 NexT 主题的优化方法都是过时的。所以我就想借助这篇文章汇总一些可以在新版主题中使用的优化方法。另外，我还推荐你阅读我的其他几篇和博客搭建有关的文章，或许能够引发你对博客更深入的探索。如果你喜欢这一篇文章，请多多分享。
+
+<style>
+blockquote.question {
+    color: #555;
+    border-left: 4px solid rgb(16, 152, 173);
+    background-color: rgb(227, 242, 253);
+    margin-bottom: 20px;
+}
+span#inline-toc {
+    display: inline-block;
+    border-radius: 80% 100% 90% 20%;
+    background-color: rgb(227, 242, 253);
+    color: #555;
+    padding: 0.05em 0.4em;
+    margin: 2px 5px 2px 0px;
+    line-height: 1.5;
+}
+</style>
 
 [^1]: 图源：[hexo-theme-next | GitHub](https://github.com/theme-next/hexo-theme-next)
 [^2]: 官方网站的 News 中会对每一个发行版相对上一版本的修改进行说明，Docs 中有主题配置的详细说明。

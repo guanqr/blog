@@ -1,4 +1,4 @@
 +++
-title = "种族歧视"
+title = "种族主义"
 slug = "racism"
 +++

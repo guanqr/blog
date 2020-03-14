@@ -294,9 +294,8 @@ workbox.googleAnalytics.initialize();
 
 设置完成后，运行命令：
 
-```
-hexo g
-gulp build
+```sh
+hexo g && gulp build
 ```
 
 即可在 `public` 文件夹下生成一个 `sw.js` 文件。
@@ -362,10 +361,6 @@ gulp build
 ```
 
 如果你完成了上述配置，将网站部署后，就可以实现 PWA 了。
-
-<p class="note-info">
-本文主要参考了「<a href="https://io-oi.me/tech/pwa-via-workbox/" target="_blank">利用 Workbox 实现博客的 PWA</a>」这一篇文章，内容结合个人实际情况有所改动。
-</p>
 
 [^1]: 参考①：[渐进式网络应用程序 | 维基百科](https://zh.wikipedia.org/wiki/渐进式网络应用程序)<br>参考②：[渐进式 Web 应用（PWA） | MDN web docs](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps)
 [^2]: 这里一个提供在线测试的网站：<https://www.webpagetest.org/lighthouse>

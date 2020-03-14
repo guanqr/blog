@@ -9,8 +9,6 @@ toc = true
 
 ## Wireshark 简介
 
-![wireshark-logo.png](/images/wireshark-logo.png)
-
 [Wireshark](https://www.wireshark.org/) 是一个免费开源的网络数据包分析软件。网络数据包分析软件的功能是截取网络数据包，并尽可能显示出最为详细的网络数据包数据。
 
 ### 使用目的

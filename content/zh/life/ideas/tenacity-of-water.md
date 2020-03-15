@@ -1,7 +1,7 @@
 +++
 title = "水之坚韧"
 date = "2019-04-22T11:11:55+08:00"
-tags = ["essay","philosophy"]
+tags = ["essay","nature","philosophy"]
 dropCap = false
 indent = true
 indentFirstParagraph = true

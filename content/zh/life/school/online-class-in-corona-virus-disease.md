@@ -1,7 +1,7 @@
 +++
 title = "疫情下的在线直播授课"
 date = "2020-02-27T19:33:50+08:00"
-tags = ["zju"]
+tags = ["tronclass","zju"]
 +++
 
 ![online-class.png](/images/online-class.png)

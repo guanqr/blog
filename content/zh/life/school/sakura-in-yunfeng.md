@@ -5,7 +5,7 @@ tags = ["essay","love","nature","youth","zju"]
 indent = true
 +++
 
-![sakura-in-yunfeng.jpg](/images/sakura-in-yunfeng.jpg)
+[^1]![sakura-in-yunfeng.jpg](/images/sakura-in-yunfeng.jpg)
 
 三月份，紫云碧峰的樱花想必已经盛开了。前一夜她还是含苞待放。早晨，当第一缕阳光穿透云雾挥洒在樱花树上时，原本紫褐色光秃秃的枝干，已经被密密麻麻的白色的花朵点缀。这时人们终于想到，杭州的春天来了。樱花与猫，紫云碧峰必不可少的两个元素。我更喜欢樱花，因为在一年当中只有春天才能看见她。
 
@@ -16,3 +16,5 @@ indent = true
 可我再也看不见紫云碧峰的樱花了。
 
 {>——二〇二〇年三月十五日写于开封>}
+
+[^1]: 拍摄于 2018 年 3 月 22 日

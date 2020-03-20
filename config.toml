@@ -180,30 +180,30 @@ uglyURLs = false
 
 [menu]
     ## 菜单栏
-    #[[menu.main]]
-    #    url = "/"
-    #    name = "首页"
-    #    weight = 1
-    #    pre = "internal"
-    #    post = "home"
+    [[menu.main]]
+        url = "/"
+        name = "首页"
+        weight = 1
+        pre = "internal"
+        post = "home"
     [[menu.main]]
         url = "/tags/"
         name = "标签"
-        weight = 1
+        weight = 2
         pre = "internal"
         post = "tags"
     [[menu.main]]
         url = "/categories/"
         name = "分类"
-        weight = 2
-        pre = "internal"
-        post = "th"
-    [[menu.main]]
-        url = "/series/"
-        name = "专栏"
         weight = 3
         pre = "internal"
-        post = "feather-alt"  
+        post = "th"
+    #[[menu.main]]
+    #    url = "/series/"
+    #    name = "专栏"
+    #    weight = 3
+    #    pre = "internal"
+    #    post = "feather-alt"  
     [[menu.main]]
         url = "/archives/"
         name = "归档"
@@ -250,24 +250,24 @@ uglyURLs = false
         pre = "external"
 
     # 首页的底部链接
-    #[[menu.home]]
-    #    url = "/life/"
-    #    weight = 1
-    #    pre = "internal"
-    #    post = "grav"
-    #    identifier = "life"
-    #[[menu.home]]
-    #    url = "/tech/"
-    #    weight = 2
-    #    pre = "internal"
-    #    post = "wpexplorer"
-    #    identifier = "tech"
-    #[[menu.home]]
-    #    url = "/series/"
-    #    weight = 3
-    #    post = "globe-asia"
-    #    pre = "internal"
-    #    identifier = "series"
+    [[menu.home]]
+        url = "/life/"
+        weight = 1
+        pre = "internal"
+        post = "grav"
+        identifier = "life"
+    [[menu.home]]
+        url = "/tech/"
+        weight = 2
+        pre = "internal"
+        post = "wpexplorer"
+        identifier = "tech"
+    [[menu.home]]
+        url = "/series/"
+        weight = 3
+        post = "globe-asia"
+        pre = "internal"
+        identifier = "series"
 
 
 ##########################################

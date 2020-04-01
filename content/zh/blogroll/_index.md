@@ -49,7 +49,7 @@ comments = false
     border-left-color: hsl(0, 0%, 55%);
 }
 [data-theme="dark"] .note-default {
-    background: hsl(0, 0%, 15%);
+    background: hsl(0, 0%, 55%, 0.15);
     border-left-color: hsl(0, 0%, 55%);
 }
 </style>

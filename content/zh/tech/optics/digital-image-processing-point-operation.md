@@ -1,5 +1,5 @@
 +++
-title = "数字图像处理：图像的点运算"
+title = "图像的点运算"
 date = "2020-02-23T15:36:13+08:00"
 tags = ["color","grayscale","matlab"]
 series = ["major-courses"]

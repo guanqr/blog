@@ -1,7 +1,7 @@
 +++
 title = "初识成像系统的像质评价"
 date = "2019-06-17T01:11:55+08:00"
-tags = ["color","fourier-optics","grayscale","white-balance"]
+tags = ["color","fourier-optics","image","white-balance"]
 series = ["major-courses"]
 aliases = ["/2019/06/17/applied-optics-2/","/study/optics/applied-optics-2/","/study/optics/preliminary-image-quality-evaluation/"]
 mathjax = true

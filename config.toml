@@ -1318,18 +1318,8 @@ uglyURLs = false
 
 
     ######################################
-    # 自定义的单行对齐 Markdown 语法
-
-    # 1. {>text>} 右对齐
-    # 2. {>text<} 居中
-    # 3. {<text<} 左对齐
-
-    enableTextAlignRight = true
-    enableTextAlignCenter = true
-    enableTextAlignLeft = true
-
-
     # 自定义页脚微信订阅功能
+    
     footerSubscription = true
     subscriptionIcon = "wechat-brands"
     subscriptionQrCode = "/images/wechat-official-accounts.svg"

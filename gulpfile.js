@@ -1,5 +1,6 @@
 var gulp = require('gulp');
-// 生成sw.js
+
+// 生成 sw.js
 const workbox = require("workbox-build");
 const uglifyes = require('uglify-es');
 const composer = require('gulp-uglify/composer');
@@ -27,5 +28,6 @@ gulp.task("uglify", function () {
         gulp.dest("./public")
   );
 });
+
 // 执行 gulp build 命令时执行的任务
 gulp.task("build", gulp.series("generate-service-worker", "uglify"));

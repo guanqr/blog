@@ -55,7 +55,7 @@ npm install hexo-deployer-git --save
 
 然后，在站点配置文件 `_config.yml` 中编辑：
 
-```yaml
+```diff
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

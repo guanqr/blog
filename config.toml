@@ -1418,11 +1418,12 @@ uglyURLs = false
 [languages.en.params]
     siteDescription = "Guanqr's Blog in English."
     listDateFormat = "January 2"
-    fontFamilyTitle = "'EB Garamond', serif"
-    fontFamilyHeadings = "'EB Garamond', serif"
+    fontFamilyTitle = "'Amstelvar', serif"
+    fontFamilyHeadings = "'Amstelvar', serif"
     fontFamilyCode = "'Source Code Pro', monospace"
-    fontFamilyBody = "'EB Garamond', serif"
-    fontsLink = "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    fontFamilyBody = "'Amstelvar', serif"
+    fontsLink = "https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    lineHeight = 1.618
     enableJustify = false
     enableSmallCap = true
     enableEmphasisPoint = false

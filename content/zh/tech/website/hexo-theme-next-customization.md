@@ -1944,7 +1944,7 @@ custom_file_path:
 然后打开主题配置文件 `_config.yml`，添加：
 
 ```yaml
-# 文章末尾添加“本文结束”标记
+# 文章末尾添加「本文结束」标记
 passage_end_tag:
   enabled: true
 ```

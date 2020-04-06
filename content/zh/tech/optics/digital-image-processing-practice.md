@@ -6,7 +6,9 @@ mathjax = true
 dropCap = false
 +++
 
-练习一：以下为两幅相位相差 $180^{\circ}$ 的干涉图，其中第一幅相位为 $I_1=a+b\cos(\varphi)$，第二幅相位为 $I_2=a+b\cos(\varphi+\pi)$。确定中心低反射圆环（光纤）的中心坐标。
+## 空间域图像处理
+
+以下为两幅相位相差 $180^{\circ}$ 的干涉图，其中第一幅相位为 $I_1=a+b\cos(\varphi)$，第二幅相位为 $I_2=a+b\cos(\varphi+\pi)$。确定中心低反射圆环（光纤）的中心坐标。
 
 ![digital-image-processing-practice-0.png](/images/digital-image-processing-practice-0.png "第一幅干涉图")
 
@@ -67,6 +69,52 @@ title('标注中心坐标');
 ```
 
 ![digital-image-processing-practice-6.png](/images/digital-image-processing-practice-6.png "标注坐标")
+
+## 频率域图像处理
+
+给定图像如下所示，消除图像中的周期性干扰。
+
+![digital-image-processing-practice-7.png](/images/digital-image-processing-practice-7.png "带有周期性干扰的图像")
+
+首先绘制原图像的频域图，观察噪声分布，具体代码和频域图像如下所示。
+
+```matlab
+I = imread('1.bmp');
+I2 = rgb2gray(I);
+s = fftshift(fft2(I2));
+I3 = log(abs(s));
+imshow(I3,[]);
+```
+
+![digital-image-processing-practice-8.png](/images/digital-image-processing-practice-8.png "原图的频域图像")
+
+频域图像的高频部分有周期分布的噪声，考虑使用理想低通滤波器消除高频噪声干扰。
+
+```matlab
+[a,b] = size(s);
+a0 = round(a/2);
+b0 = round(b/2);
+d = 16;
+for i = 1:a
+    for j = 1:b
+        distance = sqrt((i-a0)^2+(j-b0)^2);
+        if distance <= d
+            h = 1;
+        else
+            h = 0;
+        end
+        s(i,j) = h.*s(i,j);
+    end
+end
+s = uint8(real(ifft2(ifftshift(s))));
+imshow(s)
+```
+
+![digital-image-processing-practice-9.png](/images/digital-image-processing-practice-9.png "经理想低通滤波器处理后的图像")
+
+由上图可以看出，经理想低通滤波器处理后，原图的周期噪声基本消除，但原图左上方的阴影等细节部分也有所丢失。滤波后的频域图像如下图所示。
+
+![digital-image-processing-practice-10.png](/images/digital-image-processing-practice-10.png "滤波后的频域图像")
 
 {{< notice notice-note >}}
 本文内容源自浙江大学光电学院本科课程《机器视觉与图像处理》的课堂练习，图像处理的软件为 MATLAB，图像处理的方法只是个人的尝试，并非标准方法，因此仅供参考。

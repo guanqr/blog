@@ -151,6 +151,15 @@ del {
     background-position: 100% calc(50% + 2px), center center, center center, 2px 50%, calc(100% - 3px) calc(50% + 1px);
 }
 
+// 文中超链接
+
+.post-body a  {
+    text-decoration-color: var(--color-contrast-high);
+    &:hover {
+        text-decoration-color: var(--color-primary);
+    }
+}
+
 // 弹性布局调整
 
 .brand {

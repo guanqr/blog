@@ -6,7 +6,7 @@ toc = false
 katex = true
 +++
 
-本学期正在学习有关数字图像处理的课程，今天课堂讨论的时候，忽然回忆起去年的一门实验课的内容——分析相机成像的像质。我在那时写了一篇相关内容的[总结](tech/optics/preliminary-image-quality-evaluation/)，其中提到了一位学长所写的使用最为原始的方法对相机的 RAW 原始图像文件进行处理的[文章](https://ridiqulous.com/process-raw-data-using-matlab-and-dcraw/)，直到现在我才对其中的原理有了一定系统性的了解。于是，按照那篇文章的教程，我使用 MATLAB 和 Dcraw 对 RAW 文件进行了处理。
+本学期正在学习有关数字图像处理的课程，今天课堂讨论的时候，忽然回忆起去年的一门实验课的内容——分析相机成像的像质。我在那时写了一篇相关内容的[总结](/tech/optics/preliminary-image-quality-evaluation/)，其中提到了一位学长所写的使用最为原始的方法对相机的 RAW 原始图像文件进行处理的[文章](https://ridiqulous.com/process-raw-data-using-matlab-and-dcraw/)，直到现在我才对其中的原理有了一定系统性的了解。于是，按照那篇文章的教程，我使用 MATLAB 和 Dcraw 对 RAW 文件进行了处理。
 
 ## 前言
 

@@ -4,7 +4,7 @@ date = "2019-06-17T01:11:55+08:00"
 tags = ["color","fourier-optics","image","white-balance"]
 series = ["major-courses"]
 aliases = ["/2019/06/17/applied-optics-2/","/study/optics/applied-optics-2/","/study/optics/preliminary-image-quality-evaluation/"]
-mathjax = true
+katex = true
 toc = true
 +++
 
@@ -54,7 +54,7 @@ $$
 
 ![psf-lsf-esf-mtf.png](/images/psf-lsf-esf-mtf.png "PSF、LSF、ESF 和 MTF 之间的转换关系")
 
-此外，还有一种不经过傅里叶变换获得 MTF 的测量方法，是对方波靶标成像，从图像的对比度可以直接得到对应空间频率处的 MTF，即 (最大亮度-最小亮度)/(最大亮度+最小亮度)，通过对一块包含了一组不同空间频率的标板成像即可得到不同空间频率下的 MTF 数值。为了比较全面地评价像质，应当测量出高、中、低不同频率下的 MTF。朗奇变频光栅就是这样包含不同空间频率的矩形光栅。
+此外，还有一种不经过傅里叶变换获得 MTF 的测量方法，是对方波靶标成像，从图像的对比度可以直接得到对应空间频率处的 MTF，即 (最大亮度－最小亮度)/(最大亮度＋最小亮度)，通过对一块包含了一组不同空间频率的标板成像即可得到不同空间频率下的 MTF 数值。为了比较全面地评价像质，应当测量出高、中、低不同频率下的 MTF。朗奇变频光栅就是这样包含不同空间频率的矩形光栅。
 
 在我这一次的使用中，采用斜边法，对标准分辨率测试卡 ISO 12233 上的斜边图像进行拍摄，然后通过 Imatest 软件进行图像分析，其过程是通过图像处理获得 ESF 曲线与 LSF 曲线，进而获得 MTF 曲线。
 
@@ -107,7 +107,7 @@ $$
 
 <div>
 $$
-White\ Error=Max(R,G,B)-Min(R,G,B)
+\mathrm{White\ Error}=Max(R,G,B)-Min(R,G,B)
 $$
 </div>
 
@@ -129,7 +129,7 @@ $$
 
 ### 下载 Imatest 软件
 
-喜欢摄影的人经常使用 Adobe 的 LightRoom 来处理拍摄的图像，我们也可以用一种更加彻底、数据化的办法——利用 MATLAB 直接处理数码相机的 CFA（Color Filter Array）数据。在这里推荐一篇我们学院学长所写的[文章](https://ridiqulous.com/process-raw-data-using-matlab-and-dcraw/)，专门讲解的是如何利用 MATLAB 和 Dcraw 处理数码相机 Raw 文件。
+喜欢摄影的人经常使用 Adobe 的 LightRoom 来处理拍摄的图像，我们也可以用一种更加彻底、数据化的办法——利用 MATLAB 直接处理数码相机的 CFA（Color Filter Array）数据。在这里推荐一篇我们学院学长所写的[文章](https://ridiqulous.com/process-raw-data-using-matlab-and-dcraw/)，专门讲解的是如何利用 MATLAB 和 Dcraw 处理数码相机 RAW 文件（我也根据这篇文章进行了[实际的操作](/tech/optics/process-raw-data-using-matlab-and-dcraw/)，对图像处理的原理有了深入的理解）。
 
 Imatest 是一款基于 MATLAB 的图像分析软件，功能十分强大。但巨坑的是这一款软件的试用版只能使用 20 次。这里的二十次不是说能够试用二十天，也不是打开关闭软件二十次，是分析图像二十次！如此巨坑的软件，在我安装后没有怎么用，并尝试了一下破解结果失败后，试用次数直接减到零次，差点吐血。后来为了完成此次实验，只好借用室友的电脑。
 

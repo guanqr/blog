@@ -5,7 +5,7 @@ tags = ["fourier-optics","hololens","slm"]
 series = ["major-courses"]
 aliases = ["/study/optics/hololens-experiment/"]
 dropCap = false
-mathjax = true
+katex = true
 toc = true
 +++
 

@@ -4,7 +4,7 @@ date = "2020-01-20T08:38:19+08:00"
 tags = ["matlab"]
 series = ["major-courses"]
 aliases = ["/study/optics/signals-and-systems/","/tech/optics/signals-and-systems/"]
-mathjax = true
+katex = true
 toc = true
 +++
 
@@ -607,7 +607,7 @@ $$
 
 <div>
 $$
-x_a(t)=\sum\limits_{n=-\infty}^{\infty}x[n]sinc\bigg(\frac{1}{T_s}(t-nT_s)\bigg)
+x_a(t)=\sum\limits_{n=-\infty}^{\infty}x[n]\mathrm{sinc}\bigg(\frac{1}{T_s}(t-nT_s)\bigg)
 $$
 </div>
 

@@ -3,7 +3,7 @@ title = "图像的点运算"
 date = "2020-02-23T15:36:13+08:00"
 tags = ["color","image","matlab"]
 series = ["major-courses"]
-mathjax = true
+katex = true
 toc = true
 +++
 
@@ -218,7 +218,7 @@ title('经过对数变换的频谱');
 
 <div>
 $$
-y=(x+exp)^\gamma
+y=(x+esp)^\gamma
 $$
 </div>
 

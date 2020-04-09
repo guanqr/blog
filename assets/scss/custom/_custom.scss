@@ -193,6 +193,12 @@ del {
     overflow: auto hidden;
 }
 
+// katex
+
+.katex {
+    font: normal 1em KaTeX_Main, Times New Roman, serif !important;
+}
+
 // 可变字体 https://github.com/TypeNetwork/Amstelvar
 
 // Magic adjustment for en

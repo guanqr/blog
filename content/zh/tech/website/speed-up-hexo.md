@@ -149,6 +149,10 @@ filter_optimize:
 
 ![speed-up-hexo-change-url.jpg](/images/speed-up-hexo-change-url.jpg)
 
+{{< notice notice-tip >}}
+[2020-04-10] 更新：目前 NexT 主题为了适配暗色主题，已经更改了居中引用标签的样式（参见 Commit [`b0bd2dd`](https://github.com/theme-next/hexo-theme-next/commit/b0bd2dde800c15980be74b05484d652215d9bf88)），取消使用引号矢量图，改为直接加载 Font Awesome 的引号图标，因此该问题已经无需考虑。
+{{< /notice >}}
+
 ### Aplayer 音乐播放器
 
 在这款音乐播放器的配置中：

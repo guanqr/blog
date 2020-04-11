@@ -1,3 +1,24 @@
+// 超链接
+
+.post-body {
+    p a, li a, dd a, sup a {
+        color: hsl(220, 50%, 50%);
+        text-decoration: none;
+        &:hover, &:active {
+            color: hsl(290, 50%, 50%);
+        }
+    }
+}
+[data-theme="dark"] .post-body {
+    p a, li a, dd a, sup a {
+        color: hsl(200, 40%, 60%);
+        text-decoration: none;
+        &:hover, &:active {
+            color: hsl(310, 40%, 60%);
+        }
+    }
+}
+
 // 友链样式
 
 .blogroll {
@@ -156,8 +177,14 @@ del {
 // mermaid
 
 .mermaid {
-    margin: 0 0 1em;
+    margin: 4em 0;
+    text-align: center;
     overflow: auto hidden;
+    font-size: .75em;
+    svg{
+        width: 100%;
+        height: 100%;
+    } 
 }
 
 // katex

@@ -12,7 +12,9 @@ comments = false
 
 ![zijingang-qiushi-college.jpg](/images/zijingang-qiushi-college.jpg "浙江大学紫金港校区·求是书院")
 
-<blockquote class="blockquote-center"><p>十里青山远，潮平路带沙<br>数声啼鸟怨年华<br>又是凄凉时候，在天涯<br>白露收残月，清风散晓霞<br>绿杨堤畔问荷花<br>记得年时沽酒，那人家</p></blockquote>
+{{< quote-center >}}
+十里青山远，潮平路带沙<br>数声啼鸟怨年华<br>又是凄凉时候，在天涯<br>白露收残月，清风散晓霞<br>绿杨堤畔问荷花<br>记得年时沽酒，那人家
+{{< /quote-center >}}
 
 你好，欢迎来到我的博客。我是一名学生，浙江大学光电科学与工程学院本科在读，热爱光学、机械、设计，向往宇宙。
 

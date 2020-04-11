@@ -1,45 +1,3 @@
-// 自定义居中对齐引用样式
-
-.blockquote-center {
-    border-left: 0;
-    padding-left: 0;
-    p{
-        text-align: center !important;
-        margin: 0;
-    }
-    &::before {
-        background-image: url(../images/quote-l.svg);
-        background-position: 0 -6px;
-        border-top: 1px solid var(--color-contrast-low);
-        background-repeat: no-repeat;
-        background-size: 1.5em;
-        content: ' ';
-        display: block;
-        height: 1.5em;
-        opacity: .2;
-    }
-    &::after {
-        background-image: url(../images/quote-r.svg);
-        background-position: 100% 6px;
-        border-bottom: 1px solid var(--color-contrast-low);
-        background-repeat: no-repeat;
-        background-size: 1.5em;
-        content: ' ';
-        display: block;
-        height: 1.5em;
-        opacity: .2;
-    }
-}
-
-[data-theme="dark"] .blockquote-center {
-    &::before {
-        filter: invert(100%);
-    }
-    &::after {
-        filter: invert(100%);
-    }
-}
-
 // 友链样式
 
 .blogroll {
@@ -263,4 +221,161 @@ body {
 }
 .list-item-time {
     font-feature-settings: 'tnum';
+}
+
+// 短代码
+
+// quote
+
+blockquote.quote {
+    position: relative;
+    margin: 2em auto;
+    padding-left: 3em;
+    border: none;
+    &::before {
+        position: absolute;
+        left: 0;
+        content: '“';
+        color: var(--color-contrast-low);
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1;
+    }
+    &.poetry {
+        display: table;
+        padding: 0;
+        &::before {
+            left: -1em;
+        }
+        p:last-child {
+            margin: 0;
+        }
+    }
+    &.en {
+        p {
+            line-height: 1.618;
+            text-align: left;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+        }
+    }
+}
+@media (max-width: $maxWidth) {
+    blockquote.quote {
+        &.poetry {
+            padding-left: 3em;
+            &::before {
+                left: 0;
+            }
+        }
+    }
+}
+
+// quote-center
+
+blockquote.quote-center {
+    position: relative;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--color-contrast-lower);
+    border-bottom: 1px solid var(--color-contrast-lower);
+    p{
+        text-align: center !important;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+    &::before {
+        position: absolute;
+        left: 0;
+        content: '“';
+        color: var(--color-contrast-low);
+        font-size: 3em;
+        font-weight: bold;
+        margin-top: -0.42em;
+    }
+    &::after {
+        position: absolute;
+        right: 0;
+        content: '”';
+        color: var(--color-contrast-low);
+        font-size: 3em;
+        font-weight: bold;
+        margin-top: -0.7em;
+    }
+}
+
+// notice
+
+.notice {
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    p:last-child {
+        margin-bottom: 0;
+    }
+    .notice-title {
+        margin: -1em -1em 0.75em !important;
+        padding: 0.25em 1em;
+        border-radius: 4px 4px 0 0;
+        font-weight: 700;
+        color: hsl(0, 0%, 100%);
+        .notice-icon {
+            margin: 0 0.5em 0.3em 0;
+        }
+    }
+    &.notice-warning {
+        background: hsla(0, 65%, 65%, 0.15);
+        .notice-title {
+            background: hsl(0, 65%, 65%);
+        }
+    }
+    &.notice-info {
+        background: hsla(30, 80%, 70%, 0.15);
+        .notice-title {
+            background: hsl(30, 80%, 70%);
+        }
+    }
+    &.notice-note {
+        background: hsla(200, 65%, 65%, 0.15);
+        .notice-title {
+            background: hsl(200, 65%, 65%);
+        }
+    }
+    &.notice-tip {
+        background: hsla(140, 65%, 65%, 0.15);
+        .notice-title {
+            background: hsl(140, 65%, 65%);
+        }
+    }
+}
+
+[data-theme="dark"] .notice {
+    .notice-title {
+        color: hsl(0, 0%, 75%);
+    }
+    &.notice-warning {
+        background: hsla(0, 25%, 35%, 0.15);
+        .notice-title {
+            background: hsl(0, 25%, 35%);
+        }
+    }
+    &.notice-info {
+        background: hsla(30, 25%, 35%, 0.15);
+        .notice-title {
+            background: hsl(30, 25%, 35%);
+        }
+    }
+    &.notice-note {
+        background: hsla(200, 25%, 35%, 0.15);
+        .notice-title {
+            background: hsl(200, 25%, 35%);
+        }
+    }
+    &.notice-tip {
+        background: hsla(140, 25%, 35%, 0.15);
+        .notice-title {
+            background: hsl(140, 25%, 35%);
+        }
+    }
 }

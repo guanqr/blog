@@ -10,11 +10,15 @@ tags = ["crime","gangster"]
 
 这部电影讲述了一个退伍士兵——爱尔兰人弗兰克·希兰，如何从一个卡车司机逐渐变成一个冷酷的黑帮杀手的故事，同时以弗兰克·希兰的角度揭开了美国犯罪史上的一个迷案——前工会领袖吉米·霍法失踪案的真相。
 
-> I heard you paint houses.
+{{< quote en >}}
+I heard you paint houses.
+{{< /quote >}}
 
 这是原著小说的标题，「我听说你刷房子」。这也是电影中吉米·霍法对弗兰克·希兰说的第一句话，刷房子，指的是杀人时血溅墙壁犹如刷墙。
 
-> I also do my own carpentry.
+{{< quote en >}}
+I also do my own carpentry.
+{{< /quote >}}
 
 「我也做自己的木工活」，弗兰克·希兰告诉吉米·霍法他也做自己的木工活。两个人就这样认识了，也成为了关系密切的好朋友。
 
@@ -46,6 +50,8 @@ tags = ["crime","gangster"]
 
 ![the-irishman-7.jpg](/images/the-irishman-7.jpg "电影的结尾镜头")
 
-> Hey, Father? C...could you do me a favor? Don't shut the door all the way. I don't like that. Just... Leave it open a little bit.
+{{< quote en >}}
+Hey, Father? C...could you do me a favor? Don't shut the door all the way. I don't like that. Just... Leave it open a little bit.
+{{< /quote >}}
 
 曾经，弗兰克和吉米两人住一个套间。临睡的时候，吉米会留一条门缝——他也许以此在圣诞节时怀念自己的好朋友吉米。或许，他也同时希望自己的女儿能够回来，原谅自己。弗兰克为自己选择了一个棺材，颜色是代表爱尔兰人的绿色。他不愿意选择火葬，也不愿意葬入地下。和他同时代的所有人都已经去世——再也不会有任何人来了。这个房间，就是他的墓地。在刚认识罗素的时候，他讲述自己让两个战俘自掘坟墓的故事，而他自己的一生，也是在给自己挖掘坟墓。

@@ -124,12 +124,12 @@ filter_optimize:
 
 我在《[Hexo-NexT 主题个性优化](/tech/website/hexo-theme-next-customization/)》一文中所列举的「文本居中引用」中的样式：
 
-<blockquote class="blockquote-center"><p>
+{{< quote-center >}}
 人生乃是一面镜子，<br>
 从镜子里认识自己，<br>
 我要称之为头等大事，<br>
 也只是我们追求的目的！
-</p></blockquote>
+{{< /quote-center >}}
 
 上下边框的双引号，引用的是存放在 `~/themes/next/sourse/images/` 当中的 `quote-l.svg` 与 `quote-r.svg` 两个矢量图片，即在部署网页后，引用的是根目录的 `/sourse/images/` 中的图片。但在使用该插件后，图片引用的路径发生改变，引用的是你当前页面所在目录下的 `/sourse/images/` 中的图片，而不是根目录的。
 

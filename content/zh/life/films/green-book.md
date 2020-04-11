@@ -13,7 +13,9 @@ tags = ["family","love","racism"]
 
 托尼是一位尽职尽责的司机，在每一次演出前，都会检查钢琴是否合格，每天晚上，他都会为谢利博士找到适合居住的旅馆。他也会为谢利博士遭受到的歧视打抱不平。谢利博士因为种族歧视，无法和白人享受同样的待遇，他无法在服装店里试穿自己喜欢的衣服，无法去白人去的厕所，无法和白人共同进餐……这些问题他都忍耐住了。托尼不理解既然来到南方会遭受种族歧视，谢利博士为何还要到南方进行演出。演奏大提琴的音乐家说：
 
-> Because genius is not enough. It takes courage to change people's hearts.
+{{< quote en >}}
+Because genius is not enough. It takes courage to change people's hearts.
+{{< /quote >}}
 
 ![green-book-1.jpg](/images/green-book-1.jpg)
 
@@ -31,7 +33,9 @@ tags = ["family","love","racism"]
 
 在雨夜，谢利博士向鲍比·肯尼迪打了一通电话，警察局才放走了无端抓起来的二人。他们在车上吵了一架。谢利博士认为托尼袭警是因为警察说托尼是半个黑鬼，而不是为自己打抱不平。托尼觉得自己更像是个黑人，因为谢利博士一点也不了解自己的种族——不了解黑人吃什么，怎么说话，怎么生活。托尼认为谢利博士住在高高的城堡顶层，为富人们演奏音乐，而自己才是那个为了生存到处奔波的人。谢利博士下了车，在雨中，他满腔愤怒地咆哮着：
 
-> Yes, I live in a castle! Tony. Alone! And rich white people pay me to play piano for them, because it makes them feel cultured. But as soon as I step off that stage, I go right back to being just another nigger to them. Because that is their true culture. And I suffer that slight alone, because I'm not accepted by my own people, because I'm not like them either! So if I'm not black enough, and if I'm not white enough, and if I'm not man enough, then tell me, Tony, what am I?
+{{< quote en >}}
+Yes, I live in a castle! Tony. Alone! And rich white people pay me to play piano for them, because it makes them feel cultured. But as soon as I step off that stage, I go right back to being just another nigger to them. Because that is their true culture. And I suffer that slight alone, because I'm not accepted by my own people, because I'm not like them either! So if I'm not black enough, and if I'm not white enough, and if I'm not man enough, then tell me, Tony, what am I?
+{{< /quote >}}
 
 在伯明翰，因为谢利博士无法在白人餐厅用餐，托尼气愤着带着谢利博士放弃了最后的演出，来到了贫苦黑人们常去的橙鸟餐厅用餐。在餐厅破旧的钢琴前，谢利博士为餐厅中的黑人们演奏着欢快的乐曲。
 

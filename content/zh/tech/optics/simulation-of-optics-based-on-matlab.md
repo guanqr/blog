@@ -248,7 +248,7 @@ colormap hot;
 
 ![simulation-of-optics-7.png](/images/simulation-of-optics-7.png "高斯光束在自由空间传播过程的光强分布")
 
-作出束腰半径为 $2\mu m$，波长为 $1.5\mu m$的高斯光束在自由空间传播过程中其束腰附近某一时刻的电场分量的归一化空间分布。
+作出束腰半径为 $2\mu m$，波长为 $1.5\mu m$ 的高斯光束在自由空间传播过程中其束腰附近某一时刻的电场分量的归一化空间分布。
 
 ```matlab
 lambda=1.5e-6;

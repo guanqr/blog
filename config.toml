@@ -912,11 +912,11 @@ uglyURLs = false
     # 菜单栏
     fontFamilyMenu = ""
     # 文章标题、文章副标题、列表标题、列表的年份和月份标题、相关文章标题、文章上下篇标题
-    fontFamilyTitle = "'Cinzel Decorative', 'Amstelvar', 'Noto Serif SC', serif"
+    fontFamilyTitle = "'Amstelvar', 'Noto Serif SC', serif"
     # 分节标题、目录标题
     fontFamilyHeadings = "'Amstelvar', 'Noto Serif SC', serif"
     # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚、不蒜子站点浏览统计
-    fontFamilyCode = "'Source Code Pro', 'Noto Serif SC', monospace"
+    fontFamilyCode = "'JetBrains Mono', 'Noto Serif SC', monospace"
     # 引用
     fontFamilyQuote = "'Amstelvar', 'Noto Serif SC', serif"
     # 文章目录
@@ -929,7 +929,7 @@ uglyURLs = false
     fontFamilyBody = "'Amstelvar', 'Noto Serif SC', serif"
 
     # 网络字体链接
-    fontsLink = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@700&display=swap"
+    fontsLink = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap"
     # 说明：要想读者一定体验到你设置的字体，最好
     #      采用网络字体。MemE 主题目前仅支持
     #      Google Fonts 的链接，请前往
@@ -1252,7 +1252,7 @@ uglyURLs = false
     enableHighlight = true
 
     # 是否开启竖直滚动
-    enableOverflowY = true
+    enableOverflowY = false
     # 最大高度
     maxHeight = 32
     # 单位：em
@@ -1410,9 +1410,9 @@ uglyURLs = false
     listDateFormat = "January 2"
     fontFamilyTitle = "'Amstelvar', serif"
     fontFamilyHeadings = "'Amstelvar', serif"
-    fontFamilyCode = "'Source Code Pro', monospace"
+    fontFamilyCode = "'JetBrains Mono', monospace"
     fontFamilyBody = "'Amstelvar', serif"
-    fontsLink = "https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    #fontsLink = "https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     lineHeight = 1.618
     enableJustify = false
     enableSmallCap = true

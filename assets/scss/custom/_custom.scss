@@ -1,22 +1,7 @@
-// 超链接
+// 文中超链接
 
-.post-body {
-    p a, li a, dd a, sup a {
-        color: hsl(220, 50%, 50%);
-        text-decoration: none;
-        &:hover, &:active {
-            color: hsl(290, 50%, 50%);
-        }
-    }
-}
-[data-theme="dark"] .post-body {
-    p a, li a, dd a, sup a {
-        color: hsl(200, 40%, 60%);
-        text-decoration: none;
-        &:hover, &:active {
-            color: hsl(310, 40%, 60%);
-        }
-    }
+.post-body a {
+    text-decoration-color: var(--color-contrast-medium);
 }
 
 // 友链样式
@@ -118,27 +103,6 @@
     }
 }
 
-// 删除线
-
-del {
-    --color: var(--color-contrast-medium);
-    text-decoration: none;
-    padding: 0.5em;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(to left,rgba(255,255,255,0.5),transparent),linear-gradient(2deg,var(--color) 50%,transparent 50%),linear-gradient(-.9deg,var(--color) 50%,transparent 50%),linear-gradient(-60deg,var(--color) 50%,transparent 50%),linear-gradient(120deg,var(--color) 50%,transparent 50%);
-    background-size: 0% 1.5px, calc(100% - 20px) 10px, calc(100% - 20px) 10px, 10px 10px, 8px 8px;
-    background-position: 100% calc(50% + 2px), center center, center center, 2px 50%, calc(100% - 3px) calc(50% + 1px);
-}
-
-// 文中超链接
-
-.post-body a  {
-    text-decoration-color: var(--color-contrast-high);
-    &:hover {
-        text-decoration-color: var(--color-primary);
-    }
-}
-
 // 弹性布局调整
 
 .brand {
@@ -190,7 +154,11 @@ del {
 // katex
 
 .katex {
-    font: normal 1em KaTeX_Main, Times New Roman, serif !important;
+    font: normal 1em Amstelvar, KaTeX_Main, Times New Roman, serif !important;
+    .mathdefault {
+        font-family: Amstelvar, KaTeX_Math !important;
+        font-style: italic;
+    }
 }
 
 // 可变字体 https://github.com/TypeNetwork/Amstelvar
@@ -215,6 +183,13 @@ del {
         font-stretch: 50% 125%;
         font-style: italic;
     }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+    }
 } @else {
     @font-face {
         font-family: 'Amstelvar';
@@ -233,6 +208,13 @@ del {
         font-weight: 100 900;
         font-stretch: 50% 125%;
         font-style: italic;
+    }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
     }
 }
 :root {

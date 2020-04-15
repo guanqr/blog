@@ -22,19 +22,19 @@ aliases = ["/2019/10/02/use-gulp-to-compress-source-code/","/study/blog/use-gulp
 
 ## 如何使用
 
-目前在网上搜索相关的教程，大都是基于 Gulp 3 版本，而目前 Gulp 已经更新到了 v4.0，使用旧版本的方法会报错。在这里我提供 Gulp 4 版本的使用方法。
+目前在网上搜索相关的教程，大都是基于 Gulp v3 版本，而目前 Gulp 已经更新到了 v4，使用旧版本的方法会报错。在这里我提供 Gulp v4 版本的使用方法。
 
 ### 安装插件
 
 全局安装：
 
-```
+```sh
 npm install gulp -g
 ```
 
 然后到站点文件夹的根目录安装：
 
-```
+```sh
 npm install gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify --save
 ```
 
@@ -48,18 +48,21 @@ npm install gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify --save
 
 ```javascript
 var gulp = require('gulp');
-//Plugins模块获取
+
+// Plugins 模块获取
 var minifycss = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
 var htmlclean = require('gulp-htmlclean');
-//压缩css
+
+// 压缩 css
 gulp.task('minify-css', function () {
 	return gulp.src('./public/**/*.css')
 		.pipe(minifycss())
 		.pipe(gulp.dest('./public'));
 });
-//压缩html
+
+// 压缩 html
 gulp.task('minify-html', function () {
 	return gulp.src('./public/**/*.html')
 		.pipe(htmlclean())
@@ -71,17 +74,20 @@ gulp.task('minify-html', function () {
 		}))
 		.pipe(gulp.dest('./public'))
 });
-//压缩js 不压缩min.js
+
+// 压缩 js 不压缩 min.js
 gulp.task('minify-js', function () {
 	return gulp.src(['./public/**/*.js', '!./public/**/*.min.js'])
 		.pipe(uglify())
 		.pipe(gulp.dest('./public'));
 });
-//4.0以前的写法 
-//gulp.task('default', [
-  //  'minify-html', 'minify-css', 'minify-js'
-//]);
-//4.0以后的写法
+
+// 4.0 以前的写法 
+// gulp.task('default', [
+  //   'minify-html', 'minify-css', 'minify-js'
+// ]);
+
+// 4.0 以后的写法
 // 执行 gulp 命令时执行的任务
 gulp.task('default', gulp.parallel('minify-html', 'minify-css', 'minify-js'));
 ```

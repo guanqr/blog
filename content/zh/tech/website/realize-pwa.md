@@ -45,8 +45,8 @@ hexo-service-worker 和 hexo-offline 插件的设定方法几乎相同，hexo-se
 这里还要特别提醒一点，上述两款插件在站点配置文件中的配置内容仅有一处不同：
 
 ```yaml
-service_worker: #这是 hexo-service-worker 的配置开头
-offline: #这是 hexo-offline 的配置开头
+service_worker: # 这是 hexo-service-worker 的配置开头
+offline: # 这是 hexo-offline 的配置开头
 ```
 
 上文提到，我使用这两款插件的时候都遇到了问题，而且这个问题只是在最近才遇到的，我在别的网站进行测试，问题同样会发生。我不知道是什么原因，导致浏览器无法识别 `sw.js`，所以才放弃了这两款插件，从而开始使用 hexo-pwa。
@@ -55,7 +55,7 @@ offline: #这是 hexo-offline 的配置开头
 
 这一款插件的特别之处在于，你可以直接在站点的配置文件中设定 `manifest.json` 的内容，而无需额外设定。通过：
 
-```
+```sh
 npm install --save hexo-pwa
 ```
 

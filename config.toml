@@ -1168,7 +1168,7 @@ uglyURLs = false
 
     # 是否开启关于页面的极简页脚
     enableAboutPageMinimalFooter = true
-    enableVerticalBarStructure = false
+    enableVerticalBarStructure = true
     # 说明：如果开启此项，显示在右边的部类或分区
     #      将会包含全部的第一级部类或分区，并且
     #      以竖线（|）分隔开来。

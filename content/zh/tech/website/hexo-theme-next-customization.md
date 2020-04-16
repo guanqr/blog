@@ -92,7 +92,7 @@ hexo clean && hexo g && hexo d
 
 ```bash
 $ cd hexo
-$ git clone https://github.com/theme-next/hexo-theme-next themes/next
+$ git clone https://github.com/theme-next/hexo-theme-next.git themes/next
 ```
 
 或者到 Releases 中下载每月月初发布的[发行版](https://github.com/theme-next/hexo-theme-next/releases)主题，将压缩文件中的内容解压至主题文件夹下的 `next` 文件夹中。

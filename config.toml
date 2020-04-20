@@ -43,7 +43,7 @@ uglyURLs = false
 
 # URL 结构
 [permalinks]
-    categories = "/categories/:slug/"
+    #categories = "/categories/:slug/"
     tags = "/tags/:slug/"
     series = "/series/:slug/"
 
@@ -111,15 +111,12 @@ uglyURLs = false
 	[[related.indices]]
         name = "series"
         weight = 100
-    [[related.indices]]
-        name = "categories"
-        weight = 100
+    #[[related.indices]]
+    #    name = "categories"
+    #    weight = 100
     [[related.indices]]
         name = "tags"
         weight = 95
-	[[related.indices]]
-        name = "keywords"
-        weight = 90
     [[related.indices]]
         name = "date"
         weight = 10
@@ -180,36 +177,30 @@ uglyURLs = false
 
 [menu]
     ## 菜单栏
-    #[[menu.main]]
-    #    url = "/"
-    #    name = "首页"
-    #    weight = 1
-    #    pre = "internal"
-    #    post = "home"
     [[menu.main]]
-        url = "/tags/"
-        name = "标签"
+        url = "/life/"
+        name = "生活"
         weight = 1
         pre = "internal"
-        post = "tags"
+        post = "grav"
     [[menu.main]]
-        url = "/categories/"
-        name = "分类"
+        url = "/tech/"
+        name = "科技"
         weight = 2
         pre = "internal"
-        post = "th"
+        post = "wpexplorer"
     [[menu.main]]
         url = "/series/"
         name = "专栏"
         weight = 3
         pre = "internal"
-        post = "feather-alt"  
+        post = "feather-alt" 
     [[menu.main]]
-        url = "/archives/"
-        name = "归档"
+        url = "/tags/"
+        name = "标签"
         weight = 4
         pre = "internal"
-        post = "archive"
+        post = "tags"
     [[menu.main]]
         url = "/blogroll/"
         name = "友链"
@@ -228,6 +219,24 @@ uglyURLs = false
     [[menu.main]]
         weight = 9
         identifier = "lang-switcher"
+    #[[menu.main]]
+    #    url = "/"
+    #    name = "首页"
+    #    weight = 1
+    #    pre = "internal"
+    #    post = "home"
+    #[[menu.main]]
+    #    url = "/categories/"
+    #    name = "分类"
+    #    weight = 2
+    #    pre = "internal"
+    #    post = "th" 
+    #[[menu.main]]
+    #    url = "/archives/"
+    #    name = "归档"
+    #    weight = 4
+    #    pre = "internal"
+    #    post = "archive"
     [[menu.socials]]
         url = "https://github.com/guanqr"
         name = "GitHub"
@@ -432,7 +441,7 @@ uglyURLs = false
     displayPosts = false
 
     # 是否显示每一分类下的文章数
-    displayPostsCount = true
+    displayPostsCount = false
 
 
     ######################################
@@ -1105,7 +1114,7 @@ uglyURLs = false
 
     shareOnTwitter = true
     shareOnFacebook = true
-    shareOnLinkedIn = true
+    shareOnLinkedIn = false
     shareOnTelegram = true
     shareOnWeibo = true
     shareOnDouban = true

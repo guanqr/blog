@@ -1,4 +1,0 @@
-+++
-title = "ThreeZero"
-slug = "threezero"
-+++

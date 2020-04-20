@@ -684,7 +684,7 @@ custom_file_path:
 
 ![add-chinese-zodiac-to-next-title.jpg](/images/add-chinese-zodiac-to-next-title.jpg)
 
-在归档页面的年份后添加十二生肖的图案，具体样式可以参考我的[归档](/archives/)页面。
+在归档页面的年份后添加十二生肖的图案，具体样式可以参考我的文章目录页面。
 
 由于 NexT 主题的模板文件内容更新地很快，所以不同版本之间的配置可能不太一样，这里我提供最直接的修改方法，如果你对于主题的代码结构有深入研究的话，可以尝试自己优化一下这部分内容， 比如单独建立一个 `chinese-zodiac.swig` 的文件，再在主题文件中引入配置。
 

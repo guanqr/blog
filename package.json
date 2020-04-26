@@ -31,6 +31,6 @@
     "ipfs-deploy": "^7.14.0",
     "readable-stream": "^3.6.0",
     "uglify-es": "^3.3.9",
-    "workbox-build": "^5.1.2"
+    "workbox-build": "^5.1.3"
   }
 }

@@ -1,7 +1,7 @@
 +++
 title = "使用 Python 分析我国的人口数据"
 date = "2020-02-06T21:15:39+08:00"
-tags = ["python"]
+tags = ["data-processing","python"]
 aliases = ["/study/computer/chinese-population-analysis/"]
 dropCap = false
 toc = true

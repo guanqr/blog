@@ -178,17 +178,17 @@ uglyURLs = false
 [menu]
     ## 菜单栏
     [[menu.main]]
-        url = "/life/"
-        name = "生活"
+        url = "/tags/"
+        name = "标签"
         weight = 1
         pre = "internal"
-        post = "grav"
+        post = "tags"
     [[menu.main]]
-        url = "/tech/"
-        name = "科技"
+        url = "/categories/"
+        name = "分类"
         weight = 2
         pre = "internal"
-        post = "wpexplorer"
+        post = "th" 
     [[menu.main]]
         url = "/series/"
         name = "专栏"
@@ -196,11 +196,11 @@ uglyURLs = false
         pre = "internal"
         post = "feather-alt" 
     [[menu.main]]
-        url = "/tags/"
-        name = "标签"
+        url = "/archives/"
+        name = "归档"
         weight = 4
         pre = "internal"
-        post = "tags"
+        post = "archive"
     [[menu.main]]
         url = "/blogroll/"
         name = "友链"
@@ -214,29 +214,11 @@ uglyURLs = false
         pre = "internal"
         post = "user-circle"
     [[menu.main]]
-        weight = 8
+        weight = 7
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 9
+        weight = 8
         identifier = "lang-switcher"
-    #[[menu.main]]
-    #    url = "/"
-    #    name = "首页"
-    #    weight = 1
-    #    pre = "internal"
-    #    post = "home"
-    #[[menu.main]]
-    #    url = "/categories/"
-    #    name = "分类"
-    #    weight = 2
-    #    pre = "internal"
-    #    post = "th" 
-    #[[menu.main]]
-    #    url = "/archives/"
-    #    name = "归档"
-    #    weight = 4
-    #    pre = "internal"
-    #    post = "archive"
     [[menu.socials]]
         url = "https://github.com/guanqr"
         name = "GitHub"
@@ -438,10 +420,10 @@ uglyURLs = false
     # `sections`，则无法关闭树状布局
 
     # 是否显示文章标题
-    displayPosts = false
+    displayPosts = true
 
     # 是否显示每一分类下的文章数
-    displayPostsCount = false
+    displayPostsCount = true
 
 
     ######################################

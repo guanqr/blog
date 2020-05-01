@@ -118,7 +118,7 @@ IPFS_DEPLOY_CLOUDFLARE__RECORD=_dnslink.example.com
 
 [^2]![pinata.png](/images/pinata.png)
 
-Pinata 平台的服务是上传至 IPFS 的关键。Pinata 提供的是 Pinning（钉定）服务。简单来说，就是将你的文件上传到 IPFS 网络上，并且会同步到它建立的众多 IPFS 节点上（[IPFS 集群](https://cluster.ipfs.io/)。当 IPFS 上的任一个节点想要下载你的这个文件时，速度才有保证。我们之所以需要它，是因为 Cloudflare 的 IPFS Gateway 其实只是一种「缓存」服务，让我们能够利用 Cloudflare 的全球节点高速访问 IPFS 网络上的内容，但其服务器不会永久保存 IPFS 网络上的文件。
+Pinata 平台的服务是上传至 IPFS 的关键。Pinata 提供的是 Pinning（钉定）服务。简单来说，就是将你的文件上传到 IPFS 网络上，并且会同步到它建立的众多 IPFS 节点上（[IPFS 集群](https://cluster.ipfs.io/)）。当 IPFS 上的任一个节点想要下载你的这个文件时，速度才有保证。我们之所以需要它，是因为 Cloudflare 的 IPFS Gateway 其实只是一种「缓存」服务，让我们能够利用 Cloudflare 的全球节点高速访问 IPFS 网络上的内容，但其服务器不会永久保存 IPFS 网络上的文件。
 
 一个 IPFS 节点不是一块本地硬盘，节点的存储空间是有限的（默认是 10GB）。当节点存储的文件总大小超出了这个值后，节点就会自动删除一些文件（清「缓存」），而 Pinning 就告诉节点：该文件很重要，请不要清除它。如此，节点就会保留你的文件。你的文件没被清除，它就依然能够被其它节点访问到，你的文件在 IPFS 网络上的可访问性就得到了保证。目前的 IPFS 节点数量虽已不少但还远远不够，且绝大部分人还是通过第三方提供的 IPFS Gateway 来访问你的博客的，而不是通过本地 IPFS 节点。这样的话，一旦提供 IPFS Gateway 服务的服务器清除了你的文件，你的博客就无法访问了。除非，你在本地每周 7 天每天 24 小时一直运行着 `ipfs daemon`。但是，即使这样其实也远远不够，举个例子：你的文件不幸被 Cloudflare 的 IPFS Gateway 的服务器清除，而正好此时有一个读者点开了你的博客，此时会发生什么呢？该服务器会重新去 IPFS 网络寻找，但此时的情况就如下图了：
 

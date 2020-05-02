@@ -2,6 +2,7 @@
 title = "基于 ESP8266 模块的 MicroPython 入门操作"
 date = "2020-05-01T14:34:04+08:00"
 tags = ["network","python"]
+series = ["major-courses"]
 dropCap = false
 +++
 

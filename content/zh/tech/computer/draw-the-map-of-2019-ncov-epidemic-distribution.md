@@ -4,6 +4,7 @@ date = "2020-01-29T19:57:55+08:00"
 tags = ["data-processing","python"]
 aliases = ["/study/computer/draw-the-map-of-2019-ncov-epidemic-distribution/"]
 toc = false
+displayCopyright = true
 original = false
 author = "天元浪子"
 website = "https://blog.csdn.net/xufive"

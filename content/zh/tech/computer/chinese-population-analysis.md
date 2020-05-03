@@ -5,6 +5,7 @@ tags = ["data-processing","python"]
 aliases = ["/study/computer/chinese-population-analysis/"]
 dropCap = false
 toc = true
+displayCopyright = true
 original = false
 author = "猪哥 66"
 website = "https://blog.csdn.net/u014044812"

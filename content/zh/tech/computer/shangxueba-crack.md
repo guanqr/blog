@@ -5,6 +5,7 @@ tags = ["image","python"]
 aliases = ["/2019/05/05/shangxueba-crack/","/study/computer/shangxueba-crack/"]
 dropCap = false
 toc = true
+displayCopyright = true
 original = false
 author = "Tsing"
 website = "https://zhuanlan.zhihu.com/tsing"

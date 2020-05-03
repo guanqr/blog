@@ -3,7 +3,7 @@ title = "友情链接"
 description = "感谢你的关注与支持 ~"
 date = "2019-05-01T08:41:47+08:00"
 dropCap = false
-comments = false
+comments = true
 +++
 
 ---
@@ -27,7 +27,7 @@ comments = false
 网站标志：<a href="../icons/android-chrome-512x512.png" target="_blank">https://guanqr.com/icons/android-chrome-512x512.png</a><br>
 网站描述：The Sound of Silence</p>
 
-+ 将你的网站信息按照上述格式在[这里](https://github.com/guanqr/blog/issues/5)留言，审核通过后将会添加至该页面中。
++ 将你的网站信息按照上述格式在下方评论区或者在[这里](https://github.com/guanqr/blog/issues/5)留言，审核通过后将会添加至该页面中。
 
 <style>
 .note-default {

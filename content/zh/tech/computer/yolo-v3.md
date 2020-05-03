@@ -9,7 +9,7 @@ dropCap = false
 
 ## 下载与测试
 
-本次操作的全部过程均在 Linux 系统（Ubuntu）中完成。因为在 Windows 系统下，YOLO 源码编译的环境配置十分繁琐，容易出现问题。首先直接从 GitHub 上下载 darknet 源码：
+YOLO (You Only Look Once) 基于深度学习框架——darknet 的目标检测开源项目。本次操作的全部过程均在 Linux 系统（Ubuntu）中完成。因为在 Windows 系统下，YOLO 源码编译的环境配置十分繁琐，容易出现问题。首先直接从 GitHub 上下载 darknet 源码：
 
 ```sh
 git clone https://github.com/pjreddie/darknet.git darknet
@@ -67,7 +67,7 @@ for file in filelist:   # 遍历所有文件
     count += 1
 ```
 
-下面进行图片的标注工作。我是用的标注工具是 labelImg，其 GItHub 仓库地址为：<https://github.com/tzutalin/labelImg>。作者只提供了 Windows 端的可执行文件，在 Linux 端需要自己编译。软件的编译用到了 Python 3 与 Qt 5。依次执行以下命令安装 LabelImg：
+下面进行图片的标注工作。我是用的标注工具是 LabelImg，其 GItHub 仓库地址为：<https://github.com/tzutalin/labelImg>。作者只提供了 Windows 端的可执行文件，在 Linux 端需要自己编译。软件的编译用到了 Python 3 与 Qt 5。依次执行以下命令安装 LabelImg：
 
 ```sh
 sudo apt-get install pyqt5-dev-tools
@@ -77,7 +77,7 @@ cd labelImg
 make all
 ```
 
-然后在 labelImg 文件夹下执行 `python labelImg.py` 即可运行软件。
+然后在 `labelImg` 文件夹下执行 `python labelImg.py` 即可运行软件。
 
 在运行软件之前，可以先打开文件夹下的 `\data\predefined_classes.txt` 文件，该文件中的内容是标注所用到的标签。比如我在标注垃圾的时候，会标注 `glass`、`metal`、`paper`、`plastic` 四类，那么在该文件中依次填写名称即可。
 
@@ -92,7 +92,7 @@ plastic
 
 ![yolo-5.png](/images/yolo-5.png "文件详情")
 
-然后我们运行 labelImg，软件的左侧一栏，点击「改变存放目录」，修改存放地址为 `Annotations` 文件夹，接着点击「打开目录」，打开 `JPEGImages` 文件夹即可进行标注。标注后生成的文件类型为 `xml` 文件，记录了图片的所在位置和标注的横纵坐标。
+然后我们运行 LabelImg，软件的左侧一栏，点击「改变存放目录」，修改存放地址为 `Annotations` 文件夹，接着点击「打开目录」，打开 `JPEGImages` 文件夹即可进行标注。标注后生成的文件类型为 `xml` 文件，记录了图片的所在位置和标注的横纵坐标。
 
 ![yolo-6.png](/images/yolo-6.png "标注图片")
 
@@ -215,7 +215,7 @@ random=1
 
 ## 训练模型
 
-我们需要下载作者提供的预训练模型：
+我们需要下载作者提供的预训练模型至 `darknet` 文件夹：
 
 ```sh
 wget https://pjreddie.com/media/files/darknet53.conv.74
@@ -229,5 +229,5 @@ wget https://pjreddie.com/media/files/darknet53.conv.74
 
 ## 参考
 
-+ [标注工具 labelImg 在 Ubuntu 系统的安装和使用 | W_Tortoise](https://blog.csdn.net/learning_tortosie/article/details/80947301)
++ [标注工具 LabelImg 在 Ubuntu 系统的安装和使用 | W_Tortoise](https://blog.csdn.net/learning_tortosie/article/details/80947301)
 + [超详细教程：YOLO_V3（yolov3）训练自己的数据 | idotc](https://blog.csdn.net/qq_21578849/article/details/84980298)

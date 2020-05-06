@@ -4,11 +4,12 @@ date = "2019-04-15T00:00:00+08:00"
 tags = ["linux","wordpress"]
 aliases = ["/study/blog/create-a-website-1/"]
 dropCap = false
+draft = true
 +++
 
 ![bt-linux-pc-free.png](/images/bt-linux-pc-free.png "宝塔面板")
 
-宝塔面板是当前国内使用最多的 Linux 系统网站面板之一。安装宝塔面板之前，你需要先租一个 VPS 虚拟专用服务器。
+宝塔面板是当前国内使用最多的 Linux 系统网站面板之一。安装宝塔面板之前，你需要先拥有一台服务器，国内推荐使用阿里云或者腾讯云，国外推荐使用 Vultr。
 
 ## 安装环境和对应一键命令包
 
@@ -54,7 +55,7 @@ Do you want to install Bt-Panel to the /www directory now?(y/n): y
 
 ## 安装 LAMP 或者 LNMP
 
-登入面板之后，我们选择安装 LAMP 或者 LNMP 一键包。这里需要选择 LNMP，将 PHP 改为 7.2 版，等待安装完毕即可。
+登入面板之后，我们选择安装 LAMP 或者 LNMP 一键包。这里需要选择 LNMP，根据自己的服务器内存大小选择合适的版本，等待安装完毕即可。
 
 ![bt-install-lnmp.png](/images/bt-install-lnmp.png)
 

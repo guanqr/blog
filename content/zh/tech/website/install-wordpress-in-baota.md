@@ -4,6 +4,7 @@ date = "2019-04-16T00:19:35+08:00"
 tags = ["linux","wordpress"]
 aliases = ["/study/blog/create-a-website-2/"]
 dropCap = false
+draft = true
 +++
 
 ![wordpress-screen-themes.png](/images/wordpress-screen-themes.png "WordPress 控制面板")
@@ -36,8 +37,6 @@ dropCap = false
 根据向导点击域名，会看到 WP 程序的安装过程，输入我们上面保存的数据库信息。以及一步步进行站点的配置。网站的管理员用户名和密码需要自己设置。
 
 ![install-wordpress-4.png](/images/install-wordpress-4.png)
-
-## 安装成功
 
 输入密码，等待安装成功后，进入控制面板，就可以开始写你的第一篇文章啦。
 

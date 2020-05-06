@@ -25,7 +25,7 @@ comments = true
 网站名称：荷戟独彷徨<br>
 网站地址：<a href="../" target="_blank">https://guanqr.com/</a><br>
 网站标志：<a href="../icons/android-chrome-512x512.png" target="_blank">https://guanqr.com/icons/android-chrome-512x512.png</a><br>
-网站描述：The Sound of Silence</p>
+网站描述：爱光学，爱生活，爱创造</p>
 
 + 将你的网站信息按照上述格式在下方评论区或者在[这里](https://github.com/guanqr/blog/issues/5)留言，审核通过后将会添加至该页面中。
 

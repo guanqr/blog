@@ -1,7 +1,7 @@
 +++
 title = "真正的后浪"
 date = "2020-05-05T10:13:57+08:00"
-tags = ["youth"]
+tags = ["essay","youth"]
 +++
 
 ![the-real-waves-behind.png](/images/the-real-waves-behind.png)

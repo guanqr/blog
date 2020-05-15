@@ -11,7 +11,7 @@
                         {{- $raw := . -}}
                         {{- partial "utils/markdownify.html" (dict "Deliver" $Deliver "raw" $raw "isContent" false) -}}
                         {{- $Content := $Deliver.Scratch.Get "Content" -}}
-                        <div class="post-description">{{ $Content | safeHTML }}</div>
+                        <div class="post-description">{{ $Content }}</div>
                     {{ end }}
                 {{ end }}
 

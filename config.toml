@@ -211,7 +211,7 @@ uglyURLs = false
         weight = 5
         pre = "internal"
         post = "pagelines"
-        identifier = "blogroll"
+        identifier = "friends"
     [[menu.main]]
         url = "/about/"
         name = "关于"

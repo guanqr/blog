@@ -125,7 +125,7 @@
     padding: 10em 1em;
 }
 .menu-item {
-    .tags, .categories, .series, .archives, .blogroll, .about {
+    .tags, .categories, .series, .archives, .friends, .about {
         display: none;
     }
 }
@@ -137,7 +137,7 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     .menu-item {
-        .tags, .categories, .series, .archives, .blogroll, .about {
+        .tags, .categories, .series, .archives, .friends, .about {
             display: inline-block;
         }
     }

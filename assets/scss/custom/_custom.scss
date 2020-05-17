@@ -124,8 +124,10 @@
 .home .poetry {
     padding: 10em 1em;
 }
-.menu-item .icon {
-    display: none;
+.menu-item {
+    .tags, .categories, .series, .archives, .blogroll, .about {
+        display: none;
+    }
 }
 @media (max-width: $maxWidth) {
     .nav {
@@ -134,8 +136,10 @@
     .menu {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    .menu-item .icon {
-        display: inline-block;
+    .menu-item {
+        .tags, .categories, .series, .archives, .blogroll, .about {
+            display: inline-block;
+        }
     }
     .menu-item-name {
         font-size: 80%;

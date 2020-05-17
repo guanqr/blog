@@ -183,36 +183,42 @@ uglyURLs = false
         weight = 1
         pre = "internal"
         post = "tags"
+        identifier = "tags"
     [[menu.main]]
         url = "/categories/"
         name = "分类"
         weight = 2
         pre = "internal"
         post = "th" 
+        identifier = "categories"
     [[menu.main]]
         url = "/series/"
         name = "专栏"
         weight = 3
         pre = "internal"
         post = "feather-alt" 
+        identifier = "series"
     [[menu.main]]
         url = "/archives/"
         name = "归档"
         weight = 4
         pre = "internal"
         post = "archive"
+        identifier = "archives"
     [[menu.main]]
         url = "/blogroll/"
         name = "友链"
         weight = 5
         pre = "internal"
         post = "pagelines"
+        identifier = "blogroll"
     [[menu.main]]
         url = "/about/"
         name = "关于"
         weight = 6
         pre = "internal"
         post = "user-circle"
+        identifier = "about"
     [[menu.main]]
         weight = 7
         identifier = "theme-switcher"
@@ -481,6 +487,9 @@ uglyURLs = false
 
     # 是否显示每一类别项下的文章数
     displayTaxonomyTermCount = true
+
+    # 设置一个非负数来限制每一类别项下展示的文章数
+    limitEntriesLimit = -1
 
 
     ######################################

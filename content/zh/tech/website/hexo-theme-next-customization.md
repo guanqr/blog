@@ -14,10 +14,10 @@ toc = true
 
 从最初建立该博客到现在，我参考了许多使用 NexT 主题的博主们的文章，对 NexT.Muse 主题进行了一次又一次的优化与深层次的魔改。在此感谢这些分享自己建站教程的博主们。秉承着开源共享精神，我也将我在优化博客主题时使用到的方法分享出来。这些内容大都是我从互联网搜集汇总的优化方法，也有一小部分是我个人的修改。
 
-在本文中，我将会全面讲解 Hexo 博客的搭建，NexT 主题的安装和配置，以及个性优化的内容。本文文章篇幅较长，为了方便阅读，在开头添加了文章目录，目录与各段落标题之间相互链接，可双向跳转。
+在本文中，我会比较细致地讲述 Hexo 博客的搭建，NexT 主题的安装和配置，以及个性优化的内容。本文文章篇幅较长，为了方便阅读，在开头添加了文章目录，目录与各段落标题之间相互链接，可双向跳转。
 
 {{< notice notice-note >}}
-最后更新：目前我的博客已经从 Hexo 迁移到了 Hugo，因此我并没有过多地关注 NexT 主题在 2019 年 11 月后的更新内容。本文适用的 NexT 版本范围为 v7.0.0 至 v7.5.0，文中所讲的一些东西，可能随着 NexT 主题的更新，成为主题自带的一部分，或被主题抛弃；也可能自身就存在一定的错误，因此本文的内容仅供参考。如果在搭建博客的过程中遇到问题，请参考[官方文档](https://theme-next.js.org/)的相关说明或者在[主题仓库](https://github.com/theme-next/hexo-theme-next)提交 Issues。
+注意：目前我的博客已经从 Hexo 迁移到了 Hugo，因此我并没有过多地关注 NexT 主题在 2019 年 11 月后的更新内容。本文适用的 NexT 版本范围大致为 v7.0.0 至 v7.5.0，文中所讲的一些东西，可能随着 NexT 主题的更新，成为主题自带的一部分，或被主题抛弃；也可能自身就存在一定的错误，因此本文的内容仅供参考。如果在搭建博客的过程中遇到问题，请参考[官方文档](https://theme-next.js.org/)的相关说明或者在[主题仓库](https://github.com/theme-next/hexo-theme-next)提交 Issues。
 {{< /notice >}}
 
 ## 搭建 Hexo 博客
@@ -86,15 +86,16 @@ hexo clean && hexo g && hexo d
 
 ### 安装 NexT 主题
 
-目前在 GitHub 上面有两个 NexT 主题的仓库，一个是 v6.0.0 之前版本的[个人仓库](https://github.com/iissnan/hexo-theme-next)，因为主题原作者停止维护该主题，所以有高人另起炉灶，单独创立了一个 NexT 的 Organization，目前最新版本的主题在这个[仓库](https://github.com/theme-next/hexo-theme-next)中。我发现到目前为止，还有很多人选择从旧仓库下载只有 v5 版本的主题，无视仓库停止维护的公告，依旧在旧仓库中发起很多早已解决的 issues，真是令人哭笑不得。所以为了避免一些不必要的麻烦，在这里我还是要提醒各位读者，请从[这里](https://github.com/theme-next/hexo-theme-next)下载最新版本的主题，以防主题版本太旧，从而与 Hexo 版本或是环境之间发生冲突。
-
-{{< notice notice-tip >}}
-注意：因 [theme-next](https://github.com/theme-next/) 团队管理者自 2019 年 10 月起长期不在线，管理者也没有给其他成员足够的权限，导致仓库管理出现很多问题，所以自 2020 年 5 月起，theme-next 团队部分成员迁移至 [next-theme](https://github.com/next-theme/)，新团队开发的 NexT 版本为 v8.0.0 版本。因此目前 NexT 主题共有三个仓库：
+目前在 GitHub 上面有三个 NexT 主题的仓库，一个是 v6.0.0 之前版本的[个人仓库](https://github.com/iissnan/hexo-theme-next)。因为主题原作者停止维护该主题，所以有高人另起炉灶，单独创立了一个名为 [theme-next](https://github.com/theme-next/) 的团队，v6.0.0 至 v7.8.0 版本主题在这个[仓库](https://github.com/theme-next/hexo-theme-next)中。然而，因 theme-next 团队管理者自 2019 年 10 月起长期不在线，管理者也没有给其他成员足够的权限，导致仓库管理出现很多问题，所以自 2020 年 5 月起，theme-next 团队部分成员迁移至 [next-theme](https://github.com/next-theme/)，新团队开发的 NexT 版本为 v8.0.0 版本。因此目前 NexT 主题共有三个仓库：
 
 + 2014-2017：<https://github.com/iissnan/hexo-theme-next>
 + 2018-2019：<https://github.com/theme-next/hexo-theme-next>
 + 2020：<https://github.com/next-theme/hexo-theme-next>
 
+我发现到目前为止，还有很多人选择从旧仓库下载只有 v5 版本的主题，无视仓库停止维护的公告，依旧在旧仓库中发起很多早已解决的 issues，真是令人哭笑不得。所以为了避免一些不必要的麻烦，在这里我还是要提醒各位读者，请从新仓库下载最新版本的主题，以防主题版本太旧，从而与 Hexo 版本或是环境之间发生冲突。
+
+{{< notice notice-tip >}}
+由于目前 NexT 主题有三个仓库，文中的一些超链接可能因为仓库的迁移而发生变化，个人无法做到及时更新，并且如果在文中详细描述的话，这里是 theme-next，那里是 next-theme，可能有些混乱，所以就不再更改，如果出现链接错误请自行访问仓库查找。
 {{< /notice >}}
 
 你可以选择直接 `clone` 主分支（master）的最新版本主题文件到 Hexo 的主题文件夹（`themes`）中：

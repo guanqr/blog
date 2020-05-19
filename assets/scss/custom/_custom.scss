@@ -11,6 +11,7 @@
     border: 2px solid transparent;
     border-bottom: 1px dashed var(--color-contrast-low);
     display: flex;
+    transition: all .5s;
     .friend {
         text-decoration: none;
         text-overflow: ellipsis;

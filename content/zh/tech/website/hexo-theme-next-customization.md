@@ -17,7 +17,7 @@ toc = true
 在本文中，我将会全面讲解 Hexo 博客的搭建，NexT 主题的安装和配置，以及个性优化的内容。本文文章篇幅较长，为了方便阅读，在开头添加了文章目录，目录与各段落标题之间相互链接，可双向跳转。
 
 {{< notice notice-note >}}
-目前我的博客已经从 Hexo 迁移到了 Hugo，因此我并没有过多地关注 NexT 主题在 2019 年 11 月后的更新内容。文中所讲的一些东西，可能随着 NexT 主题的更新，成为主题自带的一部分，或被主题抛弃；也可能自身就存在一定的错误，因此本文的内容仅供参考。如果在搭建博客的过程中遇到问题，请参考[官方文档](https://theme-next.org/)的相关说明或者在[主题仓库](https://github.com/theme-next/hexo-theme-next)提交 Issues。另外，我也希望各位读者能及时指出本文出现的问题，让文章能够更加完善，紧跟主题更新的步伐。
+最后更新：目前我的博客已经从 Hexo 迁移到了 Hugo，因此我并没有过多地关注 NexT 主题在 2019 年 11 月后的更新内容。本文适用的 NexT 版本范围为 v7.0.0 至 v7.5.0，文中所讲的一些东西，可能随着 NexT 主题的更新，成为主题自带的一部分，或被主题抛弃；也可能自身就存在一定的错误，因此本文的内容仅供参考。如果在搭建博客的过程中遇到问题，请参考[官方文档](https://theme-next.js.org/)的相关说明或者在[主题仓库](https://github.com/theme-next/hexo-theme-next)提交 Issues。
 {{< /notice >}}
 
 ## 搭建 Hexo 博客
@@ -87,6 +87,15 @@ hexo clean && hexo g && hexo d
 ### 安装 NexT 主题
 
 目前在 GitHub 上面有两个 NexT 主题的仓库，一个是 v6.0.0 之前版本的[个人仓库](https://github.com/iissnan/hexo-theme-next)，因为主题原作者停止维护该主题，所以有高人另起炉灶，单独创立了一个 NexT 的 Organization，目前最新版本的主题在这个[仓库](https://github.com/theme-next/hexo-theme-next)中。我发现到目前为止，还有很多人选择从旧仓库下载只有 v5 版本的主题，无视仓库停止维护的公告，依旧在旧仓库中发起很多早已解决的 issues，真是令人哭笑不得。所以为了避免一些不必要的麻烦，在这里我还是要提醒各位读者，请从[这里](https://github.com/theme-next/hexo-theme-next)下载最新版本的主题，以防主题版本太旧，从而与 Hexo 版本或是环境之间发生冲突。
+
+{{< notice notice-tip >}}
+注意：因 [theme-next](https://github.com/theme-next/) 团队管理者自 2019 年 10 月起长期不在线，管理者也没有给其他成员足够的权限，导致仓库管理出现很多问题，所以自 2020 年 5 月起，theme-next 团队部分成员迁移至 [next-theme](https://github.com/next-theme/)，新团队开发的 NexT 版本为 v8.0.0 版本。因此目前 NexT 主题共有三个仓库：
+
++ 2014-2017：<https://github.com/iissnan/hexo-theme-next>
++ 2018-2019：<https://github.com/theme-next/hexo-theme-next>
++ 2020：<https://github.com/next-theme/hexo-theme-next>
+
+{{< /notice >}}
 
 你可以选择直接 `clone` 主分支（master）的最新版本主题文件到 Hexo 的主题文件夹（`themes`）中：
 
@@ -220,7 +229,7 @@ deploy:
 
 ### 主题配置文件
 
-NexT 主题的配置文件内容有很多，因为该主题有很多扩展功能。在配置主题各项功能之前，我建议先阅读 [NexT 官方网站](https://theme-next.org/)[^2]的相关文档说明。主题配置文件内容过长，为了排版美观以及阅读方便，这里我只对一些关键配置和容易出现问题地方进行说明，一些我认为不太重要的配置就不再提及。不同版本之间的配置文件可能有微小变化，这里仅供参考。
+NexT 主题的配置文件内容有很多，因为该主题有很多扩展功能。在配置主题各项功能之前，我建议先阅读 [NexT 官方网站](https://theme-next.js.org/)[^2]的相关文档说明。主题配置文件内容过长，为了排版美观以及阅读方便，这里我只对一些关键配置和容易出现问题地方进行说明，一些我认为不太重要的配置就不再提及。不同版本之间的配置文件可能有微小变化，这里仅供参考。
 
 #### 自定义配置
 
@@ -329,7 +338,7 @@ menu:
 
 ##### 多级目录
 
-NexT 主题支持多级目录，但是官网并没有直接给出配置的方法，因此很少见到有人使用，具体的样式可以参考官方网站的 [Docs](https://theme-next.org/docs/) 页面，其上方的样式即为二级目录和三级目录。
+NexT 主题支持多级目录，但是官网并没有直接给出配置的方法，因此很少见到有人使用，具体的样式可以参考官方网站的 [Docs](https://theme-next.js.org/docs/) 页面，其上方的样式即为二级目录和三级目录。
 
 ![hexo-theme-next-title.png](/images/hexo-theme-next-title.png "多级目录样式")
 
@@ -406,7 +415,7 @@ Docs:
 
 我们需要在 `~/source/docs/` 文件夹下创建对应的文件夹 `Getting Started` 和 `Theme Settings`，文件夹中创建对应的 `index.md` 文件，该文件即为其二级目录对应页面内容的存放文件。
 
-同样，创建三级目录的时候，需要将对应的二级目录默认页面改为 `default`，然后在同级下添加同样格式的内容，在此不再赘述。如果你还没有明白是怎么设定的，可以研究一下 NexT 官方网站的源码[仓库](https://github.com/theme-next/theme-next.org)文件的存放位置。
+同样，创建三级目录的时候，需要将对应的二级目录默认页面改为 `default`，然后在同级下添加同样格式的内容，在此不再赘述。如果你还没有明白是怎么设定的，可以研究一下 NexT 官方网站的源码仓库文件的存放位置。
 
 #### 文章元数据
 
@@ -477,7 +486,7 @@ post_edit:
   url: https://github.com/guanqr/guanqr.com/edit/master/source/ # Link for fork & edit
 ```
 
-该项功能的具体效果可以参考 [NexT 官方网站](https://theme-next.org/)，每一篇文章的右上角都有一个「笔头」图标，点击就会跳转到你的 GitHub 仓库的该篇文章的位置，实现在线编辑。
+该项功能的具体效果可以参考 [NexT 官方网站](https://theme-next.js.org/)，每一篇文章的右上角都有一个「笔头」图标，点击就会跳转到你的 GitHub 仓库的该篇文章的位置，实现在线编辑。
 
 #### 标签页面
 
@@ -637,7 +646,7 @@ custom_file_path:
 
 如果需要自定义 CSS 样式，需要将上述代码中 `custom_file_path:` 下的 `#style: source/_data/styles.styl` 注释取消，然后根据该自定义文件存放路径创建相应文件 `styles.styl`，在该文件中添加自定义内容。同样，如果需要在 `<head>` 中添加内容，比如修改字体时引入 Google Fonts 以及分析博客数据时引入 Google Analytics，则需要新建 `head.swig` 文件，在其中添加自定义内容即可。在 `post.swig` 中添加的文章结尾样式，可以直接添加在 `post-body-end.swig` 文件中。如果你在这里还没有明白到底该如何设定，没关系，下面的具体教程中我会详细地说明。
 
-除了 `custom_file_path`，NexT 主题还提供了更加灵活的自定义方式（`theme_inject`），更多可以阅读[文档](https://theme-next.org/docs/advanced-settings#Injects)。如果你需要在主题目录下自定义文件，可以尝试下载 [hexo-theme-plus](https://github.com/jiangtj/hexo-theme-plus) 插件，该插件会将你的自定义文件替换主题文件夹内的同目录同名文件。具体使用方法可以参考这篇[文章](https://www.dnocm.com/articles/beechnut/hexo-git-submodule/)。
+除了 `custom_file_path`，NexT 主题还提供了更加灵活的自定义方式（`theme_inject`），更多可以阅读[文档](https://theme-next.js.org/docs/advanced-settings#Injects)。如果你需要在主题目录下自定义文件，可以尝试下载 [hexo-theme-plus](https://github.com/jiangtj/hexo-theme-plus) 插件，该插件会将你的自定义文件替换主题文件夹内的同目录同名文件。具体使用方法可以参考这篇[文章](https://www.dnocm.com/articles/beechnut/hexo-git-submodule/)。
 
 目前网络中的大部分优化教程都是依据旧版主题进行设定的，因此，一些使用最新版本主题的读者根据旧版设定进行操作的话，可能会报错。为了体现本文的与时俱进，本文中采用的即为..新版的设定方式..，旧版的设定方式在这里不再提及，请采用旧版主题的读者参考过去版本的官方说明文档。
 
@@ -1386,7 +1395,7 @@ mylinks:
 
 ### 主题自带样式
 
-主题自带的一些标签功能如 Note、Tabs、Button 等在官方文档的 [Tag Plugins](https://theme-next.org/docs/tag-plugins/) 中有详细的说明。请仔细阅读官方文档进行配置与使用。由于目前本博客从 Hexo 迁移到了 Hugo，主题也不再是 NexT，因此主题部分自带功能的展示效果受到一定限制，这里不再进行详细说明和展示。
+主题自带的一些标签功能如 Note、Tabs、Button 等在官方文档的 [Tag Plugins](https://theme-next.js.org/docs/tag-plugins/) 中有详细的说明。请仔细阅读官方文档进行配置与使用。由于目前本博客从 Hexo 迁移到了 Hugo，主题也不再是 NexT，因此主题部分自带功能的展示效果受到一定限制，这里不再进行详细说明和展示。
 
 请注意，在你使用 Centered Quote 文本居中引用标签功能的时候，如果你使用了插件  [hexo-filter-optimize](https://github.com/theme-next/hexo-filter-optimize) 为博客加速，那么可能会对该功能的效果造成一定的影响，对该问题的具体分析可参见我的文章《[加速 Hexo 博客的方法及遇到的问题](/tech/website/speed-up-hexo/)》。
 
@@ -1471,7 +1480,7 @@ post_asset_folder: true
 
 在 `()` 内填写图片的路径，注意相对路径与绝对路径的问题。
 
-如果你想要一次载入多个图片，NexT 官方也提供了特有的标签语句，请参考官方文档的[使用方法](https://theme-next.org/docs/tag-plugins/group-pictures)。
+如果你想要一次载入多个图片，NexT 官方也提供了特有的标签语句，请参考官方文档的[使用方法](https://theme-next.js.org/docs/tag-plugins/group-pictures)。
 
 另外，有一个图片的插件：[hexo-asset-image](https://github.com/xcodebuild/hexo-asset-image)。很多 Hexo 博客搭建教程中都有推荐使用该插件载入图片，我认为根本没必要使用这个插件，更何况这个插件或多或少存在一些路径的问题。
 

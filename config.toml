@@ -302,7 +302,7 @@ uglyURLs = false
     # 在窄视图下隐藏菜单栏并显示一个按钮？
     enableNavToggle = true
 
-    navHeight = "12em"
+    navHeight = "9em"
     # 说明：菜单栏展开时的高度
 
 
@@ -1416,4 +1416,5 @@ uglyURLs = false
     ## 「诗意人生」
     # 诗句，支持 Markdown
     homePoetry = ["*To see a world in a grain of sand*","*And a heaven in a wild flower*","*Hold infinity in the palm of your hand*","*And eternity in an hour*"]
+    navHeight = "6em"
     enableLunrSearch = true

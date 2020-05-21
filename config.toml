@@ -136,10 +136,15 @@ uglyURLs = false
     mediaType = "application/rss+xml"
     baseName = "rss"
 
+# lunr.js 的搜索索引
+[outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "search"
+
 # Hugo 的输出控制
 [outputs]
     page = ["HTML"]
-    home = ["HTML", "SectionsAtom", "SectionsRSS"]
+    home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex"]
     section = ["HTML"]
     # 类别
     taxonomyTerm = ["HTML"]
@@ -171,9 +176,9 @@ uglyURLs = false
 # pre           内链（internal）或外链（external）
 # post          图标（留空（""）则无）
 # identifier    图标的 Class 名
-#               （对于弹性布局的顶栏有两个特殊
+#               （对于弹性布局的顶栏有三个特殊
 #               的值：`theme-switcher`、
-#               `lang-switcher`）
+#               `lang-switcher`、`search`）
 
 [menu]
     ## 菜单栏
@@ -225,6 +230,10 @@ uglyURLs = false
     [[menu.main]]
         weight = 8
         identifier = "lang-switcher"
+    #[[menu.main]]
+    #    weight = 9
+    #    identifier = "search"
+    #    post = "search"
     [[menu.socials]]
         url = "https://github.com/guanqr"
         name = "GitHub"
@@ -290,18 +299,10 @@ uglyURLs = false
     headerLayout = "flex"
     # 说明：居中布局（center）或弹性布局（flex）
 
-    # 顶栏宽度的回退值
-    headerFallbackWidth = "36em"
-    # 说明：默认情况，MemE 使用 main-inner 元素
-    #      的宽度作为顶栏宽度，但是在一些页面（比
-    #      如「诗意人生」和「视频片段」布局的首页），
-    #      不存在 main-inner 元素，所以你需要为
-    #      这种情况给一个回退值。
-
     # 在窄视图下隐藏菜单栏并显示一个按钮？
     enableNavToggle = true
 
-    navHeight = "9em"
+    navHeight = "12em"
     # 说明：菜单栏展开时的高度
 
 
@@ -1310,6 +1311,15 @@ uglyURLs = false
 
 
     ######################################
+    # Lunr 搜索（暂不支持中文）
+
+    # 说明：需要开启 `SearchIndex` 的输出
+
+    enableLunrSearch = false
+    # 说明：https://lunrjs.com/
+
+
+    ######################################
     # 404 页面
 
     # 视频封面
@@ -1351,43 +1361,22 @@ uglyURLs = false
     #category = "categories"
     #tag = "tags"
 [languages.en.menu]
-    #[[languages.en-us.menu.main]]
-    #    url = "/en-us/"
-    #    name = "Home"
-    #    weight = 1
-    #    pre = "internal"
-    #    post = "home"
-    #[[languages.en-us.menu.main]]
-        #url = "/en-us/tags/"
-        #name = "Tags"
-        #weight = 2
-        #pre = "internal"
-        #post = "tags"
-    #[[languages.en-us.menu.main]]
-        #url = "/en-us/categories/"
-        #name = "Categories"
-        #weight = 3
-        #pre = "internal"
-        #post = "th"
-    #[[languages.en-us.menu.home]]
-        #url = "/en-us/archives/"
-        #name = "Archives"
-        #weight = 4
-        #pre = "internal"
-        #post = "archive"
-        #identifier = "archive"
+    [[languages.en.menu.main]]
+        weight = 1
+        identifier = "search"
+        post = "search"
     [[languages.en.menu.main]]
         url = "/en/about/"
         name = "About"
-        weight = 1
+        weight = 2
         pre = "internal"
         post = "user-circle"
         identifier = "about"
     [[languages.en.menu.main]]
-        weight = 2
+        weight = 3
         identifier = "theme-switcher"
     [[languages.en.menu.main]]
-        weight = 3
+        weight = 4
         identifier = "lang-switcher"
     [[languages.en.menu.socials]]
         url = "https://github.com/guanqr"
@@ -1427,3 +1416,4 @@ uglyURLs = false
     ## 「诗意人生」
     # 诗句，支持 Markdown
     homePoetry = ["*To see a world in a grain of sand*","*And a heaven in a wild flower*","*Hold infinity in the palm of your hand*","*And eternity in an hour*"]
+    enableLunrSearch = true

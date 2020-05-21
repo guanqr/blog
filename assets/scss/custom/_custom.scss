@@ -4,6 +4,11 @@
     text-decoration-color: var(--color-contrast-medium);
 }
 
+// 搜索样式
+.search .search-input:focus {
+    width: 8em;
+}
+
 // 友链样式
 
 .blogroll {

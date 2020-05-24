@@ -1557,11 +1557,7 @@ Renderer.prototype.image = function(href, title, text) {
 
 ### 插入音乐
 
-首先，你可以直接使用 HTML 的标签，比如：
-
-<audio src="https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/music/Simon%20And%20Garfunkel-The%20Sound%20Of%20Silence.mp3" style="max-height :100%; max-width: 100%; display: block; margin-left: auto; margin-right: auto;" controls="controls" loop="loop" preload="meta">Your browser does not support the audio tag.</audio>
-
-格式如下，其中 `music-url` 替换为你需要加载的音乐即可：
+首先，你可以直接使用 HTML 的标签，格式如下，其中 `music-url` 替换为你需要加载的音乐即可：
 
 ```html
 <audio src="music-url" style="max-height :100%; max-width: 100%; display: block; margin-left: auto; margin-right: auto;" controls="controls" loop="loop" preload="meta">Your browser does not support the audio tag.</audio>

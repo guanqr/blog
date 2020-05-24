@@ -117,6 +117,45 @@ imshow(s)
 
 ![digital-image-processing-practice-10.png](/images/digital-image-processing-practice-10.png "滤波后的频域图像")
 
+## 综合练习
+
+识别文字时拍到照片有下图所示的阴影，造成文字分割困难，尝试改善图像质量。
+
+![digital-image-processing-practice-11.png](/images/digital-image-processing-practice-11.png "原图带有阴影，文字识别困难")
+
+首先使用同态滤波将原图阴影去除，代码如下所示。
+
+```matlab
+I1 = imread('img.png');
+I2 = rgb2gray(I1); % 转为灰度图
+
+f1 = fspecial('gaussian', [7 7], 0.25);
+f2 = fspecial('gaussian', [7 7], 1.95);
+F = f1-f2; %构建一个高通
+
+J1 = log(1.0+double(I2)); %分开入射光和反射光
+J2 = imfilter(J1, F, 'symmetric', 'conv'); % 将高通滤波器与对数转换之后的图像卷积
+
+J3 = exp(J2)-1.0; % 变换回来
+minJ = min(min(J3));
+maxJ = max(max(J3));
+J4 = (J3-minJ)/(maxJ-minJ); % 同态滤波
+imshow(J4);
+```
+
+经同态滤波处理后的图像如下所示，可以看到阴影变得均匀。
+
+![digital-image-processing-practice-12.png](/images/digital-image-processing-practice-12.png "经同态滤波处理后的图像")
+
+然后进行二值化处理即可。
+
+```matlab
+k = im2bw(J4, 0.462); % 二值化
+```
+
+![digital-image-processing-practice-13.png](/images/digital-image-processing-practice-13.png "二值化后的图像")
+
+
 {{< notice notice-note >}}
 本文内容源自浙江大学光电学院本科课程《机器视觉与图像处理》的课堂练习，图像处理的软件为 MATLAB，图像处理的方法只是个人的尝试，并非标准方法，因此仅供参考。
 {{< /notice >}}

@@ -54,7 +54,6 @@ disqus:
   count: true
   lazyload: false
   #post_meta_order: 0
-
 ```
 
 到此，Disqus 评论系统的配置就完成了。如果你想实现在国内网络环境下也能访问 Disqus 评论的内容，则需要借助 Disqus API，这就用到了 [DisqusJS](https://github.com/SukkaW/DisqusJS)。这里需要注意，目前 DisqusJS 仅支持评论的「读」操作，不支持「写」操作。
@@ -94,7 +93,7 @@ disqusjs:
 
 ![hexo-theme-next-valine.png](/images/hexo-theme-next-valine.png "Valine 官方主页")
 
-[Valine](https://valine.js.org/) 评论系统是我认为的在国内网络环境下最好用的评论系统，可通过 Leancloud 管理评论，无广告，简洁美观。不过缺点就是，Leancloud 平台的不稳定性，在 2019 年夏季的时候，出现了一次域名停止解析的事故，原因是有人利用 Leancloud 进行一些非法行为，而平台管理人员并没有监管到位。在那次事故之后，Leancloud 加强了监管，国内用户必须进行实名注册，每一个服务器必须绑定一个备案的域名[^1]。如果你不想备案，可以选择使用 Leancloud 国际版。但谁也无法确保 Leancloud 国际版会发生什么事情。
+[Valine](https://valine.js.org/) 评论系统是我认为的在国内网络环境下最好用的评论系统，可通过 Leancloud 管理评论，无广告，简洁美观。不过缺点就是，Leancloud 平台的不稳定性，在 2019 年夏季的时候，出现了一次域名停止解析的事故，原因是有人利用 Leancloud 进行一些非法行为，而平台管理人员并没有监管到位。在那次事故之后，Leancloud 加强了监管，国内用户必须进行实名注册，每一个服务器必须绑定一个备案的域名。如果你不想备案，可以选择使用 Leancloud 国际版。但谁也无法确保 Leancloud 国际版会发生什么事情。
 
 Leancloud 国内版和国际版的配置相同，这里以国际版为例进行说明。首先进入[官网](https://leancloud.app/)进行用户注册，注册完成后点击「创建应用」，填写应用的名称，选择「开发版」进行创建。
 
@@ -108,7 +107,7 @@ Leancloud 国内版和国际版的配置相同，这里以国际版为例进行�
 
 ![hexo-theme-next-leancloud-safe.png](/images/hexo-theme-next-leancloud-safe.png)
 
-再进入「设置」中的「应用 Keys」，记录 AppID 和 AppKey 的值。回到主题配置文件中，开启 Valine，在 Valine 配置中填写 AppID 和 AppKey 即可。在该项配置中，你也可以设置评论框中的提示语，默认是「Just go go」。当你将 `visitor` 选项设置为 `true` 时，可以记录当前页面的访客数。下文中的「[访客统计](#访客统计)」用到的也是 Leancloud。
+再进入「设置」中的「应用 Keys」，记录 AppID 和 AppKey 的值。回到主题配置文件中，开启 Valine，在 Valine 配置中填写 AppID 和 AppKey 即可。在该项配置中，你也可以设置评论框中的提示语，默认是「Just go go」。当你将 `visitor` 选项设置为 `true` 时，可以记录当前页面的访客数。这一部分需要填写的内容可能根据 Valine 版本的更新会有相应的增减，不过基本功能的配置思路是一样的。
 
 ```yml
 # Valine
@@ -159,5 +158,3 @@ gitalk:
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
   language:
 ```
-
-[^1]: 我从这个事件起停止使用评论系统了，一方面是因为 Leancloud 的实名与备案，另一方面是我的博客访客比较少，基本没有什么评论，加载评论还会影响一定的访问速度。

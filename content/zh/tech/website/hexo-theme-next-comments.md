@@ -36,7 +36,7 @@ comments:
 
 ![hexo-theme-next-disqus.png](/images/hexo-theme-next-disqus.png "Disqus 官网主页")
 
-[Disqus](https://disqus.com/) 评论系统我认为是重多评论系统中最好的一个，无奈需要科学上网才能访问。首先是到官网注册一个用户，然后在官网的主页，有一个「GET STARTED」按钮，点击进入，可以看到如下界面：
+[Disqus](https://disqus.com/) 评论系统我认为是诸多评论系统中最好的一个，无奈需要科学上网才能访问。首先是到官网注册一个用户，然后在官网的主页，有一个「GET STARTED」按钮，点击进入，可以看到如下界面：
 
 ![hexo-theme-next-disqus-install-site.png](/images/hexo-theme-next-disqus-install-site.png)
 

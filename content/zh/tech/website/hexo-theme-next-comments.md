@@ -158,3 +158,25 @@ gitalk:
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
   language:
 ```
+
+## Utterances
+
+有朋友向我咨询配置评论系统的时候，提到了信息安全方面的内容。像 Gitalk、Valine 这样的评论系统，都会将自己的 AppID 和 AppKey 暴露在网页的源码中，虽然说这些信息的泄露对评论的影响微乎其微，不过总觉得会有那么一点担忧。[Utterances](https://utteranc.es/) 评论系统和 Gitalk 类似，借助 GitHub 仓库的 Issues 存储评论信息，但 Utterances 的配置并不会设置 AppID 和 AppKey，只需要填写仓库名。
+
+![hexo-theme-next-utterances.png](/images/hexo-theme-next-utterances.png)
+
+Utterances 评论系统并非主题包含的评论系统，因此需要自己添加代码，或者借助插件。NexT 主题提供了添加该评论系统的插件 [hexo-next-utteranc](https://github.com/theme-next/hexo-next-utteranc).安装插件后，在配置文件 `_config.yml` 中添加以下代码：
+
+```yaml
+utteranc:
+  enable: true
+  repo: #Github repo such as :TrumanDu/comments
+  pathname: pathname
+  # theme: github-light,github-dark,github-dark-orange
+  theme: github-light
+  cdn: https://utteranc.es/client.js
+  # If you want to modify priority, please config in **hexo**
+  #priority:
+```
+
+然后在 GitHub 上安装 [Utterances 应用程序](https://github.com/apps/utterances)，添加存储评论的仓库，再将仓库名填写在配置文件 `_config.yml` 中即可。

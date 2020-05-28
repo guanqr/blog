@@ -148,7 +148,7 @@ font:
     family:
 ```
 
-首先将 `enable:` 的 `false` 改为 `true`，然后在 `host:` 后添加 Google Fonts API 地址：`fonts.googleapis.com`。考虑到国内的网络对 Google 的域名并不友好，建议将 `googleapis.com` 修改为烧饼博客提供的镜像 `loli.net`。
+首先将 `enable:` 的 `false` 改为 `true`，然后在 `host:` 后添加 Google Fonts API 地址：`fonts.googleapis.com`。如果觉得 Google 相关网址的载入速度不太理想，可以考虑将 `googleapis.com` 修改为烧饼博客提供的镜像 `loli.net`，不过我觉得载入速度还算可以。
 
 然后，设置中下面的一些选项，就是设定博客各区域的字体，比如网站标题 `title`，文章内容 `posts`……这些都可以进行修改，你要做的只是到 Google Fonts 上找到适合的字体，然后将字体的名字填写到 `family:` 中。最关键的是 `global` 字体的设定，这里的字体将会是你网站的基本（全局）字体。个人建议不要在这里填思源宋体的名字 `Noto Serif SC`，而是选取一款英文字体进行填写。因为中文字体往往携带同样的英文字体，如果将中文字体优先级设置为第一位，那么英文字体必将也会是中文字体的样式。如果你在这里设置的是 `Noto Serif SC`，那么英文字体也会是 `Noto Serif SC`。那么，中文字体到哪里去设置呢？当然还是要到 `base.styl` 文件中，直接这样修改：
 
@@ -172,6 +172,12 @@ font:
 <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,500,700&display=swap&subset=chinese-simplified" rel="stylesheet">
 ```
 
+{{< notice notice-note >}}
+注意：Google Fonts 为庆祝十周年对网站进行了改版，支持了可变字体（Variable Fonts）的加载。目前从网站上进行配置得到的代码与我在上文中所给的代码有一些差异，为了体验到最好的字体载入效果，建议亲自到 Google Fonts 网站进行配置。
+
+![hexo-theme-next-google-fonts-ten-years.png](/images/hexo-theme-next-google-fonts-ten-years.png "Google Fonts 在其 twitter 上的说明")
+{{< /notice >}}
+
 考虑到宋体的笔画要比黑体细，因此建议通过自定义 CSS 将字体的颜色加深，比如修改为 `#333`，以达到较好的阅读效果。
 
 ```css
@@ -188,6 +194,16 @@ font:
 + 英文字体：EB Garamond
 + 标题字体：Cinzel Decorative
 + 代码字体：Source Code Pro
+
+## 我的博客字体
+
+我的博客字体设定有些奇葩，如果不想太折腾，直接使用我在上文推荐的 Google Fonts 字体就可以了。我的博客字体设定如下：
+
++ 中文字体：Noto Serif SC
++ 英文字体：Amstelvar
++ 代码字体：JetBrains Mono
+
+中文字体使用的是 Google Fonts 的思源宋体 Noto Serif SC，因为对于中文衬线字体而言，这是最佳的选择。英文字体使用的是 [Amstelvar](https://github.com/TypeNetwork/Amstelvar)，这个字体是开源的可变字体，需要自行通过 CSS 设定字重和字宽，我直接将 `woff2` 格式的字体上传到博客中进行本地加载。代码字体使用的是 [JetBrains Mono](https://www.jetbrains.com/lp/mono/)，这是 2020 年 JetBrains 开源的一款等宽字体，风格独特，感觉很酷。
 
 [^1]: 参考：[前端开发你该知道的字体 font-family | fly63 前端网](http://www.fly63.com/article/detial/1114)
 [^2]: 参考：[衬线体的进化：从纸面到屏幕 | 方正字库](https://zhuanlan.zhihu.com/p/49470735)

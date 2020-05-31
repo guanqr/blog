@@ -7,24 +7,12 @@
   command = "npm run build && npm run ipfs-deploy"
 
 [build.environment]
-  HUGO_VERSION = "0.71.0"
+  HUGO_VERSION = "0.71.1"
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
-  from = "https://guanqr.netlify.com/*"
+  from = "https://guanqr.netlify.app/*"
   to = "https://guanqr.com/:splat"
   status = 301
   force = true
-
-#[[redirects]]	
-#  from = "https://www.guanqr.com/*"	
-#  to = "https://guanqr.com/:splat"	
-#  status = 301	
-#  force = true
-
-#[[redirects]]	
-#  from = "https://blog.guanqr.com/*"	
-#  to = "https://guanqr.com/:splat"	
-#  status = 301	
-#  force = true

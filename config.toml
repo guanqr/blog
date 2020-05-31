@@ -1361,22 +1361,22 @@ uglyURLs = false
     #category = "categories"
     #tag = "tags"
 [languages.en.menu]
-    [[languages.en.menu.main]]
-        weight = 1
-        identifier = "search"
-        post = "search"
+    #[[languages.en.menu.main]]
+    #    weight = 1
+    #    identifier = "search"
+    #    post = "search"
     [[languages.en.menu.main]]
         url = "/en/about/"
         name = "About"
-        weight = 2
+        weight = 1
         pre = "internal"
         post = "user-circle"
         identifier = "about"
     [[languages.en.menu.main]]
-        weight = 3
+        weight = 2
         identifier = "theme-switcher"
     [[languages.en.menu.main]]
-        weight = 4
+        weight = 3
         identifier = "lang-switcher"
     [[languages.en.menu.socials]]
         url = "https://github.com/guanqr"
@@ -1417,4 +1417,3 @@ uglyURLs = false
     # 诗句，支持 Markdown
     homePoetry = ["*To see a world in a grain of sand*","*And a heaven in a wild flower*","*Hold infinity in the palm of your hand*","*And eternity in an hour*"]
     navHeight = "6em"
-    enableLunrSearch = true

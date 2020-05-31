@@ -5,8 +5,18 @@
 }
 
 // 搜索样式
+
 input#search-input {
     font-family: "Amstelvar",serif;
+}
+
+// 评论加载按钮
+
+#load-comments {
+    border-radius: 0;
+    color: var(--color-primary);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-primary);
 }
 
 // 友链样式

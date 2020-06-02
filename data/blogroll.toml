@@ -74,3 +74,10 @@
   avatar = "/images/friends/mghio.png"
   description = "Java 搬运工＆终身学习者"
   weight = 11
+
+[[blogroll]]
+  name = "YIDAJIABEI"
+  url = "https://www.yidajiabei.xyz/"
+  avatar = "/images/friends/yidajiabei.png"
+  description = "记录所学所思所想，关注 Python、web 以及我感兴趣的技术，热爱生活"
+  weight = 12

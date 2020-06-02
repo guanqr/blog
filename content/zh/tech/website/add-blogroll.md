@@ -24,7 +24,7 @@ aliases = ["/study/blog/add-blogroll/"]
 
 这次我对友链页面的重构，适配了目前我采用的 Hugo 博客框架与 MemE 博客主题。而且可以采用添加网站信息至独立的 TOML 文件中，通过页面调取文件中的各项信息生成友链。比之前的傻瓜方式便捷了很多，而且文件结构层次分明，方便管理🍻。
 
-首先是添加友链模板。为了避免因对原主题文件进行大规模修改而进行文件的大量替换，方面以后的主题更新，这里为友链创建一个全新的页面模板。首先在博客根目录下的 `layouts` 文件夹（没有该文件夹请自建）下创建一个名为 `blogroll` 的文件夹，在该文件夹下创建名为 `blogroll.html` 的模板文件。主题中的页面模板为 `~/themes/meme/layouts/partials/pages/` 目录下的 `post.html` 文件，可参照该文件内容进行添加。具体内容如下所示：
+首先是添加友链模板。为了避免因对原主题文件进行大规模修改而进行文件的大量替换，方面以后的主题更新，这里为友链创建一个全新的页面模板。首先在博客根目录下的 `layouts` 文件夹（没有该文件夹请自建）下创建一个名为 `blogroll` 的文件夹，在该文件夹下创建名为 `blogroll.html` 的模板文件。主题中的页面模板为 `~/themes/meme/layouts/partials/pages/` 目录下的 `post.html` 文件，可参照该文件内容进行添加。不过需要注意的是，随着主题的更新，该文件的内容可能会发生变化，目前我添加的代码如下所示。如果你使用的主题版本和我的不一样，请自行修改：
 
 ```html
 <!-- 文件位置：~/layouts/blogroll/blogroll.html -->
@@ -40,14 +40,10 @@ aliases = ["/study/blog/add-blogroll/"]
                 {{ if .Site.Params.displayPostDescription }}
                     {{ with .Params.description }}
                         {{- $raw := . -}}
-                        {{- partial "utils/markdownify.html" (dict "Deliver" $Deliver "raw" $raw "isContent" false) -}}
-                        {{- $Content := $Deliver.Scratch.Get "Content" -}}
-                        <div class="post-description">{{ $Content | safeHTML }}</div>
+                        <div class="post-description">{{ partial "utils/markdownify.html" (dict "Deliver" $Deliver "raw" $raw "isContent" false) }}</div>
                     {{ end }}
                 {{ end }}
 
-                {{- partial "utils/content.html" . -}}
-                {{- $Content := .Scratch.Get "Content" -}}
                 <div class="post-body">
                     {{ range .Site.Data.blogroll }}
                         {{ range sort . "weight" }}
@@ -60,7 +56,7 @@ aliases = ["/study/blog/add-blogroll/"]
                             </div>
                         {{ end }}
                     {{ end }}
-                    {{- $Content -}}
+                    {{ partial "utils/content.html" . }}
                 </div>
 
             </article>
@@ -69,7 +65,7 @@ aliases = ["/study/blog/add-blogroll/"]
 
         </div>
     </main>
-{{ end }} 
+{{ end }}
 ```
 
 这里我删减了许多没有用到的组件。代码中的核心部分如下：
@@ -97,14 +93,14 @@ aliases = ["/study/blog/add-blogroll/"]
   name = "荷戟独彷徨"
   url = "https://guanqr.com"
   avatar = "https://guanqr.com/icons/android-chrome-512x512.png"
-  description = "The Sound of Silence"
+  description = "爱光学，爱生活，爱创造"
   weight = 1
 
 [[blogroll]]
   name = "荷戟独彷徨"
   url = "https://guanqr.com"
   avatar = "https://guanqr.com/icons/android-chrome-512x512.png"
-  description = "The Sound of Silence"
+  description = "爱光学，爱生活，爱创造"
   weight = 2
 ```
 

@@ -1,7 +1,7 @@
 +++
 title = "空间域图像增强"
 date = "2020-02-25T10:52:01+08:00"
-tags = ["color","image","matlab"]
+tags = ["image-processing","matlab"]
 series = ["major-courses"]
 katex = true
 toc = true

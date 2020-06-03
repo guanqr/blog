@@ -187,11 +187,7 @@ input#search-input {
 // katex
 
 .katex {
-    font: normal 1em Amstelvar, KaTeX_Main, Times New Roman, serif !important;
-    .mathdefault {
-        font-family: Amstelvar, KaTeX_Math !important;
-        font-style: italic;
-    }
+    font-size: 1em !important;
 }
 
 // 可变字体 https://github.com/TypeNetwork/Amstelvar

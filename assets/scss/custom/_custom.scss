@@ -424,3 +424,40 @@ blockquote.quote-center {
         }
     }
 }
+
+// GitHub
+
+.github {
+    border: 1px solid var(--color-contrast-low);
+    border-radius: 3px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    padding: 1em;
+    .github-icon {
+        margin-right: 0.5em;
+        fill: var(--color-contrast-high);
+    }
+    .name {
+        font-weight: bold;
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+    .description {
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        color: var(--color-contrast-high);
+        font-size: 90%;
+    }
+    .language-color {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        width: 0.75em;
+        height: 0.75em;
+        border-radius: 50%;
+    }
+    .language-name {
+        color: var(--color-contrast-high);
+        font-size: 90%;
+    }
+}

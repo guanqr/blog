@@ -1,0 +1,11 @@
+<div class="github">
+    <div class="logo">
+        {{ replace $.Site.Data.SVG.repository "icon" "icon github-icon" | safeHTML }}
+        <a class="name" href={{ .Get "link" }} target="_blank">{{ .Get "name" }}</a>
+    </div>
+    <div class="description">{{ .Get "description" }}</div> 
+    <div class="language">
+        <span class="language-color" style="background-color: {{ .Get "color" }}"></span>
+        <span class="language-name">{{ .Get "language" }}</span>
+    </div>
+</div>

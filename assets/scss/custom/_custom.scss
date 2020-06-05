@@ -434,8 +434,12 @@ blockquote.quote-center {
     margin-bottom: 1em;
     padding: 1em;
     .github-icon {
+        width: 1.2em;
+        height: 1.2em;
         margin-right: 0.5em;
+        margin-bottom: 0.2em;
         fill: var(--color-contrast-high);
+        transition: all .5s;
     }
     .name {
         font-weight: bold;
@@ -446,7 +450,9 @@ blockquote.quote-center {
         margin-top: 0.5em;
         margin-bottom: 1em;
         color: var(--color-contrast-high);
+        text-align: justify;
         font-size: 90%;
+        transition: all .5s;
     }
     .language-color {
         position: relative;
@@ -459,5 +465,6 @@ blockquote.quote-center {
     .language-name {
         color: var(--color-contrast-high);
         font-size: 90%;
+        transition: all .5s;
     }
 }

@@ -22,7 +22,7 @@ pluralizeListTitles = false
 summaryLength = 150
 
 # 是否开启 GitHub 风格的 Emoji 书写方式
-enableEmoji = true
+enableEmoji = false
 
 # 脚注的返回链接中的文本
 footnoteReturnLinkContents = "↩"

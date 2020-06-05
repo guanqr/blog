@@ -460,12 +460,12 @@ blockquote.quote-center {
         display: inline-block;
         width: 0.75em;
         height: 0.75em;
-        margin-left: 0.5em;
         border-radius: 50%;
     }
     .language-name {
         color: var(--color-contrast-high);
         font-size: 90%;
+        margin-left: 0.5em;
         transition: all .5s;
     }
 }

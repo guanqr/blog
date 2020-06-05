@@ -2,7 +2,7 @@
     <div class="subscription-box">
         {{ replace (index $.Site.Data.SVG $.Site.Params.subscriptionIcon) "icon" "icon subscription-icon" | safeHTML }}
         <div class="subscription-hover">
-            <img class="subscription-qrcode" src="{{ .Site.Params.subscriptionQrCode }}" />
+            <img class="subscription-qrcode" src="{{ .Site.Params.subscriptionQrCode }}" alt="Wechat" />
             <div class="subscription-description">{{ i18n "subscription" }}</div>
         </div>
     </div>

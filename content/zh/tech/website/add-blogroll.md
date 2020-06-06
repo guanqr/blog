@@ -106,37 +106,37 @@ aliases = ["/study/blog/add-blogroll/"]
 
 其中，`weight` 表示该友链的权重，用来排序。然后当然是需要新建一个友链页面，运行命令 `hugo new blogroll/_index.md`。接着运行 `Hugo server -D` 检查友链是否显示出来，如果显示正常，那么就可以继续添加 CSS 样式。在自定义 CSS 样式的文件 `custom.scss` 中添加下面的样式：
 
-```css
-/* 文件位置：~/assets/scss/custom/_custom.scss */
+```scss
+// 文件位置：~/assets/scss/custom/_custom.scss
 
-/* 友链样式 */
 .blogroll {
     padding: 1em 0;
     border: 2px solid transparent;
     border-bottom: 1px dashed var(--color-contrast-low);
     display: flex;
-}
-.blogroll .friend {
-    text-decoration: none;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-.blogroll .name {
-    font-weight: bold;
-    margin: 0.375em 0;  
-}
-.blogroll .excerpt {
-    font-size: 0.875em;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-.blogroll .avatar {
-    width: 4em !important;
-    height: 4em !important;
-    margin: 0 1em 0 0 !important;
-    z-index: 0;
+    transition: all .5s;
+    .friend {
+        text-decoration: none;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .name {
+        font-weight: bold;
+        margin: 0.375em 0;  
+    }
+    .excerpt {
+        font-size: 0.875em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .avatar {
+        width: 4em !important;
+        height: 4em !important;
+        margin: 0 1em 0 0 !important;
+        z-index: 0;
+    }
 }
 ```
 

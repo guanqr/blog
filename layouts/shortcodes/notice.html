@@ -7,6 +7,6 @@
 
 {{ $icon := (replace (index $.Site.Data.SVG $noticeType) "icon" "icon notice-icon") }}
 <div class="notice {{ $noticeType }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>
-    <p class="notice-title">{{ $icon | safeHTML }}{{- i18n $noticeType -}}</p>
+    <div class="notice-title">{{ $icon | safeHTML }}</div>
     {{- if or $block (not $raw) }}{{ $raw }}{{ else }}<p>{{ $raw }}</p>{{ end -}}
-</div>   
+</div>

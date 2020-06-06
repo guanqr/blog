@@ -42,6 +42,12 @@ tags = ["ocean","remote-sensing"]
 
 ![oceancolor-6.png](/images/oceancolor-6.png "查找 2019 年 3 月数据")
 
+{{< notice notice-note >}}
 注意：目前网站数据的下载可能需要注册用户，直接进行注册即可。
+{{< /notice >}}
+
+我去年在学院的某研究项目中摸鱼的时候用到了这些数据产品，写了一些 MATLAB 脚本对该数据进行处理，目前已经将脚本整理打包放在了 GitHub 仓库中，如有需要可以参考。
+
+{{< github name="Organic-Carbon-Estimating" link="https://github.com/guanqr/Organic-Carbon-Estimating" description="A program used in estimating organic carbon stocks in oceans. 计算指定海域的有机碳存量，包括颗粒有机碳与溶解有机碳，数据依赖于 NASA 中分辨率成像光谱仪 MODIS 遥感产品。" color="#e16737" language="MATLAB">}}
 
 [^1]: 图源：[NASA Ocean Color](https://oceancolor.gsfc.nasa.gov/)

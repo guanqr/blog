@@ -1,14 +1,2 @@
 [subscription]
 other = "微信扫一扫，订阅本博客"
-
-[notice-warning]
-other = "Warning"
-
-[notice-note]
-other = "Note"
-
-[notice-info]
-other = "Info"
-
-[notice-tip]
-other = "Tip"

@@ -1017,7 +1017,7 @@ POWERMODE.shake = false;  // 控制开启 / 关闭屏幕震动特效
     height: 24px;
     width: 24px;
     cursor: pointer;
-    background: url(https://微信的 logo.svg);
+    background: url(https://wechat-logo.svg);
     background-size: 24px 24px;
 }
 .weixin-hover {
@@ -1028,7 +1028,7 @@ POWERMODE.shake = false;  // 控制开启 / 关闭屏幕震动特效
     width: 0px;
     border-radius: 3px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-    background: url(https://二维码.svg);
+    background: url(https://qrcode.svg);
     background-color: #fff;
     background-repeat: no-repeat;
     background-size: 150px 150px;

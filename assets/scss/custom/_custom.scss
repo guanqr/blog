@@ -190,6 +190,30 @@ input#search-input {
     font-size: 1em !important;
 }
 
+// 代码高亮
+
+/* GenericDeleted */ 
+/* GenericInserted */ .chroma-dark .gi { color: #a6e22e }
+
+:root {
+    --chroma-deleted-color: #aa0000;
+    --chroma-inserted-color: #00aa00;
+}
+
+:root[data-theme="dark"] {
+    --chroma-deleted-color: #f92672;
+    --chroma-inserted-color: #a6e22e;
+}
+
+.chroma .gi {
+    color: var(--chroma-inserted-color);
+    font-weight: normal;
+}
+.chroma-dark .gi {
+    color: var(--chroma-inserted-color);
+    font-weight: normal;
+}
+
 // 可变字体 https://github.com/TypeNetwork/Amstelvar
 
 // Magic adjustment for en
@@ -219,6 +243,20 @@ input#search-input {
         font-weight: 400;
         font-style: normal;
     }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../../fonts/JetBrainsMono-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../../fonts/JetBrainsMono-Italic.woff2') format('woff2');
+        font-weight: 400;
+        font-style: italic;
+    }
 } @else {
     @font-face {
         font-family: 'Amstelvar';
@@ -244,6 +282,20 @@ input#search-input {
         src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
         font-weight: 400;
         font-style: normal;
+    }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../fonts/JetBrainsMono-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../fonts/JetBrainsMono-Italic.woff2') format('woff2');
+        font-weight: 400;
+        font-style: italic;
     }
 }
 :root {

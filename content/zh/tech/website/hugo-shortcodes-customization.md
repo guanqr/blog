@@ -19,11 +19,23 @@ Hugo 在其官网上介绍了[自带的一些简码的形式](https://gohugo.io/
 <p style="text-align:{{ index .Params 0 }}">{{ index .Params 1 | markdownify }}</p>
 ```
 
-具体形式如下：
+具体简码和样式如下：
+
+```
+{{</* align left "文字居左" */>}}
+```
 
 {{< align left "文字居左" >}}
 
+```
+{{</* align center "文字居中" */>}}
+```
+
 {{< align center "文字居中" >}}
+
+```
+{{</* align right "文字居右" */>}}
+```
 
 {{< align right "文字居右" >}}
 
@@ -107,9 +119,13 @@ repository = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 
 
 你需要在简码中填写仓库名 `name`，仓库链接 `link`，仓库描述 `description`，代码语言 `language`，代码语言对应的颜色 `color`。
 
-具体形式如下：
+具体简码和样式如下：
 
-{{< github name="Organic-Carbon-Estimating" link="https://github.com/guanqr/Organic-Carbon-Estimating" description="A program used in estimating organic carbon stocks in oceans. 计算指定海域的有机碳存量，包括颗粒有机碳与溶解有机碳，数据依赖于 NASA 中分辨率成像光谱仪 MODIS 遥感产品。" color="#e16737" language="MATLAB">}}
+```
+{{</* github name="Organic-Carbon-Estimating" link="https://github.com/guanqr/Organic-Carbon-Estimating" description="A program used in estimating organic carbon stocks in oceans. 计算指定海域的有机碳存量，包括颗粒有机碳与溶解有机碳，数据依赖于 NASA 中分辨率成像光谱仪 MODIS 遥感产品。" color="#e16737" language="MATLAB" */>}}
+```
+
+{{< github name="Organic-Carbon-Estimating" link="https://github.com/guanqr/Organic-Carbon-Estimating" description="A program used in estimating organic carbon stocks in oceans. 计算指定海域的有机碳存量，包括颗粒有机碳与溶解有机碳，数据依赖于 NASA 中分辨率成像光谱仪 MODIS 遥感产品。" color="#e16737" language="MATLAB" >}}
 
 ## notice
 
@@ -233,27 +249,43 @@ notice-note = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0
 notice-tip = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zM227 387l184-184c7-6 7-16 0-22l-22-23c-7-6-17-6-23 0L216 308l-70-70c-6-6-16-6-23 0l-22 23c-7 6-7 16 0 22l104 104c6 7 16 7 22 0z"/></svg>'
 ```
 
-具体形式如下：
+具体简码和样式如下：
 
-notice-warning：
+```
+{{</* notice notice-warning */>}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{</* /notice */>}}
+```
 
 {{< notice notice-warning >}}
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{< /notice >}}
 
-notice-info：
+```
+{{</* notice notice-info */>}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{</* /notice */>}}
+```
 
 {{< notice notice-info >}}
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{< /notice >}}
 
-notice-note：
+```
+{{</* notice notice-note */>}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{</* /notice */>}}
+```
 
 {{< notice notice-note >}}
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{< /notice >}}
 
-notice-tip：
+```
+{{</* notice notice-tip */>}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{</* /notice */>}}
+```
 
 {{< notice notice-tip >}}
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
@@ -328,15 +360,27 @@ blockquote.quote {
 }
 ```
 
-具体形式如下：
+具体简码和样式如下：
 
 中文：
+
+```
+{{</* quote */>}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{</* /quote */>}}
+```
 
 {{< quote >}}
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{< /quote >}}
 
 英文：
+
+```
+{{</* quote en */>}}
+To see a world in a grain of sand. And a heaven in a wild flower. Hold infinity in the palm of your hand. And eternity in an hour.
+{{</* /quote */>}}
+```
 
 {{< quote en >}}
 To see a world in a grain of sand. And a heaven in a wild flower. Hold infinity in the palm of your hand. And eternity in an hour.
@@ -396,7 +440,13 @@ blockquote.quote-center {
 }
 ```
 
-具体形式如下：
+具体简码和样式如下：
+
+```
+{{</* quote-center */>}}
+十里青山远，潮平路带沙<br>数声啼鸟怨年华<br>又是凄凉时候，在天涯<br>白露收残月，清风散晓霞<br>绿杨堤畔问荷花<br>记得年时沽酒，那人家
+{{</* /quote-center */>}}
+```
 
 {{< quote-center >}}
 十里青山远，潮平路带沙<br>数声啼鸟怨年华<br>又是凄凉时候，在天涯<br>白露收残月，清风散晓霞<br>绿杨堤畔问荷花<br>记得年时沽酒，那人家
@@ -404,4 +454,16 @@ blockquote.quote-center {
 
 ---
 
-因为简码的具体形式写出来会直接被 Hugo 转义，所以就没有在文中直接展示。如果在自定义简码的过程中遇到问题的话，可以直接查看[本文的 Markdown 源码](https://github.com/guanqr/blog/blob/master/content/zh/tech/website/hugo-shortcodes-customization.md)以及[简码的源码](https://github.com/guanqr/blog/tree/master/layouts/shortcodes)。
+注：因为简码的具体形式写出来会直接被 Hugo 转义渲染，所以需要在简码的括号内加入 `/* */` 来防止被转义[^1]。即你需要在 Markdown 中输入：
+
+```
+{{</*/* myshortcode */*/>}}
+```
+
+渲染出来的结果是：
+
+```
+{{</* myshortcode */>}}
+```
+
+[^1]: 参考：[如何在代码块里内嵌 HUGO 的简码 (SHORTCODES) | 消夏錄](https://tin6.com/post/how-to-escape-hugo-shortcodes-within-hugo-markdown/)

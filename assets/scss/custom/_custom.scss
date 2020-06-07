@@ -192,19 +192,14 @@ input#search-input {
 
 // 代码高亮
 
-/* GenericDeleted */ 
-/* GenericInserted */ .chroma-dark .gi { color: #a6e22e }
-
 :root {
     --chroma-deleted-color: #aa0000;
     --chroma-inserted-color: #00aa00;
 }
-
 :root[data-theme="dark"] {
     --chroma-deleted-color: #f92672;
     --chroma-inserted-color: #a6e22e;
 }
-
 .chroma .gi {
     color: var(--chroma-inserted-color);
     font-weight: normal;

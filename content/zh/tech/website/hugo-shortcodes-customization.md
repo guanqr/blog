@@ -21,19 +21,19 @@ Hugo 在其官网上介绍了[自带的一些简码的形式](https://gohugo.io/
 
 具体简码和样式如下：
 
-```
+```markdown
 {{</* align left "文字居左" */>}}
 ```
 
 {{< align left "文字居左" >}}
 
-```
+```markdown
 {{</* align center "文字居中" */>}}
 ```
 
 {{< align center "文字居中" >}}
 
-```
+```markdown
 {{</* align right "文字居右" */>}}
 ```
 
@@ -121,7 +121,7 @@ repository = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 
 
 具体简码和样式如下：
 
-```
+```markdown
 {{</* github name="Organic-Carbon-Estimating" link="https://github.com/guanqr/Organic-Carbon-Estimating" description="A program used in estimating organic carbon stocks in oceans. 计算指定海域的有机碳存量，包括颗粒有机碳与溶解有机碳，数据依赖于 NASA 中分辨率成像光谱仪 MODIS 遥感产品。" color="#e16737" language="MATLAB" */>}}
 ```
 
@@ -251,7 +251,7 @@ notice-tip = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 
 
 具体简码和样式如下：
 
-```
+```markdown
 {{</* notice notice-warning */>}}
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{</* /notice */>}}
@@ -261,7 +261,7 @@ notice-tip = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{< /notice >}}
 
-```
+```markdown
 {{</* notice notice-info */>}}
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{</* /notice */>}}
@@ -271,7 +271,7 @@ notice-tip = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{< /notice >}}
 
-```
+```markdown
 {{</* notice notice-note */>}}
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{</* /notice */>}}
@@ -281,7 +281,7 @@ notice-tip = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{< /notice >}}
 
-```
+```markdown
 {{</* notice notice-tip */>}}
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{</* /notice */>}}
@@ -364,7 +364,7 @@ blockquote.quote {
 
 中文：
 
-```
+```markdown
 {{</* quote */>}}
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{</* /quote */>}}
@@ -376,7 +376,7 @@ blockquote.quote {
 
 英文：
 
-```
+```markdown
 {{</* quote en */>}}
 To see a world in a grain of sand. And a heaven in a wild flower. Hold infinity in the palm of your hand. And eternity in an hour.
 {{</* /quote */>}}
@@ -442,7 +442,7 @@ blockquote.quote-center {
 
 具体简码和样式如下：
 
-```
+```markdown
 {{</* quote-center */>}}
 十里青山远，潮平路带沙<br>数声啼鸟怨年华<br>又是凄凉时候，在天涯<br>白露收残月，清风散晓霞<br>绿杨堤畔问荷花<br>记得年时沽酒，那人家
 {{</* /quote-center */>}}
@@ -456,13 +456,13 @@ blockquote.quote-center {
 
 注：因为简码的具体形式写出来会直接被 Hugo 转义渲染，所以需要在简码的括号内加入 `/* */` 来防止被转义[^1]。即你需要在 Markdown 中输入：
 
-```
+```markdown
 {{</*/* myshortcode */*/>}}
 ```
 
 渲染出来的结果是：
 
-```
+```markdown
 {{</* myshortcode */>}}
 ```
 

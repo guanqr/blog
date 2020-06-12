@@ -144,7 +144,7 @@ uglyURLs = false
 # Hugo 的输出控制
 [outputs]
     page = ["HTML"]
-    home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex"]
+    home = ["HTML", "SectionsAtom", "SectionsRSS"]
     section = ["HTML"]
     # 类别
     taxonomyTerm = ["HTML"]
@@ -155,7 +155,6 @@ uglyURLs = false
 # RSS & Atom 文章数限制
 [services.rss]
     limit = -1
-
 
 
 ##########################################
@@ -431,6 +430,9 @@ uglyURLs = false
 
     # 是否显示每一分类下的文章数
     displayPostsCount = true
+
+    # 设置一个非负数来限制每一分类下展示的文章数
+    limitPostsLimit = 5
 
 
     ######################################
@@ -1294,7 +1296,7 @@ uglyURLs = false
     # 平滑滚动
 
     # 是否开启
-    enableSmoothScroll = true
+    enableSmoothScroll = false
     # 说明：https://github.com/cferdinandi/smooth-scroll
 
 

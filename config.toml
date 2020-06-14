@@ -244,10 +244,10 @@ uglyURLs = false
         weight = 2
         pre = "external"
     [[menu.links]]
-        url = "mailto:guanqirui@zju.edu.cn"
-        name = "Email"
+        url = "/logs/"
+        name = "Logs"
         weight = 1
-        pre = "external"
+        pre = "internal"
     [[menu.links]]
         url = "/atom.xml"
         name = "Feed"

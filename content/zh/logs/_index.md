@@ -21,7 +21,7 @@ comments = false
       scroll-behavior: smooth;
   }
   ```
-+ 更新 Instant Page，从 v3.0.0 更新至最新版（v5.1.0）。
++ 更新 Instant Page，从 v3.0.0 更新至 v5.1.0。
 
 ##### 2020-06-06
 

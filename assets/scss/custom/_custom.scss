@@ -22,7 +22,6 @@ input#search-input {
     border-radius: 0;
     background-color: var(--color-bg);
     border: 1px solid hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), 0.5);
-    transition: all .4s;
     &:hover {
         border-radius: 0;
         color: var(--color-primary);

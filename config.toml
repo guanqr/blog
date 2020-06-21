@@ -244,10 +244,10 @@ uglyURLs = false
         weight = 2
         pre = "external"
     [[menu.links]]
-        url = "/logs/"
-        name = "Logs"
+        url = "mailto:guanqirui@zju.edu.cn"
+        name = "Email"
         weight = 1
-        pre = "internal"
+        pre = "external"
     [[menu.links]]
         url = "/atom.xml"
         name = "Feed"
@@ -1296,7 +1296,7 @@ uglyURLs = false
     # 平滑滚动
 
     # 是否开启
-    enableSmoothScroll = false
+    enableSmoothScroll = true
     # 说明：https://github.com/cferdinandi/smooth-scroll
 
 

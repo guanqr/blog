@@ -1,33 +1,7 @@
-// 页面平滑滚动，用以代替 Smooth Scroll
-
-html {
-	scroll-behavior: smooth;
-}
-
 // 文中超链接
 
 .post-body a {
     text-decoration-color: var(--color-contrast-medium);
-}
-
-// 搜索样式
-
-input#search-input {
-    font-family: "Amstelvar", serif;
-}
-
-// 评论加载按钮
-
-#load-comments {
-    border-radius: 0;
-    background-color: var(--color-bg);
-    border: 1px solid hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), 0.5);
-    &:hover {
-        border-radius: 0;
-        color: var(--color-primary);
-        background-color: var(--color-bg);
-        border: 1px solid hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.5);
-    }
 }
 
 // 友链样式
@@ -115,19 +89,6 @@ input#search-input {
     font-size: 80%;
     overflow: hidden;
     white-space: nowrap;
-}
-
-// 段落样式
-
-.post-body {
-    h2 {
-        border-bottom: 1px solid var(--color-contrast-lower);
-        transition: all .5s;
-    }
-    h3 {
-        border-bottom: 1px dotted var(--color-contrast-lower);
-        transition: all .5s;
-    }
 }
 
 // 弹性布局调整

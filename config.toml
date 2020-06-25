@@ -542,6 +542,9 @@ uglyURLs = false
     #      话。类似，如果你开启深色模式并将默认
     #      模式修改为它，即使你隐藏开关，你的读
     #      者依然可能以浅色模式模式阅读你的博客。
+    #      除非，你开启下方这个选项。
+
+    overrideSystemPreferences = false
 
 
     ######################################
@@ -620,9 +623,11 @@ uglyURLs = false
     # Mermaid (https://github.com/mermaid-js/mermaid)
 
     enableMermaid = false
-    # Note: *global settings*
-    #       `mermaid` in post’s Front Matter
-    #       has a higher priority than here
+    # 说明：文章的 Front Matter 中的 `mermaid`
+    #      的优先级高于此处
+
+    mermaidTheme = 'default'
+    mermaidThemeDark = 'dark'
 
 
     ######################################

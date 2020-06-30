@@ -19,3 +19,9 @@ tags = ["minecraft","zju"]
 ![minecraft-zhejiang-university-2.png](/images/minecraft-zhejiang-university-2.png "启真湖上赛龙舟")
 
 ![minecraft-zhejiang-university-3.png](/images/minecraft-zhejiang-university-3.png "我们都是勇仔")
+
+![minecraft-zhejiang-university-4.png](/images/minecraft-zhejiang-university-4.png "线上毕业典礼")
+
+![minecraft-zhejiang-university-5.png](/images/minecraft-zhejiang-university-5.png "西区大草坪的夜晚")
+
+![minecraft-zhejiang-university-6.png](/images/minecraft-zhejiang-university-6.png "热闹的服务器")

@@ -27,7 +27,9 @@ aliases = ["/study/computer/wechat-mini-app-development-toolbox/"]
 
 ![wechat-mini-app-toolbox.png](/images/wechat-mini-app-toolbox.png "利用假期时间开发的小程序")
 
-由于我们组设计的程序我很不满意，所以就不展示出来献丑了。放假回到家后，我再次回顾了这门课程的学习过程。在课堂展示上，我很欣赏一个小组的设计，他们组设计的是一个工具箱，具备亲戚关系的计算、BMI 的计算、家庭记账等功能。我利用两天的时间将这个工具箱复刻了出来。
+由于我们组设计的程序我很不满意，所以就不展示出来献丑了。放假回到家后，我再次回顾了这门课程的学习过程。在课堂展示上，我很欣赏一个小组的设计，他们组设计的是一个工具箱，具备亲戚关系的计算、BMI 的计算、家庭记账等功能。我利用两天的时间将这个工具箱复刻了出来，我将完整的程序放在了 GitHub 的仓库中。
+
+{{< github name="WeApp-Toolbox" link="https://github.com/guanqr/WeApp-Toolbox" description="WeChat MiniApp Development Course 2019: Toolbox. 浙江大学计算机学院《微信小程序综合实践》课程设计：一款生活工具箱小程序。" color="#f1e05a" language="JavaScript" >}}
 
 ## 程序设计
 
@@ -678,3 +680,133 @@ Page({
   }
 }
 ```
+
+至于数据的删除，我觉得当前很多应用都是向左滑动删除当前一栏数据，因此我对此进行了模仿。
+
+![wechat-mini-app-page-4.png](/images/wechat-mini-app-page-4.png "向左滑动删除数据")
+
+首先对 `wxml` 文件进行改写：
+
+```html
+<!--pages/cashbook/cashbook.wxml-->
+
+<view class="body">
+  <view class="cashbook {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{cashbook}}" wx:key= "index">
+    <view class="content">
+      <view class="title">{{item.title}}</view>
+      <view class="details">
+        <view class="money" style="color:{{item.fontColor}};">{{item.mark}}{{item.money}} 元</view>
+        <view class="date">{{item.date}}</view>
+      </view>
+    </view>
+    <view class="del" catchtap="del" data-index="{{index}}" id='{{item._id}}'>删除</view>
+  </view>
+</view>
+```
+
+再编写 JavaScript 函数实现滑动删除：
+
+```javascript
+// pages/cashbook/cashbook.js
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    cashbook: [],
+    startX: 0, //开始坐标
+    startY: 0,
+    countereId: null
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    const db = wx.cloud.database()
+    db.collection('cashbook').get({
+      success: res => {
+        //console.log(res.data)
+        res.data.reverse()
+        this.setData({
+          cashbook: res.data,
+        })
+      }
+    })
+  },
+
+  addNewCash: function () {
+    setTimeout(function () {
+      wx.navigateTo({
+        url: '/pages/add-cash/add-cash',
+      })
+    }, 50)
+  },
+
+  //手指触摸动作开始 记录起点X坐标
+  touchstart: function (e) {
+    //开始触摸时 重置所有删除
+    this.data.cashbook.forEach(function (v, i) {
+      if (v.isTouchMove)//只操作为true的
+        v.isTouchMove = false;
+    })
+    this.setData({
+      startX: e.changedTouches[0].clientX,
+      startY: e.changedTouches[0].clientY,
+      cashbook: this.data.cashbook
+    })
+  },
+  //滑动事件处理
+  touchmove: function (e) {
+    var that = this,
+    index = e.currentTarget.dataset.index,//当前索引
+    startX = that.data.startX,//开始X坐标
+    startY = that.data.startY,//开始Y坐标
+    touchMoveX = e.changedTouches[0].clientX,//滑动变化坐标
+    touchMoveY = e.changedTouches[0].clientY,//滑动变化坐标
+    //获取滑动角度
+    angle = that.angle({ X: startX, Y: startY }, { X: touchMoveX, Y: touchMoveY });
+    that.data.cashbook.forEach(function (v, i) {
+      v.isTouchMove = false
+      //滑动超过30度角 return
+      if (Math.abs(angle) > 30) return;
+      if (i == index) {
+        if (touchMoveX > startX) //右滑
+          v.isTouchMove = false
+        else //左滑
+          v.isTouchMove = true
+      }
+    })
+    //更新数据
+    that.setData({
+      cashbook: that.data.cashbook
+    })
+  },
+  /**
+     * 计算滑动角度
+     * @param {Object} start 起点坐标
+     * @param {Object} end 终点坐标
+     */
+  angle: function (start, end) {
+    var _X = end.X - start.X,
+      _Y = end.Y - start.Y
+    //返回角度 /Math.atan()返回数字的反正切值
+    return 360 * Math.atan(_Y / _X) / (2 * Math.PI);
+  },
+  //删除事件
+  del: function (e) {
+    this.data.cashbook.splice(e.currentTarget.dataset.index, 1)
+    this.setData({
+      cashbook: this.data.cashbook
+    })
+    var uid = e.target.id
+    //console.log(uid)
+    const db = wx.cloud.database()
+    db.collection('cashbook').doc(uid).remove()
+  },
+})
+```
+
+删除数据的关键就是获取当前数据的 `_id` 值。在 `wxml` 文件中，我通过使用 `id = '{{item._id}}'` 获取到了当前数据的 `_id` 值，然后使用 `remove()` 删除了指定数据。

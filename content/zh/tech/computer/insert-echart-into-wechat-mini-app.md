@@ -234,9 +234,16 @@ Page({
         temperature = [];
         res.data.reverse();
         name.push(res.data[0].name);
-        for(var i=6; i>=0; i--) {
-          date.push(res.data[i].date);
-          temperature.push(res.data[i].temperature);
+        if (res.data.length < 7) {
+          for(var i=res.data.length-1; i>=0; i--) {
+            date.push(res.data[i].date);
+            temperature.push(res.data[i].temperature);
+          }
+        } else {
+          for(var i=6; i>=0; i--) {
+            date.push(res.data[i].date);
+            temperature.push(res.data[i].temperature);
+          }
         }
         this.init_echarts();
       }
@@ -308,8 +315,30 @@ Page({
 如果在绘制完图像后，再添加新的数据，那么当前图像页面需要刷新才能显示新的数据。因此我还添加了一个刷新（`refresh`）按钮：
 
 ```javascript
+// 刷新数据
 refresh: function () {
-  this.setOption(Chart); //更新数据
+  const db = wx.cloud.database();
+  db.collection('temp').get({
+    success: res => {
+      name = [];
+      date = [];
+      temperature = [];
+      res.data.reverse();
+      name.push(res.data[0].name);
+      if (res.data.length < 7) {
+        for(var i=res.data.length-1; i>=0; i--) {
+          date.push(res.data[i].date);
+          temperature.push(res.data[i].temperature);
+        }
+      } else {
+        for(var i=6; i>=0; i--) {
+          date.push(res.data[i].date);
+          temperature.push(res.data[i].temperature);
+        }
+      }
+      this.init_echarts();
+    }
+  });
 }
 ```
 

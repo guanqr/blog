@@ -29,7 +29,7 @@ aliases = ["/study/computer/wechat-mini-app-development-toolbox/"]
 
 由于我们组设计的程序我很不满意，所以就不展示出来献丑了。放假回到家后，我再次回顾了这门课程的学习过程。在课堂展示上，我很欣赏一个小组的设计，他们组设计的是一个工具箱，具备亲戚关系的计算、BMI 的计算、家庭记账等功能。我利用两天的时间将这个工具箱复刻了出来，我将完整的程序放在了 GitHub 的仓库中。
 
-{{< github name="WeApp-Toolbox" link="https://github.com/guanqr/WeApp-Toolbox" description="WeChat MiniApp Development Course 2019: Toolbox. 浙江大学计算机学院《微信小程序综合实践》课程设计：一款生活工具箱小程序。" color="#f1e05a" language="JavaScript" >}}
+{{< github name="WeApp-Toolbox" link="https://github.com/guanqr/WeApp-Toolbox" description="WeChat MiniApp: Toolbox. 微信小程序：一个健康管理主题的生活工具箱。" color="#f1e05a" language="JavaScript" >}}
 
 ## 程序设计
 

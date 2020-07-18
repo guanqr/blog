@@ -72,9 +72,8 @@ https://api.weixin.qq.com/tcb/databaseadd?access_token=ACCESS_TOKEN
 
 ```python
 def databaseAdd(access_token):
-    """"
+    """
     新建记录并对内容进行定义
-    collection_name 集合的名称
     """
     url = 'https://api.weixin.qq.com/tcb/databaseadd?access_token=' + access_token
     
@@ -90,6 +89,36 @@ def databaseAdd(access_token):
     print(result)
 ```
 
-其中，`data` 中的 `env` 是数据库的名称。
+其中，`data` 中的 `env` 是数据库的名称。我们执行以上的函数，即可在小程序云开发的后台查看到新添加的数据。
 
-我们执行以上的函数，即可在小程序云开发的后台查看到新添加的数据。因为我想要实现的功能仅为本地数据的上传，数据的修改和删除操作均在小程序端执行，所以就没有编写有关修改和删除的函数。感兴趣的读者可以自行查阅网上相关资料自行编写。
+对云开发数据库中的数据进行获取的方法类似。比如现在有一个名为 `user` 的数据集合，数据中包含了用户的姓名 `name` 和位置 `location`，我们想要获取到有关 Tony 用户的所有数据。同样定义一个函数：
+
+```python
+def databaseQuery(access_token):
+    """
+    检索数据库，获取 tempName 用户数据
+    """
+    url = 'https://api.weixin.qq.com/tcb/databasequery?access_token=' + access_token
+    
+    #query = 'db.collection("user").limit(100).get()'
+    query = 'db.collection("user").where({"name":"' + tempName + '"}).get()'
+    
+    data = {
+        "env": "toolbox-01",
+        "query": query
+    }
+    
+    response = requests.post(url, data=json.dumps(data))
+    length = len(response.json()['data'])
+    user = response.json()['data'][length - 1]
+    user_dict = ast.literal_eval(user)
+    openId = user_dict.get('_openid')
+    location = user_dict.get('location')
+    
+    print(openId)
+    print(location)
+```
+
+其中， `tempName = Tony`，函数打印出了有关 Tony 的最新数据中对应的 `_openid` 和 `location` 信息。
+
+因为我想要实现的功能仅为本地数据的上传，数据的修改和删除操作均在小程序端执行，所以就没有编写有关修改和删除的函数。感兴趣的读者可以自行查阅网上相关资料自行编写。

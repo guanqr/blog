@@ -155,7 +155,7 @@ void loop() {
     String s = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>\r\n<p style='color:#666; font-size:40px; text-align:center;'>状态：";
     s+="<head><meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" /></head>";
     s += (val)?"LED 已关闭</p>":"LED 已开启</p>";
-    s += "<p style='font-size:40px; text-align:center;'><a style='color:#666;' href='/gpio/0'>开启 LED</a></p><p style='font-size:40px; text-align:center;'><a style='color:#666;' href='/gpio/1'>关闭 LED</a></p><p style='color:#666; font-size:40px; text-align:center;'>关其锐 学号：3170101201 嵌入式系统与应用课程设计</p></html>\n";
+    s += "<p style='font-size:40px; text-align:center;'><a style='color:#666;' href='/gpio/0'>开启 LED</a></p><p style='font-size:40px; text-align:center;'><a style='color:#666;' href='/gpio/1'>关闭 LED</a></p><p style='color:#666; font-size:40px; text-align:center;'>GuanQirui 嵌入式系统与应用课程设计</p></html>\n";
 
     // Send the response to the client
     client.print(s);

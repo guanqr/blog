@@ -120,6 +120,12 @@ preload:
 npm install workbox-build gulp gulp-uglify readable-stream uglify-es --save-dev
 ```
 
+这里 workbox-build 模块可以通过 Gulp 生成 `sw.js` 文件。
+
+{{< notice notice-note >}}
+除了使用 workbox-build 模块生成 `sw.js` 外，还可以使用 Golang 程序生成 `sw.js`，具体的方法在文章末尾。
+{{< /notice >}}
+
 > 如何将安装的模块更新到最新版本呢？
 >
 > ```
@@ -177,7 +183,7 @@ gulp.task("build", gulp.series("generate-service-worker", "uglify"));
 
 如果你此前使用 Gulp 压缩了博客的源码，你的站点根目录下应该已经存在 `gulpfile.js` 文件，那么可以直接在该文件中添加上述内容，重复的地方忽略即可。
 
-然后，再在站点根目录下新建一个 `sw-template.js` 文件：
+<span id="sw-template"></span>然后，再在站点根目录下新建一个 `sw-template.js` 文件：
 
 ```javascript
 const workboxVersion = '5.0.0';
@@ -362,5 +368,121 @@ hexo g && gulp build
 
 如果你完成了上述配置，将网站部署后，就可以实现 PWA 了。
 
+---
+
+{{< notice notice-tip >}}
+**一种使用 Golang 程序生成 `sw.js` 的方法**
+{{< /notice >}}
+
+程序设计的思路和 workbox-build 模块相同，根据 `sw-template.js` 模板，编写 Golang 程序，遍历根目录下的所有文件，生成 `sw.js` 文件。
+
+`sw-template.js` 模板与[上文](#sw-template)中的模板一直，只需要将中间部分进行修改：
+
+```diff
+- workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
++ workbox.precaching.precacheAndRoute([{{- range $index, $element := . -}}
++ {{- if ne $index 0 -}},
++ {{- end -}}
++ {revision:"{{$element.Revision}}",url:"./{{$element.Url}}"}
++ {{- end -}}]);
+```
+
+Golang 程序如下[^3]：
+
+```go
+package main
+
+import (
+	"crypto/md5"
+	"encoding/hex"
+	"flag"
+	"html/template"
+	"io"
+	"io/ioutil"
+	"log"
+	"os"
+	"path"
+)
+
+type Cache struct {
+	Url			string
+	Revision	string
+}
+
+func GetCacheList(rootPath string, dirPath string) (l []Cache, err error) {
+	dir, err := ioutil.ReadDir(path.Join(rootPath, dirPath))
+	if err != nil{
+		return
+	}
+
+	for _, fi := range dir {
+		relPath := path.Join(dirPath, fi.Name())
+		if fi.IsDir() {
+			dirList, err := GetCacheList(rootPath, relPath)
+			if err != nil{
+				return nil, err
+			}
+			l = append(l, dirList...)
+		} else {
+			ext := path.Ext(fi.Name())
+			if ext == ".html" || ext == ".js" || ext == ".css" || ext == ".json" {
+				realPath := path.Join(rootPath, relPath)
+				revision, err := GetHash(realPath)
+				if err != nil {
+					return nil, err
+				}
+				c := Cache{
+					Url:      relPath,
+					Revision: revision,
+				}
+				l = append(l, c)
+			}
+		}
+	}
+	return 
+}
+
+func GetHash(filePath string) (hashString string, err error) {
+	f, err := os.Open(filePath)
+	if err != nil {
+		return 
+	}
+	defer f.Close()
+	
+	h := md5.New()
+	if _, err = io.Copy(h, f); err != nil {
+		return 
+	}
+	hashBytes := h.Sum(nil)[:16]
+	hashString = hex.EncodeToString(hashBytes)
+	return 
+}
+
+func main()  {
+	root := flag.String("r", "./public", "根目录")
+	temp := flag.String("t", "./workbox/sw-template-go.js", "模板路径")
+	flag.Parse()
+	l, err := GetCacheList(*root, "")
+	if err != nil {
+		log.Fatal(err)
+	}
+	t, err := template.ParseFiles(*temp)
+	if err != nil {
+		log.Fatal(err)
+	}
+	f, err := os.OpenFile(path.Join(*root, "sw.js"), os.O_CREATE|os.O_WRONLY, 0755)
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = t.Execute(f, l)
+	if err != nil {
+		log.Println(err)
+	}
+}
+```
+
+运行该程序即可生成 `sw.js`。不过为了压缩该文件大小，仍需要使用 Gulp 中的 uglify 组件。
+
 [^1]: 参考①：[渐进式网络应用程序 | 维基百科](https://zh.wikipedia.org/wiki/渐进式网络应用程序)<br>参考②：[渐进式 Web 应用（PWA） | MDN web docs](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps)
 [^2]: 这里一个提供在线测试的网站：<https://www.webpagetest.org/lighthouse>
+[^3]: 参考：[使用 Golang 生成 Service Worker | EVERGARDEN](https://everness.me/tech/workbox-in-golang/)

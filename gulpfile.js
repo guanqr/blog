@@ -26,7 +26,7 @@ gulp.task("uglify", function () {
         gulp.src("./public/sw.js"),
         uglify(),
         gulp.dest("./public")
-  );
+    );
 });
 
 // 执行 gulp build 命令时执行的任务

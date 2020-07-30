@@ -86,5 +86,12 @@
   name = "Refun"
   url = "https://gears233.github.io/"
   avatar = "/images/friends/refun.jpg"
-  description = "重新找回那份简单的快乐..."
+  description = "重新找回那份简单的快乐…"
   weight = 13
+
+[[blogroll]]
+  name = "Senorui’s Blog"
+  url = "https://senorui.top/"
+  avatar = "/images/friends/senorui.jpg"
+  description = "Shoot for the moon; even if you miss, you'll land among the stars."
+  weight = 14

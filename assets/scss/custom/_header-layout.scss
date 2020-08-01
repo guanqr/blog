@@ -1,39 +1,48 @@
-// 弹性布局调整
+// 顶栏布局
 
 .brand {
     font-family: 'ZCOOL XiaoWei', serif;
     font-weight: bold;
-    line-height: 1;
 }
 
-.nav {
-    font-size: 1em;
-    margin-top: 0.4em;
-}
-.home .poetry {
-    padding: 10em 1em;
-}
-.menu-item {
-    .tags, .categories, .series, .archives, .friends, .about {
-        display: none;
+@if ($headerLayoutFlex) {
+    .brand {
+        line-height: 1;
     }
-}
-@media (max-width: $maxWidth) {
     .nav {
-        margin: 2em 0;
+        font-size: 1em;
+        margin-top: 0.4em;
     }
-    .menu {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    .home .poetry {
+        padding: 10em 1em;
     }
     .menu-item {
         .tags, .categories, .series, .archives, .friends, .about {
-            display: inline-block;
+            display: none;
         }
     }
-    .menu-item-name {
-        font-size: 80%;
+    @media (max-width: $maxWidth) {
+        .nav {
+            margin: 2em 0;
+        }
+        .menu {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .menu-item {
+            .tags, .categories, .series, .archives, .friends, .about {
+                display: inline-block;
+            }
+        }
+        .menu-item-name {
+            font-size: 80%;
+        }
     }
-}
-.nav-toggle {
-    transform: translateY(0.4em);
+    .nav-toggle {
+        transform: translateY(0.4em);
+    }
+} @else {
+    .brand {
+        font-size: 2.5em;
+        line-height: 2;
+    }
 }

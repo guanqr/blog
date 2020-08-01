@@ -1,0 +1,31 @@
+// 友链样式
+
+.blogroll {
+    padding: 1em 0;
+    border: 2px solid transparent;
+    border-bottom: 1px dashed var(--color-contrast-low);
+    display: flex;
+    transition: all .5s;
+    .friend {
+        text-decoration: none;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .name {
+        font-weight: bold;
+        margin: 0.375em 0;  
+    }
+    .excerpt {
+        font-size: 0.875em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .avatar {
+        width: 4em !important;
+        height: 4em !important;
+        margin: 0 1em 0 0 !important;
+        z-index: 0;
+    }
+}

@@ -1,0 +1,109 @@
+// 可变字体 https://github.com/TypeNetwork/Amstelvar
+
+// Magic adjustment for en
+
+@if ($lineHeight != 2) {
+    @font-face {
+        font-family: 'Amstelvar';
+        font-display: swap;
+        src: url('../../fonts/Amstelvar-Roman-VF.woff2') format('woff2-variations'),
+             url('../../fonts/Amstelvar-Roman-VF.woff2') format('woff2');
+        font-weight: 100 900;
+        font-stretch: 50% 125%;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Amstelvar';
+        font-display: swap;
+        src: url('../../fonts/Amstelvar-Italic-VF.woff2') format('woff2-variations'),
+             url('../../fonts/Amstelvar-Italic-VF.woff2') format("woff2");
+        font-weight: 100 900;
+        font-stretch: 50% 125%;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../../fonts/JetBrainsMono-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../../fonts/JetBrainsMono-Italic.woff2') format('woff2');
+        font-weight: 400;
+        font-style: italic;
+    }
+} @else {
+    @font-face {
+        font-family: 'Amstelvar';
+        font-display: swap;
+        src: url('../fonts/Amstelvar-Roman-VF.woff2') format('woff2-variations'),
+             url('../fonts/Amstelvar-Roman-VF.woff2') format('woff2');
+        font-weight: 100 900;
+        font-stretch: 50% 125%;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Amstelvar';
+        font-display: swap;
+        src: url('../fonts/Amstelvar-Italic-VF.woff2') format('woff2-variations'),
+             url('../fonts/Amstelvar-Italic-VF.woff2') format("woff2");
+        font-weight: 100 900;
+        font-stretch: 50% 125%;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../fonts/JetBrainsMono-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'JetBrains Mono';
+        font-display: swap;
+        src: url('../fonts/JetBrainsMono-Italic.woff2') format('woff2');
+        font-weight: 400;
+        font-style: italic;
+    }
+}
+
+:root {
+    --text-wdth: 90;
+    --text-opsz: 40;
+    --text-YTLC: 460;
+}
+
+body {
+    font-variation-settings:
+        'wdth' var(--text-wdth),
+        'opsz' var(--text-opsz),
+        'YTLC' var(--text-YTLC);
+}
+
+.post-title {
+    font-variation-settings:
+        'wght' 550,
+        'opsz' 60,
+        'YOPQ' 90;
+}
+
+.list-item-time {
+    font-feature-settings: 'tnum';
+}

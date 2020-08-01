@@ -1,0 +1,58 @@
+// 自定义的页脚微信订阅号样式
+
+.subscription-icon {
+    height: 1.5em;
+    width: 1.5em;
+    cursor: pointer;
+    transition: fill .5s;
+    &:hover {
+        fill: #7BB32E;
+    }
+}
+
+.subscription-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+    border: 1px solid var(--color-contrast-lower);
+    background-color: var(--color-bg);
+    transition: all 0.35s ease-in-out;
+    z-index: 5;
+    opacity: 0;
+}
+
+.subscription-box {
+    position: absolute;
+    bottom: 1em;
+    left: 1.2em;
+    &:hover {
+        .subscription-hover {
+            bottom: 1.5em;
+            left: 1.5em;
+            height: 12em;
+            width: 10.6em;
+            opacity: 1;
+        }
+    }
+}
+
+.subscription-qrcode {
+    position: absolute;
+    bottom: 0.7em;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.subscription-description {
+    position: absolute;
+    bottom: 1%;
+    left: 5%;
+    right: 5%;
+    font-size: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+}

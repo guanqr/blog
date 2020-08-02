@@ -15,3 +15,26 @@
 
 // 友链
 @import "blogroll";
+
+.brand {
+    white-space: nowrap;
+}
+.site-brand {
+    overflow: auto hidden;
+}
+
+/*.header {
+    background: none;
+    border-bottom: 3px solid var(--color-contrast-high);
+    margin: 0 auto 2px;
+    padding: 6em 0;
+    max-width: $maxWidth;
+}
+
+.menu {
+    background: none;
+    border-top: 1px solid var(--color-contrast-high);
+    border-bottom: 1px solid var(--color-contrast-high);
+    margin: 0 auto;
+    max-width: $maxWidth;
+}*/

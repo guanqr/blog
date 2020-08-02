@@ -3,6 +3,7 @@
 .brand {
     font-family: 'ZCOOL XiaoWei', serif;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 @if ($headerLayoutFlex) {
@@ -44,5 +45,8 @@
     .brand {
         font-size: 2.5em;
         line-height: 2;
+    }
+    .site-brand {
+        overflow: auto hidden;
     }
 }

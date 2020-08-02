@@ -1,4 +1,4 @@
-{{ if .Site.Params.footerSubscription }}
+{{ if .Site.Params.enableFooterSubscription }}
     <div class="subscription-box">
         {{ replace (index $.Site.Data.SVG $.Site.Params.subscriptionIcon) "icon" "icon subscription-icon" | safeHTML }}
         <div class="subscription-hover">

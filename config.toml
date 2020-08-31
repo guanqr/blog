@@ -244,14 +244,19 @@ uglyURLs = false
         weight = 2
         pre = "external"
     [[menu.links]]
+        url = "/dream/"
+        name = "Dream"
+        weight = 1
+        pre = "internal"
+    [[menu.links]]
         url = "mailto:guanqirui@zju.edu.cn"
         name = "Email"
-        weight = 1
+        weight = 2
         pre = "external"
     [[menu.links]]
         url = "/atom.xml"
         name = "Feed"
-        weight = 2
+        weight = 3
         pre = "external"
 
     # 首页的底部链接

@@ -31,3 +31,4 @@ gulp.task("uglify", function () {
 
 // 执行 gulp 命令时执行的任务
 gulp.task("build", gulp.series("generate-service-worker", "uglify"));
+gulp.task("sw-uglify", gulp.series("uglify"));

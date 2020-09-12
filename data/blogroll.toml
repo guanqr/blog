@@ -95,3 +95,10 @@
   avatar = "/images/friends/senorui.jpg"
   description = "Shoot for the moon; even if you miss, you'll land among the stars."
   weight = 14
+
+[[blogroll]]
+  name = "Sissioy’s Blog"
+  url = "https://www.sissioy.com/"
+  avatar = "/images/friends/sissioy.jpg"
+  description = "人间有味是清欢"
+  weight = 15

@@ -1,4 +1,4 @@
 +++
-title = "美剧"
+title = "剧集"
 slug = "tv-series"
 +++

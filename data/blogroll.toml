@@ -41,64 +41,57 @@
   weight = 6
 
 [[blogroll]]
-  name = "谁把钱丢了"
-  url = "https://jmyblog.top/"
-  avatar = "/images/friends/jmyblog.jpg"
-  description = "Everyday struggle"
-  weight = 7
-
-[[blogroll]]
-  name = "黎璃的个人博客"
-  url = "https://xiaotong-sun.github.io/"
-  avatar = "/images/friends/xiaotongsun.jpg"
-  description = "不困于物，不乱于心"
-  weight = 8
-
-[[blogroll]]
   name = "数学小兵儿"
   url = "https://matnoble.me/"
   avatar = "/images/friends/matnoble.png"
   description = "数学＆计算机 我都爱"
-  weight = 9
+  weight = 7
 
 [[blogroll]]
   name = "班班碎碎念"
   url = "https://blog.dlzhang.com/"
   avatar = "/images/friends/dlzhang.jpg"
   description = "无曰已是，无曰遂真"
-  weight = 10
+  weight = 8
 
 [[blogroll]]
   name = "mghio"
   url = "https://www.mghio.cn/"
   avatar = "/images/friends/mghio.png"
   description = "Java 搬运工＆终身学习者"
-  weight = 11
+  weight = 9
 
 [[blogroll]]
   name = "YIDAJIABEI"
   url = "https://www.yidajiabei.xyz/"
   avatar = "/images/friends/yidajiabei.png"
   description = "记录所学所思所想，关注 Python、web 以及我感兴趣的技术，热爱生活"
-  weight = 12
+  weight = 10
 
 [[blogroll]]
   name = "Refun"
   url = "https://gears233.github.io/"
   avatar = "/images/friends/refun.jpg"
   description = "重新找回那份简单的快乐…"
-  weight = 13
+  weight = 11
 
 [[blogroll]]
   name = "Senorui’s Blog"
   url = "https://senorui.top/"
   avatar = "/images/friends/senorui.jpg"
   description = "Shoot for the moon; even if you miss, you'll land among the stars."
-  weight = 14
+  weight = 12
 
 [[blogroll]]
   name = "Sissioy’s Blog"
   url = "https://www.sissioy.com/"
   avatar = "/images/friends/sissioy.jpg"
   description = "人间有味是清欢"
-  weight = 15
+  weight = 13
+
+[[blogroll]]
+  name = "XTAO’s Tech Blog"
+  url = "https://guoxiaotao.xyz/"
+  avatar = "/images/friends/guoxiaotao.jpg"
+  description = "Everything about robotics"
+  weight = 14

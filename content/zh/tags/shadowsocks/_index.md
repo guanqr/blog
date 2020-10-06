@@ -1,4 +1,0 @@
-+++
-title = "ShadowSocks"
-slug = "shadowsocks"
-+++

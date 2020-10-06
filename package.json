@@ -26,11 +26,6 @@
   "homepage": "https://github.com/guanqr/blog#readme",
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-uglify": "^3.0.2",
-    "ipfs-deploy": "^8.0.1",
-    "readable-stream": "^3.6.0",
-    "uglify-es": "^3.3.9",
-    "workbox-build": "^5.1.3"
+    "ipfs-deploy": "^8.0.1"
   }
 }

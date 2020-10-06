@@ -1,4 +1,0 @@
-+++
-title = "WordPress"
-slug = "wordpress"
-+++

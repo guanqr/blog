@@ -15,8 +15,8 @@ jobs:
     - name: 'Building...'
       uses: reuixiy/hugo-deploy@v1
       env:
-        DEPLOY_REPO: guanqr/guanqr.github.io
-        DEPLOY_BRANCH: master
+        DEPLOY_REPO: guanqr/blog
+        DEPLOY_BRANCH: build
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
         TZ: Asia/Shanghai

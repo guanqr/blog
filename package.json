@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "hugo --gc --minify --cleanDestinationDir",
-    "update-theme": "git submodule update --rebase --remote",
-    "ipfs-deploy": "ipfs-deploy -p pinata public -u pinata -d cloudflare -C -O",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "update-theme": "git submodule update --rebase --remote"
   },
   "repository": {
     "type": "git",
@@ -25,7 +23,5 @@
   },
   "homepage": "https://github.com/guanqr/blog#readme",
   "dependencies": {},
-  "devDependencies": {
-    "ipfs-deploy": "^8.0.1"
-  }
+  "devDependencies": {}
 }

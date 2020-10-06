@@ -7,7 +7,7 @@ gitinfo = false
 badge = false
 meta = false
 share = false
-comments = true
+comments = false
 +++
 
 ![zijingang-qiushi-college.jpg](/images/zijingang-qiushi-college.jpg "浙江大学紫金港校区·求是书院")

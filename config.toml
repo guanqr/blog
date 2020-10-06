@@ -636,12 +636,12 @@ uglyURLs = false
     # 说明：仅在生产环境（production）下渲染
 
     # 是否开启（全局设置）
-    enableComments = true
+    enableComments = false
     # 说明：文章的 Front Matter 中的 `comments`
     #      的优先级高于此处
 
     ## Disqus
-    enableDisqus = true
+    enableDisqus = false
     disqusShortname = "guanqr"
 
     ## Valine
@@ -1205,6 +1205,9 @@ uglyURLs = false
     # 是否开启
     enableFooter = true
 
+    # 是否显示
+    displayFooter = true
+
     # 是否在首页显示
     displayFooterInHome = true
 
@@ -1281,7 +1284,7 @@ uglyURLs = false
     # 文件指纹和子资源完整性（SRI）
 
     # 是否开启
-    enableFingerprint = true
+    enableFingerprint = false
     # 说明：仅对 MemE 生成的 CSS 和 JS 有效
 
 

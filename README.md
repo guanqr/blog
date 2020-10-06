@@ -5,7 +5,7 @@
 [![Home](https://img.shields.io/badge/Home-Guanqr-aa96da)](https://guanqr.com)
 [![Generator](https://img.shields.io/badge/Generator-Hugo-ff4088?&logo=hugo)](https://gohugo.io/)
 [![Theme](https://img.shields.io/badge/Theme-MemE-2a6df4)](https://github.com/reuixiy/hugo-theme-meme)
-[![Built on GitHub](https://github.com/guanqr/guanqr.com/workflows/build/badge.svg)](https://github.com/guanqr/guanqr.com/actions)
+[![Built on GitHub](https://github.com/guanqr/blog/workflows/build/badge.svg)](https://github.com/guanqr/blog/actions)
 
 关键词：生活、悦读、品影、旅行、幻想、科学、技术、光学、计算机。
 

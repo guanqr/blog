@@ -1,8 +1,2 @@
 [subscription]
 other = "WeChat Subscription"
-
-[serviceWorkerUpdatedText]	
-other = "New Update Available"	
-
-[serviceWorkerUpdatedAction]	
-other = "Refresh"	

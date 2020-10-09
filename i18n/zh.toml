@@ -1,8 +1,2 @@
 [subscription]
 other = "微信扫一扫，订阅本博客"
-
-[serviceWorkerUpdatedText]	
-other = "已更新最新版本"	
-
-[serviceWorkerUpdatedAction]	
-other = "点击刷新"

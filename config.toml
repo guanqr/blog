@@ -196,41 +196,55 @@ uglyURLs = false
         post = "th" 
         identifier = "categories"
     [[menu.main]]
+        url = "/life/"
+        name = "生活"
+        weight = 3
+        pre = "internal"
+        post = "grav"
+        identifier = "life"
+    [[menu.main]]
+        url = "/tech/"
+        name = "科技"
+        weight = 4
+        pre = "internal"
+        post = "wpexplorer"
+        identifier = "tech"
+    [[menu.main]]
         url = "/series/"
         name = "专栏"
-        weight = 3
+        weight = 5
         pre = "internal"
         post = "feather-alt" 
         identifier = "series"
-    [[menu.main]]
-        url = "/archives/"
-        name = "归档"
-        weight = 4
-        pre = "internal"
-        post = "archive"
-        identifier = "archives"
+    #[[menu.main]]
+    #    url = "/archives/"
+    #    name = "归档"
+    #    weight = 6
+    #    pre = "internal"
+    #    post = "archive"
+    #    identifier = "archives"
     [[menu.main]]
         url = "/blogroll/"
         name = "友链"
-        weight = 5
+        weight = 6
         pre = "internal"
         post = "pagelines"
         identifier = "friends"
     [[menu.main]]
         url = "/about/"
         name = "关于"
-        weight = 6
+        weight = 7
         pre = "internal"
         post = "user-circle"
         identifier = "about"
     [[menu.main]]
-        weight = 7
+        weight = 8
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 8
+        weight = 9
         identifier = "lang-switcher"
     #[[menu.main]]
-    #    weight = 9
+    #    weight = 10
     #    identifier = "search"
     #    post = "search"
     [[menu.socials]]
@@ -243,11 +257,16 @@ uglyURLs = false
         name = "CC98"
         weight = 2
         pre = "external"
+    #[[menu.socials]]
+    #    url = "mailto:guanqirui@zju.edu.cn"
+    #    name = "Email"
+    #    weight = 3
+    #    pre = "external"
     [[menu.links]]
-        url = "mailto:guanqirui@zju.edu.cn"
-        name = "Email"
+        url = "/archives/"
+        name = "Archives"
         weight = 1
-        pre = "external"
+        pre = "internal"
     [[menu.links]]
         url = "/atom.xml"
         name = "Feed"

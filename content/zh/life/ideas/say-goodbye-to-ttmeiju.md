@@ -1,7 +1,7 @@
 +++
 title = "再见了，天天美剧"
 date = "2019-05-16T00:49:31+08:00"
-tags = ["essay","tv-series"]
+tags = ["tv-series"]
 aliases = ["/2019/05/16/say-goodbye-to-ttmeiju/"]
 +++
 

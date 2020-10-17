@@ -2,7 +2,7 @@
 title = "对北方的眷恋"
 description = "想念那群当年一起为理想奋斗，为未来挥洒汗水的朋友们"
 date = "2020-05-24T12:04:35+08:00"
-tags = ["essay","youth"]
+tags = ["youth"]
 indent = true
 +++
 

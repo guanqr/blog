@@ -1,7 +1,7 @@
 +++
 title = "春节和肺炎的组合"
 date = "2020-01-25T22:35:39+08:00"
-tags = ["essay","family"]
+tags = ["family"]
 aliases = ["/life/ideas/2020-spring-festival/"]
 indent = true
 +++

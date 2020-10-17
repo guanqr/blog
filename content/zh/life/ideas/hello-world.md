@@ -1,7 +1,7 @@
 +++
 title = "Hello World!"
 date = "2019-03-31T19:35:30+08:00"
-tags = ["essay","youth"]
+tags = ["youth"]
 dropCap = false
 +++
 

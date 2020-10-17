@@ -1,7 +1,7 @@
 +++
 title = "一个卡片相机"
 date = "2019-12-11T17:01:26+08:00"
-tags = ["essay","family","youth"]
+tags = ["family","youth"]
 indent = true
 dropCapAfterHr = true
 +++

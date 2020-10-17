@@ -1,7 +1,7 @@
 +++
 title = "提问者与回答者"
 date = "2020-03-20T21:50:17+08:00"
-tags = ["essay","humankind"]
+tags = ["humankind"]
 dropCap = false
 +++
 

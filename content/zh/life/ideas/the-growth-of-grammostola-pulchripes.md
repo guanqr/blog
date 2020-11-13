@@ -12,7 +12,7 @@ toc = false
 <strong>注意</strong>：本篇文章涉及到蜘蛛、蟑螂等生物的相关文字和图像，对此类生物敏感的读者请勿继续阅读。
 {{< /notice >}}
 
-某日突发奇想，想要观察捕鸟蛛的生活状态，于是就去贴吧和淘宝逛了一圈，入手了一只金直间（巴西巨人金直间，Grammostola pulchripes）。为什么选择金直间呢，因为这种捕鸟蛛相对其他捕鸟蛛而言，比较温顺，准确的来说就是怂，不会主动攻击人，自然不会将毒牙插进你的皮肤。
+<span class="drop-cap">某</span>日突发奇想，想要观察捕鸟蛛的生活状态，于是就去贴吧和淘宝逛了一圈，入手了一只金直间（巴西巨人金直间，Grammostola pulchripes）。为什么选择金直间呢，因为这种捕鸟蛛相对其他捕鸟蛛而言，比较温顺，准确的来说就是怂，不会主动攻击人，自然不会将毒牙插进你的皮肤。
 
 我收到金直间的时候是十月七日，此时它只是一只蜕了三次皮（3L）的小蜘蛛，长度有 1cm 多。由于是幼蛛，金直间的身上还没有什么颜色，只有白里透黄的肢体和黑色的肚子。
 
@@ -28,7 +28,7 @@ toc = false
 
 下面是对金直间的成长记录，使用手机加微距镜头拍摄，图像边缘会有少许色差。
 
-<p style="text-align:center; font-size:1.6em"><strong>2020 年 10 月 7 日</strong></p>
+<p style="text-align:center; font-size:1.6em"><strong>2020.10.07</strong></p>
 
 今日刚收到小金直间，长度有 1cm 多，经过长途跋涉后依然很活泼。
 
@@ -36,7 +36,7 @@ toc = false
 
 ![grammostola-pulchripes-1.jpg](/images/grammostola-pulchripes-1.jpg "化蛹的面包虫")
 
-<p style="text-align:center; font-size:1.6em"><strong>2020 年 10 月 26 日</strong></p>
+<p style="text-align:center; font-size:1.6em"><strong>2020.10.26</strong></p>
 
 前几天金直间就开始搬土将自己的小窝封住口，今天早上检查的时候发现金直间从洞口探出了白白嫩嫩的肢体，看来它已经蜕皮了。蜘蛛蜕皮前几天会停止进食，而且脚部发黑，在蜕皮的时候尽量不要打扰它。目前的金直间足展已经达到了 2cm。
 
@@ -44,7 +44,7 @@ toc = false
 
 ![grammostola-pulchripes-3.jpg](/images/grammostola-pulchripes-3.jpg "在饲养盒里乱爬的小蟑螂")
 
-<p style="text-align:center; font-size:1.6em"><strong>2020 年 11 月 12 日</strong></p>
+<p style="text-align:center; font-size:1.6em"><strong>2020.11.12</strong></p>
 
 昨天看到金直间开始吐丝，结了厚厚一层网，它的脚部发黑，猜想可能又要蜕皮了。今天早上一看，果然蜕皮了。蜕下的皮还很完整。蜕完皮的金直间足展已经将近 3cm，身体已经有发黑的迹象。白里透着黑。
 

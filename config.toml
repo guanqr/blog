@@ -204,7 +204,7 @@ uglyURLs = false
         identifier = "life"
     [[menu.main]]
         url = "/tech/"
-        name = "科技"
+        name = "技术"
         weight = 4
         pre = "internal"
         post = "wpexplorer"

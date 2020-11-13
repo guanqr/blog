@@ -1,7 +1,7 @@
 +++
 title = "竺老校长的两个问题"
 date = "2019-12-07T23:09:03+08:00"
-tags = ["choice","essay","research","youth","zju"]
+tags = ["choice","research","youth","zju"]
 dropCap = false
 +++
 

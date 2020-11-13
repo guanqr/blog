@@ -1,7 +1,7 @@
 +++
 title = "精致的利己主义者"
 date = "2020-04-25T23:14:16+08:00"
-tags = ["essay","zju"]
+tags = ["zju"]
 +++
 
 ![exquisite-egoists.jpg](/images/exquisite-egoists.jpg)

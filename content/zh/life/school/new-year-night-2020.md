@@ -1,7 +1,7 @@
 +++
 title = "新年夜不狂欢"
 date = "2020-01-03T12:01:17+08:00"
-tags = ["choice","essay","research","youth","zju"]
+tags = ["choice","research","youth","zju"]
 aliases = ["/life/school/2020-new-year-night/"]
 indent = true
 +++

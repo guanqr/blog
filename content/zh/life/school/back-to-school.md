@@ -1,7 +1,7 @@
 +++
 title = "疫情淡去，毅然返校"
 date = "2020-05-10T17:46:54+08:00"
-tags = ["choice","essay","zju"]
+tags = ["choice","zju"]
 indent = true
 +++
 

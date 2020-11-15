@@ -20,4 +20,6 @@ comments = false
 
 博客的名字取自鲁迅的诗作《题〈彷徨〉》的最后一句——「两间余一卒，荷戟独彷徨」。博客的文章主要分为两大类：「[生活感悟](/life/)」与「[科学技术](/tech/)」。前者主要是我平时的所见所想；后者涵盖了我的专业（光学工程）知识、计算机技术等，也有一些经过我的个人实践进行适当修改的搬运的文章。除了这两类文章，我还开启了一个「[专栏](/series/)」，目前归纳了我写过的建立静态博客和专业课程学习两个类别的文章。如非特别说明，博客中的文章均采用 [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，如果想要转载的话，请注明出处。
 
+我对博客的字体进行了比较任性的设置。中文部分使用的是 Google Fonts 的[思源宋体](https://fonts.google.com/specimen/Noto+Serif+SC?subset=chinese-simplified)，英文部分使用的是 [Amstelvar](https://github.com/TypeNetwork/Amstelvar/)，代码部分使用的是 [JetBrains Mono](https://www.jetbrains.com/lp/mono/)。另外，页脚的诗词显示功能使用了[今日诗词](https://www.jinrishici.com) 的 API 接口。
+
 如果你在浏览博客的过程中发现了任何问题，欢迎前往 GitHub 的[代码仓库](https://github.com/guanqr/blog)提交 Issues 或直接修改相关文件后提交 Pull Requests。~~如果你有其他事情想要咨询，可以通过邮件联系我，邮箱地址：guanqirui (at) zju.edu.cn~~。本人目前处于考研复习阶段，如有任何邮件咨询可能无法得到正常回复。

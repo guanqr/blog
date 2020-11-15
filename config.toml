@@ -1244,7 +1244,7 @@ uglyURLs = false
     iconAnimation = true
 
     # 是否显示 Hugo 和 MemE 的链接
-    displayPoweredBy = true
+    displayPoweredBy = false
 
     # 是否显示站点的版权信息
     displaySiteCopyright = false

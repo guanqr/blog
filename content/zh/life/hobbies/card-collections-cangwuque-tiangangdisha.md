@@ -17,8 +17,6 @@ tags = ["collection"]
 |![cangwuque-tiangangdisha-lizhong.jpg](/images/cangwuque-tiangangdisha-lizhong.jpg "打虎将·李忠")|![cangwuque-tiangangdisha-zhoutong.jpg](/images/cangwuque-tiangangdisha-zhoutong.jpg "小霸王·周通")|![cangwuque-tiangangdisha-quandazhenguanxi.jpg](/images/cangwuque-tiangangdisha-quandazhenguanxi.jpg "鲁达拳打镇关西")|
 |![cangwuque-tiangangdisha-danaowutaishan.jpg](/images/cangwuque-tiangangdisha-danaowutaishan.jpg "花和尚大闹五台山")|![cangwuque-tiangangdisha-huoshaowaguansi.jpg](/images/cangwuque-tiangangdisha-huoshaowaguansi.jpg "火烧瓦罐寺")||
 
-
-
 <style>
 th {
     font-weight: normal;

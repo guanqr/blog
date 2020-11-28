@@ -14,8 +14,8 @@ tags = ["collection"]
 
 |卡牌名称|作者|材质工艺|
 |--|--|--|
-|寻梦江湖|阿毛玩卡|纱布闪烫金|
+|[寻梦江湖](/life/hobbies/card-collections-amao-xunmengjianghu/)|阿毛玩卡|纱布闪烫金|
 |[燎原三国](/life/hobbies/card-collections-liaoyuan-sanguo/)|燎原卡牌|纱布闪烫金|
 |[天龙八部](/life/hobbies/card-collections-cangwuque-tianlongbabu/)|藏无缺|半粗闪烫金|
-|天罡地煞|藏无缺|半粗闪烫金|
+|[天罡地煞](/life/hobbies/card-collections-cangwuque-tiangangdisha/)|藏无缺|半粗闪烫金|
 |西游记|时光记忆|普通卡烫金|

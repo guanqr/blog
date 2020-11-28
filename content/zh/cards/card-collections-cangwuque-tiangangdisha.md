@@ -1,12 +1,9 @@
 +++
 title = "藏无缺：天罡地煞"
 date = "2020-11-28T06:52:04+08:00"
-tags = ["collection"]
 +++
 
-天罡地煞是藏无缺璇哥和张午胤合作出品的一款粗闪水浒卡。这一款水浒卡是纯手绘的作品，独特的手绘画风加上粗闪的独有特性，将这款卡牌的粗犷风格发挥到淋漓尽致。这一款卡牌是按照水浒章节分批进行发售的，每一弹含有该章节出现的重要人物卡以及场景卡。
-
-![cangwuque-zhangwuyin.jpg](/images/cangwuque-zhangwuyin.jpg "天罡地煞画稿")
+天罡地煞是藏无缺璇哥和张午胤合作出品的一款粗闪水浒卡。这款水浒卡是纯手绘的作品，独特的手绘画风加上粗闪的独有特性，将卡牌的粗犷风格发挥到淋漓尽致。我第一次在淘宝上看见这套卡的时候，就觉得它与众不同，艳丽的色彩充满整个画面，整个卡片上没有一丝浪费的空间。这套卡是按照水浒章节分批进行发售的，每一弹含有该章节出现的重要人物卡以及场景卡。
 
 ## 第一弹
 
@@ -16,9 +13,3 @@ tags = ["collection"]
 |![cangwuque-tiangangdisha-zhuwu.jpg](/images/cangwuque-tiangangdisha-zhuwu.jpg "神机军师·朱武")|![cangwuque-tiangangdisha-chenda.jpg](/images/cangwuque-tiangangdisha-chenda.jpg "跳涧虎·陈达")|![cangwuque-tiangangdisha-yangchun.jpg](/images/cangwuque-tiangangdisha-yangchun.jpg "白花蛇·杨春")|
 |![cangwuque-tiangangdisha-lizhong.jpg](/images/cangwuque-tiangangdisha-lizhong.jpg "打虎将·李忠")|![cangwuque-tiangangdisha-zhoutong.jpg](/images/cangwuque-tiangangdisha-zhoutong.jpg "小霸王·周通")|![cangwuque-tiangangdisha-quandazhenguanxi.jpg](/images/cangwuque-tiangangdisha-quandazhenguanxi.jpg "鲁达拳打镇关西")|
 |![cangwuque-tiangangdisha-danaowutaishan.jpg](/images/cangwuque-tiangangdisha-danaowutaishan.jpg "花和尚大闹五台山")|![cangwuque-tiangangdisha-huoshaowaguansi.jpg](/images/cangwuque-tiangangdisha-huoshaowaguansi.jpg "火烧瓦罐寺")||
-
-<style>
-th {
-    font-weight: normal;
-}
-</style>

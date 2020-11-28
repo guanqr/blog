@@ -210,12 +210,12 @@ uglyURLs = false
         post = "wpexplorer"
         identifier = "tech"
     [[menu.main]]
-        url = "/series/"
-        name = "专栏"
+        url = "/cards/"
+        name = "藏卡"
         weight = 5
         pre = "internal"
         post = "feather-alt" 
-        identifier = "series"
+        identifier = "cards"
     #[[menu.main]]
     #    url = "/archives/"
     #    name = "归档"
@@ -263,15 +263,21 @@ uglyURLs = false
     #    weight = 3
     #    pre = "external"
     [[menu.links]]
+        url = "/series/"
+        name = "Series"
+        weight = 1
+        pre = "internal"
+    [[menu.links]]
         url = "/archives/"
         name = "Archives"
-        weight = 1
+        weight = 2
         pre = "internal"
     [[menu.links]]
         url = "/atom.xml"
         name = "Feed"
-        weight = 2
+        weight = 3
         pre = "external"
+
 
     # 首页的底部链接
     #[[menu.home]]

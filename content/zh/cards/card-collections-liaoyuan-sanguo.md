@@ -1,7 +1,6 @@
 +++
 title = "燎原卡牌：三国 & 群芳"
 date = "2020-11-26T15:07:20+08:00"
-tags = ["collection"]
 +++
 
 燎原卡牌推出了封神、武林志、三国、群芳等系列人物收藏卡，其人物形象偏写实风格。卡牌的大小为国际卡大小，材质分为彩闪和纱布闪两种。我比较喜欢纱布闪，可能是游戏王玩多了，对纱布闪的风格情有独钟。我只收藏了燎原的三国系列、扈三娘系列和群芳系列，因为我入坑比较晚，武林志和封神系列已经很难收集齐。下面对这几个系列以及其他一些赠卡进行展示。
@@ -23,9 +22,3 @@ tags = ["collection"]
 |![liaoyuan-husanniang-0.jpg](/images/liaoyuan-husanniang-0.jpg "扈三娘")|![liaoyuan-husanniang-1.jpg](/images/liaoyuan-husanniang-1.jpg "扈三娘（近景）")|![liaoyuan-jiutianxuannv.jpg](/images/liaoyuan-jiutianxuannv.jpg "九天玄女（近景）")|
 |--|--|--|
 |![liaoyuan-baigufuren.jpg](/images/liaoyuan-baigufuren.jpg "白骨夫人")|![liaoyuan-yuzaoqian.jpg](/images/liaoyuan-yuzaoqian.jpg "玉藻前")||
-
-<style>
-th {
-    font-weight: normal;
-}
-</style>

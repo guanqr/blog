@@ -1,7 +1,6 @@
 +++
 title = "藏无缺：天龙八部"
 date = "2020-11-27T01:08:12+08:00"
-tags = ["collection"]
 +++
 
 这套卡是藏无缺卡牌店璇哥出品的原创《天龙八部》系列半粗烫金卡。所谓半粗，指的是半粗闪，卡面上人物的服饰与背景都附有一层精致的纹理薄膜，纹理的变化能够使得画面更为立体。随着光线的照射角度不同，卡片所呈现的效果也不同。而烫金，指的是部分元素和人物名字采用烫金工艺。藏无缺璇哥的粗闪纹理设计工艺在卡牌界数一数二，因此这套卡可谓是极具收藏的佳作。这套卡总共出了三弹，人物是挑选了《天龙八部》中的一些比较重要的角色。卡片分为普通人物卡和大头卡两种，下面展示的是普通人物卡。大头卡是部分人物图像的放大版，采用的是简单地磨砂工艺，这里不再进行展示。
@@ -27,9 +26,3 @@ tags = ["collection"]
 |![cangwuque-tianlongbabu-xiaoyuanshan.jpg](/images/cangwuque-tianlongbabu-xiaoyuanshan.jpg "萧远山")|![cangwuque-tianlongbabu-xiaolei.jpg](/images/cangwuque-tianlongbabu-xiaolei.jpg "晓蕾")|![cangwuque-tianlongbabu-xuanci.jpg](/images/cangwuque-tianlongbabu-xuanci.jpg "玄慈")|
 |![cangwuque-tianlongbabu-yelvhongji.jpg](/images/cangwuque-tianlongbabu-yelvhongji.jpg "耶律洪基")|![cangwuque-tianlongbabu-nanhaieshen.jpg](/images/cangwuque-tianlongbabu-nanhaieshen.jpg "南海鳄神")|![cangwuque-tianlongbabu-zhudanchen.jpg](/images/cangwuque-tianlongbabu-zhudanchen.jpg "朱丹臣")|
 |![cangwuque-tianlongbabu-zhujian.jpg](/images/cangwuque-tianlongbabu-zhujian.jpg "竹剑")|||
-
-<style>
-th {
-    font-weight: normal;
-}
-</style>

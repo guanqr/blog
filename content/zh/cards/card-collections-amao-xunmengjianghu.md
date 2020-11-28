@@ -1,7 +1,6 @@
 +++
 title = "阿毛玩卡：寻梦江湖"
 date = "2020-11-28T08:45:36+08:00"
-tags = ["collection"]
 +++
 
 寻梦江湖系列卡是我入坑卡牌的第一款收藏。人物的绘制颇有一种独特的韵味，能够很明显地和其他人出品的卡牌区分开来。这套卡分为大卡和小卡两种，大卡采用了局部纱布闪和名字烫金的工艺；小卡采用了较厚的纸，使用了表面覆 UV 油、金边、文字烫金的工艺，这在卡圈应该是第一家采用这种工艺制作小卡的。我主要收藏的是大卡。寻梦江湖每一次发售两弹，每一弹都包含一张特卡，每次消费超过 200 元再赠送一张特藏卡，可谓是很有套路。
@@ -69,9 +68,3 @@ tags = ["collection"]
 |![amao-xunmengjianghu-wuyong.jpg](/images/amao-xunmengjianghu-wuyong.jpg "智多星·吴用")|![amao-xunmengjianghu-zhangqing.jpg](/images/amao-xunmengjianghu-zhangqing.jpg "没羽箭·张清")|![amao-xunmengjianghu-xuanzan.jpg](/images/amao-xunmengjianghu-xuanzan.jpg "丑郡马·宣赞")|
 |![amao-xunmengjianghu-wangying.jpg](/images/amao-xunmengjianghu-wangying.jpg "矮脚虎·王英")|![amao-xunmengjianghu-fanrui.jpg](/images/amao-xunmengjianghu-fanrui.jpg "混世魔王·樊瑞")|![amao-xunmengjianghu-xiangchong.jpg](/images/amao-xunmengjianghu-xiangchong.jpg "八臂哪吒·项充")|
 |![amao-xunmengjianghu-ligun.jpg](/images/amao-xunmengjianghu-ligun.jpg "飞天大圣·李衮")|![amao-xunmengjianghu-mengkang.jpg](/images/amao-xunmengjianghu-mengkang.jpg "玉幡竿·孟康")|![amao-xunmengjianghu-lizhong.jpg](/images/amao-xunmengjianghu-lizhong.jpg "打虎将·李忠")|
-
-<style>
-th {
-    font-weight: normal;
-}
-</style>

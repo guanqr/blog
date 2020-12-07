@@ -6,7 +6,6 @@ dropCap = false
 displayCopyright = false
 gitinfo = false
 toc = false
-draft = true
 +++
 
 {{< notice notice-warning >}}
@@ -49,8 +48,18 @@ draft = true
 
 昨天看到金直间开始吐丝，结了厚厚一层网，它的脚部发黑，猜想可能又要蜕皮了。今天早上一看，果然蜕皮了。蜕下的皮还很完整。蜕完皮的金直间足展已经将近 3cm，身体已经有发黑的迹象。白里透着黑。
 
-![grammostola-pulchripes-4.jpg](/images/grammostola-pulchripes-4.jpg "刚蜕皮的 5L 金直间")
+![grammostola-pulchripes-4.jpg](/images/grammostola-pulchripes-4.jpg "刚蜕皮的 5L 金直间（一）")
 
-![grammostola-pulchripes-5.jpg](/images/grammostola-pulchripes-5.jpg "刚蜕皮的 5L 金直间")
+![grammostola-pulchripes-5.jpg](/images/grammostola-pulchripes-5.jpg "刚蜕皮的 5L 金直间（二）")
 
 ![grammostola-pulchripes-6.jpg](/images/grammostola-pulchripes-6.jpg "5L 金直间蜕掉的皮")
+
+<p style="text-align:center; font-size:1.6em"><strong>2020.12.6</strong></p>
+
+按照前几次蜕皮时间的规律，我已经推算出在 12 月初会有一次蜕皮。其实在 11 月末的时候，我就已经发现金直间不怎么进食了，半条面包虫放在饲养盒了，连碰都不碰。这次蜕皮前的几天并没有结网的行动，今天上午饲养盒里还是光秃秃的，下午三点多就看到一层白色的网、一个蜕掉的皮，还有一只白白嫩嫩的金直间，目前它的足展大约有 4cm。过了几个小时，金直间的身子开始发色，可以看到腿部明显的黑色和关节处的金色。另外，前段时间我发现购买的樱桃蟑螂都死得差不多了，看来蟑螂比面包虫要难养很多，所以我又买了一百多条面包虫，还是面包虫安分。
+
+![grammostola-pulchripes-7.jpg](/images/grammostola-pulchripes-7.jpg "刚蜕皮的 6L 金直间")
+
+![grammostola-pulchripes-8.jpg](/images/grammostola-pulchripes-8.jpg "身体逐渐变成黑色")
+
+![grammostola-pulchripes-9.jpg](/images/grammostola-pulchripes-9.jpg "6L 金直间蜕掉的皮")

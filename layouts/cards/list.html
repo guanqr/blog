@@ -9,9 +9,7 @@
                         <img src="{{ . }}" alt="{{ path.Base . }}" />
                     {{ end }}
                     <ul class="list-part">
-                        {{ range .RegularPages }}
-                            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-                        {{ end }}
+                        {{ partial "utils/content.html" . }}
                     </ul>
                     <hr class="cards" />
                 </div>

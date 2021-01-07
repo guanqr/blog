@@ -1,8 +1,8 @@
 +++
-title = "燎原卡牌：三国 & 群芳"
+title = "燎原卡牌：燎原三国"
 +++
 
-燎原卡牌推出了封神、武林志、三国、群芳等系列人物收藏卡，其人物形象偏写实风格。卡牌的大小为国际卡大小，材质分为彩闪和纱布闪两种。我比较喜欢纱布闪，可能是游戏王玩多了，对纱布闪的风格情有独钟。因为我入坑比较晚，武林志和封神系列已经很难收集齐，所以我只收藏了燎原的三国系列以及后续出品的金瓶梅系列等作品，。下面对三国系列以及其他一些单卡进行展示。
+燎原卡牌推出了封神、武林志、三国、群芳等系列人物收藏卡，其人物形象偏写实风格。卡牌的大小为国际卡大小，材质分为彩闪和纱布闪两种。我比较喜欢纱布闪，可能是游戏王玩多了，对纱布闪的风格情有独钟。因为我入坑比较晚，武林志和封神系列已经很难收集齐，所以我只收藏了燎原的三国系列以及后续出品的金瓶梅系列等作品。下面对三国系列进行展示。
 
 ## 燎原三国
 
@@ -19,18 +19,6 @@ title = "燎原卡牌：三国 & 群芳"
 |![liaoyuan-sanguo-huanggai.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-sanguo-huanggai.jpg "黄盖")|![liaoyuan-sanguo-zhouyu.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-sanguo-zhouyu.jpg "周瑜")|![liaoyuan-sanguo-xiaoqiao.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-sanguo-xiaoqiao.jpg "小乔")|
 |![liaoyuan-sanguo-lvmeng.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-sanguo-lvmeng.jpg "吕蒙")|||
 |![liaoyuan-sanguo-diaochan.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-sanguo-diaochan.jpg "貂蝉")|![liaoyuan-sanguo-lvbu.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-sanguo-lvbu.jpg "吕布")||
-
-## 燎原群芳
-
-|![liaoyuan-baigufuren-0.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-baigufuren-0.jpg "白骨夫人 - 1")|![liaoyuan-baigufuren-1.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-baigufuren-1.jpg "白骨夫人 - 2")|![liaoyuan-jiutianxuannv.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-jiutianxuannv.jpg "九天玄女（近景）")|
-|--|--|--|
-|![liaoyuan-yuzaoqian-0.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-yuzaoqian-0.jpg "玉藻前 - 1")|![liaoyuan-yuzaoqian-1.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-yuzaoqian-1.jpg "玉藻前 - 2")|![liaoyuan-yuzaoqian-2.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-yuzaoqian-2.jpg "玉藻前 - 3")|
-
-## 扈三娘
-
-|![liaoyuan-husanniang-0.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-husanniang-0.jpg "扈三娘 4 号")|![liaoyuan-husanniang-1.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-husanniang-1.jpg "扈三娘 4 号（近景）")||
-|--|--|--|
-|![liaoyuan-husanniang-2.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-husanniang-2.jpg "扈三娘 5 号 - 1")|![liaoyuan-husanniang-3.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-husanniang-3.jpg "扈三娘 5 号 - 2")|![liaoyuan-husanniang-4.jpg](https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/liaoyuan-husanniang-4.jpg "扈三娘 5 号 - 3")|
 
 <style>
 th {

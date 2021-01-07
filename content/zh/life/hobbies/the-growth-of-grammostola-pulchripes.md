@@ -54,7 +54,7 @@ toc = false
 
 ![grammostola-pulchripes-6.jpg](/images/grammostola-pulchripes-6.jpg "5L 金直间蜕掉的皮")
 
-<p style="text-align:center; font-size:1.6em"><strong>2020.12.6</strong></p>
+<p style="text-align:center; font-size:1.6em"><strong>2020.12.06</strong></p>
 
 按照前几次蜕皮时间的规律，我已经推算出在 12 月初会有一次蜕皮。其实在 11 月末的时候，我就已经发现金直间不怎么进食了，半条面包虫放在饲养盒了，连碰都不碰。这次蜕皮前的几天并没有结网的行动，今天上午饲养盒里还是光秃秃的，下午三点多就看到一层白色的网、一个蜕掉的皮，还有一只白白嫩嫩的金直间，目前它的足展大约有 4cm。过了几个小时，金直间的身子开始发色，可以看到腿部明显的黑色和关节处的金色。另外，前段时间我发现购买的樱桃蟑螂都死得差不多了，看来蟑螂比面包虫要难养很多，所以我又买了一百多条面包虫，还是面包虫安分。
 
@@ -63,3 +63,19 @@ toc = false
 ![grammostola-pulchripes-8.jpg](/images/grammostola-pulchripes-8.jpg "身体逐渐变成黑色")
 
 ![grammostola-pulchripes-9.jpg](/images/grammostola-pulchripes-9.jpg "6L 金直间蜕掉的皮")
+
+<p style="text-align:center; font-size:1.6em"><strong>2021.01.06</strong></p>
+
+这次蜕皮时间距上次蜕皮时间间隔正好是一个月。估计是因为体型有些大了，随着时间的推移，蜕皮的周期会越来越长。在去年 12 月 10 多日的时候，我就看到它已经吃得饱饱的，肚子要比背甲大很多，而且屁股发亮。谁知道憋了两三周才开始偷偷蜕皮。这次蜕皮是在晚上，我早上起床的时候就发现它已经蜕好了皮。上次蜕皮后，肢体的颜色还是白色，在外皮硬化后才逐渐变成浅黑色，这次蜕皮后直接就是黑色的外表了，连肚子都比以前要黑很多。并且可以看到，金直间的腿部关节已经出现了标志性的金色。目前金直间足展为 5cm。
+
+![grammostola-pulchripes-10.jpg](/images/grammostola-pulchripes-10.jpg "7L 金直间（一）")
+
+![grammostola-pulchripes-11.jpg](/images/grammostola-pulchripes-11.jpg "7L 金直间（二）")
+
+![grammostola-pulchripes-12.jpg](/images/grammostola-pulchripes-12.jpg "7L 金直间（三）")
+
+![grammostola-pulchripes-13.jpg](/images/grammostola-pulchripes-13.jpg "7L 金直间（四）")
+
+![grammostola-pulchripes-14.jpg](/images/grammostola-pulchripes-14.jpg "7L 金直间蜕掉的皮（一）")
+
+![grammostola-pulchripes-15.jpg](/images/grammostola-pulchripes-15.jpg "7L 金直间蜕掉的皮（二）")

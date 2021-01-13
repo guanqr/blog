@@ -13,7 +13,7 @@ dropCap = false
 
 ECharts 是一个纯 Javascript 的图表库，提供直观，生动，可交互，可个性化定制的数据可视化图表。为了在小程序中实现数据可视化，ECharts 是一个不错的选择。幸运的是，目前有一个微信小程序版 ECharts 库可以直接使用：
 
-{{< github name="ecomfe/echarts-for-weixin" link="https://github.com/ecomfe/echarts-for-weixin" description="ECharts 的微信小程序版本" color="#f1e05a" language="JavaScript" >}}
+{{< github name="ecomfe / echarts-for-weixin" link="https://github.com/ecomfe/echarts-for-weixin" description="ECharts 的微信小程序版本" color="#f1e05a" language="JavaScript" >}}
 
 ## 根据静态数据绘制图像
 

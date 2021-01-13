@@ -13,7 +13,7 @@ dropCap = false
 
 微雪在官方的树莓派例程中提供了写好的绘图、字符显示、图像显示的函数，我们直接使用这些函数即可，下面是官方例程的代码仓库：
 
-{{< github name="waveshare/e-Paper" link="https://github.com/waveshare/e-Paper" description="Jetson Nano、Raspberry Pi、Arduino、STM32 例程" color="#555555" language="C" >}}
+{{< github name="waveshare / e-Paper" link="https://github.com/waveshare/e-Paper" description="Jetson Nano、Raspberry Pi、Arduino、STM32 例程" color="#555555" language="C" >}}
 
 三色水墨屏可以显示黑、白、红三种颜色，我选择购买三色正是因为三色比双色能够传达更多的信息。不过通过测试，我发现如果要显示三种颜色的话，屏幕刷新率要比显示双色慢得多，所以在程序开发的时候，我选择了双色显示。
 

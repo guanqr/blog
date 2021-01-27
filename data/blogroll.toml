@@ -63,9 +63,9 @@
 
 [[blogroll]]
   name = "YIDAJIABEI"
-  url = "https://www.yidajiabei.xyz/"
+  url = "https://blog.yidajiabei.xyz/"
   avatar = "/images/friends/yidajiabei.png"
-  description = "记录所学所思所想，关注 Python、web 以及我感兴趣的技术，热爱生活"
+  description = "学习技术，热爱生活"
   weight = 10
 
 [[blogroll]]
@@ -78,14 +78,14 @@
 [[blogroll]]
   name = "睿先森"
   url = "https://senorui.top/"
-  avatar = "/images/friends/senorui.jpg"
-  description = "Shoot for the moon; even if you miss, you'll land among the stars."
+  avatar = "/images/friends/senorui.png"
+  description = "Be a charming badass, kind but not happy."
   weight = 12
 
 [[blogroll]]
   name = "Sissioy’s Blog"
   url = "https://www.sissioy.com/"
-  avatar = "/images/friends/sissioy.jpg"
+  avatar = "/images/friends/sissioy.png"
   description = "人间有味是清欢"
   weight = 13
 
@@ -102,3 +102,10 @@
   avatar = "/images/friends/jacklanda.jpg"
   description = "做自己喜欢的事"
   weight = 15
+
+[[blogroll]]
+  name = "明心居"
+  url = "https://chengzchn.com/"
+  avatar = "/images/friends/chengzchn.jpg"
+  description = "纳于大麓，烈风雷雨弗迷"
+  weight = 16

@@ -1,7 +1,7 @@
 +++
 title = "将博客持续集成地部署到 IPFS"
 date = "2020-04-03T21:05:01+08:00"
-tags = ["decentralization","hugo","netlify"]
+tags = ["decentralization","hugo","meme","netlify"]
 series = ["create-a-blog"]
 aliases = ["/2019/10/12/host-blog-on-ipfs/"]
 +++

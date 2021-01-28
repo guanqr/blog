@@ -1,7 +1,7 @@
 +++
 title = "重构博客的友情链接"
 date = "2019-12-04T21:08:01+08:00"
-tags = ["hexo","hugo","typography"]
+tags = ["hexo","hugo","meme","typography"]
 series = ["create-a-blog"]
 aliases = ["/study/blog/add-blogroll/"]
 +++

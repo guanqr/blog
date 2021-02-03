@@ -109,3 +109,10 @@
   avatar = "/images/friends/chengzchn.jpg"
   description = "纳于大麓，烈风雷雨弗迷"
   weight = 16
+
+[[blogroll]]
+  name = "Ryan4Yin's Space"
+  url = "https://ryan4yin.space/"
+  avatar = "/images/friends/ryan4yin.jpg"
+  description = "赞美快乐~"
+  weight = 17

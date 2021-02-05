@@ -65,8 +65,8 @@ CSS:
 
 ```css
 .carousel{
-	  width: 100%;
-	  height: 100%;
+	width: 100%;
+	height: 100%;
     position: relative;
 }
 
@@ -77,8 +77,6 @@ CSS:
     > .item {
         display: none;
         position: relative;
-        -webkit-transition: 0.6s ease-in-out left;
-        -o-transition: 0.6s ease-in-out left;
         transition: 0.6s ease-in-out left;
         > img,
         > a > img {
@@ -209,7 +207,7 @@ CSS:
 
 现在具体的代码已经写好了，接下来需要考虑将图片的设定插入到主题配置文件 `config.toml` 中。
 
-### 嵌入主题
+### 进阶方法
 
 首先在主题配置文件 `config.toml` 中的 `[params]` 下创建新配置：
 
@@ -293,6 +291,89 @@ carouselActiveImage = "图片地址 1"
 ![carousel-0.png](/images/carousel-0.png "文章摘要页面")
 
 ![carousel-1.png](/images/carousel-1.png "诗意人生页面")
+
+### 简化方法
+
+经过和博友交流，博友分享了一种更为简单的方法。就是利用 Hugo 博客的简码功能，设定一个简码模板，这样可以灵活地调用轮播图功能，不再局限于在特定页面使用固定图片的轮播图，并且轮播图的样式更加适配主题。有关 Hugo 简码的功能介绍，可以参考我的另一篇文章：《[自定义 Hugo Shortcodes 简码](/tech/website/hugo-shortcodes-customization/)》。这种轮播图取消了轮播的箭头，需要左右拨动图片进行轮播。
+
+首先新增一个名为 `carousel.html` 的简码模板文件：
+
+```html
+{{ if .Site.Params.enableCarousel }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {{$itItems := split (.Get 0) ","}}
+            {{range $itItems }}
+            <div class="swiper-slide">
+                <img src="{{.}}" alt="">
+            </div>
+            {{end}}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+     <!-- Initialize Swiper -->
+     <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+        });
+        </script>
+{{ end }}
+```
+
+接着增加 CSS 样式：
+
+```css
+.swiper-container {
+    width: auto;
+    height: 500px;
+    margin: 20px auto;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+```
+
+如果在某篇文章中想要插入轮播图，使用如下所示的简码：
+
+```markdown
+{{</* carousel "URL1,URL2,URL3,URL4,URL5" */>}}
+```
+
+代码中的 `URL1`、`URL2`……`URL5` 即为图片链接地址，图片数目自行设定，逗号后不能空格。
+
+
+
+最后在主题配置文件 `config.toml` 中的 `[params]` 下创建新配置：
+
+```toml
+# 是否开启轮播图
+enableCarousel = true 
+```
+
+具体样式如下所示：
+
+{{< carousel "/images/soul-0.jpg,/images/soul-1.jpg,/images/soul-2.jpg,/images/soul-3.jpg" >}}
 
 ## 总结
 

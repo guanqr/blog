@@ -362,8 +362,6 @@ carouselActiveImage = "图片地址 1"
 
 代码中的 `URL1`、`URL2`……`URL5` 即为图片链接地址，图片数目自行设定，逗号后不能空格。
 
-
-
 最后在主题配置文件 `config.toml` 中的 `[params]` 下创建新配置：
 
 ```toml

@@ -23,23 +23,3 @@ comments = false
 我对博客的字体进行了比较任性的设置。中文部分使用的是 Google Fonts 的[思源宋体](https://fonts.google.com/specimen/Noto+Serif+SC?subset=chinese-simplified)，英文部分使用的是 [Amstelvar](https://github.com/TypeNetwork/Amstelvar/)，代码部分使用的是 [JetBrains Mono](https://www.jetbrains.com/lp/mono/)。另外，页脚的诗词显示功能使用了[今日诗词](https://www.jinrishici.com) 的 API 接口。
 
 如果你在浏览博客的过程中发现了任何问题，欢迎前往 GitHub 的[代码仓库](https://github.com/guanqr/blog)提交 Issues 或直接修改相关文件后提交 Pull Requests。如果你有其他事情想要咨询，可以通过邮件联系我，邮箱地址：guanqirui (at) zju.edu.cn。
-
-<!-- 网站运行时间的设置 -->
-<span id="timeDate">载入天数...</span>
-<span id="times">载入时分秒...</span>
-<script>
-    var now = new Date();
-    function createtime() {
-        var grt= new Date("03/09/2019 13:14:21");//此处修改你的建站时间或者网站上线时间
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-    }
-setInterval("createtime()",250);
-</script>

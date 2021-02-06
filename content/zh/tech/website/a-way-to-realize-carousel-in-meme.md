@@ -330,18 +330,21 @@ carouselActiveImage = "图片地址 1"
 
 ```css
 .swiper-container {
-    width: auto;
-    height: 500px;
-    margin: 20px auto;
+    width: 100%;
+    height: 100%;
+    margin: 2em auto;
 }
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.5);
     /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
+    img {
+        margin: 0 !important;
+    }
 }
 ```
 

@@ -4,6 +4,7 @@ date = "2019-12-04T21:08:01+08:00"
 tags = ["hexo","hugo","meme","typography"]
 series = ["create-a-blog"]
 aliases = ["/study/blog/add-blogroll/"]
+displayExpiredTip = true
 +++
 
 ![blogroll-new-style.png](/images/blogroll-new-style.png "全新的友链设计")

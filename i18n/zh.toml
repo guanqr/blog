@@ -2,7 +2,7 @@
 other = "微信扫一扫，订阅本博客"
 
 [expiredTipHead]
-other = "本文最后更新于"
+other = "本文发布于"
 
 [expiredTipTail]
 other = "天前，文中所描述的信息可能已发生改变，请谨慎使用文中的方法。"

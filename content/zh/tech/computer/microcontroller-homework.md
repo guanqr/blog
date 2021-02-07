@@ -3,6 +3,7 @@ title = "单片机基础操作"
 date = "2019-06-14T19:12:11+08:00"
 tags = ["microcontroller"]
 series = ["major-courses"]
+displayExpiredTip = true
 +++
 
 ![c51-computer.jpg](/images/c51-computer.jpg)

@@ -2,7 +2,7 @@
 other = "WeChat Subscription"
 
 [expiredTipHead]
-other = "This article was last updated"
+other = "This article was published"
 
 [expiredTipTail]
 other = "days ago. The information described in this article may have changed. Please use the method carefully."

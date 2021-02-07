@@ -3,6 +3,7 @@ title = "自定义 Hugo Shortcodes 简码"
 date = "2020-06-06T19:28:42+08:00"
 tags = ["hugo","meme","typography"]
 series = ["create-a-blog"]
+displayExpiredTip = true
 +++
 
 目前我的博客采用 Hugo 框架，使用 Markdown 进行写作。Markdown 语法的特点是简洁，但有时我们在写作的过程中需要插入一些特殊的样式，然而 Markdown 并没有相对应的语法，我们就不得不额外插入一些 HTML 语言。Hugo 提供了简码（Shortcodes）的功能，我们事先设定好某种样式的模板和对应的简码，当你需要插入这种样式的时候，直接使用简码插入，Hugo 能够自动将其转化为 HTML 语言。这样便节省了书写大量繁琐的 HTML 语言的时间。

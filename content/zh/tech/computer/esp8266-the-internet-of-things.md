@@ -4,6 +4,7 @@ date = "2020-05-01T14:34:04+08:00"
 tags = ["internet-of-things","network","python"]
 series = ["major-courses"]
 dropCap = false
+displayExpiredTip = true
 +++
 
 ![esp8266-0.jpg](/images/esp8266-0.jpg "ESP8266 模块")

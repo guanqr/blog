@@ -1,0 +1,21 @@
+/*#expiredTip {
+    margin: 10px 20px;
+    border: 1px solid #e2e2e2;
+    background-color: #ffffc0;
+    padding: 0 1em;
+    overflow: hidden;
+    color: #333;
+    border-left: .25em solid #fff000;
+}*/
+#expiredTip  {
+    padding: 1em;
+    margin: 2em 0 -3em;
+    border-radius: 4px;
+    background: hsla(30, 80%, 70%, 0.15);
+    border-left: 5px solid hsl(30, 80%, 70%);
+    font-size: 90%;
+}
+[data-theme="dark"] #expiredTip {
+    background: hsla(30, 25%, 35%, 0.15);
+    border-left: 5px solid hsl(30, 25%, 35%);
+}

@@ -1,0 +1,26 @@
+{{ if and .Site.Params.enableExpiredTip (.Params.displayExpiredTip | default .Site.Params.displayPostExpiredTip) }}
+
+<time id="updateTime" datetime="{{ $.Lastmod.Format "2006-1-2" }}"></time>
+<div id="expiredTip"></div>
+
+<script>
+    function GetNumberOfDays(date1,date2){ // 获得天数，date1 开始日期，date2 结束日期
+        var a1 = Date.parse(new Date(date1));
+        var a2 = Date.parse(new Date(date2));
+        var day = parseInt((a2 - a1) / (1000 * 60 * 60 * 24));// 核心：时间戳相减，然后除以天数
+        return day
+    };
+
+    var date = new Date();
+    var ny = date.getFullYear();
+    var nm = date.getMonth() + 1;
+    var nd = date.getDate();
+
+    var a1 = document.getElementById("updateTime").dateTime;
+    var a2 = ny + "-" + nm + "-" + nd;
+    var num = GetNumberOfDays(a1,a2);
+
+    document.getElementById("expiredTip").innerHTML = "本文最后更新于&nbsp;" + num + "&nbsp;天前，文中所描述的信息可能已发生改变，请谨慎使用。";
+</script>
+
+{{ end }}

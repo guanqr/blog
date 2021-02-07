@@ -1385,8 +1385,22 @@ uglyURLs = false
     subscriptionIcon = "wechat-brands"
     subscriptionQrCode = "/images/wechat-official-accounts.svg"
 
+
+    ######################################
     # 自定义轮播图是否开启
+
     enableCarousel = true
+
+
+    ######################################
+    # 自定义文章时效性提醒
+
+    # 是否开启
+    enableExpiredTip = true
+    # 是否显示（全局设置）
+    displayPostExpiredTip = false
+    # 说明：文章的 Front Matter 中的 
+    # `displayExpiredTip` 的优先级高于此处
 
 
 ##########################################

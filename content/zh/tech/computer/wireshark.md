@@ -6,6 +6,7 @@ series = ["major-courses"]
 aliases = ["/2019/07/10/wireshark/","/study/computer/wireshark/"]
 dropCap = false
 toc = true
+displayExpiredTip = true
 +++
 
 ## Wireshark 简介

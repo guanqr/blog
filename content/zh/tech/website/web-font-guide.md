@@ -3,6 +3,7 @@ title = "网站字体优化方案"
 date = "2019-06-11T23:58:24+08:00"
 tags = ["hexo","next","typography"]
 series = ["create-a-blog"]
+displayExpiredTip = true
 +++
 
 就网页常用的一些字体而言，最常用的三类字形为：serif（衬线）、sans-serif（无衬线）、monospace（等宽）。这三个分类是 `font-family` 的三个可用字体系列取值。也就是说，上述三个名字，代表的并非某个特定字体，而是一系列字体，这些通用的名称允许用户代理从相应集合中选择一款字体[^1]。

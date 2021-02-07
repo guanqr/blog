@@ -2,6 +2,7 @@
 title = "将本地数据上传至小程序云开发数据库"
 date = "2020-07-09T13:28:43+08:00"
 tags = ["design-contest","mini-app","python","wechat"]
+displayExpiredTip = true
 +++
 
 在[前文](/tech/computer/insert-echart-into-wechat-mini-app/)中我提到，在本次光电竞赛中我设计了一款小程序，需要借助树莓派，利用传感器采集数据并上传至小程序的云开发数据库，再通过小程序读取数据库中的数据，绘制温度变化曲线。获取数据并绘制曲线的功能已经在前文实现，现在需要做的就是，如何将本地的数据上传至云开发数据库。

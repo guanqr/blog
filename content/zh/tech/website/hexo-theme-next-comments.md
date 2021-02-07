@@ -3,6 +3,7 @@ title = "Hexo-NexT 主题添加评论系统"
 date = "2019-05-12T23:56:53+08:00"
 tags = ["hexo","next"]
 series = ["create-a-blog"]
+displayExpiredTip = true
 +++
 
 静态博客无法直接构建评论系统，需要借助第三方平台的后端。NexT 主题支持 Disqus、Valine、Gitalk 等多种第三方评论系统。我推荐使用 Valine 或者 Disqus（加载评论需科学上网）。Valine 评论系统借助于 LeanCloud 存储数据，LeanCloud 的[国内版本](https://leancloud.cn/)需要绑定域名和备案，这对于很多人来说不太方便，所以可以选择使用[国际版](https://leancloud.app/)。目前 NexT 主题支持多评论系统，不过我认为这项功能有些多余，有谁会无聊使用多种评论系统呢？不方便管理评论，将简单的管理变得更加复杂。

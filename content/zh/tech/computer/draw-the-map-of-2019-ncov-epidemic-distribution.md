@@ -10,6 +10,7 @@ author = "天元浪子"
 website = "https://blog.csdn.net/xufive"
 link = "https://blog.csdn.net/xufive/article/details/104093197"
 copyright = "原文采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh) 许可协议，内容结合个人情况有删改。"
+displayExpiredTip = true
 +++
 
 最近 2019-nCoV 疫情形势严峻，封路封小区，人们不得不待在家里防止感染病毒。目前网络上有几个平台提供了疫情实时追踪服务，比如「丁香医生」以及「腾讯新闻」。在闲逛某个论坛的时候，我见到一些人在讨论借助这些平台的数据接口进行个人的数据统计。然后就看到了一篇文章，讲述如何利用 Python 绘制这次的疫情地图，方法比较简单也很有趣，反正在家闲着也是闲着，就照着这篇文章试了一试，效果还不错。于是，我就将这篇文章搬运过来了（目前这篇文章因为时效性已经被原作者删除）。

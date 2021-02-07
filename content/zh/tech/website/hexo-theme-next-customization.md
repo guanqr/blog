@@ -6,6 +6,7 @@ series = ["create-a-blog"]
 aliases = ["/2019/05/04/hexo-next-1/","/2019/05/08/hexo-next-2/","/study/blog/hexo-theme-next-customization/"]
 dropCap = false
 toc = true
+displayExpiredTip = true
 +++
 
 [^1]![hexo-theme-next.png](/images/hexo-theme-next.png)

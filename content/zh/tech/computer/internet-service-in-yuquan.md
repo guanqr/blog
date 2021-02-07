@@ -4,6 +4,7 @@ date = "2019-09-04T15:39:44+08:00"
 tags = ["google","network","zju"]
 aliases = ["/2019/09/04/internet-service-in-yuquan/","/study/computer/internet-service-in-yuquan/"]
 toc = true
+displayExpiredTip = true
 +++
 
 初来玉泉校区，遇到的第一个问题就是，如何将计算机与有线网络相连？在紫金港的两年中，不论是笔记本电脑，手机还是平板，我大部分时间用的都是 ZJUWLAN 无线网络。虽然经常吐槽校园网的垃圾，但说实话，浙大的网络服务比大部分学校好多了。

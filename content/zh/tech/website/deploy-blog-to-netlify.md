@@ -4,6 +4,7 @@ date = "2019-10-05T00:04:30+08:00"
 tags = ["hexo","netlify"]
 series = ["create-a-blog"]
 aliases = ["/2019/10/04/deploy-blog-to-netlify/","/study/blog/deploy-blog-to-netlify/"]
+displayExpiredTip = true
 +++
 
 ![deploy-blog-to-netlify-0.jpg](/images/deploy-blog-to-netlify-0.jpg)

@@ -20,7 +20,10 @@
     var a2 = ny + "-" + nm + "-" + nd;
     var num = GetNumberOfDays(a1,a2);
 
-    document.getElementById("expiredTip").innerHTML = "本文最后更新于&nbsp;" + num + "&nbsp;天前，文中所描述的信息可能已发生改变，请谨慎使用。";
+    var str1 = '{{ i18n "expiredTipHead"}}'
+    var str2 = '{{ i18n "expiredTipTail"}}'
+
+    document.getElementById("expiredTip").innerHTML = str1 + "&nbsp;" + num + "&nbsp;" + str2;
 </script>
 
 {{ end }}

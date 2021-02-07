@@ -2,6 +2,7 @@
 title = "穷与富之间的分割与寄生"
 description = "《寄生虫》电影简评"
 date = "2019-09-28T08:41:46+08:00"
+lastmod = "2019-09-29T08:41:46+08:00"
 tags = ["class-contradiction","crime","family"]
 aliases = ["/2019/09/28/gisaengchung/"]
 +++

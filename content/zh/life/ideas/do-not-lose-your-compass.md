@@ -2,6 +2,7 @@
 title = "不要丢掉自己心中的指南针"
 description = "在信息超载的时代，我们要有自己的思考。"
 date = "2020-11-17T10:10:55+08:00"
+lastmod = "2020-11-18T10:10:55+08:00"
 tags = ["introspection","roast"]
 +++
 

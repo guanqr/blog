@@ -1,6 +1,7 @@
 +++
 title = "第八届光电设计竞赛校赛总结"
 date = "2020-07-25T17:04:33+08:00"
+lastmod = "2020-07-26T17:04:33+08:00"
 tags = ["design-contest","mini-app","python"]
 series = ["major-courses"]
 dropCap = false

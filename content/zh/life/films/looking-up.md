@@ -2,6 +2,7 @@
 title = "跨越时间的父爱，应试教育下的光芒"
 description = "《银河补习班》并非荒谬绝伦"
 date = "2019-10-17T15:52:32+08:00"
+lastmod = "2019-10-18T15:52:32+08:00"
 tags = ["education","family","space"]
 aliases = ["/2019/10/17/looking-up/"]
 +++

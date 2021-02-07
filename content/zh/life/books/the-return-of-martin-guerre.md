@@ -2,6 +2,7 @@
 title = "真假马丁"
 description ="《马丁·盖尔归来》书评"
 date = "2019-05-27T16:52:56+08:00"
+lastmod = "2020-01-25T16:52:56+08:00"
 tags = ["history","novel"]
 +++
 

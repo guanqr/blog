@@ -1,6 +1,7 @@
 +++
 title = "二〇二〇·成长"
 date = "2021-01-03T23:56:11+08:00"
+lastmod = "2021-01-04T23:56:11+08:00"
 tags = ["ideal","youth"]
 dropCap = false
 +++

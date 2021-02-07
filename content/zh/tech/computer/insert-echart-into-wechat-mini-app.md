@@ -1,6 +1,7 @@
 +++
 title = "在微信小程序中引入 ECharts 图表"
 date = "2020-07-04T14:54:46+08:00"
+lastmod = "2020-07-05T14:54:46+08:00"
 tags = ["design-contest","mini-app","wechat"]
 dropCap = false
 displayExpiredTip = true

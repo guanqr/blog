@@ -1,6 +1,7 @@
 +++
 title = "使用 MATLAB 和 Dcraw 处理 RAW 图像文件"
 date = "2020-04-08T19:52:40+08:00"
+lastmod = "2020-04-09T19:52:40+08:00"
 tags = ["image-processing","matlab","white-balance"]
 toc = false
 katex = true

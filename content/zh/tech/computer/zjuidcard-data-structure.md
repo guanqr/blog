@@ -1,6 +1,7 @@
 +++
 title = "校园卡内部数据结构研究"
 date = "2019-07-04T20:09:18+08:00"
+lastmod = "2019-07-05T20:09:18+08:00"
 tags = ["idcard","rfid","zju"]
 displayExpiredTip = true
 +++

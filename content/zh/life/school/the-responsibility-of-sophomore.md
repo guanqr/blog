@@ -1,6 +1,7 @@
 +++
 title = "学长组：责任与担当"
 date = "2019-05-22T00:47:46+08:00"
+lastmod = "2019-05-23T00:47:46+08:00"
 tags = ["youth","zju"]
 aliases = ["/2019/05/22/the-responsibility-of-sophomore/"]
 +++

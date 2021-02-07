@@ -1,6 +1,7 @@
 +++
 title = "抓取实时数据绘制疫情分布地图"
 date = "2020-01-29T19:57:55+08:00"
+lastmod = "2020-03-02T19:57:55+08:00"
 tags = ["data-processing","python"]
 aliases = ["/study/computer/draw-the-map-of-2019-ncov-epidemic-distribution/"]
 toc = false

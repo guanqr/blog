@@ -1,6 +1,6 @@
 {{ if and .Site.Params.enableExpiredTip (.Params.displayExpiredTip | default .Site.Params.displayPostExpiredTip) }}
 
-<time id="publishTime" datetime="{{ $.PublishDate.Format "2006-1-2" }}"></time>
+<time id="LastmodTime" datetime="{{ $.Lastmod.Format "2006-1-2" }}"></time>
 <div id="expiredTip"></div>
 
 <script>
@@ -16,7 +16,7 @@
     var nm = date.getMonth() + 1;
     var nd = date.getDate();
 
-    var a1 = document.getElementById("publishTime").dateTime;
+    var a1 = document.getElementById("LastmodTime").dateTime;
     var a2 = ny + "-" + nm + "-" + nd;
     var num = GetNumberOfDays(a1,a2);
 

@@ -1,6 +1,7 @@
 +++
 title = "新学期，微信公众号正式开启订阅"
 date = "2019-08-28T12:32:46+08:00"
+lastmod = "2019-08-29T12:32:46+08:00"
 tags = ["wechat"]
 aliases = ["/2019/08/28/wechat-subscription/"]
 +++

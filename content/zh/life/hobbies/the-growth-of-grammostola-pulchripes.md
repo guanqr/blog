@@ -1,6 +1,7 @@
 +++
 title = "金直间成长记"
 date = "2020-11-12T13:01:00+08:00"
+lastmod = "2021-01-07T13:01:00+08:00"
 tags = ["crawling-pet"]
 dropCap = false
 displayCopyright = false

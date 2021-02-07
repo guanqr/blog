@@ -1,6 +1,7 @@
 +++
 title = "Hexo-NexT 主题添加评论系统"
 date = "2019-05-12T23:56:53+08:00"
+lastmod = "2019-05-13T23:56:53+08:00"
 tags = ["hexo","next"]
 series = ["create-a-blog"]
 displayExpiredTip = true

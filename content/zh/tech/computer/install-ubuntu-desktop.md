@@ -1,6 +1,7 @@
 +++
 title = "Ubuntu 系统的安装与配置"
 date = "2020-03-19T10:33:30+08:00"
+lastmod = "2020-03-20T10:33:30+08:00"
 tags = ["linux"]
 dropCap = false
 displayExpiredTip = true

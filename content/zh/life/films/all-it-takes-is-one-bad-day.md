@@ -2,6 +2,7 @@
 title = "All It Takes Is One Bad Day"
 description = "当一个人在一天之内失去了亲情、友情、爱情，甚至梦想，他会变成什么模样？"
 date = "2020-02-13T12:46:23+08:00"
+lastmod = "2020-02-14T12:46:23+08:00"
 tags = ["class-contradiction","crime","cyberpunk"]
 +++
 

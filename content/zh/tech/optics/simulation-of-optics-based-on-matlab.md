@@ -1,6 +1,7 @@
 +++
 title = "MATLAB 光学仿真入门"
 date = "2020-01-19T12:29:36+08:00"
+lastmod = "2020-04-13T12:29:36+08:00"
 tags = ["electromagnetic-wave","matlab","photonics"]
 aliases = ["/study/optics/simulation-of-optics-based-on-matlab/"]
 katex = true

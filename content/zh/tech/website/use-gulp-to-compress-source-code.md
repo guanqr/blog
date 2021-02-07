@@ -1,6 +1,7 @@
 +++
 title = "使用 Gulp 压缩博客静态资源"
 date = "2019-10-02T13:24:25+08:00"
+lastmod = "2019-10-03T13:24:25+08:00"
 tags = ["gulp","hexo","next"]
 series = ["create-a-blog"]
 aliases = ["/2019/10/02/use-gulp-to-compress-source-code/","/study/blog/use-gulp-to-compress-source-code/"]

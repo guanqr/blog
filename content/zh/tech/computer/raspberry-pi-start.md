@@ -1,6 +1,7 @@
 +++
 title = "树莓派，启动"
 date = "2020-04-11T21:23:31+08:00"
+lastmod = "2020-04-12T21:23:31+08:00"
 tags = ["linux","raspberry-pi"]
 displayExpiredTip = true
 +++

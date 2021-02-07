@@ -2,6 +2,7 @@
 title = "SolidWorks 光机结构设计"
 description = "一款奇思妙想的产品：折叠式智能跟随拍摄器"
 date = "2020-01-28T10:52:19+08:00"
+lastmod = "2020-04-13T10:52:19+08:00"
 tags = ["modeling","solidworks"]
 series = ["major-courses"]
 aliases = ["/study/optics/mechanical-structure-design-by-solidworks/"]

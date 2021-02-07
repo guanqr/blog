@@ -1,6 +1,7 @@
 +++
 title = "Hexo-NexT 主题个性优化"
 date = "2019-05-04T00:00:39+08:00"
+lastmod = "2020-07-23T00:00:39+08:00"
 tags = ["git","hexo","next","typography"]
 series = ["create-a-blog"]
 aliases = ["/2019/05/04/hexo-next-1/","/2019/05/08/hexo-next-2/","/study/blog/hexo-theme-next-customization/"]

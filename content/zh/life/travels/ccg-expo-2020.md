@@ -1,6 +1,7 @@
 +++
 title = "偷偷潜入 CCG EXPO 2020"
 date = "2020-07-18T11:59:10+08:00"
+lastmod = "2020-08-09T11:59:10+08:00"
 tags = ["collection","model","shanghai"]
 aliases = ["/life/ideas/ccg-expo-2020/"]
 +++

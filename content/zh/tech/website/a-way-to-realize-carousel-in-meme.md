@@ -1,6 +1,7 @@
 +++
 title = "一种在 MemE 主题中实现轮播图功能的思路"
 date = "2021-01-28T10:49:25+08:00"
+lastmod = "2021-02-03T14:28:12+08:00"
 tags = ["hugo","meme","typography"]
 dropCap = false
 +++

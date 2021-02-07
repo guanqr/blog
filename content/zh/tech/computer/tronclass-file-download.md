@@ -1,6 +1,7 @@
 +++
 title = "学在浙大（TronClass）平台课件下载方法"
 date = "2020-03-16T17:08:58+08:00"
+lastmod = "2020-03-17T17:08:58+08:00"
 tags = ["tronclass","zju"]
 displayExpiredTip = true
 +++

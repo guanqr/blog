@@ -1,6 +1,7 @@
 +++
 title = "数字图像处理基础练习"
 date = "2020-04-01T15:33:24+08:00"
+lastmod = "2020-06-03T15:33:24+08:00"
 tags = ["image-processing","matlab"]
 series = ["major-courses"]
 katex = true

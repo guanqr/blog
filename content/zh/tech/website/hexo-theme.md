@@ -1,6 +1,7 @@
 +++
 title = "谈谈 Hexo 主题的那些事"
 date = "2019-06-08T00:24:26+08:00"
+lastmod = "2019-06-09T00:24:26+08:00"
 tags = ["hexo","next","typography"]
 aliases = ["/study/blog/hexo-theme/"]
 displayExpiredTip = true

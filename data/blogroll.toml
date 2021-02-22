@@ -116,3 +116,10 @@
   avatar = "/images/friends/ryan4yin.jpg"
   description = "赞美快乐~"
   weight = 17
+
+[[blogroll]]
+  name = "SuperPung"
+  url = "https://blog.superpung.xyz/"
+  avatar = "/images/friends/superpung.png"
+  description = "赞美快乐~"
+  weight = 18

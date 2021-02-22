@@ -12,13 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 'Checkout codes'
-      uses: actions/checkout@v2
-      with:
-        submodules: true
-    
     - name: 'Building...'
-      uses: ./.github/actions/hugo-deploy
+      uses: reuixiy/hugo-deploy@v1
       env:
         DEPLOY_REPO: guanqr/guanqr.github.io
         DEPLOY_BRANCH: master

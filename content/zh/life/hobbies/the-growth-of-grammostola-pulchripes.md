@@ -80,3 +80,25 @@ toc = false
 ![grammostola-pulchripes-14.jpg](/images/grammostola-pulchripes-14.jpg "7L 金直间蜕掉的皮（一）")
 
 ![grammostola-pulchripes-15.jpg](/images/grammostola-pulchripes-15.jpg "7L 金直间蜕掉的皮（二）")
+
+<p style="text-align:center; font-size:1.6em"><strong>2021.02.10</strong></p>
+
+1 月下旬的时候，学校放假，我回家的时候带上了金直间。用一个小盒子装着它，盒子里铺了层沾上水的纸巾。上次脱皮后我觉得小型饲养盒已经不够金直间活动的了，所以我买了个稍微大一点的盒子。又买了些新鲜的椰土。家里正好有暖气，我就把饲养盒直接放在了暖气上，省的用加热垫了。北方环境最大的问题是湿度太低，我将一个瓶盖放在了饲养盒里，瓶盖里倒上了水。
+
+2 月 11 日下午的时候，金直间蜕了皮。这次蜕皮有些失败。头部四肢都很顺利地蜕皮了，但腹部两侧和背部却依然连在了旧皮上。我只好进行了人工干预，等新皮硬化后，用牙签将卡住的部分皮挑了下来。其实还算幸运，只要没有把腿卡住就行。
+
+![grammostola-pulchripes-16.jpg](/images/grammostola-pulchripes-16.jpg "8L 金直间")
+
+![grammostola-pulchripes-17.jpg](/images/grammostola-pulchripes-17.jpg "8L 金直间蜕掉的皮")
+
+<p style="text-align:center; font-size:1.6em"><strong>2021.03.19</strong></p>
+
+寒假结束，我也将金直间带回了学校。在我把金直间装进盒子的时候，我第一次观察到了踢毛的举动，它把自己的屁股给踢秃了。现在是春天，我以为杭州已经回暖，就没有将加热垫带回了。可事实上杭州依然很冷。来学校三周，金直间一直没有吃东西。看时间，距离上次蜕皮已经过去一个月的时间，肯定是要蜕皮了。不过这次「绝食」的时间太长了。3 月 19 日早上吃完饭回到宿舍，我就发现饲养盒里有一个立起来的干皮。总算是蜕皮了，我一直担心这段时间因为气温太低可能导致金直间生病死亡，看来是我多虑了。
+
+![grammostola-pulchripes-18.jpg](/images/grammostola-pulchripes-18.jpg "9L 金直间（一）")
+
+![grammostola-pulchripes-19.jpg](/images/grammostola-pulchripes-19.jpg "9L 金直间（二）")
+
+![grammostola-pulchripes-20.jpg](/images/grammostola-pulchripes-20.jpg "9L 金直间蜕掉的皮（一）")
+
+![grammostola-pulchripes-21.jpg](/images/grammostola-pulchripes-21.jpg "9L 金直间蜕掉的皮（二）")

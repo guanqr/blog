@@ -6,3 +6,9 @@ other = "本文最后更新于"
 
 [expiredTipTail]
 other = "天前，文中所描述的信息可能已发生改变，请谨慎使用文中的方法。"
+
+[serviceWorkerUpdatedText]
+other = "已更新最新版本"
+
+[serviceWorkerUpdatedAction]
+other = "点击刷新"

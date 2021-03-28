@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: 'Building...'
-      uses: reuixiy/hugo-deploy@v1
+      uses: guanqr/guanqr-blog-deploy@v1
       env:
         DEPLOY_REPO: guanqr/guanqr.github.io
         DEPLOY_BRANCH: master

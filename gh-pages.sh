@@ -15,6 +15,6 @@ git config user.email "guanqirui@zju.edu.cn"
 
 # add commit timestamp
 git add .
-git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"
+git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"` Asia/Shanghai"
 
 git push --force --quiet "https://${Travis_Token}@${GH_REF}" master:master

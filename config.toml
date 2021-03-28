@@ -327,7 +327,8 @@ uglyURLs = false
     # 说明：对弹性布局的顶栏无效
 
     # 背景
-    headerBackground = "linear-gradient(90deg, #f795331a 0, #f370551a 15%, #ef4e7b1a 30%, #a166ab1a 44%, #5073b81a 58%, #1098ad1a 72%, #07b39b1a 86%, #6dba821a 100%)"
+    headerBackground = "var(--color-contrast-lower)"
+    #headerBackground = "linear-gradient(90deg, #f795331a 0, #f370551a 15%, #ef4e7b1a 30%, #a166ab1a 44%, #5073b81a 58%, #1098ad1a 72%, #07b39b1a 86%, #6dba821a 100%)"
     #headerBackground = "linear-gradient(90deg, #ef4e7b 0, #a166ab 25%, #5073b8 50%, #1098ad 75%, #07b39b 100%)"
     # 说明：https://developer.mozilla.org/zh-CN/docs/Web/CSS/background
 

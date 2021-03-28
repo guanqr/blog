@@ -105,12 +105,20 @@ blockquote.quote-center {
         .simple-notice-title {
             color: hsl(0, 100%, 35%);
         }
+        a {
+            color: hsl(0, 100%, 35%);
+            text-decoration-color: hsl(0, 100%, 35%);
+        }
     }
     &.simple-notice-info {
         border-top: 2px solid hsl(40, 80%, 45%);
         color: hsl(40, 80%, 45%);
         .simple-notice-title {
             color: hsl(40, 80%, 45%);
+        }
+        a {
+            color: hsl(40, 80%, 45%);
+            text-decoration-color: hsl(40, 80%, 45%);
         }
     }
     &.simple-notice-note {
@@ -119,12 +127,20 @@ blockquote.quote-center {
         .simple-notice-title {
             color: hsl(210, 100%, 25%);
         }
+        a {
+            color: hsl(210, 100%, 25%);
+            text-decoration-color: hsl(210, 100%, 25%);
+        }
     }
     &.simple-notice-tip {
         border-top: 2px solid hsl(150, 100%, 25%);
         color: hsl(150, 100%, 25%);
         .simple-notice-title {
             color: hsl(150, 100%, 25%);
+        }
+        a {
+            color: hsl(150, 100%, 25%);
+            text-decoration-color: hsl(150, 100%, 25%);
         }
     }
 }
@@ -136,12 +152,20 @@ blockquote.quote-center {
         .simple-notice-title {
             color: hsl(0, 65%, 65%);
         }
+        a {
+            color: hsl(0, 65%, 65%);
+            text-decoration-color: hsl(0, 65%, 65%);
+        }
     }
     &.simple-notice-info {
         border-top: 2px solid hsl(30, 80%, 70%);
         color: hsl(30, 80%, 70%);
         .simple-notice-title {
             color: hsl(30, 80%, 70%);
+        }
+        a {
+            color: hsl(30, 80%, 70%);
+            text-decoration-color: hsl(30, 80%, 70%);
         }
     }
     &.simple-notice-note {
@@ -150,12 +174,20 @@ blockquote.quote-center {
         .simple-notice-title {
             color: hsl(200, 65%, 65%);
         }
+        a {
+            color: hsl(200, 65%, 65%);
+            text-decoration-color: hsl(200, 65%, 65%);
+        }
     }
     &.simple-notice-tip {
         border-top: 2px solid hsl(140, 65%, 65%);
         color: hsl(140, 65%, 65%);
         .simple-notice-title {
             color: hsl(140, 65%, 65%);
+        }
+        a {
+            color: hsl(140, 65%, 65%);
+            text-decoration-color: hsl(140, 65%, 65%);
         }
     }
 }

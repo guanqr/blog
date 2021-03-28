@@ -18,9 +18,19 @@
         padding: 10em 1em;
     }
     .menu-item {
-        .tags, .categories, .series, .archives, .friends, .about {
+        .tags, .categories, .life, .tech, .cards, .series, .archives, .friends, .about {
             display: none;
         }
+    }
+    .header-wrapper {
+        padding: 1em 0;
+        background: var(--color-bg);
+        box-shadow: var(--color-contrast-low) 0 1px 0 0;
+        //transition: all .5s;
+    }
+    .nav-curtain {
+        backdrop-filter: none;
+        background: none;
     }
     @media (max-width: $maxWidth) {
         .nav {
@@ -30,7 +40,7 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
         .menu-item {
-            .tags, .categories, .series, .archives, .friends, .about {
+            .tags, .categories, .life, .tech, .cards, .series, .archives, .friends, .about {
                 display: inline-block;
             }
         }

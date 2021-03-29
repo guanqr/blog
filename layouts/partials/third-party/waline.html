@@ -25,7 +25,7 @@
             el: '#waline',
             serverURL: '{{ .Site.Params.walineServerURL }}',
             placeholder: '{{ .Site.Params.walinePlaceholder }}',
-            path: '{{ .Site.Params.walinePath }}',
+            path: {{ .Site.Params.walinePath | default "location.pathname" | safeJS }},
             avatar: '{{ .Site.Params.walineAvatar }}',
             meta: {{ .Site.Params.walineMeta }},
             pageSize: {{ .Site.Params.walinePageSize }},
@@ -36,8 +36,8 @@
             avatarForce: {{ .Site.Params.walineAvatarForce }},
             emojiCDN: '{{ .Site.Params.walineEmojiCDN }}',
             emojiMaps: {{ .Site.Params.walineEmojiMaps }},
-            requiredFields: {{ .Site.Params.walineRequiredFields }}
-            uploadImage: {{ .Site.Params.walineUploadImage }}
+            requiredFields: {{ .Site.Params.walineRequiredFields }},
+            uploadImage: {{ .Site.Params.walineUploadImage }},
             anonymous: {{ .Site.Params.walineAnonymous }}
         });
     }

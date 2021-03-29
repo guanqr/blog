@@ -685,8 +685,8 @@ uglyURLs = false
 
     ## Valine
     enableValine = false
-    valineAppId = "ylfWNE6qOyav0cPQThQzA3RB-MdYXbMMI"
-    valineAppKey = "mdjuKVrk0XTLMBIg07OHmrJK"
+    valineAppId = ""
+    valineAppKey = ""
     valinePlaceholder = "Just go go"
     valinePath = ""
     valineAvatar = "mm"
@@ -707,8 +707,8 @@ uglyURLs = false
     ## Waline
     enableWaline = true
     walineServerURL = "https://blog-waline-mu.vercel.app/"
-    walinePlaceholder = "Just go go"
-    walinePath = "window.location.pathname"
+    walinePlaceholder = "填写昵称、邮箱即可留下你的观点与想法。"
+    walinePath = ""
     walineAvatar = "mp"
     walineMeta = ["nick", "mail", "link"]
     walinePageSize = 10
@@ -719,9 +719,9 @@ uglyURLs = false
     walineAvatarForce = false
     walineEmojiCDN = ""
     walineEmojiMaps = {}
-    walineRequiredFields = []
+    walineRequiredFields = ["nick", "mail"]
     walineUploadImage = {}
-    walineAnonymous = false
+    # walineAnonymous = false
     # 说明：https://waline.js.org/
 
 

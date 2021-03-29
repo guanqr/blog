@@ -708,20 +708,13 @@ uglyURLs = false
     enableWaline = true
     walineServerURL = "https://blog-waline-mu.vercel.app/"
     walinePlaceholder = "填写昵称、邮箱即可留下你的观点与想法。"
-    walinePath = ""
     walineAvatar = "mp"
     walineMeta = ["nick", "mail", "link"]
     walinePageSize = 10
     walineLang = "zh-CN"
-    walineVisitor = false
     walineHighlight = true
     walineAvatarCDN = "https://cdn.v2ex.com/gravatar/"
-    walineAvatarForce = false
-    walineEmojiCDN = ""
-    walineEmojiMaps = {}
     walineRequiredFields = ["nick", "mail"]
-    walineUploadImage = {}
-    # walineAnonymous = false
     # 说明：https://waline.js.org/
 
 

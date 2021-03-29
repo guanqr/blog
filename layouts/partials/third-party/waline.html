@@ -1,0 +1,44 @@
+<script>
+    function loadComments() {
+        if (typeof Waline === 'undefined') {
+            var getScript = (options) => {
+                var script = document.createElement('script');
+                script.defer = true;
+                script.crossOrigin = 'anonymous';
+                Object.keys(options).forEach((key) => {
+                    script[key] = options[key];
+                });
+                document.body.appendChild(script);
+            };
+            getScript({
+                src: 'https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',
+                onload: () => {
+                    newWaline();
+                }
+            });
+        } else {
+            newWaline();
+        }
+    }
+    function newWaline() {
+        new Waline({
+            el: '#waline',
+            serverURL: '{{ .Site.Params.walineServerURL }}',
+            placeholder: '{{ .Site.Params.walinePlaceholder }}',
+            path: {{ .Site.Params.walinePath | default "location.pathname" | safeJS }},
+            avatar: '{{ .Site.Params.walineAvatar }}',
+            meta: {{ .Site.Params.walineMeta }},
+            pageSize: {{ .Site.Params.walinePageSize }},
+            lang: '{{ .Site.Params.walineLang }}',
+            visitor: {{ .Site.Params.walineVisitor }},
+            highlight: {{ .Site.Params.walineHighlight }},
+            avatarCDN: {{ .Site.Params.walineAvatarCDN | default "https://cdn.v2ex.com/gravatar/" | safeJS }},
+            avatarForce: {{ .Site.Params.walineAvatarForce }},
+            emojiCDN: '{{ .Site.Params.walineEmojiCDN }}',
+            emojiMaps: {{ .Site.Params.walineEmojiMaps }},
+            requiredFields: {{ .Site.Params.walineRequiredFields }}
+            uploadImage: {{ .Site.Params.walineUploadImage }}
+            anonymous: {{ .Site.Params.walineAnonymous }}
+        });
+    }
+</script>

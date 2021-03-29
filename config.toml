@@ -675,7 +675,7 @@ uglyURLs = false
     # 说明：仅在生产环境（production）下渲染
 
     # 是否开启（全局设置）
-    enableComments = false
+    enableComments = true
     # 说明：文章的 Front Matter 中的 `comments`
     #      的优先级高于此处
 
@@ -703,6 +703,26 @@ uglyURLs = false
     valineEnableQQ = false
     valineRequiredFields = []
     # 说明：https://valine.js.org/
+
+    ## Waline
+    enableWaline = true
+    walineServerURL = "https://blog-waline-mu.vercel.app/"
+    walinePlaceholder = "Just go go"
+    walinePath = ""
+    walineAvatar = "mp"
+    walineMeta = ["nick", "mail", "link"]
+    walinePageSize = 10
+    walineLang = "zh-CN"
+    walineVisitor = false
+    walineHighlight = true
+    walineAvatarCDN = ""
+    walineAvatarForce = false
+    walineEmojiCDN = ""
+    walineEmojiMaps = {}
+    walineRequiredFields = []
+    walineUploadImage = {}
+    walineAnonymous = false
+    # 说明：https://waline.js.org/
 
 
     ## Utterances

@@ -293,6 +293,199 @@ notice-tip = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 
 十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
 {{< /notice >}}
 
+## simple-notice
+
+simple-notice 是 notice 的简化版本。代码构成和 notice 基本一致，其样式参考了 [web.dev](https://web.dev/) 的设计。虽然说 simple-notice 和 notice 都是四种配色，但颜色的深浅不同。主要是因为，simple-notice 的文字也带有相应的颜色，如果采用 notice 的配色，明模式下颜色过浅，暗模式下颜色过深，不易识别。
+
+创建 `simple-notice.html` 文件，内容如下所示：
+
+```html
+<!-- 文件位置：~/layouts/shortcodes/notice.html -->
+
+<!--https://github.com/martignoni/hugo-notice-->
+{{- $noticeType := .Get 0 -}}
+
+{{- $raw := (markdownify .Inner | chomp) -}}
+
+{{- $block := findRE "(?is)^<(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b" $raw 1 -}}
+
+{{ $icon := (replace (index $.Site.Data.SVG $noticeType) "icon" "icon simple-notice-icon") }}
+<div class="simple-notice {{ $noticeType }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>
+    <div class="simple-notice-title">{{ $icon | safeHTML }}</div>
+    {{- if or $block (not $raw) }}{{ $raw }}{{ else }}<p>{{ $raw }}</p>{{ end -}}
+</div>
+```
+
+添加自定义 CSS 样式：
+
+```scss
+// 文件位置：~/assets/scss/custom/_custom.scss
+
+.simple-notice {
+    position:relative;
+    padding: 1em 0 1em 2em;
+    margin-bottom: 1em;
+    transition: all .5s;
+    p:last-child {
+        margin-bottom: 0;
+    }
+    .simple-notice-title {
+        position: absolute;
+        left: 0.8em;
+        .simple-notice-icon {
+            width: 1em;
+            height: 1em;
+            margin-left: -0.8em;
+        }
+    }
+    &.simple-notice-warning {
+        border-top: 2px solid hsl(0, 100%, 35%);
+        color: hsl(0, 100%, 35%);
+        .simple-notice-title {
+            color: hsl(0, 100%, 35%);
+        }
+        a {
+            color: hsl(0, 100%, 35%);
+            text-decoration-color: hsl(0, 100%, 35%);
+        }
+    }
+    &.simple-notice-info {
+        border-top: 2px solid hsl(40, 80%, 45%);
+        color: hsl(40, 80%, 45%);
+        .simple-notice-title {
+            color: hsl(40, 80%, 45%);
+        }
+        a {
+            color: hsl(40, 80%, 45%);
+            text-decoration-color: hsl(40, 80%, 45%);
+        }
+    }
+    &.simple-notice-note {
+        border-top: 2px solid hsl(210, 100%, 25%);
+        color: hsl(210, 100%, 25%);
+        .simple-notice-title {
+            color: hsl(210, 100%, 25%);
+        }
+        a {
+            color: hsl(210, 100%, 25%);
+            text-decoration-color: hsl(210, 100%, 25%);
+        }
+    }
+    &.simple-notice-tip {
+        border-top: 2px solid hsl(150, 100%, 25%);
+        color: hsl(150, 100%, 25%);
+        .simple-notice-title {
+            color: hsl(150, 100%, 25%);
+        }
+        a {
+            color: hsl(150, 100%, 25%);
+            text-decoration-color: hsl(150, 100%, 25%);
+        }
+    }
+}
+
+[data-theme="dark"] .simple-notice {
+    &.simple-notice-warning {
+        border-top: 2px solid hsl(0, 65%, 65%);
+        color: hsl(0, 65%, 65%);
+        .simple-notice-title {
+            color: hsl(0, 65%, 65%);
+        }
+        a {
+            color: hsl(0, 65%, 65%);
+            text-decoration-color: hsl(0, 65%, 65%);
+        }
+    }
+    &.simple-notice-info {
+        border-top: 2px solid hsl(30, 80%, 70%);
+        color: hsl(30, 80%, 70%);
+        .simple-notice-title {
+            color: hsl(30, 80%, 70%);
+        }
+        a {
+            color: hsl(30, 80%, 70%);
+            text-decoration-color: hsl(30, 80%, 70%);
+        }
+    }
+    &.simple-notice-note {
+        border-top: 2px solid hsl(200, 65%, 65%);
+        color: hsl(200, 65%, 65%);
+        .simple-notice-title {
+            color: hsl(200, 65%, 65%);
+        }
+        a {
+            color: hsl(200, 65%, 65%);
+            text-decoration-color: hsl(200, 65%, 65%);
+        }
+    }
+    &.simple-notice-tip {
+        border-top: 2px solid hsl(140, 65%, 65%);
+        color: hsl(140, 65%, 65%);
+        .simple-notice-title {
+            color: hsl(140, 65%, 65%);
+        }
+        a {
+            color: hsl(140, 65%, 65%);
+            text-decoration-color: hsl(140, 65%, 65%);
+        }
+    }
+}
+```
+
+在 `~/data/SVG.toml` 文件中插入图标：
+
+```toml
+# 文件位置：~/data/SVG.toml
+
+# Notice Icon
+simple-notice-warning = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512"><path d="M114.57 76.07a45.71 45.71 0 00-67.51-6.41c-17.58 16.18-19 43.52-4.75 62.77l91.78 123-92.33 124.15c-14.23 19.25-13.11 46.59 4.74 62.77a45.71 45.71 0 0067.5-6.41L242.89 262.7a12.14 12.14 0 000-14.23zm355.67 303.51l-92.33-124.13 91.78-123c14.22-19.25 12.83-46.59-4.75-62.77a45.71 45.71 0 00-67.51 6.41l-128 172.12a12.14 12.14 0 000 14.23L398 435.94a45.71 45.71 0 0067.51 6.41c17.84-16.18 18.96-43.52 4.73-62.77z"/></svg>'
+simple-notice-note = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 192 512"><path d="M176 432c0 44.11-35.89 80-80 80s-80-35.89-80-80 35.89-80 80-80 80 35.89 80 80zM25.26 25.2l13.6 272A24 24 0 0062.83 320h66.34a24 24 0 0023.97-22.8l13.6-272A24 24 0 00142.77 0H49.23a24 24 0 00-23.97 25.2z"/></svg>'
+simple-notice-info = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 192 512"><path d="M20 424.23h20V279.77H20a20 20 0 01-20-20V212a20 20 0 0120-20h112a20 20 0 0120 20v212.23h20a20 20 0 0120 20V492a20 20 0 01-20 20H20a20 20 0 01-20-20v-47.77a20 20 0 0120-20zM96 0a72 72 0 100 144A72 72 0 0096 0z"/></svg>'
+simple-notice-tip = '<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512"><path d="M173.9 439.4L7.5 273c-10-10-10-26.2 0-36.2l36.2-36.2c10-10 26.2-10 36.2 0L192 312.69l240.1-240.1c10-10 26.2-10 36.2 0l36.2 36.21c10 10 10 26.2 0 36.2L210.1 439.4c-10 10-26.2 10-36.2 0z"/></svg>'
+```
+
+具体简码和样式如下：
+
+```markdown
+{{</* simple-notice simple-notice-warning */>}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{</* /simple-notice */>}}
+```
+
+{{< simple-notice simple-notice-warning >}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{< /simple-notice >}}
+
+```markdown
+{{</* simple-notice simple-notice-info */>}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{</* /simple-notice */>}}
+```
+
+{{< simple-notice simple-notice-info >}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{< /simple-notice >}}
+
+```markdown
+{{</* simple-notice simple-notice-note */>}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{</* /simple-notice */>}}
+```
+
+{{< simple-notice simple-notice-note >}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{< /simple-notice >}}
+
+```markdown
+{{</* simple-notice simple-notice-tip */>}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{</* /simple-notice */>}}
+```
+
+{{< simple-notice simple-notice-tip >}}
+十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+{{< /simple-notice >}}
+
 ## quote
 
 这个简码是用来替代 Mardown 默认的引用样式。我常常将这个简码插入到随笔的引用中。首先创建 `quote.html` 文件，其内容如下：

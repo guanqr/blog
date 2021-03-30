@@ -8,12 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-18.04
-    env:
-      TZ: Asia/Shanghai
-      SOURCE_REPO: guanqr/blog              # 博客源码仓库
-      DEPLOY_REPO: guanqr/guanqr.github.io  # 博客部署仓库
-      DEPLOY_BRANCH: master                 # 博客部署分支
-      DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 
     steps:
     - name: Checkout source
@@ -39,8 +33,15 @@ jobs:
       run: npm run build
 
     - name: Deploy
+      env:
+        TZ: Asia/Shanghai
+        DEPLOY_REPO: guanqr/guanqr.github.io  # 博客部署仓库
+        DEPLOY_BRANCH: master                 # 博客部署分支
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
-        cd public && git init
+        cd ./public && git init
+        git config user.name "guanqr"
+        git config user.email "guanqirui@zju.edu.cn"
         git add .
         git commit -m "Automated Deployment By GitHub Actions @ $(date '+%Y-%m-%d %H:%M:%S') ${TZ}"
-        git push --force "https://$DEPLOY_KEY@github.com/$DEPLOY_REPO" master:$DEPLOY_BRANCH
+        git push --force --quiet "https://$DEPLOY_KEY@github.com/$DEPLOY_REPO" master:$DEPLOY_BRANCH

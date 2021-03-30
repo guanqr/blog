@@ -35,13 +35,13 @@ jobs:
     - name: Deploy
       env:
         TZ: Asia/Shanghai
-        DEPLOY_REPO: guanqr/guanqr.github.io  # 博客部署仓库
-        DEPLOY_BRANCH: master                 # 博客部署分支
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        DEPLOY_REPO: guanqr/guanqr.github.io
+        DEPLOY_BRANCH: master
+        PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
       run: |
         cd ./public && git init
         git config user.name "guanqr"
         git config user.email "guanqirui@zju.edu.cn"
         git add .
         git commit -m "Automated Deployment By GitHub Actions @ $(date '+%Y-%m-%d %H:%M:%S') ${TZ}"
-        git push --force --quiet "https://$DEPLOY_KEY@github.com/$DEPLOY_REPO" master:$DEPLOY_BRANCH
+        git push --force --quiet "https://$PERSONAL_TOKEN@github.com/$DEPLOY_REPO" master:$DEPLOY_BRANCH

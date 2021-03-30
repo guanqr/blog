@@ -707,7 +707,7 @@ uglyURLs = false
     ## Waline
     enableWaline = true
     walineServerURL = "https://blog-waline-mu.vercel.app/"
-    walinePlaceholder = "填写昵称、邮箱即可留下你的观点与想法。"
+    walinePlaceholder = "请填写正确的昵称和邮箱，方便接收评论回复信息哦。"
     walineAvatar = "mp"
     walineMeta = ["nick", "mail", "link"]
     walinePageSize = 10

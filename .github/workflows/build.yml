@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     env:
       TZ: Asia/Shanghai
       SOURCE_REPO: guanqr/blog              # 博客源码仓库
@@ -16,7 +16,7 @@ jobs:
       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 
     steps:
-    - name: 'Checkout source'
+    - name: Checkout source
       uses: actions/checkout@v2
       with:
         submodules: true
@@ -24,10 +24,23 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '15.4.0'
+        node-version: '14.16.0'
 
     - name: Install dependencies
       run: npm install
 
-    - name: 'Building...'
-      uses: ./.github/actions/hugo-deploy
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.82.0'
+        extended: true
+
+    - name: Build
+      run: npm run build
+
+    - name: Deploy
+      run: |
+        cd public && git init
+        git add .
+        git commit -m "Automated Deployment By GitHub Actions @ $(date '+%Y-%m-%d %H:%M:%S') ${TZ}"
+        git push --force "https://$DEPLOY_KEY@github.com/$DEPLOY_REPO" master:$DEPLOY_BRANCH

@@ -153,7 +153,7 @@ enableWaline = true
 
 ![waline-6.png](/images/waline-6.png "需要配置的内容")
 
-这部分就是 `waline.html` 文件中要写的内容：
+这部分就是 `waline.html` 文件中要写的内容（将 `valine.html` 替换为 `waline.html`）：
 
 ```html
 <script>

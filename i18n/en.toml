@@ -12,3 +12,6 @@ other = "New Update Available"
 
 [serviceWorkerUpdatedAction]
 other = "Refresh"
+
+[ChinesePoem]
+other = "Chinese poem is loading..."

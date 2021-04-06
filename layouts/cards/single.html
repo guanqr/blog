@@ -1,9 +1,8 @@
 {{ define "main" }}
     <main class="main single" id="main">
         <div class="main-inner">
-            {{ $attrs := partial "utils/data-attributes.html" . }}
-            <article class="content post h-entry" {{- with $attrs.align }} data-align="{{ . }}"{{ end }}>
-                <h1 class="post-title p-name">{{ (partial "utils/title.html" (dict "$" $ "title" $.Title)).htmlTitle }}</h1>
+            <article class="content post" >
+                <h1 class="post-title">{{ .Title }}</h1>
                 <div class="post-body cards-body">
                     <hr class="cards" />
                     {{ partial "utils/content.html" . }}
@@ -14,4 +13,3 @@
         </div>
     </main>
 {{ end }} 
-

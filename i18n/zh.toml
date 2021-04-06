@@ -12,3 +12,6 @@ other = "已更新最新版本"
 
 [serviceWorkerUpdatedAction]
 other = "点击刷新"
+
+[ChinesePoem]
+other = "正在加载今日诗词……"

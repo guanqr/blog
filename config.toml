@@ -707,7 +707,7 @@ uglyURLs = false
     ## Waline
     enableWaline = true
     walineServerURL = "https://waline.guanqr.com/"
-    walinePlaceholder = "请填写正确的昵称和邮箱，方便接收评论回复信息哦。当前表情包功能存在 BUG，正在尝试修复中。"
+    walinePlaceholder = "请填写正确的昵称和邮箱，方便接收评论回复信息哦。"
     walineAvatar = "wavatar"
     walineMeta = ["nick", "mail", "link"]
     walinePageSize = 10

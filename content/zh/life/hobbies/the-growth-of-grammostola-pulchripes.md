@@ -1,7 +1,7 @@
 +++
 title = "金直间成长记"
 date = "2020-11-12T13:01:00+08:00"
-lastmod = "2021-01-07T13:01:00+08:00"
+lastmod = "2021-05-14T17:49:23+08:00"
 tags = ["crawling-pet"]
 dropCap = false
 displayCopyright = false
@@ -102,3 +102,11 @@ toc = false
 ![grammostola-pulchripes-20.jpg](/images/grammostola-pulchripes-20.jpg "9L 金直间蜕掉的皮（一）")
 
 ![grammostola-pulchripes-21.jpg](/images/grammostola-pulchripes-21.jpg "9L 金直间蜕掉的皮（二）")
+
+<p style="text-align:center; font-size:1.6em"><strong>2021.05.14</strong></p>
+
+返校后的两个月忙于做毕业设计，基本上没怎么照顾金直间。看着去年买的面包虫都化成了蛹，只好又买来几十只。现在的金直间在看到我用镊子送来面包虫的时候，都会去主动攻击我的镊子。身边有面包虫的时候，不再躲避我的目光，等我离开后才开吃，而是直接扑过来死死咬住。它越来越凶猛了。4 月底的时候，我看到它停止了进食，肚子吃的很大很大。在等待了三周后，它开始在土上铺一层厚厚的网，将自己的身子翻过来，抽搐着蜕皮。这是我第一次真正近距离观察到蜘蛛蜕皮的过程。
+
+![grammostola-pulchripes-22.jpg](/images/grammostola-pulchripes-22.jpg "10L 金直间和蜕掉的皮（一）")
+
+![grammostola-pulchripes-23.jpg](/images/grammostola-pulchripes-23.jpg "10L 金直间和蜕掉的皮（二）")

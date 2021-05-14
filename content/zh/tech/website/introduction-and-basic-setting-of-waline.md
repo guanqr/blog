@@ -1,7 +1,7 @@
 +++
 title = "Waline 评论系统的介绍与基础配置"
 date = "2021-04-01T6:20:40+08:00"
-lastmod = "2021-04-01T20:10:47+08:00"
+lastmod = "2021-05-14T17:40:58+08:00"
 tags = ["hugo","meme","vercel"]
 dropCap = false
 toc = true
@@ -409,6 +409,12 @@ module.exports = Application({
 ![waline-16.png](/images/waline-16.png "King 会在邮箱中收到博主回复的通知")
 
 在 `index.js` 文件中，你还可以设定安全域名、违禁词、IP 禁止名单等等，这些内容请直接参考官方文档。
+
+### 注意事项
+
+完成本文的时候，MemE 主题还未内置 Waline 评论功能。并且 Waline 评论还在 0.n 版时代，尚未发布正式稳定版。所以 Waline 评论系统的样式和功能仍在不断改进中。可能各位读者在阅读本人的这篇文章的时候，Waline 评论已经更新换代很多次了。但总的来说，配置方法是不会有较多改动的。
+
+如果遇到这样的情况：原本配置好的 Waline 评论，到某一天突然出现了 BUG，不能用了。那可能就是官方的代码进行了较多的改动，需要你手动更新 GitHub 的评论仓库的 `package.json` 文件。将其中的依赖 `@waline/vercel` 更新到最新版即可。
 
 ## 总结
 

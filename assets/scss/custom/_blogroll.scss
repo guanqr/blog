@@ -1,11 +1,11 @@
 // 友链样式
-.link::after {
+.blogroll-link::after {
     content: " ";
     display: block;
     clear: both;
 }
 
-.link {
+.blogroll-link {
     display: grid;
     grid-gap: 0 1.5em;
     grid-template-columns: 1fr 1fr;
@@ -43,7 +43,7 @@
 }
 
 @media (max-width: $maxWidth) {
-    .link {
+    .blogroll-link {
         grid-template-columns: 1fr;
     }
 }

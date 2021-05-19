@@ -322,6 +322,10 @@ uglyURLs = false
     # 是否开启
     enableHeader = true
 
+    # 是否自动隐藏
+    enableHeaderAutoHide = true
+    # 说明：仅对弹性布局的顶栏有效
+
     # 是否在首页显示
     displayHeaderInHome = true
     # 说明：对弹性布局的顶栏无效
@@ -679,6 +683,9 @@ uglyURLs = false
     # 说明：文章的 Front Matter 中的 `comments`
     #      的优先级高于此处
 
+    # 直接加载评论，不需要手动点击按钮加载
+    autoLoadComments = false
+
     ## Disqus
     enableDisqus = false
     disqusShortname = "guanqr"
@@ -727,6 +734,23 @@ uglyURLs = false
     utterancesLabel = ""
     # 说明：https://utteranc.es/
 
+    ## Gitalk
+    enableGitalk = false
+    gitalkClientID = "your_client_id"
+    gitalkClientSecret = "your_client_secret"
+    gitalkRepo = "your_repository"
+    gitalkOwner = "your_gitalk_owner"
+    gitalkAdmin = ["your_gitalk_admin"]
+    gitalkLable = ["Gitalk"]
+    gitalkDistractionFreeMode = false
+    gitalkPerPage = 10
+    gitalkLanguage = "en"
+    gitalkPagerDirection = "last"
+    gitalkCreateIssueManually = false
+    gitalkProxy = "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"
+    gitalkEnableHotKey = true
+    # 说明：https://github.com/gitalk/gitalk
+
 
     ######################################
     # Google Analytics
@@ -746,6 +770,30 @@ uglyURLs = false
     # Google Site Verification
 
     googleSiteVerification = ""
+
+
+    ######################################
+    # Google AdSense
+
+    # 说明：仅在生产环境（production）下渲染
+
+    googleAdClient = ""
+
+    ## 自动广告
+    enableGoogleAutoAds = false
+
+    ## 广告单元
+    enableGoogleAdUnits = false
+    googleAdSlot = ""
+
+
+    ######################################
+    # Yandex.Metrika
+    # https://metrika.yandex.ru/
+
+    # 说明：仅在生产环境（production）下渲染
+
+    yandexMetrikaId = ""
 
 
     ######################################
@@ -867,8 +915,10 @@ uglyURLs = false
     ######################################
     # 分节标题锚点
 
-    # 是否开启
+    # 是否开启（全局设置）
     enableHeadingsAnchor = true
+    # 说明：文章的 Front Matter 中的 `anchor`
+    #      的优先级高于此处
 
     # 分节标题的级别范围
     headingsOpt = "1-6"
@@ -1246,6 +1296,9 @@ uglyURLs = false
 
     # 是否在首页显示
     displayBackToTopInHome = true
+
+    # 是否在移动端显示
+    displayBackToTopOnMobile = true
 
     # 按钮图标
     backToTopIcon = "arrow-up"

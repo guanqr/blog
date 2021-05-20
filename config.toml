@@ -721,7 +721,7 @@ uglyURLs = false
     walineLang = "zh-CN"
     walineHighlight = true
     walineAvatarCDN = "https://sdn.geekzu.org/avatar/"
-    walineRequiredFields = ["nick", "mail"]
+    walineRequiredMeta = ["nick", "mail"]
     # 说明：https://waline.js.org/
 
 

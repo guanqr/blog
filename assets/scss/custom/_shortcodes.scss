@@ -84,11 +84,11 @@ blockquote.quote-center {
 
 .simple-notice {
     position:relative;
-    padding: 1em 0 1em 2em;
-    margin-bottom: 1em;
+    padding: 1em 0 0em 2em;
+    margin: 1em 0;
     transition: all .5s;
     p:last-child {
-        margin-bottom: 0;
+        margin: 0;
     }
     .simple-notice-title {
         position: absolute;
@@ -195,10 +195,10 @@ blockquote.quote-center {
 .notice {
     position:relative;
     padding: 1em 1em 1em 2.5em;
-    margin-bottom: 1em;
+    margin: 1em 0;
     //border-radius: 4px;
     p:last-child {
-        margin-bottom: 0;
+        margin: 0;
     }
     .notice-title {
         position: absolute;

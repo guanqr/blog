@@ -43,5 +43,5 @@ jobs:
         git config user.name "guanqr"
         git config user.email "guanqirui@zju.edu.cn"
         git add .
-        git commit -m "Automated Deployment By GitHub Actions @ $(date '+%Y-%m-%d %H:%M:%S') ${TZ}"
+        git commit -m "Automated Deployment @ $(date '+%Y-%m-%d %H:%M:%S') ${TZ}"
         git push --force --quiet "https://$PERSONAL_TOKEN@github.com/$DEPLOY_REPO" master:$DEPLOY_BRANCH

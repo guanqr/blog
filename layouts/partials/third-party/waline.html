@@ -23,13 +23,13 @@
     function newWaline() {
         new Waline({
             el: '#waline',
+            dark: 'html[data-theme="dark"]',
             serverURL: '{{ .Site.Params.walineServerURL }}',
             wordLimit: {{ .Site.Params.walineWordLimit }},
             avatar: '{{ .Site.Params.walineAvatar }}',
             meta: {{ .Site.Params.walineMeta }},
             pageSize: {{ .Site.Params.walinePageSize }},
             lang: '{{ .Site.Params.walineLang }}',
-            dark: '{{ .Site.Params.walineDark }}',
             highlight: {{ .Site.Params.walineHighlight }},
             avatarCDN: '{{ .Site.Params.walineAvatarCDN }}',
             avatarForce: {{ .Site.Params.walineAvatarForce }},

@@ -719,12 +719,10 @@ uglyURLs = false
     walineMeta = ["nick", "mail", "link"]
     walinePageSize = 10
     walineLang = "zh-CN"
-    walineDark = "html[data-theme='dark']"
     walineHighlight = true
     walineAvatarCDN = "https://sdn.geekzu.org/avatar/"
     walineAvatarForce = false
-    walineEmoji = ["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
-                   "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"]
+    walineEmoji = ["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo", "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"]
     walineRequiredMeta = ["nick", "mail"]
     walineLogin = "enabled"
     walineCopyright = true

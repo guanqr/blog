@@ -728,7 +728,6 @@ uglyURLs = false
     walineRequiredMeta = ["nick", "mail"]
     walineLogin = "enabled"
     walineCopyright = true
-    walineLocale = {"placeholder": "请填写正确的昵称和邮箱，方便接收评论回复信息哦。"}
     # 说明：https://waline.js.org/
 
 

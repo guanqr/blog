@@ -714,14 +714,21 @@ uglyURLs = false
     ## Waline
     enableWaline = true
     walineServerURL = "https://waline.guanqr.com/"
-    walinePlaceholder = "请填写正确的昵称和邮箱，方便接收评论回复信息哦。"
+    walineWordLimit = 0
     walineAvatar = "wavatar"
     walineMeta = ["nick", "mail", "link"]
     walinePageSize = 10
     walineLang = "zh-CN"
+    walineDark = "html[data-theme='dark']"
     walineHighlight = true
     walineAvatarCDN = "https://sdn.geekzu.org/avatar/"
+    walineAvatarForce = false
+    walineEmoji = ["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
+                   "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"]
     walineRequiredMeta = ["nick", "mail"]
+    walineLogin = "enabled"
+    walineCopyright = true
+    walineLocale = {placeholder: "欢迎评论"}
     # 说明：https://waline.js.org/
 
 

@@ -1,0 +1,28 @@
+// 一行多图功能样式
+
+.mycard-grid {
+    display: grid;
+    grid-gap: 1em 0.5em;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1em 0;
+}
+
+.mycard-grid-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.mycard-name {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.mycard-poster {
+    margin: 0 !important;
+}
+
+@media (max-width: $maxWidth) {
+    .mycard-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

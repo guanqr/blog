@@ -1,4 +1,5 @@
 node_modules/
 public/
 resources/
+static/images/cards
 .env

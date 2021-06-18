@@ -5,7 +5,7 @@ title = "时光记忆：四大美女"
 <div class="mycard-grid">
     <div class="mycard-grid-container">
         <div class="mycard-grid-top">
-            <img class="mycard-poster" src="/images/shiguangjiyi-sidameinv-xishi.jpg" />
+            <img class="mycard-poster" src="https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/cards/shiguangjiyi-sidameinv-xishi.png" />
         </div>
         <div class="mycard-grid-bottom">
             <div class="mycard-name">沉鱼·西施</div>
@@ -13,7 +13,7 @@ title = "时光记忆：四大美女"
     </div>
     <div class="mycard-grid-container">
         <div class="mycard-grid-top">
-            <img class="mycard-poster" src="/images/shiguangjiyi-sidameinv-wangzhaojun.jpg" />
+            <img class="mycard-poster" src="https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/cards/shiguangjiyi-sidameinv-wangzhaojun.png" />
         </div>
         <div class="mycard-grid-bottom">
             <div class="mycard-name">落雁·王昭君</div>
@@ -21,7 +21,7 @@ title = "时光记忆：四大美女"
     </div>
     <div class="mycard-grid-container">
         <div class="mycard-grid-top">
-            <img class="mycard-poster" src="/images/shiguangjiyi-sidameinv-diaochan.jpg" />
+            <img class="mycard-poster" src="https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/cards/shiguangjiyi-sidameinv-diaochan.png" />
         </div>
         <div class="mycard-grid-bottom">
             <div class="mycard-name">闭月·貂蝉</div>
@@ -29,7 +29,7 @@ title = "时光记忆：四大美女"
     </div>
     <div class="mycard-grid-container">
         <div class="mycard-grid-top">
-            <img class="mycard-poster" src="/images/shiguangjiyi-sidameinv-yangguifei.jpg" />
+            <img class="mycard-poster" src="https://guanqr-com.oss-cn-hangzhou.aliyuncs.com/images/cards/shiguangjiyi-sidameinv-yangguifei.png" />
         </div>
         <div class="mycard-grid-bottom">
             <div class="mycard-name">羞花·杨贵妃</div>

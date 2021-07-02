@@ -130,3 +130,10 @@
   avatar = "/images/friends/myql.png"
   description = "青天白日梦神仙"
   weight = 19
+
+[[blogroll]]
+  name = "Finisky Garden"
+  url = "https://finisky.github.io/"
+  avatar = "/images/friends/finisky.png"
+  description = "Easy doesn’t enter into grown-up life."
+  weight = 20

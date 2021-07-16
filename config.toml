@@ -91,7 +91,7 @@ uglyURLs = false
 # 作者信息
 [author]
     # 名字
-    name = "Keiyui Kwan"
+    name = "Guan Qirui"
     # 邮箱
     email = "guanqirui@zju.edu.cn"
     # 座右铭或简介
@@ -421,7 +421,7 @@ uglyURLs = false
     # 说明：用于 JSON-LD、Open Graph
 
     # 站点的描述
-    siteDescription = "Keiyui Kwan's Blog"
+    siteDescription = "Guan Qirui's Blog"
     # 说明：用于 HTML 的头部元数据、JSON-LD、
     #      Open Graph、Atom、RSS
 
@@ -1503,7 +1503,7 @@ uglyURLs = false
     weight = 2
     languageCode = "en-US"
     hasCJKLanguage = false
-	title = "Keiyui Kwan's Blog"
+	title = "Guan Qirui's Blog"
     copyright = "The article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)."
 [languages.en.taxonomies]
     #category = "categories"
@@ -1547,7 +1547,7 @@ uglyURLs = false
         weight = 2
         pre = "external"
 [languages.en.params]
-    siteDescription = "Keiyui Kwan's Blog in English."
+    siteDescription = "Guan Qirui's Blog in English."
     listDateFormat = "January 2"
     fontFamilyTitle = "'Amstelvar', serif"
     fontFamilyHeadings = "'Amstelvar', serif"

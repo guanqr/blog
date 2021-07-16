@@ -1,7 +1,7 @@
 {
   "name": "guanqr.com",
   "version": "1.0.0",
-  "description": "Keiyui Kwan's Blog",
+  "description": "Guan Qirui's Blog",
   "main": "index.js",
   "scripts": {
     "build": "hugo --gc --minify --cleanDestinationDir && gulp build",

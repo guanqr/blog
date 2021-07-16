@@ -1,5 +1,6 @@
 +++
-title = "老实人被人背刺了"
+title = "被刺老实人"
+subtitle = "一篇论文的诞生"
 date = "2021-07-12T10:53:34+08:00"
 lastmod = "2021-07-12T10:53:34+08:00"
 tags = ["research","roast"]

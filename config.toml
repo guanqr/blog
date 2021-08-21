@@ -119,7 +119,7 @@ uglyURLs = false
         weight = 95
     [[related.indices]]
         name = "date"
-        weight = 10
+        weight = 80
         pattern = "2006"
 
 # Atom 文件格式的媒体类型

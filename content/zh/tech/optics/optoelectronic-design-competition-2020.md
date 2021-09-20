@@ -1,7 +1,7 @@
 +++
 title = "第八届光电设计竞赛校赛总结"
 date = "2020-07-25T17:04:33+08:00"
-lastmod = "2020-07-26T17:04:33+08:00"
+lastmod = "2021-09-20T23:08:18+08:00"
 tags = ["design-contest","mini-app","python"]
 series = ["major-courses"]
 dropCap = false
@@ -65,6 +65,8 @@ dropCap = false
 ![optoelectronic-design-competition-2020-poster.png](/images/optoelectronic-design-competition-2020-poster.png)
 
 ## 总结
+
+![optoelectronic-design-competition-2020-award-certificate.jpg](/images/optoelectronic-design-competition-2020-award-certificate.jpg "获奖证书")
 
 我们团队最终得到了三等奖，这也算是一个惊喜吧，毕竟是一个划水的项目，没有很看重这次比赛。不过通过这次竞赛，我觉得我的微信小程序开发能力又得到了一定的提升，这可以说是最大的收获。校赛结束后还会有东部赛区的比赛，然后是国赛，但我想我是不会再去参加了。这些时间更值得用来复习专业课程。
 

@@ -3,6 +3,7 @@ title = "Waline 评论系统的介绍与基础配置"
 date = "2021-04-01T6:20:40+08:00"
 lastmod = "2021-05-14T17:40:58+08:00"
 tags = ["hugo","meme","vercel"]
+displayExpiredTip = true
 dropCap = false
 toc = true
 +++

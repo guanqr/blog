@@ -98,11 +98,11 @@ toc = true
 
 ![military-training-0.jpg](/images/military-training-0.jpg "练习踢正步")
 
-![military-training-1.jpg](/images/military-training-1.jpg "我们的枪")
+![military-training-1.jpg](/images/military-training-1.jpg "夜晚操场彩排")
 
 后来这几天就是枪不离身了——早上排队吃饭，排队取枪，扛枪踢正步，排队还枪，排队吃午饭，排队取枪，扛枪踢正步，排队还枪，排队吃晚饭。劈枪方阵由齐步变正步的时候，手上的动作比较复杂，我们一直在练习如何劈枪和收枪。这段时间我的手指肚也磨出了茧子。
 
-![military-training-2.jpg](/images/military-training-2.jpg "夜晚操场彩排")
+![military-training-2.jpg](/images/military-training-2.jpg "我们的枪")
 
 军训的时候有个遗憾，就是没有拍一张我穿着军训服，扛着枪的照片。不过军训期间带手机实在是不方便，也没空拍什么照片。我保存的大部分军训照片都是连队办公室的同学拍摄的。如果说有人因为身体原因无法参加军训，可以到连队办公室参与文职工作。因为军训是必修课，每一个学生都无法逃避。还有个遗憾，就是我们这一届学生在军训的时候没有去靶场练习射击。不过既然我们已经摸过枪了，而且比别的连队摸枪的时间长很多，去不去靶场也无所谓了。
 

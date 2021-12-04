@@ -260,13 +260,13 @@ uglyURLs = false
         weight = 1
         pre = "external"
     [[menu.socials]]
-        url = "https://www.cc98.org/user/id/583696"
-        name = "CC98"
+        url = "https://www.instagram.com/guanqr/"
+        name = "Instagram"
         weight = 2
         pre = "external"
     [[menu.socials]]
-        url = "/atom.xml"
-        name = "Feed"
+        url = "https://www.cc98.org/user/id/583696"
+        name = "CC98"
         weight = 3
         pre = "external"
     #[[menu.socials]]
@@ -285,10 +285,10 @@ uglyURLs = false
         weight = 2
         pre = "internal"
     [[menu.links]]
-        url = "/cards/"
-        name = "Cards"
+        url = "/atom.xml"
+        name = "Feed"
         weight = 3
-        pre = "internal"
+        pre = "external"
 
 
     # 首页的底部链接

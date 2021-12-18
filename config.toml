@@ -269,11 +269,6 @@ uglyURLs = false
         name = "CC98"
         weight = 3
         pre = "external"
-    #[[menu.socials]]
-    #    url = "mailto:guanqirui@zju.edu.cn"
-    #    name = "Email"
-    #    weight = 3
-    #    pre = "external"
     [[menu.links]]
         url = "/series/"
         name = "Series"

@@ -1529,8 +1529,8 @@ uglyURLs = false
         weight = 2
         pre = "external"
     [[languages.en.menu.links]]
-        url = "mailto:guanqirui@zju.edu.cn"
-        name = "Email"
+        url = "https://www.instagram.com/guanqr/"
+        name = "Instagram"
         weight = 1
         pre = "external"
     [[languages.en.menu.links]]

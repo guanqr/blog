@@ -137,3 +137,10 @@
   avatar = "/images/friends/finisky.png"
   description = "Easy doesn’t enter into grown-up life."
   weight = 20
+
+[[blogroll]]
+  name = "夏与冬的小站"
+  url = "https://liupj.top/"
+  avatar = "/images/friends/liupj.jpg"
+  description = "临渊羡鱼，退而结网"
+  weight = 21

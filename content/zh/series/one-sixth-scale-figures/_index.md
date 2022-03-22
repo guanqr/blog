@@ -1,4 +1,4 @@
 +++
-title = "人偶收藏"
+title = "兵人收藏"
 slug = "one-sixth-scale-figures"
 +++

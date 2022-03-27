@@ -11,9 +11,9 @@ share = false
 comments = false
 +++
 
-你好，欢迎来到我的博客。我是 Guan Qirui，毕业于浙江大学光电科学与工程学院。目前从事车载激光雷达的光学设计工作。热爱光学、机械、设计，向往宇宙。
+你好，欢迎来到我的博客。我是 Guan Qirui，毕业于浙江大学光电科学与工程学院，目前从事激光雷达研发工作。热爱光学、机械、设计，向往宇宙。
 
-我希望通过一个平台来分享自己的生活、想法，把自己学到的知识分享给他人。拥有一个属于自己的独立域名，建立一个属于自己的博客网站，这样我就可以随意控制网站的布局设计，发挥最大的自由空间。选择建立静态博客的原因，一是降低了运营的成本，使用服务器建立个人博客有些大材小用；二是能够专注于文章的写作，不用花费额外的精力去维护服务器的稳定。
+我希望通过一个平台来分享自己的生活、想法，记录自己走过的这些岁月，把自己学到的知识分享给他人。拥有一个属于自己的独立域名，建立一个属于自己的博客网站，这样我就可以随意控制网站的布局设计，发挥最大的自由空间。选择建立静态博客的原因，一是降低了运营的成本，使用服务器建立个人博客有些大材小用；二是能够专注于文章的写作，不用花费额外的精力去维护服务器的稳定。
 
 目前我的博客采用 [Hugo](https://gohugo.io/) 框架，主题为 [MemE](https://github.com/reuixiy/hugo-theme-meme)，源码存放于 [GitHub](https://github.com/guanqr/blog)，通过 [GitHub Actions](https://github.com/guanqr/blog/actions) 进行持续构建、持续部署。本博客启用了 [PWA](https://developers.google.com/web/progressive-web-apps/) 技术，你可以通过浏览器添加本站到你的手机主屏或计算机桌面，随时随地进行浏览。如果你想订阅本博客，推荐 <a href="/atom.xml" target="_blank">Atom</a> / <a href="/rss.xml" target="_blank">RSS</a>。另外，我还会在<a href="/images/wechat-official-accounts.svg" target="_blank">微信公众号</a>上推送文章，不过因为个人时间有限，推送会滞后一些。
 
@@ -21,4 +21,4 @@ comments = false
 
 我对博客的字体进行了比较任性的设置。中文部分使用的是 Google Fonts 的[思源宋体](https://fonts.google.com/specimen/Noto+Serif+SC?subset=chinese-simplified)，英文部分使用的是 [Amstelvar](https://github.com/TypeNetwork/Amstelvar/)，代码部分使用的是 [JetBrains Mono](https://www.jetbrains.com/lp/mono/)。另外，博客的评论系统由 [Waline](https://waline.js.org/) 提供，页脚的诗词显示功能使用了[今日诗词](https://www.jinrishici.com)的 API 接口。
 
-如果你在浏览博客的过程中发现了任何问题，欢迎前往 GitHub 的[代码仓库](https://github.com/guanqr/blog)提交 Issues 或直接修改相关文件后提交 Pull Requests。如果你有其他事情想要咨询，可以通过邮件联系我，邮箱地址：guanqirui (at) zju.edu.cn。
+如果你在浏览博客的过程中发现了任何问题，欢迎前往 GitHub 的[代码仓库](https://github.com/guanqr/blog)提交 Issues 或直接修改相关文件后提交 Pull Requests。如果你有其他事情想要咨询，可以通过邮件联系我，邮箱地址：guanqirui (at) zju.edu.cn。请不要滥用博客的评论功能发表与主题无关言论。

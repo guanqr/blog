@@ -48,10 +48,10 @@
   weight = 7
 
 [[blogroll]]
-  name = "班班碎碎念"
-  url = "https://blog.dlzhang.com/"
-  avatar = "/images/friends/dlzhang.jpg"
-  description = "无曰已是，无曰遂真"
+  name = "频率"
+  url = "https://pinlyu.com"
+  avatar = "/images/friends/pinlyu.png"
+  description = "风卷过的起点"
   weight = 8
 
 [[blogroll]]

@@ -88,6 +88,10 @@ uglyURLs = false
         endLevel = 6
         ordered = true
 
+# 压缩 HTML
+[minify.tdewolff.html]
+    keepWhitespace = false
+
 # 作者信息
 [author]
     # 名字
@@ -141,9 +145,17 @@ uglyURLs = false
     mediaType = "application/json"
     baseName = "search"
 
+# Algolia 的搜索索引
+[outputFormats.Algolia]
+    mediaType = "application/json"
+    baseName = "algolia"
+    isPlainText = true
+    notAlternative = true
+
 # Hugo 的输出控制
 [outputs]
     page = ["HTML"]
+    # home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex", "Algolia"]
     home = ["HTML", "SectionsAtom", "SectionsRSS"]
     section = ["HTML"]
     # 类别
@@ -169,7 +181,7 @@ uglyURLs = false
 # 4. links      链接栏（关于页面的极简页脚）
 
 # 菜单内的配置说明如下：
-# url           链接地址
+# pageref/url   内链地址/外链地址
 # name          文本（留空（""）则无）
 # weight        位置
 # pre           内链（internal）或外链（external）
@@ -182,28 +194,28 @@ uglyURLs = false
 [menu]
     ## 菜单栏
     [[menu.main]]
-        url = "/tags/"
+        pageref = "/tags/"
         name = "标签"
         weight = 1
         pre = "internal"
         post = "tags"
         identifier = "tags"
     [[menu.main]]
-        url = "/categories/"
+        pageref = "/categories/"
         name = "分类"
         weight = 2
         pre = "internal"
         post = "th" 
         identifier = "categories"
     [[menu.main]]
-        url = "/life/"
+        pageref = "/life/"
         name = "生活"
         weight = 3
         pre = "internal"
         post = "grav"
         identifier = "life"
     [[menu.main]]
-        url = "/tech/"
+        pageref = "/tech/"
         name = "技术"
         weight = 4
         pre = "internal"
@@ -231,14 +243,14 @@ uglyURLs = false
     #    post = "archive"
     #    identifier = "archives"
     [[menu.main]]
-        url = "/blogroll/"
+        pageref = "/blogroll/"
         name = "友链"
         weight = 5
         pre = "internal"
         post = "pagelines"
         identifier = "friends"
     [[menu.main]]
-        url = "/about/"
+        pageref = "/about/"
         name = "关于"
         weight = 6
         pre = "internal"
@@ -270,12 +282,12 @@ uglyURLs = false
         weight = 3
         pre = "external"
     [[menu.links]]
-        url = "/series/"
+        pageref = "/series/"
         name = "Series"
         weight = 1
         pre = "internal"
     [[menu.links]]
-        url = "/archives/"
+        pageref = "/archives/"
         name = "Archives"
         weight = 2
         pre = "internal"
@@ -1005,6 +1017,11 @@ uglyURLs = false
 
 
     ######################################
+    # 滚动条
+    customizeScrollbar = true
+
+
+    ######################################
     # 字体排版
 
     ######################################
@@ -1312,6 +1329,7 @@ uglyURLs = false
     # 是否在首页显示
     displayFooterInHome = true
 
+    displayCopyleftSymbol = false
     # 是否显示版权符号（©）
     displayCopyrightSymbol = true
 
@@ -1440,6 +1458,21 @@ uglyURLs = false
 
     enableLunrSearch = false
     # 说明：https://lunrjs.com/
+
+
+    ######################################
+    # Algolia search
+
+    # 说明：需要开启 `Algolia` 的输出，且需要每
+    #      次将生成的 algolia.json 文件上传到
+    #      Algolia
+
+    enableAlgoliaSearch = false
+
+    algoliaAppId = ""
+    algoliaApiKey = ""
+    algoliaIndexName = ""
+    # 说明：https://www.algolia.com/
 
 
     ######################################

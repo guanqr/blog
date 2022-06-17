@@ -1,5 +1,9 @@
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
     function loadComments() {
+        if (!document.getElementById('waline')) {
+            return;
+        }
         if (typeof Waline === 'undefined') {
             var getScript = (options) => {
                 var script = document.createElement('script');
@@ -11,7 +15,7 @@
                 document.body.appendChild(script);
             };
             getScript({
-                src: 'https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',
+                src: 'https://unpkg.com/@waline/client@v2/dist/waline.js',
                 onload: () => {
                     newWaline();
                 }
@@ -34,7 +38,7 @@
             meta: {{ .Site.Params.walineMeta }},
             pageSize: {{ .Site.Params.walinePageSize }},
             lang: '{{ .Site.Params.walineLang }}',
-            highlight: {{ .Site.Params.walineHighlight }},
+            highlighter: {{ .Site.Params.walineHighlight }},
             emoji: {{ .Site.Params.walineEmoji }},
             requiredMeta: {{ .Site.Params.walineRequiredMeta }},
             login: '{{ .Site.Params.walineLogin }}',

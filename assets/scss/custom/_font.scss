@@ -66,3 +66,17 @@ body {
 .list-item-time {
     font-feature-settings: 'tnum';
 }
+
+//自适应屏幕宽度
+
+@media (max-width: 750px) {
+    body {
+        font-size: calc(14px + (100vw - 500px) * 0.008);
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 14px;
+    }
+}

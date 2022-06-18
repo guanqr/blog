@@ -28,7 +28,5 @@
 // sw 更新提醒
 @import "sw-notification";
 
-html[data-theme="dark"] {
-    --waline-bgcolor: hsl(231, 14%, 10%);
-    --waline-bgcolor-light:  hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.5);
-}
+// 评论
+@import "comments";

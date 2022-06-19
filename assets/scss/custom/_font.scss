@@ -69,14 +69,14 @@ body {
 
 //自适应屏幕宽度
 
-@media (max-width: 750px) {
-    body {
-        font-size: calc(14px + (100vw - 500px) * 0.008);
-    }
-}
-
 @media (max-width: 500px) {
     body {
-        font-size: 14px;
+        font-size: $fontSize * 0.875;
+    }
+    .drop-cap {
+        font-size: $fontSize * 0.875 * 3;
+        margin-right: $lineHeight * $fontSize * 0.875 - $fontSize * 0.875;
+        margin-top: $fontSize * 0.875 / $lineHeight;
+        line-height: $lineHeight * $fontSize * 0.875;
     }
 }

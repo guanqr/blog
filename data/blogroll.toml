@@ -111,8 +111,15 @@
   weight = 16
 
 [[blogroll]]
+  name = "槐雪"
+  url = "https://www.lvxuefei.top/"
+  avatar = "/images/friends/lvxuefei.jpg"
+  description = "我的生活本身已成了我的娱乐"
+  weight = 17
+
+[[blogroll]]
   name = "Refun"
   url = "https://gears233.github.io/"
   avatar = "/images/friends/refun.jpg"
   description = "重新找回那份简单的快乐…"
-  weight = 17
+  weight = 18

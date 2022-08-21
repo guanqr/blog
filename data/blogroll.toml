@@ -118,8 +118,15 @@
   weight = 17
 
 [[blogroll]]
+  name = "Anomie"
+  url = "https://dongsheng2000.gitee.io/"
+  avatar = "/images/friends/dongsheng2000.png"
+  description = "utilitarianism & scientism"
+  weight = 18
+
+[[blogroll]]
   name = "Refun"
   url = "https://gears233.github.io/"
   avatar = "/images/friends/refun.jpg"
   description = "重新找回那份简单的快乐…"
-  weight = 18
+  weight = 19

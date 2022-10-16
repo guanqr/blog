@@ -125,10 +125,10 @@
   weight = 18
 
 [[blogroll]]
-  name = "AZPL"
-  url = "https://www.azplstudio.top/"
-  avatar = "/images/friends/azpl.jpg"
-  description = "数码科技"
+  name = "月下八哥"
+  url = "http://www.blog.yx-bug.xyz/"
+  avatar = "/images/friends/yxbug.png"
+  description = "平平无奇的苍蓝星、光之战士，偶尔写写代码"
   weight = 19
 
 [[blogroll]]

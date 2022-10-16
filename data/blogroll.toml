@@ -125,8 +125,15 @@
   weight = 18
 
 [[blogroll]]
+  name = "AZPL"
+  url = "https://www.azplstudio.top/"
+  avatar = "/images/friends/azpl.jpg"
+  description = "数码科技"
+  weight = 19
+
+[[blogroll]]
   name = "Refun"
   url = "https://gears233.github.io/"
   avatar = "/images/friends/refun.jpg"
   description = "重新找回那份简单的快乐…"
-  weight = 19
+  weight = 20

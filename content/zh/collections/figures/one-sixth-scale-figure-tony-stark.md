@@ -62,7 +62,7 @@ HotToys 出品最多的角色就是钢铁侠了，各种型号的机型，甚至
 
 （下文更新于 2022.06.15）
 
-## 领带
+## 领带更换（更新于 2022.06.15）
 
 六月中旬，我终于收到了订购的 dino 领带。和 Yunsil 的衣服一样，这是我第一次见到 dino 领带的实物。dino 制作的领带要比一般的定制服装里自带的领带更为精致。印花工艺清晰度高，布料选材适中。特别值得称赞的是，dino 使用了和真实领带一样的松紧方法，不像 Yunsil，单独做一个绕脖子的结构。下图展示了 dino 领带的细节，和 Yunsil 领带的对比以及上身效果。
 
@@ -76,8 +76,20 @@ HotToys 出品最多的角色就是钢铁侠了，各种型号的机型，甚至
 
 ![one-sixth-scale-figure-tony-stark-19.jpg](/images/one-sixth-scale-figure-tony-stark-19.jpg "上身细节")
 
-此外，我还在这批订购中预订了 dino 的小丑领带和 dino 与 2ouble8ight 合作的小丑衬衣。小丑形象来自于《黑暗骑士》。衬衣的印花极致还原了真实的服饰，特别是领口的细节部分，精益求精。在 hot Toys 和其他第三方（包括定制）的小丑中，衬衣的印花总是设计成左右对称，和实物对比，这显然是错误的。当然，印花的花纹细节也有问题。所以，当前这一款小丑衬衣是不可多得的精品。
+此外，我还在这批订购中预订了 dino 的小丑领带和 dino 与 2ouble8ight 合作的小丑衬衣。小丑形象来自于《黑暗骑士》。衬衣的印花极致还原了真实的服饰，特别是领口的细节部分，精益求精。在 Hot Toys 和其他第三方（包括定制）的小丑中，衬衣的印花总是设计成左右对称，和实物对比，这显然是错误的。当然，印花的花纹细节也有问题。所以，当前这一款小丑衬衣是不可多得的精品。
 
 ![one-sixth-scale-figure-tony-stark-20.jpg](/images/one-sixth-scale-figure-tony-stark-20.jpg "小丑衬衣和领带")
 
 ![one-sixth-scale-figure-tony-stark-21.jpg](/images/one-sixth-scale-figure-tony-stark-21.jpg "小丑衬衣细节")
+
+## 头雕更换（更新于 2022.10.17）
+
+时隔数月，回过头来觉得这款兵人我并没有打理到位，遂拆卸下来重新打理，包括垫肩，垫肚子，增肥一条龙。其中最让我觉得麻烦的一点，就在于头雕。因为这款头雕是脖子向下延伸的头雕，下端的口径偏大，因此需要先安放头雕，再打理衣服，尤其是领带的松紧很繁琐。如此一来，如果我想要找涂装师涂头雕的话，还需要把衣服给拆了。不如再配一颗更适合这套颁奖场景的头雕吧。
+
+三步工作室的笑脸托尼已经出货，这款头雕在闲鱼市场的价格，相对于该工作室其他头雕而言，便宜很多很多，因为并没有限量，且有早期翻模流出，盗版猖獗。于是我便收入了一颗，到货后仔细欣赏了一番，果然栩栩如生。用这颗头雕搭配颁奖套西装，再合适不过了。
+
+![one-sixth-scale-figure-tony-stark-22.jpg](/images/one-sixth-scale-figure-tony-stark-22.jpg "微笑头雕")
+
+![one-sixth-scale-figure-tony-stark-23.jpg](/images/one-sixth-scale-figure-tony-stark-23.jpg "证书与头雕")
+
+![one-sixth-scale-figure-tony-stark-24.jpg](/images/one-sixth-scale-figure-tony-stark-24.jpg "整体效果")

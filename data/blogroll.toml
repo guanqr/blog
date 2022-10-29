@@ -132,8 +132,15 @@
   weight = 19
 
 [[blogroll]]
+  name = "长街短梦"
+  url = "https://wangyunzi.com/"
+  avatar = "/images/friends/wangyunzi.png"
+  description = "此行山高路远，我只剩口袋玫瑰一片"
+  weight = 20
+
+[[blogroll]]
   name = "Refun"
   url = "https://gears233.github.io/"
   avatar = "/images/friends/refun.jpg"
   description = "重新找回那份简单的快乐…"
-  weight = 20
+  weight = 21

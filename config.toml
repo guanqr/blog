@@ -207,20 +207,20 @@ uglyURLs = false
         pre = "internal"
         post = "th" 
         identifier = "categories"
-    [[menu.main]]
-        pageref = "/life/"
-        name = "生活"
-        weight = 3
-        pre = "internal"
-        post = "grav"
-        identifier = "life"
-    [[menu.main]]
-        pageref = "/tech/"
-        name = "技术"
-        weight = 4
-        pre = "internal"
-        post = "wpexplorer"
-        identifier = "tech"
+    #[[menu.main]]
+    #    pageref = "/life/"
+    #    name = "生活"
+    #    weight = 3
+    #    pre = "internal"
+    #    post = "grav"
+    #    identifier = "life"
+    #[[menu.main]]
+    #    pageref = "/tech/"
+    #    name = "技术"
+    #    weight = 4
+    #    pre = "internal"
+    #    post = "wpexplorer"
+    #    identifier = "tech"
     #[[menu.main]]
     #    url = "/series/"
     #    name = "专栏"
@@ -235,32 +235,32 @@ uglyURLs = false
     #    pre = "internal"
     #    post = "feather-alt" 
     #    identifier = "cards"
-    #[[menu.main]]
-    #    url = "/archives/"
-    #    name = "归档"
-    #    weight = 6
-    #    pre = "internal"
-    #    post = "archive"
-    #    identifier = "archives"
+    [[menu.main]]
+        pageref = "/archives/"
+        name = "归档"
+        weight = 3
+        pre = "internal"
+        post = "archive"
+        identifier = "archives"
     [[menu.main]]
         pageref = "/blogroll/"
         name = "友链"
-        weight = 5
+        weight = 4
         pre = "internal"
         post = "pagelines"
         identifier = "friends"
     [[menu.main]]
         pageref = "/about/"
         name = "关于"
-        weight = 6
+        weight = 5
         pre = "internal"
         post = "user-circle"
         identifier = "about"
     [[menu.main]]
-        weight = 7
+        weight = 6
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 8
+        weight = 7
         identifier = "lang-switcher"
     #[[menu.main]]
     #    weight = 11
@@ -276,25 +276,20 @@ uglyURLs = false
         name = "Instagram"
         weight = 2
         pre = "external"
-    [[menu.socials]]
-        url = "https://www.cc98.org/user/id/583696"
-        name = "CC98"
-        weight = 3
-        pre = "external"
+    #[[menu.socials]]
+    #    url = "https://www.cc98.org/user/id/583696"
+    #    name = "CC98"
+    #    weight = 3
+    #    pre = "external"
     [[menu.links]]
         pageref = "/series/"
         name = "Series"
         weight = 1
         pre = "internal"
     [[menu.links]]
-        pageref = "/archives/"
-        name = "Archives"
-        weight = 2
-        pre = "internal"
-    [[menu.links]]
         url = "/atom.xml"
         name = "Feed"
-        weight = 3
+        weight = 2
         pre = "external"
 
 

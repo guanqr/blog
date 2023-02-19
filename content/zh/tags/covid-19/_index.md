@@ -1,4 +1,4 @@
 +++
-title = "covid-19"
-slug = "COVID-19"
+title = "COVID-19"
+slug = "covid-19"
 +++

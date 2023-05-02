@@ -84,7 +84,7 @@
 
 [[blogroll]]
   name = "月下八哥"
-  url = "http://www.blog.yx-bug.xyz/"
+  url = "https://www.yxbug.ren/"
   avatar = "/images/friends/yxbug.png"
   description = "平平无奇的苍蓝星、光之战士，偶尔写写代码"
   weight = 13
@@ -102,3 +102,10 @@
   avatar = "/images/friends/seersu.jpg"
   description = "山有扶苏，隰有荷华"
   weight = 15
+
+[[blogroll]]
+  name = "wenderfeng"
+  url = "https://wenderfeng.top/"
+  avatar = "/images/friends/wenderfeng.jpg"
+  description = "Step by step"
+  weight = 16

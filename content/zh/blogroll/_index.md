@@ -10,6 +10,10 @@ comments = false
 
 ## 申请方式
 
+{{< notice notice-warning >}}
+<strong>由于友链数量较多，目前已停止接受友链申请，谢谢！</strong>
+{{< /notice >}}
+
 + 首先将本站链接添加至你的网站，信息如下：
 
 {{< notice notice-tip >}}
@@ -30,7 +34,4 @@ comments = false
 
 |            站名           |              链接              |               网站描述               |    状态    |
 |:-------------------------:|:-----------------------------:|:------------------------------------:|:---------:|
-|   Sissioy’s Blog   |   https://www.sissioy.com/    |  人间有味是清欢  |  无法访问  |
-|   天涯共此时   |   https://ztygcs.github.io/    |  技术博文，生活杂碎，哲理人生 |  一年以上未更新  |
-|   数学小兵儿   |   https://matnoble.me/    |  数学＆计算机 我都爱 |  一年以上未更新  |
-|   XTAO’s Tech Blog   |   https://xiaotaoguo.com/    |  If you aren't proud of it, it isn't good enough. |  一年以上未更新  |
+|   —   |   —    |  —  |  —  |

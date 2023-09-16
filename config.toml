@@ -228,13 +228,6 @@ uglyURLs = false
     #    pre = "internal"
     #    post = "globe-asia"
     #    identifier = "series"
-    #[[menu.main]]
-    #    url = "/cards/"
-    #    name = "藏卡"
-    #    weight = 6
-    #    pre = "internal"
-    #    post = "feather-alt" 
-    #    identifier = "cards"
     [[menu.main]]
         pageref = "/archives/"
         name = "归档"
@@ -243,24 +236,31 @@ uglyURLs = false
         post = "archive"
         identifier = "archives"
     [[menu.main]]
+        url = "/exhibition/"
+        name = "收藏"
+        weight = 4
+        pre = "internal"
+        post = "feather-alt" 
+        identifier = "cards"
+    [[menu.main]]
         pageref = "/blogroll/"
         name = "友链"
-        weight = 4
+        weight = 5
         pre = "internal"
         post = "pagelines"
         identifier = "friends"
     [[menu.main]]
         pageref = "/about/"
         name = "关于"
-        weight = 5
+        weight = 6
         pre = "internal"
         post = "user-circle"
         identifier = "about"
     [[menu.main]]
-        weight = 6
+        weight = 7
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 7
+        weight = 8
         identifier = "lang-switcher"
     #[[menu.main]]
     #    weight = 11

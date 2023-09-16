@@ -1,32 +1,32 @@
 // 友链样式
-.blogroll-link::after {
+.collection-link::after {
     content: " ";
     display: block;
     clear: both;
 }
 
-.blogroll-link {
+.collection-link {
     display: grid;
     grid-gap: 0 1.5em;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.blogroll {
+.collection {
     padding: 1em 0;
     border-bottom: 1px dashed var(--color-contrast-low);
-    display: flex;
     transition: all .5s;
     text-decoration: none !important;
+    text-align: center;
     overflow: hidden;
-    .friend {
+    .overview {
         text-decoration: none;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+        margin: 0.5em;
     }
     .name {
         font-weight: bold;
-        margin: 0.375em 0;
     }
     .excerpt {
         font-size: 0.875em;
@@ -34,17 +34,23 @@
         overflow: hidden;
         white-space: nowrap;
     }
-    .avatar {
-        width: 4em !important;
-        height: 4em !important;
-        margin: 0 1em 0 0 !important;
+    .cover {
+        width: 12em !important;
+        height: 16em !important;
+        margin: 1em auto 0 !important;
         pointer-events: none;
         z-index: 0;
     }
 }
 
 @media (max-width: $maxWidth) {
-    .blogroll-link {
+    .collection-link {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 400px) {
+    .collection-link {
         grid-template-columns: 1fr;
     }
 }

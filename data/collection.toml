@@ -3,11 +3,6 @@
   url = "/collections/figures/one-sixth-scale-figure-tony-stark/"
   cover = "/images/cover/one-sixth-scale-figure-tony-stark-cover.jpg"
   source = "《钢铁侠 2》"
-  head = "ThreeStep Studio"
-  outfit = "Toribox"
-  shoe = "KantiZhu"
-  accessory = "Solid Factory"
-  organizer = "KantiZhu"
   weight = 1
 
 [[collection]]
@@ -15,11 +10,6 @@
   url = "/collections/figures/one-sixth-scale-figure-zhang-muzhi/"
   cover = "/images/cover/one-sixth-scale-figure-zhang-muzhi-cover.jpg"
   source = "《让子弹飞》"
-  head = "712 Studio"
-  outfit = "Y.M.A Studio"
-  shoe = "HotToys"
-  accessory = "712 Studio"
-  organizer = "712 Studio"
   weight = 2
 
 [[collection]]
@@ -27,11 +17,6 @@
   url = "/collections/figures/one-sixth-scale-figure-negan/"
   cover = "/images/cover/one-sixth-scale-figure-negan-cover.jpg"
   source = "《行尸走肉》"
-  head = "Balloon Man"
-  outfit = "Toribox"
-  shoe = "Mr.E"
-  accessory = "—"
-  organizer = "Hosam"
   weight = 3
 
 [[collection]]
@@ -39,11 +24,6 @@
   url = "/collections/figures/one-sixth-scale-figure-bruce-wayne-bvs/"
   cover = "/images/cover/one-sixth-scale-figure-bruce-wayne-cover.jpg"
   source = "《蝙蝠侠大战超人》"
-  head = "六等星"
-  outfit = "Zihao Studio"
-  shoe = "Zihao Studio"
-  accessory = "—"
-  organizer = "Zihao Studio"
   weight = 4
 
 [[collection]]
@@ -51,9 +31,25 @@
   url = "/collections/figures/one-sixth-scale-figure-bill-the-butcher/"
   cover = "/images/cover/one-sixth-scale-figure-bill-the-butcher-cover.jpg"
   source = "《纽约黑帮》"
-  head = "Jay.sculptor"
-  outfit = "Toribox"
-  shoe = "NightT47"
-  accessory = "Robbie"
-  organizer = "Siruis & Yunaitou"
   weight = 5
+
+[[collection]]
+  name = "布兰迪"
+  url = ""
+  cover = "/images/cover/one-sixth-scale-figure-blondie-cover.jpg"
+  source = "《黄金三镖客》"
+  weight = 6
+
+[[collection]]
+  name = "里昂"
+  url = ""
+  cover = "/images/cover/one-sixth-scale-figure-leon-cover.jpg"
+  source = "《这个杀手不太冷》"
+  weight = 7
+
+[[collection]]
+  name = "莱斯特"
+  url = ""
+  cover = "/images/cover/one-sixth-scale-figure-lestat-cover.jpg"
+  source = "《夜访吸血鬼》"
+  weight = 8

@@ -1485,7 +1485,7 @@ uglyURLs = false
     ######################################
     # 自定义页脚微信订阅功能
     
-    enableFooterSubscription = true
+    enableFooterSubscription = false
     subscriptionIcon = "wechat-brands"
     subscriptionQrCode = "/images/wechat-official-accounts.svg"
 

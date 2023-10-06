@@ -53,3 +53,10 @@
   cover = "/images/cover/one-sixth-scale-figure-lestat-cover.jpg"
   source = "《夜访吸血鬼》"
   weight = 8
+
+[[collection]]
+  name = "旭仔"
+  url = ""
+  cover = "/images/cover/one-sixth-scale-figure-xuzai-cover.jpg"
+  source = "《阿飞正传》"
+  weight = 9

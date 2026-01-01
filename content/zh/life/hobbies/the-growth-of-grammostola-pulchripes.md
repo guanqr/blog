@@ -1,11 +1,9 @@
 +++
 title = "金直间成长记"
 date = "2020-11-12T13:01:00+08:00"
-lastmod = "2021-05-14T17:49:23+08:00"
+lastmod = "2026-01-01T17:49:23+08:00"
 tags = ["crawling-pet"]
 dropCap = false
-displayCopyright = false
-gitinfo = false
 toc = false
 +++
 
@@ -110,3 +108,11 @@ toc = false
 ![grammostola-pulchripes-22.jpg](/images/grammostola-pulchripes-22.jpg "10L 金直间和蜕掉的皮（一）")
 
 ![grammostola-pulchripes-23.jpg](/images/grammostola-pulchripes-23.jpg "10L 金直间和蜕掉的皮（二）")
+
+---
+
+2021 年毕业后，我带着我的金直间入住了公司的公寓。
+
+2023 年春季，我又带着它搬到了外面租的房子里，并给它换了个更大的玻璃房。这期间它蜕皮了好几次。
+
+2025 年夏季，在我又进行了一次搬家后，金直间开始了最新一次的蜕皮。时间已经过去了这么久，我早已忘记这是它第几次蜕皮了。由于我疏于对它的关照，它在很长一段时间里摄入的蛋白有些少，肚子很小。蜕皮后，已经没有什么精神气了。再喂它虫子也不吃。就这样蜷缩在角落，逐渐与脚下的泥土融为一体。可能我今后再也没有兴致去养一只蜘蛛了，我也无心把它的躯体做成标本，它是我大学时期的「遗产」，承载着我的部分回忆。永别了！

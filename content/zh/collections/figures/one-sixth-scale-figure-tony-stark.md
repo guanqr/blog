@@ -1,5 +1,5 @@
 +++
-title = "钢铁侠 | 托尼 - 颁奖西装 ver."
+title = "《钢铁侠 2》托尼·斯塔克"
 date = "2022-02-26T18:38:31+08:00"
 lastmod = "2023-09-15T17:53:43+08:00"
 tags = ["collection","marvel","model"]

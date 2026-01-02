@@ -1,5 +1,5 @@
 +++
-title = "纽约黑帮 | 屠夫比尔 - Mr. Cutting ver."
+title = "《纽约黑帮》屠夫比尔"
 date = "2023-05-15T17:11:07+08:00"
 lastmod = "2023-07-19T00:02:45+08:00"
 tags = ["collection","gangster","model"]

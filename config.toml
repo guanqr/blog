@@ -235,13 +235,13 @@ uglyURLs = false
         pre = "internal"
         post = "archive"
         identifier = "archives"
-    [[menu.main]]
-        url = "/exhibition/"
-        name = "收藏"
-        weight = 4
-        pre = "internal"
-        post = "feather-alt" 
-        identifier = "cards"
+    #[[menu.main]]
+    #    url = "/exhibition/"
+    #    name = "收藏"
+    #    weight = 4
+    #    pre = "internal"
+    #    post = "feather-alt" 
+    #    identifier = "cards"
     [[menu.main]]
         pageref = "/blogroll/"
         name = "友链"
@@ -1059,7 +1059,7 @@ uglyURLs = false
     ######################################
     ## 字号（单位：px）
 
-    fontSize = 16
+    fontSize = 18
 
     ######################################
     ## 制表符的宽度

@@ -194,16 +194,23 @@ uglyURLs = false
 [menu]
     ## 菜单栏
     [[menu.main]]
+        pageref = "/archives/"
+        name = "目录"
+        weight = 1
+        pre = "internal"
+        post = "archive"
+        identifier = "archives"
+    [[menu.main]]
         pageref = "/tags/"
         name = "标签"
-        weight = 1
+        weight = 2
         pre = "internal"
         post = "tags"
         identifier = "tags"
     [[menu.main]]
         pageref = "/categories/"
         name = "分类"
-        weight = 2
+        weight = 3
         pre = "internal"
         post = "th" 
         identifier = "categories"
@@ -228,13 +235,6 @@ uglyURLs = false
     #    pre = "internal"
     #    post = "globe-asia"
     #    identifier = "series"
-    [[menu.main]]
-        pageref = "/archives/"
-        name = "归档"
-        weight = 3
-        pre = "internal"
-        post = "archive"
-        identifier = "archives"
     #[[menu.main]]
     #    url = "/exhibition/"
     #    name = "收藏"
@@ -245,22 +245,22 @@ uglyURLs = false
     [[menu.main]]
         pageref = "/blogroll/"
         name = "友链"
-        weight = 5
+        weight = 4
         pre = "internal"
         post = "pagelines"
         identifier = "friends"
     [[menu.main]]
         pageref = "/about/"
         name = "关于"
-        weight = 6
+        weight = 5
         pre = "internal"
         post = "user-circle"
         identifier = "about"
     [[menu.main]]
-        weight = 7
+        weight = 6
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 8
+        weight = 7
         identifier = "lang-switcher"
     #[[menu.main]]
     #    weight = 11

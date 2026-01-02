@@ -195,7 +195,7 @@ uglyURLs = false
     ## 菜单栏
     [[menu.main]]
         pageref = "/archives/"
-        name = "目录"
+        name = "文章"
         weight = 1
         pre = "internal"
         post = "archive"

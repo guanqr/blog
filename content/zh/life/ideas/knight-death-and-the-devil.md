@@ -20,7 +20,7 @@ A stolid armoured knight on a proud horse, accompanied by his faithful dog, ride
 {{< /quote >}}
 
 
-丢勒在我看来是前无古人，多雷则是后无来者。两位都是我非常喜欢的画家，他们都创作出了很多不朽的作品。希望以后有机会可以多收集一些他们的版画。
+在我看来，于版画艺术领域，丢勒是前无古人，多雷是后无来者。两位都是我非常喜欢的画家，他们都创作出了很多不朽的作品。希望以后有机会可以多收集一些他们的作品。
 
 ![knight-death-and-the-devil-2.jpg](/images/knight-death-and-the-devil-2.jpg "细节展示（一）")
 

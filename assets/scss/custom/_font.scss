@@ -12,6 +12,7 @@
     font-stretch: 50% 125%;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Amstelvar';
     font-display: swap;
@@ -21,6 +22,7 @@
     font-stretch: 50% 125%;
     font-style: italic;
 }
+
 @font-face {
     font-family: 'JetBrains Mono';
     font-display: swap;
@@ -28,20 +30,7 @@
     font-weight: 400;
     font-style: normal;
 }
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-display: swap;
-    src: url('#{$baseRelURL}/fonts/JetBrainsMono-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-display: swap;
-    src: url('#{$baseRelURL}/fonts/JetBrainsMono-Italic.woff2') format('woff2');
-    font-weight: 400;
-    font-style: italic;
-}
+
 @font-face {
     font-family: 'I.MingCP';
     font-display: swap;
@@ -51,9 +40,9 @@
 }
 
 :root {
-    --text-wdth: 90;
+    --text-wdth: 100;
     --text-opsz: 40;
-    --text-YTLC: 460;
+    --text-YTLC: 450;
 }
 
 body {
@@ -66,9 +55,30 @@ body {
 .post-title {
     font-variation-settings:
         'wght' 550,
-        'opsz' 60,
-        'YOPQ' 90;
+        'opsz' 30,
+        'YOPQ' 100,
+        'YTLC' 570;
 }
+
+.list-item {
+    font-variation-settings:
+        'wght' 400,
+        'wdth' 103,
+        'opsz' 20,
+        'YOPQ' 90,
+        'YTLC' 570;
+}
+
+.list-year {
+    font-variation-settings:
+        'wdth' 100,
+        'opsz' 20,
+        'YOPQ' 100;
+}
+
+//* {
+//    font-feature-settings: 'halt';
+//}
 
 .list-item-time {
     font-feature-settings: 'tnum';

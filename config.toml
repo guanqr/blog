@@ -15,7 +15,7 @@ theme = "meme"
 newContentEditor = ""
 
 # i18n
-defaultContentLanguage = "zh"
+defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = false
 
 # 标题大小写格式
@@ -390,7 +390,7 @@ uglyURLs = false
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
-    homePoetry = ["十里青山远，潮平路带沙","数声啼鸟怨年华","又是凄凉时候，在天涯","白露收残月，清风散晓霞","绿杨堤畔问荷花","记得年时沽酒，那人家"]
+    homePoetry = ["十里青山遠，潮平路帶沙","數聲啼鳥怨年華","又是淒涼時候，在天涯","白露收殘月，清風散曉霞","綠楊堤畔問荷花","記得年時沽酒，那人家"]
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1
 
@@ -1024,10 +1024,10 @@ uglyURLs = false
     #      (~/blog/static/images/meme.jpg)
 
     # 是否开启
-    enableImageHost = false
+    enableImageHost = true
 
     # 图片外链地址
-    imageHostURL = "https://example.com/"
+    imageHostURL = "https://cdn.jsdelivr.net/gh/guanqr/blog/static/"
 
     # 是否将 HTML 的头部元数据中的图片链接也替换为外链
     headAlso = false
@@ -1396,6 +1396,9 @@ uglyURLs = false
     # 是否开启图标的跳动效果
     iconAnimation = true
 
+    # 是否显示站点的作者名称
+    displaySiteAuthorName = true
+
     # 是否显示 Hugo 和 MemE 的链接
     displayPoweredBy = false
 
@@ -1621,17 +1624,19 @@ uglyURLs = false
 # 自行添加的多语言站点设置
 
 # 中文
-[languages.zh]
+[languages.zh-cn]
     languageName = "🇨🇳"
     contentDir = "content/zh"
     weight = 1
+[languages.zh-cn.params]
+    contentDir = "content/zh"
 
 # 英文
 [languages.en]
     languageName = "🇺🇸"
     contentDir = "content/en"
     weight = 2
-    languageCode = "en-US"
+    languageCode = "en"
     hasCJKLanguage = false
 	title = "Guan Qirui's Blog"
     copyright = "The article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)."

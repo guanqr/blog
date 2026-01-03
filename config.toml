@@ -1024,7 +1024,7 @@ uglyURLs = false
     #      (~/blog/static/images/meme.jpg)
 
     # 是否开启
-    enableImageHost = true
+    enableImageHost = false
 
     # 图片外链地址
     imageHostURL = "https://cdn.jsdelivr.net/gh/guanqr/blog/static/"

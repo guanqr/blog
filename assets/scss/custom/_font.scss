@@ -86,14 +86,14 @@ body {
 
 //自适应屏幕宽度
 
-@media (max-width: 500px) {
-    body {
-        font-size: $fontSize * 0.875;
-    }
-    .drop-cap {
-        font-size: $fontSize * 0.875 * 3;
-        margin-right: $lineHeight * $fontSize * 0.875 - $fontSize * 0.875;
-        margin-top: $fontSize * 0.875 / $lineHeight;
-        line-height: $lineHeight * $fontSize * 0.875;
-    }
-}
+//@media (max-width: 500px) {
+//    body {
+//        font-size: $fontSize * 0.875;
+//    }
+//    .drop-cap {
+//        font-size: $fontSize * 0.875 * 3;
+//        margin-right: $lineHeight * $fontSize * 0.875 - $fontSize * 0.875;
+//        margin-top: $fontSize * 0.875 / $lineHeight;
+//        line-height: $lineHeight * $fontSize * 0.875;
+//    }
+//}

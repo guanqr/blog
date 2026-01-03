@@ -11,9 +11,16 @@ copyright = "本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses
 # 主题选择
 theme = "meme"
 
+# `hugo new` 新建文章自动打开的文本编辑器
+newContentEditor = ""
+
 # i18n
 defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = false
+
+# 标题大小写格式
+# https://gohugo.io/getting-started/configuration/#configure-title-case
+titleCaseStyle = "none"
 
 # 是否复数化列表页面的标题
 pluralizeListTitles = false
@@ -32,9 +39,6 @@ enableGitInfo = true
 
 # 是否生成 robots.txt 文件
 enableRobotsTXT = false
-
-# 每一分页的文章数（仅对「文章摘要」首页布局有效）
-paginate = 10
 
 # URL 相关
 disablePathToLower = false
@@ -56,6 +60,12 @@ uglyURLs = false
 # 修改时间
 [frontmatter]
     lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
+
+[pagination]
+    disableAliases = false
+    # 每一分页的文章数（仅对「文章摘要」首页布局有效）
+    pagerSize = 5
+    path = 'page'
 
 # Markdown 渲染器
 [markup]
@@ -91,21 +101,6 @@ uglyURLs = false
 # 压缩 HTML
 [minify.tdewolff.html]
     keepWhitespace = false
-
-# 作者信息
-[author]
-    # 名字
-    name = "Guan Qirui"
-    # 邮箱
-    email = "guanqirui@zju.edu.cn"
-    # 座右铭或简介
-    motto = "爱光学，爱生活，爱创造"
-    # 头像
-    avatar = "/icons/apple-touch-icon.png"
-    # 网站（默认值：baseURL）
-    website = "https://guanqr.com/"
-    # 推特
-    twitter = ""
 
 # 相关文章
 [related]
@@ -146,11 +141,11 @@ uglyURLs = false
     baseName = "search"
 
 # Algolia 的搜索索引
-[outputFormats.Algolia]
-    mediaType = "application/json"
-    baseName = "algolia"
-    isPlainText = true
-    notAlternative = true
+#[outputFormats.Algolia]
+    #mediaType = "application/json"
+    #baseName = "algolia"
+    #isPlainText = true
+    #notAlternative = true
 
 # Hugo 的输出控制
 [outputs]
@@ -158,11 +153,8 @@ uglyURLs = false
     # home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex", "Algolia"]
     home = ["HTML", "SectionsAtom", "SectionsRSS"]
     section = ["HTML"]
-    # 类别
-    taxonomyTerm = ["HTML"]
-    # 类别项
     taxonomy = ["HTML"]
-    # 说明：https://github.com/gohugoio/hugo/issues/4528#issuecomment-508488859
+    term = ["HTML"]
 
 # RSS & Atom 文章数限制
 [services.rss]
@@ -207,13 +199,13 @@ uglyURLs = false
         pre = "internal"
         post = "tags"
         identifier = "tags"
-    [[menu.main]]
-        pageref = "/categories/"
-        name = "分类"
-        weight = 3
-        pre = "internal"
-        post = "th" 
-        identifier = "categories"
+    #[[menu.main]]
+    #    pageref = "/categories/"
+    #    name = "分类"
+    #    weight = 3
+    #    pre = "internal"
+    #    post = "th" 
+    #    identifier = "categories"
     #[[menu.main]]
     #    pageref = "/life/"
     #    name = "生活"
@@ -245,22 +237,22 @@ uglyURLs = false
     [[menu.main]]
         pageref = "/blogroll/"
         name = "友链"
-        weight = 4
+        weight = 3
         pre = "internal"
         post = "pagelines"
         identifier = "friends"
     [[menu.main]]
         pageref = "/about/"
         name = "关于"
-        weight = 5
+        weight = 4
         pre = "internal"
         post = "user-circle"
         identifier = "about"
     [[menu.main]]
-        weight = 6
+        weight = 5
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 7
+        weight = 6
         identifier = "lang-switcher"
     #[[menu.main]]
     #    weight = 11
@@ -414,6 +406,11 @@ uglyURLs = false
     homeKeywords = "个人博客，关键词：生活、悦读、品影、旅行、青春、幻想、科学、技术、光学、计算机"
     homeLinksDelimiter = "·"
 
+    ## 「文章摘要」
+    enableHideInHomepage = false
+    # 说明：激活 `hideInHomepage` front matter
+    #      的支持（性能原因默认关闭）
+
 
     ######################################
     # 站点信息
@@ -566,7 +563,11 @@ uglyURLs = false
     #      有一个比手动指定更高的优先级——
     #      Front Matter 中的 `description`。
 
-
+    # 自定页脚（支持 Template 与 Markdown 语法）
+    feedFooter = """> 阅读原文：<{{ .Permalink }}>  
+> 博客公告：博客现已开通邮件订阅，欢迎[通过 Substack 订阅](https://username.substack.com)支持我的创作！"""
+    
+    
     ######################################
     # 深色模式
 
@@ -611,8 +612,8 @@ uglyURLs = false
 
     themeColor = "#fff"
     themeColorDark = "#16171d"
-    safariMaskColor = "#2a6df4"
-    msApplicationTileColor = "#fff"
+    #safariMaskColor = "#2a6df4"
+    #msApplicationTileColor = "#fff"
 
 
     ######################################
@@ -744,15 +745,73 @@ uglyURLs = false
     gitalkRepo = "your_repository"
     gitalkOwner = "your_gitalk_owner"
     gitalkAdmin = ["your_gitalk_admin"]
-    gitalkLable = ["Gitalk"]
+
+    # 1. default (`location.href`)
+    # 2. pathname (`location.pathname`)
+    # 3. hash (hash_filepath)
+    # 4. custom:your_gitalk_id ("your_gitalk_id")
+    gitalkID = "pathname"
+
+    gitalkNumber = -1
+    gitalkLables = ["Gitalk"]
+
+    # 1. default (`document.title`)
+    # 2. custom:your_gitalk_title ("your_gitalk_title")
+    gitalkTitle = "default"
+
+    # 1. default (`location.href` + header.meta[description])
+    # 2. href (`location.href`)
+    # 3. custom:your_gitalk_body ("your_gitalk_body")
+    gitalkBody = "default"
+
+    # 1. default (`navigator.language || navigator.userLanguage`)
+    # 2. Support [en, zh-CN, zh-TW, es-ES, fr, ru, de, pl, ko, fa, ja]
+    gitalkLanguage = "zh-CN"
+
     gitalkDistractionFreeMode = false
     gitalkPerPage = 10
-    gitalkLanguage = "en"
     gitalkPagerDirection = "last"
     gitalkCreateIssueManually = false
     gitalkProxy = "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"
+    gitalkStaggerDelayBy = 150
+    gitalkAppearAnimation = "accordionVertical"
+    gitalkEnterAnimation = "accordionVertical"
+    gitalkLeaveAnimation = "accordionVertical"
     gitalkEnableHotKey = true
     # 说明：https://github.com/gitalk/gitalk
+
+    ## Giscus
+    enableGiscus = false
+    giscusRepo = "[ENTER repo/you/want HERE]"
+    giscusRepoId = "[ENTER REPO ID HERE]"
+    giscusCategory = "[ENTER CATEGORY NAME HERE]"
+    giscusCategoryId = "[ENTER CATEGORY ID HERE]"
+    giscusMapping = "pathname"
+    giscusStrict = false
+    giscusReactionsEnabled = true
+    giscusEmitMetaData = false
+    giscusInputPosition = "top"
+    giscusTheme = "light"
+    giscusThemeDark = "dark"
+    giscusLang = "zh-CN"
+    # 说明：https://giscus.app/zh-CN
+
+    # Remark42
+    enableRemark42 = false
+    remark42Host = ""
+    remark42SiteId = "remark"
+    remark42Url = ""
+    remark42Components = ["embed"]
+    remark42MaxShownComments = 15
+    remark42MaxLastComments = 15
+    remark42Theme = "light"
+    remark42PageTitle = ""
+    remark42Locale = "zh"
+    remark42ShowEmailSubscription = true
+    remark42ShowRssSubscription = true
+    remark42SimpleView = false
+    remark42NoFooter = false
+    # 说明：https://remark42.com/docs/configuration/frontend/
 
 
     ######################################
@@ -788,7 +847,8 @@ uglyURLs = false
     ## 广告单元
     enableGoogleAdUnits = false
     googleAdSlot = ""
-
+    googleAdSlotInArticle = ""
+    googleAdSlotAutoRelaxed = ""
 
     ######################################
     # Yandex.Metrika
@@ -1223,16 +1283,13 @@ uglyURLs = false
 
     displayShareOnText = false
 
-    shareOnTwitter = true
-    shareOnFacebook = true
-    shareOnLinkedIn = false
-    shareOnTelegram = true
-    shareOnWeibo = true
-    shareOnDouban = true
-    shareOnQQ = true
-    shareOnQzone = true
+    postShareItems = ["facebook", "mastodon", "fediverse", "x", "linkedin", "telegram", "weibo", "douban", "qq", "qzone", "pocket", "hackernews", "qrcode", "email"]
 
-    shareViaQRCode = false
+    # 从网络获取 Fediverse 实例列表用于输入建议
+    fetchFediverseInstances = false
+    # 说明：当开启 mastodon 或 fediverse 分享项
+    #      时建议开启。开启后构建时，数据需要从网
+    #      络下载，会带来额外的构建时间。
 
 
     ######################################
@@ -1285,13 +1342,14 @@ uglyURLs = false
 
     # 是否开启
     enableMinimalFooter = false
-
-    # 是否开启关于页面的极简页脚
-    enableAboutPageMinimalFooter = true
     enableVerticalBarStructure = true
     # 说明：如果开启此项，显示在右边的部类或分区
     #      将会包含全部的第一级部类或分区，并且
     #      以竖线（|）分隔开来。
+
+    # 是否开启关于页面的极简页脚
+    enableAboutPageMinimalFooter = true
+
 
     ######################################
     # 返回顶部按钮
@@ -1483,6 +1541,39 @@ uglyURLs = false
 
 
     ######################################
+    # 定制第三方库的地址
+
+    [params.lib]
+        host = "https://cdn.jsdelivr.net"
+        # 说明：设置为根（"/"）且将下方对应 path
+        #      设置，如果你想要直接从「本地」
+        #      加载某个库的话。比如：
+        #      将 path 设置为 "js/lib.min.js"，
+        #      并将文件放到你的 /static/js/lib.min.js
+    [params.lib.path]
+        clipboard = "/npm/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.min.js"
+        instantsearch = "/npm/instantsearch.js@2/dist/instantsearch.min.js"
+        gitalk = "/npm/gitalk@1/dist/gitalk.min.js"
+        gitalk_css = "/npm/gitalk@1/dist/gitalk.css"
+        instantpage = "/npm/instant.page@5.1.0/instantpage.min.js"
+        katex = "/npm/katex@0.13.0/dist/katex.min.js"
+        katex_css = "/npm/katex@0.13.0/dist/katex.min.css"
+        katex_mhchem = "/npm/katex@0.13.0/dist/contrib/mhchem.min.js"
+        katex_auto_render = "/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+        lunr = "/npm/lunr@2.3.9/lunr.min.js"
+        lunr_tinyseg = "/npm/lunr-languages@1.4.0/tinyseg.js"
+        lunr_stemmer = "/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js"
+        lunr_lang = "/npm/lunr-languages@1.4.0/min/lunr.de.min.js"
+        mathjax = "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"
+        medium_zoom = "/npm/medium-zoom@latest/dist/medium-zoom.min.js"
+        mermaid = "/npm/mermaid@8.8.3/dist/mermaid.min.js"
+        qrcode = "/npm/qrcode-generator@1.4.4/qrcode.min.js"
+        valine = "/npm/valine@1.4.14/dist/Valine.min.js"
+        busuanzi = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+        utterances = "https://utteranc.es/client.js"
+
+
+    ######################################
     # 自定义页脚微信订阅功能
     
     enableFooterSubscription = false
@@ -1505,6 +1596,25 @@ uglyURLs = false
     displayPostExpiredTip = false
     # 说明：文章的 Front Matter 中的 
     # `displayExpiredTip` 的优先级高于此处
+
+    ######################################
+    # 作者信息
+    [params.author]
+        # 名字
+        name = "Guan Qirui"
+        # 邮箱
+        email = "guanqirui@zju.edu.cn"
+        # 座右铭或简介
+        motto = "爱光学，爱生活，爱创造"
+        # 头像
+        avatar = "/icons/apple-touch-icon.png"
+        # 网站（默认值：baseURL）
+        website = "https://guanqr.com/"
+        # 推特
+        twitter = ""
+        # Fediverse
+        fediverse = ""
+
 
 
 ##########################################

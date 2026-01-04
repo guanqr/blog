@@ -6,106 +6,78 @@
   weight = 1
 
 [[blogroll]]
-  name = "RidiQulous"
-  url = "https://ridiqulous.com/"
-  avatar = "/images/friends/ridiqulous.png"
-  description = "计算摄影，图像处理，颜色科学"
-  weight = 2
-
-[[blogroll]]
   name = "频率"
   url = "https://pinlyu.com"
   avatar = "/images/friends/pinlyu.png"
   description = "风卷过的起点"
-  weight = 3
-
-[[blogroll]]
-  name = "mghio"
-  url = "https://www.mghio.cn/"
-  avatar = "/images/friends/mghio.png"
-  description = "Java 搬运工＆终身学习者"
-  weight = 4
+  weight = 2
 
 [[blogroll]]
   name = "一大加贝"
   url = "https://tianheg.co/"
   avatar = "/images/friends/yidajiabei.png"
   description = "学习技术，热爱生活"
-  weight = 5
-
-[[blogroll]]
-  name = "睿先森"
-  url = "https://senorui.top/"
-  avatar = "/images/friends/senorui.png"
-  description = "Be a charming badass, kind but not happy."
-  weight = 6
+  weight = 3
 
 [[blogroll]]
   name = "Ryan4Yin's Space"
   url = "https://thiscute.world/"
   avatar = "/images/friends/ryan4yin.jpg"
   description = "赞美快乐~"
-  weight = 7
+  weight = 4
 
 [[blogroll]]
   name = "SuperPung"
   url = "https://blog.superpung.cn/"
   avatar = "/images/friends/superpung.png"
   description = "Follow Your Heart"
-  weight = 8
+  weight = 5
 
 [[blogroll]]
   name = "雨夜回廊"
   url = "https://myql.eu.org/"
   avatar = "/images/friends/myql.png"
   description = "青天白日梦神仙"
-  weight = 9
+  weight = 6
 
 [[blogroll]]
   name = "Finisky Garden"
   url = "https://finisky.github.io/"
   avatar = "/images/friends/finisky.png"
   description = "Easy doesn’t enter into grown-up life."
-  weight = 10
+  weight = 7
 
 [[blogroll]]
   name = "槐雪"
   url = "https://www.lvxuefei.top/"
   avatar = "/images/friends/lvxuefei.jpg"
   description = "我的生活本身已成了我的娱乐"
-  weight = 11
+  weight = 8
 
 [[blogroll]]
   name = "Anomie"
   url = "https://shengdong00.github.io/"
   avatar = "/images/friends/shengdong00.png"
   description = "utilitarianism & scientism"
-  weight = 12
+  weight = 9
 
 [[blogroll]]
   name = "月下八哥"
   url = "https://www.yxbug.ren/"
   avatar = "/images/friends/yxbug.png"
   description = "平平无奇的苍蓝星、光之战士，偶尔写写代码"
-  weight = 13
+  weight = 10
 
 [[blogroll]]
   name = "长街短梦"
   url = "https://wangyunzi.com/"
   avatar = "/images/friends/wangyunzi.png"
   description = "此行山高路远，我只剩口袋玫瑰一片"
-  weight = 14
-
-[[blogroll]]
-  name = "SeerSu"
-  url = "https://www.seersu.me/"
-  avatar = "/images/friends/seersu.jpg"
-  description = "山有扶苏，隰有荷华"
-  weight = 15
+  weight = 11
 
 [[blogroll]]
   name = "wenderfeng"
   url = "https://wenderfeng.top/"
   avatar = "/images/friends/wenderfeng.jpg"
   description = "Step by step"
-  weight = 16
+  weight = 12

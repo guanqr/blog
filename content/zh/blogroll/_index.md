@@ -34,4 +34,6 @@ comments = false
 
 |            站名           |              链接              |               网站描述               |    状态    |
 |:-------------------------:|:-----------------------------:|:------------------------------------:|:---------:|
-|   —   |   —    |  —  |  —  |
+|   mghio  |   https://www.mghio.cn/    |  Java 搬运工＆终身学习者  |  无法进入  |
+|   睿先森  |   https://senorui.top/   |Be a charming badass, kind but not happy.|  无法进入  |
+|   SeerSu  |   https://www.seersu.me/    |  山有扶苏，隰有荷华  |  无法进入  |

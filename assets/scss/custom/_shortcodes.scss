@@ -332,3 +332,9 @@ blockquote.quote-center {
         margin: 0 !important;
     }
 }
+
+// bracket 括号内样式
+span.bracket {
+    font-size: 90%;
+    color: var(--color-contrast-medium);
+}

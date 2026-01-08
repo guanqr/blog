@@ -1639,7 +1639,7 @@ uglyURLs = false
     weight = 2
     languageCode = "en"
     hasCJKLanguage = false
-	title = "Guan Qirui's Blog"
+	title = "Wondering Alone"
     copyright = "The article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)."
 [languages.en.taxonomies]
     #category = "categories"
@@ -1668,8 +1668,8 @@ uglyURLs = false
         weight = 1
         pre = "external"
     [[languages.en.menu.socials]]
-        url = "https://www.cc98.org/user/id/583696"
-        name = "CC98"
+        url = "https://www.instagram.com/guanqr/"
+        name = "Instagram"
         weight = 2
         pre = "external"
     [[languages.en.menu.links]]

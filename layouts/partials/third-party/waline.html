@@ -1,6 +1,9 @@
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 <script>
     function loadComments() {
+        if (!document.getElementById('waline')) {
+            return;
+        }
         if (typeof Waline === 'undefined') {
             var getScript = (options) => {
                 var script = document.createElement('script');
@@ -12,7 +15,7 @@
                 document.body.appendChild(script);
             };
             getScript({
-                src: 'https://unpkg.com/@waline/client@v2/dist/waline.js',
+                src: 'https://unpkg.com/@waline/client@v3/dist/waline.js',
                 onload: () => {
                     newWaline();
                 }
@@ -29,18 +32,21 @@
         };
         Waline.init({
             el: '#waline',
-            dark: 'html[data-theme="dark"]',
             serverURL: '{{ .Site.Params.walineServerURL }}',
-            wordLimit: {{ .Site.Params.walineWordLimit }},          
-            meta: {{ .Site.Params.walineMeta }},
-            pageSize: {{ .Site.Params.walinePageSize }},
             lang: '{{ .Site.Params.walineLang }}',
-            highlighter: {{ .Site.Params.walineHighlight }},
+            locale,
             emoji: {{ .Site.Params.walineEmoji }},
+            dark: 'html[data-theme="dark"]',
+            commentSorting: '{{ .Site.Params.walineCommentSorting }}',
+            meta: {{ .Site.Params.walineMeta }},
             requiredMeta: {{ .Site.Params.walineRequiredMeta }},
             login: '{{ .Site.Params.walineLogin }}',
-            copyright: {{ .Site.Params.walineCopyright }},
-            locale
+            wordLimit: {{ .Site.Params.walineWordLimit }},          
+            pageSize: {{ .Site.Params.walinePageSize }},
+            imageUploader: {{ .Site.Params.walineImageUploader }},
+            highlighter: {{ .Site.Params.walineHighlighter }},
+            search: {{ .Site.Params.walineSearch }},
+            noCopyright: {{ .Site.Params.walineNoCopyright }}            
         });
     }
 </script>

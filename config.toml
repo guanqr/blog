@@ -717,15 +717,18 @@ uglyURLs = false
     ## Waline
     enableWaline = true
     walineServerURL = "https://waline.guanqr.com/"
-    walineWordLimit = 0
-    walineMeta = ["nick", "mail", "link"]
-    walinePageSize = 10
     walineLang = "zh-CN"
-    walineHighlight = true
-    walineEmoji = ["https://unpkg.com/@waline/emojis@1.0.1/weibo", "https://unpkg.com/@waline/emojis@1.0.1/bilibili"]
+    walineEmoji = ["https://unpkg.com/@waline/emojis@1.4.0/weibo", "https://unpkg.com/@waline/emojis@1.4.0/bilibili"]
+    walineCommentSorting = "latest"
+    walineMeta = ["nick", "mail", "link"]
     walineRequiredMeta = ["nick", "mail"]
     walineLogin = "enabled"
-    walineCopyright = true
+    walineWordLimit = 0
+    walinePageSize = 10
+    walineImageUploader = false
+    walineHighlighter = true
+    walineSearch = false   
+    walineNoCopyright = false
     # 说明：https://waline.js.org/
 
 

@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
-<script>
+<script type="module">
     function loadComments() {
         if (!document.getElementById('waline')) {
             return;
         }
-        if (typeof Waline === 'undefined') {
+        if (typeof init === 'undefined') {
             const getScript = (options) => {
                 const script = document.createElement('script');
                 script.defer = true;

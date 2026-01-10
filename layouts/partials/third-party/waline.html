@@ -1,30 +1,10 @@
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
-<script>
+<script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
     function loadComments() {
         if (!document.getElementById('waline')) {
             return;
-        }
-        if (typeof init === 'undefined') {
-            const getScript = (options) => {
-                const script = document.createElement('script');
-                script.defer = true;
-                script.crossOrigin = 'anonymous';
-                Object.keys(options).forEach((key) => {
-                    script[key] = options[key];
-                });
-                document.body.appendChild(script);
-            };
-            getScript({
-                src: 'https://unpkg.com/@waline/client@v3/dist/waline.js',
-                onload: () => {
-                    newWaline();
-                }
-            });
-        } else {
-            newWaline();
-        }
-    }
-    function newWaline() {
+        }       
         const locale = {
             nick: "昵称*",
             mail: "邮箱*",
@@ -49,4 +29,5 @@
             noCopyright: {{ .Site.Params.walineNoCopyright }}            
         });
     }
+    window.loadComments = loadComments;
 </script>

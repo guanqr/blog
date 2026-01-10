@@ -916,12 +916,12 @@ uglyURLs = false
     publishedDateIcon = "calendar-alt"
 
     # 是否显示修改时间
-    displayModifiedDate = true
+    displayModifiedDate = false
     # 修改时间的图标
     modifiedDateIcon = "calendar-check"
 
     # 是否显示过期时间
-    displayExpiredDate = true
+    displayExpiredDate = false
     # 过期时间的图标
     expiredDateIcon = "calendar-times"
 
@@ -930,15 +930,15 @@ uglyURLs = false
     # 分类的图标
     categoryIcon = "folder"
     # 分类之间的分隔符
-    categoryDelimiter = "/"
+    categoryDelimiter = "·"
 
     # 是否显示字数统计
-    displayWordCount = true
+    displayWordCount = false
     # 字数统计的图标
     wordCountIcon = "pencil-alt"
 
     # 是否显示阅读时长
-    displayReadingTime = true
+    displayReadingTime = false
     # 阅读时长的图标
     readingTimeIcon = "clock"
 
@@ -1429,7 +1429,7 @@ uglyURLs = false
     # 多语言
 
     # 是否开启多语言按钮
-    enableLangToggle = true
+    enableLangToggle = false
 
     # 是否在首页隐藏多语言按钮
     hideLangToggleInHome = false
@@ -1552,6 +1552,12 @@ uglyURLs = false
     enableFooterSubscription = false
     subscriptionIcon = "wechat-brands"
     subscriptionQrCode = "/images/wechat-official-accounts.svg"
+
+
+    ######################################
+    # 自定义今日诗词功能
+    
+    enableJinrishici = false
 
 
     ######################################

@@ -42,16 +42,18 @@
 :root {
     --text-wdth: 95;
     --text-opsz: 40;
+    --text-XOPQ: 145;
     --text-YTLC: 480;
-    --text-YTUC: 700;
-    --text-YTAS: 716;
-    --text-YTFI: 709;
+    --text-YTUC: 710;
+    --text-YTAS: 726;
+    --text-YTFI: 720;
 }
 
 body {
     font-variation-settings:
         'wdth' var(--text-wdth),
         'opsz' var(--text-opsz),
+        'XOPQ' var(--text-XOPQ),
         'YTLC' var(--text-YTLC),
         'YTUC' var(--text-YTUC),
         'YTAS' var(--text-YTAS),

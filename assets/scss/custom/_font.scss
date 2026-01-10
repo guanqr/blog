@@ -40,16 +40,22 @@
 }
 
 :root {
-    --text-wdth: 100;
+    --text-wdth: 95;
     --text-opsz: 40;
     --text-YTLC: 480;
+    --text-YTUC: 700;
+    --text-YTAS: 716;
+    --text-YTFI: 709;
 }
 
 body {
     font-variation-settings:
         'wdth' var(--text-wdth),
         'opsz' var(--text-opsz),
-        'YTLC' var(--text-YTLC);
+        'YTLC' var(--text-YTLC),
+        'YTUC' var(--text-YTUC),
+        'YTAS' var(--text-YTAS),
+        'YTFI' var(--text-YTFI);
 }
 
 .post-title {

@@ -1,11 +1,8 @@
 [subscription]
 other = "微信扫一扫，订阅本博客"
 
-[expiredTipHead]
-other = "本文最后更新于"
-
-[expiredTipTail]
-other = "天前，文中所描述的信息可能已发生改变，请谨慎使用文中的方法。"
+[expiredTip]
+other = "本文已超过一年未更新。随着版本迭代，文中所述信息可能已失效，仅供参考。"
 
 [serviceWorkerUpdatedText]
 other = "已更新最新版本"

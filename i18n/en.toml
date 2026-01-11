@@ -1,11 +1,8 @@
 [subscription]
 other = "WeChat Subscription"
 
-[expiredTipHead]
-other = "This article was last updated"
-
-[expiredTipTail]
-other = "days ago. The information described in this article may have changed. Please use the method carefully."
+[expiredTip]
+other = "This article has not been updated for over a year. With the iteration of versions, the information described in the article may have become outdated and is for reference only."
 
 [serviceWorkerUpdatedText]
 other = "New Update Available"

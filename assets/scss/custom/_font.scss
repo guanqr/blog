@@ -40,7 +40,7 @@
 }
 
 :root {
-    --text-wdth: 95;
+    --text-wdth: 100;
     --text-opsz: 40;
     --text-XOPQ: 145;
     --text-YTLC: 480;
@@ -65,7 +65,8 @@ body {
         'wght' 550,
         'opsz' 30,
         'YOPQ' 100,
-        'YTLC' 570;
+        'YTLC' 570,
+        'YTUC' var(--text-YTUC);
 }
 
 .list-title {
@@ -73,7 +74,8 @@ body {
         'wght' 550,
         'opsz' 30,
         'YOPQ' 100,
-        'YTLC' 570;
+        'YTLC' 570,
+        'YTUC' var(--text-YTUC);
 }
 
 .list-item {
@@ -82,14 +84,16 @@ body {
         'wdth' 103,
         'opsz' 20,
         'YOPQ' 90,
-        'YTLC' 570;
+        'YTLC' 570,
+        'YTUC' var(--text-YTUC);
 }
 
 .list-year {
     font-variation-settings:
         'wdth' 100,
         'opsz' 20,
-        'YOPQ' 100;
+        'YOPQ' 100,
+        'YTUC' var(--text-YTUC);
 }
 
 //* {

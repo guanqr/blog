@@ -3,7 +3,7 @@ title = "使用 GitHub Actions 部署 Hugo 博客"
 date = "2026-01-11T15:56:27+08:00"
 lastmod = "2026-01-11T15:56:27+08:00"
 tags = ["hugo","meme"]
-toc = false
+dropCap = false
 +++
 
 ## 前言

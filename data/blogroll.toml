@@ -76,8 +76,15 @@
   weight = 11
 
 [[blogroll]]
+  name = "SeerSu"
+  url = "https://suus.me/"
+  avatar = "/images/friends/seersu.jpg"
+  description = "山有扶苏，隰有荷华"
+  weight = 12
+
+[[blogroll]]
   name = "wenderfeng"
   url = "https://wenderfeng.top/"
   avatar = "/images/friends/wenderfeng.jpg"
   description = "Step by step"
-  weight = 12
+  weight = 13

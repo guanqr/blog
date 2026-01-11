@@ -10,10 +10,6 @@ comments = false
 
 ## 申请方式
 
-{{< notice notice-warning >}}
-<strong>由于友链数量较多，目前已停止接受友链申请，谢谢！</strong>
-{{< /notice >}}
-
 + 首先将本站链接添加至你的网站，信息如下：
 
 {{< notice notice-tip >}}
@@ -36,4 +32,3 @@ comments = false
 |:-------------------------:|:-----------------------------:|:------------------------------------:|:---------:|
 |   mghio  |   https://www.mghio.cn/    |  Java 搬运工＆终身学习者  |  无法进入  |
 |   睿先森  |   https://senorui.top/   |Be a charming badass, kind but not happy.|  无法进入  |
-|   SeerSu  |   https://www.seersu.me/    |  山有扶苏，隰有荷华  |  无法进入  |

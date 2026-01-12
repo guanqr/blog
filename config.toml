@@ -727,7 +727,7 @@ uglyURLs = false
     walineImageUploader = false
     walineHighlighter = true
     walineSearch = false   
-    walineNoCopyright = false
+    walineCopyright = true
     # 说明：https://waline.js.org/
 
 

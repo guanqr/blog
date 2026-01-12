@@ -1,0 +1,5 @@
+{{/*  Load custom fonts async  */}}
+{{- $fontsLink := "https://cdn.jsdelivr.net/gh/guanqr/fonts@build/css/fonts.min.css" -}}
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="{{ $fontsLink }}" media="print" onload="this.media='all'" />

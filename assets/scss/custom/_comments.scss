@@ -5,6 +5,6 @@
 
 html[data-theme="dark"] {
     --waline-theme-color: hsl(201deg 45% 52%) !important;
-    --waline-bgcolor: hsl(231, 14%, 10%) !important;
-    --waline-bgcolor-light: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.5) !important;
+    --waline-bg-color: hsl(231, 14%, 10%) !important;
+    --waline-bg-color-light: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.5) !important;
 }

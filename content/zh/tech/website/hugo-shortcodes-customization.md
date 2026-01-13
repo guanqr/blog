@@ -523,16 +523,6 @@ blockquote.quote {
         font-weight: bold;
         line-height: 1;
     }
-    &.poetry {
-        display: table;
-        padding: 0;
-        &::before {
-            left: -1em;
-        }
-        p:last-child {
-            margin: 0;
-        }
-    }
     &.en {
         p {
             line-height: 1.618;
@@ -540,16 +530,6 @@ blockquote.quote {
             hyphens: auto;
             -webkit-hyphens: auto;
             -moz-hyphens: auto;
-        }
-    }
-}
-@media (max-width: $maxWidth) {
-    blockquote.quote {
-        &.poetry {
-            padding-left: 3em;
-            &::before {
-                left: 0;
-            }
         }
     }
 }

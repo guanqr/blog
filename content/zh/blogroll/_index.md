@@ -14,8 +14,8 @@ comments = false
 
 {{< notice notice-tip >}}
 网站名称：荷戟独彷徨<br>
-网站地址：<a href="../" target="_blank">https://guanqr.com/</a><br>
-网站标志：<a href="https://cdn.jsdelivr.net/gh/guanqr/blog/static/icons/android-chrome-512x512.png" target="_blank">https://cdn.jsdelivr.net/gh/guanqr/blog/static/icons/android-chrome-512x512.png</a><br>
+网站地址：https://guanqr.com/<br>
+网站标志：https://guanqr.com/images/logo.png<br>
 网站描述：爱光学，爱生活，爱创造
 {{< /notice >}}
 

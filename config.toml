@@ -1013,7 +1013,7 @@ uglyURLs = false
     enableCaption = true
 
     # 说明文字的前缀
-    captionPrefix = "◎ "
+    captionPrefix = "※ "
 
 
     ######################################

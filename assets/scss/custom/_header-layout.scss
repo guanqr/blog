@@ -1,60 +1,48 @@
-// 顶栏布局
+// 自定义顶栏布局样式
 
 .brand {
-//    font-family: 'ZCOOL XiaoWei', serif;
     font-weight: bold;
     white-space: nowrap;
+    line-height: 1;
 }
 
-@if ($headerLayoutFlex) {
-    .brand {
-        line-height: 1;
+.nav {
+    font-size: 1em;
+    margin-top: 0.4em;
+}
+
+.home .poetry {
+    padding: 10em 1em;
+}
+
+.menu-item {
+    .tags, .archives, .friends, .about {
+        display: none;
     }
+}
+
+@media (max-width: $maxWidth) {
     .nav {
-        font-size: 1em;
-        margin-top: 0.4em;
+        margin: 2em 0;
     }
-    .home .poetry {
-        padding: 10em 1em;
+    .menu {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     .menu-item {
-        .tags, .categories, .life, .tech, .cards, .series, .archives, .friends, .about {
-            display: none;
+        .tags, .archives, .friends, .about {
+            display: inline-block;
         }
     }
-    .header-wrapper {
-        padding: 1em 0;
-        //box-shadow: var(--color-contrast-low) 0 1px 0 0;
+    .menu-item-name {
+        font-size: 80%;
     }
-    .nav-curtain {
-        backdrop-filter: none;
-        background: none;
-    }
-    @media (max-width: $maxWidth) {
-        .nav {
-            margin: 2em 0;
-        }
-        .menu {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-        .menu-item {
-            .tags, .categories, .life, .tech, .cards, .series, .archives, .friends, .about {
-                display: inline-block;
-            }
-        }
-        .menu-item-name {
-            font-size: 80%;
-        }
-    }
-    .nav-toggle {
-        transform: translateY(0.4em);
-    }
-} @else {
-    .brand {
-        font-size: 2.5em;
-        line-height: 2;
-    }
-    .site-brand {
-        overflow: auto hidden;
-    }
+}
+
+.nav-curtain {
+    backdrop-filter: none;
+    background: none;
+}
+
+.nav-toggle {
+    transform: translateY(0.4em);
 }

@@ -5,6 +5,9 @@ blockquote.quote {
     margin: 2em auto;
     padding-left: 3em;
     border: none;
+    p {
+        font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+    }
     &::before {
         position: absolute;
         left: 0;
@@ -15,34 +18,15 @@ blockquote.quote {
         font-weight: bold;
         line-height: 1;
     }
-    &.poetry {
-        display: table;
-        padding: 0;
-        &::before {
-            left: -1em;
-        }
-        p:last-child {
-            margin: 0;
-        }
-    }
     &.en {
         p {
+            font-family: 'Amstelvar', serif;
+            font-style: italic;
             line-height: 1.618;
             text-align: left;
             hyphens: auto;
             -webkit-hyphens: auto;
             -moz-hyphens: auto;
-        }
-    }
-}
-
-@media (max-width: $maxWidth) {
-    blockquote.quote {
-        &.poetry {
-            padding-left: 3em;
-            &::before {
-                left: 0;
-            }
         }
     }
 }
@@ -55,7 +39,8 @@ blockquote.quote-center {
     padding-left: 0;
     border-top: 1px solid var(--color-contrast-lower);
     border-bottom: 1px solid var(--color-contrast-lower);
-    p{
+    p {
+        font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
         text-align: center !important;
         margin-top: 1.5em;
         margin-bottom: 1.5em;
@@ -65,6 +50,7 @@ blockquote.quote-center {
         left: 0;
         content: '“';
         color: var(--color-contrast-low);
+        font-family: 'Amstelvar', 'Noto Serif SC', serif;
         font-size: 3em;
         font-weight: bold;
         margin-top: -0.42em;
@@ -74,6 +60,7 @@ blockquote.quote-center {
         right: 0;
         content: '”';
         color: var(--color-contrast-low);
+        font-family: 'Amstelvar', 'Noto Serif SC', serif;
         font-size: 3em;
         font-weight: bold;
         margin-top: -0.7em;
@@ -335,6 +322,7 @@ blockquote.quote-center {
 
 // bracket 括号内样式
 span.bracket {
+    font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
     font-size: 80%;
     color: var(--color-contrast-medium);
 }

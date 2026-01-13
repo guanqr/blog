@@ -1,43 +1,4 @@
-// 可变字体 https://github.com/TypeNetwork/Amstelvar
-
-// Magic adjustment for en
-
-/*
-@font-face {
-    font-family: 'Amstelvar';
-    font-display: swap;
-    src: url('#{$baseRelURL}/fonts/Amstelvar-Roman-VF.woff2') format('woff2-variations'),
-            url('#{$baseRelURL}/fonts/Amstelvar-Roman-VF.woff2') format('woff2');
-    font-weight: 100 900;
-    font-stretch: 50% 125%;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Amstelvar';
-    font-display: swap;
-    src: url('#{$baseRelURL}/fonts/Amstelvar-Italic-VF.woff2') format('woff2-variations'),
-            url('#{$baseRelURL}/fonts/Amstelvar-Italic-VF.woff2') format("woff2");
-    font-weight: 100 900;
-    font-stretch: 50% 125%;
-    font-style: italic;
-}*/
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-display: swap;
-    src: url('#{$baseRelURL}/fonts/JetBrainsMono-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-}
-/*
-@font-face {
-    font-family: 'I.MingCP';
-    font-display: swap;
-    src: url('#{$baseRelURL}/fonts/I.MingCP-8.10.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-}*/
+// 自定义字体样式
 
 :root {
     --text-wdth: 100;
@@ -96,6 +57,15 @@ body {
         'YTUC' var(--text-YTUC);
 }
 
+.safari-only {
+    /* Safari-only fixes */
+    .emphasis-point {
+        text-decoration-line: underline;
+        text-decoration-style: dashed;
+        text-underline-offset: 0.25em;
+    }
+}
+
 //* {
 //    font-feature-settings: 'halt';
 //}
@@ -104,16 +74,34 @@ body {
     font-feature-settings: 'tnum';
 }
 
-//自适应屏幕宽度
+.post-meta {
+    font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+}
 
-//@media (max-width: 500px) {
-//    body {
-//        font-size: $fontSize * 0.875;
-//    }
-//    .drop-cap {
-//        font-size: $fontSize * 0.875 * 3;
-//        margin-right: $lineHeight * $fontSize * 0.875 - $fontSize * 0.875;
-//        margin-top: $fontSize * 0.875 / $lineHeight;
-//        line-height: $lineHeight * $fontSize * 0.875;
-//    }
-//}
+.post-body {
+    .caption {
+        font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+    }
+}
+
+.post-tags {
+    font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+}
+
+
+
+
+
+//自适应屏幕宽度
+/*
+@media (max-width: 500px) {
+    body {
+        font-size: $fontSize * 0.875;
+    }
+    .drop-cap {
+        font-size: $fontSize * 0.875 * 3;
+        margin-right: $lineHeight * $fontSize * 0.875 - $fontSize * 0.875;
+        margin-top: $fontSize * 0.875 / $lineHeight;
+        line-height: $lineHeight * $fontSize * 0.875;
+    }
+}*/

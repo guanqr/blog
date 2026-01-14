@@ -1,5 +1,5 @@
 +++
-title = "更新网站，至繁归于至简"
+title = "至繁归于至简"
 date = "2026-01-10T23:47:20+08:00"
 lastmod = "2026-01-10T23:47:20+08:00"
 tags = ["hugo","meme"]
@@ -11,7 +11,12 @@ tags = ["hugo","meme"]
 
 ## 字体修改
 
-之前在《[网站字体优化方案](https://guanqr.com/tech/website/web-font-guide/)》一文中，我已对自己使用的字体进行过说明：中文字体采用的是思源宋体 Noto Serif SC，英文字体采用的是可变字体 [Amstelvar](https://github.com/TypeNetwork/Amstelvar)。本次修改参考了 [reuixiy](https://io-oi.me/tech/using-the-inherited-glyphs-font-iming/)，将中文更换为了[一點字坊](https://github.com/ichitenfont/)的[一點明體 I.MingCP](https://github.com/ichitenfont/I.Ming/)，并将 Amstelvar 的字形做了轻微的调整以适配中文。 Amstelvar 字体大写字母的默认顶部高度较高，会造成英文比中文字号大的错觉，所以需要把顶部高度调低一些，整体线条调细一些。而文章的标题需要醒目，所以我把标题里的小写字母的高度调高了一些。具体设置的参数如下所示。
+之前在《[网站字体优化方案](/tech/website/web-font-guide/)》一文中，我已对自己使用的字体进行过说明：中文字体采用的是思源宋体 Noto Serif SC，英文字体采用的是可变字体 [Amstelvar](https://github.com/TypeNetwork/Amstelvar)。本次修改参考了 [reuixiy](https://io-oi.me/tech/using-the-inherited-glyphs-font-iming/)，中文部分增加了：
+
++ [一點字坊](https://github.com/ichitenfont/)的一點明體 [I.MingCP](https://github.com/ichitenfont/I.Ming/)；
++ [落霞孤鹜 lxgw](https://github.com/lxgw) 的霞鶩文楷 [LXGW WenKai TC](https://github.com/lxgw/LxgwWenkaiTC)。
+
+此外，我将 Amstelvar 的字形做了轻微的调整以适配中文。 Amstelvar 字体大写字母的默认顶部高度较高，会造成英文比中文字号大的错觉，所以需要把顶部高度调低一些，整体线条调细一些。而文章的标题需要醒目，所以我把标题里的小写字母的高度调高了一些。Amstelvar 字体具体设置的参数如下所示。
 
 ```scss
 // body 字形

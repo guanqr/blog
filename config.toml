@@ -1092,13 +1092,13 @@ uglyURLs = false
     # 菜单栏
     fontFamilyMenu = ""
     # 文章标题、文章副标题、列表标题、列表的年份和月份标题、相关文章标题、文章上下篇标题
-    fontFamilyTitle = "'Amstelvar', 'I.MingCP', 'Noto Serif SC', serif"
+    fontFamilyTitle = "'Amstelvar', 'Noto Serif TC', 'Noto Serif SC', serif"
     # 分节标题、目录标题
-    fontFamilyHeadings = "'Amstelvar', 'I.MingCP', 'Noto Serif SC', serif"
+    fontFamilyHeadings = "'Amstelvar', 'Noto Serif TC', 'Noto Serif SC', serif"
     # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚、不蒜子站点浏览统计
-    fontFamilyCode = "'JetBrains Mono', 'I.MingCP', 'Noto Serif SC', monospace"
+    fontFamilyCode = "'JetBrains Mono', 'LXGW WenKai TC', monospace"
     # 引用
-    fontFamilyQuote = "'Amstelvar', 'I.MingCP', 'Noto Serif SC', serif"
+    fontFamilyQuote = ""
     # 文章目录
     fontFamilyTOC = ""
     # 说明文字
@@ -1106,10 +1106,10 @@ uglyURLs = false
     # 页脚
     fontFamilyFooter = ""
     # 主体
-    fontFamilyBody = "'Amstelvar', 'I.MingCP', 'Noto Serif SC', serif"
+    fontFamilyBody = "'Amstelvar', 'I.MingCP', serif"
 
     # 网络字体链接
-    fontsLink = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap"
+    fontsLink = "https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&family=Noto+Serif+SC:wght@700&display=swap"
     # 说明：要想读者一定体验到你设置的字体，最好
     #      采用网络字体。MemE 主题目前仅支持
     #      Google Fonts 的链接，请前往

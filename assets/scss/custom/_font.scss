@@ -1,5 +1,6 @@
 // 自定义字体样式
 
+// 可变字体设置
 :root {
     --text-wdth: 100;
     --text-opsz: 40;
@@ -57,6 +58,17 @@ body {
         'YTUC' var(--text-YTUC);
 }
 
+
+// 着重号样式
+em {
+    font-family: 'Amstelvar', serif;
+    font-variation-settings: 'wght' 280;
+}
+
+.emphasis-point {
+    font-family: $fontFamilyBody;
+}
+
 .safari-only {
     /* Safari-only fixes */
     .emphasis-point {
@@ -70,27 +82,34 @@ body {
 //    font-feature-settings: 'halt';
 //}
 
+.brand {
+    font-family: 'Noto Serif TC', 'Noto Serif SC', serif;
+    font-weight: bold;
+    white-space: nowrap;
+    line-height: 1;
+}
+
 .list-item-time {
     font-feature-settings: 'tnum';
 }
 
 .post-meta {
-    font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+    font-family: 'glyph-correction', 'LXGW WenKai TC', serif;
 }
 
 .post-body {
     .caption {
-        font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+        font-family: 'glyph-correction', 'LXGW WenKai TC', serif;
     }
 }
 
 .post-tags {
-    font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+    font-family: 'glyph-correction', 'LXGW WenKai TC', serif;
 }
 
-
-
-
+strong {
+    font-family: 'glyph-correction', 'Amstelvar', 'Noto Serif TC', 'Noto Serif SC', serif;
+}
 
 //自适应屏幕宽度
 /*

@@ -1,11 +1,5 @@
 // 自定义顶栏布局样式
 
-.brand {
-    font-weight: bold;
-    white-space: nowrap;
-    line-height: 1;
-}
-
 .nav {
     font-size: 1em;
     margin-top: 0.4em;
@@ -36,6 +30,11 @@
     .menu-item-name {
         font-size: 80%;
     }
+}
+
+.nav-curtain {
+    backdrop-filter: none;
+    background: none;
 }
 
 .nav-toggle {

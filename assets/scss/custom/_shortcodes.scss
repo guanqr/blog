@@ -70,7 +70,8 @@ blockquote.quote-center {
 // notice
 
 .simple-notice {
-    position:relative;
+    font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+    position: relative;
     padding: 1em 0 0em 2em;
     margin: 1em 0;
     transition: all .5s;
@@ -180,7 +181,8 @@ blockquote.quote-center {
 }
 
 .notice {
-    position:relative;
+    font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+    position: relative;
     padding: 1em 1em 1em 2.5em;
     margin: 1em 0;
     //border-radius: 4px;

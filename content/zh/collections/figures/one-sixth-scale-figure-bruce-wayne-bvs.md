@@ -1,5 +1,5 @@
 +++
-title = "《蝙蝠侠大战超人》布鲁斯·韦恩"
+title = "人偶：布鲁斯·韦恩"
 date = "2023-02-19T22:27:52+08:00"
 lastmod = "2023-02-19T22:27:52+08:00"
 tags = ["collection","model","super-hero"]

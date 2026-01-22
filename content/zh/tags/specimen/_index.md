@@ -1,4 +1,4 @@
 +++
-title = "荒诞"
-slug = "absurd"
+title = "标本"
+slug = "specimen"
 +++

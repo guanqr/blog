@@ -1,0 +1,11 @@
+<div class="blogroll-link">
+    {{ range .Site.Data.blogroll.items }}
+            <a class="blogroll" href="{{ .url }}" target="_blank">
+                <img class="avatar" src="{{ .avatar }}"/>
+                <div class="friend">
+                    <div class="name">{{ .name }}</div>
+                    <div class="excerpt">{{ .description }}</div>
+                </div>  
+            </a>
+    {{ end }}
+</div>

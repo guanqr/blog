@@ -1,9 +1,4 @@
-// 友链样式
-.collection-link::after {
-    content: " ";
-    display: block;
-    clear: both;
-}
+// 个人收藏页面样式
 
 .collection-link {
     display: grid;
@@ -15,11 +10,9 @@
     padding: 1em 0;
     border-bottom: 1px dashed var(--color-contrast-low);
     transition: all .5s;
-    text-decoration: none !important;
     text-align: center;
     overflow: hidden;
     .overview {
-        text-decoration: none;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
@@ -35,11 +28,14 @@
         white-space: nowrap;
     }
     .cover {
-        width: 12em !important;
-        height: 16em !important;
+        //width: 9.99em !important;
+        //height: 13.32em !important;
         margin: 1em auto 0 !important;
-        pointer-events: none;
         z-index: 0;
+        object-fit: cover;
+    }
+    .collection-link-text {
+        text-decoration: none !important;
     }
 }
 
@@ -49,7 +45,7 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 27em) {
     .collection-link {
         grid-template-columns: 1fr;
     }

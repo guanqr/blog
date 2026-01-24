@@ -1,0 +1,13 @@
+<div class="collection-link">
+    {{ range .Site.Data.collection.items }}
+            <div class="collection">
+                <img class="cover" src="{{ .cover }}"/>
+                <div class="overview">
+                    <a class="collection-link-text" href="{{ .url }}" >
+                        <div class="name">{{ .name }}</div>
+                        <div class="excerpt">{{ .source }}</div>
+                    </a>
+                </div>  
+            </div>
+    {{ end }}
+</div>

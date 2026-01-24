@@ -1,62 +1,53 @@
-[[collection]]
+[[items]]
   name = "托尼·斯塔克"
   url = "/collections/figures/one-sixth-scale-figure-tony-stark/"
   cover = "/images/cover/one-sixth-scale-figure-tony-stark-cover.jpg"
   source = "《钢铁侠 2》"
-  weight = 1
 
-[[collection]]
+[[items]]
   name = "张牧之"
   url = "/collections/figures/one-sixth-scale-figure-zhang-muzhi/"
   cover = "/images/cover/one-sixth-scale-figure-zhang-muzhi-cover.jpg"
   source = "《让子弹飞》"
-  weight = 2
 
-[[collection]]
+[[items]]
   name = "尼根"
   url = "/collections/figures/one-sixth-scale-figure-negan/"
   cover = "/images/cover/one-sixth-scale-figure-negan-cover.jpg"
   source = "《行尸走肉》"
-  weight = 3
 
-[[collection]]
+[[items]]
   name = "布鲁斯·韦恩"
   url = "/collections/figures/one-sixth-scale-figure-bruce-wayne-bvs/"
   cover = "/images/cover/one-sixth-scale-figure-bruce-wayne-cover.jpg"
   source = "《蝙蝠侠大战超人》"
-  weight = 4
 
-[[collection]]
+[[items]]
   name = "屠夫比尔"
   url = "/collections/figures/one-sixth-scale-figure-bill-the-butcher/"
   cover = "/images/cover/one-sixth-scale-figure-bill-the-butcher-cover.jpg"
   source = "《纽约黑帮》"
-  weight = 5
 
-[[collection]]
+[[items]]
   name = "布兰迪"
   url = ""
   cover = "/images/cover/one-sixth-scale-figure-blondie-cover.jpg"
   source = "《黄金三镖客》"
-  weight = 6
 
-[[collection]]
+[[items]]
   name = "里昂"
   url = ""
   cover = "/images/cover/one-sixth-scale-figure-leon-cover.jpg"
   source = "《这个杀手不太冷》"
-  weight = 7
 
-[[collection]]
+[[items]]
   name = "莱斯特"
   url = ""
   cover = "/images/cover/one-sixth-scale-figure-lestat-cover.jpg"
   source = "《夜访吸血鬼》"
-  weight = 8
 
-[[collection]]
+[[items]]
   name = "旭仔"
   url = ""
   cover = "/images/cover/one-sixth-scale-figure-xuzai-cover.jpg"
   source = "《阿飞正传》"
-  weight = 9

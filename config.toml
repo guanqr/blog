@@ -264,8 +264,8 @@ uglyURLs = false
         weight = 1
         pre = "external"
     [[menu.socials]]
-        url = "https://www.instagram.com/guanqr/"
-        name = "Instagram"
+        url = "/atom.xml"
+        name = "Feed"
         weight = 2
         pre = "external"
     #[[menu.socials]]
@@ -274,24 +274,18 @@ uglyURLs = false
     #    weight = 3
     #    pre = "external"
     [[menu.links]]
-        pageref = "/series/"
-        name = "Series"
+        pageref = "/exhibition/"
+        name = "Exhibitions"
         weight = 1
         pre = "internal"
     [[menu.links]]
-        url = "/atom.xml"
-        name = "Feed"
+        pageref = "/series/"
+        name = "Series"
         weight = 2
-        pre = "external"
+        pre = "internal"
 
 
     # 首页的底部链接
-    [[menu.home]]
-        url = "/exhibition/"
-        weight = 1
-        pre = "internal"
-        post = "feather-alt" 
-        identifier = "wonder"
     #[[menu.home]]
     #    url = "/life/"
     #    weight = 1

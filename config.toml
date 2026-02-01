@@ -230,7 +230,7 @@ uglyURLs = false
     #[[menu.main]]
     #    url = "/exhibition/"
     #    name = "收藏"
-    #    weight = 4
+    #    weight = 5
     #    pre = "internal"
     #    post = "feather-alt" 
     #    identifier = "cards"
@@ -249,10 +249,10 @@ uglyURLs = false
         post = "user-circle"
         identifier = "about"
     [[menu.main]]
-        weight = 5
+        weight = 8
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 6
+        weight = 9
         identifier = "lang-switcher"
     #[[menu.main]]
     #    weight = 11
@@ -286,6 +286,12 @@ uglyURLs = false
 
 
     # 首页的底部链接
+    [[menu.home]]
+        url = "/exhibition/"
+        weight = 1
+        pre = "internal"
+        post = "feather-alt" 
+        identifier = "wonder"
     #[[menu.home]]
     #    url = "/life/"
     #    weight = 1
@@ -346,9 +352,9 @@ uglyURLs = false
     siteBrandSVG = false
     # 如果是，请将你的 SVG 放到 `SVG.toml` 文
     # 件内，并配置以下项。单位：px。
-    siteBrandSVGWidth = 250
-    siteBrandSVGHeight = 100
-    siteBrandSVGFill = "#fff"
+    siteBrandSVGWidth = 30
+    siteBrandSVGHeight = 30
+    siteBrandSVGFill = "var(--color-contrast-high)"
     # 如果否，则会使用你的站点标题作为默认值，并
     # 以文字的形式显示，下方可配置字号和字色。字
     # 体请到底部的字体部分配置。单位：em。
@@ -594,18 +600,21 @@ uglyURLs = false
     # 网页应用
 
     # 说明：前往 https://realfavicongenerator.net/
-    #      生成相关图标和文件，下载后解压，仅保留
-    #      android-chrome-512x512.png、
-    #      apple-touch-icon.png、
-    #      mstile-150x150.png、
-    #      safari-pinned-tab.svg、favicon.ico、
-    #      site.webmanifest 这些文件，删除其余。
+    #      生成相关图标和文件，下载后解压。
     #      然后将这些文件移动到 ~/blog/static/icons/
     #      目录下，再将 favicon.ico、site.webmanifest
     #      移动到 ~/blog/static/ 目录下，
     #      最后将 site.webmanifest 重命名为
     #      manifest.json，并检查和修改相关内容
     #      （图标的路径）。
+
+    # 注意：要检查你的图标
+    #      请前往 https://realfavicongenerator.net/favicon-checker。
+    #      如果检测到任何问题，检查生成的文件和
+    #      ~/blog/themes/meme/static/ 目录下
+    #      相关文件的文件名差异。如果有差异，
+    #      这意味着某些文件可能已经过时。
+    #      如有需要，请提 Issue。
 
     themeColor = "#fff"
     themeColorDark = "#16171d"

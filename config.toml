@@ -1302,7 +1302,7 @@ uglyURLs = false
     enableRelatedPosts = true
 
     # 是否显示（全局设置）
-    displayRelatedPosts = true
+    displayRelatedPosts = false
     # 说明：文章的 Front Matter 中的 `related`
     #      的优先级高于此处
 

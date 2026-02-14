@@ -1,5 +1,5 @@
 +++
-title = "关于"
+title = "關於"
 date = "2019-05-01T08:41:47+08:00"
 dropCap = false
 displayCopyright = false
@@ -11,22 +11,22 @@ share = false
 comments = false
 +++
 
-## 关于我
+## 關於我
 
-- **ZJUer**：浙江大学 2021 届毕业生。住过紫金港碧峰 3 舍和玉泉 7 舍，爬过北高峰，在大雨中测过十二分钟跑，在华家池的定向越野中迷过路。在校期间经常在晚上到西湖边上散步……毕业的时候紫金港大西区还没有建好，对现在学校的一切都不了解。
-- **狂热的影视爱好者**：喜欢观看不论国内外的各种类型的电影和电视剧，特别是悬疑、科幻、超英、克苏鲁题材。极度排斥豆瓣平台，极度排斥以豆瓣评分和豆瓣排名评价电影好坏，极度排斥为了流量狂吹或狂踩一部电影的二极管影评人。
-- **平民窟里的模型玩家**：喜欢玩一些需要手工拼装类的玩具，诸如高达、乐高。喜欢收藏影视相关的人偶，不论量产或定制，不论有无官方授权。只要能够还原人物形象，就是优秀的作品。坚决抵制不良的翻模商家，这群人不断消耗第三方创作者的热情。
-- **怀旧的卡牌收集者**：喜欢收藏很多画师创作的水浒、三国、西游、封神等不同题材、不同画风、不同工艺的卡牌。这是一种对童年收藏方便面里的卡牌情怀的延续。还有一些画师亲笔绘制的手绘卡。
-- **专业性不强的标本收藏家**：喜欢收集各种各样不含放射性元素的矿石、海贝、陆贝、节肢动物标本。对节肢动物的整姿技术一般。既让我沉迷又让我头疼的环节就是给标本制作分类标签。
+- **ZJUer**：浙江大學 2021 屆畢業生。住過紫金港碧峰 3 舍和玉泉 7 舍，爬過北高峰，在大雨中測過十二分鐘跑，在華家池的定向越野中迷過路。在校期間經常在晚上到西湖邊上散步……畢業的時候紫金港大西區還沒有建好，對現在學校的一切都不瞭解。
+- **狂熱的影視愛好者**：喜歡觀看不論國內外的各種類型的電影和電視劇，特別是懸疑、科幻、超英、克蘇魯題材。極度排斥豆瓣平台，極度排斥以豆瓣評分和豆瓣排名評價電影好壞，極度排斥為了流量狂吹或狂踩一部電影的二極體影評人。
+- **平民窟裡的模型玩家**：喜歡玩一些需要手工拼裝類的玩具，諸如高達、樂高。喜歡收藏影視相關的人偶，不論量產或定制，不論有無官方授權。只要能夠還原人物形象，就是優秀的作品。堅決抵制不良的翻模商家，這群人不斷消耗第三方創作者的熱情。
+- **懷舊的卡牌收集者**：喜歡收藏很多畫師創作的水滸、三國、西遊、封神等不同題材、不同畫風、不同工藝的卡牌。這是一種對童年收藏方便麵裡的卡牌情懷的延續。還有一些畫師親筆繪製的手繪卡。
+- **專業性不強的標本收藏家**：喜歡收集各種各樣不含放射性元素的礦石、海貝、陸貝、節肢動物標本。對節肢動物的整姿技術一般。既讓我沉迷又讓我頭疼的環節就是給標本製作分類標籤。
 
-## 关于此博客
+## 關於此博客
 
-在读本科二年级的时候，我创建了这个博客。我希望通过一个平台来分享自己的生活、想法，记录自己走过的这些岁月，把自己学到的知识分享给他人。拥有一个属于自己的独立域名，建立一个属于自己的博客网站，这样我就可以随意控制网站的布局设计，发挥最大的自由空间。选择建立静态博客的原因，一是降低了运营的成本，使用服务器建立个人博客有些大材小用；二是能够专注于文章的写作，不用花费额外的精力去维护服务器的稳定。
+在讀本科二年級的時候，我創建了這個博客。我希望透過一個平台來分享自己的生活、想法，記錄自己走過的這些歲月，把自己學到的知識分享給他人。擁有一個屬於自己的獨立域名，建立一個屬於自己的博客網站，這樣我就可以隨意控制網站的佈局設計，發揮最大的自由空間。選擇建立靜態博客的原因，一是降低了營運的成本，使用服務器建立個人博客有些大材小用；二是能夠專注於文章的寫作，不用花費額外的精力去維護服務器的穩定。
 
-目前我的博客采用 [Hugo](https://gohugo.io/) 框架，主题为 [MemE](https://github.com/reuixiy/hugo-theme-meme)，源码存放于 [GitHub](https://github.com/guanqr/blog)，通过 [GitHub Actions](https://github.com/guanqr/blog/actions) 进行持续构建、持续部署。本博客启用了 [PWA](https://developers.google.com/web/progressive-web-apps/) 技术，你可以通过浏览器添加本站到你的手机主屏或计算机桌面，随时随地进行浏览。如果你想订阅本博客，推荐 <a href="/atom.xml" target="_blank">Atom</a> / <a href="/rss.xml" target="_blank">RSS</a>。
+目前我的博客採用 [Hugo](https://gohugo.io/) 框架，主題為 [MemE](https://github.com/reuixiy/hugo-theme-meme)，源碼存放於 [GitHub](https://github.com/guanqr/blog)，通過 [GitHub Actions](https://github.com/guanqr/blog/actions) 進行持續構建、持續部署。本博客啟用了 [PWA](https://developers.google.com/web/progressive-web-apps/) 技術，你可以通過瀏覽器添加本站到你的手機主屏幕或電腦桌面，隨時隨地進行瀏覽。如果你想訂閱本博客，推薦 <a href="/atom.xml" target="_blank">Atom</a> / <a href="/rss.xml" target="_blank">RSS</a>。
 
-博客的名字取自鲁迅的诗作《題〈彷徨〉》的最后一句——「兩間餘一卒，荷戟獨彷徨」。博客的文章主要分为两大类：「[生活感悟](/life/)」与「[科学技术](/tech/)」。前者主要是我平时的所见所想；后者涵盖了我的专业（光学工程）知识、计算机技术等，也有一些经过我的个人实践进行适当修改的搬运的文章。除了这两类文章，我还开启了一个「[专栏](/series/)」，目前归纳了我写过的建立静态博客和专业课程学习两个类别的文章。如非特别说明，博客中的文章均采用 [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，如果想要转载的话，请注明出处。
+博客的名字取自魯迅的詩作《題〈彷徨〉》的最後一句——「兩間餘一卒，荷戟獨彷徨」。博客的文章主要分為兩大類：「[生活感悟](/life/)」與「[科學技術](/tech/)」。前者主要是我平時的所見所想；後者涵蓋了我的專業（光學工程）知識、計算機技術等，也有一些經過我的個人實踐進行適當修改的搬運的文章。除了這兩類文章，我還開啟了一個「[專欄](/series/)」，目前歸納了我寫過的建立靜態博客和專業課程學習兩個類別的文章。如非特別說明，部落格中的文章均採用 [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) 許可協議，如果想要轉載的話，請註明出處。
 
-我对博客的字体进行了比较任性的设置。中文部分使用的是 Google Fonts 的[思源宋体](https://fonts.google.com/specimen/Noto+Serif+SC?subset=chinese-simplified)，[一點字坊](https://github.com/ichitenfont/)的[一點明體](https://github.com/ichitenfont/I.Ming/)，以及[落霞孤鹜](https://github.com/lxgw)的[霞鶩文楷](https://github.com/lxgw/LxgwWenkaiTC)。英文部分使用的是 [Amstelvar](https://github.com/TypeNetwork/Amstelvar/)。代码部分使用的是 [JetBrains Mono](https://www.jetbrains.com/lp/mono/)。另外，博客的评论系统由 [Waline](https://waline.js.org/) 提供。
+我對博客的字體進行了比較任性的設置。中文部分使用的是 Google Fonts 的[思源宋體](https://fonts.google.com/specimen/Noto+Serif+SC?subset=chinese-simplified)，[一點字坊](https://github.com/ichitenfont/)的[一點明體](https://github.com/ichitenfont/I.Ming/)，以及[落霞孤鶩](https://github.com/lxgw)的[霞鶩文楷](https://github.com/lxgw/LxgwWenkaiTC)。英文部分使用的是 [Amstelvar](https://github.com/TypeNetwork/Amstelvar/)。代碼部分使用的是 [JetBrains Mono](https://www.jetbrains.com/lp/mono/)。另外，博客的評論系統由 [Waline](https://waline.js.org/) 提供。
 
-如果你在浏览博客的过程中发现了任何问题，欢迎前往 GitHub 的[代码仓库](https://github.com/guanqr/blog)提交 Issues 或直接修改相关文件后提交 Pull Requests。如果你有其他事情想要咨询，可以通过邮件联系我，邮箱地址：guanqirui (at) zju.edu.cn。请不要滥用博客的评论功能发表与文章主题无关的言论。
+如果你在瀏覽博客的過程中發現了任何問題，歡迎前往 GitHub 的[源碼倉庫](https://github.com/guanqr/blog)提交 Issues 或直接修改相關檔案後提交 Pull Requests。如果你有其他事情想要諮詢，可以通過郵件聯繫我，郵箱地址：guanqirui (at) zju.edu.cn。請不要濫用博客的留言功能發表與文章主題無關的言論。

@@ -1,5 +1,5 @@
 +++
-title = "友情链接"
+title = "友鏈"
 description = "感谢关注与支持 ~"
 date = "2019-05-01T08:41:47+08:00"
 dropCap = false

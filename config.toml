@@ -194,7 +194,7 @@ uglyURLs = false
         identifier = "archives"
     [[menu.main]]
         pageref = "/tags/"
-        name = "标签"
+        name = "標籤"
         weight = 2
         pre = "internal"
         post = "tags"
@@ -236,14 +236,14 @@ uglyURLs = false
     #    identifier = "cards"
     [[menu.main]]
         pageref = "/blogroll/"
-        name = "友链"
+        name = "友鏈"
         weight = 3
         pre = "internal"
         post = "pagelines"
         identifier = "friends"
     [[menu.main]]
         pageref = "/about/"
-        name = "关于"
+        name = "關於"
         weight = 4
         pre = "internal"
         post = "user-circle"

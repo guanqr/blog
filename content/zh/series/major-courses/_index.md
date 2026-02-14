@@ -1,4 +1,4 @@
 +++
-title = "专业课程"
+title = "專業課程"
 slug = "major-courses"
 +++

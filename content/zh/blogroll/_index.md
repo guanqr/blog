@@ -21,7 +21,7 @@ comments = false
 + 首先將本站鏈接添加至你的網站，信息如下：
 
 ```
-网站名稱：荷戟獨彷徨
+網站名稱：荷戟獨彷徨
 網站地址：https://guanqr.com/
 網站標誌：https://guanqr.com/images/logo.png
 網站描述：愛光學，愛生活，愛創造

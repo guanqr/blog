@@ -3,10 +3,10 @@
 
 baseURL = "https://guanqr.com/"
 title = "荷戟獨彷徨"
-languageCode = "zh-CN"
+languageCode = "zh-hant"
 hasCJKLanguage = true
 # 版权信息（支持 Markdown）
-copyright = "本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 许可协议，转载请注明出处。"
+copyright = "本文採用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 許可協議，轉載請註明出處。"
 
 # 主题选择
 theme = "meme"
@@ -15,7 +15,7 @@ theme = "meme"
 newContentEditor = ""
 
 # i18n
-defaultContentLanguage = "zh-cn"
+defaultContentLanguage = "zh-hant"
 defaultContentLanguageInSubdir = false
 
 # 标题大小写格式
@@ -418,7 +418,7 @@ uglyURLs = false
     # 说明：用于 JSON-LD、Open Graph
 
     # 站点的描述
-    siteDescription = "Guan Qirui's Blog"
+    siteDescription = "Guanqr's Blog"
     # 说明：用于 HTML 的头部元数据、JSON-LD、
     #      Open Graph、Atom、RSS
 
@@ -717,7 +717,7 @@ uglyURLs = false
     ## Waline
     enableWaline = true
     walineServerURL = "https://waline.guanqr.com/"
-    walineLang = "zh-CN"
+    walineLang = "zh-TW"
     walineEmoji = ["https://unpkg.com/@waline/emojis@1.4.0/weibo", "https://unpkg.com/@waline/emojis@1.4.0/bilibili"]
     walineCommentSorting = "latest"
     walineMeta = ["nick", "mail", "link"]
@@ -1614,7 +1614,7 @@ uglyURLs = false
     # 作者信息
     [params.author]
         # 名字
-        name = "Guan Qirui"
+        name = "Guanqr"
         # 邮箱
         email = "guanqirui@zju.edu.cn"
         # 座右铭或简介
@@ -1634,11 +1634,11 @@ uglyURLs = false
 # 自行添加的多语言站点设置
 
 # 中文
-[languages.zh-cn]
+[languages.zh-hant]
     languageName = "🇨🇳"
     contentDir = "content/zh"
     weight = 1
-[languages.zh-cn.params]
+[languages.zh-hant.params]
     contentDir = "content/zh"
 
 # 英文
@@ -1692,7 +1692,7 @@ uglyURLs = false
         weight = 2
         pre = "external"
 [languages.en.params]
-    siteDescription = "Guan Qirui's Blog in English."
+    siteDescription = "Guanqr's Blog in English."
     listDateFormat = "January 2"
     fontFamilyTitle = "'Amstelvar', serif"
     fontFamilyHeadings = "'Amstelvar', serif"

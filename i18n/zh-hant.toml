@@ -1,0 +1,14 @@
+[subscription]
+other = "微信掃一掃，訂閱本博客"
+
+[expiredTip]
+other = "本文已超過一年未更新。隨著版本迭代，文中所述信息可能已失效，僅供參考。"
+
+[serviceWorkerUpdatedText]
+other = "已更新最新版本"
+
+[serviceWorkerUpdatedAction]
+other = "點擊刷新"
+
+[ChinesePoem]
+other = "正在加載今日詩詞……"

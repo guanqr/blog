@@ -1563,10 +1563,6 @@ uglyURLs = false
     enableJinrishici = false
 
 
-    ######################################
-    # 自定义轮播图是否开启
-
-    enableCarousel = true
 
 
     ######################################

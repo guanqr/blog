@@ -1,0 +1,32 @@
+[subscription]
+other = "WeChat Subscription"
+
+[expiredTip]
+other = "This article has not been updated for over a year. With the iteration of versions, the information described in the article may have become outdated and is for reference only."
+
+[serviceWorkerUpdatedText]
+other = "New Update Available"
+
+[serviceWorkerUpdatedAction]
+other = "Refresh"
+
+[ChinesePoem]
+other = "Chinese poem is loading..."
+
+[LoadMoreBtn]
+other = "Load More"
+
+[walineNick]
+other = "Nickname*"
+
+[walineMail]
+other = "Email*"
+
+[walinePlaceholder]
+other = "Please fill in your correct nickname and email to receive reply notifications. Comments including but not limited to advertisements, offensive, or meaningless content will be deleted."
+
+[newer]
+other = "Newer"
+
+[older]
+other = "Older"

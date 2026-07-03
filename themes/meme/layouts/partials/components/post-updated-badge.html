@@ -1,0 +1,12 @@
+{{ if and .Site.Params.enablePostUpdatedBadge (.Params.badge | default .Site.Params.displayUpdatedBadge) }}
+    <div class="updated-badge-container">
+        {{- $date := .Lastmod.Format "2006-01-02" -}}
+        {{- if .Site.Params.enableBadgeTitle }}
+        <span title="{{ .Site.Params.badgeTitlePrefix }}{{ .Lastmod.Format "2006-01-02 15:04:05 MST" }}" style="cursor:help">
+        {{- end -}}
+            {{- partial "utils/updated-badge.html" (dict "date" $date) -}}
+        {{- if .Site.Params.enableBadgeTitle }}
+        </span>
+        {{- end -}}
+    </div>
+{{ end }}

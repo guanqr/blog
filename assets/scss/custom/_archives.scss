@@ -1,0 +1,37 @@
+// 歸檔頁年份導航
+
+.archives-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+.archives-nav-side {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--color-contrast-medium);
+    cursor: pointer;
+    transition: color $duration;
+    user-select: none;
+    -webkit-user-select: none;
+
+    &:hover {
+        color: var(--color-primary);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+
+    svg {
+        width: 1.2em;
+        height: 1.2em;
+    }
+}
+
+.archives-nav-year {
+    font-size: 0.95em;
+}

@@ -1,0 +1,3 @@
+{{ if and .Site.Params.enableExpiredTip (.Params.displayExpiredTip | default .Site.Params.displayPostExpiredTip) }}
+<div id="expiredTip">{{ i18n "expiredTip" }}</div>
+{{ end }}

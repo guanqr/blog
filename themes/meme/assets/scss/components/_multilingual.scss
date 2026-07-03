@@ -1,0 +1,31 @@
+#lang-switcher {
+    position: relative;
+    z-index: 4;
+    color: var(--color-contrast-medium);
+}
+
+#langs {
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        width: max-content;
+    }
+}
+
+@if ($headerLayoutFlex) {
+    #lang-switcher {
+        display: inline-block;
+    }
+    #langs {
+        left: 0;
+        right: 0;
+    }
+} @else {
+    #lang-switcher {
+        padding: 1em;
+        float: left;
+    }
+}

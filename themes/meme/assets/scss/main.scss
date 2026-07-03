@@ -1,0 +1,499 @@
+{{ with .Site.Params.fontSize | default 16 }}
+    $fontSize: {{ . }}px;
+{{ end }}
+{{ with .Site.Params.tabSize | default 4 }}
+    $tabSize: {{ . }};
+{{ end }}
+{{ with .Site.Params.lineHeight | default 2 }}
+    $lineHeight: {{ . }};
+{{ end }}
+
+{{ with .Site.Params.postWidth | default 42 }}
+    $postWidth: {{ . }}em;
+{{ end }}
+{{ with .Site.Params.listWidth | default 42 }}
+    $listWidth: {{ . }}em;
+{{ end }}
+
+{{ with .Site.Params.duration | default 0.5 }}
+    $duration: {{ . }}s;
+{{ end }}
+
+{{ if eq .Site.Params.headerLayout "flex" }}
+    $headerLayoutFlex: true;
+{{ else }}
+    $headerLayoutFlex: false;
+{{ end }}
+
+{{ if .Site.Params.enableHeaderAutoHide }}
+    $enableHeaderAutoHide: true;
+{{ else }}
+    $enableHeaderAutoHide: false;
+{{ end }}
+
+{{ if .Site.Params.enableNavToggle }}
+    $enableNavToggle: true;
+
+    {{ with .Site.Params.navHeight | default "10em" }}
+        $navHeight: {{ . }};
+    {{ end }}
+{{ else }}
+    $enableNavToggle: false;
+{{ end }}
+
+{{ if .Site.Params.displayBackToTopOnMobile }}
+    $displayBackToTopOnMobile: true;
+{{ else }}
+    $displayBackToTopOnMobile: false;
+{{ end }}
+
+{{ if .Site.Params.enableOverflowY }}
+    $enableOverflowY: true;
+{{ else }}
+    $enableOverflowY: false;
+{{ end }}
+
+{{ with .Site.Params.maxHeight | default 20 }}
+    $maxHeight: {{ . }}em;
+{{ end }}
+
+{{ if .Site.Params.enableCopy }}
+    $enableCopy: true;
+{{ else }}
+    $enableCopy: false;
+{{ end }}
+
+{{ if .Site.Params.enableCopyAutoHide }}
+    $enableCopyAutoHide: true;
+{{ else }}
+    $enableCopyAutoHide: false;
+{{ end }}
+
+{{ if .Site.Params.enableSmoothScroll }}
+    $enableSmoothScroll: true;
+{{ else }}
+    $enableSmoothScroll: false;
+{{ end }}
+
+$baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
+
+
+// Utilities
+
+@import "utils/functions";
+@import "utils/mixins";
+
+
+// Base
+
+@import "base/base";
+
+{{ if .Site.Params.customizeScrollbar }}
+    @import "base/scrollbar";
+{{ end }}
+
+
+// Typography
+
+// Font Family
+
+{{ if .Site.Params.enableChinesePunctuationGlyphCorrection }}
+    {{ .Scratch.Set "glyph" "'glyph-correction', " }}
+{{ else }}
+    {{ .Scratch.Set "glyph" "" }}
+{{ end }}
+{{ $glyph := .Scratch.Get "glyph" }}
+
+{{ with .Site.Params.fontFamilySiteBrand }}
+    $fontFamilySiteBrand: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyMenu }}
+    $fontFamilyMenu: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyTitle }}
+    $fontFamilyTitle: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyHeadings }}
+    $fontFamilyHeadings: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyCode }}
+    $fontFamilyCode: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyQuote }}
+    $fontFamilyQuote: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyTOC }}
+    $fontFamilyTOC: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyCaption }}
+    $fontFamilyCaption: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyFooter }}
+    $fontFamilyFooter: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyBody }}
+    $fontFamilyBody: {{ $glyph }}{{ . }};
+{{ end }}
+
+@import "base/font-family";
+
+// Chinese Punctuation Glyph Correction
+
+{{ if .Site.Params.enableChinesePunctuationGlyphCorrection }}
+    @import "base/glyph-correction";
+
+    // Magic adjustment for zh-cn
+    .drop-cap {
+        margin-top: 1rem !important;
+    }
+{{ end }}
+
+// Emphasis Point
+
+{{ if .Site.Params.enableEmphasisPoint }}
+    @import "base/emphasis-point";
+{{ end }}
+
+// Paragraph Indents
+
+{{ if .Site.Params.enableParagraphIndent }}
+    @import "base/indent";
+{{ end }}
+
+
+// Themes
+
+// Light
+
+{{ with .Site.Params.primaryColorLight | default "220, 90%, 56%" }}
+    {{ $number := (split (replace . "%" "") ", ") }}
+    {{ range $index, $value := $number }}
+        {{ if eq $index 0 }}
+            $primaryColorLightH: {{ $value | int }};
+        {{ end }}
+        {{ if eq $index 1 }}
+            $primaryColorLightS: {{ $value | int }}%;
+        {{ end }}
+        {{ if eq $index 2 }}
+            $primaryColorLightL: {{ $value | int }}%;
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if and .Site.Params.enableDarkMode (eq .Site.Params.defaultTheme "dark") }}
+    $defaultTheme: dark;
+{{ else }}
+    $defaultTheme: light;
+{{ end }}
+
+{{ if .Site.Params.enableHighlight }}
+    $enableHighlight: true;
+{{ else }}
+    $enableHighlight: false;
+{{ end }}
+
+@import "themes/light";
+
+// Dark Mode
+
+{{ if .Site.Params.enableDarkMode }}
+    {{ with .Site.Params.primaryColorDark | default "201, 65%, 62%" }}
+        {{ $number := (split (replace . "%" "") ", ") }}
+        {{ range $index, $value := $number }}
+            {{ if eq $index 0 }}
+                $primaryColorDarkH: {{ $value | int }};
+            {{ end }}
+            {{ if eq $index 1 }}
+                $primaryColorDarkS: {{ $value | int }}%;
+            {{ end }}
+            {{ if eq $index 2 }}
+                $primaryColorDarkL: {{ $value | int }}%;
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    @import "themes/dark";
+    @import "components/theme-switcher";
+{{ end }}
+
+
+// Header
+
+{{ if .Site.Params.enableHeader }}
+    {{ with .Site.Params.headerBackground }}
+        $headerBackground: {{ . }};
+    {{ end }}
+
+    {{ if .Site.Params.siteBrandSVG }}
+        $siteBrandSVG: true;
+        $siteBrandSVGWidth: {{ .Site.Params.siteBrandSVGWidth }}px;
+        $siteBrandSVGHeight: {{ .Site.Params.siteBrandSVGHeight }}px;
+        $siteBrandSVGFill: {{ .Site.Params.siteBrandSVGFill }};
+    {{ else }}
+        $siteBrandSVG: false;
+        $siteBrandFontSize: {{ .Site.Params.siteBrandFontSize }}em;
+        $siteBrandFontColor: {{ .Site.Params.siteBrandFontColor }};
+    {{ end }}
+
+    @import 'layout/header';
+
+    {{ if and (eq .Site.Params.headerLayout "flex") .Site.Params.enableNavToggle }}
+        @import 'components/nav-toggle';
+    {{ end }}
+{{ end }}
+
+
+// Menu Bar
+
+{{ if or .Site.Params.enableMenu (eq .Site.Params.headerLayout "flex") }}
+    @import 'layout/menu';
+{{ end }}
+
+
+// List Page
+
+{{ if eq .Site.Params.listDatePosition "right" }}
+    $listDatePosition: right;
+{{ end }}
+{{ if eq .Site.Params.listDatePosition "left" }}
+    $listDatePosition: left;
+{{ end }}
+
+@import "layout/list";
+
+
+// Single Page
+
+{{ if .Site.Params.enableAnchorAutoHide }}
+    $enableAnchorAutoHide: true;
+{{ else }}
+    $enableAnchorAutoHide: false;
+{{ end }}
+
+{{ with .Site.Params.footnoteReturnLinkIcon }}
+    $footnoteReturnLinkIcon: true;
+{{ else }}
+    $footnoteReturnLinkIcon: false;
+{{ end }}
+
+@import "layout/single";
+
+
+// Footer
+
+{{ if .Site.Params.enableFooter }}
+    {{ with .Site.Params.iconColor }}
+        $iconColor: {{ . }};
+    {{ end }}
+
+    {{ if .Site.Params.iconAnimation }}
+        $iconAnimation: true;
+    {{ else }}
+        $iconAnimation: false;
+    {{ end }}
+
+    @import "layout/footer";
+{{ end }}
+
+
+// Components
+
+{{ if and hugo.IsMultilingual .Site.Params.enableLangToggle }}
+    @import "components/multilingual";
+{{ end }}
+
+{{ if or .Site.Params.enablePostMeta .Site.Params.enablePostMetaInHome }}
+    @import "components/post-meta";
+{{ end }}
+
+{{ if .Site.Params.enablePostCopyright }}
+    @import "components/post-copyright";
+{{ end }}
+
+{{ if .Site.Params.enablePostUpdatedBadge }}
+    @import "components/updated-badge";
+{{ end }}
+
+{{ if .Site.Params.enablePostGitInfo }}
+    @import "components/post-gitinfo";
+{{ end }}
+
+{{ if .Site.Params.enablePostShare }}
+    {{ if and .Site.Params.displayShareOnText }}
+        $displayShareOnText: true;
+    {{ else }}
+        $displayShareOnText: false;
+    {{ end }}
+
+    {{ if or (in .Site.Params.postShareItems "mastodon") (in .Site.Params.postShareItems "fediverse") }}
+        $shareOnFediverse: true;
+    {{ else }}
+        $shareOnFediverse: false;
+    {{ end }}
+
+    {{ if in .Site.Params.postShareItems "qrcode" }}
+        $shareViaQRCode: true;
+    {{ else }}
+        $shareViaQRCode: false;
+    {{ end }}
+
+    @import "components/post-share";
+{{ end }}
+
+{{ if .Site.Params.enableRelatedPosts }}
+    @import "components/related-posts";
+{{ end }}
+
+{{ if .Site.Params.enablePostTags }}
+    @import "components/post-tags";
+{{ end }}
+
+{{ if .Site.Params.enableMinimalFooter }}
+    @import "components/minimal-footer";
+{{ end }}
+
+{{ if .Site.Params.enableAboutPageMinimalFooter }}
+    @import "components/minimal-footer-about";
+{{ end }}
+
+{{ if .Site.Params.enablePostNav }}
+    @import "components/post-nav";
+{{ end }}
+
+{{ if .Site.Params.enableComments }}
+    @import "components/comments";
+{{ end }}
+
+{{ if .Site.Params.enableBackToTop }}
+    {{ if .Site.Params.enableBackToTopAutoHide }}
+        $enableBackToTopAutoHide: true;
+    {{ else }}
+        $enableBackToTopAutoHide: false;
+    {{ end }}
+
+    @import "components/back-to-top";
+{{ end }}
+
+{{ if .Site.Params.enableHighlight }}
+    @import "components/highlight";
+{{ end }}
+
+{{ if .Site.Params.enableSocials }}
+    @import "components/socials";
+{{ end }}
+
+
+// Homepage Layout
+
+{{ if eq .Site.Params.homeLayout "poetry" }}
+    $homeLinksPadding: {{ .Site.Params.homeLinksPadding }}em;
+
+    @import "pages/home-poetry";
+{{ end }}
+
+{{ if eq .Site.Params.homeLayout "footage" }}
+    // https://github.com/reuixiy/hugo-theme-meme/issues/51
+    {{ if strings.HasPrefix .Site.Params.homePoster "." }}
+        {{ $homePoster := printf `.%s` .Site.Params.homePoster }}
+        {{ .Scratch.Set "homePoster" $homePoster }}
+    {{ else }}
+        {{ .Scratch.Set "homePoster" .Site.Params.homePoster }}
+    {{ end }}
+    {{ $homePoster := .Scratch.Get "homePoster" }}
+
+    $homePoster: url({{ $homePoster }});
+
+    @import "pages/home-footage";
+{{ end }}
+
+{{ if eq .Site.Params.homeLayout "posts" }}
+    @import "pages/home-posts";
+{{ end }}
+
+
+// Categories Page
+
+{{ if .Site.Params.enableTree }}
+    @import "pages/tree-categories";
+{{ end }}
+
+
+// Tags Page
+
+{{ if .Site.Params.enableTagCloud }}
+    @import "pages/tag-cloud";
+{{ end }}
+
+
+// 404 Page
+
+// https://github.com/reuixiy/hugo-theme-meme/issues/51
+{{ if strings.HasPrefix .Site.Params.fofPoster "." }}
+    {{ $fofPoster := printf `.%s` .Site.Params.fofPoster }}
+    {{ .Scratch.Set "fofPoster" $fofPoster }}
+{{ else }}
+    {{ .Scratch.Set "fofPoster" .Site.Params.fofPoster }}
+{{ end }}
+{{ $fofPoster := .Scratch.Get "fofPoster" }}
+
+$fofPoster: url({{ $fofPoster }});
+
+@import "pages/404";
+
+
+// Third Party
+
+// Medium Zoom
+
+{{ if .Site.Params.enableMediumZoom }}
+    @import "third-party/medium-zoom";
+{{ end }}
+
+// Busuanzi Site UV And PV
+
+{{ if .Site.Params.enableFooter }}
+    {{ if and .Site.Params.displayBusuanziSiteUVAndPV (eq hugo.Environment "production") }}
+        @import "third-party/busuanzi";
+    {{ end }}
+{{ end }}
+
+// Lunr search
+
+{{ if and (eq .Site.Params.headerLayout "flex") (or .Site.Params.enableLunrSearch .Site.Params.enableAlgoliaSearch) }}
+    $enableSearch: true;
+    @import "components/search";
+{{ else }}
+    $enableSearch: false;
+{{ end }}
+
+
+// Responsive
+
+$greaterWidth: null;
+
+@if ($postWidth > $listWidth) {
+    $greaterWidth: $postWidth;
+} @else {
+    $greaterWidth: $listWidth;
+}
+
+@import "base/max-width";
+:root {
+    --max-width: #{$maxWidth};
+}
+@import "base/responsive";
+
+
+// Data Attributes
+
+@import "base/data-attributes";
+
+
+// @supports()
+
+@import "base/supports";
+
+
+// Custom
+
+@import "custom/custom";

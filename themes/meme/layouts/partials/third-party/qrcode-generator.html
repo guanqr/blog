@@ -1,0 +1,12 @@
+{{- $src := partial "utils/lib.html" (dict "$" . "type" "qrcode") -}}
+
+<script src="{{ $src }}"></script>
+
+<script>
+    const typeNumber = 0;
+    const errorCorrectionLevel = 'L';
+    const qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData('{{ .Permalink }}');
+    qr.make();
+    document.getElementById('qrcode-img').innerHTML = qr.createImgTag();
+</script>

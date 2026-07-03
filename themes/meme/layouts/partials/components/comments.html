@@ -1,0 +1,35 @@
+{{ if and (.Params.comments | default .Site.Params.enableComments) (eq hugo.Environment "production") }}
+    {{ if or (in .Site.Params.mainSections .Section) .Params.comments }}
+
+        {{ if not .Site.Params.autoLoadComments }}
+            <div class="load-comments">
+                <div id="load-comments">{{ i18n "loadComments" }}</div>
+            </div>
+        {{  end }}
+
+        {{ if .Site.Params.enableDisqus }}
+            <div id="disqus_thread"></div>
+        {{ end }}
+
+        {{ if .Site.Params.enableValine }}
+            <div id="vcomments"></div>
+        {{ end }}
+
+        {{ if .Site.Params.enableUtterances }}
+            <div id="utterances"></div>
+        {{ end }}
+
+        {{ if .Site.Params.enableGitalk }}
+            <div id="gitalk-container"></div>
+        {{ end }}
+
+        {{ if .Site.Params.enableGiscus }}
+            <div id="giscus"></div>
+        {{ end }}
+
+        {{ if .Site.Params.enableRemark42 }}
+          <div id="remark42"></div>
+        {{ end }}
+
+    {{ end }}
+{{ end }}

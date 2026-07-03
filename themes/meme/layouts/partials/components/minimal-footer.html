@@ -1,0 +1,96 @@
+{{ if and .Site.Params.enableMinimalFooter (in .Site.Params.mainSections .Section) }}
+    <footer class="minimal-footer">
+        {{ with .Params.tags }}
+            <div class="post-tag">
+                {{- range $index, $tag := . -}}
+                    <!-- Work-around for https://github.com/gohugoio/hugo/issues/6546 -->
+                    {{- $path := (urls.Parse ($tag | urlize)).Path -}}
+                    {{- with $.Site.GetPage (printf `/tags/%s` $path) -}}
+                        {{- if gt $index 0 -}}
+                            {{- " " -}}
+                        {{- end -}}
+                        <a href="{{ .RelPermalink }}" rel="tag" class="post-tag-link">#{{ .Slug | default .LinkTitle | default $path | lower | anchorize }}</a>
+                    {{- end -}}
+                {{- end -}}
+            </div>
+        {{ end }}
+        {{ if eq .Site.Params.categoryBy "sections" }}
+            <div class="post-category">
+                {{ if .Site.Params.enableVerticalBarStructure }}
+                    {{- with .Site.GetPage .Section -}}
+                        <a href="{{ .RelPermalink }}" class="post-category-link active">{{ .Slug | default .Params.url | default .LinkTitle | default $.Section | lower | anchorize }}</a>
+                    {{- end -}}
+                    {{- $sections := .Site.Params.mainSections | symdiff (slice .Section) -}}
+                    {{- range $index, $section := $sections -}}
+                        {{- " | " -}}
+                        {{- with $.Site.GetPage $section -}}
+                            <a href="{{ .RelPermalink }}" class="post-category-link">{{ .Slug | default .Params.url | default .LinkTitle | default $section | lower | anchorize }}</a>
+                        {{- end -}}
+                    {{- end -}}
+                {{ else }}
+                    {{ $pathParts := split (strings.TrimSuffix "/" ($.File.Dir | default $.Section)) "/" }}
+                    {{ $sections := dict }}
+                    {{ with $pathParts }}
+                        {{ range $index, $section := $pathParts }}
+                            {{ with $.Site.GetPage (printf `/%s` $section) }}
+                                {{ if (eq .Kind "section") }}
+                                    {{ $sections = merge $sections (dict (printf `%s/%s` (string $index) .RelPermalink) (.Slug | default .Params.url | default .LinkTitle | default $section | lower | anchorize)) }}
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                    {{ with $sections }}
+                        {{- range $link, $title := $sections -}}
+                            {{- $index := $link | replaceRE `(\d+)/.+` `$1` | int -}}
+                            {{- if gt $index 0 -}}
+                                {{- $.Site.Params.categoryDelimiter | default "/" -}}
+                            {{- end -}}
+                            <a href="{{ $link | replaceRE `\d+/(.+)` `$1` }}" class="post-category-link">{{ $title | lower }}</a>
+                        {{- end -}}
+                    {{ end }}
+                {{ end }}
+            </div>
+        {{ end }}
+        {{ if eq .Site.Params.categoryBy "categories" }}
+            {{ with .Params.categories }}
+                <div class="post-category">
+                    {{ if $.Site.Params.enableVerticalBarStructure }}
+                        {{- $currentTopLevelCategory := (index . 0) -}}
+                        <!-- Work-around for https://github.com/gohugoio/hugo/issues/6546 -->
+                        {{- $path := (urls.Parse ($currentTopLevelCategory | urlize)).Path -}}
+                        {{- with $.Site.GetPage (printf `/categories/%s` $path) -}}
+                            <a href="{{ .RelPermalink }}" class="post-category-link active">{{ .Slug | default .LinkTitle | default $path | lower | anchorize }}</a>
+                        {{- end -}}
+                        {{- $categories := slice -}}
+                        {{- range $.Site.RegularPages -}}
+                            {{- with .Param "categories" -}}
+                                {{- $topLevelCategory := (index . 0) -}}
+                                {{- $categories = union $categories (slice $topLevelCategory) -}}
+                            {{- end -}}
+                        {{- end -}}
+                        {{- $categories = uniq $categories | symdiff (slice $currentTopLevelCategory) -}}
+                        {{- range $index, $category := $categories -}}
+                            {{- " | " -}}
+                            <!-- Work-around for https://github.com/gohugoio/hugo/issues/6546 -->
+                            {{- $path := (urls.Parse ($category | urlize)).Path -}}
+                            {{- with $.Site.GetPage (printf `/categories/%s` $path) -}}
+                                <a href="{{ .RelPermalink }}" class="post-category-link">{{ .Slug | default .LinkTitle | default $path | lower | anchorize }}</a>
+                            {{- end -}}
+                        {{- end -}}
+                    {{ else }}
+                        {{- range $index, $category := . -}}
+                            {{- if gt $index 0 -}}
+                                {{- $.Site.Params.categoryDelimiter | default "/" -}}
+                            {{- end -}}
+                            <!-- Work-around for https://github.com/gohugoio/hugo/issues/6546 -->
+                            {{- $path := (urls.Parse ($category | urlize)).Path -}}
+                            {{- with $.Site.GetPage (printf `/categories/%s` $path) -}}
+                                <a href="{{ .RelPermalink }}" class="post-category-link">{{ .Slug | default .LinkTitle | default $path | lower | anchorize }}</a>
+                            {{- end -}}
+                        {{- end -}}
+                    {{ end }}
+                </div>
+            {{ end }}
+        {{ end }}
+    </footer>
+{{ end }}

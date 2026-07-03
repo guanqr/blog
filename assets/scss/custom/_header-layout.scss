@@ -1,0 +1,42 @@
+// 自定义顶栏布局样式
+
+.nav {
+    font-size: 1em;
+    margin-top: 0.4em;
+}
+
+.home .poetry {
+    padding: 10em 1em;
+}
+
+.menu-item {
+    .tags, .archives, .photos, .friends, .about {
+        display: none;
+    }
+}
+
+@media (max-width: $maxWidth) {
+    .nav {
+        margin: 2em 0;
+    }
+    .menu {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .menu-item {
+        .tags, .archives, .photos, .friends, .about {
+            display: inline-block;
+        }
+    }
+    .menu-item-name {
+        font-size: 80%;
+    }
+}
+
+.nav-curtain {
+    backdrop-filter: none;
+    background: none;
+}
+
+.nav-toggle {
+    transform: translateY(0.4em);
+}

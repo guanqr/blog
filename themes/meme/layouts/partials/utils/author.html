@@ -1,0 +1,54 @@
+{{- $author := dict -}}
+{{- if .Params.original | default .Site.Params.original -}}
+    {{- with .Site.Params.author.name -}}
+        {{- $author = merge $author (dict "name" .) -}}
+    {{- end -}}
+    {{- with .Site.Params.author.email -}}
+        {{- $author = merge $author (dict "email" .) -}}
+    {{- end -}}
+    {{- with .Site.Params.author.motto -}}
+        {{- $author = merge $author (dict "motto" .) -}}
+    {{- end -}}
+    {{- with .Site.Params.author.avatar -}}
+        {{- $author = merge $author (dict "avatar" .) -}}
+    {{- end -}}
+    {{- $baseURLWithLangFix := "" | absLangURL -}}
+    {{- with .Site.Params.author.website | default $baseURLWithLangFix -}}
+        {{- $author = merge $author (dict "website" .) -}}
+    {{- end -}}
+    {{- with .Site.Copyright -}}
+        {{- $author = merge $author (dict "copyright" .) -}}
+    {{- end -}}
+    {{- with .Site.Params.author.twitter -}}
+        {{- $author = merge $author (dict "twitter" .) -}}
+    {{- end -}}
+    {{- with .Site.Params.author.fediverse -}}
+        {{- $author = merge $author (dict "fediverse" .) -}}
+    {{- end -}}
+{{- else -}}
+    {{- with .Params.author -}}
+        {{- $author = merge $author (dict "name" .) -}}
+    {{- end -}}
+    {{- with .Params.email -}}
+        {{- $author = merge $author (dict "email" .) -}}
+    {{- end -}}
+    {{- with .Params.motto -}}
+        {{- $author = merge $author (dict "motto" .) -}}
+    {{- end -}}
+    {{- with .Params.avatar -}}
+        {{- $author = merge $author (dict "avatar" .) -}}
+    {{- end -}}
+    {{- with .Params.website -}}
+        {{- $author = merge $author (dict "website" .) -}}
+    {{- end -}}
+    {{- with .Params.copyright -}}
+        {{- $author = merge $author (dict "copyright" .) -}}
+    {{- end -}}
+    {{- with .Params.twitter -}}
+        {{- $author = merge $author (dict "twitter" .) -}}
+    {{- end -}}
+    {{- with .Params.fediverse -}}
+        {{- $author = merge $author (dict "fediverse" .) -}}
+    {{- end -}}
+{{- end -}}
+{{- return $author -}}

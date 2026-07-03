@@ -1,0 +1,4 @@
+<blockquote class="quote{{ range .Params }} {{ . }}{{ end }}">
+    {{- $content := .Inner | markdownify -}}
+    {{ partial "quote-content.html" (dict "content" $content) }}
+</blockquote>

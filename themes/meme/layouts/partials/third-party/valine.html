@@ -1,0 +1,50 @@
+{{- $src := partial "utils/lib.html" (dict "$" . "type" "valine") -}}
+
+<script>
+    function loadComments() {
+        if (!document.getElementById('vcomments')) {
+            return;
+        }
+        if (typeof Valine === 'undefined') {
+            const getScript = (options) => {
+                const script = document.createElement('script');
+                script.defer = true;
+                script.crossOrigin = 'anonymous';
+                Object.keys(options).forEach((key) => {
+                    script[key] = options[key];
+                });
+                document.body.appendChild(script);
+            };
+            getScript({
+                src: '{{ $src }}',
+                onload: () => {
+                    newValine();
+                }
+            });
+        } else {
+            newValine();
+        }
+    }
+    function newValine() {
+        new Valine({
+            el: '#vcomments',
+            appId: '{{ .Site.Params.valineAppId }}',
+            appKey: '{{ .Site.Params.valineAppKey }}',
+            placeholder: '{{ .Site.Params.valinePlaceholder }}',
+            path: {{ .Site.Params.valinePath | default "location.pathname" | safeJS }},
+            avatar: '{{ .Site.Params.valineAvatar }}',
+            meta: {{ .Site.Params.valineMeta }},
+            pageSize: {{ .Site.Params.valinePageSize }},
+            lang: '{{ .Site.Params.valineLang }}',
+            visitor: {{ .Site.Params.valineVisitor }},
+            highlight: {{ .Site.Params.valineHighlight }},
+            avatarForce: {{ .Site.Params.valineAvatarForce }},
+            recordIP: {{ .Site.Params.valineRecordIP }},
+            serverURLs: '{{ .Site.Params.valineServerURLs }}',
+            emojiCDN: '{{ .Site.Params.valineEmojiCDN }}',
+            emojiMaps: {{ .Site.Params.valineEmojiMaps }},
+            enableQQ: {{ .Site.Params.valineEnableQQ }},
+            requiredFields: {{ .Site.Params.valineRequiredFields }}
+        });
+    }
+</script>

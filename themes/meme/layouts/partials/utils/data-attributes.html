@@ -1,0 +1,29 @@
+<!-- Small Caps -->
+{{- $smallCaps := .Params.smallCaps | default .Site.Params.enableSmallCaps | default false -}}
+
+<!-- Align -->
+{{- $align := .Params.align | default "default" -}}
+{{- if ne .Type "poetry" -}}
+    {{- if and $.Site.Params.enableJustify (eq $align "default") -}}
+        {{- $align = "justify" -}}
+    {{- end -}}
+{{- end -}}
+
+<!-- Type -->
+{{- $type := .Type -}}
+
+<!-- Layout -->
+{{- $layout := .Params.layout -}}
+
+<!-- Paragraph Indent -->
+{{- $indent := false -}}
+{{- if and .Site.Params.enableParagraphIndent (ne .Type "poetry") -}}
+    {{- if .Params.indent | default (eq .Site.Params.paragraphStyle "indent") -}}
+        {{- $indent = true -}}
+    {{- end -}}
+{{- end -}}
+
+<!-- TOC Number -->
+{{- $tocNum := .Params.tocNum | default .Site.Params.displayTOCNum -}}
+
+{{- return dict "smallCaps" $smallCaps "align" $align "type" $type "layout" $layout "indent" $indent "tocNum" $tocNum -}}

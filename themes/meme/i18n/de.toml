@@ -1,0 +1,213 @@
+[ellipsis]
+other = "…"
+
+[colon]
+other = ": "
+
+[minute]
+one = "min"
+other = "min"
+
+[tocTitle]
+other = "Inhalt"
+
+[readMore]
+other = "Weiterlesen"
+
+[prevPage]
+other = "Neuer"
+
+[nextPage]
+other = "Älter"
+
+[copy]
+other = "Kopieren"
+
+[copied]
+other = "Kopiert!"
+
+[copyrightAuthor]
+other = "Autor"
+
+[copyrightLink]
+other = "Link"
+
+[copyrightLicense]
+other = "Lizenz"
+
+[shareOn]
+other = "Teilen auf:"
+
+[shareOnTitle]
+other = "Teilen auf "
+
+[shareViaTitle]
+other = "Teilen mit "
+
+[relatedPosts]
+other = "Siehe auch:"
+
+[loadComments]
+other = "Kommentare laden?"
+
+[pageNotFound]
+other = "404 - Seite nicht gefunden"
+
+[fofLinkText]
+other = "Zur Hauptseite"
+
+[searchResultsTitle]
+one = "Ein Suchergebnis für „{{ .Term }}” gefunden"
+other = "{{ .Count }} Suchergebnisse für „{{ .Term }}” gefunden"
+
+[searchResultsNone]
+other = "Leider keine Suchergebnisse für „{{ .Term }}”"
+
+[backToTop]
+other = "Zurück nach oben"
+
+[themeSwitcher]
+other = "Thema wechseln"
+
+
+# Socials
+
+[x]
+other = "𝕏"
+
+[facebook]
+other = "Facebook"
+
+[fediverse]
+other = "Fediverse"
+
+[mastodon]
+other = "Mastodon"
+
+[linkedin]
+other = "LinkedIn"
+
+[telegram]
+other = "Telegram"
+
+[weibo]
+other = "Weibo"
+
+[douban]
+other = "Douban"
+
+[qq]
+other = "QQ"
+
+[qzone]
+other = "Qzone"
+
+[pocket]
+other = "Pocket"
+
+[hackernews]
+other = "Hacker News"
+
+[qrcode]
+other = "QR Code"
+
+[email]
+other = "E-Mail"
+
+
+# Share on Fediverse page
+
+[javascriptRequired]
+other = "Für diese Funktionalität muss JavaScript aktiviert sein!"
+
+[fedishareTitleLabel]
+other = "Titel des Beitrags"
+
+[fedishareDescriptionLabel]
+other = "Beschreibung (kann im nächsten Schritt geändert werden)"
+
+[fedishareUrlLabel]
+other = "Link"
+
+[fedishareInstanceLabel]
+other = "Fediverse-Instanz"
+
+[fedishareRememberInstance]
+other = "Instanz auf diesem Gerät merken"
+
+[fedishareSubmitLabel]
+other = "Weiter zur Instanz"
+
+
+# Months
+# Used for `i18nMonth`
+
+[january]
+other = "Januar"
+
+[february]
+other = "Februar"
+
+[march]
+other = "März"
+
+[april]
+other = "April"
+
+[may]
+other = "Mai"
+
+[june]
+other = "Juni"
+
+[july]
+other = "Juli"
+
+[august]
+other = "August"
+
+[september]
+other = "September"
+
+[october]
+other = "Oktober"
+
+[november]
+other = "November"
+
+[december]
+other = "Dezember"
+
+
+# Numbers
+# Used for `i18nYear`
+
+[0]
+other = "0"
+
+[1]
+other = "1"
+
+[2]
+other = "2"
+
+[3]
+other = "3"
+
+[4]
+other = "4"
+
+[5]
+other = "5"
+
+[6]
+other = "6"
+
+[7]
+other = "7"
+
+[8]
+other = "8"
+
+[9]
+other = "9"

@@ -1,0 +1,11 @@
+<!-- https://gohugo.io/functions/findre/ -->
+<!-- https://gohugo.io/functions/replacere/ -->
+<!-- https://regex101.com/ -->
+{{- $imgs := slice -}}
+{{- if and .IsPage (in .Site.Params.mainSections .Section) -}}
+    {{- range (findRE `<img\s+[^>]*?src="/?([^"]+)` .Content | uniq) -}}
+        {{- $url := replaceRE `<img\s+[^>]*?src="/?([^"]+)` `$1` . -}}
+        {{- $imgs = union $imgs (slice $url) -}}
+    {{- end -}}
+{{- end -}}
+{{- return $imgs -}}

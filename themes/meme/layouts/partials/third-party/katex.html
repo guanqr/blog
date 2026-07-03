@@ -1,0 +1,50 @@
+{{- $src := partial "utils/lib.html" (dict "$" . "type" "katex") -}}
+{{- $srcCSS := partial "utils/lib.html" (dict "$" . "type" "katex-css") -}}
+{{- $srcMhchem := partial "utils/lib.html" (dict "$" . "type" "katex-mhchem") -}}
+{{- $srcAutoRender := partial "utils/lib.html" (dict "$" . "type" "katex-auto-render") -}}
+
+<link rel="stylesheet" href="{{ $srcCSS }}">
+<script>
+    if (typeof renderMathInElement === 'undefined') {
+        const getScript = (options) => {
+            const script = document.createElement('script');
+            script.defer = true;
+            script.crossOrigin = 'anonymous';
+            Object.keys(options).forEach((key) => {
+                script[key] = options[key];
+            });
+            document.body.appendChild(script);
+        };
+        getScript({
+            src: '{{ $src }}',
+            onload: () => {
+                getScript({
+                    src: '{{ $srcMhchem }}',
+                    onload: () => {
+                        getScript({
+                            src: '{{ $srcAutoRender }}',
+                            onload: () => {
+                                renderKaTex();
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    } else {
+        renderKaTex();
+    }
+    function renderKaTex() {
+        renderMathInElement(
+            document.body,
+            {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false}
+                ]
+            }
+        );
+    }
+</script>

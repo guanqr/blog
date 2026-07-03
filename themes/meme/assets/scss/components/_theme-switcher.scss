@@ -1,0 +1,26 @@
+#theme-switcher {
+    border: none;
+    padding: 0;
+    background: transparent;
+    font-size: inherit;
+    cursor: pointer;
+
+    color: var(--color-contrast-medium);
+    transition: color $duration;
+    z-index: 4;
+
+    &:hover {
+        color: var(--color-primary);
+    }
+
+    .icon {
+        margin-right: 0 !important;
+    }
+}
+
+@if (not $headerLayoutFlex) {
+    #theme-switcher {
+        padding: 1em;
+        float: right;
+    }
+}

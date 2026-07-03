@@ -1,0 +1,65 @@
+{{- $scripts := slice "js/main.js" -}}
+
+{{- if and .Site.Params.enableForceHTTPS (eq hugo.Environment "production") -}}
+    {{- $scripts = union $scripts (slice "js/force-https.js") -}}
+{{- end -}}
+
+{{- if and .Site.Params.enableHeader (eq .Site.Params.headerLayout "flex") -}}
+    {{- $scripts = union $scripts (slice "js/header.js") -}}
+
+    {{- if .Site.Params.enableNavToggle -}}
+        {{- $scripts = union $scripts (slice "js/nav-toggle.js") -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if .Site.Params.enableBackToTopAutoHide -}}
+    {{- $scripts = union $scripts (slice "js/back-to-top.js") -}}
+{{- end -}}
+
+{{- if .Site.Params.enableDarkMode -}}
+    {{- $scripts = union $scripts (slice "js/dark-mode.js") -}}
+{{- end -}}
+
+{{- if and hugo.IsMultilingual .Site.Params.enableLangToggle -}}
+    {{- $scripts = union $scripts (slice "js/multilingual.js") -}}
+{{- end -}}
+
+{{- if .Site.Params.enableCopy -}}
+    {{- $scripts = union $scripts (slice "js/copy.js") -}}
+{{- end -}}
+
+{{- if and .Site.Params.enableComments (eq hugo.Environment "production") -}}
+    {{- $scripts = union $scripts (slice "js/comments.js") -}}
+{{- end -}}
+
+{{- if .Site.Params.enableLunrSearch -}}
+    {{- $scripts = union $scripts (partial "third-party/lunr-search.html" .) -}}
+{{- end -}}
+
+{{- if .Site.Params.enableAlgoliaSearch -}}
+    {{- $scripts = union $scripts (partial "third-party/algolia-search.html" .) -}}
+{{- end -}}
+
+{{- $scripts = union $scripts (slice "js/custom.js") -}}
+
+{{- $processedScripts := slice ("" | resources.FromString "dummy.js") -}}
+{{- range $scripts -}}
+    {{- if findRE `^https?:` . -}}
+        <script src="{{ . }}" defer></script>
+    {{- else -}}
+        {{- $path := printf "%s/%s" $.Lang (. | replaceRE `\.js$` "-rendered.js") -}}
+        {{- $processedScripts = union $processedScripts (slice (resources.Get . | resources.ExecuteAsTemplate $path $)) -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $path := (strings.TrimPrefix "/" (printf `%s/js/meme.js` .Site.LanguagePrefix)) -}}
+
+{{- $script := $processedScripts | resources.Concat $path | resources.Minify -}}
+{{- if .Site.Params.enableFingerprint -}}
+    {{- $script = $script | resources.Fingerprint -}}
+    <script src="{{ $script.RelPermalink }}"
+    {{- if .Site.Params.enableSRI }} integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"{{- end -}}
+    ></script>
+{{- else -}}
+    <script src="{{ $script.RelPermalink }}"></script>
+{{- end }}

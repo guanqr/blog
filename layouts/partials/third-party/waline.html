@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@2.15.8/dist/waline.css">
+<script>
+    function loadComments() {
+        if (!document.getElementById('waline')) {
+            return;
+        }
+        if (typeof Waline === 'undefined') {
+            const getScript = (options) => {
+                const script = document.createElement('script');
+                script.defer = true;
+                script.crossOrigin = 'anonymous';
+                Object.keys(options).forEach((key) => {
+                    script[key] = options[key];
+                });
+                document.body.appendChild(script);
+            };
+            getScript({
+                src: 'https://unpkg.com/@waline/client@2.15.8/dist/waline.js',
+                onload: () => {
+                    newWaline();
+                }
+            });
+        } else {
+            newWaline();
+        }
+    }
+    function newWaline() {
+        const locale = {
+            nick: "{{ i18n "walineNick" }}",
+            mail: "{{ i18n "walineMail" }}",
+            placeholder: "{{ i18n "walinePlaceholder" }}"
+        };
+        Waline.init({
+            el: '#waline',
+            serverURL: '{{ .Site.Params.walineServerURL }}',
+            lang: '{{ .Site.Params.walineLang }}',
+            locale,
+            emoji: {{ .Site.Params.walineEmoji }},
+            dark: 'html[data-theme="dark"]',
+            commentSorting: '{{ .Site.Params.walineCommentSorting }}',
+            meta: {{ .Site.Params.walineMeta }},
+            requiredMeta: {{ .Site.Params.walineRequiredMeta }},
+            login: '{{ .Site.Params.walineLogin }}',
+            wordLimit: {{ .Site.Params.walineWordLimit }},          
+            pageSize: {{ .Site.Params.walinePageSize }},
+            imageUploader: {{ .Site.Params.walineImageUploader }},
+            highlighter: {{ .Site.Params.walineHighlighter }},
+            search: {{ .Site.Params.walineSearch }},
+            copyright: {{ .Site.Params.walineCopyright }}            
+        });
+    }
+</script>

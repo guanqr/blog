@@ -1,0 +1,45 @@
+// 顶栏布局
+@import "header-layout";
+
+// 字体设定
+@import "font";
+
+// 简码设定
+@import "shortcodes";
+
+// 正文设定
+@import "post";
+
+// 订阅
+@import "subscription";
+
+// 友链
+@import "blogroll";
+
+// 歸檔頁導航
+@import "archives";
+
+// 一行多图
+@import "gallery";
+
+// 文章时效性提醒
+@import "expired-tip";
+
+// 评论
+@import "comments";
+
+// 全局无障碍与性能
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0s !important;
+        transition-duration: 0s !important;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}

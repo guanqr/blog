@@ -1,0 +1,28 @@
+{{- $imgs := .Params.images -}}
+
+<!-- Auto Detect Images -->
+{{- if and (not $imgs) .Site.Params.autoDetectImages -}}
+    {{- $imgs = partial "utils/auto-detect-images.html" . -}}
+{{- end -}}
+
+{{- with $imgs -}}
+    {{- $translated := slice -}}
+    {{- range $index, $img := $imgs -}}
+        <!-- Image Hosting -->
+        {{- if and $.Site.Params.enableImageHost $.Site.Params.headAlso -}}
+            {{- if (eq hugo.Environment "production") -}}
+                {{- if ne (substr . 0 4) "http" -}}
+                    {{- $img = printf `%s/%s` (strings.TrimSuffix "/" $.Site.Params.imageHostURL) (strings.TrimPrefix "/" $img) -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
+        <!-- Make URLs absolute -->
+        {{- $img = $img | absURL -}}
+
+        {{- $translated = union $translated (slice $img) -}}
+    {{- end -}}
+    {{- $imgs = $translated -}}
+{{- end -}}
+
+{{- return $imgs -}}

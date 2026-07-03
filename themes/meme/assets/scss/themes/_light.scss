@@ -1,0 +1,56 @@
+// https://codyhouse.co/ds/globals/colors
+
+@mixin light-theme {
+    --theme-name: "light";
+    @include defineColorHSL(--color-primary, $primaryColorLightH, $primaryColorLightS, $primaryColorLightL);
+    @include defineColorHSL(--color-bg, 0, 0%, 100%);
+    @include defineColorHSL(--color-contrast-lower, 0, 0%, 95%);
+    @include defineColorHSL(--color-contrast-low, 240, 1%, 83%);
+    @include defineColorHSL(--color-contrast-medium, 240, 1%, 48%);
+    @include defineColorHSL(--color-contrast-high, 240, 4%, 20%);
+    @include defineColorHSL(--color-contrast-higher, 240, 8%, 12%);
+    .theme-icon-system {
+        display: none;
+    }
+    .theme-icon-light {
+        display: inline-block;
+    }
+    .theme-icon-dark {
+        display: none;
+    }
+    img {
+        filter: none;
+    }
+
+    @if ($enableHighlight) {
+        /* https://xyproto.github.io/splash/docs/all.html */
+        /* Color values matching manni style */
+
+        --chroma-line-numbers-background: #ffffcc;
+        --chroma-line-numbers-color: #7f7f7f;
+        --chroma-keyword-color: #006699;
+        --chroma-name-color: #9999ff;
+        --chroma-attribute-color: #330099;
+        --chroma-literal-color: #cc3300;
+        --chroma-number-color: #ff6600;
+        --chroma-comment-color: #0099ff;
+        --chroma-deleted-color: #ffcccc;
+        --chroma-output-color: #aaaaaa;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        @include light-theme;
+    }
+}
+
+@if ($defaultTheme == "light") {
+    :root {
+        @include light-theme;
+    }
+} @else {
+    :root[data-theme="light"] {
+        @include light-theme;
+    }
+}

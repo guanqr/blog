@@ -1,0 +1,213 @@
+[ellipsis]
+other = "…"
+
+[colon]
+other = ": "
+
+[minute]
+one = "min"
+other = "mins"
+
+[tocTitle]
+other = "Contenido"
+
+[readMore]
+other = "Continúa leyendo"
+
+[prevPage]
+other = "Nuevas"
+
+[nextPage]
+other = "Viejas"
+
+[copy]
+other = "Copiar"
+
+[copied]
+other = "Copiado!"
+
+[copyrightAuthor]
+other = "Autor"
+
+[copyrightLink]
+other = "Vínculo"
+
+[copyrightLicense]
+other = "Licencia"
+
+[shareOn]
+other = "Compartir en:"
+
+[shareOnTitle]
+other = "Compartir en "
+
+[shareViaTitle]
+other = "Compartir via "
+
+[relatedPosts]
+other = "Publicaciones relacionadas:"
+
+[loadComments]
+other = "Cargar Comentarios?"
+
+[pageNotFound]
+other = "404 - Página no encontrada."
+
+[fofLinkText]
+other = "Llévame al Inicio"
+
+[searchResultsTitle]
+one = "Se encontró un resultado sobre “{{ .Term }}”"
+other = "Se encontraron {{ .Count }} resultados sobre “{{ .Term }}”"
+
+[searchResultsNone]
+other = "No se encontró ningún resultado sobre “{{ .Term }}”"
+
+[backToTop]
+other = "Volver arriba"
+
+[themeSwitcher]
+other = "Cambiar tema"
+
+
+# Socials
+
+[x]
+other = "𝕏"
+
+[facebook]
+other = "Facebook"
+
+[fediverse]
+other = "Fediverse"
+
+[mastodon]
+other = "Mastodon"
+
+[linkedin]
+other = "LinkedIn"
+
+[telegram]
+other = "Telegram"
+
+[weibo]
+other = "Weibo"
+
+[douban]
+other = "Douban"
+
+[qq]
+other = "QQ"
+
+[qzone]
+other = "Qzone"
+
+[pocket]
+other = "Pocket"
+
+[hackernews]
+other = "Hacker News"
+
+[qrcode]
+other = "Código QR"
+
+[email]
+other = "correo electrónico"
+
+
+# Share on Fediverse page
+
+[javascriptRequired]
+other = "¡Esta funcionalidad requiere que JavaScript esté habilitado!"
+
+[fedishareTitleLabel]
+other = "Título de la entrada"
+
+[fedishareDescriptionLabel]
+other = "Descripción (se puede cambiar en el siguiente paso)"
+
+[fedishareUrlLabel]
+other = "Enlace"
+
+[fedishareInstanceLabel]
+other = "Instancia fediversa"
+
+[fedishareRememberInstance]
+other = "Recordar instancia en este dispositivo"
+
+[fedishareSubmitLabel]
+other = "Continuar a la instancia"
+
+
+# Months
+# Used for `i18nMonth`
+
+[january]
+other = "Enero"
+
+[february]
+other = "Febrero"
+
+[march]
+other = "Marzo"
+
+[april]
+other = "Abril"
+
+[may]
+other = "Mayo"
+
+[june]
+other = "Junio"
+
+[july]
+other = "Julio"
+
+[august]
+other = "Agosto"
+
+[september]
+other = "Septiembre"
+
+[october]
+other = "Octubre"
+
+[november]
+other = "Noviembre"
+
+[december]
+other = "Diciembre"
+
+
+# Numbers
+# Used for `i18nYear`
+
+[0]
+other = "0"
+
+[1]
+other = "1"
+
+[2]
+other = "2"
+
+[3]
+other = "3"
+
+[4]
+other = "4"
+
+[5]
+other = "5"
+
+[6]
+other = "6"
+
+[7]
+other = "7"
+
+[8]
+other = "8"
+
+[9]
+other = "9"

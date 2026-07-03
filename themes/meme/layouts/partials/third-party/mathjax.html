@@ -1,0 +1,32 @@
+{{- $src := partial "utils/lib.html" (dict "$" . "type" "mathjax") -}}
+
+<script>
+    if (typeof MathJax === 'undefined') {
+        window.MathJax = {
+            loader: {
+                load: ['[tex]/mhchem']
+            },
+            {{ if .Site.Params.disableMathJaxMenu }}
+                options: {
+                    renderActions: {
+                        addMenu: [0, '', '']
+                    }
+                },
+            {{ end }}
+            tex: {
+                inlineMath: {'[+]': [['$', '$']]},
+                tags: 'ams',
+                packages: {'[+]': ['mhchem']}
+            }
+        };
+        (function() {
+            const script = document.createElement('script');
+            script.src = '{{ $src }}';
+            script.defer = true;
+            document.head.appendChild(script);
+        })();
+    } else {
+        MathJax.texReset();
+        MathJax.typeset();
+    }
+</script>

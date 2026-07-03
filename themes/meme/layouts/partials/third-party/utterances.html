@@ -1,0 +1,41 @@
+{{- $src := partial "utils/lib.html" (dict "$" . "type" "utterances") -}}
+
+<script>
+    function loadComments() {
+        (function() {
+            const utterances = document.getElementById("utterances");
+            if (!utterances) {
+                return;
+            }
+            const script = document.createElement('script');
+            script.src = '{{ $src }}';
+            script.async = true;
+            script.crossOrigin = 'anonymous';
+            script.setAttribute('repo', '{{ .Site.Params.utterancesRepo }}');
+            script.setAttribute('issue-term', '{{ .Site.Params.utterancesIssueTerm }}');
+            {{ template "utterances-theme" . }}
+            {{ with .Site.Params.utterancesLabel }}
+                script.setAttribute('label', '{{ . }}');
+            {{ end }}
+            utterances.appendChild(script);
+        })();
+    }
+</script>
+
+{{- define "utterances-theme" -}}
+    {{- $theme := .Site.Params.utterancesTheme | default "github-light" -}}
+    {{- if and .Site.Params.enableDarkMode (eq .Site.Params.defaultTheme "dark") -}}
+        {{- $theme = .Site.Params.utterancesThemeDark | default "photon-dark" -}}
+    {{- end -}}
+
+    {{- if .Site.Params.enableDarkMode -}}
+        const isDark = getCurrentTheme() === 'dark';
+        if (isDark) {
+            script.setAttribute('theme', '{{ .Site.Params.utterancesThemeDark | default "photon-dark" }}');
+        } else {
+            script.setAttribute('theme', '{{ .Site.Params.utterancesTheme | default "github-light" }}');
+        }
+    {{- else -}}
+        script.setAttribute('theme', '{{ $theme }}');
+    {{- end -}}
+{{- end -}}

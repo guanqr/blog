@@ -1,0 +1,214 @@
+[ellipsis]
+other = "…"
+
+[colon]
+other = ": "
+
+[minute]
+one = "мин"
+other = "мин"
+
+[tocTitle]
+other = "Содержание"
+
+[readMore]
+other = "Читать далее"
+
+[prevPage]
+other = "Предыдущие"
+
+[nextPage]
+other = "Следующие"
+
+[copy]
+other = "Копировать"
+
+[copied]
+other = "Скопировано!"
+
+[copyrightAuthor]
+other = "Автор"
+
+[copyrightLink]
+other = "Ссылка"
+
+[copyrightLicense]
+other = "Лицензия"
+
+[shareOn]
+other = "Поделиться:"
+
+[shareOnTitle]
+other = "Поделиться на "
+
+[shareViaTitle]
+other = "Поделиться через "
+
+[relatedPosts]
+other = "Ещё:"
+
+[loadComments]
+other = "Загрузить комментарии?"
+
+[pageNotFound]
+other = "404 - Страница не найдена"
+
+[fofLinkText]
+other = "Домой"
+
+[searchResultsTitle]
+one = "Найден один результат для “{{ .Term }}”"
+other = "Найдено {{ .Count }} результатов для “{{ .Term }}”"
+
+[searchResultsNone]
+other = "Ничего не найдено для “{{ .Term }}”"
+
+[backToTop]
+other = "Вернуться наверх"
+
+[themeSwitcher]
+other = "Переключить тему"
+
+
+# Socials
+
+[x]
+other = "𝕏"
+
+[facebook]
+other = "Facebook"
+
+[fediverse]
+other = "Fediverse"
+
+[mastodon]
+other = "Mastodon"
+
+[linkedin]
+other = "LinkedIn"
+
+[telegram]
+other = "Telegram"
+
+[weibo]
+other = "Weibo"
+
+[douban]
+other = "Douban"
+
+[qq]
+other = "QQ"
+
+[qzone]
+other = "Qzone"
+
+[pocket]
+other = "Pocket"
+
+[hackernews]
+other = "Hacker News"
+
+[qrcode]
+other = "QR Code"
+
+[email]
+other = "электронную почту"
+
+
+# Share on Fediverse page
+
+[javascriptRequired]
+other = "Эта функция требует включения JavaScript!"
+
+[fedishareTitleLabel]
+other = "Заголовок статьи"
+
+[fedishareDescriptionLabel]
+other = "Описание (можно изменить на следующем шаге)"
+
+[fedishareUrlLabel]
+other = "Ссылка"
+
+[fedishareInstanceLabel]
+other = "Сервер Fediverse"
+
+[fedishareRememberInstance]
+other = "Запомнить сервер на этом устройстве"
+
+[fedishareSubmitLabel]
+other = "Перейти к серверу"
+
+
+# Months
+# Used for `i18nMonth`
+
+[january]
+other = "Январь"
+
+[february]
+other = "Февраль"
+
+[march]
+other = "Март"
+
+[april]
+other = "Апрель"
+
+[may]
+other = "Май"
+
+[june]
+other = "Июнь"
+
+[july]
+other = "Июль"
+
+[august]
+other = "Август"
+
+[september]
+other = "Сентябрь"
+
+[october]
+other = "Октябрь"
+
+[november]
+other = "Ноябрь"
+
+[december]
+other = "Декабрь"
+
+
+# Numbers
+# Used for `i18nYear`
+
+[0]
+other = "0"
+
+[1]
+other = "1"
+
+[2]
+other = "2"
+
+[3]
+other = "3"
+
+[4]
+other = "4"
+
+[5]
+other = "5"
+
+[6]
+other = "6"
+
+[7]
+other = "7"
+
+[8]
+other = "8"
+
+[9]
+other = "9"
+

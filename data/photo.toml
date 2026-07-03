@@ -1,0 +1,329 @@
+[[photo]]
+src = "/images/photos/黄崖关长城.jpg"
+alt = "黃崖關長城"
+focus = "28"
+iso = "160"
+aperture = "10"
+shutter = "1/200"
+time = "2015-08-27"
+place = "天津薊州"
+
+[[photo]]
+src = "/images/photos/茶卡盐湖.jpg"
+alt = "天空之鏡"
+focus = "27"
+iso = "50"
+aperture = "2.2"
+shutter = "1/2900"
+time = "2017-07-25"
+place = "青海茶卡鹽湖"
+
+[[photo]]
+src = "/images/photos/东京铁路.jpg"
+alt = "東京鐵路"
+focus = "62"
+iso = "50"
+aperture = "2.2"
+shutter = "1/280"
+time = "2018-07-16"
+place = "日本东京"
+
+[[photo]]
+src = "/images/photos/鼓浪屿.jpg"
+alt = "鼓浪嶼"
+focus = "55"
+iso = "110"
+aperture = "5.6"
+shutter = "1/250"
+time = "2024-05-02"
+place = "廈門鼓浪嶼"
+
+[[photo]]
+src = "/images/photos/厦门植物园.jpg"
+alt = "林中光影"
+focus = "73"
+iso = "1800"
+aperture = "6"
+shutter = "1/125"
+time = "2024-05-03"
+place = "廈門植物園"
+
+[[photo]]
+src = "/images/photos/宏村月沼.jpg"
+alt = "月沼清晨"
+focus = "30"
+iso = "1800"
+aperture = "4.5"
+shutter = "1/125"
+time = "2024-10-06"
+place = "安徽宏村"
+
+[[photo]]
+src = "/images/photos/黛瓦灯影.jpg"
+alt = "黛瓦燈影"
+focus = "53"
+iso = "3600"
+aperture = "5.6"
+shutter = "1/60"
+time = "2024-10-06"
+place = "安徽宏村"
+
+[[photo]]
+src = "/images/photos/卢村秋景.jpg"
+alt = "盧村秋景"
+focus = "32"
+iso = "200"
+aperture = "5.6"
+shutter = "1/250"
+time = "2024-10-06"
+place = "安徽盧村"
+
+[[photo]]
+src = "/images/photos/满觉陇汤屋.jpg"
+alt = "茶園湯屋"
+focus = "99"
+iso = "160"
+aperture = "2.4"
+shutter = "1/100"
+time = "2024-10-07"
+place = "杭州滿覺隴"
+
+[[photo]]
+src = "/images/photos/深秋绿叶.jpg"
+alt = "深秋綠葉"
+focus = "200"
+iso = "3200"
+aperture = "6.3"
+shutter = "1/160"
+time = "2024-11-30"
+place = "杭州虎跑公園"
+
+[[photo]]
+src = "/images/photos/德寿红梅.jpg"
+alt = "德壽紅梅"
+focus = "125"
+iso = "1600"
+aperture = "11"
+shutter = "1/800"
+time = "2025-03-01"
+place = "杭州德壽宮"
+
+[[photo]]
+src = "/images/photos/上海空山基展.jpg"
+alt = "機械姬"
+focus = "24"
+iso = "250"
+aperture = "4"
+shutter = "1/250"
+time = "2025-03-15"
+place = "上海空山基展"
+
+[[photo]]
+src = "/images/photos/白纱下的凝视.jpg"
+alt = "白紗下的凝視"
+focus = "92"
+iso = "560"
+aperture = "6.3"
+shutter = "1/125"
+time = "2025-10-01"
+place = "上海玩物藏志集"
+
+[[photo]]
+src = "/images/photos/老场坊.jpg"
+alt = "混凝土的迴響"
+focus = "40"
+iso = "2500"
+aperture = "5"
+shutter = "1/125"
+time = "2025-10-01"
+place = "上海 1933 老場坊"
+
+[[photo]]
+src = "/images/photos/玉龙雪山.jpg"
+alt = "玉龍雪山"
+focus = "24"
+iso = "100"
+aperture = "5.6"
+shutter = "1/250"
+time = "2025-10-05"
+place = "雲南麗江"
+
+[[photo]]
+src = "/images/photos/云杉坪.jpg"
+alt = "雲杉坪"
+focus = "24"
+iso = "200"
+aperture = "5.6"
+shutter = "1/250"
+time = "2025-10-05"
+place = "雲南麗江"
+
+[[photo]]
+src = "/images/photos/木窗瓷韵.jpg"
+alt = "木窗瓷韻"
+focus = "98"
+iso = "3600"
+aperture = "6.3"
+shutter = "1/60"
+time = "2025-10-06"
+place = "雲南麗江"
+
+[[photo]]
+src = "/images/photos/镜中世界.jpg"
+alt = "鏡中世界"
+focus = "83"
+iso = "160"
+aperture = "6.3"
+shutter = "1/250"
+time = "2025-10-06"
+place = "雲南麗江"
+
+[[photo]]
+src = "/images/photos/荒野之国.jpg"
+alt = "荒野之國"
+focus = "80"
+iso = "100"
+aperture = "6.3"
+shutter = "1/320"
+time = "2025-10-06"
+place = "雲南麗江"
+
+[[photo]]
+src = "/images/photos/金檐青霄.jpg"
+alt = "金簷青霄"
+focus = "110"
+iso = "160"
+aperture = "6.3"
+shutter = "1/250"
+time = "2025-10-07"
+place = "雲南香格里拉"
+
+[[photo]]
+src = "/images/photos/独克宗古城.jpg"
+alt = "獨克宗古城"
+focus = "47"
+iso = "320"
+aperture = "5.3"
+shutter = "1/250"
+time = "2025-10-07"
+place = "雲南香格里拉"
+
+[[photo]]
+src = "/images/photos/松赞林寺.jpg"
+alt = "松贊林寺"
+focus = "71"
+iso = "125"
+aperture = "6"
+shutter = "1/250"
+time = "2025-10-07"
+place = "雲南香格里拉"
+
+[[photo]]
+src = "/images/photos/望仙谷舞龙.jpg"
+alt = "望仙谷舞龍"
+focus = "120"
+iso = "1600"
+aperture = "6.3"
+shutter = "1/100"
+time = "2026-02-22"
+place = "江西上饒"
+
+[[photo]]
+src = "/images/photos/滕王阁.jpg"
+alt = "滕王閣"
+focus = "93"
+iso = "400"
+aperture = "6.3"
+shutter = "1/200"
+time = "2026-02-23"
+place = "江西南昌"
+
+[[photo]]
+src = "/images/photos/绳金塔.jpg"
+alt = "繩金塔"
+focus = "99"
+iso = "250"
+aperture = "6.3"
+shutter = "1/125"
+time = "2026-02-23"
+place = "江西南昌"
+
+[[photo]]
+src = "/images/photos/赣江两岸.jpg"
+alt = "贛江兩岸"
+focus = "101"
+iso = "125"
+aperture = "6.3"
+shutter = "1/5"
+time = "2026-02-23"
+place = "江西南昌"
+
+[[photo]]
+src = "/images/photos/江岭日出.jpg"
+alt = "江嶺日出"
+focus = "27"
+iso = "100"
+aperture = "16"
+shutter = "6"
+time = "2026-03-15"
+place = "江西婺源"
+
+[[photo]]
+src = "/images/photos/花竹日出.jpg"
+alt = "花竹日出"
+focus = "41"
+iso = "100"
+aperture = "16"
+shutter = "1/400"
+time = "2026-05-01"
+place = "福建霞浦"
+
+[[photo]]
+src = "/images/photos/杨家溪古榕.jpg"
+alt = "楊家溪古榕"
+focus = "34"
+iso = "640"
+aperture = "7.1"
+shutter = "1/125"
+time = "2026-05-01"
+place = "福建霞浦"
+
+[[photo]]
+src = "/images/photos/半山铁骨.jpg"
+alt = "半山鐵骨"
+focus = "30"
+iso = "100"
+aperture = "6.3"
+shutter = "1/250"
+time = "2026-05-16"
+place = "杭州杭钢公园"
+
+[[photo]]
+src = "/images/photos/黄线迷宫.jpg"
+alt = "黃線迷宮"
+focus = "70"
+iso = "100"
+aperture = "8"
+shutter = "1/125"
+time = "2026-05-16"
+place = "杭州杭钢公园"
+
+[[photo]]
+src = "/images/photos/金光穿洞.jpg"
+alt = "金光穿洞"
+focus = "70"
+iso = "100"
+aperture = "10"
+shutter = "1/6"
+time = "2026-05-17"
+place = "杭州曲院風荷"
+
+[[photo]]
+src = "/images/photos/钢铁森林.jpg"
+alt = "鋼鐵森林"
+focus = "200"
+iso = "100"
+aperture = "16"
+shutter = "3"
+time = "2026-05-30"
+place = "寧波鎮海煉化"

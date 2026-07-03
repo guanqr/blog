@@ -1,0 +1,24 @@
+{{ if .Site.Params.enableFooterSubscription }}
+    <div class="subscription-box">
+        {{ replace (index $.Site.Data.SVG $.Site.Params.subscriptionIcon) "icon" "icon subscription-icon" | safeHTML }}
+        <div class="subscription-hover">
+            <img class="subscription-qrcode" src="{{ .Site.Params.subscriptionQrCode }}" alt="Wechat" />
+            <div class="subscription-description">{{ i18n "subscription" }}</div>
+        </div>
+    </div>
+{{ end }}
+
+
+{{ if .Site.Params.enableJinrishici }}
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <text class="poem_sentence">{{ i18n "ChinesePoem" }}</text>
+    <text class="poem_info"></text>
+    <script type="text/javascript">
+        jinrishici.load(function(result) {
+            var sentence = document.querySelector(".poem_sentence")
+            var info = document.querySelector(".poem_info")
+            sentence.innerHTML = result.data.content
+            info.innerHTML = '——' + result.data.origin.author
+        });
+    </script>
+{{ end }}

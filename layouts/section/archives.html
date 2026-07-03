@@ -1,0 +1,79 @@
+{{ define "main" }}
+    {{ $pages := (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
+    {{ $yearGroups := $pages.GroupByDate "2006" }}
+
+    {{ $minYear := 0 }}
+    {{ $maxYear := 0 }}
+    {{ range $yearGroups }}
+        {{ $y := int .Key }}
+        {{ if or (eq $minYear 0) (lt $y $minYear) }}
+            {{ $minYear = $y }}
+        {{ end }}
+        {{ if gt $y $maxYear }}
+            {{ $maxYear = $y }}
+        {{ end }}
+    {{ end }}
+
+    {{ $currentYear := $maxYear }}
+
+    <main class="main list" id="main">
+        <div class="main-inner">
+            <div class="content list-group">
+                {{ if .Site.Params.displayListTitle }}
+                    <h1 class="list-title">{{ .Title }}</h1>
+                {{ end }}
+
+                <div id="archives-container" data-current="{{ $currentYear }}">
+                    {{ range $yearGroups }}
+                        {{ $y := int .Key }}
+                        <div class="archives-year" data-year="{{ $y }}"{{ if ne $y $currentYear }} style="display:none"{{ end }}>
+                            {{ $key := .Key }}
+                            {{ $.Scratch.Delete "year" }}
+                            {{ if $.Site.Params.i18nYear }}
+                                {{ $.Scratch.Delete "num" }}
+                                {{ range (slice 1 2 3 4) }}
+                                    {{ $.Scratch.Add "num" (slice (substr $key (sub . 1) 1)) }}
+                                {{ end }}
+                                {{ $num := $.Scratch.Get "num" }}
+                                {{ $.Scratch.Delete "i18nNum" }}
+                                {{ range $num }}
+                                    {{ $.Scratch.Add "i18nNum" (i18n .) }}
+                                {{ end }}
+                                {{ $i18nNum := $.Scratch.Get "i18nNum" }}
+                                {{ $.Scratch.Set "year" $i18nNum }}
+                            {{ else }}
+                                {{ $.Scratch.Set "year" $key }}
+                            {{ end }}
+                            {{ $year := $.Scratch.Get "year" }}
+                            {{ $.Scratch.Delete "zodiacName" }}
+                            {{ if $.Site.Params.chineseZodiac }}
+                                {{ $zodiacName := (index $.Site.Data.ChineseZodiac (string (mod $y 12))) }}
+                                {{ $.Scratch.Set "zodiacName" $zodiacName }}
+                            {{ end }}
+                            {{ $zodiacName := $.Scratch.Get "zodiacName" }}
+                            <h2 class="list-year">{{ $year }}{{ if $.Site.Params.chineseZodiac }}{{ partial "utils/icon.html" (dict "$" $ "name" $zodiacName "class" "chinese-zodiac") }}{{ end }}</h2>
+                            {{ partial "utils/list-item.html" (dict "$" .) }}
+                        </div>
+                    {{ end }}
+                </div>
+
+                {{ if gt (len $yearGroups) 1 }}
+                <nav class="archives-nav">
+                    <div class="archives-nav-side" id="archives-newer">
+                        {{ (index $.Site.Data.SVG "chevron-left") | safeHTML }}
+                        <span class="archives-nav-year" id="archives-year-newer">{{ $maxYear }}</span>
+                    </div>
+                    <div class="archives-nav-side" id="archives-older">
+                        <span class="archives-nav-year" id="archives-year-older">{{ $minYear }}</span>
+                        {{ (index $.Site.Data.SVG "chevron-right") | safeHTML }}
+                    </div>
+                </nav>
+                {{ end }}
+            </div>
+        </div>
+    </main>
+
+    {{ if gt (len $yearGroups) 1 }}
+    <script src="/js/archives.js"></script>
+    {{ end }}
+{{ end }}

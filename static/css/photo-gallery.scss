@@ -1,0 +1,114 @@
+// 相册页面
+.photo-gallery {
+    width: 100%;
+    margin: 0 auto; 
+    padding: 8px 0;
+    position: relative;
+    min-height: 500px;
+    box-sizing: border-box;
+}
+  
+.photo-item {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: calc(50% - 2px);
+    margin: 0;
+    overflow: hidden;
+    border-radius: 1px;
+    display: none;
+    transition: top 0.35s ease, left 0.35s ease !important;
+    box-sizing: border-box;
+  
+    img {
+        position: relative;
+        width: calc(100% - 20px);
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        margin: 10px auto 0;
+        border: none;
+        box-shadow: 0 0px 14px rgba(0, 0, 0, 9);
+    }
+  
+    &:hover .photo-caption {
+        opacity: 1;
+    }
+}
+
+// 右列样式
+.photo-item.col-right {
+    left: calc(50% + 2px) !important;
+}
+
+// 手机端强制单列
+@media (max-width: 480px) {
+    .photo-item {
+        width: 100% !important;
+        left: 0 !important;
+    }
+    .photo-item.col-right {
+        left: 0 !important;
+    }
+}
+
+.photo-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px) brightness(0.9);
+    transform: scale(1.2);
+}
+
+:root[data-theme="dark"] .photo-bg {
+    filter: blur(4px) brightness(0.675);
+}
+
+.photo-caption {
+    position: relative;
+    margin: 8px 10px 10px;
+    color: hsl(60, 6%, 90%);
+    opacity: 1;
+    pointer-events: none;
+    font-size: 10px;
+    font-family: 'glyph-correction', 'LXGW WenKai TC', serif;
+    line-height: 1.5;
+    text-align: center;
+
+    .title {
+        font-size: 14px;
+        display: block;
+    }
+
+    @media (max-width: 738px) {
+        opacity: 1 !important;
+    }
+}
+
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    &.loaded {
+        opacity: 1;
+    }
+}
+
+.load-more-container {
+    margin: 3em 0;
+    text-align: center;
+}
+
+.load-more-btn {
+    cursor: pointer;
+    display: inline-block;
+    background-color: var(--color-contrast-lower);
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    transition: background-color .5s;
+
+    &:hover{
+        background-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.3);
+    }
+}

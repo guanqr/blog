@@ -1,0 +1,12 @@
+{{- $src := partial "utils/lib.html" (dict "$" . "type" "medium-zoom") -}}
+
+<script src="{{ $src }}"></script>
+
+<script>
+    let imgNodes = document.querySelectorAll('div.post-body img');
+    imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
+
+    mediumZoom(imgNodes, {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>

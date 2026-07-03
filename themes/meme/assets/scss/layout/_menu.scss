@@ -1,0 +1,52 @@
+.nav {
+    z-index: 3;
+    position: relative;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.menu-item {
+    display: inline-block;
+    a {
+        color: var(--color-contrast-medium);
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+}
+
+.active {
+    a {
+        color: var(--color-primary);
+    }
+}
+
+@if ($headerLayoutFlex) {
+    .nav {
+        text-align: right;
+        font-size: 80%;
+    }
+    .menu-item {
+        margin-left: 0.5em;
+        .icon {
+            margin: 0 0.3em 0.2em 0;
+        }
+    }
+} @else {
+    .menu {
+        text-align: center;
+        background: var(--color-contrast-lower);
+    }
+    .menu-item {
+        margin: 0 1em;
+    }
+    .menu-item-name {
+        display: flex;
+    }
+}

@@ -1,0 +1,49 @@
+<!-- http://ogp.me/ -->
+<!-- https://developers.facebook.com/docs/sharing/webmasters -->
+<!-- https://developers.google.com/web/fundamentals/discovery/social-discovery/ -->
+<!-- https://stackoverflow.com/a/29831974 -->
+<!-- https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/opengraph.html -->
+{{- $ := index . "$" -}}
+{{- $description := .description -}}
+<!-- Date -->
+{{- $dates := partial "utils/date.html" $ -}}
+<!-- Author -->
+{{- $author := partial "utils/author.html" $ -}}
+<!-- Images -->
+{{- $images := partial "utils/images.html" $ -}}
+
+<meta property="og:title" content="{{ (partial "utils/title.html" (dict "$" $ "title" $.Title)).rawTitle }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:url" content="{{ $.Permalink }}" />
+<meta property="og:site_name" content="{{ $.Site.Title }}" />
+<meta property="og:locale" content="{{ $.Site.Language.Lang }}" />
+{{- if and hugo.IsMultilingual $.IsTranslated -}}
+    {{- range $.Site.Languages -}}
+        {{ if ne .Lang $.Site.Language.Lang }}
+            <meta property="og:locale:alternate" content="{{ . }}" />
+        {{ end }}
+    {{- end -}}
+{{- end -}}
+
+{{- with $images -}}
+    <meta property="og:image" content="{{ index . 0 }}" />
+{{ else -}}
+    {{ with $.Site.Params.siteLogo -}}
+        <meta property="og:image" content="{{ . | absURL }}" />
+    {{ end -}}
+{{- end -}}
+
+{{- if and $.IsPage (in $.Site.Params.mainSections $.Section) -}}
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="{{ $dates.pubDate }}" />
+    <meta property="article:modified_time" content="{{ $dates.modDate }}" />
+    {{ if not $.ExpiryDate.IsZero -}}
+        <meta property="article:expiration_time" content="{{ $.ExpiryDate.Format "2006-01-02T15:04:05-07:00" }}" />
+    {{- end }}
+    <meta property="article:section" content="{{ $.Section }}" />
+{{ else -}}
+    <meta property="og:type" content="website" />
+{{- end }}
+{{- with $author.fediverse -}}
+    <meta name="fediverse:creator" content="{{ . }}" />
+{{- end }}

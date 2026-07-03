@@ -1,0 +1,261 @@
+.single .main-inner {
+    width: $postWidth;
+}
+
+.post-title {
+    text-align: center;
+}
+
+.post-subtitle {
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: 700;
+    margin-top: -0.618em;
+}
+
+.post-description {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 90%;
+}
+
+.post-body {
+    margin-top: 5em !important;
+    a {
+        text-decoration: underline;
+        text-decoration-color: var(--color-contrast-low);
+        &:hover {
+            text-decoration-color: alpha(var(--color-primary), 0.5);
+        }
+    }
+}
+
+.post {
+    p {
+        margin: 1em 0;
+        line-height: $lineHeight;
+    }
+    img {
+        display: block;
+        margin: 2em auto;
+        max-width: 100%;
+        border: 1px solid var(--color-contrast-lower);
+        clear: both;
+    }
+    video {
+        display: block;
+        max-width: 100%;
+        margin: 2em auto;
+        clear: both;
+    }
+    sup {
+        unicode-bidi: isolate;
+        font-size: 70%;
+        vertical-align: super;
+        a {
+            text-decoration: none;
+        }
+    }
+    ol, ul {
+        margin: 0;
+        padding-left: 2em;
+        line-height: $lineHeight;
+    }
+    hr {
+        border: none;
+        margin: 2.427em 0 1.5em;
+        text-align: center;
+        &::after {
+            content: "···";
+            letter-spacing: 2em;
+            padding-left: 2em;
+        }
+    }
+}
+
+blockquote {
+    margin: 2em 0;
+    padding-left: 1em;
+    color: var(--color-contrast-medium);
+    border-left: 3px solid var(--color-contrast-low);
+    a {
+        color: var(--color-contrast-medium);
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+}
+
+.drop-cap {
+    float: left;
+    font-size: $fontSize * 3;
+    margin-right: $lineHeight * $fontSize - $fontSize;
+    margin-top: $fontSize / $lineHeight;
+    line-height: $lineHeight * $fontSize;
+}
+
+.caption {
+    display: block;
+    text-align: center;
+    margin: -1em 0 0;
+    font-size: 90%;
+    color: var(--color-contrast-medium);
+}
+
+.contents {
+    margin-top: 5em;
+    ol, ul {
+        list-style: none;
+    }
+}
+ol, ul {
+    &.toc {
+        padding: 0;
+        overflow: auto hidden;
+        white-space: nowrap;
+    }
+}
+
+.footnotes {
+    font-size: 90%;
+    margin-top: 5rem;
+    hr {
+        margin: 0;
+        height: 1px;
+        border: none;
+        background-color: var(--color-contrast-medium);
+        &::after {
+            content: none;
+        }
+    }
+    ol {
+        margin: 1.618rem 0 0 !important;
+        padding: 0 1rem 0 2rem !important;
+    }
+}
+
+@if ($footnoteReturnLinkIcon) {
+    .footnote-icon {
+        fill: alpha(var(--color-contrast-high), 0.5);
+        transition: fill $duration;
+        margin-bottom: 0.3em;
+        &:hover {
+            fill: var(--color-primary);
+        }
+    }
+}
+
+.anchor-link {
+    position: absolute;
+    transform: translate(-150%);
+}
+.anchor-icon {
+    width: 0.75em;
+    height: 0.75em;
+    vertical-align: baseline;
+}
+
+@if ($enableAnchorAutoHide) {
+    :root {
+        --anchor-opacity: 0;
+    }
+    .anchor-link {
+        opacity: var(--anchor-opacity);
+        transition: all ($duration / 2);
+    }
+    .post {
+        h1, h2, h3, h4, h5, h6, .anchor-link {
+            &:hover {
+                --anchor-opacity: 1;
+            }
+        }
+    }
+}
+
+.table-container {
+    margin: 2em 0;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-color: var(--color-contrast-lower);
+}
+th {
+    font-weight: 700;
+}
+th, td {
+    font-size: 0.9em;
+    padding: 0.4em;
+    border: 1px solid var(--color-contrast-lower);
+}
+table > tbody > tr:nth-of-type(odd) {
+    background-color: alpha(var(--color-contrast-lower), 0.5);
+}
+table > tbody > tr:hover {
+    background-color: var(--color-contrast-lower);
+}
+
+dt {
+    font-weight: 700;
+}
+dd {
+    margin-left: 2em;
+}
+
+code {
+    padding: ($fontSize / 8) ($fontSize / 4);
+    background-color: alpha(var(--color-contrast-lower), 0.5);
+    font-size: 80%;
+}
+pre {
+    overflow: auto;
+    overflow-wrap: normal;
+    word-wrap: normal;
+    font-size: 0.8rem;
+    margin: 2rem 0;
+    padding: 1em;
+    line-height: 1.618;
+    background-color: alpha(var(--color-contrast-lower), 0.5);
+    code {
+        background-color: unset;
+        font-size: 0.8rem;
+        padding: 0;
+    }
+}
+
+@if ($enableOverflowY) {
+    pre {
+        max-height: $maxHeight;
+    }
+}
+
+@if ($enableCopy) {
+    .copy-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 0;
+        font-size: inherit;
+        color: var(--color-bg);
+        background-color: alpha(var(--color-contrast-medium), 0.5);
+        transition: all $duration;
+        cursor: pointer;
+        &:hover {
+            background-color: alpha(var(--color-primary), 0.5);
+        }
+    }
+
+    @if ($enableCopyAutoHide) {
+        .copy-button {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+}
+
+.katex-display, mjx-container[jax="CHTML"][display="true"] {
+    overflow: auto hidden;
+    text-indent: 0;
+}

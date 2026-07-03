@@ -1,0 +1,235 @@
+// quote
+
+blockquote.quote {
+    position: relative;
+    margin: 2em auto;
+    padding-left: 2.5em;
+    border: none;
+    p {
+        font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+    }
+    &::before {
+        position: absolute;
+        left: 0;
+        content: '“';
+        color: var(--color-contrast-low);
+        font-family: 'JetBrains Mono', 'Amstelvar', 'Noto Serif SC', serif;
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1;
+    }
+    &.en {
+        p {
+            font-family: 'Amstelvar', serif;
+            font-style: italic;
+            line-height: 1.618;
+            text-align: left;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+        }
+    }
+}
+
+// quote-center
+
+blockquote.quote-center {
+    position: relative;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--color-contrast-lower);
+    border-bottom: 1px solid var(--color-contrast-lower);
+    p {
+        font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+        text-align: center !important;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+    &::before {
+        position: absolute;
+        left: 0;
+        content: '“';
+        color: var(--color-contrast-low);
+        font-family: 'Amstelvar', 'Noto Serif SC', serif;
+        font-size: 3em;
+        font-weight: bold;
+        margin-top: -0.42em;
+    }
+    &::after {
+        position: absolute;
+        right: 0;
+        content: '”';
+        color: var(--color-contrast-low);
+        font-family: 'Amstelvar', 'Noto Serif SC', serif;
+        font-size: 3em;
+        font-weight: bold;
+        margin-top: -0.7em;
+    }
+}
+
+// notice
+
+$simple-notice-variants: (
+    'warning': hsl(0, 100%, 35%),
+    'info':    hsl(40, 80%, 45%),
+    'note':    hsl(210, 100%, 25%),
+    'tip':     hsl(150, 100%, 25%),
+);
+$simple-notice-dark-variants: (
+    'warning': hsl(0, 65%, 65%),
+    'info':    hsl(30, 80%, 70%),
+    'note':    hsl(200, 65%, 65%),
+    'tip':     hsl(140, 65%, 65%),
+);
+$notice-variants: (
+    'warning': (color: hsl(0, 65%, 65%), bg: hsla(0, 65%, 65%, 0.15)),
+    'info':    (color: hsl(30, 80%, 70%), bg: hsla(30, 80%, 70%, 0.15)),
+    'note':    (color: hsl(200, 65%, 65%), bg: hsla(200, 65%, 65%, 0.15)),
+    'tip':     (color: hsl(140, 65%, 65%), bg: hsla(140, 65%, 65%, 0.15)),
+);
+$notice-dark-variants: (
+    'warning': (color: hsl(0, 25%, 35%), bg: hsla(0, 25%, 35%, 0.15)),
+    'info':    (color: hsl(30, 25%, 35%), bg: hsla(30, 25%, 35%, 0.15)),
+    'note':    (color: hsl(200, 25%, 35%), bg: hsla(200, 25%, 35%, 0.15)),
+    'tip':     (color: hsl(140, 25%, 35%), bg: hsla(140, 25%, 35%, 0.15)),
+);
+
+.simple-notice {
+    font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+    position: relative;
+    padding: 1em 0 0em 2em;
+    margin: 1em 0;
+    p {
+        margin: 0;
+    }
+    .simple-notice-title {
+        position: absolute;
+        left: 0.8em;
+        .simple-notice-icon {
+            width: 1em;
+            height: 1em;
+            margin-left: -0.8em;
+        }
+    }
+    @each $name, $color in $simple-notice-variants {
+        &.simple-notice-#{$name} {
+            border-top: 2px solid $color;
+            color: $color;
+            .simple-notice-title { color: $color; }
+            a {
+                color: $color;
+                text-decoration-color: $color;
+            }
+        }
+    }
+}
+
+[data-theme="dark"] .simple-notice {
+    @each $name, $color in $simple-notice-dark-variants {
+        &.simple-notice-#{$name} {
+            border-top: 2px solid $color;
+            color: $color;
+            .simple-notice-title { color: $color; }
+            a {
+                color: $color;
+                text-decoration-color: $color;
+            }
+        }
+    }
+}
+
+.notice {
+    font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+    position: relative;
+    padding: 1em 1em 1em 2.5em;
+    margin: 1em 0;
+    p {
+        margin: 0;
+    }
+    .notice-title {
+        position: absolute;
+        left: 0.8em;
+        .notice-icon {
+            width: 1.2em;
+            height: 1.2em;
+        }
+    }
+    @each $name, $c in $notice-variants {
+        &.notice-#{$name} {
+            background: map-get($c, bg);
+            border-left: 5px solid map-get($c, color);
+            .notice-title { color: map-get($c, color); }
+        }
+    }
+}
+
+[data-theme="dark"] .notice {
+    @each $name, $c in $notice-dark-variants {
+        &.notice-#{$name} {
+            background: map-get($c, bg);
+            border-left: 5px solid map-get($c, color);
+            .notice-title { color: map-get($c, color); }
+        }
+    }
+}
+
+// GitHub
+
+.github {
+    border: 1px solid var(--color-contrast-low);
+    border-radius: 3px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    padding: 1em;
+    .github-icon {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.5em;
+        margin-bottom: 0.2em;
+        fill: var(--color-contrast-high);
+    }
+    .name {
+        font-weight: bold;
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+    .description {
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        color: var(--color-contrast-high);
+        text-align: justify;
+        font-size: 90%;
+    }
+    .language-color {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        width: 0.75em;
+        height: 0.75em;
+        border-radius: 50%;
+    }
+    .language-name {
+        color: var(--color-contrast-high);
+        font-size: 90%;
+        margin-left: 0.5em;
+    }
+}
+
+// carousel 轮播图
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    margin: 2em auto;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.5);
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        margin: 0 !important;
+    }
+}

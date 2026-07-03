@@ -1,0 +1,113 @@
+// 自定义字体样式
+
+// 可变字体设置
+:root {
+    --text-wdth: 100;
+    --text-opsz: 40;
+    --text-XOPQ: 145;
+    --text-YTLC: 480;
+    --text-YTUC: 710;
+    --text-YTAS: 726;
+    --text-YTFI: 720;
+}
+
+body {
+    font-variation-settings:
+        'wdth' var(--text-wdth),
+        'opsz' var(--text-opsz),
+        'XOPQ' var(--text-XOPQ),
+        'YTLC' var(--text-YTLC),
+        'YTUC' var(--text-YTUC),
+        'YTAS' var(--text-YTAS),
+        'YTFI' var(--text-YTFI);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+// 字体家族变量
+$fontFamilyGlyph: 'glyph-correction', 'LXGW WenKai TC', serif;
+
+// 标题可变字体 mixin
+@mixin title-variation-settings {
+    font-variation-settings:
+        'wght' 550,
+        'opsz' 30,
+        'YOPQ' 100,
+        'YTLC' 570,
+        'YTUC' var(--text-YTUC);
+}
+
+.post-title {
+    @include title-variation-settings;
+}
+
+.list-title {
+    @include title-variation-settings;
+}
+
+.list-item {
+    font-variation-settings:
+        'wght' 260,
+        'wdth' 103,
+        'opsz' 20,
+        'YOPQ' 90,
+        'YTLC' 570,
+        'YTUC' var(--text-YTUC);
+}
+
+.list-year {
+    font-variation-settings:
+        'wdth' 100,
+        'opsz' 20,
+        'YOPQ' 100,
+        'YTUC' var(--text-YTUC);
+}
+
+
+// 着重号样式
+
+.emphasis-point {
+    font-family: $fontFamilyBody;
+}
+
+.safari-only {
+    .emphasis-point {
+        text-decoration-line: underline;
+        text-decoration-style: dashed;
+        text-underline-offset: 0.25em;
+    }
+}
+
+.brand {
+    font-family: 'Noto Serif TC', 'Noto Serif SC', 'I.MingCP', serif;
+    font-weight: bold;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.list-item-time {
+    font-feature-settings: 'tnum';
+}
+
+.post-meta {
+    font-family: $fontFamilyGlyph;
+}
+
+.post-body {
+    .caption {
+        font-family: $fontFamilyGlyph;
+    }
+}
+
+.post-tags {
+    font-family: $fontFamilyGlyph;
+}
+
+strong {
+    font-family: 'glyph-correction', 'Amstelvar', 'Noto Serif TC', 'Noto Serif SC', 'I.MingCP', serif;
+}
+
+.archives-nav-year {
+    font-family: 'JetBrains Mono', 'Amstelvar', monospace;
+}

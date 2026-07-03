@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'glyph-correction';
+    src: url('#{$baseRelURL}/fonts/glyph-correction.woff2') format('woff2');
+    font-display: swap;
+    font-style: inherit;
+    font-weight: inherit;
+    // Middle dot, em dash, bullet, and ellipsis
+    unicode-range: U+00B7, U+2014, U+2022, U+2026;
+}

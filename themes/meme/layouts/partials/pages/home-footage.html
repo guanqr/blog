@@ -1,0 +1,37 @@
+<main class="home">
+    {{ with or .Site.Params.homeVideoWebm .Site.Params.homeVideoMp4 }}
+        <video poster="{{ $.Site.Params.homePoster }}" playsinline autoplay muted loop>
+            {{ with $.Site.Params.homeVideoWebm }}
+                <source src="{{ . }}" type="video/webm" />
+            {{ end }}
+            {{ with $.Site.Params.homeVideoMp4 }}
+                <source src="{{ . }}" type="video/mp4" />
+            {{ end }}
+        </video>
+    {{ end }}
+    <div class="main-inner">
+        <div class="content">
+            <a href="{{ .Site.Params.homeLogoLink }}">
+                <img src="{{ .Site.Params.homeLogo }}" class="avatar" />
+            </a>
+            <h1>{{ .Site.Params.homeTitle }}</h1>
+            <div class="motto">{{ .Site.Params.homeMotto }}</div>
+            <hr>
+            <div class="description">{{ .Site.Params.homeDescription }}</div>
+            <div class="keywords">{{ .Site.Params.homeKeywords }}</div>
+        </div>
+        {{ with .Site.Menus.home }}
+            <div class="links">
+                {{ $length := sub (len .) 1 }}
+                {{ range $index, $value := . }}
+                    {{- $linkType := (string .Pre) -}}
+                    {{- $iconName := (string .Post) -}}
+                    <a href="{{ .URL }}"{{ if eq $linkType "external" }} target="_blank" rel="external noopener"{{ end }}>{{ partial "utils/icon.html" (dict "$" $ "name" $iconName "class" .Identifier) }}{{ .Name }}</a>
+                    {{- if lt $index $length -}}
+                        {{- $.Site.Params.homeLinksDelimiter -}}
+                    {{- end -}}
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+</main>

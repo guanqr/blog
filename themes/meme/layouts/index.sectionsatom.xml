@@ -1,0 +1,101 @@
+{{ `<?xml version="1.0" encoding="utf-8"?>` | safeHTML }}
+<!-- Reference: https://tools.ietf.org/html/rfc4287 -->
+<!-- Reference: https://github.com/kaushalmodi/hugo-atom-feed/blob/master/layouts/_default/list.atom.xml -->
+<!-- Reference: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml -->
+{{- $pages := where .Site.RegularPages "Section" "in" .Site.Params.mainSections -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+    {{- $pages = $pages | first $limit -}}
+{{- end -}}
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ .Site.LanguageCode }}">
+    <title type="text">{{ .Site.Title }}</title>
+    <subtitle type="html">{{ .Site.Params.siteDescription }}</subtitle>
+    <updated>{{ now.Format "2006-01-02T15:04:05-07:00" }}</updated>
+    <id>{{ .Permalink }}</id>
+    <link rel="alternate" type="text/html" href="{{ .Permalink }}" />
+    {{ with .OutputFormats.Get "SectionsAtom" -}}
+        <link rel="self" type="{{ .MediaType }}" href="{{ .Permalink }}" />
+    {{ end -}}
+    {{ with .Site.Params.author.name -}}
+        <author>
+            <name>{{ . }}</name>
+            <uri>{{ "" | absLangURL }}</uri>
+            {{ with $.Site.Params.author.email }}
+                <email>{{ . }}</email>
+            {{ end -}}
+        </author>
+    {{- end }}
+    {{ with .Site.Copyright -}}
+        <rights>{{ . | plainify | htmlUnescape }}</rights>
+    {{- end }}
+    <generator uri="https://gohugo.io/" version="{{ hugo.Version }}">Hugo</generator>
+    {{- range $pages }}
+        {{ $page := . }}
+        {{- $author := partial "utils/author.html" $page -}}
+        <entry>
+            <title type="text">{{ (partial "utils/title.html" (dict "$" . "title" .Title)).rawTitle }}</title>
+            <link rel="alternate" type="text/html" href="{{ .Permalink }}" />
+            <id>{{ .Permalink }}</id>
+            <updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}</updated>
+            <published>{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }}</published>
+            {{ with $author -}}
+                <author>
+                    {{ with .name -}}
+                    <name>{{ . }}</name>
+                    {{ end -}}
+                    {{ with .website -}}
+                    <uri>{{ . }}</uri>
+                    {{ end -}}
+                    {{ with .email -}}
+                    <email>{{ . }}</email>
+                    {{ end -}}
+                </author>
+            {{- end }}
+            {{ with $author.copyright -}}
+                <rights>{{ . | plainify | htmlUnescape }}</rights>
+            {{- end }}
+            {{- $summary := .Description | default (partial "utils/summary.html" $page) -}}
+            {{- $content := (partial "utils/content.html" $page) -}}
+            {{- $feedFooterRaw := $.Site.Params.feedFooter | resources.FromString (printf "feed-footer-%s.md" (.Permalink | urlize)) | resources.ExecuteAsTemplate (printf "feed-footer-rendered-%s.md" (.Permalink | urlize)) . -}}
+            {{- $feedFooter := partial "utils/markdownify.html" (dict "$" . "raw" $feedFooterRaw.Content "isContent" false) -}}
+            <summary type="html">
+                {{ partial "utils/make-links-absolute.html" (dict "$" . "content" $summary) | html }}
+                {{ partial "utils/make-links-absolute.html" (dict "$" . "content" $feedFooter) | html }}
+            </summary>
+            {{ if $.Site.Params.includeContent }}
+                <content type="html">
+                    {{ partial "utils/make-links-absolute.html" (dict "$" . "content" $content) | html }}
+                    {{ partial "utils/make-links-absolute.html" (dict "$" . "content" $feedFooter) | html }}
+                </content>
+            {{ end }}
+            <!-- Sections -->
+            {{ if eq $.Site.Params.categoryBy "sections" }}
+                {{ $.Scratch.Delete "sectionDir" }}
+                {{ $sections := split (strings.TrimSuffix "/" .File.Dir) "/" }}
+                {{ range $sections }}
+                    {{ $section := . }}
+                    {{ $.Scratch.Add "sectionDir" (printf `/%s` .) }}
+                    {{ with $.Site.GetPage ($.Scratch.Get "sectionDir") }}
+                        {{ if (eq .Kind "section") }}
+                            <category scheme="{{ .Permalink }}" term="{{ $section }}" label="{{ $section }}" />
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <!-- Taxonomies -->
+            {{ with $.Site.Taxonomies }}
+                {{ range $taxonomy, $terms := . }}
+                    {{ with $page.Param $taxonomy }}
+                        {{ range $index, $term := . }}
+                            {{ $url := urls.Parse ($term | urlize) }}
+                            {{ $path := $url.Path }}
+                            {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $path) }}
+                                <category scheme="{{ .Permalink }}" term="{{ .Title | default $term }}" label="{{ .Title | default $term }}" />
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </entry>
+    {{ end }}
+</feed>

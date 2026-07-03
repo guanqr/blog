@@ -1,0 +1,151 @@
+<!-- https://schema.org/ -->
+<!-- https://json-ld.org/ -->
+<!-- https://search.google.com/structured-data/testing-tool -->
+{{- $ := index . "$" -}}
+{{- $description := .description -}}
+{{- $baseURLWithLangFix := "" | absLangURL -}}
+<!-- Title -->
+{{- $rawTitle := (partial "utils/title.html" (dict "$" $ "title" $.Title)).rawTitle -}}
+<!-- Date -->
+{{- $dates := partial "utils/date.html" $ -}}
+<!-- Author -->
+{{- $author := partial "utils/author.html" $ -}}
+<!-- Images -->
+{{- $images := partial "utils/images.html" $ -}}
+
+{{- if $.IsHome -}}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "datePublished": {{ $dates.pubDate }},
+        "dateModified": {{ $dates.modDate }},
+        "url": {{ $baseURLWithLangFix }},
+        "description": {{ $description }},
+        {{ with $.Site.Params.siteLogo -}}
+        "image": {{ . | absURL }},
+        {{ end -}}
+        {{ with $author -}}
+        "author": {
+            "@type": "Person",
+            {{ with .motto -}}
+            "description": {{ . | plainify | htmlUnescape }},
+            {{ end -}}
+            {{ with .email -}}
+            "email": {{ . }},
+            {{ end -}}
+            {{ with .avatar -}}
+            "image": {{ . | absURL }},
+            {{ end -}}
+            {{ with .website -}}
+            "url": {{ . }},
+            {{ end -}}
+            {{ with .name -}}
+            "name": {{ . }}
+            {{- end }}
+        },
+        {{ end -}}
+        {{ with $author.copyright -}}
+        "license": {{ . | plainify | htmlUnescape }},
+        {{ end -}}
+        "name": {{ $rawTitle }}
+    }
+</script>
+{{- else if and $.IsPage (in $.Site.Params.mainSections $.Section) -}}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": {{ $dates.pubDate }},
+        "dateModified": {{ $dates.modDate }},
+        "url": {{ $.Permalink }},
+        "headline": {{ $rawTitle }},
+        "description": {{ $description }},
+        "inLanguage" : "{{ $.Site.LanguageCode }}",
+        "articleSection": {{ $.Section }},
+        "wordCount": {{ $.WordCount }},
+        {{ with $images -}}
+        "image": {{ . }},
+        {{ else -}}
+        {{ with $.Site.Params.siteLogo -}}
+        "image": {{ . | absURL }},
+        {{ end -}}
+        {{ end -}}
+        {{ with $author -}}
+        "author": {
+            "@type": "Person",
+            {{ with .motto -}}
+            "description": {{ . | plainify | htmlUnescape }},
+            {{ end -}}
+            {{ with .email -}}
+            "email": {{ . }},
+            {{ end -}}
+            {{ with .avatar -}}
+            "image": {{ . | absURL }},
+            {{ end -}}
+            {{ with .website -}}
+            "url": {{ . }},
+            {{ end -}}
+            {{ with .name -}}
+            "name": {{ . }}
+            {{- end }}
+        },
+        {{ end -}}
+        {{ with $author.copyright -}}
+        "license": {{ . | plainify | htmlUnescape }},
+        {{ end -}}
+        "publisher": {
+            "@type": "Organization",
+            "name": {{ $.Site.Title }},
+            {{ with $.Site.Params.siteLogo -}}
+            "logo": {
+                "@type": "ImageObject",
+                "url": {{ . | absURL }}
+            },
+            {{ end -}}
+            "url": {{ $baseURLWithLangFix }}
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": {{ $baseURLWithLangFix }}
+        }
+    }
+</script>
+{{- else -}}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "datePublished": {{ $dates.pubDate }},
+        "dateModified": {{ $dates.modDate }},
+        "url": {{ $.Permalink }},
+        "name": {{ $rawTitle }},
+        "description": {{ $description }},
+        {{ with $images -}}
+        "image": {{ . }},
+        {{ else -}}
+        {{ with $.Site.Params.siteLogo -}}
+        "image": {{ . | absURL }},
+        {{ end -}}
+        {{ end -}}
+        {{ with $author.copyright -}}
+        "license": {{ . | plainify | htmlUnescape }},
+        {{ end -}}
+        "publisher": {
+            "@type": "Organization",
+            "name": {{ $.Site.Title }},
+            {{ with $.Site.Params.siteLogo -}}
+            "logo": {
+                "@type": "ImageObject",
+                "url": {{ . | absURL }}
+            },
+            {{ end -}}
+            "url": {{ $baseURLWithLangFix }}
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": {{ $baseURLWithLangFix }}
+        }
+    }
+</script>
+{{- end -}}

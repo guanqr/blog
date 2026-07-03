@@ -1,0 +1,26 @@
+{{ if or (or (and .IsHome .Site.Params.displayHeaderInHome) (eq .Site.Params.headerLayout "flex")) (and (not .IsHome) .Site.Params.enableHeader) }}
+    <header class="header">
+        {{ if eq .Site.Params.headerLayout "flex" }}
+            <div class="header-wrapper">
+                <div class="header-inner {{ cond (or .IsHome (eq (len .Pages) 0)) "single" "list"}}">
+                    {{ template "site-brand" . }}
+                    {{ partial "menu.html" . }}
+                    {{ partial "custom/header.html" . }}
+                </div>
+            </div>
+            {{ partial "components/nav-toggle.html" . }}
+        {{ else }}
+            {{ template "site-brand" . }}
+        {{ end }}
+    </header>
+{{ end }}
+
+{{ define "site-brand" }}
+    <div class="site-brand">
+        {{ if .Site.Params.siteBrandSVG }}
+            <a href="{{ "" | relLangURL }}">{{ partial "utils/icon.html" (dict "$" . "name" "brand") }}</a>
+        {{ else }}
+            <a href="{{ "" | relLangURL }}" class="brand">{{ .Site.Title }}</a>
+        {{ end }}
+    </div>
+{{ end }}

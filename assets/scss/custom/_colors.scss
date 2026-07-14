@@ -1,18 +1,18 @@
 // ============================================================
 // 全局配色覆盖
-// 亮色模式 — MimoRee photofolio 风格
+// 亮色模式 — MemE 原版配色 + 金色主调
 // 暗色模式 — MemE 原版 Dracula 配色 + 金色主调
 // ============================================================
 
 // ---- 亮色模式 (默认) ----
 :root {
     @include defineColorHSL(--color-primary, 43, 89%, 38%);
-    @include defineColorHSL(--color-bg, 210, 17%, 98%);
-    @include defineColorHSL(--color-contrast-lower, 210, 14%, 93%);
-    @include defineColorHSL(--color-contrast-low, 210, 10%, 83%);
-    @include defineColorHSL(--color-contrast-medium, 208, 7%, 46%);
-    @include defineColorHSL(--color-contrast-high, 210, 11%, 15%);
-    @include defineColorHSL(--color-contrast-higher, 210, 11%, 12%);
+    @include defineColorHSL(--color-bg, 0, 0%, 100%);
+    @include defineColorHSL(--color-contrast-lower, 0, 0%, 95%);
+    @include defineColorHSL(--color-contrast-low, 240, 1%, 83%);
+    @include defineColorHSL(--color-contrast-medium, 240, 1%, 48%);
+    @include defineColorHSL(--color-contrast-high, 240, 4%, 20%);
+    @include defineColorHSL(--color-contrast-higher, 240, 8%, 12%);
 }
 
 // ---- 系统亮色偏好 ----

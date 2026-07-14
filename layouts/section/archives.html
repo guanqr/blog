@@ -49,8 +49,7 @@
                     <h1 class="list-title">{{ (.Site.GetPage "/archives").Title }}</h1>
                 {{ end }}
 
-                {{/* Render all year groups; JS manages visibility and animation */}}
-                <div class="archives-panels">
+                {{/* Render all year groups; JS manages visibility */}}
                 {{ range $yearGroups }}
                     {{ $y := int .Key }}
                     {{ $key := .Key }}
@@ -82,7 +81,6 @@
                         {{ partial "utils/list-item.html" (dict "$" .) }}
                     </div>
                 {{ end }}
-                </div>
 
                 {{ if gt (len $yearGroups) 1 }}
                 <nav class="archives-nav">

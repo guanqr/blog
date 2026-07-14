@@ -46,7 +46,7 @@
         <div class="main-inner">
             <div class="content list-group">
                 {{ if .Site.Params.displayListTitle }}
-                    <h1 class="list-title">{{ .Title }}</h1>
+                    <h1 class="list-title">{{ (.Site.GetPage "/archives").Title }}</h1>
                 {{ end }}
 
                 <div class="archives-year">

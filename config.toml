@@ -231,7 +231,7 @@ uglyURLs = false
         url = "https://photo.guanqr.com/"
         name = "影集"
         weight = 3
-        pre = "internal"
+        pre = "external"
         post = "feather-alt" 
         identifier = "photos"
     [[menu.main]]

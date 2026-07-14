@@ -1473,7 +1473,7 @@ uglyURLs = false
     # 说明：仅对 MemE 生成的 CSS 和 JS 有效
 
     # 是否开启
-    enableFingerprint = false
+    enableFingerprint = true
 
     # 是否开启子资源完整性验证
     enableSRI = false

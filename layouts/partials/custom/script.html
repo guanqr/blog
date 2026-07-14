@@ -1,5 +1,49 @@
 <script src="/js/page-transition.js"></script>
 <script>
+    // Fix back-to-top: <base href="/"> breaks #top anchor
+    (function() {
+        var btn = document.getElementById('back-to-top');
+        if (!btn) return;
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+</script>
+<script>
+    // Override theme switcher: light ↔ dark only, no system
+    // Clean stale 'system' preference
+    if (localStorage.getItem('theme') === 'system') {
+        localStorage.setItem('theme', document.documentElement.getAttribute('data-theme') || 'light');
+    }
+
+    // Intercept all clicks on the switcher before the theme's {once:true} handler
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('#theme-switcher')) return;
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var cur = document.documentElement.getAttribute('data-theme') || 'light';
+        var next = cur === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+
+        // Update icon visibility
+        var btn = document.getElementById('theme-switcher');
+        if (btn) {
+            btn.querySelectorAll('.theme-icon-light, .theme-icon-dark, .theme-icon-system')
+                .forEach(function(i) { i.style.display = 'none'; });
+            var active = btn.querySelector('.theme-icon-' + next);
+            if (active) active.style.display = '';
+        }
+
+        // Update meta theme-color
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', next === 'dark' ? '{{ .Site.Params.themeColorDark }}' : '{{ .Site.Params.themeColor }}');
+    }, true);
+</script>
+<script>
     // Add a class to the body if the user agent is Safari
     if (navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {
         document.body.classList.add('safari-only');

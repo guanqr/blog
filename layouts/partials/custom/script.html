@@ -11,13 +11,13 @@
     })();
 </script>
 <script>
-    // Override theme switcher: light ↔ dark only, no system
-    // Clean stale 'system' preference
+    // Override theme switcher: light ↔ dark only, no system.
+    // Icon visibility is handled by CSS ([data-theme] selectors),
+    // so JS only needs to toggle the attribute.
     if (localStorage.getItem('theme') === 'system') {
         localStorage.setItem('theme', document.documentElement.getAttribute('data-theme') || 'light');
     }
 
-    // Intercept all clicks on the switcher before the theme's {once:true} handler
     document.addEventListener('click', function(e) {
         if (!e.target.closest('#theme-switcher')) return;
         e.preventDefault();
@@ -29,16 +29,6 @@
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
 
-        // Update icon visibility
-        var btn = document.getElementById('theme-switcher');
-        if (btn) {
-            btn.querySelectorAll('.theme-icon-light, .theme-icon-dark, .theme-icon-system')
-                .forEach(function(i) { i.style.display = 'none'; });
-            var active = btn.querySelector('.theme-icon-' + next);
-            if (active) active.style.display = '';
-        }
-
-        // Update meta theme-color
         var meta = document.querySelector('meta[name="theme-color"]');
         if (meta) meta.setAttribute('content', next === 'dark' ? '{{ .Site.Params.themeColorDark }}' : '{{ .Site.Params.themeColor }}');
     }, true);

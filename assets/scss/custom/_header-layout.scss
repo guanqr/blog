@@ -48,7 +48,15 @@
     transform: translateY(0.4em);
 }
 
-// 隐藏「跟随系统」图标
+// 主题图标：按 data-theme 属性自动切换，不依赖 JS 操作 style.display
 .theme-icon-system {
+    display: none !important;
+}
+[data-theme="light"] .theme-icon-light,
+[data-theme="dark"] .theme-icon-dark {
+    display: inline-block !important;
+}
+[data-theme="light"] .theme-icon-dark,
+[data-theme="dark"] .theme-icon-light {
     display: none !important;
 }

@@ -1,5 +1,28 @@
-// 自定义顶栏布局样式
+// 自定义顶栏布局样式 — 参考 MimoRee photofolio 配色
 
+// ---- 顶栏容器 ----
+.header {
+    border-bottom: 0.0625em solid var(--color-contrast-low);
+}
+
+.header-wrapper {
+    background: hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.85);
+}
+
+// ---- 导航链接 ----
+.menu-item {
+    a {
+        color: var(--color-contrast-medium);
+        transition: color $duration;
+    }
+
+    &:hover a,
+    &.active a {
+        color: var(--color-contrast-high);
+    }
+}
+
+// ---- 移动端适配 ----
 .nav {
     font-size: 1em;
     margin-top: 0.4em;

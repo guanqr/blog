@@ -1,0 +1,53 @@
+// ============================================================
+// 全局配色覆盖
+// 亮色模式 — MimoRee photofolio 风格
+// 暗色模式 — MemE 原版 Dracula 配色 + 金色主调
+// ============================================================
+
+// ---- 亮色模式 (默认) ----
+:root {
+    @include defineColorHSL(--color-primary, 43, 89%, 38%);
+    @include defineColorHSL(--color-bg, 210, 17%, 98%);
+    @include defineColorHSL(--color-contrast-lower, 210, 14%, 93%);
+    @include defineColorHSL(--color-contrast-low, 210, 10%, 83%);
+    @include defineColorHSL(--color-contrast-medium, 208, 7%, 46%);
+    @include defineColorHSL(--color-contrast-high, 210, 11%, 15%);
+    @include defineColorHSL(--color-contrast-higher, 210, 11%, 12%);
+}
+
+// ---- 系统亮色偏好 ----
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        @include defineColorHSL(--color-primary, 43, 89%, 38%);
+        @include defineColorHSL(--color-bg, 0, 0%, 100%);
+        @include defineColorHSL(--color-contrast-lower, 0, 0%, 95%);
+        @include defineColorHSL(--color-contrast-low, 240, 1%, 83%);
+        @include defineColorHSL(--color-contrast-medium, 240, 1%, 48%);
+        @include defineColorHSL(--color-contrast-high, 240, 4%, 20%);
+        @include defineColorHSL(--color-contrast-higher, 240, 8%, 12%);
+    }
+}
+
+// ---- 暗色模式（MemE 原版 Dracula + 金色） ----
+:root[data-theme="dark"] {
+    @include defineColorHSL(--color-primary, 40, 50%, 57%);
+    @include defineColorHSL(--color-bg, 231, 14%, 10%);
+    @include defineColorHSL(--color-contrast-lower, 230, 12%, 18%);
+    @include defineColorHSL(--color-contrast-low, 240, 2%, 37%);
+    @include defineColorHSL(--color-contrast-medium, 80, 2%, 69%);
+    @include defineColorHSL(--color-contrast-high, 69, 9%, 84%);
+    @include defineColorHSL(--color-contrast-higher, 60, 6%, 90%);
+}
+
+// ---- 系统暗色偏好 ----
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        @include defineColorHSL(--color-primary, 40, 50%, 57%);
+        @include defineColorHSL(--color-bg, 231, 14%, 10%);
+        @include defineColorHSL(--color-contrast-lower, 230, 12%, 18%);
+        @include defineColorHSL(--color-contrast-low, 240, 2%, 37%);
+        @include defineColorHSL(--color-contrast-medium, 80, 2%, 69%);
+        @include defineColorHSL(--color-contrast-high, 69, 9%, 84%);
+        @include defineColorHSL(--color-contrast-higher, 60, 6%, 90%);
+    }
+}

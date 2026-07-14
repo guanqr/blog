@@ -1,0 +1,22 @@
+{{/*
+  Content adapter for the archives section.
+  Auto-generates year-based subsection pages (e.g., /archives/2025/)
+  at build time — no manual _index.md files needed.
+
+  Pages are generated from archiveStartYear (set in config.toml)
+  through the current year.
+*/}}
+
+{{ $startYear := $.Site.Params.archiveStartYear | default (now.Year) }}
+{{ $endYear := now.Year }}
+
+{{ range seq $startYear $endYear }}
+  {{ $year := printf "%d" . }}
+  {{ $page := dict
+    "path" $year
+    "kind" "section"
+    "title" $year
+    "params" (dict "year" $year)
+  }}
+  {{ $.AddPage $page }}
+{{ end }}

@@ -16,6 +16,7 @@
     transition: color $duration;
     user-select: none;
     -webkit-user-select: none;
+    text-decoration: none;
 
     &:hover {
         color: var(--color-primary);
@@ -29,6 +30,11 @@
     svg {
         width: 1.2em;
         height: 1.2em;
+    }
+
+    &.is-disabled {
+        visibility: hidden;
+        cursor: default;
     }
 }
 

@@ -2,6 +2,7 @@
     {{ $pages := (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
     {{ $yearGroups := $pages.GroupByDate "2006" }}
 
+    {{/* Determine year bounds */}}
     {{ $minYear := 0 }}
     {{ $maxYear := 0 }}
     {{ range $yearGroups }}
@@ -14,7 +15,32 @@
         {{ end }}
     {{ end }}
 
-    {{ $currentYear := $maxYear }}
+    {{/* Determine active year: from .Params.year for subsections, or current year for parent */}}
+    {{ $activeYear := now.Year }}
+    {{ with .Params.year }}
+        {{ $activeYear = int . }}
+    {{ end }}
+
+    {{/* Clamp active year to available range */}}
+    {{ if lt $activeYear $minYear }}
+        {{ $activeYear = $minYear }}
+    {{ end }}
+    {{ if gt $activeYear $maxYear }}
+        {{ $activeYear = $maxYear }}
+    {{ end }}
+
+    {{/* Find adjacent years for navigation */}}
+    {{ $prevYear := 0 }}
+    {{ $nextYear := 0 }}
+    {{ range $yearGroups }}
+        {{ $y := int .Key }}
+        {{ if and (lt $y $activeYear) (or (eq $prevYear 0) (gt $y $prevYear)) }}
+            {{ $prevYear = $y }}
+        {{ end }}
+        {{ if and (gt $y $activeYear) (or (eq $nextYear 0) (lt $y $nextYear)) }}
+            {{ $nextYear = $y }}
+        {{ end }}
+    {{ end }}
 
     <main class="main list" id="main">
         <div class="main-inner">
@@ -23,10 +49,10 @@
                     <h1 class="list-title">{{ .Title }}</h1>
                 {{ end }}
 
-                <div id="archives-container" data-current="{{ $currentYear }}">
+                <div class="archives-year">
                     {{ range $yearGroups }}
-                        {{ $y := int .Key }}
-                        <div class="archives-year" data-year="{{ $y }}"{{ if ne $y $currentYear }} style="display:none"{{ end }}>
+                        {{ if eq (int .Key) $activeYear }}
+                            {{ $y := int .Key }}
                             {{ $key := .Key }}
                             {{ $.Scratch.Delete "year" }}
                             {{ if $.Site.Params.i18nYear }}
@@ -53,20 +79,33 @@
                             {{ $zodiacName := $.Scratch.Get "zodiacName" }}
                             <h2 class="list-year">{{ $year }}{{ if $.Site.Params.chineseZodiac }}{{ partial "utils/icon.html" (dict "$" $ "name" $zodiacName "class" "chinese-zodiac") }}{{ end }}</h2>
                             {{ partial "utils/list-item.html" (dict "$" .) }}
-                        </div>
+                        {{ end }}
                     {{ end }}
                 </div>
 
                 {{ if gt (len $yearGroups) 1 }}
                 <nav class="archives-nav">
-                    <div class="archives-nav-side" id="archives-newer">
+                    {{ if gt $nextYear 0 }}
+                    <a class="archives-nav-side" href="/archives/{{ $nextYear }}/" rel="next">
                         {{ (index $.Site.Data.SVG "chevron-left") | safeHTML }}
-                        <span class="archives-nav-year" id="archives-year-newer">{{ $maxYear }}</span>
-                    </div>
-                    <div class="archives-nav-side" id="archives-older">
-                        <span class="archives-nav-year" id="archives-year-older">{{ $minYear }}</span>
+                        <span class="archives-nav-year">{{ $nextYear }}</span>
+                    </a>
+                    {{ else }}
+                    <span class="archives-nav-side is-disabled">
+                        {{ (index $.Site.Data.SVG "chevron-left") | safeHTML }}
+                    </span>
+                    {{ end }}
+
+                    {{ if gt $prevYear 0 }}
+                    <a class="archives-nav-side" href="/archives/{{ $prevYear }}/" rel="prev">
+                        <span class="archives-nav-year">{{ $prevYear }}</span>
                         {{ (index $.Site.Data.SVG "chevron-right") | safeHTML }}
-                    </div>
+                    </a>
+                    {{ else }}
+                    <span class="archives-nav-side is-disabled">
+                        {{ (index $.Site.Data.SVG "chevron-right") | safeHTML }}
+                    </span>
+                    {{ end }}
                 </nav>
                 {{ end }}
             </div>

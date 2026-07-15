@@ -3,3 +3,5 @@ public/
 resources/
 static/images/cards
 .env
+oss_config.json
+.upload-cache.json

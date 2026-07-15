@@ -7,9 +7,7 @@
 
             {{/* English subtitle */}}
             {{ $en := .Type | humanize }}
-            {{ $first := substr $en 0 1 | upper }}
-            {{ $words := split $en " " }}
-            <div class="post-title-en"><span class="post-title-dropcap">{{ $first }}</span>{{ substr (index $words 0) 1 }}{{ range $i, $w := $words }}{{ if gt $i 0 }} {{ substr $w 0 1 | upper }}{{ substr $w 1 }}{{ end }}{{ end }}</div>
+            <div class="post-title-en"><span class="post-title-dropcap">{{ substr $en 0 1 }}</span>{{ substr $en 1 }}</div>
 
             {{ $type := .Type }}
             {{ range .Data.Terms.ByCount }}

@@ -14,8 +14,9 @@
     margin: -6em 0 1em;
     color: var(--color-contrast-low);
     font-size: 1.1em;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     font-style: italic;
+    text-transform: uppercase;
     opacity: 0.25;
     font-variation-settings: 'wght' 550, 'opsz' 30, 'YOPQ' 100, 'YTLC' 570, 'YTUC' 710;
 }
@@ -29,8 +30,8 @@
     margin-right: -0.05em;
 }
 
-// 间距收紧：原主题 5em/5rem 缩至 3em
-.post-body  { margin-top: 3em !important; }
+// 间距收紧
+.post-body { margin-top: 3em !important; }
 .contents   { margin-top: 3em; }
 .footnotes  { margin-top: 3rem; }
 .post-tags  { margin-top: 3em; }

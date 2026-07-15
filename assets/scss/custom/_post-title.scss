@@ -1,0 +1,38 @@
+// 标题区域（英文副标题 + 装饰大字母）
+.post-header {
+    position: relative;
+}
+.post-title {
+    position: relative;
+    z-index: 1;
+}
+.post-title-en {
+    position: relative;
+    z-index: -1;
+    user-select: none;
+    text-align: center;
+    margin: -6em 0 1em;
+    color: var(--color-contrast-low);
+    font-size: 1.1em;
+    letter-spacing: 0.06em;
+    font-style: italic;
+    text-transform: uppercase;
+    opacity: 0.25;
+    font-variation-settings: 'wght' 550, 'opsz' 30, 'YOPQ' 100, 'YTLC' 570, 'YTUC' 710;
+}
+.post-title-dropcap {
+    font-size: 6em;
+    font-variation-settings: 'wght' 550, 'opsz' 30, 'YOPQ' 100, 'YTLC' 570, 'YTUC' 710;
+    color: inherit;
+    line-height: 0.75;
+    font-style: italic;
+    vertical-align: baseline;
+    margin-right: -0.05em;
+}
+
+// 间距收紧
+.post-body { margin-top: 3em !important; }
+.contents   { margin-top: 3em; }
+.footnotes  { margin-top: 3rem; }
+.post-tags  { margin-top: 3em; }
+.comments   { margin-top: 3em; }

@@ -10,6 +10,9 @@
 // 简码设定
 @import "shortcodes";
 
+// 标题与间距
+@import "post-title";
+
 // 正文设定
 @import "post";
 
@@ -21,9 +24,6 @@
 
 // 歸檔頁導航
 @import "archives";
-
-// 一行多图
-@import "gallery";
 
 // 文章时效性提醒
 @import "expired-tip";

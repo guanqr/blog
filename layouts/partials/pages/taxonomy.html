@@ -1,0 +1,30 @@
+<main class="main list" id="main">
+    <div class="main-inner">
+        <div class="content list-group">
+            {{ if .Site.Params.displayListTitle }}
+                <h1 class="list-title">{{ .Title | default (.Type | title) }}</h1>
+            {{ end }}
+
+            {{/* English subtitle */}}
+            {{ $en := .Type | humanize }}
+            {{ $first := substr $en 0 1 | upper }}
+            {{ $words := split $en " " }}
+            <div class="post-title-en"><span class="post-title-dropcap">{{ $first }}</span>{{ substr (index $words 0) 1 }}{{ range $i, $w := $words }}{{ if gt $i 0 }} {{ substr $w 0 1 | upper }}{{ substr $w 1 }}{{ end }}{{ end }}</div>
+
+            {{ $type := .Type }}
+            {{ range .Data.Terms.ByCount }}
+                {{ $name := .Name }}
+                <h2 class="term-title">
+                    {{ $page := $.Site.GetPage (printf "/%s/%s" $type $name) }}
+                    {{ with $page }}
+                        <a href="{{ .RelPermalink }}" class="term-title-link">{{ .LinkTitle | default .Data.Term | default $name }}</a>
+                    {{ end }}
+                    {{ if $.Site.Params.displayTaxonomyTermCount }}
+                        <span class="term-count">{{ printf "(%d)" .Count }}</span>
+                    {{ end }}
+                </h2>
+                {{ partial "utils/list-item.html" (dict "$" . "linkTarget" $page) }}
+            {{ end }}
+        </div>
+    </div>
+</main>

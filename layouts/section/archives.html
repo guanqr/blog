@@ -49,6 +49,14 @@
                     <h1 class="list-title">{{ (.Site.GetPage "/archives").Title }}</h1>
                 {{ end }}
 
+                {{/* English subtitle from slug */}}
+                {{ with .File }}
+                    {{ $en := humanize .ContentBaseName }}
+                    {{ $first := substr $en 0 1 | upper }}
+                    {{ $words := split $en " " }}
+                    <div class="post-title-en"><span class="post-title-dropcap">{{ $first }}</span>{{ substr (index $words 0) 1 }}{{ range $i, $w := $words }}{{ if gt $i 0 }} {{ substr $w 0 1 | upper }}{{ substr $w 1 }}{{ end }}{{ end }}</div>
+                {{ end }}
+
                 {{/* Render all year groups; JS manages visibility */}}
                 {{ range $yearGroups }}
                     {{ $y := int .Key }}

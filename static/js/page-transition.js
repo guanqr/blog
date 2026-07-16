@@ -70,6 +70,9 @@
             /* execute scripts injected inside #main (e.g. archives.js) */
             executeScripts(main);
 
+            /* force reflow after scripts modify DOM */
+            main.offsetHeight;
+
             /* scroll to top */
             window.scrollTo(0, 0);
 

@@ -230,9 +230,9 @@ uglyURLs = false
     [[menu.main]]
         url = "https://photo.guanqr.com/"
         name = "影集"
-        weight = 3
+        weight = 6
         pre = "external"
-        post = "feather-alt" 
+        post = "feather-alt"
         identifier = "photos"
     [[menu.main]]
         pageref = "/blogroll/"

@@ -1,31 +1,25 @@
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@2.15.8/dist/waline.css">
 <script>
     function loadComments() {
-        if (!document.getElementById('waline')) {
-            return;
+        if (!document.getElementById('waline')) return;
+        // lazy-load CSS
+        if (!document.getElementById('waline-css')) {
+            var css = document.createElement('link');
+            css.id = 'waline-css';
+            css.rel = 'stylesheet';
+            css.href = 'https://unpkg.com/@waline/client@2.15.8/dist/waline.css';
+            document.head.appendChild(css);
         }
         if (typeof Waline === 'undefined') {
-            const getScript = (options) => {
-                const script = document.createElement('script');
-                script.defer = true;
-                script.crossOrigin = 'anonymous';
-                Object.keys(options).forEach((key) => {
-                    script[key] = options[key];
-                });
-                document.body.appendChild(script);
-            };
-            getScript({
-                src: 'https://unpkg.com/@waline/client@2.15.8/dist/waline.js',
-                onload: () => {
-                    newWaline();
-                }
-            });
+            var s = document.createElement('script');
+            s.src = 'https://unpkg.com/@waline/client@2.15.8/dist/waline.js';
+            s.onload = function() { newWaline(); };
+            document.body.appendChild(s);
         } else {
             newWaline();
         }
     }
     function newWaline() {
-        const locale = {
+        var locale = {
             nick: "{{ i18n "walineNick" }}",
             mail: "{{ i18n "walineMail" }}",
             placeholder: "{{ i18n "walinePlaceholder" }}"
@@ -34,19 +28,19 @@
             el: '#waline',
             serverURL: '{{ .Site.Params.walineServerURL }}',
             lang: '{{ .Site.Params.walineLang }}',
-            locale,
+            locale: locale,
             emoji: {{ .Site.Params.walineEmoji }},
             dark: 'html[data-theme="dark"]',
             commentSorting: '{{ .Site.Params.walineCommentSorting }}',
             meta: {{ .Site.Params.walineMeta }},
             requiredMeta: {{ .Site.Params.walineRequiredMeta }},
             login: '{{ .Site.Params.walineLogin }}',
-            wordLimit: {{ .Site.Params.walineWordLimit }},          
+            wordLimit: {{ .Site.Params.walineWordLimit }},
             pageSize: {{ .Site.Params.walinePageSize }},
             imageUploader: {{ .Site.Params.walineImageUploader }},
             highlighter: {{ .Site.Params.walineHighlighter }},
             search: {{ .Site.Params.walineSearch }},
-            copyright: {{ .Site.Params.walineCopyright }}            
+            copyright: {{ .Site.Params.walineCopyright }}
         });
     }
 </script>

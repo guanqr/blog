@@ -33,6 +33,7 @@
         .tags, .archives, .photos, .friends, .about {
             display: inline-block;
         }
+        padding: 1em;
     }
     .menu-item-name {
         font-size: 80%;
@@ -43,6 +44,7 @@
     backdrop-filter: none;
     background: none;
 }
+
 
 .nav-toggle {
     transform: translateY(0.4em);

@@ -11,58 +11,58 @@
 
 ## 关于
 
-个人博客，基于 [Hugo](https://gohugo.io/) 静态站点生成器和 [MemE](https://github.com/reuixiy/hugo-theme-meme) 主题。所有主题定制均通过外层覆盖实现，不修改主题文件。
-
-关键词：生活、悦读、品影、旅行、幻想、科学、技术、光学、计算机。
+个人博客，基于 [Hugo](https://gohugo.io/) 静态站点生成器和 [MemE](https://github.com/reuixiy/hugo-theme-meme) 主题。所有定制均通过外层覆盖实现，不修改主题文件。
 
 ## 特性
+
+### 排版
+- 英文装饰副标题（slug 转换，全大写，可变字体）
+- 首字母 6em 大号垫在标题之后
+- 文章间距收紧（5em → 3em）
 
 ### 配色
 - 亮色 / 暗色双主题，一键切换（仅亮↔暗，无系统跟随模式）
 - 金色主色调，其余对比度层级保持 MemE 原版
-- `[data-theme]` CSS 选择器控制图标可见性，不依赖 JS 时序
+- `[data-theme]` CSS 选择器控制图标可见性
 
 ### 归档
 - 年份 URL 路由：`/archives/2025/` 等，由 Hugo Content Adapter 自动生成
 - 即时切换年份，`pushState` 同步 URL
 - 键盘 ← → 导航
 
-### 页面过渡
-- 站内链接 SPA 式切换：淡出 → fetch → 替换 → 淡入
-- 浏览器前进/后退支持
-- `<base href="/">` 确保 pushState 后相对路径正确
+### 图床
+- 图片托管于阿里云 OSS（`guanqr.oss-cn-hangzhou.aliyuncs.com`）
+- `scripts/upload-images.py` 一键增量上传，本地缓存避免重复
 
 ### 顶栏
-- 纯色半透明背景 + 毛玻璃模糊
-- 金色底边线
-- 中英文双语
+- 纯色半透明背景 + 毛玻璃模糊，金色底边线
+- 宽窄屏自适应，`resize` 自动清理菜单状态
 
 ## 结构
 
 ```
-├── assets/scss/custom/    # SCSS 覆盖（配色、顶栏、归档导航等）
+├── assets/scss/custom/    # SCSS 覆盖
+│   ├── _colors.scss       # 配色
+│   ├── _post-title.scss   # 标题 & 英文副标题
+│   └── ...
 ├── content/zh/archives/   # 归档（含 _content.gotmpl 内容适配器）
-├── layouts/               # 模板覆盖（section、partials、shortcodes）
-│   └── partials/components/dark-mode.html  # 主题切换按钮
-├── static/js/             # 自定义 JS
-│   ├── page-transition.js # 页面过渡
+├── layouts/               # 模板覆盖
+├── static/js/
 │   └── archives.js        # 归档年份切换
-├── config.toml            # 站点配置
+├── scripts/
+│   └── upload-images.py   # OSS 图片上传
+├── upload-images.bat      # 一键上传
+├── config.toml
 └── themes/meme/           # MemE 主题（git submodule）
 ```
 
 ## 本地运行
 
 ```bash
-# 克隆（含子模块）
 git clone --recursive https://github.com/guanqr/blog.git
 cd blog
-
-# 启动开发服务器
-hugo serve
-
-# 构建
-hugo
+hugo serve        # 开发
+hugo              # 构建
 ```
 
 ## 许可

@@ -51,6 +51,7 @@
             .header.open {
                 .nav {
                     display: block;
+                    overflow: hidden;
                     animation: appear $duration;
                     animation-iteration-count: 1;
                     animation-fill-mode: forwards;
@@ -60,15 +61,11 @@
                         opacity: 0;
                         height: 0;
                         margin: 0;
-                        transform: scaleY(0);
-                        transform-origin: top;
                     }
                     100% {
                         opacity: 1;
                         height: $navHeight;
                         margin: 2em 0;
-                        transform: scaleY(1);
-                        transform-origin: top;
                     }
                 }
                 .nav-curtain {
@@ -90,6 +87,7 @@
             .header.fade {
                 .nav {
                     display: block;
+                    overflow: hidden;
                     animation: fade $duration;
                     animation-iteration-count: 1;
                     animation-fill-mode: forwards;
@@ -99,15 +97,11 @@
                         opacity: 1;
                         height: $navHeight;
                         margin: 2em 0;
-                        transform: scaleY(1);
-                        transform-origin: top;
                     }
                     100% {
                         opacity: 0;
                         height: 0;
                         margin: 0;
-                        transform: scaleY(0);
-                        transform-origin: top;
                     }
                 }
                 .nav-curtain {

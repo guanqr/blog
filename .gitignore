@@ -1,7 +1,14 @@
-node_modules/
+# Hugo build outputs
 public/
 resources/
-static/images/cards
+.hugo_build.lock
+
+# Dependencies
+node_modules/
+
+# Config & secrets
 .env
 oss_config.json
+
+# Tool cache
 .upload-cache.json

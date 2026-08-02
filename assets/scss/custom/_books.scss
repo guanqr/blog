@@ -1,0 +1,67 @@
+// ============================================================
+// 书单页面
+// ============================================================
+
+.book-list {
+    margin: 1.5em 0;
+}
+
+.book-year-group {
+    margin-bottom: 1.5em;
+}
+
+.book-year {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--color-contrast-low);
+}
+
+.book-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.book-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4em 0.8em;
+    padding: 0.5em 0;
+    border-bottom: 1px dashed var(--color-contrast-lower);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.book-title {
+    font-weight: 600;
+    color: var(--color-contrast-high);
+}
+
+.book-meta {
+    display: flex;
+    gap: 0.6em;
+    font-size: 0.9em;
+}
+
+.book-author,
+.book-publisher,
+.book-genre {
+    color: var(--color-contrast-medium);
+}
+
+.book-meta {
+    font-family: $fontFamilyGlyph;
+}
+
+.book-publisher::before,
+.book-genre::before {
+    content: "|";
+    margin-right: 0.6em;
+    color: var(--color-contrast-low);
+}

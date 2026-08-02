@@ -1,0 +1,44 @@
+# 書單數據
+# 年份按需添加，程序自動按年份倒序排列（最新的在上面）
+
+[[books]]
+year = 2026
+title = "書與書人"
+author = "陸灝"
+genre = "隨筆"
+publisher = "草鷺文化"
+
+[[books]]
+year = 2026
+title = "十三行小字中央"
+author = "江弱水"
+genre = "隨筆"
+publisher = "浙江大學出版社"
+
+[[books]]
+year = 2026
+title = "秩序的暗線——兩晉南北朝三百年的權力邏輯"
+author = "莊華峰"
+genre = "歷史"
+publisher = "陝西師範大學出版總社"
+
+[[books]]
+year = 2026
+title = "夜晚的潛水艇"
+author = "陳春成"
+genre = "小說集"
+publisher = "上海三聯書店"
+
+[[books]]
+year = 2026
+title = "河上歌"
+author = "郭爽"
+genre = "小說"
+publisher = "譯林出版社"
+
+[[books]]
+year = 2026
+title = "魔術師"
+author = "小川哲"
+genre = "小說集"
+publisher = "人民文學出版社"

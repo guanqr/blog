@@ -274,8 +274,8 @@ uglyURLs = false
     #    weight = 3
     #    pre = "external"
     [[menu.links]]
-        pageref = "/Photos/"
-        name = "Photos"
+        pageref = "/books/"
+        name = "Books"
         weight = 1
         pre = "internal"
     [[menu.links]]

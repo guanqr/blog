@@ -1,0 +1,53 @@
+// ============================================================
+// 身份卡片网格 — 关于页面
+// ============================================================
+
+.identity-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin: 1.5em 0;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.identity-card {
+    background: transparent;
+    border: 1px dashed var(--color-contrast-low);
+    border-radius: 3px;
+    padding: 1.2em 1em;
+    transition: border-color $duration;
+
+    &:hover {
+        border-color: var(--color-primary);
+    }
+
+    .identity-card-emoji {
+        font-size: 1.8em;
+        line-height: 1.2;
+        margin-bottom: 0.3em;
+        text-align: center;
+    }
+
+    .identity-card-title {
+        font-weight: 700;
+        font-size: 1.05em;
+        color: var(--color-contrast-higher);
+        margin-bottom: 0.4em;
+        text-align: center;
+    }
+
+    .identity-card-desc {
+        font-size: 0.9em;
+        color: var(--color-contrast-high);
+
+        p {
+            margin: 0;
+        }
+    }
+}

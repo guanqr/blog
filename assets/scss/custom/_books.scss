@@ -26,12 +26,9 @@
 }
 
 .book-item {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.4em 0.8em;
     padding: 0.5em 0;
     border-bottom: 1px dashed var(--color-contrast-lower);
+    line-height: 1.8;
 
     &:last-child {
         border-bottom: none;
@@ -44,9 +41,9 @@
 }
 
 .book-meta {
-    display: flex;
-    gap: 0.6em;
     font-size: 0.9em;
+    font-family: $fontFamilyGlyph;
+    margin-left: 0.6em;
 }
 
 .book-author,
@@ -55,13 +52,8 @@
     color: var(--color-contrast-medium);
 }
 
-.book-meta {
-    font-family: $fontFamilyGlyph;
-}
-
 .book-publisher::before,
 .book-genre::before {
-    content: "|";
-    margin-right: 0.6em;
+    content: " | ";
     color: var(--color-contrast-low);
 }

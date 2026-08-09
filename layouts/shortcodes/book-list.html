@@ -8,7 +8,14 @@
         {{ if ne $currentYear "" }}</ul></div>{{ end }}
         {{ $currentYear = $y }}
         <div class="book-year-group">
-            <h2 class="book-year">{{ $currentYear }}</h2>
+            <h2 class="book-year">
+                    <span>{{ $currentYear }}</span>
+                    {{ if site.Params.chineseZodiac }}
+                        {{ $zodiac := index site.Data.ChineseZodiac (string (mod (int $currentYear) 12)) }}
+                        {{ $icon := index site.Data.SVG $zodiac }}
+                        <span class="book-zodiac">{{ replace $icon "icon" "icon book-zodiac-icon" | safeHTML }}</span>
+                    {{ end }}
+                </h2>
             <ul class="book-items">
     {{ end }}
             <li class="book-item">

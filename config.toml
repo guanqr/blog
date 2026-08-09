@@ -3,7 +3,7 @@
 
 baseURL = "https://guanqr.com/"
 title = "荷戟獨彷徨"
-languageCode = "zh-hant"
+locale = "zh-hant"
 hasCJKLanguage = true
 # 版权信息（支持 Markdown）
 copyright = "本文採用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 許可協議，轉載請註明出處。"
@@ -1645,7 +1645,7 @@ uglyURLs = false
 
 # 中文
 [languages.zh-hant]
-    languageName = "🇨🇳"
+    label = "🇨🇳"
     contentDir = "content/zh"
     weight = 1
 [languages.zh-hant.params]
@@ -1653,10 +1653,10 @@ uglyURLs = false
 
 # 英文
 [languages.en]
-    languageName = "🇺🇸"
+    label = "🇺🇸"
     contentDir = "content/en"
     weight = 2
-    languageCode = "en"
+    locale = "en"
     hasCJKLanguage = false
 	title = "Wondering Alone"
     copyright = "The article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)."

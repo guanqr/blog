@@ -79,7 +79,7 @@
                         {{ $year := $.Scratch.Get "year" }}
                         {{ $.Scratch.Delete "zodiacName" }}
                         {{ if $.Site.Params.chineseZodiac }}
-                            {{ $zodiacName := (index $.Site.Data.ChineseZodiac (string (mod $y 12))) }}
+                            {{ $zodiacName := (index site.Data.ChineseZodiac (string (mod $y 12))) }}
                             {{ $.Scratch.Set "zodiacName" $zodiacName }}
                         {{ end }}
                         {{ $zodiacName := $.Scratch.Get "zodiacName" }}
@@ -92,23 +92,23 @@
                 <nav class="archives-nav">
                     {{ if gt $nextYear 0 }}
                     <a class="archives-nav-side" id="archives-newer" href="/archives/{{ $nextYear }}/" data-year="{{ $nextYear }}" rel="next">
-                        {{ (index $.Site.Data.SVG "chevron-left") | safeHTML }}
+                        {{ (index site.Data.SVG "chevron-left") | safeHTML }}
                         <span class="archives-nav-year">{{ $nextYear }}</span>
                     </a>
                     {{ else }}
                     <span class="archives-nav-side is-disabled" id="archives-newer">
-                        {{ (index $.Site.Data.SVG "chevron-left") | safeHTML }}
+                        {{ (index site.Data.SVG "chevron-left") | safeHTML }}
                     </span>
                     {{ end }}
 
                     {{ if gt $prevYear 0 }}
                     <a class="archives-nav-side" id="archives-older" href="/archives/{{ $prevYear }}/" data-year="{{ $prevYear }}" rel="prev">
                         <span class="archives-nav-year">{{ $prevYear }}</span>
-                        {{ (index $.Site.Data.SVG "chevron-right") | safeHTML }}
+                        {{ (index site.Data.SVG "chevron-right") | safeHTML }}
                     </a>
                     {{ else }}
                     <span class="archives-nav-side is-disabled" id="archives-older">
-                        {{ (index $.Site.Data.SVG "chevron-right") | safeHTML }}
+                        {{ (index site.Data.SVG "chevron-right") | safeHTML }}
                     </span>
                     {{ end }}
                 </nav>

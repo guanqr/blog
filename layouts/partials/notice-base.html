@@ -7,7 +7,7 @@
 
 {{- $block := findRE "(?is)^<(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b" $raw 1 -}}
 
-{{ $icon := (replace (index $ctx.Site.Data.SVG $noticeType) "icon" (printf "icon %s-icon" $classPrefix)) }}
+{{ $icon := (replace (index site.Data.SVG $noticeType) "icon" (printf "icon %s-icon" $classPrefix)) }}
 <div class="{{ $classPrefix }} {{ $noticeType }}" {{ if len $ctx.Params | eq 2 }} id="{{ $ctx.Get 1 }}" {{ end }}>
     <div class="{{ $classPrefix }}-title">{{ $icon | safeHTML }}</div>
     {{- if or $block (not $raw) }}{{ $raw }}{{ else }}<p>{{ $raw }}</p>{{ end -}}

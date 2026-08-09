@@ -24,7 +24,7 @@
 
 @media (max-width: $maxWidth) {
     .nav {
-        margin: 2em 0 0.5em !important;
+        margin: 2em 0 0.5em;
     }
     .menu {
         grid-template-columns: 1fr 1fr 1fr 1fr;

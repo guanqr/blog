@@ -7,5 +7,9 @@
             {{ block "main" . }}{{ end }}
             {{ partial "footer.html" . }}
         </div>
+
+        {{ partial "components/back-to-top.html" . }}
+        {{ partial "components/sidebar-toggle.html" . }}
+        {{ partial "components/sidebar.html" . }}
     </body>
 </html>

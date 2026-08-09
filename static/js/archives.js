@@ -84,6 +84,7 @@
         }
     });
 
+    setBase(initYear);
     buildNav(initYear);
     history.replaceState({ year: initYear }, '', location.href);
 

@@ -20,6 +20,8 @@
     function getLeftSVG()  { var s = document.querySelector('#archives-newer svg'); return s ? s.outerHTML : ''; }
     function getRightSVG() { var s = document.querySelector('#archives-older svg'); return s ? s.outerHTML : ''; }
 
+    var basePath = location.pathname.replace(/\/archives\/.*$/, '/archives/');
+
     function getYearFromURL() {
         var m = location.pathname.match(/\/archives\/(\d{4})\/?$/);
         return m ? parseInt(m[1]) : null;
@@ -35,14 +37,14 @@
         var newerHTML, olderHTML;
 
         if (nextYear) {
-            newerHTML = '<a class="archives-nav-side" id="archives-newer" href="/archives/' + nextYear + '/" data-year="' + nextYear + '" rel="next">' +
+            newerHTML = '<a class="archives-nav-side" id="archives-newer" href="' + basePath + nextYear + '/" data-year="' + nextYear + '" rel="next">' +
                 leftSVG + '<span class="archives-nav-year">' + nextYear + '</span></a>';
         } else {
             newerHTML = '<span class="archives-nav-side is-disabled" id="archives-newer">' + leftSVG + '</span>';
         }
 
         if (prevYear) {
-            olderHTML = '<a class="archives-nav-side" id="archives-older" href="/archives/' + prevYear + '/" data-year="' + prevYear + '" rel="prev">' +
+            olderHTML = '<a class="archives-nav-side" id="archives-older" href="' + basePath + prevYear + '/" data-year="' + prevYear + '" rel="prev">' +
                 '<span class="archives-nav-year">' + prevYear + '</span>' + rightSVG + '</a>';
         } else {
             olderHTML = '<span class="archives-nav-side is-disabled" id="archives-older">' + rightSVG + '</span>';
@@ -64,7 +66,7 @@
         buildNav(year);
 
         if (addToHistory !== false) {
-            history.pushState({ year: year }, '', '/archives/' + year + '/');
+            history.pushState({ year: year }, '', basePath + year + '/');
         }
     }
 
@@ -93,6 +95,13 @@
         e.preventDefault();
         var year = parseInt(link.getAttribute('data-year'));
         if (year && yearMap[year]) showYear(year, true);
+    });
+
+    window.addEventListener('popstate', function(e) {
+        var year = getYearFromURL();
+        if (year && yearMap[year]) {
+            showYear(year, false);
+        }
     });
 
     document.addEventListener('keydown', function(e) {

@@ -1,6 +1,3 @@
-[subscription]
-other = "WeChat Subscription"
-
 [expiredTip]
 other = "This article has not been updated for over a year. With the iteration of versions, the information described in the article may have become outdated and is for reference only."
 
@@ -9,9 +6,6 @@ other = "New Update Available"
 
 [serviceWorkerUpdatedAction]
 other = "Refresh"
-
-[ChinesePoem]
-other = "Chinese poem is loading..."
 
 [LoadMoreBtn]
 other = "Load More"

@@ -37,29 +37,6 @@
     });
 </script>
 <script>
-    // Override theme switcher: light ↔ dark only, no system.
-    // Icon visibility is handled by CSS ([data-theme] selectors),
-    // so JS only needs to toggle the attribute.
-    if (localStorage.getItem('theme') === 'system') {
-        localStorage.setItem('theme', document.documentElement.getAttribute('data-theme') || 'light');
-    }
-
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('#theme-switcher')) return;
-        e.preventDefault();
-        e.stopImmediatePropagation();
-
-        var cur = document.documentElement.getAttribute('data-theme') || 'light';
-        var next = cur === 'dark' ? 'light' : 'dark';
-
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-
-        var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', next === 'dark' ? '{{ .Site.Params.themeColorDark }}' : '{{ .Site.Params.themeColor }}');
-    }, true);
-</script>
-<script>
     // Fix load-comments button: after page transition the theme's
     // DOMContentLoaded handler is lost. Use event delegation.
     document.addEventListener('click', function(e) {

@@ -16,13 +16,6 @@ window.addEventListener("DOMContentLoaded", function() {
         sidebarDimmer.setAttribute('aria-hidden', 'false');
         document.body.classList.add('sidebar-open');
         sidebarToggle.classList.add('open');
-
-        var activeItem = sidebar.querySelector('.sidebar-toc a.active');
-        if (activeItem) {
-            setTimeout(function() {
-                activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-            }, 350);
-        }
     }
 
     function closeSidebar() {
@@ -66,20 +59,6 @@ window.addEventListener("DOMContentLoaded", function() {
             sidebarToggle.focus();
         }
     });
-
-    // Tab switching: TOC / Overview
-    var sidebarInnerEl = document.querySelector('.sidebar-inner');
-    var navTabs = document.querySelectorAll('.sidebar-nav li');
-    if (sidebarInnerEl && navTabs.length) {
-        navTabs.forEach(function(tab, index) {
-            tab.addEventListener('click', function() {
-                sidebarInnerEl.classList.replace(
-                    index === 0 ? 'sidebar-overview-active' : 'sidebar-toc-active',
-                    index === 0 ? 'sidebar-toc-active' : 'sidebar-overview-active'
-                );
-            });
-        });
-    }
 
     // Highlight active TOC item based on scroll position
     var tocLinks = document.querySelectorAll('.sidebar-toc a');

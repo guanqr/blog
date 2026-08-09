@@ -23,9 +23,6 @@
 }
 
 @media (max-width: $maxWidth) {
-    .nav {
-        margin: 2em 0 0.5em;
-    }
     .menu {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
@@ -48,6 +45,17 @@
 
 .nav-toggle {
     transform: translateY(0.4em);
+
+    span {
+        height: 2.5px;
+        border-radius: 0.8px;
+        width: 1em;
+    }
+
+    &.open span:nth-child(2) {
+        width: 0;
+        opacity: 0;
+    }
 }
 
 // 主题图标：按 data-theme 属性自动切换，不依赖 JS 操作 style.display

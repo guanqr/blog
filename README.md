@@ -23,12 +23,35 @@
 ### 配色
 - 亮色 / 暗色双主题，一键切换（仅亮↔暗，无系统跟随模式）
 - 金色主色调，其余对比度层级保持 MemE 原版
-- `[data-theme]` CSS 选择器控制图标可见性
+- dark-mode.js 精简为二态逻辑，移除系统跟随
+
+### 侧边栏（Next Muse 风格）
+- 文章目录（TOC），仅 TOC 开启的页面显示
+- 宽屏推挤主内容（1100px+），窄屏叠加遮罩
+- CSS 计数器三级编号（1 / 1.1 / 1.1.1）
+- 滚动高亮当前章节
+- 三横线汉堡图标，点击变叉号，动画与导航栏一致
+
+### 微动态（Micro）
+- Markdown 创建，无标题无目录无评论
+- `/micro/` 页面倒序展示，日期在正文下方
+- 排除在 RSS / 归档之外
+- `hugo new micro/xxx.md` 一键创建
+
+### 书单（Books）
+- `data/books.toml` 按年份分组，自动倒序排列
+- 书名 + 作者 + 类型 + 出版社内联展示
+- 年份右侧生肖图标，hover 金色高亮
+
+### 关于页面
+- Emoji 卡片网格，data 驱动
+- 虚线边框 + hover 金黄过渡
 
 ### 归档
 - 年份 URL 路由：`/archives/2025/` 等，由 Hugo Content Adapter 自动生成
 - 即时切换年份，`pushState` 同步 URL
 - 键盘 ← → 导航
+- `<base href="/">` 仅存档页使用，修正相对链接
 
 ### 图床
 - 图片托管于阿里云 OSS（`guanqr.oss-cn-hangzhou.aliyuncs.com`）
@@ -38,22 +61,42 @@
 - 纯色半透明背景 + 毛玻璃模糊，金色底边线
 - 宽窄屏自适应，`resize` 自动清理菜单状态
 
+### 其他
+- Hugo 0.164.0 适配（`languageCode`→`locale`，`languageName`→`label`，`.Site.Data`→`site.Data`）
+- SCSS 清理冗余代码（色值、订阅样式、失效选择器）
+- archives.js 修复 popstate / 相对链接 / 动态 basePath
+
 ## 结构
 
 ```
-├── assets/scss/custom/    # SCSS 覆盖
-│   ├── _colors.scss       # 配色
-│   ├── _post-title.scss   # 标题 & 英文副标题
+├── assets/
+│   ├── js/
+│   │   ├── dark-mode.js    # 二态主题切换
+│   │   └── sidebar.js      # 侧边栏 & TOC 高亮
+│   └── scss/custom/        # SCSS 覆盖
+│       ├── _colors.scss    # 配色
+│       ├── _sidebar.scss   # 侧边栏
+│       ├── _books.scss     # 书单
+│       ├── _micro.scss     # 微动态
+│       ├── _identity-cards.scss  # 身份卡片
+│       └── ...
+├── data/                   # 结构化数据
+│   ├── books.toml          # 书单
+│   ├── identities.toml     # 身份标签
+│   └── blogroll.toml       # 友链
+├── content/zh/
+│   ├── archives/           # 归档（含 _content.gotmpl）
+│   ├── micro/              # 微动态
+│   ├── books/              # 书单
 │   └── ...
-├── content/zh/archives/   # 归档（含 _content.gotmpl 内容适配器）
-├── layouts/               # 模板覆盖
+├── layouts/                # 模板覆盖
 ├── static/js/
-│   └── archives.js        # 归档年份切换
+│   └── archives.js         # 归档年份切换
 ├── scripts/
-│   └── upload-images.py   # OSS 图片上传
-├── upload-images.bat      # 一键上传
+│   └── upload-images.py    # OSS 图片上传
+├── upload-images.bat       # 一键上传
 ├── config.toml
-└── themes/meme/           # MemE 主题（git submodule）
+└── themes/meme/            # MemE 主题（git submodule）
 ```
 
 ## 本地运行

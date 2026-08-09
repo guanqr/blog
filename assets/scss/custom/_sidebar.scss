@@ -192,7 +192,7 @@ $sidebar-z: 10;
 }
 
 // Wide desktop: push content left
-$sidebar-push-breakpoint: 1100px;
+$sidebar-push-breakpoint: 1200px;
 
 // Tablet and mobile: overlay mode with dimmer
 @media (max-width: $sidebar-push-breakpoint - 1px) {
@@ -212,19 +212,16 @@ $sidebar-push-breakpoint: 1100px;
 
     body {
         box-sizing: border-box;
-        transition: padding-right $duration ease;
 
         &.sidebar-open {
             padding-right: $sidebar-width;
-
-            .header {
-                width: calc(100vw - 320px);
-            }
         }
     }
 
     .header {
-        transition: width $duration ease;
+        body.sidebar-open & {
+            width: calc(100vw - 320px);
+        }
     }
 
     #back-to-top {

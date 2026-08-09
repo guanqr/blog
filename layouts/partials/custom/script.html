@@ -14,29 +14,6 @@
     }
 </script>
 <script>
-    // Fix all #hash links broken by <base href="/">
-    // Rewrite href so the browser status bar shows the correct URL
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-        a.href = location.pathname + a.getAttribute('href');
-    });
-
-    document.addEventListener('click', function(e) {
-        var link = e.target.closest('a');
-        if (!link) return;
-        var raw = link.getAttribute('href');
-        if (!raw || raw.indexOf('#') === -1) return;
-        var id = raw.split('#').pop();
-        if (!id) return;
-        e.preventDefault();
-        var target = document.getElementById(id);
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    });
-</script>
-<script>
     // Fix load-comments button: after page transition the theme's
     // DOMContentLoaded handler is lost. Use event delegation.
     document.addEventListener('click', function(e) {

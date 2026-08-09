@@ -15,7 +15,6 @@
     justify-content: space-between;
     align-items: baseline;
     font-weight: 700;
-    color: var(--color-primary);
     margin-bottom: 0.5em;
     padding-bottom: 0.3em;
     border-bottom: 1px solid var(--color-contrast-low);
@@ -35,6 +34,14 @@
     &:last-child {
         border-bottom: none;
     }
+
+    &:hover .book-author,
+    &:hover .book-publisher,
+    &:hover .book-genre,
+    &:hover .book-publisher::before,
+    &:hover .book-genre::before {
+        color: var(--color-primary);
+    }
 }
 
 .book-title {
@@ -52,10 +59,12 @@
 .book-publisher,
 .book-genre {
     color: var(--color-contrast-medium);
+    transition: color $duration;
 }
 
 .book-publisher::before,
 .book-genre::before {
     content: " | ";
     color: var(--color-contrast-low);
+    transition: color $duration;
 }

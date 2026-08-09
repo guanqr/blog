@@ -1,0 +1,4 @@
++++
+date = "{{ .Date }}"
+type = "micro"
++++

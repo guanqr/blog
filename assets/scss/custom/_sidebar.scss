@@ -3,7 +3,6 @@
 // ============================================================
 
 $sidebar-width: 320px;
-$sidebar-toggle-bottom: 0;
 $sidebar-z: 10;
 
 // ---- Toggle button ----
@@ -244,12 +243,8 @@ $sidebar-push-breakpoint: 1200px;
     }
 }
 
-// Mobile
+// Mobile: scale sidebar with viewport
 @media (max-width: $maxWidth) {
-    body.sidebar-open {
-        overflow: hidden;
-    }
-
     .sidebar {
         width: 75vw;
         max-width: $sidebar-width;

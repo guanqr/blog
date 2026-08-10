@@ -1,3 +1,20 @@
+// Freeze header/body transitions during window resize (all pages)
+window.addEventListener("DOMContentLoaded", function() {
+    var header = document.querySelector('.header');
+    var body = document.body;
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+        if (header) header.style.transition = 'none';
+        if (body) body.style.transition = 'none';
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (header) header.style.transition = '';
+            if (body) body.style.transition = '';
+        }, 300);
+    });
+});
+
+// Sidebar logic (only on pages with sidebar)
 window.addEventListener("DOMContentLoaded", function() {
     var sidebar = document.getElementById('sidebar');
     var sidebarToggle = document.getElementById('sidebar-toggle');
@@ -58,20 +75,6 @@ window.addEventListener("DOMContentLoaded", function() {
             closeSidebar();
             sidebarToggle.focus();
         }
-    });
-
-    // Freeze header/body transitions during window resize
-    var header = document.querySelector('.header');
-    var body = document.body;
-    var resizeTimer;
-    window.addEventListener('resize', function() {
-        if (header) header.style.transition = 'none';
-        if (body) body.style.transition = 'none';
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-            if (header) header.style.transition = '';
-            if (body) body.style.transition = '';
-        }, 300);
     });
 
     // Highlight active TOC item based on scroll position

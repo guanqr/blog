@@ -17,6 +17,15 @@ $sidebar-z: 10;
     height: 18px;
     background: transparent;
     box-sizing: content-box;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -1em;
+        left: 0;
+        right: 0;
+        height: 2em;
+    }
 }
 
 .toggle-line {

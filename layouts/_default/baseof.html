@@ -9,7 +9,7 @@
         </div>
 
         {{ partial "components/back-to-top.html" . }}
-        {{ if and .IsPage (.Params.toc | default .Site.Params.enableTOC) }}
+        {{ if and .Site.Params.enableSidebar .IsPage (.Params.toc | default .Site.Params.enableTOC) }}
         {{ partial "components/sidebar-toggle.html" . }}
         {{ partial "components/sidebar.html" . }}
         {{ end }}

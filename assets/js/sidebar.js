@@ -7,41 +7,26 @@ window.addEventListener("DOMContentLoaded", function() {
 
     var isOpen = false;
 
-    var header = document.querySelector('.header');
-    var body = document.body;
-
     function openSidebar() {
         if (isOpen) return;
         isOpen = true;
-        if (header) header.style.transition = 'width 0.5s ease';
-        if (body) body.style.transition = 'padding-right 0.5s ease';
         sidebar.classList.add('open');
         sidebar.setAttribute('aria-hidden', 'false');
         sidebarDimmer.classList.add('open');
         sidebarDimmer.setAttribute('aria-hidden', 'false');
         document.body.classList.add('sidebar-open');
         sidebarToggle.classList.add('open');
-        setTimeout(function() {
-            if (header) header.style.transition = '';
-            if (body) body.style.transition = '';
-        }, 500);
     }
 
     function closeSidebar() {
         if (!isOpen) return;
         isOpen = false;
-        if (header) header.style.transition = 'width 0.5s ease';
-        if (body) body.style.transition = 'padding-right 0.5s ease';
         sidebar.classList.remove('open');
         sidebar.setAttribute('aria-hidden', 'true');
         sidebarDimmer.classList.remove('open');
         sidebarDimmer.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('sidebar-open');
         sidebarToggle.classList.remove('open');
-        setTimeout(function() {
-            if (header) header.style.transition = '';
-            if (body) body.style.transition = '';
-        }, 500);
     }
 
     function toggleSidebar() {
@@ -75,6 +60,20 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Freeze header/body transitions during window resize
+    var header = document.querySelector('.header');
+    var body = document.body;
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+        if (header) header.style.transition = 'none';
+        if (body) body.style.transition = 'none';
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (header) header.style.transition = '';
+            if (body) body.style.transition = '';
+        }, 300);
+    });
+
     // Highlight active TOC item based on scroll position
     var tocLinks = document.querySelectorAll('.sidebar-toc a');
     var headings = [];
@@ -101,5 +100,4 @@ window.addEventListener("DOMContentLoaded", function() {
 
         headings.forEach(function(h) { observer.observe(h.el); });
     }
-
 });

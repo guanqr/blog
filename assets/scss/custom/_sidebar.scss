@@ -3,26 +3,28 @@
 // ============================================================
 
 $sidebar-width: 320px;
-$sidebar-toggle-bottom: 3.2em;
+$sidebar-toggle-bottom: 0;
 $sidebar-z: 10;
 
 // ---- Toggle button ----
 .sidebar-toggle {
     position: fixed;
-    right: 1.03em;
-    bottom: $sidebar-toggle-bottom;
+    left: 0;
+    bottom: -1em;
     z-index: $sidebar-z + 3;
     cursor: pointer;
+    padding: 1em;
     width: 18px;
     height: 18px;
     background: transparent;
+    box-sizing: content-box;
 }
 
 .toggle-line {
     display: block;
     position: absolute;
     height: 2.5px;
-    width: 100%;
+    width: 18px;
     background: var(--color-contrast-medium);
     border-radius: 0.8px;
     transition: all $duration;
@@ -47,10 +49,8 @@ $sidebar-z: 10;
 // Open X
 .sidebar-toggle.open {
     .toggle-line {
-        background: var(--color-primary);
-
         &:first-child {
-            top: 50%;
+            top: 7px;
             transform: rotate(225deg);
         }
         &:nth-child(2) {
@@ -59,9 +59,13 @@ $sidebar-z: 10;
             transform: rotate(-135deg);
         }
         &:last-child {
-            top: 50%;
+            top: 7px;
             transform: rotate(-45deg);
         }
+    }
+
+    &:hover .toggle-line {
+        background: var(--color-primary);
     }
 }
 
@@ -88,19 +92,19 @@ $sidebar-z: 10;
 .sidebar {
     position: fixed;
     top: 0;
-    right: 0 - $sidebar-width;
+    left: 0 - $sidebar-width;
     width: $sidebar-width;
     max-width: 85vw;
     height: 100%;
     z-index: $sidebar-z + 2;
     background: var(--color-bg);
-    border-left: 1px solid var(--color-contrast-lower);
+    border-right: 1px solid var(--color-contrast-lower);
     overflow-y: auto;
     overflow-x: hidden;
-    transition: right $duration ease;
+    transition: left $duration ease;
 
     &.open {
-        right: 0;
+        left: 0;
     }
 }
 
@@ -212,17 +216,24 @@ $sidebar-push-breakpoint: 1200px;
 
     body {
         box-sizing: border-box;
+        transition: padding-left $duration ease;
 
         &.sidebar-open {
-            padding-right: $sidebar-width;
+            padding-left: $sidebar-width;
         }
     }
 
     .header {
+        left: 0;
+        width: 100vw;
+        transition: left $duration ease, width $duration ease;
+
         body.sidebar-open & {
-            width: calc(100vw - 320px);
+            left: $sidebar-width;
+            width: calc(100vw - #{$sidebar-width});
         }
     }
+
 
     #back-to-top {
         z-index: $sidebar-z + 3;

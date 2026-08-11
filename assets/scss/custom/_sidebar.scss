@@ -5,6 +5,11 @@
 $sidebar-width: 320px;
 $sidebar-z: 10;
 
+// Unify back-to-top speed with global $duration
+.back-to-top {
+    transition: bottom $duration ease !important;
+}
+
 // ---- Toggle button ----
 .sidebar-toggle {
     position: fixed;
@@ -35,7 +40,7 @@ $sidebar-z: 10;
     width: 18px;
     background: var(--color-contrast-medium);
     border-radius: 0.8px;
-    transition: all $duration;
+    transition: top $duration ease, transform $duration ease, opacity $duration ease, width $duration ease;
 
     &:first-child {
         top: 2px;
@@ -100,7 +105,7 @@ $sidebar-z: 10;
 .sidebar {
     position: fixed;
     top: 0;
-    left: 0 - $sidebar-width;
+    left: 0;
     width: $sidebar-width;
     max-width: 85vw;
     height: 100%;
@@ -109,10 +114,11 @@ $sidebar-z: 10;
     border-right: 1px solid var(--color-contrast-lower);
     overflow-y: auto;
     overflow-x: hidden;
-    transition: left $duration ease;
+    transform: translateX(-100%);
+    transition: transform $duration ease;
 
     &.open {
-        left: 0;
+        transform: translateX(0);
     }
 }
 
@@ -208,10 +214,6 @@ $sidebar-push-breakpoint: 1200px;
 
 // Tablet and mobile: overlay mode with dimmer
 @media (max-width: $sidebar-push-breakpoint - 1px) {
-    body.sidebar-open {
-        overflow: hidden;
-    }
-
     .sidebar {
         max-width: $sidebar-width;
     }
@@ -224,7 +226,7 @@ $sidebar-push-breakpoint: 1200px;
 
     body {
         box-sizing: border-box;
-        transition: padding-left $duration ease;
+        transition: padding-left $duration ease, background-color $duration ease;
 
         &.sidebar-open {
             padding-left: $sidebar-width;
@@ -234,7 +236,7 @@ $sidebar-push-breakpoint: 1200px;
     .header {
         left: 0;
         width: 100vw;
-        transition: left $duration ease, width $duration ease;
+        transition: left $duration ease, width $duration ease, top 0.3s ease-in-out;
 
         body.sidebar-open & {
             left: $sidebar-width;

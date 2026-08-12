@@ -1,19 +1,4 @@
 <script>
-    // Clean up .open class on resize to prevent nav flash
-    var header = document.querySelector('.header');
-    var navToggle = document.getElementById('nav-toggle');
-    if (header && navToggle) {
-        var prevWidth = window.innerWidth;
-        window.addEventListener('resize', function() {
-            if (window.innerWidth !== prevWidth) {
-                header.classList.remove('open', 'fade');
-                if (navToggle.checked) navToggle.checked = false;
-                prevWidth = window.innerWidth;
-            }
-        });
-    }
-</script>
-<script>
     // Fix load-comments button: after page transition the theme's
     // DOMContentLoaded handler is lost. Use event delegation.
     document.addEventListener('click', function(e) {

@@ -115,7 +115,7 @@ $sidebar-z: 10;
     overflow-y: auto;
     overflow-x: hidden;
     transform: translateX(-100%);
-    transition: transform $duration ease;
+    transition: transform $duration ease, background-color $duration ease, border-color $duration ease;
 
     &.open {
         transform: translateX(0);

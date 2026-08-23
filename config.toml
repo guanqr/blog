@@ -279,7 +279,7 @@ uglyURLs = false
         weight = 1
         pre = "internal"
     [[menu.links]]
-        pageref = "/books/"
+        pageref = "/booklist/"
         name = "Books"
         weight = 2
         pre = "internal"

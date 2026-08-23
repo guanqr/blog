@@ -21,8 +21,6 @@ window.addEventListener(
        * Auto hide header
        */
       let lastScrollY = 0;
-      let anchorY = 0;
-      const minDelta = 50;
 
       window.addEventListener(
         'scroll',
@@ -30,19 +28,10 @@ window.addEventListener(
           // Don't hide if page content is shorter than viewport + header
           if (document.body.scrollHeight <= window.innerHeight + header.clientHeight) return;
 
-          const delta = window.scrollY - anchorY;
-          if (Math.abs(delta) < minDelta) return;
+          window.scrollY > lastScrollY
+            ? header.classList.add('hide')
+            : header.classList.remove('hide');
 
-          const scrollingDown = window.scrollY > lastScrollY;
-          if (scrollingDown) {
-            header.classList.add('hide');
-          } else {
-            header.classList.remove('hide');
-          }
-
-          if (scrollingDown !== (delta > 0)) {
-            anchorY = lastScrollY;
-          }
           lastScrollY = window.scrollY;
         }, delayTime)
       );

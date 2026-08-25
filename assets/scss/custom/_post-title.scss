@@ -12,12 +12,12 @@
     user-select: none;
     text-align: center;
     margin: -6.6rem 0 1rem;
-    color: var(--color-contrast-low);
+    color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), 0.4);
     font-size: 1.1em;
     letter-spacing: 0.06em;
     font-style: italic;
     text-transform: uppercase;
-    opacity: 0.25;
+    opacity: 0.35;
     @include title-variation-settings;
 }
 .post-title-dropcap {

@@ -177,6 +177,54 @@ $sidebar-z: 10;
         content: counter(toc1) "." counter(toc2) "." counter(toc3) " ";
     }
 
+    .contents ol ol ol ol {
+        counter-reset: toc4;
+    }
+
+    .contents ol ol ol ol > li {
+        counter-increment: toc4;
+    }
+
+    .contents ol ol ol ol > li > a::before {
+        content: counter(toc1) "." counter(toc2) "." counter(toc3) "." counter(toc4) " ";
+    }
+
+    .contents ol ol ol ol ol {
+        counter-reset: toc5;
+    }
+
+    .contents ol ol ol ol ol > li {
+        counter-increment: toc5;
+    }
+
+    .contents ol ol ol ol ol > li > a::before {
+        content: counter(toc1) "." counter(toc2) "." counter(toc3) "." counter(toc4) "." counter(toc5) " ";
+    }
+
+    .contents ol ol ol ol ol ol {
+        counter-reset: toc6;
+    }
+
+    .contents ol ol ol ol ol ol > li {
+        counter-increment: toc6;
+    }
+
+    .contents ol ol ol ol ol ol > li > a::before {
+        content: counter(toc1) "." counter(toc2) "." counter(toc3) "." counter(toc4) "." counter(toc5) "." counter(toc6) " ";
+    }
+
+    .contents ol ol ol ol ol ol ol {
+        counter-reset: toc7;
+    }
+
+    .contents ol ol ol ol ol ol ol > li {
+        counter-increment: toc7;
+    }
+
+    .contents ol ol ol ol ol ol ol > li > a::before {
+        content: counter(toc1) "." counter(toc2) "." counter(toc3) "." counter(toc4) "." counter(toc5) "." counter(toc6) "." counter(toc7) " ";
+    }
+
     ol.toc, ul.toc {
         padding: 0;
         overflow: visible;

@@ -3,13 +3,13 @@
 :root {
     --waline-theme-color: var(--color-primary) !important;
     --waline-active-color: var(--color-primary) !important;
-    --waline-bgcolor: hsl(50, 5%, 95%) !important;
+    --waline-bg-color: hsl(50, 5%, 95%) !important;
 }
 
 :root[data-theme="dark"] {
     --waline-theme-color: var(--color-primary) !important;
-    --waline-bgcolor: hsl(203, 22%, 7%) !important;
-    --waline-bgcolor-light: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.5) !important;
+    --waline-bg-color: hsl(203, 22%, 7%) !important;
+    --waline-bg-color-light: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.5) !important;
 }
 
 #load-comments {

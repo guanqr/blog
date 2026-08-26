@@ -734,7 +734,6 @@ uglyURLs = false
     walineMeta = ["nick", "mail", "link"]
     walineRequiredMeta = ["nick", "mail"]
     walineLogin = "enabled"
-    walineWordLimit = 0
     walinePageSize = 10
     walineImageUploader = false
     walineHighlighter = true

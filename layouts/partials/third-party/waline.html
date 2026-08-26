@@ -6,25 +6,19 @@
             var css = document.createElement('link');
             css.id = 'waline-css';
             css.rel = 'stylesheet';
-            css.href = 'https://unpkg.com/@waline/client@2.15.8/dist/waline.css';
+            css.href = 'https://unpkg.com/@waline/client@3/dist/waline.css';
             document.head.appendChild(css);
         }
-        if (typeof Waline === 'undefined') {
-            var s = document.createElement('script');
-            s.src = 'https://unpkg.com/@waline/client@2.15.8/dist/waline.js';
-            s.onload = function() { newWaline(); };
-            document.body.appendChild(s);
-        } else {
-            newWaline();
-        }
+        newWaline();
     }
-    function newWaline() {
+    async function newWaline() {
+        const { init } = await import('https://unpkg.com/@waline/client@3/dist/waline.js');
         var locale = {
             nick: "{{ i18n "walineNick" }}",
             mail: "{{ i18n "walineMail" }}",
             placeholder: "{{ i18n "walinePlaceholder" }}"
         };
-        Waline.init({
+        init({
             el: '#waline',
             serverURL: '{{ .Site.Params.walineServerURL }}',
             lang: '{{ .Site.Params.walineLang }}',
@@ -35,7 +29,6 @@
             meta: {{ .Site.Params.walineMeta }},
             requiredMeta: {{ .Site.Params.walineRequiredMeta }},
             login: '{{ .Site.Params.walineLogin }}',
-            wordLimit: {{ .Site.Params.walineWordLimit }},
             pageSize: {{ .Site.Params.walinePageSize }},
             imageUploader: {{ .Site.Params.walineImageUploader }},
             highlighter: {{ .Site.Params.walineHighlighter }},

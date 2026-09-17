@@ -4,52 +4,44 @@
 
 [![Home](https://img.shields.io/badge/Home-Guanqr-aa96da)](https://guanqr.com)
 [![Generator](https://img.shields.io/badge/Generator-Hugo-ff4088?&logo=hugo)](https://gohugo.io/)
-[![Theme](https://img.shields.io/badge/Theme-MemE-2a6df4)](https://github.com/reuixiy/hugo-theme-meme)
+[![Theme](https://img.shields.io/badge/Theme-memoree-2a6df4)](https://github.com/guanqr/blog/tree/master/themes/memoree)
 [![Build](https://github.com/guanqr/blog/workflows/build/badge.svg)](https://github.com/guanqr/blog/actions)
 
 </div>
 
 ## 关于
 
-个人博客，基于 [Hugo](https://gohugo.io/) 静态站点生成器和 [MemE](https://github.com/reuixiy/hugo-theme-meme) 主题。所有定制均通过外层覆盖实现，不修改主题文件。
+个人博客，基于 [Hugo](https://gohugo.io/) 静态站点生成器和自有主题 [memoree](themes/memoree/)（由 [MemE](https://github.com/reuixiy/hugo-theme-meme) 复刻而来，MIT 许可）。所有定制均已直接写入主题，站点目录不再包含模板覆盖。
 
 ## 结构
 
 ```
-├── assets/
-│   ├── js/
-│   │   ├── dark-mode.js    # 二态主题切换
-│   │   └── sidebar.js      # 侧边栏 & TOC 高亮
-│   └── scss/custom/        # SCSS 覆盖
-│       ├── _colors.scss    # 配色
-│       ├── _sidebar.scss   # 侧边栏
-│       ├── _books.scss     # 书单
-│       ├── _micro.scss     # 微动态
-│       ├── _identity-cards.scss  # 身份卡片
-│       └── ...
-├── data/                   # 结构化数据
-│   ├── books.toml          # 书单
+├── themes/memoree/         # 自有主题（由 MemE 复刻）
+│   ├── layouts/            # 全部模板（含侧边栏、归档、微动态、9 个 shortcode）
+│   ├── assets/
+│   │   ├── js/             # dark-mode/header/sidebar 等脚本
+│   │   └── scss/custom/    # 配色、侧边栏、书单、身份卡片等样式
+│   ├── static/js/archives.js  # 归档年份切换
+│   ├── i18n/               # 16 种语言（en/zh-hant 含站点定制键）
+│   └── data/SVG.toml       # 图标（含站点新增图标）
+├── data/                   # 站点结构化数据
+│   ├── booklist.toml       # 书单
 │   ├── identities.toml     # 身份标签
 │   └── blogroll.toml       # 友链
 ├── content/zh/
 │   ├── archives/           # 归档（含 _content.gotmpl）
 │   ├── micro/              # 微动态
-│   ├── books/              # 书单
 │   └── ...
-├── layouts/                # 模板覆盖
-├── static/js/
-│   └── archives.js         # 归档年份切换
 ├── scripts/
 │   └── upload-images.py    # OSS 图片上传
 ├── upload-images.bat       # 一键上传
-├── config.toml
-└── themes/meme/            # MemE 主题（git submodule）
+└── config.toml
 ```
 
 ## 本地运行
 
 ```bash
-git clone --recursive https://github.com/guanqr/blog.git
+git clone https://github.com/guanqr/blog.git
 cd blog
 hugo serve        # 开发
 hugo              # 构建

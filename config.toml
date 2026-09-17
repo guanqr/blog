@@ -616,7 +616,7 @@ uglyURLs = false
     # 注意：要检查你的图标
     #      请前往 https://realfavicongenerator.net/favicon-checker。
     #      如果检测到任何问题，检查生成的文件和
-    #      ~/blog/themes/meme/static/ 目录下
+    #      ~/blog/themes/memoree/static/ 目录下
     #      相关文件的文件名差异。如果有差异，
     #      这意味着某些文件可能已经过时。
     #      如有需要，请提 Issue。

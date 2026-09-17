@@ -1453,22 +1453,6 @@ uglyURLs = false
 
 
     ######################################
-    # 自定义页脚微信订阅功能
-    
-    enableFooterSubscription = false
-    subscriptionIcon = "wechat-brands"
-    subscriptionQrCode = "/images/wechat-official-accounts.svg"
-
-
-    ######################################
-    # 自定义今日诗词功能
-    
-    enableJinrishici = false
-
-
-
-
-    ######################################
     # 自定义文章时效性提醒
 
     # 是否开启

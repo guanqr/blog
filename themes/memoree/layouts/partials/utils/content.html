@@ -18,7 +18,7 @@
     {{- $headings := $headings | default "1-6" -}}
 
     {{- with .Site.Params.anchorIcon -}}
-        {{- $icon := (replace (index $.Site.Data.SVG .) "icon" "icon anchor-icon") -}}
+        {{- $icon := (replace (index site.Data.SVG .) "icon" "icon anchor-icon") -}}
         {{- $.Scratch.Set "icon" $icon -}}
     {{- end -}}
     {{- $icon := .Scratch.Get "icon" -}}
@@ -179,9 +179,6 @@
 <!-- Responsive tables -->
 {{- $Content = $Content | replaceRE `<table\b` `<div class="table-container"><table` -}}
 {{- $Content = $Content | replaceRE `</table>` `</table></div>` -}}
-
-<!-- Custom -->
-{{- $Content = partial "custom/content.html" (dict "$" $ "Content" $Content) | default $Content -}}
 
 <!-- Final Content -->
 {{- $Content | safeHTML -}}

@@ -18,8 +18,8 @@
 <meta property="og:site_name" content="{{ $.Site.Title }}" />
 <meta property="og:locale" content="{{ $.Site.Language.Lang }}" />
 {{- if and hugo.IsMultilingual $.IsTranslated -}}
-    {{- range $.Site.Languages -}}
-        {{ if ne .Lang $.Site.Language.Lang }}
+    {{- range site.Languages -}}
+        {{ if ne .Lang site.Language.Lang }}
             <meta property="og:locale:alternate" content="{{ . }}" />
         {{ end }}
     {{- end -}}

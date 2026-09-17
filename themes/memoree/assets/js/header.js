@@ -25,6 +25,9 @@ window.addEventListener(
       window.addEventListener(
         'scroll',
         throttle(() => {
+          // Don't hide if page content is shorter than viewport + header
+          if (document.body.scrollHeight <= window.innerHeight + header.clientHeight) return;
+
           window.scrollY > lastScrollY
             ? header.classList.add('hide')
             : header.classList.remove('hide');
@@ -32,6 +35,7 @@ window.addEventListener(
           lastScrollY = window.scrollY;
         }, delayTime)
       );
+
       {{ end }}
     }
   },

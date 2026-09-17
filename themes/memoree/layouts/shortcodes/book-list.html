@@ -1,0 +1,31 @@
+{{ $books := sort site.Data.booklist.books "year" "desc" }}
+{{ $currentYear := "" }}
+
+<div class="book-list">
+{{ range $books }}
+    {{ $y := string .year }}
+    {{ if ne $y $currentYear }}
+        {{ if ne $currentYear "" }}</ul></div>{{ end }}
+        {{ $currentYear = $y }}
+        <div class="book-year-group">
+            <h2 class="book-year">
+                    <span>{{ $currentYear }}</span>
+                    {{ if site.Params.chineseZodiac }}
+                        {{ $zodiac := index site.Data.ChineseZodiac (string (mod (int $currentYear) 12)) }}
+                        {{ $icon := index site.Data.SVG $zodiac }}
+                        <span class="book-zodiac">{{ replace $icon "icon" "icon book-zodiac-icon" | safeHTML }}</span>
+                    {{ end }}
+                </h2>
+            <ul class="book-items">
+    {{ end }}
+            <li class="book-item">
+                <span class="book-title">{{ .title }}</span>
+                <span class="book-meta">
+                    <span class="book-author">{{ .author }}</span>
+                    <span class="book-genre">{{ .genre }}</span>
+                    <span class="book-publisher">{{ .publisher }}</span>
+                </span>
+            </li>
+{{ end }}
+{{ if ne $currentYear "" }}</ul></div>{{ end }}
+</div>

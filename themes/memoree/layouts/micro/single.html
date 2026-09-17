@@ -1,0 +1,17 @@
+<main class="main single" id="main">
+    <div class="main-inner">
+        <article class="content post">
+            <h1 class="post-title">
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">
+                    {{ .Date.Format "2006-01-02 15:04" }}
+                </time>
+            </h1>
+            <div class="post-body">
+                {{ .Content }}
+            </div>
+            <p style="margin-top:2em;font-size:0.9em;">
+                ← <a href="../">返回動態</a>
+            </p>
+        </article>
+    </div>
+</main>

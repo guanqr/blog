@@ -1,0 +1,16 @@
+<div id="sidebar-dimmer" class="sidebar-dimmer" aria-hidden="true"></div>
+
+{{ $enableTOC := and .IsPage (.Params.toc | default .Site.Params.enableTOC) }}
+<aside id="sidebar" class="sidebar" aria-label="Sidebar" aria-hidden="true">
+    <div class="sidebar-inner">
+        <div class="sidebar-toc">
+            <div class="sidebar-toc-title">{{ i18n "sidebarTocTitle" }}</div>
+            {{ if $enableTOC }}
+                {{ $toc := .TableOfContents }}
+                {{ if and $toc (ne $toc "<nav id=\"TableOfContents\"></nav>") }}
+                    {{ partial "utils/toc.html" . }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</aside>

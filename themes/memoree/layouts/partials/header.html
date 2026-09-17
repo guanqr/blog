@@ -5,7 +5,6 @@
                 <div class="header-inner {{ cond (or .IsHome (eq (len .Pages) 0)) "single" "list"}}">
                     {{ template "site-brand" . }}
                     {{ partial "menu.html" . }}
-                    {{ partial "custom/header.html" . }}
                 </div>
             </div>
             {{ partial "components/nav-toggle.html" . }}

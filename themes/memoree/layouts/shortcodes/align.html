@@ -1,0 +1,7 @@
+{{- $align := .Get 0 -}}
+{{- $validAligns := slice "left" "center" "right" "justify" "start" "end" -}}
+{{- if in $validAligns $align -}}
+  <p style="text-align:{{ $align }}">{{ .Get 1 | markdownify }}</p>
+{{- else -}}
+  <p>{{ .Get 1 | markdownify }}</p>
+{{- end -}}

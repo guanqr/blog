@@ -119,5 +119,9 @@
         {{ partial "third-party/yandex-metrika.html" . }}
     {{- end }}
 
-    {{ partial "custom/head.html" . }}
+    {{/*  Load custom fonts async  */}}
+    {{- $fontsLink := .Site.Params.customFontsLink -}}
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="{{ $fontsLink }}" media="print" onload="this.media='all'" />
 </head>

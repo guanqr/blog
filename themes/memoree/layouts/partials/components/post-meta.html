@@ -82,5 +82,7 @@
             <span class="post-meta-item busuanzi-page-pv" id="busuanzi_container_page_pv">{{ $icon }}&nbsp;<span id="busuanzi_value_page_pv"></span></span>
         {{ end }}
     {{ end }}
-    {{ partial "custom/post-meta.html" $ }}
+    {{ if and $.Site.Params.enableExpiredTip ($.Params.displayExpiredTip | default $.Site.Params.displayPostExpiredTip) }}
+    <div id="expiredTip">{{ i18n "expiredTip" }}</div>
+    {{ end }}
 </div>

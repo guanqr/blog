@@ -21,15 +21,6 @@
     {{- $path = $.Site.Params.lib.path.instantsearch | default $defalut -}}
 {{- end -}}
 
-{{- if eq $type "gitalk" -}}
-    {{- $defalut := "/npm/gitalk@1/dist/gitalk.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.gitalk | default $defalut -}}
-{{- end -}}
-{{- if eq $type "gitalk-css" -}}
-    {{- $dafault := "/npm/gitalk@1/dist/gitalk.css" -}}
-    {{- $path = $.Site.Params.lib.path.gitalk_css | default $dafault -}}
-{{- end -}}
-
 {{- if eq $type "instantpage" -}}
     {{- $default := "/npm/instant.page@5.1.0/instantpage.min.js" -}}
     {{- $path = $.Site.Params.lib.path.instantpage | default $default -}}
@@ -89,11 +80,6 @@
     {{- $path = $.Site.Params.lib.path.qrcode | default $defalut -}}
 {{- end -}}
 
-{{- if eq $type "valine" -}}
-    {{- $defalut := "/npm/valine@1.4.14/dist/Valine.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.valine | default $defalut -}}
-{{- end -}}
-
 <!--
 
   Third-party services
@@ -105,25 +91,14 @@
     {{- $host = $.Site.Params.lib.path.busuanzi | default $defalut -}}
 {{- end -}}
 
-{{- if eq $type "utterances" -}}
-    {{- $defalut := "https://utteranc.es/client.js" -}}
-    {{- $host = $.Site.Params.lib.path.utterances | default $defalut -}}
-{{- end -}}
-
-{{- if eq $type "giscus" -}}
-    {{- $defalut := "https://giscus.app/client.js" -}}
-    {{- $host = $.Site.Params.lib.path.giscus | default $defalut -}}
-{{- end -}}
-
 <!--
 
   Third-party libraries/services/resources which not included in this file:
 
-    1. Disqus
-    2. Google Analytics
-    3. Google Adsense
-    4. Yandex Metrika
-    5. Other hosts customized in config.toml
+    1. Google Analytics
+    2. Google Adsense
+    3. Yandex Metrika
+    4. Other hosts customized in config.toml
 
 --->
 

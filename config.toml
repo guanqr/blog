@@ -9,7 +9,7 @@ hasCJKLanguage = true
 copyright = "本文採用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 許可協議，轉載請註明出處。"
 
 # 主题选择
-theme = "meme"
+theme = "memoree"
 
 # `hugo new` 新建文章自动打开的文本编辑器
 newContentEditor = ""

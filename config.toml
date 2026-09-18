@@ -355,11 +355,9 @@ uglyURLs = false
     ######################################
     # 首页布局
 
-    # MemE 主题有以下四种首页布局：
+    # 首页布局：
     # 1. poetry    诗意人生
-    # 2. footage   视频片段
-    # 3. posts     文章摘要
-    # 4. page      普通页面
+    # 2. posts     文章摘要
 
     homeLayout = "poetry"
 
@@ -368,18 +366,6 @@ uglyURLs = false
     homePoetry = ["十里青山遠，潮平路帶沙","數聲啼鳥怨年華","又是淒涼時候，在天涯","白露收殘月，清風散曉霞","綠楊堤畔問荷花","記得年時沽酒，那人家"]
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1
-
-    ## 「视频片段」
-    homePoster = ""
-    homeVideoWebm = ""
-    homeVideoMp4 = ""
-    homeLogo = "/icons/android-chrome-512x512.png"
-    homeLogoLink = "/home/"
-    homeTitle = "荷戟独彷徨"
-    homeMotto = "The Sound of Silence"
-    homeDescription = "十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花：记得年时沽酒，那人家？"
-    homeKeywords = "个人博客，关键词：生活、悦读、品影、旅行、青春、幻想、科学、技术、光学、计算机"
-    homeLinksDelimiter = "·"
 
     ## 「文章摘要」
     enableHideInHomepage = false

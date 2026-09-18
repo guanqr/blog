@@ -22,7 +22,7 @@
 │   │   ├── js/             # dark-mode/header/sidebar 等脚本
 │   │   └── scss/custom/    # 配色、侧边栏、书单、身份卡片等样式
 │   ├── static/js/archives.js  # 归档年份切换
-│   ├── i18n/               # 16 种语言（en/zh-hant 含站点定制键）
+│   ├── i18n/               # en / zh-hant（含站点定制键）
 │   └── data/SVG.toml       # 图标（含站点新增图标）
 ├── data/                   # 站点结构化数据
 │   ├── booklist.toml       # 书单

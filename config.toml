@@ -135,22 +135,9 @@ uglyURLs = false
     mediaType = "application/rss+xml"
     baseName = "rss"
 
-# lunr.js 的搜索索引
-[outputFormats.SearchIndex]
-    mediaType = "application/json"
-    baseName = "search"
-
-# Algolia 的搜索索引
-#[outputFormats.Algolia]
-    #mediaType = "application/json"
-    #baseName = "algolia"
-    #isPlainText = true
-    #notAlternative = true
-
 # Hugo 的输出控制
 [outputs]
     page = ["HTML"]
-    # home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex", "Algolia"]
     home = ["HTML", "SectionsAtom", "SectionsRSS"]
     section = ["HTML"]
     taxonomy = ["HTML"]
@@ -179,9 +166,9 @@ uglyURLs = false
 # pre           内链（internal）或外链（external）
 # post          图标（留空（""）则无）
 # identifier    图标的 Class 名
-#               （对于弹性布局的顶栏有三个特殊
+#               （对于弹性布局的顶栏有两个特殊
 #               的值：`theme-switcher`、
-#               `lang-switcher`、`search`）
+#               `lang-switcher`）
 
 [menu]
     ## 菜单栏
@@ -254,10 +241,6 @@ uglyURLs = false
     [[menu.main]]
         weight = 9
         identifier = "lang-switcher"
-    #[[menu.main]]
-    #    weight = 11
-    #    identifier = "search"
-    #    post = "search"
     [[menu.socials]]
         url = "https://github.com/guanqr"
         name = "GitHub"
@@ -1417,29 +1400,6 @@ uglyURLs = false
 
 
     ######################################
-    # Lunr 搜索（暂不支持中文）
-
-    # 说明：需要开启 `SearchIndex` 的输出
-
-    enableLunrSearch = false
-    # 说明：https://lunrjs.com/
-
-
-    ######################################
-    # Algolia search
-
-    # 说明：需要开启 `Algolia` 的输出，且需要每
-    #      次将生成的 algolia.json 文件上传到
-    #      Algolia
-
-    enableAlgoliaSearch = false
-
-    algoliaAppId = ""
-    algoliaApiKey = ""
-    algoliaIndexName = ""
-    # 说明：https://www.algolia.com/
-
-
     ######################################
     # 404 页面
 
@@ -1475,16 +1435,11 @@ uglyURLs = false
         #      并将文件放到你的 /static/js/lib.min.js
     [params.lib.path]
         clipboard = "/npm/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.min.js"
-        instantsearch = "/npm/instantsearch.js@2/dist/instantsearch.min.js"
         instantpage = "/npm/instant.page@5.1.0/instantpage.min.js"
         katex = "/npm/katex@0.13.0/dist/katex.min.js"
         katex_css = "/npm/katex@0.13.0/dist/katex.min.css"
         katex_mhchem = "/npm/katex@0.13.0/dist/contrib/mhchem.min.js"
         katex_auto_render = "/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
-        lunr = "/npm/lunr@2.3.9/lunr.min.js"
-        lunr_tinyseg = "/npm/lunr-languages@1.4.0/tinyseg.js"
-        lunr_stemmer = "/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js"
-        lunr_lang = "/npm/lunr-languages@1.4.0/min/lunr.de.min.js"
         mathjax = "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"
         medium_zoom = "/npm/medium-zoom@latest/dist/medium-zoom.min.js"
         mermaid = "/npm/mermaid@8.8.3/dist/mermaid.min.js"
@@ -1536,10 +1491,6 @@ uglyURLs = false
     #category = "categories"
     #tag = "tags"
 [languages.en.menu]
-    #[[languages.en.menu.main]]
-    #    weight = 1
-    #    identifier = "search"
-    #    post = "search"
     [[languages.en.menu.main]]
         url = "/en/about/"
         name = "About"

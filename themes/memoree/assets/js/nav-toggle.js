@@ -72,12 +72,6 @@ window.addEventListener("DOMContentLoaded", event => {
 
 
     function checkInput() {
-        // https://github.com/reuixiy/hugo-theme-meme/issues/171
-        const input = document.getElementById('search-input');
-        if (input && input === document.activeElement) {
-            return;
-        }
-
         closeNav();
     }
 

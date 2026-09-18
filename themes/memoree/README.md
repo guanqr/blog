@@ -1,12 +1,11 @@
 # memoree
 
-memoree 是 [Guanqr's Blog](https://guanqr.com/) 使用的个人 Hugo 主题，由 [hugo-theme-meme](https://github.com/reuixiy/hugo-theme-meme)（v5.0.0）复刻而来。上游自 2022 年起已停止更新，本站将主题剥离为自有主题并直接维护。
+memoree 是 [Guanqr](https://guanqr.com/) 使用的个人 Hugo 主题，由 [hugo-theme-meme](https://github.com/reuixiy/hugo-theme-meme)（v5.0.0）复刻而来。上游自 2022 年起已基本停止更新，本站将主题剥离为自有主题并直接维护。
 
 ## 与上游的差异
 
 - **站点定制全部写入主题**：不再通过外层覆盖，站点根目录无 layouts/、assets/、i18n/、archetypes/
 - **评论系统仅保留 Waline**（v3 ESM 懒加载），删除了 Disqus、Valine、Utterances、Gitalk、Giscus、Remark42
-- **删除今日诗词与页脚订阅功能**
 - **删除未使用语言**：i18n 仅保留 `en` 与 `zh-hant`
 - **删除上游元数据**：`.github/`、`exampleSite/`、`config-examples/`
 

@@ -16,11 +16,6 @@
     {{- $path = $.Site.Params.lib.path.clipboard | default $defalut -}}
 {{- end -}}
 
-{{- if eq $type "instantsearch" -}}
-    {{- $defalut := "/npm/instantsearch.js@2/dist/instantsearch.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.instantsearch | default $defalut -}}
-{{- end -}}
-
 {{- if eq $type "instantpage" -}}
     {{- $default := "/npm/instant.page@5.1.0/instantpage.min.js" -}}
     {{- $path = $.Site.Params.lib.path.instantpage | default $default -}}
@@ -41,23 +36,6 @@
 {{- if eq $type "katex-auto-render" -}}
     {{- $defalut := "/npm/katex@0.13.0/dist/contrib/auto-render.min.js" -}}
     {{- $path = $.Site.Params.lib.path.katex_auto_render | default $defalut -}}
-{{- end -}}
-
-{{- if eq $type "lunr" -}}
-    {{- $defalut := "/npm/lunr@2.3.9/lunr.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.lunr | default $defalut -}}
-{{- end -}}
-{{- if eq $type "lunr-tinyseg" -}}
-    {{- $defalut := "/npm/lunr-languages@1.4.0/tinyseg.js" -}}
-    {{- $path = $.Site.Params.lib.path.lunr_tinyseg | default $defalut -}}
-{{- end -}}
-{{- if eq $type "lunr-stemmer" -}}
-    {{- $defalut := "/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.lunr_stemmer | default $defalut -}}
-{{- end -}}
-{{- if eq $type "lunr-lang" -}}
-    {{- $defalut := printf "/npm/lunr-languages@1.4.0/min/lunr.%s.min.js" $lang -}}
-    {{- $path = $.Site.Params.lib.path.lunr_lang | default $defalut -}}
 {{- end -}}
 
 {{- if eq $type "mathjax" -}}

@@ -29,7 +29,6 @@
 ### 精简
 
 - 删除 Disqus、Valine、Utterances、Gitalk、Giscus、Remark42 评论系统（仅保留 Waline）
-- 删除今日诗词与页脚订阅功能
 - 删除 i18n 中未使用的 14 种语言（仅保留 en、zh-hant）
 - 删除上游元数据：`.github/`、`exampleSite/`、`config-examples/`、README、截图、`Socials.toml`
 

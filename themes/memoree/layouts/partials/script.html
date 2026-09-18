@@ -32,14 +32,6 @@
     {{- $scripts = union $scripts (slice "js/comments.js") -}}
 {{- end -}}
 
-{{- if .Site.Params.enableLunrSearch -}}
-    {{- $scripts = union $scripts (partial "third-party/lunr-search.html" .) -}}
-{{- end -}}
-
-{{- if .Site.Params.enableAlgoliaSearch -}}
-    {{- $scripts = union $scripts (partial "third-party/algolia-search.html" .) -}}
-{{- end -}}
-
 {{- $scripts = union $scripts (slice "js/sidebar.js") -}}
 {{- $scripts = union $scripts (slice "js/custom.js") -}}
 

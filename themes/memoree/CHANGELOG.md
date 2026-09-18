@@ -31,6 +31,11 @@
 - 删除 Disqus、Valine、Utterances、Gitalk、Giscus、Remark42 评论系统（仅保留 Waline）
 - 删除 i18n 中未使用的 14 种语言（仅保留 en、zh-hant）
 - 删除上游元数据：`.github/`、`exampleSite/`、`config-examples/`、README、截图、`Socials.toml`
+- 删除主题搜索功能（Lunr 与 Algolia，含搜索 UI 与索引输出）
+- 删除顶栏居中布局（固定为弹性布局）
+- 删除首页的视频片段与普通页面布局（仅保留诗意人生与文章摘要）
+- 删除谷歌广告（AdSense）与不蒜子统计
+- 删除文章分享模块（分享按钮、Fediverse 分享页与二维码）
 
 ### 修复
 

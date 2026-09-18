@@ -8,7 +8,7 @@ description = "memoree is a personal Hugo theme forked from MemE for guanqr.com.
 homepage = "https://github.com/guanqr/blog/"
 tags = ["Blog", "Minimal", "Clean", "Typography", "Multilingual"]
 features = ["Dark Mode", "MathJax", "KaTeX", "JSON-LD", "Drop Cap", "PWA", "TOC"]
-min_version = "0.141.0"
+min_version = "0.164.0"
 
 [author]
 name = "guanqr"

@@ -53,11 +53,6 @@
     {{- $path = $.Site.Params.lib.path.mermaid | default $defalut -}}
 {{- end -}}
 
-{{- if eq $type "qrcode" -}}
-    {{- $defalut := "/npm/qrcode-generator@1.4.4/qrcode.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.qrcode | default $defalut -}}
-{{- end -}}
-
 <!--
 
   Third-party services

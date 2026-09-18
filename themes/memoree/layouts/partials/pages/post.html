@@ -49,10 +49,6 @@
 
         </article>
 
-        {{ if and .Site.Params.enableGoogleAdUnits (eq hugo.Environment "production") -}}
-            {{ partial "third-party/google-adsense-unit.html" . }}
-        {{- end }}
-
         {{ partial "components/post-updated-badge.html" . }}
 
         {{ partial "components/post-gitinfo.html" . }}

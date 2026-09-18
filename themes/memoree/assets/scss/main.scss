@@ -426,14 +426,6 @@ $fofPoster: url({{ $fofPoster }});
     @import "third-party/medium-zoom";
 {{ end }}
 
-// Busuanzi Site UV And PV
-
-{{ if .Site.Params.enableFooter }}
-    {{ if and .Site.Params.displayBusuanziSiteUVAndPV (eq hugo.Environment "production") }}
-        @import "third-party/busuanzi";
-    {{ end }}
-{{ end }}
-
 // Responsive
 
 $greaterWidth: null;

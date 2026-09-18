@@ -76,12 +76,6 @@
         {{ $icon := partial "utils/icon.html" (dict "$" $ "name" $.Site.Params.readingTimeIcon "class" "post-meta-icon") }}
         <span class="post-meta-item reading-time">{{ $icon }}&nbsp;{{ $.ReadingTime }}&nbsp;{{ i18n "minute" $.ReadingTime }}</span>
     {{ end }}
-    {{ if and ($.Params.displayBusuanziPagePV | default $.Site.Params.displayBusuanziPagePV) (eq hugo.Environment "production") }}
-        {{ if not $isHome }}
-            {{ $icon := partial "utils/icon.html" (dict "$" $ "name" $.Site.Params.busuanziPagePVIcon "class" "post-meta-icon") }}
-            <span class="post-meta-item busuanzi-page-pv" id="busuanzi_container_page_pv">{{ $icon }}&nbsp;<span id="busuanzi_value_page_pv"></span></span>
-        {{ end }}
-    {{ end }}
     {{ if and $.Site.Params.enableExpiredTip ($.Params.displayExpiredTip | default $.Site.Params.displayPostExpiredTip) }}
     <div id="expiredTip">{{ i18n "expiredTip" }}</div>
     {{ end }}

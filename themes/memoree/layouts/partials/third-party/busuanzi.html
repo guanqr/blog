@@ -1,7 +1,0 @@
-{{- $src := partial "utils/lib.html" (dict "$" . "type" "busuanzi") -}}
-
-{{ if or .Site.Params.displayBusuanziPagePV .Site.Params.displayBusuanziSiteUVAndPV }}
-    {{ if eq hugo.Environment "production" }}
-        <script async src="{{ $src }}"></script>
-    {{ end }}
-{{ end }}

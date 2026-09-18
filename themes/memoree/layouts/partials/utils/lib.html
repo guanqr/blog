@@ -64,19 +64,13 @@
 
 --->
 
-{{- if eq $type "busuanzi" -}}
-    {{- $defalut := "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" -}}
-    {{- $host = $.Site.Params.lib.path.busuanzi | default $defalut -}}
-{{- end -}}
-
 <!--
 
   Third-party libraries/services/resources which not included in this file:
 
     1. Google Analytics
-    2. Google Adsense
-    3. Yandex Metrika
-    4. Other hosts customized in config.toml
+    2. Yandex Metrika
+    3. Other hosts customized in config.toml
 
 --->
 

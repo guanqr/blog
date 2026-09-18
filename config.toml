@@ -690,22 +690,6 @@ uglyURLs = false
 
 
     ######################################
-    # Google AdSense
-
-    # 说明：仅在生产环境（production）下渲染
-
-    googleAdClient = ""
-
-    ## 自动广告
-    enableGoogleAutoAds = false
-
-    ## 广告单元
-    enableGoogleAdUnits = false
-    googleAdSlot = ""
-    googleAdSlotInArticle = ""
-    googleAdSlotAutoRelaxed = ""
-
-    ######################################
     # Yandex.Metrika
     # https://metrika.yandex.ru/
 
@@ -793,14 +777,6 @@ uglyURLs = false
     displayReadingTime = false
     # 阅读时长的图标
     readingTimeIcon = "clock"
-
-    # 是否显示不蒜子页面浏览量
-    displayBusuanziPagePV = false
-    # 不蒜子页面浏览量的图标
-    busuanziPagePVIcon = "eye"
-    # 说明：仅在生产环境（production）下渲染
-    #      首页暂不支持
-    #      https://busuanzi.ibruce.info/
 
 
     ######################################
@@ -1269,15 +1245,6 @@ uglyURLs = false
     # 自定义页脚（支持 Markdown）
     customFooter = ""
 
-    displayBusuanziSiteUVAndPV = false
-    busuanziSiteUVText = "本站访客数"
-    busuanziSiteUVIcon = "user"
-    busuanziSitePVText = "本站访问量"
-    busuanziSitePVIcon = "eye"
-    # 说明：仅在生产环境（production）下渲染
-    #      文本或图标，留空（""）则无
-    #      https://busuanzi.ibruce.info/
-
     # 社交链接
     enableSocials = false
     # 说明：见 data/Socials.toml
@@ -1413,7 +1380,6 @@ uglyURLs = false
         medium_zoom = "/npm/medium-zoom@latest/dist/medium-zoom.min.js"
         mermaid = "/npm/mermaid@8.8.3/dist/mermaid.min.js"
         qrcode = "/npm/qrcode-generator@1.4.4/qrcode.min.js"
-        busuanzi = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
 
 
     ######################################

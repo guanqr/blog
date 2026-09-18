@@ -4,7 +4,7 @@
     {{- $scripts = union $scripts (slice "js/force-https.js") -}}
 {{- end -}}
 
-{{- if and .Site.Params.enableHeader (eq .Site.Params.headerLayout "flex") -}}
+{{- if .Site.Params.enableHeader -}}
     {{- $scripts = union $scripts (slice "js/header.js") -}}
 
     {{- if .Site.Params.enableNavToggle -}}

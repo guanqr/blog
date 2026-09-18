@@ -12,13 +12,12 @@
             display: none;
         }
     }
-    @if ($headerLayoutFlex) {
-        .header-inner {
-            width: 100%;
-        }
-        .site-brand {
-            margin-left: 1em;
-        }
+    .header-inner {
+        width: 100%;
+    }
+    .site-brand {
+        margin-left: 1em;
+    }
         @if ($enableNavToggle) {
             .header-inner {
                 display: block;
@@ -128,13 +127,4 @@
                 margin-right: 1em;
             }
         }
-    } @else {
-        .menu {
-            display: flex;
-            justify-content: space-around;
-        }
-        .menu-item {
-            margin: 0;
-        }
-    }
 }

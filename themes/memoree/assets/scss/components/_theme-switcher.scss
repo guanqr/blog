@@ -17,10 +17,3 @@
         margin-right: 0 !important;
     }
 }
-
-@if (not $headerLayoutFlex) {
-    #theme-switcher {
-        padding: 1em;
-        float: right;
-    }
-}

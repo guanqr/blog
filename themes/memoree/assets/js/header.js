@@ -16,7 +16,7 @@ window.addEventListener(
         headerHeight
       );
 
-      {{ if and .Site.Params.enableHeaderAutoHide (eq .Site.Params.headerLayout "flex") }}
+      {{ if .Site.Params.enableHeaderAutoHide }}
       /**
        * Auto hide header
        */

@@ -15,17 +15,10 @@
     }
 }
 
-@if ($headerLayoutFlex) {
-    #lang-switcher {
-        display: inline-block;
-    }
-    #langs {
-        left: 0;
-        right: 0;
-    }
-} @else {
-    #lang-switcher {
-        padding: 1em;
-        float: left;
-    }
+#lang-switcher {
+    display: inline-block;
+}
+#langs {
+    left: 0;
+    right: 0;
 }

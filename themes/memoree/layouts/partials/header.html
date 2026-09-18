@@ -1,16 +1,12 @@
-{{ if or (or (and .IsHome .Site.Params.displayHeaderInHome) (eq .Site.Params.headerLayout "flex")) (and (not .IsHome) .Site.Params.enableHeader) }}
+{{ if or .IsHome .Site.Params.enableHeader }}
     <header class="header">
-        {{ if eq .Site.Params.headerLayout "flex" }}
-            <div class="header-wrapper">
-                <div class="header-inner {{ cond (or .IsHome (eq (len .Pages) 0)) "single" "list"}}">
-                    {{ template "site-brand" . }}
-                    {{ partial "menu.html" . }}
-                </div>
+        <div class="header-wrapper">
+            <div class="header-inner {{ cond (or .IsHome (eq (len .Pages) 0)) "single" "list"}}">
+                {{ template "site-brand" . }}
+                {{ partial "menu.html" . }}
             </div>
-            {{ partial "components/nav-toggle.html" . }}
-        {{ else }}
-            {{ template "site-brand" . }}
-        {{ end }}
+        </div>
+        {{ partial "components/nav-toggle.html" . }}
     </header>
 {{ end }}
 

@@ -32,13 +32,8 @@ body {
 
 .main {
     padding: 2em 1em 15em;
+    padding-top: 7em;
     display: block;
-}
-
-@if ($headerLayoutFlex) {
-    .main {
-        padding-top: 7em;
-    }
 }
 
 .main-inner {

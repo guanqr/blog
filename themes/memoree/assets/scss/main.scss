@@ -19,12 +19,6 @@
     $duration: {{ . }}s;
 {{ end }}
 
-{{ if eq .Site.Params.headerLayout "flex" }}
-    $headerLayoutFlex: true;
-{{ else }}
-    $headerLayoutFlex: false;
-{{ end }}
-
 {{ if .Site.Params.enableHeaderAutoHide }}
     $enableHeaderAutoHide: true;
 {{ else }}
@@ -237,7 +231,7 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 
     @import 'layout/header';
 
-    {{ if and (eq .Site.Params.headerLayout "flex") .Site.Params.enableNavToggle }}
+    {{ if .Site.Params.enableNavToggle }}
         @import 'components/nav-toggle';
     {{ end }}
 {{ end }}
@@ -245,9 +239,7 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 
 // Menu Bar
 
-{{ if or .Site.Params.enableMenu (eq .Site.Params.headerLayout "flex") }}
-    @import 'layout/menu';
-{{ end }}
+@import 'layout/menu';
 
 
 // List Page

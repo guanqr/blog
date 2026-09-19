@@ -259,3 +259,63 @@ pre {
     overflow: auto hidden;
     text-indent: 0;
 }
+
+// ============================================================
+// 站点定制：标题区域（英文副标题 + 装饰大字母）
+// ============================================================
+.post-header {
+    position: relative;
+}
+.post-title {
+    position: relative;
+    z-index: 1;
+}
+.post-title-en {
+    position: relative;
+    z-index: -1;
+    user-select: none;
+    text-align: center;
+    margin: -6.6rem 0 1rem;
+    color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), 0.3);
+    font-size: 1.1em;
+    letter-spacing: 0.06em;
+    font-style: italic;
+    text-transform: uppercase;
+    opacity: 0.35;
+    @include title-variation-settings;
+}
+.post-title-dropcap {
+    font-size: 6em;
+    @include title-variation-settings;
+    color: inherit;
+    line-height: 0.75;
+    font-style: italic;
+    vertical-align: baseline;
+    margin-right: -0.05em;
+}
+
+// 间距收紧
+.post-body { margin-top: 3em !important; }
+.contents   { margin-top: 3em; }
+.footnotes  { margin-top: 3rem; }
+.post-tags  { margin-top: 3em; }
+.comments   { margin-top: 3em; }
+
+// mermaid
+
+.mermaid {
+    margin: 4em 0;
+    text-align: center;
+    overflow: auto hidden;
+    font-size: .75em;
+    svg{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// katex
+
+.katex {
+    font-size: 1em !important;
+}

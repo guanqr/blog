@@ -55,3 +55,14 @@
         @include dark-theme;
     }
 }
+
+// ---- 站点配色覆盖（暗色，Dracula + 青绿） ----
+:root[data-theme="dark"] {
+    @include defineColorHSL(--color-primary, 169, 25%, 58%);
+    @include defineColorHSL(--color-bg, 203, 22%, 7%);
+    @include defineColorHSL(--color-contrast-lower, 230, 12%, 18%);
+    @include defineColorHSL(--color-contrast-low, 240, 2%, 37%);
+    @include defineColorHSL(--color-contrast-medium, 80, 2%, 69%);
+    @include defineColorHSL(--color-contrast-high, 69, 9%, 84%);
+    @include defineColorHSL(--color-contrast-higher, 60, 6%, 90%);
+}

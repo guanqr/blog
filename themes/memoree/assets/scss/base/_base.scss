@@ -90,3 +90,21 @@ a {
 ::selection {
     background-color: alpha(var(--color-primary), 0.3);
 }
+
+// ============================================================
+// 站点定制：全局无障碍与性能
+// ============================================================
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0s !important;
+        transition-duration: 0s !important;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}

@@ -128,3 +128,19 @@
             }
         }
 }
+
+// ---- 站点覆盖：移动端菜单 ----
+@media (max-width: $maxWidth) {
+    .menu {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .menu-item {
+        .tags, .archives, .photos, .friends, .about {
+            display: inline-block;
+        }
+        padding: 1em;
+    }
+    .menu-item-name {
+        font-size: 80%;
+    }
+}

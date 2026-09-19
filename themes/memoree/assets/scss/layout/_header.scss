@@ -73,3 +73,9 @@ $brandHeight: null;
         }
     }
 }
+
+// ---- 站点覆盖：顶栏容器 ----
+.header-wrapper {
+    background: hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.85);
+    border-bottom: 0.0625em solid var(--color-contrast-low);
+}

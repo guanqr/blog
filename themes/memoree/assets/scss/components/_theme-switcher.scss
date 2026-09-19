@@ -17,3 +17,16 @@
         margin-right: 0 !important;
     }
 }
+
+// ---- 站点覆盖：按 data-theme 切换图标，不依赖 JS 操作 style.display ----
+.theme-icon-system {
+    display: none !important;
+}
+[data-theme="light"] .theme-icon-light,
+[data-theme="dark"] .theme-icon-dark {
+    display: inline-block !important;
+}
+[data-theme="light"] .theme-icon-dark,
+[data-theme="dark"] .theme-icon-light {
+    display: none !important;
+}

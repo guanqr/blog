@@ -37,3 +37,15 @@
         margin: 0 0.3em 0.2em 0;
     }
 }
+
+// ---- 站点覆盖：移动端适配 ----
+.nav {
+    font-size: 1em;
+    margin-top: 0.4em;
+}
+
+.menu-item {
+    .tags, .archives, .photos, .friends, .about {
+        display: none;
+    }
+}

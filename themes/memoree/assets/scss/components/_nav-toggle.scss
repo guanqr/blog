@@ -61,3 +61,24 @@
     @include blur;
     background: $headerBackground rgba(0, 0, 0, 0.5);
 }
+
+// ---- 站点覆盖 ----
+.nav-curtain {
+    backdrop-filter: none;
+    background: none;
+}
+
+.nav-toggle {
+    transform: translateY(0.4em);
+
+    span {
+        height: 2.5px;
+        border-radius: 0.8px;
+        width: 1em;
+    }
+
+    &.open span:nth-child(2) {
+        width: 0;
+        opacity: 0;
+    }
+}

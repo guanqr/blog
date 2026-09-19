@@ -424,6 +424,14 @@ $greaterWidth: null;
 @import "base/supports";
 
 
+// Site Shortcodes
+
+@import "components/shortcodes";
+
+// Sidebar
+
+@import "components/sidebar";
+
 // Custom
 
 @import "custom/custom";

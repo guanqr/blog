@@ -20,7 +20,7 @@
 │   ├── layouts/            # 全部模板（含侧边栏、归档、微动态、9 个 shortcode）
 │   ├── assets/
 │   │   ├── js/             # dark-mode/header/sidebar 等脚本
-│   │   └── scss/custom/    # 配色、侧边栏、书单、身份卡片等样式
+│   │   └── scss/           # 按功能分层：base/components/layout/pages/themes
 │   ├── static/js/archives.js  # 归档年份切换
 │   ├── i18n/               # en / zh-hant（含站点定制键）
 │   └── data/SVG.toml       # 图标（含站点新增图标）

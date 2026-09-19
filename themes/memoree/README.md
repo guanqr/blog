@@ -29,7 +29,7 @@ memoree/
 ├── archetypes/         # 文章与微动态模板
 ├── assets/
 │   ├── js/             # 深色模式、侧边栏、代码复制等脚本
-│   └── scss/           # main.scss 注入配置变量；custom/ 存放站点定制样式
+│   └── scss/           # main.scss 注入配置变量；按功能分层，custom/ 仅留空钩子
 ├── data/
 │   ├── SVG.toml        # 图标
 │   └── ChineseZodiac.toml  # 生肖

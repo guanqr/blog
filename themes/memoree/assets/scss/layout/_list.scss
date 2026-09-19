@@ -90,3 +90,92 @@
     color: var(--color-contrast-medium);
     font-size: 0.7em;
 }
+
+// 歸檔頁年份導航
+
+.archives-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+.archives-nav-side {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--color-contrast-medium);
+    cursor: pointer;
+    transition: color $duration;
+    user-select: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+
+    &:hover {
+        color: var(--color-primary);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+
+    svg {
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    &.is-disabled {
+        visibility: hidden;
+        cursor: default;
+    }
+}
+
+.archives-nav-year {
+    font-size: 0.95em;
+}
+
+
+// ============================================================
+// 微动态页面
+// ============================================================
+
+.micro-list {
+    margin-top: 3em;
+}
+
+.micro-entry {
+    padding: 0.75em 0;
+    border-bottom: 1px dashed var(--color-contrast-lower);
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover .micro-date {
+        color: var(--color-primary);
+    }
+}
+
+.micro-date {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 0.85em;
+    color: var(--color-contrast-low);
+    font-family: $fontFamilyGlyph;
+    transition: color $duration;
+}
+
+
+.micro-content {
+    color: var(--color-contrast-high);
+    line-height: 1.7;
+
+    p {
+        margin: 0;
+    }
+
+    img {
+        margin: 0.5em 0;
+    }
+}

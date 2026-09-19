@@ -38,8 +38,14 @@
 - 删除文章分享模块（分享按钮、Fediverse 分享页与二维码）
 - 删除分类树布局链路（categories 与树状分类模板、相关配置参数）
 - 清理冗余：搜索功能遗留的 `relative-url` 工具、孤儿 i18n 键（`themeSwitcher` 等 5 个）与图标（`home`、`rss` 等 8 个）
+- 删除首页底部链接（`menu.home`）的渲染与样式
 
-### 修复
+### 重构
 
-- 移除归档页遗留的 `<base href="/">` 标签（曾劫持页内锚点跳转）
-- 恢复 Service Worker 注册（`enableServiceWorker` 开关此前因 baseof 缺少调用而未生效）
+- custom SCSS 16 个文件按类型归并入主题结构（custom/ 仅留空钩子），编译 CSS 规则级等价
+- 消除 SCSS 重复定义：配色、顶栏背景、菜单、导航开关、正文间距、代码块、首页诗词等站点值直接写入原规则
+- 字体设置收编配置：`fontFamilySiteBrand`/`fontFamilyGlyph`/`fontFamilyStrong`/`fontFamilyArchivesYear`
+- 新增 `enableVariableFont` 开关，可变字体轴设置独立为 `base/_variable-font.scss`，仅启用时导入
+- 侧边栏宽度与桌面推挤断点配置化（`sidebarWidth`/`sidebarPushBreakpoint`）
+- `font-size` 单位统一为 em（代码块等根锚定元素保留 rem）
+- 迁移弃用 API：`site.Data`→`hugo.Data`、`site.Languages`→`hugo.Sites`、`.Site.LanguageCode`→`.Site.Language.Locale`、`.Site.Author`→`.Site.Params.author`（构建零警告）

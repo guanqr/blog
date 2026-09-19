@@ -16,7 +16,7 @@
 .post-description {
     text-align: center;
     margin: 1rem 0;
-    font-size: 90%;
+    font-size: 0.9em;
 }
 
 .post-body {
@@ -50,7 +50,7 @@
     }
     sup {
         unicode-bidi: isolate;
-        font-size: 70%;
+        font-size: 0.7em;
         vertical-align: super;
         a {
             text-decoration: none;
@@ -98,7 +98,7 @@ blockquote {
     display: block;
     text-align: center;
     margin: -1em 0 0;
-    font-size: 90%;
+    font-size: 0.9em;
     color: var(--color-contrast-medium);
 }
 
@@ -117,7 +117,7 @@ ol, ul {
 }
 
 .footnotes {
-    font-size: 90%;
+    font-size: 0.9em;
     margin-top: 3rem;
     hr {
         margin: 0;
@@ -207,20 +207,20 @@ dd {
 code {
     padding: ($fontSize / 8) ($fontSize / 4);
     background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
-    font-size: 80%;
+    font-size: 0.8em;
 }
 pre {
     overflow: auto;
     overflow-wrap: normal;
     word-wrap: normal;
-    font-size: 0.8rem;
+    font-size: 0.8em;
     margin: 2rem 0;
     padding: 1em;
     line-height: 1.618;
     background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
     code {
         background-color: unset;
-        font-size: 0.8rem;
+        font-size: 1em;
         padding: 0;
     }
 }

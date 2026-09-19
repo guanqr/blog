@@ -198,7 +198,7 @@ $notice-dark-variants: (
         margin-bottom: 1em;
         color: var(--color-contrast-high);
         text-align: justify;
-        font-size: 90%;
+        font-size: 0.9em;
     }
     .language-color {
         position: relative;
@@ -210,7 +210,7 @@ $notice-dark-variants: (
     }
     .language-name {
         color: var(--color-contrast-high);
-        font-size: 90%;
+        font-size: 0.9em;
         margin-left: 0.5em;
     }
 }

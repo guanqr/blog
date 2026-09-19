@@ -50,12 +50,6 @@ other = "Take Me Home"
 [backToTop]
 other = "Back to top"
 
-[themeSwitcher]
-other = "Switch theme"
-
-
-# Socials
-
 [january]
 other = "January"
 
@@ -133,12 +127,6 @@ other = "Contents"
 [expiredTip]
 other = "This article has not been updated for over a year. With the iteration of versions, the information described in the article may have become outdated and is for reference only."
 
-[serviceWorkerUpdatedText]
-other = "New Update Available"
-
-[serviceWorkerUpdatedAction]
-other = "Refresh"
-
 [walineNick]
 other = "Nickname*"
 
@@ -147,9 +135,3 @@ other = "Email*"
 
 [walinePlaceholder]
 other = "Please fill in your correct nickname and email to receive reply notifications. Comments including but not limited to advertisements, offensive, or meaningless content will be deleted."
-
-[newer]
-other = "Newer"
-
-[older]
-other = "Older"

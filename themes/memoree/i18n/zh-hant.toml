@@ -52,12 +52,6 @@ other = "送我回起始頁面"
 [backToTop]
 other = "回到頂部"
 
-[themeSwitcher]
-other = "切換主題"
-
-
-# Socials
-
 [january]
 other = "一月"
 
@@ -135,12 +129,6 @@ other = "文章目錄"
 [expiredTip]
 other = "本文已超過一年未更新。隨著版本迭代，文中所述信息可能已失效，僅供參考。"
 
-[serviceWorkerUpdatedText]
-other = "已更新最新版本"
-
-[serviceWorkerUpdatedAction]
-other = "點擊刷新"
-
 [walineNick]
 other = "暱稱*"
 
@@ -149,9 +137,3 @@ other = "郵箱*"
 
 [walinePlaceholder]
 other = "請填寫正確的暱稱和郵箱，方便接收評論回覆信息。若隨意填寫郵箱地址，發佈包括但不限於廣告、攻擊性、無意義等內容文字，將會作刪除處理。"
-
-[newer]
-other = "較新的年份"
-
-[older]
-other = "較早的年份"

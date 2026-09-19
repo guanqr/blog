@@ -36,7 +36,10 @@
 - 删除首页的视频片段与普通页面布局（仅保留诗意人生与文章摘要）
 - 删除谷歌广告（AdSense）与不蒜子统计
 - 删除文章分享模块（分享按钮、Fediverse 分享页与二维码）
+- 删除分类树布局链路（categories 与树状分类模板、相关配置参数）
+- 清理冗余：搜索功能遗留的 `relative-url` 工具、孤儿 i18n 键（`themeSwitcher` 等 5 个）与图标（`home`、`rss` 等 8 个）
 
 ### 修复
 
 - 移除归档页遗留的 `<base href="/">` 标签（曾劫持页内锚点跳转）
+- 恢复 Service Worker 注册（`enableServiceWorker` 开关此前因 baseof 缺少调用而未生效）

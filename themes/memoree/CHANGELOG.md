@@ -1,12 +1,12 @@
 # Changelog
 
-本主题由 [hugo-theme-meme](https://github.com/reuixiy/hugo-theme-meme) v5.0.0 复刻而来，从 v1.0.0 开始记录自有修改。
+本主题基于 [hugo-theme-meme](https://github.com/reuixiy/hugo-theme-meme) v5.0.0 修改而来，从 v1.0.0 开始记录自有修改。
 
 ## v1.0.0 (2026-09-18)
 
 首个独立版本：剥离上游、合并站点定制、精简功能。
 
-### 复刻
+### 剥离
 
 - 主题更名为 memoree，移除 submodule 声明，作为本站仓库 `themes/memoree/` 的普通文件维护
 - 保留 MIT 许可与上游版权声明，theme.toml 更新作者与最低 Hugo 版本（0.164.0）

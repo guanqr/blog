@@ -1,6 +1,6 @@
 # memoree
 
-memoree 是 [Guanqr](https://guanqr.com/) 使用的个人 Hugo 主题，由 [hugo-theme-meme](https://github.com/reuixiy/hugo-theme-meme)（v5.0.0）复刻而来。上游自 2022 年起已基本停止更新，本站将主题剥离为自有主题并直接维护。
+memoree 是 [Guanqr](https://guanqr.com/) 使用的个人 Hugo 主题，基于 [hugo-theme-meme](https://github.com/reuixiy/hugo-theme-meme)（v5.0.0）修改而来。上游自 2022 年起已基本停止更新，本站将主题剥离为自有主题并直接维护。
 
 ## 与上游的差异
 

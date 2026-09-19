@@ -1,4 +1,4 @@
-# <div align="center"><a title="Guanqr's blog repository" href="https://github.com/guanqr/blog"><img align="center" width="75" height="75" src="https://raw.githubusercontent.com/guanqr/blog/master/static/icons/favicon.svg?sanitize=true"></a> 荷戟独彷徨</div>
+# <div align="center"><a title="Guanqr's blog repository" href="https://github.com/guanqr/blog"><img align="center" width="75" height="75" src="https://raw.githubusercontent.com/guanqr/blog/master/themes/memoree/static/icons/favicon.svg?sanitize=true"></a> 荷戟独彷徨</div>
 
 <div align="center">
 
@@ -11,41 +11,49 @@
 
 ## 关于
 
-个人博客，基于 [Hugo](https://gohugo.io/) 静态站点生成器和自有主题 [memoree](themes/memoree/)（由 [MemE](https://github.com/reuixiy/hugo-theme-meme) 复刻而来，MIT 许可）。所有定制均已直接写入主题，站点目录不再包含模板覆盖。
+个人博客，基于 [Hugo](https://gohugo.io/) 静态站点生成器和自有主题 [memoree](themes/memoree/)（基于 [MemE](https://github.com/reuixiy/hugo-theme-meme) 修改而来，MIT 许可）。所有定制均已直接写入主题，站点目录不再包含模板覆盖。
 
 ## 结构
 
 ```
-├── themes/memoree/         # 自有主题（由 MemE 复刻）
-│   ├── layouts/            # 全部模板（含侧边栏、归档、微动态、9 个 shortcode）
+├── themes/memoree/            # 自有主题（基于 MemE 修改，含 CHANGELOG）
+│   ├── layouts/               # 全部模板（含侧边栏、归档、微动态、9 个 shortcode）
 │   ├── assets/
-│   │   ├── js/             # dark-mode/header/sidebar 等脚本
-│   │   └── scss/           # 按功能分层：base/components/layout/pages/themes
+│   │   ├── js/                # dark-mode/header/sidebar 等脚本
+│   │   └── scss/              # 按功能分层：base/components/layout/pages/themes
 │   ├── static/js/archives.js  # 归档年份切换
-│   ├── i18n/               # en / zh-hant（含站点定制键）
-│   └── data/SVG.toml       # 图标（含站点新增图标）
-├── data/                   # 站点结构化数据
-│   ├── booklist.toml       # 书单
-│   ├── identities.toml     # 身份标签
-│   └── blogroll.toml       # 友链
+│   ├── i18n/                  # en / zh-hant（含站点定制键）
+│   ├── archetypes/            # 文章与微动态模板
+│   └── data/SVG.toml          # 图标（含站点新增图标）
+├── data/                      # 站点结构化数据
+│   ├── booklist.toml          # 书单
+│   ├── identities.toml        # 身份标签
+│   └── blogroll.toml          # 友链
 ├── content/zh/
-│   ├── archives/           # 归档（含 _content.gotmpl）
-│   ├── micro/              # 微动态
+│   ├── archives/              # 归档（含 _content.gotmpl）
+│   ├── micro/                 # 微动态
 │   └── ...
 ├── scripts/
-│   └── upload-images.py    # OSS 图片上传
-├── upload-images.bat       # 一键上传
+│   └── upload-images.py       # OSS 图片上传
+├── upload-images.bat          # 一键上传
+├── .github/workflows/build.yml  # 推送即自动构建部署
 └── hugo.toml
 ```
 
 ## 本地运行
 
+需要 [Hugo extended](https://gohugo.io/installation/) ≥ 0.164.0（SCSS 由 Hugo 编译，无 npm 依赖）：
+
 ```bash
 git clone https://github.com/guanqr/blog.git
 cd blog
 hugo serve        # 开发
-hugo              # 构建
+hugo              # 构建（生产，输出至 public/）
 ```
+
+## 部署
+
+推送 `master` 后由 GitHub Actions 自动构建，并部署至 `guanqr/guanqr.github.io` 仓库。详见 `.github/workflows/build.yml`。
 
 ## 许可
 

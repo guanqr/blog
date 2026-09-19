@@ -4,7 +4,7 @@
 name = "memoree"
 license = "MIT"
 licenselink = "https://github.com/guanqr/blog/blob/master/themes/memoree/LICENSE"
-description = "memoree is a personal Hugo theme forked from MemE for guanqr.com."
+description = "memoree is a personal Hugo theme based on MemE for guanqr.com."
 homepage = "https://github.com/guanqr/blog/"
 tags = ["Blog", "Minimal", "Clean", "Typography", "Multilingual"]
 features = ["Dark Mode", "MathJax", "KaTeX", "JSON-LD", "Drop Cap", "PWA", "TOC"]

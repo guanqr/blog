@@ -213,14 +213,14 @@ pre {
     overflow: auto;
     overflow-wrap: normal;
     word-wrap: normal;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     margin: 2rem 0;
     padding: 1em;
     line-height: 1.618;
     background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
     code {
         background-color: unset;
-        font-size: 1em;
+        font-size: 0.8rem;
         padding: 0;
     }
 }

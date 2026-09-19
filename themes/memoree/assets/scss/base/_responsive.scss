@@ -34,7 +34,7 @@
             }
             .menu {
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
                 align-items: center;
             }
             .menu-item {
@@ -46,6 +46,7 @@
             }
             .menu-item-name {
                 display: block;
+                font-size: 80%;
             }
             .header.open {
                 .nav {
@@ -129,18 +130,11 @@
         }
 }
 
-// ---- 站点覆盖：移动端菜单 ----
+// ---- 站点覆盖：移动端菜单图标 ----
 @media (max-width: $maxWidth) {
-    .menu {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
     .menu-item {
         .tags, .archives, .photos, .friends, .about {
             display: inline-block;
         }
-        padding: 1em;
-    }
-    .menu-item-name {
-        font-size: 80%;
     }
 }

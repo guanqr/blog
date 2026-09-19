@@ -7,6 +7,7 @@
     padding: 1em 0;
     @include blur;
     background: $headerBackground;
+    border-bottom: 0.0625em solid var(--color-contrast-low);
     transition: background $duration;
 }
 .header-inner {
@@ -72,10 +73,4 @@ $brandHeight: null;
             top: calc(var(--header-height) * -1);
         }
     }
-}
-
-// ---- 站点覆盖：顶栏容器 ----
-.header-wrapper {
-    background: hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.85);
-    border-bottom: 0.0625em solid var(--color-contrast-low);
 }

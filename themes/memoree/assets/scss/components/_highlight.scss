@@ -26,7 +26,7 @@ span.lnt {
 
 .chroma {
     color: var(--color-contrast-high);
-    background-color: alpha(var(--color-contrast-lower), 0.5);
+    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
 }
 
 @if ($enableOverflowY) {
@@ -93,35 +93,7 @@ span.lnt {
 /* GenericDeleted */ .chroma .gd { color: var(--chroma-deleted-color) }
 /* GenericEmph */ .chroma .ge { text-decoration: underline }
 /* GenericHeading */ .chroma .gh { font-weight: bold }
-/* GenericInserted */ .chroma .gi { font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: var(--chroma-inserted-color); font-weight: normal }
 /* GenericOutput */ .chroma .go { color: var(--chroma-output-color) }
 /* GenericSubheading */ .chroma .gu { font-weight: bold }
 /* GenericUnderline */ .chroma .gl { text-decoration: underline }
-
-// 背景透明度
-code {
-    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
-}
-
-pre {
-    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
-}
-
-.chroma {
-    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
-}
-
-// 增删行颜色
-:root {
-    --chroma-deleted-color: #aa0000;
-    --chroma-inserted-color: #00aa00;
-}
-:root[data-theme="dark"] {
-    --chroma-deleted-color: #f92672;
-    --chroma-inserted-color: #a6e22e;
-}
-.chroma .gi,
-.chroma-dark .gi {
-    color: var(--chroma-inserted-color);
-    font-weight: normal;
-}

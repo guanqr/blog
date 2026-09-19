@@ -3,20 +3,20 @@
 @mixin light-theme {
     --theme-name: "light";
     @include defineColorHSL(--color-primary, $primaryColorLightH, $primaryColorLightS, $primaryColorLightL);
-    @include defineColorHSL(--color-bg, 0, 0%, 100%);
-    @include defineColorHSL(--color-contrast-lower, 0, 0%, 95%);
+    @include defineColorHSL(--color-bg, 50, 5%, 95%);
+    @include defineColorHSL(--color-contrast-lower, 0, 0%, 90%);
     @include defineColorHSL(--color-contrast-low, 240, 1%, 83%);
     @include defineColorHSL(--color-contrast-medium, 240, 1%, 48%);
     @include defineColorHSL(--color-contrast-high, 240, 4%, 20%);
     @include defineColorHSL(--color-contrast-higher, 240, 8%, 12%);
     .theme-icon-system {
-        display: none;
+        display: none !important;
     }
     .theme-icon-light {
-        display: inline-block;
+        display: inline-block !important;
     }
     .theme-icon-dark {
-        display: none;
+        display: none !important;
     }
     img {
         filter: none;
@@ -34,7 +34,8 @@
         --chroma-literal-color: #cc3300;
         --chroma-number-color: #ff6600;
         --chroma-comment-color: #0099ff;
-        --chroma-deleted-color: #ffcccc;
+        --chroma-deleted-color: #aa0000;
+        --chroma-inserted-color: #00aa00;
         --chroma-output-color: #aaaaaa;
     }
 }
@@ -53,15 +54,4 @@
     :root[data-theme="light"] {
         @include light-theme;
     }
-}
-
-// ---- 站点配色覆盖（亮色，青绿主调） ----
-:root {
-    @include defineColorHSL(--color-primary, 173, 41%, 31%);
-    @include defineColorHSL(--color-bg, 50, 5%, 95%);
-    @include defineColorHSL(--color-contrast-lower, 0, 0%, 90%);
-    @include defineColorHSL(--color-contrast-low, 240, 1%, 83%);
-    @include defineColorHSL(--color-contrast-medium, 240, 1%, 48%);
-    @include defineColorHSL(--color-contrast-high, 240, 4%, 20%);
-    @include defineColorHSL(--color-contrast-higher, 240, 8%, 12%);
 }

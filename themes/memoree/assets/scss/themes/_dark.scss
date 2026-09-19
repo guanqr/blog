@@ -4,20 +4,20 @@
 @mixin dark-theme {
     --theme-name: "dark";
     @include defineColorHSL(--color-primary, $primaryColorDarkH, $primaryColorDarkS, $primaryColorDarkL);
-    @include defineColorHSL(--color-bg, 231, 14%, 10%);
+    @include defineColorHSL(--color-bg, 203, 22%, 7%);
     @include defineColorHSL(--color-contrast-lower, 230, 12%, 18%);
     @include defineColorHSL(--color-contrast-low, 240, 2%, 37%);
     @include defineColorHSL(--color-contrast-medium, 80, 2%, 69%);
     @include defineColorHSL(--color-contrast-high, 69, 9%, 84%);
     @include defineColorHSL(--color-contrast-higher, 60, 6%, 90%);
     .theme-icon-system {
-        display: none;
+        display: none !important;
     }
     .theme-icon-light {
-        display: none;
+        display: none !important;
     }
     .theme-icon-dark {
-        display: inline-block;
+        display: inline-block !important;
     }
     img {
         filter: brightness(75%);
@@ -35,7 +35,8 @@
         --chroma-literal-color: #f1fa8c;
         --chroma-number-color: #bd93f9;
         --chroma-comment-color: #6272a4;
-        --chroma-deleted-color: #8b080b;
+        --chroma-deleted-color: #f92672;
+        --chroma-inserted-color: #a6e22e;
         --chroma-output-color: #44475a;
     }
 }
@@ -54,15 +55,4 @@
     :root[data-theme="dark"] {
         @include dark-theme;
     }
-}
-
-// ---- 站点配色覆盖（暗色，Dracula + 青绿） ----
-:root[data-theme="dark"] {
-    @include defineColorHSL(--color-primary, 169, 25%, 58%);
-    @include defineColorHSL(--color-bg, 203, 22%, 7%);
-    @include defineColorHSL(--color-contrast-lower, 230, 12%, 18%);
-    @include defineColorHSL(--color-contrast-low, 240, 2%, 37%);
-    @include defineColorHSL(--color-contrast-medium, 80, 2%, 69%);
-    @include defineColorHSL(--color-contrast-high, 69, 9%, 84%);
-    @include defineColorHSL(--color-contrast-higher, 60, 6%, 90%);
 }

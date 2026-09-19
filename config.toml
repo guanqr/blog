@@ -314,7 +314,7 @@ uglyURLs = false
     enableHeaderAutoHide = false
 
     # 背景
-    headerBackground = "alpha(var(--color-bg), 0.8) linear-gradient(90deg, #f795331a 0, #f370551a 15%, #ef4e7b1a 30%, #a166ab1a 44%, #5073b81a 58%, #1098ad1a 72%, #07b39b1a 86%, #6dba821a 100%)"
+    headerBackground = "hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.85)"
     # 说明：https://developer.mozilla.org/zh-CN/docs/Web/CSS/background
 
     # 在窄视图下隐藏菜单栏并显示一个按钮？
@@ -686,10 +686,10 @@ uglyURLs = false
     # 超链接的颜色变化持续时间（单位：秒）
     duration = 0.5
 
-    # 浅色模式的主色
-    primaryColorLight = "220, 90%, 56%"
-    # 深色模式的主色
-    primaryColorDark = "201, 65%, 62%"
+    # 浅色模式的主色（青绿）
+    primaryColorLight = "173, 41%, 31%"
+    # 深色模式的主色（青绿）
+    primaryColorDark = "169, 25%, 58%"
     # 注意：只支持 HSL 颜色值
 
     # 文章的内容宽度

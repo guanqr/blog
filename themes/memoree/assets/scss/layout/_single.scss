@@ -20,7 +20,7 @@
 }
 
 .post-body {
-    margin-top: 5em !important;
+    margin-top: 3em !important;
     a {
         text-decoration: underline;
         text-decoration-color: var(--color-contrast-low);
@@ -103,7 +103,7 @@ blockquote {
 }
 
 .contents {
-    margin-top: 5em;
+    margin-top: 3em;
     ol, ul {
         list-style: none;
     }
@@ -118,7 +118,7 @@ ol, ul {
 
 .footnotes {
     font-size: 90%;
-    margin-top: 5rem;
+    margin-top: 3rem;
     hr {
         margin: 0;
         height: 1px;
@@ -206,7 +206,7 @@ dd {
 
 code {
     padding: ($fontSize / 8) ($fontSize / 4);
-    background-color: alpha(var(--color-contrast-lower), 0.5);
+    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
     font-size: 80%;
 }
 pre {
@@ -217,7 +217,7 @@ pre {
     margin: 2rem 0;
     padding: 1em;
     line-height: 1.618;
-    background-color: alpha(var(--color-contrast-lower), 0.5);
+    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
     code {
         background-color: unset;
         font-size: 0.8rem;
@@ -295,10 +295,6 @@ pre {
 }
 
 // 间距收紧
-.post-body { margin-top: 3em !important; }
-.contents   { margin-top: 3em; }
-.footnotes  { margin-top: 3rem; }
-.post-tags  { margin-top: 3em; }
 .comments   { margin-top: 3em; }
 
 // mermaid

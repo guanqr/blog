@@ -11,6 +11,7 @@
     width: 1em;
     height: 1em;
     cursor: pointer;
+    transform: translateY(0.4em);
 }
 
 .nav-toggle-inner {
@@ -22,8 +23,9 @@
     span {
         display: block;
         position: absolute;
-        height: 0.1em;
+        height: 2.5px;
         width: 1em;
+        border-radius: 0.8px;
         background-color: var(--color-contrast-high);
         transition: all $duration;
         &:nth-child(1) {
@@ -58,27 +60,5 @@
 .nav-curtain {
     height: 100vh;
     width: 100vw;
-    @include blur;
-    background: $headerBackground rgba(0, 0, 0, 0.5);
-}
-
-// ---- 站点覆盖 ----
-.nav-curtain {
-    backdrop-filter: none;
     background: none;
-}
-
-.nav-toggle {
-    transform: translateY(0.4em);
-
-    span {
-        height: 2.5px;
-        border-radius: 0.8px;
-        width: 1em;
-    }
-
-    &.open span:nth-child(2) {
-        width: 0;
-        opacity: 0;
-    }
 }

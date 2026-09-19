@@ -33,6 +33,8 @@
 
 ## 代码风格
 
+- **模板中任何展示给用户的文本都必须经 `i18n` 转换**（`{{ i18n "key" }}`），不得硬编码中英文；新增文案时在 `themes/memoree/i18n/{en,zh-hant}.toml` 中同步添加键
+- **CSS 样式不得内联写入 HTML**（禁用 `style="..."`），一律通过 SCSS 文件按功能分层编写（base/components/layout/pages/themes）
 - `font-size` 统一用 `em`；根锚定元素（代码块 `pre`/`.highlight`、404 标题等）用 `rem`；不使用百分比
 - 使用 Hugo 0.164 现行 API：`hugo.Data`（非 `site.Data`）、`hugo.Sites`（非 `.Site.Languages`）、`.Site.Language.Locale`（非 `.Site.LanguageCode`）、`.Site.Params.author`（非 `.Site.Author`）；构建保持**零警告**
 - 编辑含中文/UTF-8 文件时保持**无 BOM**、不改动无关行

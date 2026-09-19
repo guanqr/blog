@@ -366,13 +366,6 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 {{ end }}
 
 
-// Categories Page
-
-{{ if .Site.Params.enableTree }}
-    @import "pages/tree-categories";
-{{ end }}
-
-
 // Tags Page
 
 {{ if .Site.Params.enableTagCloud }}

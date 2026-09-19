@@ -421,24 +421,6 @@ uglyURLs = false
 
 
     ######################################
-    # 分类页面
-
-    # 是否开启树状布局
-    enableTree = true
-    # 注意：如果你设置 categoryBy 为
-    # `sections`，则无法关闭树状布局
-
-    # 是否显示文章标题
-    displayPosts = true
-
-    # 是否显示每一分类下的文章数
-    displayPostsCount = true
-
-    # 设置一个非负数来限制每一分类下展示的文章数
-    limitPostsLimit = 5
-
-
-    ######################################
     # 标签页面
 
     # 是否开启标签云

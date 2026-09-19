@@ -47,13 +47,11 @@ uglyURLs = false
 
 # URL 结构
 [permalinks]
-    #categories = "/categories/:slug/"
     tags = "/tags/:slug/"
     series = "/series/:slug/"
 
 # 类别
 [taxonomies]
-    #category = "categories"
     tag = "tags"
     series = "series"
 
@@ -69,7 +67,6 @@ uglyURLs = false
 
 # Markdown 渲染器
 [markup]
-    defaultMarkdownHandler = "goldmark"
     [markup.goldmark]
         [markup.goldmark.extensions]
             definitionList = true
@@ -151,13 +148,10 @@ uglyURLs = false
 ##########################################
 # 菜单配置
 
-# MemE 主题支持以下四种菜单：
-# 1. main       顶栏下方（居中布局）或里面（弹性
-#               布局）的菜单栏
-# 2. home       首页的底部链接（适用于「诗意
-#               人生」和「视频片段」布局）
-# 3. socials    社交栏（关于页面的极简页脚）
-# 4. links      链接栏（关于页面的极简页脚）
+# MemE 主题支持以下三种菜单：
+# 1. main       顶栏（弹性布局）里的菜单栏
+# 2. socials    社交栏（关于页面的极简页脚）
+# 3. links      链接栏（关于页面的极简页脚）
 
 # 菜单内的配置说明如下：
 # pageref/url   内链地址/外链地址
@@ -186,34 +180,6 @@ uglyURLs = false
         pre = "internal"
         post = "tags"
         identifier = "tags"
-    #[[menu.main]]
-    #    pageref = "/categories/"
-    #    name = "分类"
-    #    weight = 3
-    #    pre = "internal"
-    #    post = "th" 
-    #    identifier = "categories"
-    #[[menu.main]]
-    #    pageref = "/life/"
-    #    name = "生活"
-    #    weight = 3
-    #    pre = "internal"
-    #    post = "grav"
-    #    identifier = "life"
-    #[[menu.main]]
-    #    pageref = "/tech/"
-    #    name = "技术"
-    #    weight = 4
-    #    pre = "internal"
-    #    post = "wpexplorer"
-    #    identifier = "tech"
-    #[[menu.main]]
-    #    url = "/series/"
-    #    name = "专栏"
-    #    weight = 5
-    #    pre = "internal"
-    #    post = "globe-asia"
-    #    identifier = "series"
     [[menu.main]]
         url = "https://photo.guanqr.com/"
         name = "影集"
@@ -271,27 +237,6 @@ uglyURLs = false
         name = "Series"
         weight = 3
         pre = "internal"
-
-
-    # 首页的底部链接
-    #[[menu.home]]
-    #    url = "/life/"
-    #    weight = 1
-    #    pre = "internal"
-    #    post = "grav"
-    #    identifier = "life"
-    #[[menu.home]]
-    #    url = "/tech/"
-    #    weight = 2
-    #    pre = "internal"
-    #    post = "wpexplorer"
-    #    identifier = "tech"
-    #[[menu.home]]
-    #    url = "/series/"
-    #    weight = 3
-    #    post = "globe-asia"
-    #    pre = "internal"
-    #    identifier = "series"
 
 
 ##########################################
@@ -364,8 +309,6 @@ uglyURLs = false
     ## 「诗意人生」
     # 诗句，支持 Markdown
     homePoetry = ["十里青山遠，潮平路帶沙","數聲啼鳥怨年華","又是淒涼時候，在天涯","白露收殘月，清風散曉霞","綠楊堤畔問荷花","記得年時沽酒，那人家"]
-    # 底部链接的内间距，单位：em
-    homeLinksPadding = 1
 
     ## 「文章摘要」
     enableHideInHomepage = false
@@ -779,6 +722,12 @@ uglyURLs = false
     # 侧边栏目录
     enableSidebar = true
 
+    # 侧边栏宽度
+    sidebarWidth = "320px"
+
+    # 桌面端推挤内容的断点（大于等于此宽度时正文为侧边栏让位）
+    sidebarPushBreakpoint = "1200px"
+
     # 是否显示目录标题
     displayTOCTitle = true
 
@@ -902,16 +851,19 @@ uglyURLs = false
     #      体 `fontFamilyBody`，故没必要全部
     #      设置。此外，如果你的品牌栏用的 SVG，
     #      则可留空品牌栏字体。
+    # 说明：开启中文标点字形纠正后，下方每项都会
+    #      自动前置 `'glyph-correction',`，无需
+    #      自行填写。
 
     # 品牌栏
-    fontFamilySiteBrand = ""
+    fontFamilySiteBrand = "'Noto Serif TC', 'Noto Serif SC', 'I.MingCP', serif"
     # 菜单栏
     fontFamilyMenu = ""
     # 文章标题、文章副标题、列表标题、列表的年份和月份标题、相关文章标题、文章上下篇标题
     fontFamilyTitle = "'Amstelvar', 'Noto Serif TC', 'Noto Serif SC', 'I.MingCP', serif"
     # 分节标题、目录标题
     fontFamilyHeadings = "'Amstelvar', 'Noto Serif TC', 'Noto Serif SC', 'I.MingCP', serif"
-    # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚、不蒜子站点浏览统计
+    # 代码、上标、文章更新徽章、文章的 Git 版本信息、极简页脚
     fontFamilyCode = "'JetBrains Mono', 'LXGW WenKai TC', monospace"
     # 引用
     fontFamilyQuote = ""
@@ -923,6 +875,12 @@ uglyURLs = false
     fontFamilyFooter = ""
     # 主体
     fontFamilyBody = "'Amstelvar', 'I.MingCP', serif"
+    # 标注用中文（文章元信息、说明文字、标签、书单等）
+    fontFamilyGlyph = "'LXGW WenKai TC', serif"
+    # 加粗文字
+    fontFamilyStrong = "'Amstelvar', 'Noto Serif TC', 'Noto Serif SC', 'I.MingCP', serif"
+    # 归档年份导航
+    fontFamilyArchivesYear = "'JetBrains Mono', 'Amstelvar', monospace"
 
     # 网络字体链接
     fontsLink = "https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&family=Noto+Serif+SC:wght@700&display=swap"
@@ -934,6 +892,11 @@ uglyURLs = false
 
     # 自定义字体链接（可变字体 + 中文字体）
     customFontsLink = "https://cdn.jsdelivr.net/gh/guanqr/fonts@build/css/fonts.min.css"
+
+    # 是否启用可变字体（Amstelvar）轴设置
+    enableVariableFont = true
+    # 说明：仅当字体配置实际使用可变字体时开启，
+    #      开启后导入 base/_variable-font.scss
 
     ######################################
     ## 字号（单位：px）
@@ -1381,9 +1344,6 @@ uglyURLs = false
     hasCJKLanguage = false
 	title = "Wondering Alone"
     copyright = "The article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)."
-[languages.en.taxonomies]
-    #category = "categories"
-    #tag = "tags"
 [languages.en.menu]
     [[languages.en.menu.main]]
         url = "/en/about/"

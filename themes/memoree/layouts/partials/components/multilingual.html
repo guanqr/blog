@@ -12,9 +12,9 @@
             {{ else }}
                 {{ if not .Site.Params.autoHideLangToggle }}
                     <ul id="langs">
-                        {{ range site.Languages }}
-                            {{ if ne site.Language.Lang .Lang }}
-                                <li><a rel="alternate" href="{{ .Lang | relURL }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ .LanguageName }}</a></li>
+                        {{ range hugo.Sites }}
+                            {{ if ne site.Language.Lang .Language.Lang }}
+                                <li><a rel="alternate" href="{{ .Language.Lang | relURL }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}">{{ .Language.LanguageName }}</a></li>
                             {{ end }}
                         {{ end }}
                     </ul>

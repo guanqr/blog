@@ -282,11 +282,9 @@ pre {
     font-style: italic;
     text-transform: uppercase;
     opacity: 0.35;
-    @include title-variation-settings;
 }
 .post-title-dropcap {
     font-size: 6em;
-    @include title-variation-settings;
     color: inherit;
     line-height: 0.75;
     font-style: italic;

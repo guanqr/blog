@@ -10,3 +10,12 @@
     -moz-text-emphasis-position: under;
     text-emphasis-position: under;
 }
+
+// Safari 不渲染着重号，降级为虚线下划线
+.safari-only {
+    .emphasis-point {
+        text-decoration-line: underline;
+        text-decoration-style: dashed;
+        text-underline-offset: 0.25em;
+    }
+}

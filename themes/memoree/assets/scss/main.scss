@@ -128,8 +128,23 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 {{ with .Site.Params.fontFamilyBody }}
     $fontFamilyBody: {{ $glyph }}{{ . }};
 {{ end }}
+{{ with .Site.Params.fontFamilyGlyph }}
+    $fontFamilyGlyph: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyStrong }}
+    $fontFamilyStrong: {{ $glyph }}{{ . }};
+{{ end }}
+{{ with .Site.Params.fontFamilyArchivesYear }}
+    $fontFamilyArchivesYear: {{ $glyph }}{{ . }};
+{{ end }}
 
 @import "base/font-family";
+
+// Variable Font (Amstelvar)
+
+{{ if .Site.Params.enableVariableFont }}
+    @import "base/variable-font";
+{{ end }}
 
 // Chinese Punctuation Glyph Correction
 
@@ -356,8 +371,6 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 // Homepage Layout
 
 {{ if eq .Site.Params.homeLayout "poetry" }}
-    $homeLinksPadding: {{ .Site.Params.homeLinksPadding }}em;
-
     @import "pages/home-poetry";
 {{ end }}
 
@@ -429,6 +442,13 @@ $greaterWidth: null;
 @import "components/shortcodes";
 
 // Sidebar
+
+{{ with .Site.Params.sidebarWidth }}
+    $sidebarWidth: {{ . }};
+{{ end }}
+{{ with .Site.Params.sidebarPushBreakpoint }}
+    $sidebarPushBreakpoint: {{ . }};
+{{ end }}
 
 @import "components/sidebar";
 

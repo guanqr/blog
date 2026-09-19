@@ -1,0 +1,58 @@
+// ============================================================
+// 可变字体（Amstelvar）轴设置
+// 仅当 config.toml 的 enableVariableFont 为 true 时导入
+// 数值为手调值，直接内联
+// ============================================================
+
+body {
+    font-variation-settings:
+        'wdth' 100,
+        'opsz' 40,
+        'XOPQ' 145,
+        'YTLC' 480,
+        'YTUC' 710,
+        'YTAS' 726,
+        'YTFI' 720;
+}
+
+// 标题可变字体轴
+@mixin title-variation-settings {
+    font-variation-settings:
+        'wght' 550,
+        'opsz' 30,
+        'YOPQ' 100,
+        'YTLC' 570,
+        'YTUC' 710;
+}
+
+.post-title {
+    @include title-variation-settings;
+}
+
+.list-title {
+    @include title-variation-settings;
+}
+
+.list-item {
+    font-variation-settings:
+        'wght' 260,
+        'wdth' 103,
+        'opsz' 20,
+        'YOPQ' 90,
+        'YTLC' 570,
+        'YTUC' 710;
+}
+
+.list-year {
+    font-variation-settings:
+        'wdth' 100,
+        'opsz' 20,
+        'YOPQ' 100,
+        'YTUC' 710;
+}
+
+// 文章英文副标题与装饰大字母（样式本身在 layout/_single.scss）
+.post-title-en,
+.post-title-dropcap {
+    @include title-variation-settings;
+}

@@ -1,4 +1,4 @@
-{{ $books := sort site.Data.booklist.books "year" "desc" }}
+{{ $books := sort hugo.Data.booklist.books "year" "desc" }}
 {{ $currentYear := "" }}
 
 <div class="book-list">
@@ -11,8 +11,8 @@
             <h2 class="book-year">
                     <span>{{ $currentYear }}</span>
                     {{ if site.Params.chineseZodiac }}
-                        {{ $zodiac := index site.Data.ChineseZodiac (string (mod (int $currentYear) 12)) }}
-                        {{ $icon := index site.Data.SVG $zodiac }}
+                        {{ $zodiac := index hugo.Data.ChineseZodiac (string (mod (int $currentYear) 12)) }}
+                        {{ $icon := index hugo.Data.SVG $zodiac }}
                         <span class="book-zodiac">{{ replace $icon "icon" "icon book-zodiac-icon" | safeHTML }}</span>
                     {{ end }}
                 </h2>

@@ -2,7 +2,6 @@
 // Sidebar — Hexo Next Muse inspired overlay panel
 // ============================================================
 
-$sidebar-width: 320px;
 $sidebar-z: 10;
 
 // Unify back-to-top speed with global $duration
@@ -106,7 +105,7 @@ $sidebar-z: 10;
     position: fixed;
     top: 0;
     left: 0;
-    width: $sidebar-width;
+    width: $sidebarWidth;
     max-width: 85vw;
     height: 100%;
     z-index: $sidebar-z + 2;
@@ -258,16 +257,15 @@ $sidebar-z: 10;
 }
 
 // Wide desktop: push content left
-$sidebar-push-breakpoint: 1200px;
 
 // Tablet and mobile: overlay mode with dimmer
-@media (max-width: $sidebar-push-breakpoint - 1px) {
+@media (max-width: $sidebarPushBreakpoint - 1px) {
     .sidebar {
-        max-width: $sidebar-width;
+        max-width: $sidebarWidth;
     }
 }
 
-@media (min-width: $sidebar-push-breakpoint) {
+@media (min-width: $sidebarPushBreakpoint) {
     html {
         overflow-x: hidden;
     }
@@ -277,7 +275,7 @@ $sidebar-push-breakpoint: 1200px;
         transition: padding-left $duration ease, background-color $duration ease;
 
         &.sidebar-open {
-            padding-left: $sidebar-width;
+            padding-left: $sidebarWidth;
         }
     }
 
@@ -287,8 +285,8 @@ $sidebar-push-breakpoint: 1200px;
         transition: left $duration ease, width $duration ease, top 0.3s ease-in-out;
 
         body.sidebar-open & {
-            left: $sidebar-width;
-            width: calc(100vw - #{$sidebar-width});
+            left: $sidebarWidth;
+            width: calc(100vw - #{$sidebarWidth});
         }
     }
 
@@ -306,6 +304,6 @@ $sidebar-push-breakpoint: 1200px;
 @media (max-width: $maxWidth) {
     .sidebar {
         width: 75vw;
-        max-width: $sidebar-width;
+        max-width: $sidebarWidth;
     }
 }

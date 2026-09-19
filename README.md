@@ -35,7 +35,7 @@
 ├── scripts/
 │   └── upload-images.py    # OSS 图片上传
 ├── upload-images.bat       # 一键上传
-└── config.toml
+└── hugo.toml
 ```
 
 ## 本地运行

@@ -7,24 +7,4 @@
         margin: 0 auto;
         padding: 10em 1em;
     }
-    .links {
-        position: absolute;
-        bottom: 10%;
-        left: 5%;
-        right: 5%;
-        font-size: 1.5em;
-    }
-    .links-item {
-        padding: $homeLinksPadding;
-        display: inline-block;
-    }
-    .life {
-        color: #f37055;
-    }
-    .tech {
-        color: #a166ab;
-    }
-    .about {
-        color: #07b39b;
-    }
 }

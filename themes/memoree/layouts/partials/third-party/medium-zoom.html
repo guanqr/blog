@@ -3,10 +3,22 @@
 <script src="{{ $src }}"></script>
 
 <script>
-    let imgNodes = document.querySelectorAll('div.post-body img');
-    imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
+    function initMediumZoom() {
+        let imgNodes = document.querySelectorAll('div.post-body img');
+        imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
 
-    mediumZoom(imgNodes, {
-        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
-    })
+        mediumZoom(imgNodes, {
+            background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+        });
+    }
+
+    initMediumZoom();
+
+    // 注册到页面切换重跑（defer 的 bundle 在 DOMContentLoaded 前执行，
+    // 届时 __memoreePageReinit 已就绪）
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.__memoreePageReinit) {
+            window.__memoreePageReinit.register(initMediumZoom);
+        }
+    });
 </script>

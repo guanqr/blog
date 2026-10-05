@@ -266,10 +266,6 @@ $sidebar-z: 10;
 }
 
 @media (min-width: $sidebarPushBreakpoint) {
-    html {
-        overflow-x: hidden;
-    }
-
     body {
         box-sizing: border-box;
         transition: padding-left $duration ease, background-color $duration ease;
@@ -281,12 +277,12 @@ $sidebar-z: 10;
 
     .header {
         left: 0;
-        width: 100vw;
+        width: 100%;
         transition: left $duration ease, width $duration ease, top 0.3s ease-in-out;
 
         body.sidebar-open & {
             left: $sidebarWidth;
-            width: calc(100vw - #{$sidebarWidth});
+            width: calc(100% - #{$sidebarWidth});
         }
     }
 

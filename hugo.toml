@@ -253,7 +253,7 @@ uglyURLs = false
     enableHeaderAutoHide = false
 
     # 背景
-    headerBackground = "hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.85)"
+    headerBackground = "hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 1)"
     # 说明：https://developer.mozilla.org/zh-CN/docs/Web/CSS/background
 
     # 在窄视图下隐藏菜单栏并显示一个按钮？
@@ -1292,7 +1292,7 @@ uglyURLs = false
         katex_mhchem = "/npm/katex@0.13.0/dist/contrib/mhchem.min.js"
         katex_auto_render = "/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
         mathjax = "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"
-        medium_zoom = "/npm/medium-zoom@latest/dist/medium-zoom.min.js"
+        medium_zoom = "/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"
         mermaid = "/npm/mermaid@8.8.3/dist/mermaid.min.js"
 
 

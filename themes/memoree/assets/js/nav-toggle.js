@@ -51,24 +51,46 @@ window.addEventListener("DOMContentLoaded", event => {
     });
 
 
-    window.addEventListener(
-        'scroll',
-        throttle(function() {
-            // Close nav when window is scrolled by user
-            checkInput();
-        }, delayTime)
-    );
-
-
     const maxWidth = window.getComputedStyle(document.documentElement, null).getPropertyValue('--max-width');
     let mediaQuery = window.matchMedia(`(max-width: ${maxWidth})`);
 
-    mediaQuery.addListener(e => {
+    // 仅在窄屏（导航按钮可见）时挂载滚动监听，桌面端不产生滚动开销
+    let scrollHandler = null;
+
+    function attachScroll() {
+        if (scrollHandler) return;
+        scrollHandler = throttle(function() {
+            // Close nav when window is scrolled by user
+            checkInput();
+        }, delayTime);
+        window.addEventListener('scroll', scrollHandler);
+    }
+
+    function detachScroll() {
+        if (!scrollHandler) return;
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+    }
+
+    function onMediaChange(e) {
         if (!e.matches) {
             // We are no longer in responsive mode, close nav
             closeNav(true);
+            detachScroll();
+        } else {
+            attachScroll();
         }
-    });
+    }
+
+    if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener('change', onMediaChange);
+    } else {
+        mediaQuery.addListener(onMediaChange);
+    }
+
+    if (mediaQuery.matches) {
+        attachScroll();
+    }
 
 
     function checkInput() {

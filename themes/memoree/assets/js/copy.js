@@ -6,7 +6,7 @@
 // 1. https://tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/
 // 2. https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/
 
-window.addEventListener("DOMContentLoaded", event => {
+function initCopyButtons() {
     const copyText = '{{ i18n "copy" }}';
     const copiedText = '{{ i18n "copied" }}';
     const copyIcon = '{{ index hugo.Data.SVG "clipboard" }}';
@@ -76,7 +76,10 @@ window.addEventListener("DOMContentLoaded", event => {
 
     if (navigator && navigator.clipboard) {
         addCopyButtons(navigator.clipboard);
-    } else {
+    } else if (typeof clipboard !== 'undefined') {
+        addCopyButtons(clipboard);
+    } else if (!window.__memoreeClipboardFallback) {
+        window.__memoreeClipboardFallback = true;
         const script = document.createElement('script');
         script.src = '{{ $src }}';
         script.defer = true;
@@ -86,4 +89,10 @@ window.addEventListener("DOMContentLoaded", event => {
 
         document.head.appendChild(script);
     }
-}, {once: true});
+}
+
+// 首次加载与 SPA 切换后均执行
+window.addEventListener("DOMContentLoaded", initCopyButtons, { once: true });
+if (window.__memoreePageReinit) {
+    window.__memoreePageReinit.register(initCopyButtons);
+}

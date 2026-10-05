@@ -1,9 +1,51 @@
+// Waline 评论：全局函数，SPA 切换后由点击委派直接调用
+function loadComments() {
+    if (!document.getElementById('waline')) return;
+    // lazy-load CSS
+    if (!document.getElementById('waline-css')) {
+        var css = document.createElement('link');
+        css.id = 'waline-css';
+        css.rel = 'stylesheet';
+        css.href = 'https://unpkg.com/@waline/client@3/dist/waline.css';
+        document.head.appendChild(css);
+    }
+    newWaline();
+}
+
+async function newWaline() {
+    const { init } = await import('https://unpkg.com/@waline/client@3/dist/waline.js');
+    var locale = {
+        nick: "{{ i18n "walineNick" }}",
+        mail: "{{ i18n "walineMail" }}",
+        placeholder: "{{ i18n "walinePlaceholder" }}"
+    };
+    init({
+        el: '#waline',
+        serverURL: '{{ .Site.Params.walineServerURL }}',
+        lang: '{{ .Site.Params.walineLang }}',
+        locale: locale,
+        emoji: {{ .Site.Params.walineEmoji | jsonify }},
+        dark: 'html[data-theme="dark"]',
+        commentSorting: '{{ .Site.Params.walineCommentSorting }}',
+        meta: {{ .Site.Params.walineMeta | jsonify }},
+        requiredMeta: {{ .Site.Params.walineRequiredMeta | jsonify }},
+        login: '{{ .Site.Params.walineLogin }}',
+        pageSize: {{ .Site.Params.walinePageSize }},
+        imageUploader: {{ .Site.Params.walineImageUploader }},
+        highlighter: {{ .Site.Params.walineHighlighter }},
+        search: {{ .Site.Params.walineSearch }},
+        copyright: {{ .Site.Params.walineCopyright }}
+    });
+}
+
 window.addEventListener("DOMContentLoaded", event => {
     {{ if .Site.Params.autoLoadComments }}
-        if (typeof loadComments === 'function') {
-            loadComments()
+        if (document.getElementById('waline')) {
+            loadComments();
         }
     {{ else }}
+        // 初始页面的加载按钮；SPA 切换后的按钮由 third-party/script.html 的
+        // document 级点击委派处理
         const commentsToggle = document.getElementById('load-comments');
 
         if (commentsToggle !== null) {

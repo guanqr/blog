@@ -1,11 +1,10 @@
 .header {
     z-index: 3;
     position: fixed;
-    width: 100vw;
+    width: 100%;
 }
 .header-wrapper {
     padding: 1em 0;
-    @include blur;
     background: $headerBackground;
     border-bottom: 0.0625em solid var(--color-contrast-low);
     transition: background $duration;

@@ -283,6 +283,11 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 @import "layout/single";
 
 
+// SPA 页面切换
+
+@import "layout/page-transition";
+
+
 // Footer
 
 {{ if .Site.Params.enableFooter }}
@@ -427,11 +432,6 @@ $greaterWidth: null;
 // Data Attributes
 
 @import "base/data-attributes";
-
-
-// @supports()
-
-@import "base/supports";
 
 
 // Site Shortcodes

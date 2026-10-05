@@ -1,4 +1,4 @@
-{{- $scripts := slice "js/main.js" -}}
+{{- $scripts := slice "js/main.js" "js/page-transition.js" -}}
 
 {{- if and .Site.Params.enableForceHTTPS (eq hugo.Environment "production") -}}
     {{- $scripts = union $scripts (slice "js/force-https.js") -}}
@@ -50,9 +50,9 @@
 {{- $script := $processedScripts | resources.Concat $path | resources.Minify -}}
 {{- if .Site.Params.enableFingerprint -}}
     {{- $script = $script | resources.Fingerprint -}}
-    <script src="{{ $script.RelPermalink }}"
+    <script src="{{ $script.RelPermalink }}" defer
     {{- if .Site.Params.enableSRI }} integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"{{- end -}}
     ></script>
 {{- else -}}
-    <script src="{{ $script.RelPermalink }}"></script>
+    <script src="{{ $script.RelPermalink }}" defer></script>
 {{- end }}

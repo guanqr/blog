@@ -1,22 +1,26 @@
-// https://www.30secondsofcode.org/js/s/throttle/
-
+// 节流：窗口首帧立即执行 + 窗口末尾补一次尾调用；
+// 计时器随滚动自然归零，避免每次滚动事件都创建/取消定时器
 const throttle = (fn, wait) => {
-    let inThrottle, lastFn, lastTime;
+    let lastTime = 0;
+    let timer = null;
     return function() {
         const context = this,
-              args = arguments;
-        if (!inThrottle) {
+              args = arguments,
+              now = Date.now(),
+              remaining = wait - (now - lastTime);
+        if (remaining <= 0) {
+            if (timer) {
+                clearTimeout(timer);
+                timer = null;
+            }
+            lastTime = now;
             fn.apply(context, args);
-            lastTime = Date.now();
-            inThrottle = true;
-        } else {
-            clearTimeout(lastFn);
-            lastFn = setTimeout(function() {
-                if (Date.now() - lastTime >= wait) {
-                    fn.apply(context, args);
-                    lastTime = Date.now();
-                }
-            }, Math.max(wait - (Date.now() - lastTime), 0));
+        } else if (!timer) {
+            timer = setTimeout(function() {
+                lastTime = Date.now();
+                timer = null;
+                fn.apply(context, args);
+            }, remaining);
         }
     };
 };

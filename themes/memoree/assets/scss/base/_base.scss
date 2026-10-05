@@ -21,7 +21,7 @@ body {
     overflow-wrap: break-word;
     word-wrap: break-word;
     line-height: 1.618;
-    transition: all $duration;
+    transition: background-color $duration, padding-left $duration;
 }
 
 .container {
@@ -81,7 +81,7 @@ h6 {
 a {
     color: var(--color-contrast-high);
     text-decoration: none;
-    transition: all $duration;
+    transition: color $duration;
     &:hover {
         color: var(--color-primary);
     }

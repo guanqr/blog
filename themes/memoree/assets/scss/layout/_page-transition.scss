@@ -1,0 +1,12 @@
+// ============================================================
+// SPA 页面切换过渡（配合 assets/js/page-transition.js）
+// 切换时 .main-content 淡出淡入，header/footer 不重载
+// ============================================================
+
+.main-content {
+    transition: opacity 0.15s ease;
+
+    &.is-leaving {
+        opacity: 0;
+    }
+}

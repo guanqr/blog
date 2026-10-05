@@ -9,9 +9,14 @@
 window.addEventListener("DOMContentLoaded", event => {
     const copyText = '{{ i18n "copy" }}';
     const copiedText = '{{ i18n "copied" }}';
+    const copyIcon = '{{ index hugo.Data.SVG "clipboard" }}';
+    const checkIcon = '{{ index hugo.Data.SVG "check" }}';
 
     document.querySelectorAll('.post-body > pre').forEach((e) => {
         const div = document.createElement('div');
+        // 无语言的裸代码块也套用 mac 卡片样式，
+        // 并作为复制按钮的绝对定位锚点（.highlight 具有 position: relative）
+        div.className = 'highlight';
         e.parentNode.replaceChild(div, e);
         div.appendChild(e);
     });
@@ -20,12 +25,15 @@ window.addEventListener("DOMContentLoaded", event => {
         const divs = document.querySelectorAll('table.lntable, .highlight > pre, .post-body > div > pre');
 
         divs.forEach((containerEl) => {
-            containerEl.parentNode.style.position = 'relative';
+            // 定位锚点为 .highlight 卡片（position: relative），
+            // 按钮绝对定位到头部右上角，与 mac 红黄绿圆点同一行
+            const root = containerEl.closest('.highlight') || containerEl;
 
             const button = document.createElement('button');
             button.className = 'copy-button';
             button.type = 'button';
-            button.innerText = copyText;
+            button.title = copyText;
+            button.innerHTML = copyIcon;
 
             let codeBlock;
             if (containerEl.classList.contains('lntable')) {
@@ -40,26 +48,26 @@ window.addEventListener("DOMContentLoaded", event => {
                        leaving the button in a focused state. */
                     button.blur();
 
-                    button.innerText = copiedText;
+                    button.innerHTML = checkIcon;
+                    button.title = copiedText;
 
                     setTimeout(() => {
-                        button.innerText = copyText;
+                        button.innerHTML = copyIcon;
+                        button.title = copyText;
                     }, 1000);
                 }).catch((error) => {
-                    button.innerText = 'Error';
-
                     console.error(error);
                 });
             });
 
-            containerEl.appendChild(button);
+            root.appendChild(button);
 
             {{ if .Site.Params.enableCopyAutoHide }}
-                containerEl.parentNode.addEventListener('mouseover', () => {
+                root.addEventListener('mouseover', () => {
                     button.style = 'visibility: visible; opacity: 1';
                 });
 
-                containerEl.parentNode.addEventListener('mouseout', () => {
+                root.addEventListener('mouseout', () => {
                     button.style = 'visibility: hidden; opacity: 0';
                 });
             {{ end }}

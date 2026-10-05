@@ -21,7 +21,6 @@
 │   ├── assets/
 │   │   ├── js/                # dark-mode/header/sidebar 等脚本
 │   │   └── scss/              # 按功能分层：base/components/layout/pages/themes
-│   ├── static/js/archives.js  # 归档年份切换
 │   ├── i18n/                  # en / zh-hant（含站点定制键）
 │   ├── archetypes/            # 文章与微动态模板
 │   └── data/SVG.toml          # 图标（含站点新增图标）
@@ -30,7 +29,7 @@
 │   ├── identities.toml        # 身份标签
 │   └── blogroll.toml          # 友链
 ├── content/zh/
-│   ├── archives/              # 归档（含 _content.gotmpl）
+│   ├── archives/              # 归档（分页列表）
 │   ├── micro/                 # 微动态
 │   └── ...
 ├── scripts/

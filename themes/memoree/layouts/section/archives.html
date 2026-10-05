@@ -1,46 +1,7 @@
 {{ define "main" }}
     {{ $pages := (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
-    {{ $yearGroups := $pages.GroupByDate "2006" }}
-
-    {{/* Determine year bounds */}}
-    {{ $minYear := 0 }}
-    {{ $maxYear := 0 }}
-    {{ range $yearGroups }}
-        {{ $y := int .Key }}
-        {{ if or (eq $minYear 0) (lt $y $minYear) }}
-            {{ $minYear = $y }}
-        {{ end }}
-        {{ if gt $y $maxYear }}
-            {{ $maxYear = $y }}
-        {{ end }}
-    {{ end }}
-
-    {{/* Determine active year: from .Params.year for subsections, or current year for parent */}}
-    {{ $activeYear := now.Year }}
-    {{ with .Params.year }}
-        {{ $activeYear = int . }}
-    {{ end }}
-
-    {{/* Clamp active year to available range */}}
-    {{ if lt $activeYear $minYear }}
-        {{ $activeYear = $minYear }}
-    {{ end }}
-    {{ if gt $activeYear $maxYear }}
-        {{ $activeYear = $maxYear }}
-    {{ end }}
-
-    {{/* Find adjacent years for navigation */}}
-    {{ $prevYear := 0 }}
-    {{ $nextYear := 0 }}
-    {{ range $yearGroups }}
-        {{ $y := int .Key }}
-        {{ if and (lt $y $activeYear) (or (eq $prevYear 0) (gt $y $prevYear)) }}
-            {{ $prevYear = $y }}
-        {{ end }}
-        {{ if and (gt $y $activeYear) (or (eq $nextYear 0) (lt $y $nextYear)) }}
-            {{ $nextYear = $y }}
-        {{ end }}
-    {{ end }}
+    {{/* 每页 15 篇文章 */}}
+    {{ $paginator := .Paginate $pages 15 }}
 
     <main class="main list" id="main">
         <div class="main-inner">
@@ -55,11 +16,23 @@
                     <div class="post-title-en"><span class="post-title-dropcap">{{ substr $en 0 1 }}</span>{{ substr $en 1 }}</div>
                 {{ end }}
 
-                {{/* Render all year groups; JS manages visibility */}}
-                {{ range $yearGroups }}
-                    {{ $y := int .Key }}
+                {{/* 当前页的文章按年份分组渲染 */}}
+                {{ range $paginator.Pages.GroupByDate "2006" }}
                     {{ $key := .Key }}
-                    <div class="archives-year" data-year="{{ $key }}"{{ if ne $y $activeYear }} style="display:none"{{ end }}>
+                    {{ $y := int $key }}
+                    {{/* 年份标题仅在该年份首次出现的页显示：
+                         若本页首个分组与上页末篇同年，说明标题已在上页展示过 */}}
+                    {{ $.Scratch.Set "hideHeading" false }}
+                    {{ if and $paginator.HasPrev (eq $key ((index $paginator.Pages 0).PublishDate.Format "2006")) }}
+                        {{ with index (last 1 $paginator.Prev.Pages) 0 }}
+                            {{ if eq (.PublishDate.Format "2006") $key }}
+                                {{ $.Scratch.Set "hideHeading" true }}
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                    {{ $hideHeading := $.Scratch.Get "hideHeading" }}
+                    <div class="archives-year">
+                        {{ if not $hideHeading }}
                         {{ $.Scratch.Delete "year" }}
                         {{ if $.Site.Params.i18nYear }}
                             {{ $.Scratch.Delete "num" }}
@@ -84,40 +57,27 @@
                         {{ end }}
                         {{ $zodiacName := $.Scratch.Get "zodiacName" }}
                         <h2 class="list-year">{{ $year }}{{ if $.Site.Params.chineseZodiac }}{{ partial "utils/icon.html" (dict "$" $ "name" $zodiacName "class" "chinese-zodiac") }}{{ end }}</h2>
+                        {{ end }}
                         {{ partial "utils/list-item.html" (dict "$" .) }}
                     </div>
                 {{ end }}
 
-                {{ if gt (len $yearGroups) 1 }}
-                <nav class="archives-nav">
-                    {{ if gt $nextYear 0 }}
-                    <a class="archives-nav-side" id="archives-newer" href="/archives/{{ $nextYear }}/" data-year="{{ $nextYear }}" rel="next">
-                        {{ (index hugo.Data.SVG "chevron-left") | safeHTML }}
-                        <span class="archives-nav-year">{{ $nextYear }}</span>
-                    </a>
-                    {{ else }}
-                    <span class="archives-nav-side is-disabled" id="archives-newer">
-                        {{ (index hugo.Data.SVG "chevron-left") | safeHTML }}
-                    </span>
-                    {{ end }}
-
-                    {{ if gt $prevYear 0 }}
-                    <a class="archives-nav-side" id="archives-older" href="/archives/{{ $prevYear }}/" data-year="{{ $prevYear }}" rel="prev">
-                        <span class="archives-nav-year">{{ $prevYear }}</span>
-                        {{ (index hugo.Data.SVG "chevron-right") | safeHTML }}
-                    </a>
-                    {{ else }}
-                    <span class="archives-nav-side is-disabled" id="archives-older">
-                        {{ (index hugo.Data.SVG "chevron-right") | safeHTML }}
-                    </span>
-                    {{ end }}
-                </nav>
+                {{/* 分页：与首页文章概览一致的文字箭头 */}}
+                {{ if or $paginator.HasPrev $paginator.HasNext }}
+                    <ul class="pagination">
+                        {{ if $paginator.HasPrev }}
+                            <li class="pagination-prev">
+                                <a href="{{ $paginator.Prev.URL }}" rel="prev">&lt; {{ i18n "prevPage" }}</a>
+                            </li>
+                        {{ end }}
+                        {{ if $paginator.HasNext }}
+                            <li class="pagination-next">
+                                <a href="{{ $paginator.Next.URL }}" rel="next">{{ i18n "nextPage" }} &gt;</a>
+                            </li>
+                        {{ end }}
+                    </ul>
                 {{ end }}
             </div>
         </div>
     </main>
-
-    {{ if gt (len $yearGroups) 1 }}
-    <script src="/js/archives.js"></script>
-    {{ end }}
 {{ end }}

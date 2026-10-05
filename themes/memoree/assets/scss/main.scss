@@ -134,9 +134,6 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 {{ with .Site.Params.fontFamilyStrong }}
     $fontFamilyStrong: {{ $glyph }}{{ . }};
 {{ end }}
-{{ with .Site.Params.fontFamilyArchivesYear }}
-    $fontFamilyArchivesYear: {{ $glyph }}{{ . }};
-{{ end }}
 
 @import "base/font-family";
 

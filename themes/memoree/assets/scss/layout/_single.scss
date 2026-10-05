@@ -234,16 +234,24 @@ pre {
 @if ($enableCopy) {
     .copy-button {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 0.55em;
+        right: 0.9em;
         border: 0;
-        font-size: inherit;
-        color: var(--color-bg);
-        background-color: alpha(var(--color-contrast-medium), 0.5);
-        transition: all $duration;
+        padding: 0.2em;
+        background: transparent;
+        font-size: 0.9em;
+        line-height: 1;
+        color: var(--color-contrast-medium);
+        transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
+
         &:hover {
-            background-color: alpha(var(--color-primary), 0.5);
+            color: var(--color-primary);
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
         }
     }
 
@@ -251,6 +259,7 @@ pre {
         .copy-button {
             visibility: hidden;
             opacity: 0;
+            transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.25s, opacity 0.25s;
         }
     }
 }

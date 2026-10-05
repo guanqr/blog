@@ -244,12 +244,6 @@ uglyURLs = false
 
 [params]
     ######################################
-    # 歸檔頁面
-    # 歸檔頁生成年份的起點（内容適配器會自動生成
-    # /archives/YYYY/ 頁面）
-    archiveStartYear = 2019
-
-    ######################################
     # 顶栏
 
     # 是否开启
@@ -304,7 +298,7 @@ uglyURLs = false
     # 1. poetry    诗意人生
     # 2. posts     文章摘要
 
-    homeLayout = "poetry"
+    homeLayout = "posts"
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
@@ -879,8 +873,6 @@ uglyURLs = false
     fontFamilyGlyph = "'LXGW WenKai TC', serif"
     # 加粗文字
     fontFamilyStrong = "'Amstelvar', 'Noto Serif TC', 'Noto Serif SC', 'I.MingCP', serif"
-    # 归档年份导航
-    fontFamilyArchivesYear = "'JetBrains Mono', 'Amstelvar', monospace"
 
     # 网络字体链接
     fontsLink = "https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&family=Noto+Serif+SC:wght@700&display=swap"
@@ -1392,7 +1384,7 @@ uglyURLs = false
     enableEmphasisPoint = false
     enableChinesePunctuationGlyphCorrection = false
 	mainSections = ["posts"]
-    homeLayout = "poetry"
+    homeLayout = "posts"
     ## 「诗意人生」
     # 诗句，支持 Markdown
     homePoetry = ["*To see a world in a grain of sand*","*And a heaven in a wild flower*","*Hold infinity in the palm of your hand*","*And eternity in an hour*"]

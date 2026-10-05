@@ -21,7 +21,8 @@
 }
 
 @if variable-exists("fontFamilyHeadings") {
-    .post-body {
+    .post-body,
+    .summary {
         h1, h2, h3, h4, h5, h6 {
             font-family: $fontFamilyHeadings;
         }
@@ -70,12 +71,6 @@
 @if variable-exists("fontFamilyStrong") {
     strong {
         font-family: $fontFamilyStrong;
-    }
-}
-
-@if variable-exists("fontFamilyArchivesYear") {
-    .archives-nav-year {
-        font-family: $fontFamilyArchivesYear;
     }
 }
 

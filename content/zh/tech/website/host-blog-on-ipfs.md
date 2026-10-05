@@ -102,7 +102,7 @@ ipfs-deploy --help
 
 我们还需要添加一个 `.env` 文件，它是 `ipfs-deploy` 所需的环境变量，如下：
 
-```
+```text
 IPFS_DEPLOY_PINATA__API_KEY=
 IPFS_DEPLOY_PINATA__SECRET_API_KEY=
 
@@ -142,7 +142,7 @@ Pinata 平台的服务是上传至 IPFS 的关键。Pinata 提供的是 Pinning�
 
 这时候就需要回到域名服务商那里修改 Nameserver 到：
 
-```
+```text
 merlin.ns.cloudflare.com
 vita.ns.cloudflare.com
 ```
@@ -204,7 +204,7 @@ git push origin master
 
 我们可以在 Netlify 上查看到部署到 IPFS 的详细信息：
 
-```
+```text
 8:10:05 PM: > ipfs-deploy -p pinata public -u pinata -d cloudflare -C -O
 8:10:06 PM: - 📦  Calculating size of public…
 8:10:06 PM: ✔ 🚚  Directory public weighs 126.0 MiB.

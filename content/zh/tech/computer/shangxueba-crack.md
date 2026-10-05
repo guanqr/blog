@@ -94,7 +94,7 @@ if __name__ == '__main__':
 
 其中 requests 和 beautifulsoup 两个库需要另外安装，建议使用 pip 方式安装：
 
-```
+```text
 pip install requests
 pip install beautifulsoup4
 ```
@@ -103,7 +103,7 @@ pip install beautifulsoup4
 
 首先复制上学吧某道题目的网址，格式类似以下[网址](https://www.shangxueba.com/ask/13207771.html)：
 
-```
+```text
 https://www.shangxueba.com/ask/13207771.html
 ```
 

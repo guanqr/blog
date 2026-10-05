@@ -21,7 +21,7 @@ aliases = ["/study/optics/asap-siren-light/"]
 
 ### 参数定义
 
-```
+```text
 EPS=0.05    !! 定义epsilon变量数值
 NRAYS=100000    !! 设定光线数
 NPIXELS=45  !! 设定光线接收分辨率
@@ -41,7 +41,7 @@ FILA_RAD=0.2    !! 灯丝的转弯半径
 
 首先是定义波长和材料的折射率，以及光线吸收面、透射面和反射面。
 
-```
+```text
 SYSTEM NEW
 UNITS  INCHES
 
@@ -57,7 +57,7 @@ COATING PROPERTIES
 然后开始构建模型，这里先构建的是灯罩部分，根据设定的参数数值，灯罩高度和宽度，构建内外两层灯罩。顶部圆弧曲率直径与设定的灯罩宽度相
 等，表面为光学透射面。
 
-```
+```text
 EDGE
   ROUNDED  Y  0  (LGT_SHD_HGT)  (LGT_SHD_WID)  (LGT_SHD_WID)  32  0  90
     SWEEP  AXIS  360  0  0  1  0  0  0
@@ -79,7 +79,7 @@ OBJECT; .1  'LIGHT.SHADE.EXTERIOR'
 
 构建灯顶的弧形反射面。使用 `REVOLUTION` 和 `LOCAL` 指令确定弧形的弯曲程度，其参数变量根据构建的灯罩宽度进行限定。并设定曲面为反射面。
 
-```
+```text
 SURFACE
   REVOLUTION  Z  0  0  0  1  (1/LGT_SHD_WID)  0,
                   0  0  0  0  0
@@ -95,7 +95,7 @@ OBJECT; .1  'LIGHT.REFLECTOR'
 
 构建底部反射面 X-Z 面构建四十五度的斜面，斜面宽度等于灯罩内宽度 `2*(LGT_SHD_WID)`。
 
-```
+```text
 SURFACE
   PLANE NORMAL  1  0  1  0  0  0
     LOCAL  -(LGT_SHD_WID-EPS)  (LGT_SHD_WID-EPS)  -(LGT_SHD_WID-EPS)  (LGT_SHD_WID-EPS)  -(LGT_SHD_WID)  (LGT_SHD_WID)  Z  0
@@ -110,7 +110,7 @@ OBJECT; .1  'LIGHT.ROTATING_MIRROR'
 
 构建圆柱形底座，首先建一个管状物。半径为 `(LGT_SHD_WID-EPS)`，高度为 `(MOTOR_HGT)`，该面为吸收面。然后构建圆柱形底座的顶面，同样为吸收光线面。
 
-```
+```text
 SURFACE
   TUBE  Z  0  (LGT_SHD_WID-EPS)  (LGT_SHD_WID-EPS)  (MOTOR_HGT)  (LGT_SHD_WID-EPS)  (LGT_SHD_WID-EPS)  0  0
 OBJECT; .1  'LIGHT.MOTOR.SIDE'
@@ -130,7 +130,7 @@ OBJECT; .1  'LIGHT.MOTOR.TOP'
 
 构建控制底部反光板的转轴，先建一个管，再建一个与底部反光板相同的斜面切除管。该面为光线吸收面。
 
-```
+```text
 SURFACE
   TUBE  Z  (MOTOR_HGT)  (MOTOR_AXLE_WID)  (MOTOR_AXLE_WID)  (LGT_SHD_HGT)  (MOTOR_AXLE_WID)  (MOTOR_AXLE_WID)  0  0
 SURFACE
@@ -147,7 +147,7 @@ OBJECT; .2  'LIGHT.MOTOR.AXLE'
 
 构建光线探测面，为一矩形平面，该面与 Z 轴垂直。
 
-```
+```text
 SURFACE
   PLANE  X  (3*LGT_SHD_WID)  RECTANGLE (2*LGT_SHD_WID) (2*LGT_SHD_WID) 0 0 0
     SHIFT  Z  (LGT_SHD_HGT-2*LGT_SHD_WID-LGT_MIR_DST)
@@ -161,7 +161,7 @@ OBJECT; .1  'DETECTOR'
 
 最后定义光源，位置和光线数量。
 
-```
+```text
 RESET             !! - clear out any existing sources or rays
 WAVELENGTH  630   !! - assign wavelength for source (roughly red)
 EMITTING HELIX  Z  0  (FILA_HGT)  5  (FILA_RAD)  (FILA_THK)  (NRAYS)
@@ -174,7 +174,7 @@ EMITTING HELIX  Z  0  (FILA_HGT)  5  (FILA_RAD)  (FILA_THK)  (NRAYS)
 
 对出射的光线进行光强分布等一系列分析。
 
-```
+```text
 WINDOW Z X
 CONSIDER EXCEPT DETECTOR
 PLOT FACETS OVERLAY !! 画出警示灯栅格图

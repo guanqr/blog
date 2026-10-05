@@ -42,7 +42,7 @@ GitBook 支持的特性：
 
 安装完成这后，你可以在终端模式下检验一下：
 
-```
+```text
 $ node -v
 v0.10.28
 ```
@@ -134,7 +134,7 @@ $ cat book/SUMMARY.md
 
 这个文件是一本书的目录结构，在 [GitBook 的安装](#gitbook-的安装)这一章节中已经提到，比如：
 
-```
+```text
 * [GitBook 学习笔记](README.md)
 * [安装与使用](install/README.md)
     * [Node.js 的安装](install/Nodejsinstall.md)
@@ -269,7 +269,7 @@ $ cat book/SUMMARY.md
 
 #### 一些常用的命令
 
-```
+```text
 gitbook init    //初始化目录文件
 gitbook help    //列出gitbook所有的命令
 gitbook --help  //输出gitbook-cli的帮助信息
@@ -287,7 +287,7 @@ gitbook builid --debug  //输出错误信息
 
 #### gitbook
 
-```
+```text
 $ gitbook
 Usage: gitbook [options] [command]
 
@@ -314,7 +314,7 @@ Usage: gitbook [options] [command]
 
 #### gitbook ls
 
-```
+```text
 $ gitbook ls
 GitBook Versions Installed:
 
@@ -325,7 +325,7 @@ Run "gitbook update" to update to the latest version.
 
 #### gitbook ls-remote
 
-```
+```text
 $ gitbook ls-remote
 Available GitBook Versions:
 
@@ -347,7 +347,7 @@ Tags:
 
 在 `book.json` 文件中的 `plugins` 项，可以进行插件加载的管理．在每次运行预览命令 `gitbook serve` 或构建命令 `gitbook build` 前，如果新增了加载的插件，则需要插入新的一句命令：
 
-```
+```text
 $ gitbook install ./
 ```
 
@@ -834,7 +834,7 @@ poster="https://yourimage.jpg" data-setup='{"aspectRatio":"16:9"}'>
 - 本插件只会提取 h[1-3] 标签作为悬浮导航
 - 只有按照以下顺序嵌套才会被提取
 
-```
+```text
 # h1
 ## h2
 ### h3
@@ -959,13 +959,13 @@ input[type=checkbox]{
 
 标签的使用格式如下所示：
 
-```
+```text
 **[<tag_name> 内容]
 ```
 
 为了使标签正常工作，需要在代码块的第一行加入`**[termial]`标记，下面是一个使用示例：
 
-```
+```text
 **[terminal]
 **[prompt foo@joe]**[path ~]**[delimiter  $ ]**[command ./myscript]
 Normal output line. Nothing special here...
@@ -1006,7 +1006,7 @@ terminal 支持下面 5 种样式，如果需要更换样式，在 pluginsConfig
 
 下面是使用示例：
 
-```
+```text
 Info styling
 > **[info] For info**
 >
@@ -1123,13 +1123,13 @@ GitBook 支持多种输出格式，这里主要讲述如何将 GitBook 发布在
 
 当你在自己的电脑上编辑好图书之后，你可以使用 GitBook 的命令行进行本地预览：
 
-```
+```text
 $ gitbook serve
 ```
 
 这里会启动一个端口为 `4000` 用于预览的服务器：
 
-```
+```text
 $ gitbook serve
 Press CTRL+C to quit ...
 Starting build ...
@@ -1146,7 +1146,7 @@ Serving book on http://localhost:4000
 
 与直接预览生成的静态网站文件不一样的是，使用这个命令，你可以将内容输入到你所想要的目录中去：
 
-```
+```text
 $ mkdir /tmp/gitbook
 $ gitbook build --output=/tmp/gitbook
 Starting build ...
@@ -1177,7 +1177,7 @@ gitbook           index.html        publish
 
 - 将 `gh-pages` 分支 clone 到本地：
 
-```
+```text
 git clone -b gh-pages git@github.com:USERNAME/book.git book-end
 ```
 

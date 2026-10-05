@@ -66,7 +66,7 @@ db.collection('temp').add ({
 
 另外，上传数据的接口为：
 
-```
+```text
 https://api.weixin.qq.com/tcb/databaseadd?access_token=ACCESS_TOKEN
 ```
 

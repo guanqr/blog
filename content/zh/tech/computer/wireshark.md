@@ -61,7 +61,7 @@ displayExpiredTip = true
 
 输入ARP进行筛选，得到一组数据包：
 
-```
+```text
 Who has 10.171.32.1? Tell 10.171.34.11
 10.171.32.1 is at 28:6e:d4:44:20:4f
 ```
@@ -132,7 +132,7 @@ Who has 10.171.32.1? Tell 10.171.34.11
 
 设置过滤条件：
 
-```
+```text
 http and ip.addr==10.10.98.98 and tcp.port==80
 ```
 

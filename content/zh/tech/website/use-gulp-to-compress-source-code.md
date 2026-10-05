@@ -98,7 +98,7 @@ gulp.task('default', gulp.parallel('minify-html', 'minify-css', 'minify-js'));
 
 ### 执行命令
 
-```
+```text
 hexo clean	//先清理文件
 hexo g	//编译生成静态文件
 gulp	//Gulp 插件执行压缩任务
@@ -107,7 +107,7 @@ hexo s	//开启服务
 
 正常运行后应该显示：
 
-```
+```text
 $ gulp
 [13:08:13] Using gulpfile G:\Hexo\gulpfile.js
 [13:08:13] Starting 'default'...

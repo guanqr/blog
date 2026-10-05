@@ -118,7 +118,7 @@ preload:
 
 由于需要使用 Node 的模块，因此我们的电脑必须安装 [Node.js](https://nodejs.org/zh-cn/download/)。如果你使用的是 Hexo，那么是已经安装过的；如果你使用的并非基于 Node.js 的博客框架，比如 Hugo，那么请自行安装一下。然后，我们安装模块：
 
-```
+```text
 npm install workbox-build gulp gulp-uglify readable-stream uglify-es --save-dev
 ```
 
@@ -130,13 +130,13 @@ npm install workbox-build gulp gulp-uglify readable-stream uglify-es --save-dev
 
 > 如何将安装的模块更新到最新版本呢？
 >
-> ```
+> ```text
 > npm update
 > ```
 >
 > 如果不生效，可继续尝试（下方以 `workbox-build` 为例）：
 >
-> ```
+> ```text
 > npm outdated
 > Package        Current  Wanted  Latest  Location
 > workbox-build    4.3.1   4.3.1   5.0.0  blog

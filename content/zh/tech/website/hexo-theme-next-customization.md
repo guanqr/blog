@@ -30,12 +30,12 @@ displayExpiredTip = true
 
 请直接参考 [Hexo 官方文档](https://hexo.io/zh-cn/docs/)。安装好 Hexo 后，先任意目录新建个文件夹，然后进入这个文件夹，输入命令初始化博客文件夹：
 
-```
+```text
 hexo init
 ```
 等待构建完毕，如果出现橙色的 WARN 没关系，只要不出现红色的 ERROR 就行。然后输入命令：
 
-```
+```text
 hexo g && hexo s
 ```
 
@@ -51,7 +51,7 @@ GitHub Pages 是开源协作社区 GitHub 的一个服务，免费，方便，�
 
 将 Hexo 部署到 GitHub Pages 需要借助一个插件：hexo-deployer-git，进入博客文件夹根目录下，进行插件的安装：
 
-```
+```text
 npm install hexo-deployer-git --save
 ```
 
@@ -68,7 +68,7 @@ deploy:
 ```
 `repository` 即为你之前创建的仓库地址。将其中的 `username` 改成你的 GitHub 用户名即可，然后执行下面的命令：
 
-```
+```text
 hexo clean && hexo g && hexo d
 ```
 
@@ -978,7 +978,7 @@ document.addEventListener('visibilitychange', function () {
 ```
 其中：
 
-```
+```text
 POWERMODE.colorful = true;  // 控制开启 / 开启礼花特效  
 POWERMODE.shake = false;  // 控制开启 / 关闭屏幕震动特效
 ```
@@ -1569,7 +1569,7 @@ Renderer.prototype.image = function(href, title, text) {
 
 这里推荐 [hexo-tag-aplayer](<https://github.com/MoePlayer/hexo-tag-aplayer>)，[APlayer](https://github.com/MoePlayer/APlayer) 播放器的 Hexo 标签插件。安装：
 
-```
+```text
 npm install hexo-tag-aplayer --save
 ```
 
@@ -1623,7 +1623,7 @@ npm install hexo-tag-aplayer --save
 
 安装：
 
-```
+```text
 npm install hexo-tag-dplayer --save
 ```
 
@@ -1650,14 +1650,14 @@ Markdown 基本语法中并不包含脚注语法，但是脚注作为一种常�
 
 对于上述两款插件，根据喜好选择一款插件安装：
 
-```
+```text
 npm install hexo-footnotes --save
 npm install hexo-reference --save
 ```
 
 如果要添加脚注，使用格式如下：
 
-```
+```text
 这是我的博客[^1]。
 
 [^1]: 地址：https://blog.guanqr.com。
@@ -1669,7 +1669,7 @@ npm install hexo-reference --save
 
 Hexo 的 [ECharts 插件](https://github.com/kchen0x/hexo-tag-echarts3)是博主 [KChen](https://kchen.cc/) 根据周旅军的原型插件开发的。进入博客根目录安装插件：
 
-```
+```text
 npm install hexo-tag-echarts3 --save
 ```
 
@@ -1788,7 +1788,7 @@ markdown:
 
 这就是对锚点进行配置的内容。不过使用这种方法添加锚点最大的问题就是，在文章目录中每一章节标题前也会显示锚点的图案，这样显得比较难看，即：
 
-```
+```text
 1. ¶第一章
   1.1 ¶第一节
 2. ¶第二章
@@ -1810,7 +1810,7 @@ markdown:
 
 然后再安装该插件：
 
-```
+```text
 npm install hexo-theme-next-anchor
 ```
 
@@ -1850,13 +1850,13 @@ anchor:
 
 进入博客根目录安装插件：
 
-```
+```text
 npm install hexo-recommended-posts --save
 ```
 
 在编辑完新的文章之后，使用如下命令获取推荐列表
 
-```
+```text
 hexo recommend
 ```
 

@@ -33,7 +33,7 @@ displayExpiredTip = true
 
 在附加开发板管理器网址汇总添加有关 ESP8266 的内容：
 
-```
+```text
 http://arduino.esp8266.com/stable/package_esp8266com_index.json>
 ```
 

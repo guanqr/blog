@@ -83,7 +83,7 @@ make all
 
 在运行软件之前，可以先打开文件夹下的 `\data\predefined_classes.txt` 文件，该文件中的内容是标注所用到的标签。比如我在标注垃圾的时候，会标注 `glass`、`metal`、`paper`、`plastic` 四类，那么在该文件中依次填写名称即可。
 
-```
+```text
 glass
 metal
 paper
@@ -168,7 +168,7 @@ cat 2007_train.txt 2007_val.txt  > train.txt
 
 下面需要对 darknet 的源码进行一些修改。打开 `cfg/voc.data` 文件，修改为：
 
-```
+```text
 classes= 4
 train  = /home/guanqirui/darknet/train.txt
 valid  = /home/guanqirui/darknet/2007_test.txt
@@ -203,7 +203,7 @@ random=1
 
 在该文件的开头，有：
 
-```
+```text
 [net]
 # Testing
  batch=1

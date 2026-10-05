@@ -28,7 +28,7 @@ displayExpiredTip = true
 
 回到本地，可以看到在你的博客源码存放的文件夹根目录下，有一个 `.gitignore` 文件。这是你在安装 Hexo 的时候就已经存在的文件，作用是在你上传博客源码至仓库的时候，忽略上传某些特定的文件。在这个文件中，默认忽略上传的应该有：
 
-```
+```text
 .DS_Store
 Thumbs.db
 db.json
@@ -46,7 +46,7 @@ public/
 
 然后，进入你的主题文件夹中，这里面还有一个 `.gitignore` 文件，打开后，修改其内容为：
 
-```
+```text
 .DS_Store
 .idea/
 *.log
@@ -74,7 +74,7 @@ node_modules/
 
 我还了解到其实主题文件夹也可不必上传，可以直接设定跟随原主题仓库的更新，即在根目录下添加 `.gitmodules` 文件，设定 `themes` 文件夹下的内容为子仓库，子仓库设定为 NexT 主题的仓库。即：
 
-```
+```text
 [submodule "themes/next"]
 	path = themes/next
 	url = https://github.com/theme-next/hexo-theme-next
@@ -96,13 +96,13 @@ node_modules/
 
 这里会让你设定部署的一些详细信息，Netlify 会识别到你使用的是 Hexo，一般默认即可。但这里需要注意一点，「Build command」中默认的命令是：
 
-```
+```text
 hexo generate
 ```
 
 而我设定的命令是：
 
-```
+```text
 hexo clean && hexo generate && gulp build && gulp
 ```
 

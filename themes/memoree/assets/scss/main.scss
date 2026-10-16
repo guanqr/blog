@@ -81,48 +81,12 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 
 // Font Family
 
-{{ if .Site.Params.enableChinesePunctuationGlyphCorrection }}
-    {{ .Scratch.Set "glyph" "'glyph-correction', " }}
-{{ else }}
-    {{ .Scratch.Set "glyph" "" }}
-{{ end }}
-{{ $glyph := .Scratch.Get "glyph" }}
+{{ $glyph := cond .Site.Params.enableChinesePunctuationGlyphCorrection "'glyph-correction', " "" }}
 
-{{ with .Site.Params.fontFamilySiteBrand }}
-    $fontFamilySiteBrand: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyMenu }}
-    $fontFamilyMenu: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyTitle }}
-    $fontFamilyTitle: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyHeadings }}
-    $fontFamilyHeadings: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyCode }}
-    $fontFamilyCode: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyQuote }}
-    $fontFamilyQuote: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyTOC }}
-    $fontFamilyTOC: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyCaption }}
-    $fontFamilyCaption: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyFooter }}
-    $fontFamilyFooter: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyBody }}
-    $fontFamilyBody: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyGlyph }}
-    $fontFamilyGlyph: {{ $glyph }}{{ . }};
-{{ end }}
-{{ with .Site.Params.fontFamilyStrong }}
-    $fontFamilyStrong: {{ $glyph }}{{ . }};
+{{ range $name := slice "SiteBrand" "Menu" "Title" "Headings" "Code" "Quote" "Caption" "Footer" "Body" "Glyph" "Strong" }}
+    {{ with index $.Site.Params (printf "fontFamily%s" $name) }}
+        $fontFamily{{ $name }}: {{ $glyph }}{{ . }};
+    {{ end }}
 {{ end }}
 
 @import "base/font-family";
@@ -162,18 +126,7 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 // Light
 
 {{ with .Site.Params.primaryColorLight | default "220, 90%, 56%" }}
-    {{ $number := (split (replace . "%" "") ", ") }}
-    {{ range $index, $value := $number }}
-        {{ if eq $index 0 }}
-            $primaryColorLightH: {{ $value | int }};
-        {{ end }}
-        {{ if eq $index 1 }}
-            $primaryColorLightS: {{ $value | int }}%;
-        {{ end }}
-        {{ if eq $index 2 }}
-            $primaryColorLightL: {{ $value | int }}%;
-        {{ end }}
-    {{ end }}
+    {{ partial "utils/hsl-vars.html" (dict "value" . "prefix" "primaryColorLight") }}
 {{ end }}
 
 {{ if and .Site.Params.enableDarkMode (eq .Site.Params.defaultTheme "dark") }}
@@ -194,18 +147,7 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 
 {{ if .Site.Params.enableDarkMode }}
     {{ with .Site.Params.primaryColorDark | default "201, 65%, 62%" }}
-        {{ $number := (split (replace . "%" "") ", ") }}
-        {{ range $index, $value := $number }}
-            {{ if eq $index 0 }}
-                $primaryColorDarkH: {{ $value | int }};
-            {{ end }}
-            {{ if eq $index 1 }}
-                $primaryColorDarkS: {{ $value | int }}%;
-            {{ end }}
-            {{ if eq $index 2 }}
-                $primaryColorDarkL: {{ $value | int }}%;
-            {{ end }}
-        {{ end }}
+        {{ partial "utils/hsl-vars.html" (dict "value" . "prefix" "primaryColorDark") }}
     {{ end }}
 
     @import "themes/dark";
@@ -282,20 +224,12 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 
 // Components
 
-{{ if and hugo.IsMultilingual .Site.Params.enableLangToggle }}
-    @import "components/multilingual";
-{{ end }}
-
 {{ if or .Site.Params.enablePostMeta .Site.Params.enablePostMetaInHome }}
     @import "components/post-meta";
 {{ end }}
 
 {{ if .Site.Params.enablePostCopyright }}
     @import "components/post-copyright";
-{{ end }}
-
-{{ if .Site.Params.enablePostUpdatedBadge }}
-    @import "components/updated-badge";
 {{ end }}
 
 {{ if .Site.Params.enablePostGitInfo }}
@@ -340,6 +274,10 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
     @import "components/highlight";
 {{ end }}
 
+{{ if .Site.Params.enableCopy }}
+    @import "components/copy-button";
+{{ end }}
+
 {{ if .Site.Params.enableSocials }}
     @import "components/socials";
 {{ end }}
@@ -363,6 +301,11 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 {{ end }}
 
 
+// Micro Page
+
+@import "pages/micro";
+
+
 // 404 Page
 
 @import "pages/404";
@@ -376,6 +319,14 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
     @import "third-party/medium-zoom";
 {{ end }}
 
+// KaTeX
+
+@import "third-party/katex";
+
+// Mermaid
+
+@import "third-party/mermaid";
+
 // Responsive
 
 $greaterWidth: null;
@@ -386,7 +337,7 @@ $greaterWidth: null;
     $greaterWidth: $listWidth;
 }
 
-@import "base/max-width";
+$maxWidth: $fontSize * (strip-unit($greaterWidth) + 5);
 :root {
     --max-width: #{$maxWidth};
 }
@@ -400,7 +351,12 @@ $greaterWidth: null;
 
 // Site Shortcodes
 
-@import "components/shortcodes";
+@import "components/shortcodes-quote";
+@import "components/shortcodes-notice";
+@import "components/shortcodes-github";
+@import "components/shortcodes-blogroll";
+@import "components/shortcodes-identity-cards";
+@import "components/shortcodes-book-list";
 
 // Sidebar
 

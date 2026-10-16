@@ -12,8 +12,8 @@
 --->
 
 {{- if eq $type "clipboard" -}}
-    {{- $defalut := "/npm/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.clipboard | default $defalut -}}
+    {{- $default := "/npm/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.min.js" -}}
+    {{- $path = $.Site.Params.lib.path.clipboard | default $default -}}
 {{- end -}}
 
 {{- if eq $type "instantpage" -}}
@@ -22,35 +22,35 @@
 {{- end -}}
 
 {{- if eq $type "katex" -}}
-    {{- $defalut := "/npm/katex@0.13.0/dist/katex.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.katex | default $defalut -}}
+    {{- $default := "/npm/katex@0.13.0/dist/katex.min.js" -}}
+    {{- $path = $.Site.Params.lib.path.katex | default $default -}}
 {{- end -}}
 {{- if eq $type "katex-css" -}}
-    {{- $defalut := "/npm/katex@0.13.0/dist/katex.min.css" -}}
-    {{- $path = $.Site.Params.lib.path.katex_css | default $defalut -}}
+    {{- $default := "/npm/katex@0.13.0/dist/katex.min.css" -}}
+    {{- $path = $.Site.Params.lib.path.katex_css | default $default -}}
 {{- end -}}
 {{- if eq $type "katex-mhchem" -}}
-    {{- $defalut := "/npm/katex@0.13.0/dist/contrib/mhchem.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.katex_mhchem | default $defalut -}}
+    {{- $default := "/npm/katex@0.13.0/dist/contrib/mhchem.min.js" -}}
+    {{- $path = $.Site.Params.lib.path.katex_mhchem | default $default -}}
 {{- end -}}
 {{- if eq $type "katex-auto-render" -}}
-    {{- $defalut := "/npm/katex@0.13.0/dist/contrib/auto-render.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.katex_auto_render | default $defalut -}}
+    {{- $default := "/npm/katex@0.13.0/dist/contrib/auto-render.min.js" -}}
+    {{- $path = $.Site.Params.lib.path.katex_auto_render | default $default -}}
 {{- end -}}
 
 {{- if eq $type "mathjax" -}}
-    {{- $defalut := "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js" -}}
-    {{- $path = $.Site.Params.lib.path.mathjax | default $defalut -}}
+    {{- $default := "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js" -}}
+    {{- $path = $.Site.Params.lib.path.mathjax | default $default -}}
 {{- end -}}
 
 {{- if eq $type "medium-zoom" -}}
-    {{- $defalut := "/npm/medium-zoom@latest/dist/medium-zoom.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.medium_zoom | default $defalut -}}
+    {{- $default := "/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" -}}
+    {{- $path = $.Site.Params.lib.path.medium_zoom | default $default -}}
 {{- end -}}
 
 {{- if eq $type "mermaid" -}}
-    {{- $defalut := "/npm/mermaid@8.8.3/dist/mermaid.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.mermaid | default $defalut -}}
+    {{- $default := "/npm/mermaid@8.8.3/dist/mermaid.min.js" -}}
+    {{- $path = $.Site.Params.lib.path.mermaid | default $default -}}
 {{- end -}}
 
 <!--

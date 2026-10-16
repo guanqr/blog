@@ -16,6 +16,15 @@
 
         {{ partial "components/back-to-top.html" . }}
         {{ partial "components/service-worker.html" . }}
+
+        <script>
+            // 检测 Safari（排除 Chrome 内核伪装的 UA），给 body 加 safari-only 类：
+            // 供 emphasis-point 的降级样式（Safari 不渲染着重号，改虚线下划线）
+            if (navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {
+                document.body.classList.add('safari-only');
+            }
+        </script>
+
         {{ partial "third-party/script.html" . }}
     </body>
 </html>

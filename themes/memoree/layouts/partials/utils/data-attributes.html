@@ -23,7 +23,4 @@
     {{- end -}}
 {{- end -}}
 
-<!-- TOC Number -->
-{{- $tocNum := .Params.tocNum | default .Site.Params.displayTOCNum -}}
-
-{{- return dict "smallCaps" $smallCaps "align" $align "type" $type "layout" $layout "indent" $indent "tocNum" $tocNum -}}
+{{- return dict "smallCaps" $smallCaps "align" $align "type" $type "layout" $layout "indent" $indent -}}

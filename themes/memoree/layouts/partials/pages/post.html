@@ -9,8 +9,7 @@
         {{- with $attrs.align }} data-align="{{ . }}"{{ end }}
         {{- with $attrs.type }} data-type="{{ . }}"{{ end }}
         {{- with $attrs.layout }} data-layout="{{ . }}"{{ end }}
-        {{- if $attrs.indent }} data-indent="true"{{ end }}
-        {{- if $attrs.tocNum }} data-toc-num="true"{{ end }}>
+        {{- if $attrs.indent }} data-indent="true"{{ end }}>
 
             {{/* English subtitle from slug */}}
             {{ with .File }}
@@ -48,8 +47,6 @@
             {{ partial "components/post-copyright.html" . }}
 
         </article>
-
-        {{ partial "components/post-updated-badge.html" . }}
 
         {{ partial "components/post-gitinfo.html" . }}
 

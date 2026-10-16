@@ -1,0 +1,43 @@
+// 友链样式
+
+.blogroll-link {
+    display: grid;
+    gap: 0 1.5em;
+    grid-template-columns: 1fr 1fr;
+}
+
+a.blogroll {
+    padding: 1em 0;
+    border-bottom: 1px dashed var(--color-contrast-low);
+    display: flex;
+    text-decoration: none;
+    overflow: hidden;
+    .friend {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .name {
+        font-weight: bold;
+        margin: 0.375em 0;
+    }
+    .excerpt {
+        font-size: 0.875em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .avatar {
+        width: 4em !important;
+        height: 4em !important;
+        margin: 0 1em 0 0 !important;
+        pointer-events: none;
+        z-index: 0;
+    }
+}
+
+@media (max-width: $maxWidth) {
+    .blogroll-link {
+        grid-template-columns: 1fr;
+    }
+}

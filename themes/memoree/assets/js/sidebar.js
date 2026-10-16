@@ -1,19 +1,3 @@
-// Freeze header/body transitions during window resize (all pages)
-window.addEventListener("DOMContentLoaded", function() {
-    var header = document.querySelector('.header');
-    var body = document.body;
-    var resizeTimer;
-    window.addEventListener('resize', function() {
-        if (header) header.style.transition = 'none';
-        if (body) body.style.transition = 'none';
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-            if (header) header.style.transition = '';
-            if (body) body.style.transition = '';
-        }, 300);
-    });
-});
-
 // Sidebar logic
 function initSidebar() {
     var sidebar = document.getElementById('sidebar');
@@ -80,6 +64,8 @@ function initSidebar() {
     });
 
     // Highlight active TOC item based on scroll position
+    // rootMargin 手调值：上边距 -80px 让位顶栏高度；
+    // 下边距 -70% 把「当前阅读位置」限定在视口上部 30% 区域
     var tocLinks = document.querySelectorAll('.sidebar-toc a');
     var headings = [];
     tocLinks.forEach(function(link) {
@@ -91,15 +77,19 @@ function initSidebar() {
     });
 
     if (headings.length) {
+        // el → link 映射：观察回调按元素取对应链接，O(1) 替代数组线性查找
+        var linkByEl = new Map(headings.map(function(h) { return [h.el, h.link]; }));
+        var activeLink = null;
+
         var observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
-                var link = headings.find(function(h) { return h.el === entry.target; });
-                if (link) {
-                    if (entry.isIntersecting) {
-                        tocLinks.forEach(function(l) { l.classList.remove('active'); });
-                        link.link.classList.add('active');
-                    }
-                }
+                if (!entry.isIntersecting) return;
+                var link = linkByEl.get(entry.target);
+                if (!link) return;
+                // 任何时刻仅一个 active：只摘除上一次的链接，无需全量遍历
+                if (activeLink) activeLink.classList.remove('active');
+                activeLink = link;
+                link.classList.add('active');
             });
         }, { rootMargin: '-80px 0px -70% 0px' });
 

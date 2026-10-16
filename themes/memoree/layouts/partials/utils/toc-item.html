@@ -1,0 +1,13 @@
+{{- $idAttr := "" -}}
+{{- if site.Params.linkHeadingsToTOC -}}
+    {{- $idAttr = printf ` id="contents:%s"` .ID -}}
+{{- end -}}
+{{- $link := printf `<a%s href="#%s">%s</a>` $idAttr .ID (.Title | htmlEscape) -}}
+<li>{{ $link | safeHTML }}
+{{- with .Headings -}}
+<ol>
+    {{- range . -}}
+        {{- partial "utils/toc-item.html" . -}}
+    {{- end -}}
+</ol>
+{{- end -}}</li>

@@ -162,9 +162,6 @@ uglyURLs = false
 # pre           内链（internal）或外链（external）
 # post          图标（留空（""）则无）
 # identifier    图标的 Class 名
-#               （对于弹性布局的顶栏有两个特殊
-#               的值：`theme-switcher`、
-#               `lang-switcher`）
 
 [menu]
     ## 菜单栏
@@ -203,9 +200,6 @@ uglyURLs = false
         pre = "internal"
         post = "user-circle"
         identifier = "about"
-    [[menu.main]]
-        weight = 9
-        identifier = "lang-switcher"
     [[menu.socials]]
         url = "https://github.com/guanqr"
         name = "GitHub"
@@ -718,14 +712,6 @@ uglyURLs = false
     # 桌面端推挤内容的断点（大于等于此宽度时正文为侧边栏让位）
     sidebarPushBreakpoint = "1200px"
 
-    # 是否显示目录标题
-    displayTOCTitle = true
-
-    # 是否显示数字（全局设置）
-    displayTOCNum = true
-    # 说明：文章的 Front Matter 中的 `tocNum`
-    #      的优先级高于此处
-
     # 是否链接文章的分节标题到目录
     linkHeadingsToTOC = true
 
@@ -853,12 +839,10 @@ uglyURLs = false
     fontFamilyTitle = "'Amstelvar', 'Noto Serif TC', 'Noto Serif SC', 'I.MingCP', serif"
     # 分节标题、目录标题
     fontFamilyHeadings = "'Amstelvar', 'Noto Serif TC', 'Noto Serif SC', 'I.MingCP', serif"
-    # 代码、上标、文章更新徽章、文章的 Git 版本信息、极简页脚
+    # 代码、上标、文章的 Git 版本信息、极简页脚
     fontFamilyCode = "'JetBrains Mono', 'LXGW WenKai TC', monospace"
     # 引用
     fontFamilyQuote = ""
-    # 文章目录
-    fontFamilyTOC = ""
     # 说明文字
     fontFamilyCaption = ""
     # 页脚
@@ -980,23 +964,6 @@ uglyURLs = false
     displayPostCopyright = false
     # 说明：文章的 Front Matter 中的 `displayCopyright`
     #      的优先级高于此处
-
-
-    ######################################
-    # 文章更新徽章
-
-    # 是否开启
-    enablePostUpdatedBadge = false
-
-    # 是否显示（全局设置）
-    displayUpdatedBadge = false
-    # 说明：文章的 Front Matter 中的 `badge`
-    #      的优先级高于此处
-
-    # 是否添加 `title`
-    enableBadgeTitle = true
-    # `title` 的前缀
-    badgeTitlePrefix = "Updated @ "
 
 
     ######################################
@@ -1155,21 +1122,6 @@ uglyURLs = false
 
 
     ######################################
-    # 多语言
-
-    # 是否开启多语言按钮
-    enableLangToggle = false
-
-    # 是否在首页隐藏多语言按钮
-    hideLangToggleInHome = false
-
-    # 是否自动隐藏多语言按钮
-    autoHideLangToggle = true
-    # 说明：即仅当该文章有相应的翻译版本时才显
-    #      示按钮
-
-
-    ######################################
     # 代码块
 
     # 是否开启高亮
@@ -1245,28 +1197,6 @@ uglyURLs = false
 
 
     ######################################
-    # 定制第三方库的地址
-
-    [params.lib]
-        host = "https://cdn.jsdelivr.net"
-        # 说明：设置为根（"/"）且将下方对应 path
-        #      设置，如果你想要直接从「本地」
-        #      加载某个库的话。比如：
-        #      将 path 设置为 "js/lib.min.js"，
-        #      并将文件放到你的 /static/js/lib.min.js
-    [params.lib.path]
-        clipboard = "/npm/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.min.js"
-        instantpage = "/npm/instant.page@5.1.0/instantpage.min.js"
-        katex = "/npm/katex@0.13.0/dist/katex.min.js"
-        katex_css = "/npm/katex@0.13.0/dist/katex.min.css"
-        katex_mhchem = "/npm/katex@0.13.0/dist/contrib/mhchem.min.js"
-        katex_auto_render = "/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
-        mathjax = "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"
-        medium_zoom = "/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"
-        mermaid = "/npm/mermaid@8.8.3/dist/mermaid.min.js"
-
-
-    ######################################
     # 作者信息
     [params.author]
         # 名字
@@ -1287,75 +1217,12 @@ uglyURLs = false
 
 
 ##########################################
-# 自行添加的多语言站点设置
+# 站点语言设置
 
-# 中文
+# 仅中文：内容位于 content/zh
+# params.contentDir 供 Git 信息/编辑链接定位仓库内文件路径
 [languages.zh-hant]
-    label = "🇨🇳"
     contentDir = "content/zh"
-    weight = 1
+
 [languages.zh-hant.params]
     contentDir = "content/zh"
-
-# 英文
-[languages.en]
-    label = "🇺🇸"
-    contentDir = "content/en"
-    weight = 2
-    locale = "en"
-    hasCJKLanguage = false
-	title = "Wondering Alone"
-    copyright = "The article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)."
-[languages.en.menu]
-    [[languages.en.menu.main]]
-        url = "/en/about/"
-        name = "About"
-        weight = 1
-        pre = "internal"
-        post = "user-circle"
-        identifier = "about"
-    [[languages.en.menu.main]]
-        weight = 2
-        identifier = "theme-switcher"
-    [[languages.en.menu.main]]
-        weight = 3
-        identifier = "lang-switcher"
-    [[languages.en.menu.socials]]
-        url = "https://github.com/guanqr"
-        name = "GitHub"
-        weight = 1
-        pre = "external"
-    [[languages.en.menu.socials]]
-        url = "https://www.instagram.com/guanqr/"
-        name = "Instagram"
-        weight = 2
-        pre = "external"
-    [[languages.en.menu.links]]
-        url = "https://www.instagram.com/guanqr/"
-        name = "Instagram"
-        weight = 1
-        pre = "external"
-    [[languages.en.menu.links]]
-        url = "/en/atom.xml"
-        name = "Feed"
-        weight = 2
-        pre = "external"
-[languages.en.params]
-    siteDescription = "Guanqr's Blog in English."
-    listDateFormat = "January 2"
-    fontFamilyTitle = "'Amstelvar', serif"
-    fontFamilyHeadings = "'Amstelvar', serif"
-    fontFamilyCode = "'JetBrains Mono', monospace"
-    fontFamilyBody = "'Amstelvar', serif"
-    #fontsLink = "https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    lineHeight = 1.618
-    enableJustify = false
-    enableSmallCap = true
-    enableEmphasisPoint = false
-    enableChinesePunctuationGlyphCorrection = false
-	mainSections = ["posts"]
-    homeLayout = "posts"
-    ## 「诗意人生」
-    # 诗句，支持 Markdown
-    homePoetry = ["*To see a world in a grain of sand*","*And a heaven in a wild flower*","*Hold infinity in the palm of your hand*","*And eternity in an hour*"]
-    navHeight = "6em"

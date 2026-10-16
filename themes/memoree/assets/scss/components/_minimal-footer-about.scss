@@ -1,10 +1,5 @@
 .minimal-footer-about {
-    font-size: 0.8em;
-    margin-top: 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    line-height: 2;
+    @include minimalFooter;
     a {
         display: inline-block;
         color: alpha(var(--color-contrast-medium), 0.9);

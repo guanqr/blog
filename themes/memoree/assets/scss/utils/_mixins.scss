@@ -11,3 +11,37 @@
     -moz-tab-size: $tabSize;
     tab-size: $tabSize;
 }
+
+
+// 极简页脚共用布局（minimal-footer 与 minimal-footer-about 相同）
+
+@mixin minimalFooter {
+    font-size: 0.8em;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    line-height: 2;
+}
+
+
+// 三线汉堡图标（nav-toggle 与 sidebar-toggle 共用）
+
+// 静止态：三线定位
+@mixin hamburgerLines($width, $height, $top1, $top2, $top3) {
+    display: block;
+    position: absolute;
+    width: $width;
+    height: $height;
+    border-radius: 0.8px;
+    &:nth-child(1) { top: $top1; }
+    &:nth-child(2) { top: $top2; }
+    &:nth-child(3) { top: $top3; }
+}
+
+// 展开态：三线变形为 X
+@mixin hamburgerOpen($top) {
+    &:first-child { top: $top; transform: rotate(225deg); }
+    &:nth-child(2) { width: 0; opacity: 0; transform: rotate(-135deg); }
+    &:last-child { top: $top; transform: rotate(-45deg); }
+}

@@ -1,27 +1,13 @@
-{{- $toc := .TableOfContents -}}
-
-<!-- Change TOC Attribute -->
-{{- $regexPatternTOC := `<nav id="TableOfContents">` -}}
-{{- $regexReplacementTOC := `<nav class="contents">` -}}
-{{- $toc = $toc | replaceRE $regexPatternTOC $regexReplacementTOC -}}
-
-<!-- Inject Class Attribute -->
-{{- $regexPatternTOC := `(<nav class="contents">\n.+)<(ol|ul)>` -}}
-{{- $regexReplacementTOC := `$1<$2 class="toc">` -}}
-{{- $toc = $toc | replaceRE $regexPatternTOC $regexReplacementTOC -}}
-
-<!-- Inject TOC Title -->
-{{- if .Site.Params.displayTOCTitle -}}
-    {{- $regexPatternTOC := `(<nav class="contents">\n.+)(<(ol|ul) class="toc">)` -}}
-    {{- $regexReplacementTOC := (printf `$1<h2 id="contents" class="contents-title">%s</h2>$2` (i18n "tocTitle")) -}}
-    {{- $toc = $toc | replaceRE $regexPatternTOC $regexReplacementTOC -}}
+{{- /* 依据 .Fragments 的目录树渲染侧边栏目录（替代对 .TableOfContents 的正则手术）。
+     树由 Hugo 按 [markup.tableOfContents] 配置（startLevel/endLevel）生成，
+     根节点 Level 0，实际条目自其 Headings 子键起；逐层递归见 utils/toc-item.html */ -}}
+{{- if .Fragments.Headings -}}
+{{- $root := index .Fragments.Headings 0 -}}
+{{- if $root.Headings -}}
+<nav class="contents"><ol class="toc">
+{{- range $root.Headings -}}
+    {{- partial "utils/toc-item.html" . -}}
 {{- end -}}
-
-<!-- Link Headings to TOC -->
-{{- if .Site.Params.linkHeadingsToTOC -}}
-    {{- $regexPatternTOC := `(<a)( href="#([^"]+)">)` -}}
-    {{- $regexReplacementTOC := `$1 id="contents:$3"$2` -}}
-    {{- $toc = $toc | replaceRE $regexPatternTOC $regexReplacementTOC -}}
-{{ end }}
-
-{{- $toc | safeHTML -}}
+</ol></nav>
+{{- end -}}
+{{- end -}}

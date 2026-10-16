@@ -27,13 +27,10 @@
             font-family: $fontFamilyHeadings;
         }
     }
-    .contents-title {
-        font-family: $fontFamilyHeadings;
-    }
 }
 
 @if variable-exists("fontFamilyCode") {
-    code, pre, sup, .updated-badge, .post-gitinfo, .minimal-footer, .minimal-footer-about, .copy-button {
+    code, pre, sup, .post-gitinfo, .minimal-footer, .minimal-footer-about, .copy-button {
         font-family: $fontFamilyCode;
     }
 }
@@ -41,12 +38,6 @@
 @if variable-exists("fontFamilyQuote") {
     blockquote {
         font-family: $fontFamilyQuote;
-    }
-}
-
-@if variable-exists("fontFamilyTOC") {
-    .contents {
-        font-family: $fontFamilyTOC;
     }
 }
 

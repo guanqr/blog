@@ -1,10 +1,5 @@
 .minimal-footer {
-    font-size: 0.8em;
-    margin-top: 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    line-height: 2;
+    @include minimalFooter;
 }
 
 .post-tag, .post-category {

@@ -1,0 +1,68 @@
+// quote
+
+blockquote.quote {
+    position: relative;
+    margin: 2em auto;
+    padding-left: 2.5em;
+    border: none;
+    p {
+        font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+    }
+    &::before {
+        position: absolute;
+        left: 0;
+        content: '“';
+        color: var(--color-contrast-low);
+        font-family: 'JetBrains Mono', 'Amstelvar', 'Noto Serif SC', serif;
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1;
+    }
+    &.en {
+        p {
+            font-family: 'Amstelvar', serif;
+            font-style: italic;
+            line-height: 1.618;
+            text-align: left;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+        }
+    }
+}
+
+// quote-center
+
+blockquote.quote-center {
+    position: relative;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--color-contrast-lower);
+    border-bottom: 1px solid var(--color-contrast-lower);
+    p {
+        font-family: 'glyph-correction', 'LXGW WenKai TC', 'Noto Serif SC', serif;
+        text-align: center !important;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+    &::before {
+        position: absolute;
+        left: 0;
+        content: '“';
+        color: var(--color-contrast-low);
+        font-family: 'Amstelvar', 'Noto Serif SC', serif;
+        font-size: 3em;
+        font-weight: bold;
+        margin-top: -0.42em;
+    }
+    &::after {
+        position: absolute;
+        right: 0;
+        content: '”';
+        color: var(--color-contrast-low);
+        font-family: 'Amstelvar', 'Noto Serif SC', serif;
+        font-size: 3em;
+        font-weight: bold;
+        margin-top: -0.7em;
+    }
+}

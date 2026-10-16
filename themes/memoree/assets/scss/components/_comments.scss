@@ -20,11 +20,13 @@
 :root {
     --waline-theme-color: var(--color-primary) !important;
     --waline-active-color: var(--color-primary) !important;
-    --waline-bg-color: hsl(50, 5%, 95%) !important;
+    // 与主题 --color-bg 同值，引用而非硬编码（light 为 50, 5%, 95%）
+    --waline-bg-color: var(--color-bg) !important;
 }
 
 :root[data-theme="dark"] {
     --waline-theme-color: var(--color-primary) !important;
-    --waline-bg-color: hsl(203, 22%, 7%) !important;
+    // 与主题 --color-bg 同值，引用而非硬编码（dark 为 203, 22%, 7%）
+    --waline-bg-color: var(--color-bg) !important;
     --waline-bg-color-light: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.5) !important;
 }

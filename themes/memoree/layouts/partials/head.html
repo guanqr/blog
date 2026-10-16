@@ -60,6 +60,11 @@
         <link rel="stylesheet" href="{{ . }}" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="{{ . }}" /></noscript>
     {{- end }}
+    {{- with .Site.Params.customFontsLink -}}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+        <link rel="stylesheet" href="{{ . }}" media="print" onload="this.media='all'" />
+    {{- end }}
 
     <meta name="author" content="{{ .Params.author | default .Site.Params.author.name }}" />
     {{- $description := .Description | default (partial "utils/summary.html" .) | default .Site.Params.siteDescription | plainify | htmlUnescape -}}
@@ -122,9 +127,4 @@
         {{ partial "third-party/yandex-metrika.html" . }}
     {{- end }}
 
-    {{/*  Load custom fonts async  */}}
-    {{- $fontsLink := .Site.Params.customFontsLink -}}
-
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="stylesheet" href="{{ $fontsLink }}" media="print" onload="this.media='all'" />
 </head>

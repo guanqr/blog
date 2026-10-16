@@ -1,12 +1,14 @@
 {{ if and .Site.Params.enableServiceWorker (eq hugo.Environment "production") }}
-    {{- $sw := resources.Get "js/sw.js" -}}
+    {{- $sw := resources.Get "js/sw.js" | resources.ExecuteAsTemplate "sw.js" (dict "version" (now.Format "20060102150405")) -}}
     {{- $dummy := "" | resources.FromString "dummy.js" -}}
     {{- $url := (slice $sw $dummy | resources.Concat "sw.js").RelPermalink -}}
 
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('{{ $url }}');
+                navigator.serviceWorker.register('{{ $url }}')
+                    .then(reg => console.log('ServiceWorker 注册成功，作用域: ', reg.scope))
+                    .catch(err => console.log('ServiceWorker 注册失败: ', err));
             });
         }
     </script>

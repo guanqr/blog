@@ -14,4 +14,7 @@
     {{- end -}}
 {{- end -}}
 */}}
+{{- /* 首页概览不显示文章内图片：图片在文首时会被自动摘要一并截入，统一剥离；
+     replaceRE 返回字符串会丢失 template.HTML 类型，需 safeHTML 恢复原样输出 */ -}}
+{{- $summary = $summary | replaceRE `(?i)<img[^>]*>` "" | safeHTML -}}
 {{- return $summary -}}

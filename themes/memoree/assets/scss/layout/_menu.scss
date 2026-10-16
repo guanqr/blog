@@ -1,6 +1,8 @@
 .nav {
     z-index: 3;
     position: relative;
+    text-align: right;
+    font-size: 1em;
 }
 
 .menu {
@@ -13,33 +15,23 @@
 
 .menu-item {
     display: inline-block;
+    margin-left: 0.5em;
     a {
         color: var(--color-contrast-medium);
         &:hover {
             color: var(--color-primary);
         }
     }
+    .icon {
+        margin: 0 0.3em 0.2em 0;
+    }
+    .tags, .archives, .photos, .friends, .about {
+        display: none;
+    }
 }
 
 .active {
     a {
         color: var(--color-primary);
-    }
-}
-
-.nav {
-    text-align: right;
-    font-size: 1em;
-}
-.menu-item {
-    margin-left: 0.5em;
-    .icon {
-        margin: 0 0.3em 0.2em 0;
-    }
-}
-
-.menu-item {
-    .tags, .archives, .photos, .friends, .about {
-        display: none;
     }
 }

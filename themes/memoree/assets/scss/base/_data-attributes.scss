@@ -4,9 +4,6 @@
             font-variant: small-caps;
         }
     }
-    .contents-title {
-        font-variant: small-caps;
-    }
 }
 
 [data-align="justify"] {
@@ -59,28 +56,3 @@
     }
 }
 
-[data-toc-num="true"] {
-    .contents {
-        ol {
-            counter-reset: item;
-            li {
-                &::before {
-                    counter-increment: item;
-                    margin-right: 0.5em;
-                }
-            }
-        }
-    }
-    // First level
-    .contents > ol > li {
-        &::before {
-            content: counters(item, ".") ".";
-        }
-    }
-    // Sub level
-    .contents li > ol > li {
-        &::before {
-            content: counters(item, ".");
-        }
-    }
-}

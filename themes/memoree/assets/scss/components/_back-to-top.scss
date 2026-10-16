@@ -12,10 +12,14 @@
     }
 }
 
+// 与全局过渡时长 $duration 统一（原 _sidebar.scss 中的覆盖归位于此）
+.back-to-top {
+    transition: bottom $duration ease;
+}
+
 @if ($enableBackToTopAutoHide) {
     .back-to-top {
         bottom: -3.6em;
-        transition: bottom 0.3s ease-in-out;
         &.show {
             bottom: 0;
         }

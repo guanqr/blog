@@ -4,11 +4,6 @@
 
 $sidebar-z: 10;
 
-// Unify back-to-top speed with global $duration
-.back-to-top {
-    transition: bottom $duration ease !important;
-}
-
 // ---- Toggle button ----
 .sidebar-toggle {
     position: fixed;
@@ -33,25 +28,9 @@ $sidebar-z: 10;
 }
 
 .toggle-line {
-    display: block;
-    position: absolute;
-    height: 2.5px;
-    width: 18px;
+    @include hamburgerLines(18px, 2.5px, 2px, 7px, 12px);
     background: var(--color-contrast-medium);
-    border-radius: 0.8px;
     transition: top $duration ease, transform $duration ease, opacity $duration ease, width $duration ease;
-
-    &:first-child {
-        top: 2px;
-    }
-
-    &:nth-child(2) {
-        top: 7px;
-    }
-
-    &:last-child {
-        top: 12px;
-    }
 }
 
 .sidebar-toggle:hover .toggle-line {
@@ -61,19 +40,7 @@ $sidebar-z: 10;
 // Open X
 .sidebar-toggle.open {
     .toggle-line {
-        &:first-child {
-            top: 7px;
-            transform: rotate(225deg);
-        }
-        &:nth-child(2) {
-            width: 0;
-            opacity: 0;
-            transform: rotate(-135deg);
-        }
-        &:last-child {
-            top: 7px;
-            transform: rotate(-45deg);
-        }
+        @include hamburgerOpen(7px);
     }
 
     &:hover .toggle-line {
@@ -235,10 +202,6 @@ $sidebar-z: 10;
     ol.toc ol, ul.toc ul,
     ol.toc ul, ul.toc ol {
         padding-left: 1.2em;
-    }
-
-    .contents-title {
-        display: none;
     }
 
     a {

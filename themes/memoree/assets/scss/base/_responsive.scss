@@ -132,18 +132,12 @@
                     }
                 }
             }
-            #langs li {
-                width: auto;
-            }
         } @else {
             .nav {
                 margin-right: 1em;
             }
         }
-}
-
-// ---- 站点覆盖：移动端菜单图标 ----
-@media (max-width: $maxWidth) {
+    // 窄屏显示菜单图标（桌面端图标隐藏、仅文字，见 layout/_menu.scss）
     .menu-item {
         .tags, .archives, .photos, .friends, .about {
             display: inline-block;

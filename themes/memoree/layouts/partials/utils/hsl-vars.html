@@ -1,0 +1,7 @@
+{{- $prefix := .prefix -}}
+{{- $number := (split (replace .value "%" "") ", ") -}}
+{{- range $index, $v := $number -}}
+    {{- if eq $index 0 }}${{ $prefix }}H: {{ $v | int }};{{ end -}}
+    {{- if eq $index 1 }}${{ $prefix }}S: {{ $v | int }}%;{{ end -}}
+    {{- if eq $index 2 }}${{ $prefix }}L: {{ $v | int }}%;{{ end -}}
+{{- end -}}

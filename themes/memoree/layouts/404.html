@@ -4,23 +4,13 @@
     <body>
         <div class="container">
             <main class="fof">
-                {{ with or .Site.Params.fofVideoWebm .Site.Params.fofVideoMp4 }}
-                <video poster="{{ $.Site.Params.fofPoster }}" playsinline autoplay muted loop>
-                    {{ with $.Site.Params.fofVideoWebm }}
-                    <source src="{{ . }}" type="video/webm" />
-                    {{ end }}
-                    {{ with $.Site.Params.fofVideoMp4 }}
-                    <source src="{{ . }}" type="video/mp4" />
-                    {{ end }}
-                </video>
-                {{ end }}
-                <div class="main-inner">
-                    <h1>{{ i18n "pageNotFound" }}</h1>
-                    <div class="fof-footer">
-                        <!-- 404 可能被任意路径请求，返回首页须用绝对地址，
-                             相对链接会解析到当前错误路径 -->
-                        <a href="{{ "" | absLangURL }}">{{ i18n "fofLinkText" }}</a>
-                    </div>
+                <div class="fof-inner">
+                    <div class="fof-code">404</div>
+                    <h1 class="fof-title">{{ i18n "pageNotFound" }}</h1>
+                    <p class="fof-desc">{{ i18n "pageNotFoundDesc" }}</p>
+                    <!-- 根相对地址按主机解析、与请求路径深度无关（relativeURLs = false），
+                         本地预览与线上部署均指向当前站点的首页 -->
+                    <a class="fof-home" href="{{ "" | relLangURL }}">{{ i18n "fofLinkText" }}</a>
                 </div>
             </main>
         </div>

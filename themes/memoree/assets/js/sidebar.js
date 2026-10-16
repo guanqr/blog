@@ -14,31 +14,13 @@ window.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Escape 关闭侧栏（document 级，全局挂载一次，动态读取当前侧栏状态）
-window.addEventListener("DOMContentLoaded", function() {
-    document.addEventListener('keydown', function(e) {
-        if (e.key !== 'Escape') return;
-        var sidebar = document.getElementById('sidebar');
-        var sidebarToggle = document.getElementById('sidebar-toggle');
-        if (sidebar && sidebar.classList.contains('open')) {
-            if (typeof window.__memoreeCloseSidebar === 'function') {
-                window.__memoreeCloseSidebar();
-                if (sidebarToggle) sidebarToggle.focus();
-            }
-        }
-    });
-});
-
-// Sidebar logic（页面级：SPA 切换后随新内容重跑）
+// Sidebar logic
 function initSidebar() {
     var sidebar = document.getElementById('sidebar');
     var sidebarToggle = document.getElementById('sidebar-toggle');
     var sidebarDimmer = document.getElementById('sidebar-dimmer');
 
     if (!sidebar || !sidebarToggle || !sidebarDimmer) return;
-
-    // 切换后重置推入布局（body 在切换区外，可能残留 open 状态）
-    document.body.classList.remove('sidebar-open');
 
     var isOpen = false;
 
@@ -64,8 +46,14 @@ function initSidebar() {
         sidebarToggle.classList.remove('open');
     }
 
-    // 供全局 Escape 监听调用
-    window.__memoreeCloseSidebar = closeSidebar;
+    // Escape 关闭侧栏（监听注册于所属模块内，直接调用本地 closeSidebar）
+    document.addEventListener('keydown', function(e) {
+        if (e.key !== 'Escape') return;
+        if (sidebar.classList.contains('open')) {
+            closeSidebar();
+            sidebarToggle.focus();
+        }
+    });
 
     function toggleSidebar() {
         if (isOpen) { closeSidebar(); } else { openSidebar(); }
@@ -119,8 +107,4 @@ function initSidebar() {
     }
 }
 
-// 首次加载与 SPA 切换后均执行
 window.addEventListener("DOMContentLoaded", initSidebar);
-if (window.__memoreePageReinit) {
-    window.__memoreePageReinit.register(initSidebar);
-}

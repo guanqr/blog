@@ -12,22 +12,31 @@ function initCopyButtons() {
     const copyIcon = '{{ index hugo.Data.SVG "clipboard" }}';
     const checkIcon = '{{ index hugo.Data.SVG "check" }}';
 
-    document.querySelectorAll('.post-body > pre').forEach((e) => {
+    // 无语言的裸代码块包一层 .highlight：
+    // 统一外边距规则，并作为复制按钮的绝对定位锚点
+    function wrapInHighlight(pre) {
         const div = document.createElement('div');
-        // 无语言的裸代码块也套用 mac 卡片样式，
-        // 并作为复制按钮的绝对定位锚点（.highlight 具有 position: relative）
         div.className = 'highlight';
-        e.parentNode.replaceChild(div, e);
-        div.appendChild(e);
+        pre.parentNode.replaceChild(div, pre);
+        div.appendChild(pre);
+        return div;
+    }
+
+    document.querySelectorAll('.post-body > pre').forEach((e) => {
+        wrapInHighlight(e);
     });
 
     function addCopyButtons(clipboard) {
         const divs = document.querySelectorAll('table.lntable, .highlight > pre, .post-body > div > pre');
 
         divs.forEach((containerEl) => {
-            // 定位锚点为 .highlight 卡片（position: relative），
-            // 按钮绝对定位到头部右上角，与 mac 红黄绿圆点同一行
-            const root = containerEl.closest('.highlight') || containerEl;
+            // 定位锚点为 .highlight（position: relative），按钮绝对定位到右上角；
+            // 短代码（如 notice）内的裸 pre 没有 .highlight 祖先，先就地包裹
+            let root = containerEl.closest('.highlight');
+            if (!root && containerEl.tagName === 'PRE') {
+                root = wrapInHighlight(containerEl);
+            }
+            if (!root) root = containerEl;
 
             const button = document.createElement('button');
             button.className = 'copy-button';
@@ -39,7 +48,8 @@ function initCopyButtons() {
             if (containerEl.classList.contains('lntable')) {
                 codeBlock = containerEl.querySelectorAll('.lntd')[1];
             } else {
-                codeBlock = containerEl.querySelector('code');
+                // 裸 HTML <pre>（无 code 子元素）回退到 pre 本身的文本
+                codeBlock = containerEl.querySelector('code') || containerEl;
             }
 
             button.addEventListener('click', () => {
@@ -78,21 +88,19 @@ function initCopyButtons() {
         addCopyButtons(navigator.clipboard);
     } else if (typeof clipboard !== 'undefined') {
         addCopyButtons(clipboard);
-    } else if (!window.__memoreeClipboardFallback) {
-        window.__memoreeClipboardFallback = true;
+    } else {
         const script = document.createElement('script');
         script.src = '{{ $src }}';
-        script.defer = true;
         script.onload = function() {
             addCopyButtons(clipboard);
+        };
+        // 无剪贴板 API 时 polyfill 是唯一路径：加载失败需留痕便于诊断
+        script.onerror = function() {
+            console.error('clipboard polyfill failed to load: ' + script.src);
         };
 
         document.head.appendChild(script);
     }
 }
 
-// 首次加载与 SPA 切换后均执行
 window.addEventListener("DOMContentLoaded", initCopyButtons, { once: true });
-if (window.__memoreePageReinit) {
-    window.__memoreePageReinit.register(initCopyButtons);
-}

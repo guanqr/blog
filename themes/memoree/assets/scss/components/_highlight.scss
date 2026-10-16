@@ -1,43 +1,20 @@
 .highlight {
     font-size: 0.8rem;
     margin: 2rem 0;
+    // 复制按钮的绝对定位锚点（按钮悬浮于代码块右上角）
     position: relative;
-    padding-top: 2.2em;
-    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
-    border: 1px solid var(--color-contrast-lower);
-    border-radius: 0.25rem;
-    overflow: hidden;
-
-    // macOS 红黄绿圆点（参考 Hexo Next 主题 mac 风格）
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0.75em;
-        left: 1em;
-        width: 0.75em;
-        height: 0.75em;
-        border-radius: 50%;
-        background: #fc625d;
-        box-shadow: 1.4em 0 0 #fdbc40, 2.8em 0 0 #35cd4b;
-    }
 
     pre {
         margin: 0 !important;
-        max-height: unset;
-        border: none;
-        border-radius: 0;
-        background-color: unset;
     }
     .lntd pre {
         background-color: unset;
         overflow: visible;
     }
-    // 行号表格会被 content.html 包进 .table-container，其外边距与边框在代码框内是多余的
+    // 行号表格的通用 .table-container 外边距在代码块内多余：边距会穿过
+    // 无边框包装层折叠到 .highlight 外，缩排模式下撑大代码块外距
     .table-container {
         margin: 0;
-        border: none;
-        border-radius: 0;
-        overflow: visible;
     }
     table > tbody > tr:nth-of-type(odd) {
         background-color: inherit;
@@ -56,12 +33,7 @@ span.lnt {
 
 .chroma {
     color: var(--color-contrast-high);
-}
-
-@if ($enableOverflowY) {
-    .lntable, .highlight > pre {
-        max-height: $maxHeight;
-    }
+    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
 }
 
 /* The following is the output of `hugo gen chromastyles --style=dracula` */

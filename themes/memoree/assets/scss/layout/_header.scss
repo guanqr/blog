@@ -20,7 +20,8 @@
     max-width: $listWidth;
 }
 .site-brand {
-    margin-right: 1em;
+    // auto 边距把切换按钮与菜单推到右侧（按钮位于菜单左侧）
+    margin-right: auto;
 }
 
 $brandHeight: null;

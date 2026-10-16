@@ -5,10 +5,30 @@
 
     {{- with .Site.Params.defaultTheme | default "light" -}}
         {{- if eq . "light" -}}
-            <meta name="theme-color" content="{{ $.Site.Params.themeColor }}" />
+            <meta name="theme-color" content="{{ $.Site.Params.themeColor | default "#fff" }}" />
         {{- else -}}
-            <meta name="theme-color" content="{{ $.Site.Params.themeColorDark }}" />
+            <meta name="theme-color" content="{{ $.Site.Params.themeColorDark | default "#16171d" }}" />
         {{- end -}}
+    {{- end -}}
+
+    {{- if .Site.Params.enableDarkMode -}}
+    <script>
+        // 在样式表加载前应用持久化主题：避免切换主题后重新进入时先按系统
+        // 偏好渲染、再切换到所选主题的闪烁（逻辑与 dark-mode.js 初始化一致）
+        (function () {
+            var theme;
+            try {
+                theme = localStorage.getItem('theme');
+            } catch (e) {
+                return;
+            }
+            var defaultTheme = '{{ .Site.Params.defaultTheme | default "light" }}';
+            if (!theme || theme === 'system') theme = defaultTheme;
+            document.documentElement.setAttribute('data-theme', theme);
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', theme === 'dark' ? '{{ .Site.Params.themeColorDark | default "#16171d" }}' : '{{ .Site.Params.themeColor | default "#fff" }}');
+        })();
+    </script>
     {{- end -}}
 
     <!-- https://web.dev/color-scheme/ -->
@@ -46,6 +66,7 @@
     <meta name="description" content="{{ $description }}" />
 
     <!-- Favicon, Icons, Web App -->
+    {{- /* 保持相对地址（同源，无 start_url 跨域警告） */ -}}
     {{- $icoFavicon := "favicon.ico" -}}
     {{- $svgFavicon := "icons/favicon.svg" -}}
     {{- $pngFavicon := "icons/favicon-96x96.png" -}}

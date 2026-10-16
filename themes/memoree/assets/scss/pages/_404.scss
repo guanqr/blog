@@ -1,57 +1,37 @@
+// 404 页：居中极简布局（参考 MimoRee 404 结构），
+// 颜色全部引用 :root 主题变量、随明暗主题切换，无硬编码色值
 .fof {
-    &::before {
-        background-image: $fofPoster;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 50% 50%;
-        content: " ";
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+
+    .fof-code {
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--color-primary);
+        line-height: 1;
+        margin-bottom: 0.2em;
     }
-    .main-inner {
-        background: rgba(0, 0, 0, 0.25);
-        min-height: 100%;
-        min-width: 100%;
-        position: absolute;
-        z-index: 3;
+
+    .fof-title {
+        font-size: 1.5rem;
+        color: var(--color-contrast-high);
+        margin: 0 0 0.5em;
     }
-    video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 2;
+
+    .fof-desc {
+        color: var(--color-contrast-medium);
+        margin: 0 0 2em;
     }
-    h1 {
-        font-size: 3rem;
-        text-transform: uppercase;
-        letter-spacing: 0.3rem;
-        text-align: center;
-        top: 15%;
-        left: 5%;
-        right: 5%;
-        position: absolute;
-        color: #fff;
-        margin: 0.67em 0;
-    }
-    .fof-footer {
-        font-size: 2rem;
-        position: absolute;
-        bottom: 15%;
-        left: 10%;
-        right: 10%;
-        text-align: center;
-    }
-    a {
-        color: #eee;
+
+    .fof-home {
+        color: var(--color-contrast-medium);
+        transition: color $duration;
+
         &:hover {
-            color: #fff;
+            color: var(--color-primary);
         }
     }
 }

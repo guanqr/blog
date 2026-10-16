@@ -14,10 +14,6 @@
               {{- end -}}
               {{- now.Format "2006" -}}
 
-              {{- with .Site.Params.iconBetweenYearAndAuthor -}}
-                  &nbsp;{{- partial "utils/icon.html" (dict "$" $ "name" . "class" "footer-icon") -}}
-              {{- end -}}
-
               {{- if .Site.Params.displaySiteAuthorName -}}
                   &nbsp;{{- .Site.Params.author.name -}}
               {{- end -}}

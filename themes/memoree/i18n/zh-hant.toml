@@ -43,8 +43,14 @@ other = "相關文章："
 [loadComments]
 other = "載入評論"
 
+[themeToggle]
+other = "切換主題"
+
 [pageNotFound]
-other = "404 - 頁面不存在"
+other = "頁面不存在"
+
+[pageNotFoundDesc]
+other = "您訪問的頁面不存在或已被移除。"
 
 [fofLinkText]
 other = "送我回起始頁面"

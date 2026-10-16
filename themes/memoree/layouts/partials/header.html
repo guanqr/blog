@@ -3,6 +3,7 @@
         <div class="header-wrapper">
             <div class="header-inner {{ cond (or .IsHome (eq (len .Pages) 0)) "single" "list"}}">
                 {{ template "site-brand" . }}
+                {{ partial "components/dark-mode.html" . }}
                 {{ partial "menu.html" . }}
             </div>
         </div>

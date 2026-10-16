@@ -13,12 +13,4 @@
     }
 
     initMediumZoom();
-
-    // 注册到页面切换重跑（defer 的 bundle 在 DOMContentLoaded 前执行，
-    // 届时 __memoreePageReinit 已就绪）
-    document.addEventListener('DOMContentLoaded', function() {
-        if (window.__memoreePageReinit) {
-            window.__memoreePageReinit.register(initMediumZoom);
-        }
-    });
 </script>

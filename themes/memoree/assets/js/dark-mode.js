@@ -2,14 +2,12 @@
 
 const defaultTheme = '{{ .Site.Params.defaultTheme | default "light" }}';
 
-// Initialize — convert legacy 'system' to default
-let theme = localStorage.getItem('theme');
-if (!theme || theme === 'system') theme = defaultTheme;
-applyTheme(theme);
+// Initialize — 主题决议由 head 内联脚本在样式表前完成并写入 data-theme，
+// 此处以其结果为准（脚本早退时属性缺失，回退默认主题），避免双份维护
+let theme = document.documentElement.getAttribute('data-theme') || defaultTheme;
 
 window.addEventListener('DOMContentLoaded', () => {
     changeModeMeta();
-    updateIcons(theme);
 
     const switcher = document.getElementById('theme-switcher');
     if (switcher) {
@@ -19,7 +17,6 @@ window.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', theme);
             applyTheme(theme);
             changeModeMeta();
-            updateIcons(theme);
         });
     }
 }, { once: true });
@@ -31,23 +28,15 @@ window.addEventListener('storage', (e) => {
     if (theme === 'system') theme = defaultTheme;
     applyTheme(theme);
     changeModeMeta();
-    updateIcons(theme);
 });
 
 function applyTheme(t) {
     document.documentElement.setAttribute('data-theme', t);
 }
 
-function updateIcons(t) {
-    document.querySelectorAll('.theme-icon-light, .theme-icon-dark, .theme-icon-system')
-        .forEach(icon => icon.style.display = 'none');
-    const icon = document.querySelector('.theme-icon-' + t);
-    if (icon) icon.style.display = 'inline-block';
-}
-
 function changeModeMeta() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const color = isDark ? '{{ .Site.Params.themeColorDark }}' : '{{ .Site.Params.themeColor }}';
+    const color = isDark ? '{{ .Site.Params.themeColorDark | default "#16171d" }}' : '{{ .Site.Params.themeColor | default "#fff" }}';
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', color);
 }

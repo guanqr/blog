@@ -1,4 +1,4 @@
-// Waline 评论：全局函数，SPA 切换后由点击委派直接调用
+// Waline 评论：全局函数
 function loadComments() {
     if (!document.getElementById('waline')) return;
     // lazy-load CSS
@@ -44,8 +44,7 @@ window.addEventListener("DOMContentLoaded", event => {
             loadComments();
         }
     {{ else }}
-        // 初始页面的加载按钮；SPA 切换后的按钮由 third-party/script.html 的
-        // document 级点击委派处理
+        // 初始页面的加载按钮
         const commentsToggle = document.getElementById('load-comments');
 
         if (commentsToggle !== null) {

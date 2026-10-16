@@ -1,4 +1,4 @@
-{{- $scripts := slice "js/main.js" "js/page-transition.js" -}}
+{{- $scripts := slice "js/main.js" -}}
 
 {{- if and .Site.Params.enableForceHTTPS (eq hugo.Environment "production") -}}
     {{- $scripts = union $scripts (slice "js/force-https.js") -}}
@@ -33,7 +33,6 @@
 {{- end -}}
 
 {{- $scripts = union $scripts (slice "js/sidebar.js") -}}
-{{- $scripts = union $scripts (slice "js/custom.js") -}}
 
 {{- $processedScripts := slice ("" | resources.FromString "dummy.js") -}}
 {{- range $scripts -}}

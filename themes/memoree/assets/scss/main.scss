@@ -41,16 +41,6 @@
     $displayBackToTopOnMobile: false;
 {{ end }}
 
-{{ if .Site.Params.enableOverflowY }}
-    $enableOverflowY: true;
-{{ else }}
-    $enableOverflowY: false;
-{{ end }}
-
-{{ with .Site.Params.maxHeight | default 20 }}
-    $maxHeight: {{ . }}em;
-{{ end }}
-
 {{ if .Site.Params.enableCopy }}
     $enableCopy: true;
 {{ else }}
@@ -283,24 +273,9 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 @import "layout/single";
 
 
-// SPA 页面切换
-
-@import "layout/page-transition";
-
-
 // Footer
 
 {{ if .Site.Params.enableFooter }}
-    {{ with .Site.Params.iconColor }}
-        $iconColor: {{ . }};
-    {{ end }}
-
-    {{ if .Site.Params.iconAnimation }}
-        $iconAnimation: true;
-    {{ else }}
-        $iconAnimation: false;
-    {{ end }}
-
     @import "layout/footer";
 {{ end }}
 
@@ -390,17 +365,6 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 
 // 404 Page
 
-// https://github.com/reuixiy/hugo-theme-meme/issues/51
-{{ if strings.HasPrefix .Site.Params.fofPoster "." }}
-    {{ $fofPoster := printf `.%s` .Site.Params.fofPoster }}
-    {{ .Scratch.Set "fofPoster" $fofPoster }}
-{{ else }}
-    {{ .Scratch.Set "fofPoster" .Site.Params.fofPoster }}
-{{ end }}
-{{ $fofPoster := .Scratch.Get "fofPoster" }}
-
-$fofPoster: url({{ $fofPoster }});
-
 @import "pages/404";
 
 
@@ -448,7 +412,3 @@ $greaterWidth: null;
 {{ end }}
 
 @import "components/sidebar";
-
-// Custom
-
-@import "custom/custom";

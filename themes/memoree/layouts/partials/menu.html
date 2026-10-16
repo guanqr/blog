@@ -3,14 +3,7 @@
         {{ $currentPage := . }}
 
         {{ range .Site.Menus.main }}
-            {{ if and (eq .Identifier "theme-switcher") $.Site.Params.enableDarkMode }}
-                {{ $switcher := partial "components/dark-mode.html" $currentPage }}
-                {{ with $switcher }}
-                    <li class="menu-item">
-                        {{ . }}
-                    </li>
-                {{ end }}
-            {{ else if eq .Identifier "lang-switcher" }}
+            {{ if eq .Identifier "lang-switcher" }}
                 {{ if and hugo.IsMultilingual $.Site.Params.enableLangToggle }}
                     {{ $switcher := partial "components/multilingual.html" $currentPage }}
                     {{ with $switcher }}

@@ -225,15 +225,10 @@ pre {
     }
 }
 
-@if ($enableOverflowY) {
-    pre {
-        max-height: $maxHeight;
-    }
-}
-
 @if ($enableCopy) {
     .copy-button {
         position: absolute;
+        // 悬浮于代码块右上角，无背景的独立图标
         top: 0.55em;
         right: 0.9em;
         border: 0;

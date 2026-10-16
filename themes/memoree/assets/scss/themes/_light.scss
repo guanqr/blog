@@ -9,15 +9,6 @@
     @include defineColorHSL(--color-contrast-medium, 240, 1%, 48%);
     @include defineColorHSL(--color-contrast-high, 240, 4%, 20%);
     @include defineColorHSL(--color-contrast-higher, 240, 8%, 12%);
-    .theme-icon-system {
-        display: none !important;
-    }
-    .theme-icon-light {
-        display: inline-block !important;
-    }
-    .theme-icon-dark {
-        display: none !important;
-    }
     img {
         filter: none;
     }

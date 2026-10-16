@@ -19,17 +19,6 @@
 {{ end }}
 
 <script>
-    // Fix load-comments button: after page transition the theme's
-    // DOMContentLoaded handler is lost. Use event delegation.
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('#load-comments')) return;
-        if (typeof loadComments !== 'function') return;
-        loadComments();
-        var btn = document.getElementById('load-comments');
-        if (btn) btn.style.display = 'none';
-    });
-</script>
-<script>
     // Add a class to the body if the user agent is Safari
     if (navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {
         document.body.classList.add('safari-only');

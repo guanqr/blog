@@ -47,6 +47,10 @@ window.addEventListener("DOMContentLoaded", event => {
     navCurtain.addEventListener('animationend', (e) => {
         if (!navToggle.checked) {
             e.target.removeAttribute('style');
+            // fade 动画结束后摘除 fade 类：.header.fade .nav 的
+            // display:block 随之失效——残留该类会在跨越断点时
+            // 重放「菜单收回」动画（闪现展开又收起）
+            header.classList.remove('fade');
         }
     });
 
@@ -80,6 +84,9 @@ window.addEventListener("DOMContentLoaded", event => {
         } else {
             attachScroll();
         }
+        // 跨断点即清除 fade 残留（动画未播完就变宽等边缘路径），
+        // 保证再次进入窄屏时菜单直接处于收起状态
+        header.classList.remove('fade');
     }
 
     if (mediaQuery.addEventListener) {

@@ -42,7 +42,9 @@ enableRobotsTXT = false
 
 # URL 相关
 disablePathToLower = false
-relativeURLs = true
+# 根相对链接（对齐 MimoRee 项目）：按主机解析、与页面深度无关，
+# 任意路径（含深层 404）下资源与页面链接均正确
+relativeURLs = false
 uglyURLs = false
 
 # URL 结构
@@ -201,9 +203,6 @@ uglyURLs = false
         pre = "internal"
         post = "user-circle"
         identifier = "about"
-    [[menu.main]]
-        weight = 8
-        identifier = "theme-switcher"
     [[menu.main]]
         weight = 9
         identifier = "lang-switcher"
@@ -467,9 +466,6 @@ uglyURLs = false
     #      话。类似，如果你开启深色模式并将默认
     #      模式修改为它，即使你隐藏开关，你的读
     #      者依然可能以浅色模式模式阅读你的博客。
-    #      除非，你开启下方这个选项。
-
-    overrideSystemPreferences = false
 
 
     ######################################
@@ -1141,13 +1137,6 @@ uglyURLs = false
     # 是否显示站点的创建年份
     displaySiteCreatedYear = true
 
-    # 年份与作者之间的图标
-    iconBetweenYearAndAuthor = "heart"
-    # 图标颜色
-    iconColor = "#f06292"
-    # 是否开启图标的跳动效果
-    iconAnimation = true
-
     # 是否显示站点的作者名称
     displaySiteAuthorName = true
 
@@ -1185,12 +1174,6 @@ uglyURLs = false
 
     # 是否开启高亮
     enableHighlight = true
-
-    # 是否开启竖直滚动
-    enableOverflowY = false
-    # 最大高度
-    maxHeight = 32
-    # 单位：em
 
     # 是否开启复制
     enableCopy = true
@@ -1248,19 +1231,6 @@ uglyURLs = false
 
     enableInstantPage = true
     # 说明：https://github.com/instantpage/instant.page
-
-
-    ######################################
-    ######################################
-    # 404 页面
-
-    # 视频封面
-    fofPoster = ""
-
-    # 视频地址
-    fofVideoWebm = ""
-    fofVideoMp4 = ""
-    # 说明：视频地址可留空（""）
 
 
     ######################################

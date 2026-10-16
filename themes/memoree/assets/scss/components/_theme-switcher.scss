@@ -1,6 +1,15 @@
+// 主题切换按钮：header 最左侧的独立按钮（不进折叠菜单，窄屏依然可见）。
+// 显隐由 CSS 按 [data-theme] 驱动；图标内部元素（sg-core/sg-ray）
+// 以缩放+透明度过渡切换（属「慢慢淡出」族）
 #theme-switcher {
+    position: relative;
     border: none;
     padding: 0;
+    // 与菜单的间距由首项自身的 margin-left 0.5em 提供（与项间间距一致）
+    margin-right: 0;
+    // 与菜单文字（1em）相适配：按钮 1.6em、图标沿用全局 .icon 的 1.05em × 1em
+    width: 1.6em;
+    height: 1.6em;
     background: transparent;
     font-size: inherit;
     cursor: pointer;
@@ -14,6 +23,59 @@
     }
 
     .icon {
-        margin-right: 0 !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1.05em;
+        height: 1em;
+        margin: 0 !important;
+        // 描边图标：抵消全局 .icon 的 fill: currentColor，
+        // 否则太阳圆盘/月亮会被填充成实心色块
+        fill: none;
+        stroke: currentColor;
+    }
+
+    .sg-core,
+    .sg-ray {
+        transition: transform $duration, opacity $duration;
+        transform-origin: center;
+    }
+
+    // 基础态（亮色 / 无 data-theme 的 no-JS 回退）：太阳可见，月亮隐藏
+    .theme-icon-light {
+        .sg-core,
+        .sg-ray {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    .theme-icon-dark {
+        .sg-core {
+            opacity: 0;
+            transform: scale(0.6);
+        }
+    }
+}
+
+// 暗色模式：月亮可见，太阳收起
+[data-theme="dark"] {
+    #theme-switcher {
+        .theme-icon-light {
+            .sg-core {
+                opacity: 0;
+                transform: scale(0.6);
+            }
+            .sg-ray {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+        .theme-icon-dark {
+            .sg-core {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     }
 }

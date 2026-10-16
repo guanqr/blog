@@ -27,6 +27,18 @@
             .nav-toggle {
                 display: block;
             }
+            // 主题切换按钮窄屏保持可见（不进折叠菜单）：绝对定位在
+            // nav-toggle（右上角）的左侧，与菜单展开前的右侧操作区呼应
+            #theme-switcher {
+                position: absolute;
+                // 与汉堡图标对齐（实测：线条视觉中心 top 1.3em +
+                // 半高 0.8em = 2.1em；线条左缘右距 3em），按钮中心对齐
+                // 线条中心、置于其左侧留 0.5em 间隙
+                top: 1.3em;
+                right: 3.5em;
+                margin-right: 0;
+                margin-top: 0;
+            }
             .nav {
                 display: none;
                 text-align: center;

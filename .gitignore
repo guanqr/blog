@@ -12,7 +12,7 @@ node_modules/
 oss_config.json
 
 # Claude Code (local)
-.claude/settings.local.json
+.claude/
 
 # Tool cache
 .upload-cache.json

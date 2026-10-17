@@ -112,6 +112,23 @@ a {
 }
 
 :focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+    outline: 0.125em solid var(--color-primary);
+    outline-offset: 0.125em;
+}
+
+// 键盘跳转链接：视觉隐藏、Tab 聚焦时滑入视口（z 高于顶栏与缩放层）
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1em;
+    z-index: 1000;
+    padding: 0.75em 1.5em;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    font-weight: 600;
+    transition: top 0.2s ease;
+
+    &:focus {
+        top: 1em;
+    }
 }

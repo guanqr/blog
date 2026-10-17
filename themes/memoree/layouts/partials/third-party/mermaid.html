@@ -1,4 +1,4 @@
-{{- $src := partial "utils/lib.html" (dict "$" . "type" "mermaid") -}}
+{{- $src := partialCached "utils/lib.html" (dict "page" . "type" "mermaid") "mermaid" -}}
 
 <script src="{{ $src }}"></script>
 <script>

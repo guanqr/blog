@@ -3,37 +3,43 @@
 <!-- https://developers.google.com/web/fundamentals/discovery/social-discovery/ -->
 <!-- https://stackoverflow.com/a/29831974 -->
 <!-- https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/opengraph.html -->
-{{- $ := index . "$" -}}
+{{/*
+  输出 Open Graph meta 标签
+  参数：page（页面）、description（页面描述）
+  Usage:
+    {{ partial "utils/open-graph.html" (dict "page" . "description" $description) }}
+*/}}
+{{- $page := index . "page" -}}
 {{- $description := .description -}}
 <!-- Date -->
-{{- $dates := partial "utils/date.html" $ -}}
+{{- $dates := partial "utils/date.html" $page -}}
 <!-- Author -->
-{{- $author := partial "utils/author.html" $ -}}
+{{- $author := partial "utils/author.html" $page -}}
 <!-- Images -->
-{{- $images := partial "utils/images.html" $ -}}
+{{- $images := partial "utils/images.html" $page -}}
 
-<meta property="og:title" content="{{ (partial "utils/title.html" (dict "$" $ "title" $.Title)).rawTitle }}" />
+<meta property="og:title" content="{{ (partial "utils/title.html" (dict "page" $page "title" $page.Title)).rawTitle }}" />
 <meta property="og:description" content="{{ $description }}" />
-<meta property="og:url" content="{{ $.Permalink }}" />
-<meta property="og:site_name" content="{{ $.Site.Title }}" />
-<meta property="og:locale" content="{{ $.Site.Language.Lang }}" />
+<meta property="og:url" content="{{ $page.Permalink }}" />
+<meta property="og:site_name" content="{{ $page.Site.Title }}" />
+<meta property="og:locale" content="{{ $page.Site.Language.Lang }}" />
 
 {{- with $images -}}
     <meta property="og:image" content="{{ index . 0 }}" />
 {{ else -}}
-    {{ with $.Site.Params.siteLogo -}}
+    {{ with $page.Site.Params.siteLogo -}}
         <meta property="og:image" content="{{ . | absURL }}" />
     {{ end -}}
 {{- end -}}
 
-{{- if and $.IsPage (in $.Site.Params.mainSections $.Section) -}}
+{{- if and $page.IsPage (in $page.Site.Params.mainSections $page.Section) -}}
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="{{ $dates.pubDate }}" />
     <meta property="article:modified_time" content="{{ $dates.modDate }}" />
-    {{ if not $.ExpiryDate.IsZero -}}
-        <meta property="article:expiration_time" content="{{ $.ExpiryDate.Format "2006-01-02T15:04:05-07:00" }}" />
+    {{ if not $page.ExpiryDate.IsZero -}}
+        <meta property="article:expiration_time" content="{{ $page.ExpiryDate.Format "2006-01-02T15:04:05-07:00" }}" />
     {{- end }}
-    <meta property="article:section" content="{{ $.Section }}" />
+    <meta property="article:section" content="{{ $page.Section }}" />
 {{ else -}}
     <meta property="og:type" content="website" />
 {{- end }}

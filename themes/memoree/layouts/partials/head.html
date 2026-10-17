@@ -3,11 +3,13 @@
 
     {{ hugo.Generator }}
 
+    {{- $tc := partial "utils/theme-colors.html" . -}}
+
     {{- with .Site.Params.defaultTheme | default "light" -}}
         {{- if eq . "light" -}}
-            <meta name="theme-color" content="{{ $.Site.Params.themeColor | default "#fff" }}" />
+            <meta name="theme-color" content="{{ $tc.light }}" />
         {{- else -}}
-            <meta name="theme-color" content="{{ $.Site.Params.themeColorDark | default "#16171d" }}" />
+            <meta name="theme-color" content="{{ $tc.dark }}" />
         {{- end -}}
     {{- end -}}
 
@@ -26,7 +28,7 @@
             if (!theme || theme === 'system') theme = defaultTheme;
             document.documentElement.setAttribute('data-theme', theme);
             var meta = document.querySelector('meta[name="theme-color"]');
-            if (meta) meta.setAttribute('content', theme === 'dark' ? '{{ .Site.Params.themeColorDark | default "#16171d" }}' : '{{ .Site.Params.themeColor | default "#fff" }}');
+            if (meta) meta.setAttribute('content', theme === 'dark' ? '{{ $tc.dark }}' : '{{ $tc.light }}');
         })();
     </script>
     {{- end -}}
@@ -43,14 +45,18 @@
     <!-- Avoid Baidu Mobile Search Transcoding -->
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>{{ (partial "utils/title.html" (dict "$" . "title" .Title)).title }}</title>
+    <title>{{ (partial "utils/title.html" (dict "page" . "title" .Title)).title }}</title>
 
     <!-- CSS -->
-    {{- partial "style.html" . }}
+    {{- /* 产物只依赖站点配置与语言：variant 带上语言，避免单语言假设写死
+           （多语言站点下固定 variant 会跨语言复用首个语言的样式表） */ -}}
+    {{- partialCached "style.html" . (printf "style:%s" .Site.Language.Lang) }}
 
     <!-- JavaScript -->
     {{ if ne .Kind "404" }}
-        {{ partial "script.html" . }}
+        {{- /* 产物只依赖站点配置与语言（脚本按 enable* 开关组装，无页面级字段），
+              全站共享同一标签；variant 带语言避免单语言假设写死 */ -}}
+        {{ partialCached "script.html" . (printf "script:%s" .Site.Language.Lang) }}
     {{ end }}
 
     <!-- Fonts -->
@@ -76,7 +82,6 @@
     {{- $svgFavicon := "icons/favicon.svg" -}}
     {{- $pngFavicon := "icons/favicon-96x96.png" -}}
     {{- $appleTouchIcon := "icons/apple-touch-icon.png" -}}
-    {{- $manifest := "manifest.json" -}}
     <link rel="shortcut icon" type="image/x-icon" href="{{ $icoFavicon | relURL }}" />
     <link rel="icon" type="image/svg+xml" href="{{ $svgFavicon | relURL }}" />
     <link rel="icon" type="image/png" href="{{ $pngFavicon | relURL }}" sizes="96x96" />
@@ -86,7 +91,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="application-name" content="{{ .Site.Title }}" />
-    <link rel="manifest" href="{{ $manifest | relURL }}" />
+    {{ partial "manifest.html" . }}
 
     <!-- Atom / RSS -->
     {{ with .OutputFormats.Get "SectionsAtom" -}}
@@ -100,31 +105,16 @@
     <link rel="canonical" href="{{ .Permalink }}" />
     <!-- JSON-LD -->
     {{- with .Site.Params.jsonLD -}}
-        {{ partial "utils/json-ld.html" (dict "$" $ "description" $description) }}
+        {{ partial "utils/json-ld.html" (dict "page" $ "description" $description) }}
     {{- end }}
 
     <!-- Twitter Cards -->
     {{- with .Site.Params.twitterCards -}}
-        {{ partial "utils/twitter-cards.html" (dict "$" $) }}
+        {{ partial "utils/twitter-cards.html" (dict "page" $) }}
     {{- end }}
     <!-- Open Graph -->
     {{- with .Site.Params.openGraph -}}
-        {{ partial "utils/open-graph.html" (dict "$" $ "description" $description) }}
-    {{- end }}
-
-    {{- with .Site.Params.googleSiteVerification }}
-        <meta name="google-site-verification" content="{{ . }}" />
-    {{- end }}
-
-    {{- if and .Site.Params.enableGoogleAnalytics (eq hugo.Environment "production") }}
-        <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
-
-        {{ partial "third-party/google-analytics.html" . }}
-    {{- end }}
-
-    <!-- Yandex.Metrika -->
-    {{ if and .Site.Params.yandexMetrikaId (eq hugo.Environment "production") }}
-        {{ partial "third-party/yandex-metrika.html" . }}
+        {{ partial "utils/open-graph.html" (dict "page" $ "description" $description) }}
     {{- end }}
 
 </head>

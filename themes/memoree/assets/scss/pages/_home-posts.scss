@@ -1,5 +1,5 @@
 article.content.post.home {
-    margin-top: 5em;
+    margin-top: $postBlockGap;
 }
 
 .summary-title-link {
@@ -19,17 +19,4 @@ article.content.post.home {
     display: inline-block;
 }
 
-.pagination {
-    list-style: none;
-    margin: 5em 0 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-}
-.pagination-prev {
-    margin-right: auto;
-}
-.pagination-next {
-    margin-left: auto;
-    text-align: right;
-}
+// 分页样式见 components/_pagination.scss（无条件导入，归档页不依赖首页布局配置）

@@ -1,3 +1,9 @@
+{{/*
+  把 "H, S%, L%" 形式的 HSL 值展开为 SCSS 变量声明（main.scss 配置注入用）
+  参数：value（HSL 字符串）、prefix（变量名前缀）
+  Usage:
+    {{ partial "utils/hsl-vars.html" (dict "value" . "prefix" "primaryColorLight") }}
+*/}}
 {{- $prefix := .prefix -}}
 {{- $number := (split (replace .value "%" "") ", ") -}}
 {{- range $index, $v := $number -}}

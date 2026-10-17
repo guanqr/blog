@@ -19,7 +19,7 @@
 .identity-card {
     background: transparent;
     border: 1px dashed var(--color-contrast-low);
-    border-radius: 3px;
+    border-radius: $radiusSm;
     padding: 1.2em 1em;
     transition: border-color $duration;
 
@@ -27,11 +27,21 @@
         border-color: var(--color-primary);
     }
 
-    .identity-card-emoji {
-        font-size: 1.8em;
-        line-height: 1.2;
+    // 只作用于外层容器：SVG 上同样带 identity-card-icon class（icon.html 拼接），
+    // 用后代选择器会双重命中导致 margin-bottom 叠加（2026-10-17 审查实测）
+    > .identity-card-icon {
         margin-bottom: 0.3em;
         text-align: center;
+        color: var(--color-primary);
+
+        .icon {
+            // 描边图标：抵消全局 .icon 的 fill: currentColor，
+            // 否则图标会被填充成实心色块
+            fill: none;
+            stroke: currentColor;
+            width: 1.8em;
+            height: 1.8em;
+        }
     }
 
     .identity-card-title {

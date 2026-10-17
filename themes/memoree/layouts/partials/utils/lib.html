@@ -1,8 +1,17 @@
-{{- $ := index . "$" -}}
+{{/*
+  解析第三方库/资源的 CDN 地址（jsDelivr），站点可通过 lib.host / lib.path.* 覆盖
+  参数：page（页面）、type（库类型，见下方清单）、lang（可选）
+  返回：完整 URL
+  注意：地址只取决于站点配置与 type，调用点用 partialCached 并传 type 作显式
+        variant（dict 里的 page 会破坏默认缓存键，必须显式指定）
+  Usage:
+    {{ partialCached "utils/lib.html" (dict "page" . "type" "clipboard") "clipboard" }}
+*/}}
+{{- $page := index . "page" -}}
 {{- $type := .type -}}
 {{- $lang := .lang -}}
 
-{{- $host := $.Site.Params.lib.host | default "https://cdn.jsdelivr.net" -}}
+{{- $host := $page.Site.Params.lib.host | default "https://cdn.jsdelivr.net" -}}
 {{- $path := "" -}}
 
 <!--
@@ -13,44 +22,44 @@
 
 {{- if eq $type "clipboard" -}}
     {{- $default := "/npm/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.clipboard | default $default -}}
+    {{- $path = $page.Site.Params.lib.path.clipboard | default $default -}}
 {{- end -}}
 
 {{- if eq $type "instantpage" -}}
     {{- $default := "/npm/instant.page@5.1.0/instantpage.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.instantpage | default $default -}}
+    {{- $path = $page.Site.Params.lib.path.instantpage | default $default -}}
 {{- end -}}
 
 {{- if eq $type "katex" -}}
     {{- $default := "/npm/katex@0.13.0/dist/katex.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.katex | default $default -}}
+    {{- $path = $page.Site.Params.lib.path.katex | default $default -}}
 {{- end -}}
 {{- if eq $type "katex-css" -}}
     {{- $default := "/npm/katex@0.13.0/dist/katex.min.css" -}}
-    {{- $path = $.Site.Params.lib.path.katex_css | default $default -}}
+    {{- $path = $page.Site.Params.lib.path.katex_css | default $default -}}
 {{- end -}}
 {{- if eq $type "katex-mhchem" -}}
     {{- $default := "/npm/katex@0.13.0/dist/contrib/mhchem.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.katex_mhchem | default $default -}}
+    {{- $path = $page.Site.Params.lib.path.katex_mhchem | default $default -}}
 {{- end -}}
 {{- if eq $type "katex-auto-render" -}}
     {{- $default := "/npm/katex@0.13.0/dist/contrib/auto-render.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.katex_auto_render | default $default -}}
+    {{- $path = $page.Site.Params.lib.path.katex_auto_render | default $default -}}
 {{- end -}}
 
 {{- if eq $type "mathjax" -}}
     {{- $default := "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js" -}}
-    {{- $path = $.Site.Params.lib.path.mathjax | default $default -}}
+    {{- $path = $page.Site.Params.lib.path.mathjax | default $default -}}
 {{- end -}}
 
 {{- if eq $type "medium-zoom" -}}
     {{- $default := "/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.medium_zoom | default $default -}}
+    {{- $path = $page.Site.Params.lib.path.medium_zoom | default $default -}}
 {{- end -}}
 
 {{- if eq $type "mermaid" -}}
     {{- $default := "/npm/mermaid@8.8.3/dist/mermaid.min.js" -}}
-    {{- $path = $.Site.Params.lib.path.mermaid | default $default -}}
+    {{- $path = $page.Site.Params.lib.path.mermaid | default $default -}}
 {{- end -}}
 
 <!--
@@ -63,9 +72,7 @@
 
   Third-party libraries/services/resources which not included in this file:
 
-    1. Google Analytics
-    2. Yandex Metrika
-    3. Other hosts customized in config.toml
+    1. Other hosts customized in config.toml
 
 --->
 

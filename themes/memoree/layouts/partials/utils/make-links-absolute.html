@@ -1,7 +1,14 @@
 <!-- https://github.com/reuixiy/hugo-theme-meme/issues/141 -->
-{{- $ := index . "$" -}}
+{{/*
+  把内容中的相对链接与锚点改写为绝对 URL（feed 输出用）
+  参数：page（页面）、content（HTML）
+  返回：safeHTML
+  Usage:
+    {{ partial "utils/make-links-absolute.html" (dict "page" . "content" $content) }}
+*/}}
+{{- $page := index . "page" -}}
 {{- $content := .content -}}
 {{- $baseURL := "" | absLangURL | strings.TrimSuffix "/" -}}
 {{- $content = $content | replaceRE ` (href|src)="/` (printf ` $1="%s/` $baseURL) -}}
-{{- $content = $content | replaceRE ` (href|src)="#` (printf ` $1="%s#` $.Permalink) -}}
+{{- $content = $content | replaceRE ` (href|src)="#` (printf ` $1="%s#` $page.Permalink) -}}
 {{- $content | safeHTML -}}

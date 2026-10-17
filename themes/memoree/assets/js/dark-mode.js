@@ -36,7 +36,8 @@ function applyTheme(t) {
 
 function changeModeMeta() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const color = isDark ? '{{ .Site.Params.themeColorDark | default "#16171d" }}' : '{{ .Site.Params.themeColor | default "#fff" }}';
+    // 主题色与 head 的 theme-color meta 共用 utils/theme-colors.html 单源
+    const color = isDark ? '{{ (partial "utils/theme-colors.html" .).dark }}' : '{{ (partial "utils/theme-colors.html" .).light }}';
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', color);
 }

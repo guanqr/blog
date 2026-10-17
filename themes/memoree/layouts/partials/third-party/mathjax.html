@@ -1,4 +1,4 @@
-{{- $src := partial "utils/lib.html" (dict "$" . "type" "mathjax") -}}
+{{- $src := partialCached "utils/lib.html" (dict "page" . "type" "mathjax") "mathjax" -}}
 
 <script>
     if (typeof MathJax === 'undefined') {

@@ -30,7 +30,7 @@
 }
 
 @if variable-exists("fontFamilyCode") {
-    code, pre, sup, .post-gitinfo, .minimal-footer, .minimal-footer-about, .copy-button {
+    code, pre, sup, .post-gitinfo, .minimal-footer-about, .copy-button {
         font-family: $fontFamilyCode;
     }
 }

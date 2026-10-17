@@ -15,27 +15,27 @@
             {{ with .File }}
                 {{ $en := humanize .ContentBaseName }}
                 <div class="post-header">
-                    <h1 class="post-title p-name">{{ (partial "utils/title.html" (dict "$" $ "title" $.Title)).htmlTitle }}</h1>
+                    <h1 class="post-title p-name">{{ (partial "utils/title.html" (dict "page" $ "title" $.Title)).htmlTitle }}</h1>
                     <div class="post-title-en"><span class="post-title-dropcap">{{ substr $en 0 1 }}</span>{{ substr $en 1 }}</div>
                 </div>
             {{ else }}
-                <h1 class="post-title p-name">{{ (partial "utils/title.html" (dict "$" $ "title" $.Title)).htmlTitle }}</h1>
+                <h1 class="post-title p-name">{{ (partial "utils/title.html" (dict "page" $ "title" $.Title)).htmlTitle }}</h1>
             {{ end }}
 
             {{ with .Params.subtitle }}
                 {{- $raw := . -}}
-                <div class="post-subtitle p-name">{{ partial "utils/markdownify.html" (dict "$" $ "raw" $raw "isContent" false) }}</div>
+                <div class="post-subtitle p-name">{{ partial "utils/markdownify.html" (dict "page" $ "raw" $raw "isContent" false) }}</div>
             {{ end }}
 
             {{ if .Site.Params.displayPostDescription }}
                 {{ with .Params.description }}
                     {{- $raw := . -}}
-                    <div class="post-description p-summary">{{ partial "utils/markdownify.html" (dict "$" $ "raw" $raw "isContent" false) }}</div>
+                    <div class="post-description p-summary">{{ partial "utils/markdownify.html" (dict "page" $ "raw" $raw "isContent" false) }}</div>
                 {{ end }}
             {{ end }}
 
             {{ if .Params.meta | default .Site.Params.enablePostMeta }}
-                {{ partial "components/post-meta.html" (dict "$" . "isHome" false) }}
+                {{ partial "components/post-meta.html" (dict "page" . "isHome" false) }}
             {{ end }}
 
             {{/* TOC moved to sidebar */}}
@@ -53,8 +53,6 @@
         {{ partial "components/related-posts.html" . }}
 
         {{ partial "components/post-tags.html" . }}
-
-        {{ partial "components/minimal-footer.html" . }}
 
         {{ partial "components/minimal-footer-about.html" . }}
 

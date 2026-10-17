@@ -1,0 +1,45 @@
+{{/*
+  链接渲染钩子（Markdown 正文与非正文的 markdownify 路径都会执行）：
+  1. 外链：按 hrefTargetBlank 配置统一加 target="_blank" 与 rel 属性——自本钩子
+     起，utils/markdownify.html 的正则后处理已删除（否则同一链接被处理两次，
+     产生重复的 target/rel 属性，2026-10-17 审查实测）
+  2. 内链：构建期校验，既解析不到页面、static/ 下也不存在的链接输出警告
+     同一死链全站只告警一次（site.Store 按路径去重）；内存解析（GetPage）优先，
+     磁盘 IO（static/）仅兜底
+  已知范围：仅校验以 / 开头的绝对站内路径（相对链接、短代码输出的 HTML 不经过本钩子）；
+  查询串与 # 锚点在检查时剥离；alias 跳转地址、分页页（/page/N/、/archives/page/N/）
+  等构建生成地址不在校验视野，若被正文链接会误报，届时再扩展
+*/}}
+{{- $dest := .Destination -}}
+{{- $isExternal := or (hasPrefix $dest "http://") (hasPrefix $dest "https://") -}}
+
+{{- if and $isExternal .Page.Site.Params.hrefTargetBlank -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }} target="_blank" rel="noopener noreferrer">{{ .Text }}</a>
+{{- else if $isExternal -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}</a>
+{{- else -}}
+    {{- if hasPrefix $dest "/" -}}
+        {{- /* 剥离查询串与锚点后校验（// 协议相对链接不属于站内，跳过） */ -}}
+        {{- $path := $dest -}}
+        {{- $path = index (split $path "?") 0 -}}
+        {{- $path = index (split $path "#") 0 -}}
+        {{- $rel := strings.TrimPrefix "/" $path -}}
+        {{- $ext := path.Ext $rel -}}
+        {{- /* .xml 是构建生成的输出（feed、sitemap），GetPage 与 static/ 都查不到，跳过检查 */ -}}
+        {{- if ne $ext ".xml" -}}
+            {{- /* 内存解析优先，磁盘 IO 仅兜底（GetPage 命中直接通过） */ -}}
+            {{- if not (site.GetPage $path) -}}
+                {{- $onDisk := or (fileExists (printf "static/%s" $rel)) (fileExists (printf "static/%s/index.html" $rel)) -}}
+                {{- if not $onDisk -}}
+                    {{- /* 同一死链全站只告警一次（feed 渲染会重复执行本钩子数百次） */ -}}
+                    {{- $warnKey := printf "deadlink:%s" $path -}}
+                    {{- if not (site.Store.Get $warnKey) -}}
+                        {{- site.Store.Set $warnKey true -}}
+                        {{- warnf "link: unresolved internal link %q on %s" $dest .Page.RelPermalink -}}
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}</a>
+{{- end -}}

@@ -1,3 +1,10 @@
+{{/*
+  规范化发布时间与修改时间（为空时回退站点创建时间）
+  上下文：页面
+  返回：dict{ pubDate, modDate }（ISO 8601 字符串）
+  Usage:
+    {{ partial "utils/date.html" . }}
+*/}}
 {{- $pubDate := .PublishDate -}}
 {{- if $pubDate.IsZero -}}
     {{- $pubDate = .Site.Params.siteCreatedTime -}}

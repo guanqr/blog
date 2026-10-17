@@ -1,0 +1,26 @@
+// ============================================================
+// 共享占位符（组件里用 @extend 引用；未被使用的占位符不产出 CSS）
+// ============================================================
+
+// 两侧布局基类：分页与文章前后篇导航共用（边框/字重/间距由使用方声明）
+%arrow-nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+// 次要链接基类：标签、关于页链接等低强调链接共用（hover 行为由使用方声明）
+%muted-link {
+    display: inline-block;
+    color: alpha(var(--color-contrast-medium), 0.9);
+}
+
+// 图标按钮基类：基色 + 过渡 + hover 主色（返回顶部/主题切换/菜单链接共用）
+%icon-button {
+    color: var(--color-contrast-medium);
+    transition: color $duration;
+    &:hover {
+        color: var(--color-primary);
+    }
+}

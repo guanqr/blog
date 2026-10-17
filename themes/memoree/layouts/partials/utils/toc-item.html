@@ -1,3 +1,7 @@
+{{/*
+  渲染单条 TOC 条目（含子级递归），由 utils/toc.html 调用
+  上下文：.Fragments 的 Heading 节点
+*/}}
 {{- $idAttr := "" -}}
 {{- if site.Params.linkHeadingsToTOC -}}
     {{- $idAttr = printf ` id="contents:%s"` .ID -}}

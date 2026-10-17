@@ -47,6 +47,13 @@ body {
     fill: currentColor;
     display: inline-block;
 }
+
+:root {
+    /* 顶栏与其内部的菜单同层（菜单渲染于顶栏内部）。
+       定义放 base 而非 _header.scss：header 的导入受 enableHeader 条件控制，
+       而菜单无条件渲染（首页不受该开关影响），关闭时菜单 z 层会失效 */
+    --z-header: 3;
+}
 svg {
     vertical-align: middle;
 }

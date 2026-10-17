@@ -482,8 +482,8 @@ uglyURLs = false
     #      这意味着某些文件可能已经过时。
     #      如有需要，请提 Issue。
 
-    themeColor = "#fff"
-    themeColorDark = "#16171d"
+    themeColor = "hsl(0, 0%, 100%)"
+    themeColorDark = "hsl(231.4, 13.7%, 10%)"
     #safariMaskColor = "#2a6df4"
     #msApplicationTileColor = "#fff"
 
@@ -579,39 +579,13 @@ uglyURLs = false
 
 
     ######################################
-    # Google Analytics
-
-    # 说明：仅在生产环境（production）下渲染
-
-    enableGoogleAnalytics = true
-
-    # 跟踪代码的类型
-    trackingCodeType = "gtag"
-    # 说明：gtag 或 analytics
-
-    trackingID = "UA-140800645-1"
-
-
-    ######################################
-    # Google Site Verification
-
-    googleSiteVerification = ""
-
-
-    ######################################
-    # Yandex.Metrika
-    # https://metrika.yandex.ru/
-
-    # 说明：仅在生产环境（production）下渲染
-
-    yandexMetrikaId = ""
-
-
-    ######################################
     # 文章设置
 
     # 超链接的颜色变化持续时间（单位：秒）
     duration = 0.5
+
+    # 快速过渡时长（顶栏隐藏、侧边栏移动、代码复制按钮）（单位：秒）
+    durationFast = 0.3
 
     # 浅色模式的主色（青绿）
     primaryColorLight = "173, 41%, 31%"
@@ -623,6 +597,13 @@ uglyURLs = false
     postWidth = 42
     # 说明：如果留空（""），则用 42 作为默认值
     #      单位：em
+
+    # 文章底部块间距（版权、前后篇、相关文章、首页文章块）
+    postBlockGap = "5em"
+    # 文章底部两侧块宽度（前后篇导航、关于页社交栏/链接栏）
+    postBlockItemWidth = "42%"
+    # 小圆角（时效提醒、身份卡片、GitHub 卡片）
+    radiusSm = "3px"
 
     # 文章是否为原创（全局设置）
     original = true
@@ -1053,16 +1034,9 @@ uglyURLs = false
 
 
     ######################################
-    # 极简页脚
+    # 极简页脚（关于页面）
 
     # 是否开启
-    enableMinimalFooter = false
-    enableVerticalBarStructure = true
-    # 说明：如果开启此项，显示在右边的部类或分区
-    #      将会包含全部的第一级部类或分区，并且
-    #      以竖线（|）分隔开来。
-
-    # 是否开启关于页面的极简页脚
     enableAboutPageMinimalFooter = true
 
 

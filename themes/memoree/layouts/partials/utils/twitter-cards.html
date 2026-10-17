@@ -1,11 +1,17 @@
 <!-- https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started -->
 <!-- https://cards-dev.twitter.com/validator -->
 <!-- https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/twitter_cards.html -->
-{{- $ := index . "$" -}}
+{{/*
+  输出 Twitter Cards meta 标签
+  参数：page（页面）
+  Usage:
+    {{ partial "utils/twitter-cards.html" (dict "page" .) }}
+*/}}
+{{- $page := index . "page" -}}
 <!-- Author -->
-{{- $author := partial "utils/author.html" $ -}}
+{{- $author := partial "utils/author.html" $page -}}
 <!-- Images -->
-{{- $images := partial "utils/images.html" $ -}}
+{{- $images := partial "utils/images.html" $page -}}
 
 {{- with $images -}}
     <meta name="twitter:card" content="summary_large_image" />
@@ -13,7 +19,7 @@
     <meta name="twitter:card" content="summary" />
 {{- end }}
 
-{{ with $.Site.Params.siteTwitter -}}
+{{ with $page.Site.Params.siteTwitter -}}
     <meta name="twitter:site" content="@{{ . }}" />
 {{ end -}}
 {{ with $author.twitter -}}

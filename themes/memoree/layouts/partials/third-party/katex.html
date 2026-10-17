@@ -1,7 +1,7 @@
-{{- $src := partial "utils/lib.html" (dict "$" . "type" "katex") -}}
-{{- $srcCSS := partial "utils/lib.html" (dict "$" . "type" "katex-css") -}}
-{{- $srcMhchem := partial "utils/lib.html" (dict "$" . "type" "katex-mhchem") -}}
-{{- $srcAutoRender := partial "utils/lib.html" (dict "$" . "type" "katex-auto-render") -}}
+{{- $src := partialCached "utils/lib.html" (dict "page" . "type" "katex") "katex" -}}
+{{- $srcCSS := partialCached "utils/lib.html" (dict "page" . "type" "katex-css") "katex-css" -}}
+{{- $srcMhchem := partialCached "utils/lib.html" (dict "page" . "type" "katex-mhchem") "katex-mhchem" -}}
+{{- $srcAutoRender := partialCached "utils/lib.html" (dict "page" . "type" "katex-auto-render") "katex-auto-render" -}}
 
 <link rel="stylesheet" href="{{ $srcCSS }}">
 <script>

@@ -13,18 +13,6 @@
 }
 
 
-// 极简页脚共用布局（minimal-footer 与 minimal-footer-about 相同）
-
-@mixin minimalFooter {
-    font-size: 0.8em;
-    margin-top: 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    line-height: 2;
-}
-
-
 // 三线汉堡图标（nav-toggle 与 sidebar-toggle 共用）
 
 // 静止态：三线定位

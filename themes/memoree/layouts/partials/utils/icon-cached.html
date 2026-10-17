@@ -1,0 +1,12 @@
+{{/*
+  缓存版图标渲染（utils/icon.html 的包装）：在此单点拼接显式 variant 并调用
+  partialCached——调用点只需传 name/class，无需记忆缓存键规则
+  （dict 输入依赖默认缓存键会跨图标串键，2026-10-17 实测，见 icon.html）
+  参数：name（图标名）、class（追加类名，默认与 name 相同）
+  返回：safeHTML 的 <svg>
+  Usage:
+    {{ partial "utils/icon-cached.html" (dict "name" "archive" "class" "archives") }}
+*/}}
+{{- $name := .name -}}
+{{- $class := .class | default $name -}}
+{{- return (partialCached "utils/icon.html" (dict "name" $name "class" $class) (printf "icon:%s:%s" $name $class)) -}}

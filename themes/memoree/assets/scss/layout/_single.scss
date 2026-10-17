@@ -147,7 +147,7 @@ blockquote {
     }
     .anchor-link {
         opacity: var(--anchor-opacity);
-        transition: all ($duration / 2);
+        transition: opacity ($duration / 2);
     }
     .post {
         h1, h2, h3, h4, h5, h6, .anchor-link {

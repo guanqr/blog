@@ -21,17 +21,17 @@
 
             {{- if .Site.Params.displayPoweredBy }}
                 {{- $raw := `Powered by [Hugo](https://github.com/gohugoio/hugo) | Theme is [MemE](https://github.com/reuixiy/hugo-theme-meme)` -}}
-                <div class="powered-by">{{ partial "utils/markdownify.html" (dict "$" $ "raw" $raw "isContent" false) }}</div>
+                <div class="powered-by">{{ partial "utils/markdownify.html" (dict "page" $ "raw" $raw "isContent" false) }}</div>
             {{- end }}
 
             {{- if .Site.Params.displaySiteCopyright }}
                 {{- $raw := .Site.Copyright -}}
-                <div class="site-copyright">{{ partial "utils/markdownify.html" (dict "$" $ "raw" $raw "isContent" false) }}</div>
+                <div class="site-copyright">{{ partial "utils/markdownify.html" (dict "page" $ "raw" $raw "isContent" false) }}</div>
             {{- end }}
 
             {{- with .Site.Params.customFooter }}
                 {{- $raw := . -}}
-                <div class="custom-footer">{{ partial "utils/markdownify.html" (dict "$" $ "raw" $raw "isContent" false) }}</div>
+                <div class="custom-footer">{{ partial "utils/markdownify.html" (dict "page" $ "raw" $raw "isContent" false) }}</div>
             {{- end }}
 
             {{ partial "components/socials.html" . }}

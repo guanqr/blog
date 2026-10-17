@@ -18,17 +18,15 @@
         /* https://xyproto.github.io/splash/docs/all.html */
         /* Color values matching dracula style */
 
-        --chroma-line-numbers-background: #ffffcc;
-        --chroma-line-numbers-color: #7f7f7f;
-        --chroma-keyword-color: #ff79c6;
-        --chroma-name-color: #8be9fd;
-        --chroma-attribute-color: #50fa7b;
-        --chroma-literal-color: #f1fa8c;
-        --chroma-number-color: #bd93f9;
-        --chroma-comment-color: #6272a4;
-        --chroma-deleted-color: #f92672;
-        --chroma-inserted-color: #a6e22e;
-        --chroma-output-color: #44475a;
+        --chroma-keyword-color: hsl(325.5, 100%, 73.7%);
+        --chroma-name-color: hsl(190.5, 96.6%, 76.9%);
+        --chroma-attribute-color: hsl(135.2, 94.4%, 64.7%);
+        --chroma-literal-color: hsl(64.9, 91.7%, 76.5%);
+        --chroma-number-color: hsl(264.7, 89.5%, 77.6%);
+        --chroma-comment-color: hsl(225.5, 26.6%, 51.4%);
+        --chroma-deleted-color: hsl(338.4, 94.6%, 56.3%);
+        --chroma-inserted-color: hsl(80, 75.6%, 53.3%);
+        --chroma-output-color: hsl(231.8, 13.9%, 31%);
     }
 }
 

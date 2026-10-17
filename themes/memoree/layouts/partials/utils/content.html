@@ -1,4 +1,11 @@
-{{- $Content := partial "utils/markdownify.html" (dict "$" . "raw" .Content "isContent" true) -}}
+{{/*
+  文章正文渲染管线：TOC 锚点、首字下沉、脚注样式、图片/视频托管、段首缩排、表格包裹等
+  上下文：页面
+  返回：safeHTML 正文
+  Usage:
+    {{ partial "utils/content.html" . }}
+*/}}
+{{- $Content := partial "utils/markdownify.html" (dict "page" . "raw" .Content "isContent" true) -}}
 
 <!-- Link Headings to TOC -->
 {{- $enableTOC := .Params.toc | default .Site.Params.enableTOC -}}
@@ -90,7 +97,7 @@
 
 <!-- Replace `footnoteReturnLinkContents` with icon -->
 {{- with .Site.Params.footnoteReturnLinkIcon -}}
-    {{- $icon := (partial "utils/icon.html" (dict "$" $ "name" . "class" "footnote-icon")) -}}
+    {{- $icon := (partial "utils/icon-cached.html" (dict "name" . "class" "footnote-icon")) -}}
     {{- $replacement := (printf `${1}%s$3` $icon) -}}
 
     {{- $regexPatternfootnoteReturnLinkIcon := `(href="#fnref[^>]+>)([^<]+)(.+)` -}}

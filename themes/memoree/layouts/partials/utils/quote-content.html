@@ -1,3 +1,8 @@
+{{/*
+  引用类短码正文：确保内容被 <p> 包裹
+  参数：content（HTML）
+  返回：safeHTML
+*/}}
 {{- $content := .content -}}
 {{- if not (strings.HasPrefix $content "<p>") }}
     {{ printf `<p>%s</p>` $content | safeHTML }}

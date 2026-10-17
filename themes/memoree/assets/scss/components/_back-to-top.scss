@@ -3,12 +3,9 @@
     right: 0;
     z-index: 1;
     a {
+        @extend %icon-button;
         display: block;
         padding: 1em;
-        color: var(--color-contrast-medium);
-        &:hover {
-            color: var(--color-primary);
-        }
     }
 }
 

@@ -1,3 +1,10 @@
+{{/*
+  取文章摘要（首页/feed 用）：剥离摘要内嵌的图片（文首配图会被自动摘要一并截入）
+  上下文：页面
+  返回：safeHTML
+  Usage:
+    {{ partial "utils/summary.html" . }}
+*/}}
 {{- $summary := .Summary -}}
 {{/*
     2024-10-27 @reuixiy I found that Hugo now applies the same logic for CJK language,

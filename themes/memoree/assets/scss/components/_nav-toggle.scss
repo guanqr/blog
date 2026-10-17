@@ -23,7 +23,8 @@
     span {
         @include hamburgerLines(1em, 2px, 0.4em, 0.7em, 1em);
         background-color: var(--color-contrast-high);
-        transition: all $duration;
+        // 展开/收回只涉及 top / width / opacity / transform（height 恒定）
+        transition: top $duration, width $duration, opacity $duration, transform $duration;
     }
     &.open {
         span {

@@ -1,5 +1,5 @@
 .header {
-    z-index: 3;
+    z-index: var(--z-header);
     position: fixed;
     width: 100%;
 }
@@ -46,6 +46,9 @@ $brandHeight: null;
 }
 
 :root {
+    /* --z-header 定义于 base/_base.scss（无条件导入），此处只保留依赖
+       brand/菜单尺寸的 header-height 计算 */
+
     /* This is an approximate calculation, it won't cover all scenarios */
     --header-height: calc(
         max(
@@ -67,7 +70,7 @@ $brandHeight: null;
 @if ($enableHeaderAutoHide) {
     .header {
         top: 0;
-        transition: top 0.3s ease-in-out;
+        transition: top $durationFast ease-in-out;
 
         &.hide {
             top: calc(var(--header-height) * -1);

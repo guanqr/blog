@@ -1,7 +1,7 @@
 <div class="identity-cards">
     {{ range hugo.Data.identities.items }}
         <div class="identity-card">
-            <div class="identity-card-emoji">{{ .emoji }}</div>
+            <div class="identity-card-icon">{{ partial "utils/icon-cached.html" (dict "name" .icon "class" "identity-card-icon") }}</div>
             <div class="identity-card-title">{{ .title }}</div>
             <div class="identity-card-desc"><p>{{ .description }}</p></div>
         </div>

@@ -5,10 +5,9 @@
 }
 
 .post-tags-link {
-    color: alpha(var(--color-contrast-medium), 0.9);
+    @extend %muted-link;
     margin: 0 0.5em;
     line-height: 2;
-    display: inline-block;
 }
 
 .tag-icon {

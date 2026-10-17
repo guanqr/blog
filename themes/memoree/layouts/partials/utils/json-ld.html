@@ -1,19 +1,25 @@
 <!-- https://schema.org/ -->
 <!-- https://json-ld.org/ -->
 <!-- https://search.google.com/structured-data/testing-tool -->
-{{- $ := index . "$" -}}
+{{/*
+  输出 JSON-LD 结构化数据（schema.org）：首页 WebSite / 文章 BlogPosting / 其他 WebPage
+  参数：page（页面）、description（页面描述）
+  Usage:
+    {{ partial "utils/json-ld.html" (dict "page" . "description" $description) }}
+*/}}
+{{- $page := index . "page" -}}
 {{- $description := .description -}}
 {{- $baseURLWithLangFix := "" | absLangURL -}}
 <!-- Title -->
-{{- $rawTitle := (partial "utils/title.html" (dict "$" $ "title" $.Title)).rawTitle -}}
+{{- $rawTitle := (partial "utils/title.html" (dict "page" $page "title" $page.Title)).rawTitle -}}
 <!-- Date -->
-{{- $dates := partial "utils/date.html" $ -}}
+{{- $dates := partial "utils/date.html" $page -}}
 <!-- Author -->
-{{- $author := partial "utils/author.html" $ -}}
+{{- $author := partial "utils/author.html" $page -}}
 <!-- Images -->
-{{- $images := partial "utils/images.html" $ -}}
+{{- $images := partial "utils/images.html" $page -}}
 
-{{- if $.IsHome -}}
+{{- if $page.IsHome -}}
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -22,7 +28,7 @@
         "dateModified": {{ $dates.modDate }},
         "url": {{ $baseURLWithLangFix }},
         "description": {{ $description }},
-        {{ with $.Site.Params.siteLogo -}}
+        {{ with $page.Site.Params.siteLogo -}}
         "image": {{ . | absURL }},
         {{ end -}}
         {{ with $author -}}
@@ -51,23 +57,23 @@
         "name": {{ $rawTitle }}
     }
 </script>
-{{- else if and $.IsPage (in $.Site.Params.mainSections $.Section) -}}
+{{- else if and $page.IsPage (in $page.Site.Params.mainSections $page.Section) -}}
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": {{ $dates.pubDate }},
         "dateModified": {{ $dates.modDate }},
-        "url": {{ $.Permalink }},
+        "url": {{ $page.Permalink }},
         "headline": {{ $rawTitle }},
         "description": {{ $description }},
-        "inLanguage" : "{{ $.Site.Language.Locale }}",
-        "articleSection": {{ $.Section }},
-        "wordCount": {{ $.WordCount }},
+        "inLanguage" : "{{ $page.Site.Language.Locale }}",
+        "articleSection": {{ $page.Section }},
+        "wordCount": {{ $page.WordCount }},
         {{ with $images -}}
         "image": {{ . }},
         {{ else -}}
-        {{ with $.Site.Params.siteLogo -}}
+        {{ with $page.Site.Params.siteLogo -}}
         "image": {{ . | absURL }},
         {{ end -}}
         {{ end -}}
@@ -96,8 +102,8 @@
         {{ end -}}
         "publisher": {
             "@type": "Organization",
-            "name": {{ $.Site.Title }},
-            {{ with $.Site.Params.siteLogo -}}
+            "name": {{ $page.Site.Title }},
+            {{ with $page.Site.Params.siteLogo -}}
             "logo": {
                 "@type": "ImageObject",
                 "url": {{ . | absURL }}
@@ -118,13 +124,13 @@
         "@type": "WebPage",
         "datePublished": {{ $dates.pubDate }},
         "dateModified": {{ $dates.modDate }},
-        "url": {{ $.Permalink }},
+        "url": {{ $page.Permalink }},
         "name": {{ $rawTitle }},
         "description": {{ $description }},
         {{ with $images -}}
         "image": {{ . }},
         {{ else -}}
-        {{ with $.Site.Params.siteLogo -}}
+        {{ with $page.Site.Params.siteLogo -}}
         "image": {{ . | absURL }},
         {{ end -}}
         {{ end -}}
@@ -133,8 +139,8 @@
         {{ end -}}
         "publisher": {
             "@type": "Organization",
-            "name": {{ $.Site.Title }},
-            {{ with $.Site.Params.siteLogo -}}
+            "name": {{ $page.Site.Title }},
+            {{ with $page.Site.Params.siteLogo -}}
             "logo": {
                 "@type": "ImageObject",
                 "url": {{ . | absURL }}

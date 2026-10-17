@@ -1,3 +1,10 @@
+{{/*
+  按「原创/转载」收集作者信息（name/email/motto/avatar/website/copyright/twitter/fediverse）
+  上下文：页面
+  返回：dict
+  Usage:
+    {{ partial "utils/author.html" . }}
+*/}}
 {{- $author := dict -}}
 {{- if .Params.original | default .Site.Params.original -}}
     {{- with .Site.Params.author.name -}}

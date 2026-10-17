@@ -1,4 +1,5 @@
 .copy-button {
+    @extend %icon-button;
     position: absolute;
     // 悬浮于代码块右上角，无背景的独立图标
     top: 0.55em;
@@ -8,13 +9,9 @@
     background: transparent;
     font-size: 0.9em;
     line-height: 1;
-    color: var(--color-contrast-medium);
-    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    // 覆盖 %icon-button 的 $duration 过渡：复制按钮用快速时长
+    transition: color $durationFast ease-in-out;
     cursor: pointer;
-
-    &:hover {
-        color: var(--color-primary);
-    }
 
     .icon {
         width: 1em;
@@ -26,6 +23,6 @@
     .copy-button {
         visibility: hidden;
         opacity: 0;
-        transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.25s, opacity 0.25s;
+        transition: color $durationFast ease-in-out, visibility $durationFast, opacity $durationFast;
     }
 }

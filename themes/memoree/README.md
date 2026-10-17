@@ -6,21 +6,21 @@ memoree 是 [Guanqr](https://guanqr.com/) 使用的个人 Hugo 主题，基于 [
 
 - **站点定制全部写入主题**：不再通过外层覆盖，站点根目录无 layouts/、assets/、i18n/、archetypes/
 - **评论系统仅保留 Waline**（v3 ESM 懒加载），删除了 Disqus、Valine、Utterances、Gitalk、Giscus、Remark42
-- **删除未使用语言**：i18n 仅保留 `en` 与 `zh-hant`
+- **删除未使用语言**：i18n 仅保留 `zh-hant`（站点单语言化后 en 亦删除）
 - **删除上游元数据**：`.github/`、`exampleSite/`、`config-examples/`
 
 ## 特性
 
 - 深色模式（二态切换）、弹性顶栏、返回顶部
 - 文章侧边栏目录（TOC 滚动高亮、移动端抽屉）
-- 归档页年份切换（Content Adapter 生成 `/archives/YYYY/`，JS 即时切换 + pushState）
+- 归档页分页列表 `/archives/page/N/`，页内按年份分组，文字箭头翻页
 - 微动态（`type = "micro"`）
 - 标签云、生肖年份图标、相关文章
 - KaTeX / MathJax / Mermaid 公式与图表（按文章开启）
 - Waline 评论、代码块复制、medium-zoom 图片缩放、instant.page 预加载
 - 9 个自定义短码：`align`、`blogroll`、`book-list`、`github`、`identity-cards`、`notice`、`quote-center`、`quote`、`simple-notice`
 - 中文排版：段首缩排、两端对齐、首字下沉、着重号（`..文本..`）、中文标点字形纠正、文章时效性提醒
-- 自定义 Atom / RSS 输出、图片外链重写、Google Analytics、Service Worker
+- 自定义 Atom / RSS 输出、图片外链重写、Service Worker
 
 ## 结构
 
@@ -29,13 +29,13 @@ memoree/
 ├── archetypes/         # 文章与微动态模板
 ├── assets/
 │   ├── js/             # 深色模式、侧边栏、代码复制等脚本
-│   └── scss/           # main.scss 注入配置变量；按功能分层，custom/ 仅留空钩子
+│   └── scss/           # main.scss 注入配置变量；按 base/components/layout/pages/themes/utils 分层
 ├── data/
 │   ├── SVG.toml        # 图标
 │   └── ChineseZodiac.toml  # 生肖
-├── i18n/               # en / zh-hant
+├── i18n/               # zh-hant
 ├── layouts/            # 模板（含 shortcodes/）
-└── static/             # 图标、manifest、归档切换脚本、标点修正字体
+└── static/             # 图标、字体（manifest 由 assets/manifest.tmpl 模板生成）
 ```
 
 ## 使用

@@ -1,40 +1,48 @@
-{{- $ := index . "$" -}}
+{{/*
+  获取页面标题（含 fallback 链）：优先传入的 title，其次按页面 Kind 取默认标题
+  （taxonomy/term/section/404），markdownify 后返回三种形态
+  参数：page（页面）、title（候选标题）
+  返回：dict{ rawTitle, title, htmlTitle }（title = rawTitle | 站名，首页除外）
+  Usage:
+    {{ partial "utils/title.html" (dict "page" . "title" .Title) }}
+*/}}
+{{- $page := index . "page" -}}
 
 {{- $path := "" -}}
-{{- with .File -}}
+{{- with $page.File -}}
     {{- $path = .Path -}}
 {{- else -}}
-    {{- $path = .Path -}}
+    {{- $path = $page.Path -}}
 {{- end -}}
 
 {{- $htmlTitle := .title -}}
 <!-- Home -->
-{{- if eq $.Kind "home" -}}
-    {{- $htmlTitle = $htmlTitle | default $.Site.Title -}}
+{{- if eq $page.Kind "home" -}}
+    {{- $htmlTitle = $htmlTitle | default $page.Site.Title -}}
 <!-- Taxonomy -->
-{{- else if eq $.Kind "taxonomy" -}}
-    {{- $htmlTitle = $htmlTitle | default ($.Type | title) -}}
+{{- else if eq $page.Kind "taxonomy" -}}
+    {{- $htmlTitle = $htmlTitle | default ($page.Type | title) -}}
 <!-- Taxonomy Term -->
-{{- else if eq $.Kind "term" -}}
-    {{- $taxonomyTermTitle := $htmlTitle | default $.Data.Term | default (delimit (last 1 (split (strings.TrimSuffix "/_index.md" $path) "/")) " ") -}}
-    {{- with $.Site.GetPage (printf "/%s" $.Data.Plural) -}}
+{{- else if eq $page.Kind "term" -}}
+    {{- $taxonomyTermTitle := $htmlTitle | default $page.Data.Term | default (delimit (last 1 (split (strings.TrimSuffix "/_index.md" $path) "/")) " ") -}}
+    {{- with $page.Site.GetPage (printf "/%s" $page.Data.Plural) -}}
         {{- $htmlTitle = printf "%s%s%s" (.Title | default (.Type | title)) (i18n "colon") $taxonomyTermTitle -}}
     {{- end -}}
 <!-- Section -->
-{{- else if eq $.Kind "section" -}}
+{{- else if eq $page.Kind "section" -}}
     {{- $htmlTitle = $htmlTitle | default (delimit (last 1 (split (strings.TrimSuffix "/_index.md" $path) "/")) " ") -}}
 <!-- 404 -->
-{{- else if eq $.Kind "404" -}}
+{{- else if eq $page.Kind "404" -}}
     {{- $htmlTitle = i18n "pageNotFound" -}}
 {{- end -}}
 
-{{- $htmlTitle = partial "utils/markdownify.html" (dict "$" $ "raw" $htmlTitle "isContent" false) -}}
+{{- $htmlTitle = partial "utils/markdownify.html" (dict "page" $page "raw" $htmlTitle "isContent" false) -}}
 
-{{- $rawTitle := $htmlTitle | plainify | htmlUnescape -}}
+{{- $rawTitle := $htmlTitle | plainify | htmlUnescape | strings.TrimSpace -}}
 
 {{- $title := $rawTitle -}}
-{{- if ne $.Kind "home" -}}
-    {{- $title = printf "%s | %s" $title $.Site.Title -}}
+{{- if ne $page.Kind "home" -}}
+    {{- $title = printf "%s | %s" $title $page.Site.Title -}}
 {{- end -}}
 
 {{- return dict "rawTitle" $rawTitle "title" $title "htmlTitle" $htmlTitle -}}

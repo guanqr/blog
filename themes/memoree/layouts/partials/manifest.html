@@ -1,0 +1,10 @@
+{{/*
+  PWA manifest 链接与生成：static/ 静态文件无法注入主题色配置，改为
+  assets/manifest.tmpl 模板渲染发布，theme_color/background_color 与
+  head 的 theme-color meta 共用 utils/theme-colors.html 单源
+  上下文：页面
+*/}}
+{{- with resources.Get "manifest.tmpl" | resources.ExecuteAsTemplate "manifest.json" . -}}
+    {{- .Publish -}}
+{{- end -}}
+<link rel="manifest" href="{{ "manifest.json" | relURL }}" />

@@ -1,22 +1,22 @@
-{{ with .Site.Params.fontSize | default 16 }}
-    $fontSize: {{ . }}px;
-{{ end }}
-{{ with .Site.Params.tabSize | default 4 }}
-    $tabSize: {{ . }};
-{{ end }}
-{{ with .Site.Params.lineHeight | default 2 }}
-    $lineHeight: {{ . }};
-{{ end }}
-
-{{ with .Site.Params.postWidth | default 42 }}
-    $postWidth: {{ . }}em;
-{{ end }}
-{{ with .Site.Params.listWidth | default 42 }}
-    $listWidth: {{ . }}em;
-{{ end }}
-
-{{ with .Site.Params.duration | default 0.5 }}
-    $duration: {{ . }}s;
+{{/* 标量配置注入表：名称 / 参数键 / 默认值 / 单位后缀——新增参数只改表一行；
+     默认值仅兜底，站点值以 hugo.toml 为准；with 对 0 视为空的既有行为沿用
+     （见 CLAUDE.md「Hugo 0.164 陷阱」） */}}
+{{ $scalarParams := slice
+    (dict "name" "fontSize" "param" "fontSize" "default" 16 "unit" "px")
+    (dict "name" "tabSize" "param" "tabSize" "default" 4 "unit" "")
+    (dict "name" "lineHeight" "param" "lineHeight" "default" 2 "unit" "")
+    (dict "name" "postWidth" "param" "postWidth" "default" 42 "unit" "em")
+    (dict "name" "listWidth" "param" "listWidth" "default" 42 "unit" "em")
+    (dict "name" "duration" "param" "duration" "default" 0.5 "unit" "s")
+    (dict "name" "durationFast" "param" "durationFast" "default" 0.3 "unit" "s")
+    (dict "name" "postBlockGap" "param" "postBlockGap" "default" "5em" "unit" "")
+    (dict "name" "postBlockItemWidth" "param" "postBlockItemWidth" "default" "42%" "unit" "")
+    (dict "name" "radiusSm" "param" "radiusSm" "default" "3px" "unit" "")
+}}
+{{ range $p := $scalarParams }}
+    {{- with index $.Site.Params $p.param | default $p.default -}}
+        {{ printf "$%s: %v%s;" $p.name . $p.unit }}
+    {{- end -}}
 {{ end }}
 
 {{ if .Site.Params.enableHeaderAutoHide }}
@@ -66,6 +66,7 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 
 @import "utils/functions";
 @import "utils/mixins";
+@import "utils/placeholders";
 
 
 // Base
@@ -244,10 +245,6 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
     @import "components/post-tags";
 {{ end }}
 
-{{ if .Site.Params.enableMinimalFooter }}
-    @import "components/minimal-footer";
-{{ end }}
-
 {{ if .Site.Params.enableAboutPageMinimalFooter }}
     @import "components/minimal-footer-about";
 {{ end }}
@@ -281,6 +278,9 @@ $baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
 {{ if .Site.Params.enableSocials }}
     @import "components/socials";
 {{ end }}
+
+// 分页样式无条件导入：归档页 /archives/page/N/ 不依赖首页布局配置
+@import "components/pagination";
 
 
 // Homepage Layout

@@ -1,0 +1,12 @@
+{{/*
+  主题色（theme-color meta、防闪烁脚本、dark-mode.js 与 PWA manifest 共用）：
+  默认值只在此处维护一份，站点经 themeColor/themeColorDark 配置覆盖
+  上下文：页面
+  返回：dict{ light, dark }
+  Usage:
+    {{ $tc := partial "utils/theme-colors.html" . }}
+    {{ $tc.light }}
+*/}}
+{{- $light := .Site.Params.themeColor | default "hsl(0, 0%, 100%)" -}}
+{{- $dark := .Site.Params.themeColorDark | default "hsl(231.4, 13.7%, 10%)" -}}
+{{- return dict "light" $light "dark" $dark -}}

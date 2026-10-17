@@ -9,14 +9,18 @@
         {{ range $paginator.Pages }}
             <article class="content post home h-entry">
                 <h2 class="post-title p-name">
-                    <a href="{{ .RelPermalink }}" class="summary-title-link u-url">{{ (partial "utils/title.html" (dict "$" . "title" .LinkTitle)).htmlTitle }}</a>
+                    <a href="{{ .RelPermalink }}" class="summary-title-link u-url">{{ (partial "utils/title.html" (dict "page" . "title" .LinkTitle)).htmlTitle }}</a>
                 </h2>
                 {{ if $.Site.Params.enablePostMetaInHome }}
-                    {{ partial "components/post-meta.html" (dict "$" . "isHome" true) }}
+                    {{ partial "components/post-meta.html" (dict "page" . "isHome" true) }}
                 {{ end }}
-                <summary class="summary p-summary">
+                {{/* 摘要容器用 div 而非 summary：HTML 规范要求 summary 必须是 details 的
+                     子元素，且摘要内常含文章开头的链接（交互元素），置于 summary 内
+                     对键盘与辅助技术不可达（a11y 审计报错，2026-10-17 实测）；
+                     样式按 .summary 类选择器绑定，改标签无影响 */}}
+                <div class="summary p-summary">
                     {{ partial "utils/summary.html" . }}
-                </summary>
+                </div>
                 {{ if or .Truncated .Params.summary }}
                     <div class="read-more-container">
                         <a href="{{ .RelPermalink }}" class="read-more-link">{{ i18n "readMore" }} »</a>

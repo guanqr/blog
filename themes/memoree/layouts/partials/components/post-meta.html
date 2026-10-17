@@ -1,45 +1,51 @@
-{{ $ := index . "$" }}
+{{/*
+  渲染文章 meta 行（发布时间/分类/字数/阅读时长等）
+  参数：page（页面）、isHome（是否首页概览）
+  Usage:
+    {{ partial "components/post-meta.html" (dict "page" . "isHome" false) }}
+*/}}
+{{ $page := index . "page" }}
 {{ $isHome := .isHome }}
 <div class="post-meta">
-    {{ if $.Params.displayPublishedDate | default (and $.Site.Params.displayPublishedDate (not $.PublishDate.IsZero)) }}
-        {{ $icon := partial "utils/icon.html" (dict "$" $ "name" $.Site.Params.publishedDateIcon "class" "post-meta-icon") }}
-        <time datetime="{{ $.PublishDate.Format "2006-01-02T15:04:05-07:00" }}" class="post-meta-item published dt-published">{{ $icon }}&nbsp;{{ $.PublishDate.Format $.Site.Params.postMetaDateFormat }}</time>
+    {{ if $page.Params.displayPublishedDate | default (and $page.Site.Params.displayPublishedDate (not $page.PublishDate.IsZero)) }}
+        {{ $icon := partial "utils/icon-cached.html" (dict "name" $page.Site.Params.publishedDateIcon "class" "post-meta-icon") }}
+        <time datetime="{{ $page.PublishDate.Format "2006-01-02T15:04:05-07:00" }}" class="post-meta-item published dt-published">{{ $icon }}&nbsp;{{ $page.PublishDate.Format $page.Site.Params.postMetaDateFormat }}</time>
     {{ end }}
-    {{ if $.Params.displayModifiedDate | default (and $.Site.Params.displayModifiedDate (not $.Lastmod.IsZero)) }}
-        {{ $icon := partial "utils/icon.html" (dict "$" $ "name" $.Site.Params.modifiedDateIcon "class" "post-meta-icon") }}
-        <time datetime="{{ $.Lastmod.Format "2006-01-02T15:04:05-07:00" }}" class="post-meta-item modified dt-updated">{{ $icon }}&nbsp;{{ $.Lastmod.Format $.Site.Params.postMetaDateFormat }}</time>
+    {{ if $page.Params.displayModifiedDate | default (and $page.Site.Params.displayModifiedDate (not $page.Lastmod.IsZero)) }}
+        {{ $icon := partial "utils/icon-cached.html" (dict "name" $page.Site.Params.modifiedDateIcon "class" "post-meta-icon") }}
+        <time datetime="{{ $page.Lastmod.Format "2006-01-02T15:04:05-07:00" }}" class="post-meta-item modified dt-updated">{{ $icon }}&nbsp;{{ $page.Lastmod.Format $page.Site.Params.postMetaDateFormat }}</time>
     {{ end }}
-    {{ if $.Params.displayExpiryDate | default (and $.Site.Params.displayExpiredDate (not $.ExpiryDate.IsZero)) }}
-        {{ $icon := partial "utils/icon.html" (dict "$" $ "name" $.Site.Params.expiredDateIcon "class" "post-meta-icon") }}
-        <time datetime="{{ $.ExpiryDate.Format "2006-01-02T15:04:05-07:00" }}" class="post-meta-item expired">{{ $icon }}&nbsp;{{ $.ExpiryDate.Format $.Site.Params.postMetaDateFormat }}</time>
+    {{ if $page.Params.displayExpiryDate | default (and $page.Site.Params.displayExpiredDate (not $page.ExpiryDate.IsZero)) }}
+        {{ $icon := partial "utils/icon-cached.html" (dict "name" $page.Site.Params.expiredDateIcon "class" "post-meta-icon") }}
+        <time datetime="{{ $page.ExpiryDate.Format "2006-01-02T15:04:05-07:00" }}" class="post-meta-item expired">{{ $icon }}&nbsp;{{ $page.ExpiryDate.Format $page.Site.Params.postMetaDateFormat }}</time>
     {{ end }}
-    {{ if $.Params.displayCategory | default $.Site.Params.displayCategory }}
-        {{ $icon := partial "utils/icon.html" (dict "$" $ "name" $.Site.Params.categoryIcon "class" "post-meta-icon") }}
-        {{ if and (eq $.Site.Params.categoryBy "sections") (in $.Site.Params.mainSections $.Section) }}
-            {{ $sections := split (strings.TrimSuffix "/" ($.File.Dir | default $.Section)) "/" }}
+    {{ if $page.Params.displayCategory | default $page.Site.Params.displayCategory }}
+        {{ $icon := partial "utils/icon-cached.html" (dict "name" $page.Site.Params.categoryIcon "class" "post-meta-icon") }}
+        {{ if and (eq $page.Site.Params.categoryBy "sections") (in $page.Site.Params.mainSections $page.Section) }}
+            {{ $sections := split (strings.TrimSuffix "/" ($page.File.Dir | default $page.Section)) "/" }}
             {{ with $sections }}
-                {{ $.Scratch.Delete "sectionsDirMeta" }}
-                {{ $.Scratch.Delete "sectionsMeta" }}
-                {{ $.Scratch.Set "index" 0 }}
+                {{ $page.Scratch.Delete "sectionsDirMeta" }}
+                {{ $page.Scratch.Delete "sectionsMeta" }}
+                {{ $page.Scratch.Set "index" 0 }}
                 {{ range $sections }}
                     {{ $section := . }}
-                    {{ $.Scratch.Add "sectionsDirMeta" (printf `/%s` $section) }}
-                    {{ with $.Site.GetPage ($.Scratch.Get "sectionsDirMeta") }}
+                    {{ $page.Scratch.Add "sectionsDirMeta" (printf `/%s` $section) }}
+                    {{ with $page.Site.GetPage ($page.Scratch.Get "sectionsDirMeta") }}
                         {{ if (eq .Kind "section") }}
-                            {{ $.Scratch.SetInMap "sectionsMeta" (printf `%s/%s` (string ($.Scratch.Get "index")) .RelPermalink) (.LinkTitle | default $section) }}
-                            {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
+                            {{ $page.Scratch.SetInMap "sectionsMeta" (printf `%s/%s` (string ($page.Scratch.Get "index")) .RelPermalink) (.LinkTitle | default $section) }}
+                            {{ $page.Scratch.Set "index" (add ($page.Scratch.Get "index") 1) }}
                         {{ end }}
                     {{ end }}
                 {{ end }}
             {{ end }}
-            {{ $sections := $.Scratch.Get "sectionsMeta" }}
+            {{ $sections := $page.Scratch.Get "sectionsMeta" }}
             {{ with $sections }}
                 <span class="post-meta-item category">
                     {{- $icon -}}&nbsp;
                     {{- range $link, $title := $sections -}}
                         {{- $index := $link | replaceRE `(\d+)/.+` `$1` | int -}}
                         {{- if ne $index 0 }}
-                            {{- $.Site.Params.categoryDelimiter | default "/" -}}
+                            {{- $page.Site.Params.categoryDelimiter | default "/" -}}
                         {{- end -}}
                         <a href="{{- $link | replaceRE `\d+/(.+)` `$1` -}}" class="category-link p-category">
                             {{- $title -}}
@@ -48,17 +54,17 @@
                 </span>
             {{ end }}
         {{ end }}
-        {{ if eq $.Site.Params.categoryBy "categories" }}
-            {{ with $.Params.categories }}
+        {{ if eq $page.Site.Params.categoryBy "categories" }}
+            {{ with $page.Params.categories }}
                 <span class="post-meta-item category">
                     {{- $icon -}}&nbsp;
                     {{- range $index, $category := . -}}
                         {{- if ne $index 0 -}}
-                            {{- $.Site.Params.categoryDelimiter | default "/" -}}
+                            {{- $page.Site.Params.categoryDelimiter | default "/" -}}
                         {{- end -}}
                         <!-- Work-around for https://github.com/gohugoio/hugo/issues/6546 -->
                         {{- $path := (urls.Parse ($category | urlize)).Path -}}
-                        {{- with $.Site.GetPage (printf `/categories/%s` $path) -}}
+                        {{- with $page.Site.GetPage (printf `/categories/%s` $path) -}}
                             <a href="{{- .RelPermalink -}}" class="category-link p-category">
                                 {{- .LinkTitle | default $path -}}
                             </a>
@@ -68,15 +74,15 @@
             {{ end }}
         {{ end }}
     {{ end }}
-    {{ if $.Params.displayWordCount | default $.Site.Params.displayWordCount }}
-        {{ $icon := partial "utils/icon.html" (dict "$" $ "name" $.Site.Params.wordCountIcon "class" "post-meta-icon") }}
-        <span class="post-meta-item wordcount">{{ $icon }}&nbsp;{{ $.WordCount }}</span>
+    {{ if $page.Params.displayWordCount | default $page.Site.Params.displayWordCount }}
+        {{ $icon := partial "utils/icon-cached.html" (dict "name" $page.Site.Params.wordCountIcon "class" "post-meta-icon") }}
+        <span class="post-meta-item wordcount">{{ $icon }}&nbsp;{{ $page.WordCount }}</span>
     {{ end }}
-    {{ if $.Params.displayReadingTime | default $.Site.Params.displayReadingTime }}
-        {{ $icon := partial "utils/icon.html" (dict "$" $ "name" $.Site.Params.readingTimeIcon "class" "post-meta-icon") }}
-        <span class="post-meta-item reading-time">{{ $icon }}&nbsp;{{ $.ReadingTime }}&nbsp;{{ i18n "minute" $.ReadingTime }}</span>
+    {{ if $page.Params.displayReadingTime | default $page.Site.Params.displayReadingTime }}
+        {{ $icon := partial "utils/icon-cached.html" (dict "name" $page.Site.Params.readingTimeIcon "class" "post-meta-icon") }}
+        <span class="post-meta-item reading-time">{{ $icon }}&nbsp;{{ $page.ReadingTime }}&nbsp;{{ i18n "minute" $page.ReadingTime }}</span>
     {{ end }}
-    {{ if and $.Site.Params.enableExpiredTip ($.Params.displayExpiredTip | default $.Site.Params.displayPostExpiredTip) }}
+    {{ if and $page.Site.Params.enableExpiredTip ($page.Params.displayExpiredTip | default $page.Site.Params.displayPostExpiredTip) }}
     <div id="expiredTip">{{ i18n "expiredTip" }}</div>
     {{ end }}
 </div>

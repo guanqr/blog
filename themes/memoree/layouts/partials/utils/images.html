@@ -1,3 +1,11 @@
+{{/*
+  收集页面配图（og:image / JSON-LD 用）：优先 front matter 的 images，
+  未设置且开启 autoDetectImages 时从正文提取；经图片托管与绝对化处理
+  上下文：页面
+  返回：URL 切片
+  Usage:
+    {{ partial "utils/images.html" . }}
+*/}}
 {{- $imgs := .Params.images -}}
 
 <!-- Auto Detect Images -->

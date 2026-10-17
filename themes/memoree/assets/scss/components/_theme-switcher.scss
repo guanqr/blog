@@ -14,13 +14,9 @@
     font-size: inherit;
     cursor: pointer;
 
-    color: var(--color-contrast-medium);
-    transition: color $duration;
-    z-index: 4;
+    @extend %icon-button;
 
-    &:hover {
-        color: var(--color-primary);
-    }
+    z-index: 4;
 
     .icon {
         position: absolute;

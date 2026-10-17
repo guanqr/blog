@@ -1,0 +1,15 @@
+// ============================================================
+// 分页（首页与归档页共用，无条件导入——归档页样式不依赖首页布局配置）
+// ============================================================
+
+.pagination {
+    @extend %arrow-nav;
+    margin: $postBlockGap 0 0;
+}
+.pagination-prev {
+    margin-right: auto;
+}
+.pagination-next {
+    margin-left: auto;
+    text-align: right;
+}

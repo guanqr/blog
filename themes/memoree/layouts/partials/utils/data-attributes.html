@@ -1,3 +1,10 @@
+{{/*
+  收集文章容器的数据属性：小体大写、对齐、类型、布局、段首缩排
+  上下文：页面
+  返回：dict{ smallCaps, align, type, layout, indent }
+  Usage:
+    {{ partial "utils/data-attributes.html" . }}
+*/}}
 <!-- Small Caps -->
 {{- $smallCaps := .Params.smallCaps | default .Site.Params.enableSmallCaps | default false -}}
 

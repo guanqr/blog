@@ -1,20 +1,29 @@
-{{- $ := index . "$" -}}
+{{/*
+  Markdown 渲染管线：强调点（..文本..）、markdownify、emoji、外链属性，
+  供标题、页脚、版权等非正文文本复用；文章正文见 utils/content.html
+  参数：page（页面）、raw（原始文本）、isContent（是否已渲染正文，true 跳过 markdownify）
+  返回：safeHTML
+  Usage:
+    {{ partial "utils/markdownify.html" (dict "page" . "raw" $raw "isContent" false) }}
+*/}}
+{{- $page := index . "page" -}}
 {{- $Content := .raw -}}
 {{- $isContent := .isContent -}}
 
-<!-- New Syntax: Emphasis Point `..中文..` -->
-<!-- https://www.w3.org/International/clreq/#id84 -->
-{{- if $.Site.Params.enableEmphasisPoint -}}
+{{/* Emphasis Point `..中文..`，见 https://www.w3.org/International/clreq/#id84。
+     注意：本文件内注释一律模板注释——HTML 注释会输出进标题管线，被 plainify
+     剥掉后留下换行与缩进残留（曾污染 JSON-LD name，2026-10-17 实测） */}}
+{{- if $page.Site.Params.enableEmphasisPoint -}}
     {{- $regexPatternEmphasisPoint := `\.\.([\p{Han}]+)\.\.` -}}
     {{- $regexReplacementEmphasisPoint := `<em class="emphasis-point">$1</em>` -}}
     {{- $Content = $Content | replaceRE $regexPatternEmphasisPoint $regexReplacementEmphasisPoint -}}
 {{- end -}}
 
-<!-- Markdownify -->
+{{/* Markdownify */}}
 {{- if not $isContent -}}
     {{- $Content = $Content | markdownify -}}
 
-    <!-- Emojify -->
+    {{/* Emojify */}}
     {{- if (fileExists "config.toml") -}}
         {{- $enableEmoji := replaceRE `enableEmoji = (.+)` `$1` (delimit (readFile "config.toml" | findRE `enableEmoji = (.+)` | uniq) " ") -}}
         {{- if eq $enableEmoji "true" -}}
@@ -23,9 +32,8 @@
     {{- end -}}
 {{- end -}}
 
-<!-- External Links -->
-{{- if $.Site.Params.hrefTargetBlank -}}
-    {{- $Content = replaceRE `(<a href="https?:[^"]+")` `$1 target="_blank" rel="noopener"` $Content -}}
-{{- end -}}
+{{/* 外链处理已完全由 _markup/render-link.html 承担：markdownify 函数本身会执行
+     渲染钩子，这里若再替换会产生重复的 target/rel 属性（feed 中已实测出现，
+     2026-10-17 审查确认）。此文件内不得再出现外链正则 */}}
 
 {{- $Content | safeHTML -}}

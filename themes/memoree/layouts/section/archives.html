@@ -56,9 +56,9 @@
                             {{ $.Scratch.Set "zodiacName" $zodiacName }}
                         {{ end }}
                         {{ $zodiacName := $.Scratch.Get "zodiacName" }}
-                        <h2 class="list-year">{{ $year }}{{ if $.Site.Params.chineseZodiac }}{{ partial "utils/icon.html" (dict "$" $ "name" $zodiacName "class" "chinese-zodiac") }}{{ end }}</h2>
+                        <h2 class="list-year">{{ $year }}{{ if $.Site.Params.chineseZodiac }}{{ partial "utils/icon-cached.html" (dict "name" $zodiacName "class" "chinese-zodiac") }}{{ end }}</h2>
                         {{ end }}
-                        {{ partial "utils/list-item.html" (dict "$" .) }}
+                        {{ partial "utils/list-item.html" (dict "page" .) }}
                     </div>
                 {{ end }}
 

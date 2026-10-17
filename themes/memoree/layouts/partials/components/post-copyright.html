@@ -22,7 +22,7 @@
             {{ end }}
             {{ with $author.copyright }}
                 {{- $raw := . -}}
-                <li class="copyright-item license"><span class="copyright-item-text">{{ i18n "copyrightLicense" }}</span>{{ i18n "colon" }}{{ partial "utils/markdownify.html" (dict "$" $ "raw" $raw "isContent" false) }}</li>
+                <li class="copyright-item license"><span class="copyright-item-text">{{ i18n "copyrightLicense" }}</span>{{ i18n "colon" }}{{ partial "utils/markdownify.html" (dict "page" $ "raw" $raw "isContent" false) }}</li>
             {{ end }}
         </ul>
     {{ end }}

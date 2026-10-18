@@ -31,6 +31,4 @@ tags = ["humanist","photography"]
 
 ![rush-harvest-migrant-workers-7.jpg](/images/rush-harvest-migrant-workers-7.jpg)
 
-{{< notice notice-info >}}
-文中照片均由本人親自拍攝，禁止商用或二次創作。
-{{< /notice >}}
+{{< photo-copyright >}}

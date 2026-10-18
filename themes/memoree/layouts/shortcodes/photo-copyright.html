@@ -1,0 +1,17 @@
+{{/*
+  photo-copyright 短碼：聲明照片版權並引導前往「影集」
+  站名與鏈接複用 main 菜單 photos 項（按 Identifier 查找），
+  菜單缺項時引導行不渲染，卡片降級為僅版權聲明
+  Usage:
+    {{< photo-copyright >}}
+*/}}
+<div class="photo-copyright">
+    <div class="photo-copyright-license">{{ i18n "photo_copyright_license" }}</div>
+    {{- with index (where site.Menus.main "Identifier" "photos") 0 -}}
+        <div class="photo-copyright-more">
+            {{- i18n "photo_copyright_more_prefix" -}}
+            <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer">{{ .Name }}</a>
+            {{- i18n "photo_copyright_more_suffix" -}}
+        </div>
+    {{- end -}}
+</div>

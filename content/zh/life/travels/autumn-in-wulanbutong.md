@@ -40,3 +40,5 @@ tags = ["inner-mongolia", "mid-autumn", "photography"]
 ![autumn-in-wulanbutong-10.jpg](/images/autumn-in-wulanbutong-10.jpg "踏浪馳風")
 
 每次出行都不可能十全十美，我在路上常聽到的一句話是——一切都是最好的安排。雖然這些天都沒有看到完美的日出日落，而且由於是跟團出行，無法隨時停車抓拍路旁的牛羊，但這終究是我親眼看到的真實景象，不是從網絡中刷到的別人的旅途，這便足夠了。
+
+{{< photo-copyright >}}

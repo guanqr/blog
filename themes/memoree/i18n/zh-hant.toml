@@ -34,6 +34,15 @@ other = "連結"
 [copyright_license]
 other = "許可"
 
+[photo_copyright_license]
+other = "本文照片版權歸作者所有，禁止商用或二次創作"
+
+[photo_copyright_more_prefix]
+other = "更多攝影作品可訪問「"
+
+[photo_copyright_more_suffix]
+other = "」查看"
+
 [related_posts]
 other = "相關文章："
 

@@ -24,6 +24,9 @@
     a {
         text-decoration: underline;
         text-decoration-color: var(--color-contrast-low);
+        // 下划线颜色与文字颜色同速过渡；color 必须一并列出——
+        // 此规则会覆盖全局 a 的 transition: color（2026-10-18 实测）
+        transition: color $duration, text-decoration-color $duration;
         &:hover {
             text-decoration-color: alpha(var(--color-primary), 0.5);
         }

@@ -46,6 +46,4 @@ toc = false
 
 ![mays-sunshine-3.jpg](/images/mays-sunshine-3.jpg)
 
-{{< notice notice-info >}}
-文中照片均由本人親自拍攝，禁止商用或二次創作。
-{{< /notice >}}
+{{< photo-copyright >}}

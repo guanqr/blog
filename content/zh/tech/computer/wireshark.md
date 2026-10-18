@@ -4,7 +4,6 @@ date = "2019-07-10T00:23:42+08:00"
 lastmod = "2019-07-11T00:23:42+08:00"
 tags = ["network","security"]
 series = ["major-courses"]
-aliases = ["/2019/07/10/wireshark/","/study/computer/wireshark/"]
 dropCap = false
 toc = true
 displayExpiredTip = true

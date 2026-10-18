@@ -4,7 +4,6 @@ date = "2019-05-18T08:07:15+08:00"
 lastmod = "2020-04-09T08:07:15+08:00"
 tags = ["dispersion","geometric-optics","prism"]
 series = ["major-courses"]
-aliases = ["/2019/05/18/applied-optics-1/","/study/optics/applied-optics-1/","/study/optics/dispersion-of-glass/"]
 katex = true
 toc = true
 +++

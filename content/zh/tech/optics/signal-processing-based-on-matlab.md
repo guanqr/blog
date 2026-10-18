@@ -4,7 +4,6 @@ date = "2020-01-20T08:38:19+08:00"
 lastmod = "2020-04-09T08:38:19+08:00"
 tags = ["matlab"]
 series = ["major-courses"]
-aliases = ["/study/optics/signals-and-systems/","/tech/optics/signals-and-systems/"]
 katex = true
 toc = true
 +++

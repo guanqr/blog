@@ -5,7 +5,6 @@ date = "2019-07-29T09:10:03+08:00"
 lastmod = "2020-03-12T09:10:03+08:00"
 tags = ["geometric-optics", "hardware", "engineering", "zemax", "zju"]
 series = ["major-courses"]
-aliases = ["/study/optics/opt-short-term-2019/"]
 toc = true
 mermaid = true
 +++

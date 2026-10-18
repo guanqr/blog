@@ -4,7 +4,6 @@ date = "2019-12-04T21:08:01+08:00"
 lastmod = "2019-12-05T21:08:01+08:00"
 tags = ["hexo","hugo","meme","fine-art"]
 series = ["create-a-blog"]
-aliases = ["/study/blog/add-blogroll/"]
 displayExpiredTip = true
 +++
 

@@ -4,7 +4,6 @@ date = "2019-06-17T01:11:55+08:00"
 lastmod = "2020-06-03T01:11:55+08:00"
 tags = ["fourier-optics","image-processing","white-balance"]
 series = ["major-courses"]
-aliases = ["/2019/06/17/applied-optics-2/","/study/optics/applied-optics-2/","/study/optics/preliminary-image-quality-evaluation/"]
 katex = true
 toc = true
 +++

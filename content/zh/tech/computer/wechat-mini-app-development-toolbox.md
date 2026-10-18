@@ -4,7 +4,6 @@ description = "「微信小程序开发实践」课程总结，微信小程序�
 date = "2020-01-18T19:52:44+08:00"
 lastmod = "2020-01-19T19:52:44+08:00"
 tags = ["mini-app","fine-art","wechat","zju"]
-aliases = ["/study/computer/wechat-mini-app-development-toolbox/"]
 displayExpiredTip = true
 +++
 

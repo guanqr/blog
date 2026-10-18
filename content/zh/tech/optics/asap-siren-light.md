@@ -4,7 +4,6 @@ date = "2019-11-06T23:43:17+08:00"
 lastmod = 2020-02-14T23:43:17+08:00
 tags = ["geometric-optics","engineering"]
 series = ["major-courses"]
-aliases = ["/study/optics/asap-siren-light/"]
 +++
 
 ![asap-siren-light-0.png](/images/asap-siren-light-0.png)

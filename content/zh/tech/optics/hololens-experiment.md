@@ -4,7 +4,6 @@ date = "2020-01-16T16:21:40+08:00"
 lastmod = "2020-04-09T16:21:40+08:00"
 tags = ["fourier-optics","hololens","slm"]
 series = ["major-courses"]
-aliases = ["/study/optics/hololens-experiment/"]
 dropCap = false
 katex = true
 toc = true

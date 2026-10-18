@@ -4,7 +4,6 @@ date = "2019-08-20T12:33:10"
 lastmod = "2019-08-21T12:33:10"
 tags = ["hexo","next","pwa"]
 series = ["create-a-blog"]
-aliases = ["/2019/08/20/speed-up-hexo/","/study/blog/speed-up-hexo/"]
 displayExpiredTip = true
 +++
 

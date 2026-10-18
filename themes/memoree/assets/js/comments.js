@@ -15,9 +15,9 @@ function loadComments() {
 async function newWaline() {
     const { init } = await import('https://unpkg.com/@waline/client@3/dist/waline.js');
     var locale = {
-        nick: "{{ i18n "walineNick" }}",
-        mail: "{{ i18n "walineMail" }}",
-        placeholder: "{{ i18n "walinePlaceholder" }}"
+        nick: "{{ i18n "waline_nick" }}",
+        mail: "{{ i18n "waline_mail" }}",
+        placeholder: "{{ i18n "waline_placeholder" }}"
     };
     init({
         el: '#waline',

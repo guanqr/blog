@@ -83,6 +83,6 @@
         <span class="post-meta-item reading-time">{{ $icon }}&nbsp;{{ $page.ReadingTime }}&nbsp;{{ i18n "minute" $page.ReadingTime }}</span>
     {{ end }}
     {{ if and $page.Site.Params.enableExpiredTip ($page.Params.displayExpiredTip | default $page.Site.Params.displayPostExpiredTip) }}
-    <div id="expiredTip">{{ i18n "expiredTip" }}</div>
+    <div id="expired_tip">{{ i18n "expired_tip" }}</div>
     {{ end }}
 </div>

@@ -1,6 +1,6 @@
 {{ if or (and .IsHome .Site.Params.displayBackToTopInHome) (and (not .IsHome) .Site.Params.enableBackToTop) }}
     <div id="back-to-top" class="back-to-top">
-        <a href="{{ .RelPermalink }}#top" aria-label="{{ i18n "backToTop" }}">
+        <a href="{{ .RelPermalink }}#top" aria-label="{{ i18n "back_to_top" }}">
             {{ partial "utils/icon-cached.html" (dict "name" .Site.Params.backToTopIcon) }}
         </a>
     </div>

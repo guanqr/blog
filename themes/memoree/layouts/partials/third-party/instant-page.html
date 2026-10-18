@@ -1,3 +1,3 @@
-{{- $src := partialCached "utils/lib.html" (dict "page" . "type" "instantpage") "instantpage" -}}
-
-<script src="{{ $src }}" type="module" defer></script>
+{{/* instant.page 自托管（2026-10-18，v5.2.0，static/js/instantpage.min.js 含 MIT 许可证头）：
+     去除运行时对 jsDelivr 的依赖（与影集同款自托管做法） */}}
+<script src="{{ "/js/instantpage.min.js" | relURL }}" type="module" defer></script>

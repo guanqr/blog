@@ -1,6 +1,6 @@
-{{- $src := partialCached "utils/lib.html" (dict "page" . "type" "medium-zoom") "medium-zoom" -}}
-
-<script src="{{ $src }}"></script>
+{{/* medium-zoom 自托管（2026-10-18，v1.1.0，static/js/medium-zoom.min.js 含 MIT 许可证头）：
+     去除运行时对 jsDelivr 的依赖（与影集同款自托管做法） */}}
+<script src="{{ "/js/medium-zoom.min.js" | relURL }}"></script>
 
 <script>
     function initMediumZoom() {

@@ -9,8 +9,8 @@
 function initCopyButtons() {
     const copyText = '{{ i18n "copy" }}';
     const copiedText = '{{ i18n "copied" }}';
-    const copyIcon = '{{ index hugo.Data.SVG "clipboard" }}';
-    const checkIcon = '{{ index hugo.Data.SVG "check" }}';
+    const copyIcon = '{{ partial "utils/icon.html" (dict "name" "clipboard") }}';
+    const checkIcon = '{{ partial "utils/icon.html" (dict "name" "check") }}';
 
     // 无语言的裸代码块包一层 .highlight：
     // 统一外边距规则，并作为复制按钮的绝对定位锚点

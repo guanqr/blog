@@ -27,7 +27,7 @@
         {{ if and (gt $limit 0) (gt (len $page.Pages) $limit) }}
             {{ with $linkTarget }}
                 <li class="list-read-more">
-                    <a href="{{ $linkTarget.RelPermalink }}">{{ i18n "readMore" }} »</a>
+                    <a href="{{ $linkTarget.RelPermalink }}">{{ i18n "read_more" }} »</a>
                 </li>
             {{ end }}
         {{ end }}

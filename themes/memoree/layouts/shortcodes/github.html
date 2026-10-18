@@ -1,6 +1,6 @@
 <div class="github">
     <div class="logo">
-        {{ replace hugo.Data.SVG.repository "icon" "icon github-icon" | safeHTML }}
+        {{ partial "utils/icon.html" (dict "name" "repository" "class" "github-icon") }}
         <a class="name" href={{ .Get "link" }} target="_blank" rel="noopener noreferrer">{{ .Get "name" }}</a>
     </div>
     <div class="description">{{ .Get "description" }}</div> 

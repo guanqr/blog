@@ -1,15 +1,20 @@
 {{/*
-  按名称从 data/SVG.toml 取内联 SVG 图标，并把 svg 上的 class="icon" 替换为 class="icon <class>"
-  参数：name（图标名）、class（追加类名，默认与 name 相同）
+  按名称从 data/SVG.toml 取内联 SVG 图标，并注入 xmlns 与类名——
+  数据只存图标自身的差异属性（viewBox/fill/stroke/width 等，2026-10-18 瘦身，
+  与影集 utils/icon.html 同款前缀注入机制，替代原 replace "icon" 字符串替换 hack）
+  类名规则：非 brand 图标注入基础类 "icon" + 指定类（全局 .icon 尺寸/填充依赖
+  基础类）；brand 只注入 "brand"（站点 Logo，独立样式）
+  参数：name（图标名）、class（指定类名，默认与 name 相同）
   返回：safeHTML 的 <svg>
-  注意：本 partial 是底层实现，调用点请用 utils/icon-cached.html——
-        该包装单点维护 partialCached 与显式 variant（dict 输入依赖默认
-        缓存键会跨图标串键，2026-10-17 实测）
   Usage:
-    {{ partial "utils/icon-cached.html" (dict "name" "archive" "class" "archives") }}
+    {{ partial "utils/icon.html" (dict "name" "archive" "class" "archives") }}
 */}}
 {{- $name := .name -}}
 {{- $class := .class | default $name -}}
-{{- $icon := index hugo.Data.SVG $name -}}
-{{- $class := printf "icon %s" $class -}}
-{{- return (replace $icon "icon" $class | safeHTML) -}}
+{{- $classList := $class -}}
+{{- if ne $class "brand" -}}
+    {{- $classList = printf "icon %s" $class -}}
+{{- end -}}
+{{- $svg := index hugo.Data.SVG $name -}}
+{{- $open := replaceRE `^<svg` (printf `<svg xmlns="http://www.w3.org/2000/svg" class="%s"` $classList) $svg -}}
+{{- return ($open | safeHTML) -}}

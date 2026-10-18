@@ -10,13 +10,13 @@ other = "："
 one = "分鐘"
 other = "分鐘"
 
-[readMore]
+[read_more]
 other = "閱讀更多"
 
-[prevPage]
+[prev_page]
 other = "上一頁"
 
-[nextPage]
+[next_page]
 other = "下一頁"
 
 [copy]
@@ -25,34 +25,34 @@ other = "複製"
 [copied]
 other = "已複製"
 
-[copyrightAuthor]
+[copyright_author]
 other = "作者"
 
-[copyrightLink]
+[copyright_link]
 other = "連結"
 
-[copyrightLicense]
+[copyright_license]
 other = "許可"
 
-[relatedPosts]
+[related_posts]
 other = "相關文章："
 
-[loadComments]
+[load_comments]
 other = "載入評論"
 
-[themeToggle]
+[theme_toggle]
 other = "切換主題"
 
-[pageNotFound]
+[page_not_found]
 other = "頁面不存在"
 
-[pageNotFoundDesc]
+[page_not_found_desc]
 other = "您訪問的頁面不存在或已被移除。"
 
-[fofLinkText]
+[fof_link_text]
 other = "送我回起始頁面"
 
-[backToTop]
+[back_to_top]
 other = "回到頂部"
 
 [january]
@@ -126,26 +126,26 @@ other = "八"
 other = "九"
 
 
-[sidebarTocTitle]
+[sidebar_toc_title]
 other = "文章目錄"
 
 [sidebar]
 other = "側邊欄"
 
-[sidebarToggle]
+[sidebar_toggle]
 other = "切換側邊欄"
 
-[expiredTip]
+[expired_tip]
 other = "本文已超過一年未更新。隨著版本迭代，文中所述信息可能已失效，僅供參考。"
 
-[walineNick]
+[waline_nick]
 other = "暱稱*"
 
-[walineMail]
+[waline_mail]
 other = "郵箱*"
 
-[walinePlaceholder]
+[waline_placeholder]
 other = "請填寫正確的暱稱和郵箱，方便接收評論回覆信息。若隨意填寫郵箱地址，發佈包括但不限於廣告、攻擊性、無意義等內容文字，將會作刪除處理。"
 
-[skipToContent]
+[skip_to_content]
 other = "跳到主要內容"

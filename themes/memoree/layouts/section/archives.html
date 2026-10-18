@@ -67,12 +67,12 @@
                     <ul class="pagination">
                         {{ if $paginator.HasPrev }}
                             <li class="pagination-prev">
-                                <a href="{{ $paginator.Prev.URL }}" rel="prev">&lt; {{ i18n "prevPage" }}</a>
+                                <a href="{{ $paginator.Prev.URL }}" rel="prev">&lt; {{ i18n "prev_page" }}</a>
                             </li>
                         {{ end }}
                         {{ if $paginator.HasNext }}
                             <li class="pagination-next">
-                                <a href="{{ $paginator.Next.URL }}" rel="next">{{ i18n "nextPage" }} &gt;</a>
+                                <a href="{{ $paginator.Next.URL }}" rel="next">{{ i18n "next_page" }} &gt;</a>
                             </li>
                         {{ end }}
                     </ul>

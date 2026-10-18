@@ -29,14 +29,14 @@
 
 // 自定义文章时效性提示样式
 
-#expiredTip  {
+#expired_tip  {
     padding: 1em;
     margin: 2em 0 0;
     border-radius: $radiusSm;
     background: hsla(30, 80%, 70%, 0.15);
     border-left: 5px solid hsl(30, 80%, 70%);
 }
-[data-theme="dark"] #expiredTip {
+[data-theme="dark"] #expired_tip {
     background: hsla(30, 25%, 35%, 0.15);
     border-left: 5px solid hsl(30, 25%, 35%);
 }

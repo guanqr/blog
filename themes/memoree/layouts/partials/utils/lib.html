@@ -25,11 +25,6 @@
     {{- $path = $page.Site.Params.lib.path.clipboard | default $default -}}
 {{- end -}}
 
-{{- if eq $type "instantpage" -}}
-    {{- $default := "/npm/instant.page@5.1.0/instantpage.min.js" -}}
-    {{- $path = $page.Site.Params.lib.path.instantpage | default $default -}}
-{{- end -}}
-
 {{- if eq $type "katex" -}}
     {{- $default := "/npm/katex@0.13.0/dist/katex.min.js" -}}
     {{- $path = $page.Site.Params.lib.path.katex | default $default -}}
@@ -50,11 +45,6 @@
 {{- if eq $type "mathjax" -}}
     {{- $default := "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js" -}}
     {{- $path = $page.Site.Params.lib.path.mathjax | default $default -}}
-{{- end -}}
-
-{{- if eq $type "medium-zoom" -}}
-    {{- $default := "/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" -}}
-    {{- $path = $page.Site.Params.lib.path.medium_zoom | default $default -}}
 {{- end -}}
 
 {{- if eq $type "mermaid" -}}

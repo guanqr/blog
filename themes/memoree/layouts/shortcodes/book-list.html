@@ -12,8 +12,7 @@
                     <span>{{ $currentYear }}</span>
                     {{ if site.Params.chineseZodiac }}
                         {{ $zodiac := index hugo.Data.ChineseZodiac (string (mod (int $currentYear) 12)) }}
-                        {{ $icon := index hugo.Data.SVG $zodiac }}
-                        <span class="book-zodiac">{{ replace $icon "icon" "icon book-zodiac-icon" | safeHTML }}</span>
+                        <span class="book-zodiac">{{ partial "utils/icon.html" (dict "name" $zodiac "class" "book-zodiac-icon") }}</span>
                     {{ end }}
                 </h2>
             <ul class="book-items">

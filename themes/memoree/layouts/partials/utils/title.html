@@ -33,7 +33,7 @@
     {{- $htmlTitle = $htmlTitle | default (delimit (last 1 (split (strings.TrimSuffix "/_index.md" $path) "/")) " ") -}}
 <!-- 404 -->
 {{- else if eq $page.Kind "404" -}}
-    {{- $htmlTitle = i18n "pageNotFound" -}}
+    {{- $htmlTitle = i18n "page_not_found" -}}
 {{- end -}}
 
 {{- $htmlTitle = partial "utils/markdownify.html" (dict "page" $page "raw" $htmlTitle "isContent" false) -}}

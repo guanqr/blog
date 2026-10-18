@@ -2,7 +2,7 @@
 title = "新年夜不狂欢"
 date = "2020-01-03T12:01:17+08:00"
 lastmod = "2020-01-04T12:01:17+08:00"
-tags = ["choice","research","youth","zju"]
+tags = ["youth","zju"]
 indent = true
 +++
 

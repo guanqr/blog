@@ -2,7 +2,7 @@
 title = "奥本海默"
 date = "2023-09-08T23:52:18+08:00"
 lastmod = "2023-09-08T23:52:18+08:00"
-tags = ["history","humankind"]
+tags = ["history"]
 +++
 
 ![oppenheimer.jpg](/images/oppenheimer.jpg)

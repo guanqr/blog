@@ -2,7 +2,7 @@
 title = "二〇二一年兵人收藏记"
 date = "2021-12-31T23:24:52+08:00"
 lastmod = "2021-12-31T23:24:52+08:00"
-tags = ["collection","model"]
+tags = ["collection"]
 series = ["one-sixth-scale-figures"]
 dropCap = false
 +++

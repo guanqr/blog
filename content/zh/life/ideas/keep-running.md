@@ -2,7 +2,7 @@
 title = "坚持跑步，健康生活"
 date = "2021-05-20T16:11:14+08:00"
 lastmod = "2021-05-20T16:11:14+08:00"
-tags = ["health","pressure"]
+tags = ["outdoors"]
 indent = true
 +++
 

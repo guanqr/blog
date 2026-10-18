@@ -1,4 +1,0 @@
-+++
-title = "Workbox"
-slug = "workbox"
-+++

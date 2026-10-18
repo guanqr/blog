@@ -2,7 +2,7 @@
 title = "使用 Gulp 压缩博客静态资源"
 date = "2019-10-02T13:24:25+08:00"
 lastmod = "2019-10-03T13:24:25+08:00"
-tags = ["gulp","hexo","next"]
+tags = ["hexo","next","tool"]
 series = ["create-a-blog"]
 displayExpiredTip = true
 +++

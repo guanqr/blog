@@ -2,7 +2,7 @@
 title = "紫云碧峰的樱花"
 date = "2020-03-15T15:51:09+08:00"
 lastmod = "2020-03-16T15:51:09+08:00"
-tags = ["love","nature","youth","zju"]
+tags = ["love","youth","zju"]
 indent = true
 +++
 

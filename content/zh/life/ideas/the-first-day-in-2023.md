@@ -2,7 +2,7 @@
 title = "二〇二三·元旦"
 date = "2023-01-02T23:09:46+08:00"
 lastmod = "2023-02-19T21:43:22+08:00"
-tags = ["covid-19","work"]
+tags = ["work"]
 dropCap = false
 +++
 

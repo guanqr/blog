@@ -2,7 +2,7 @@
 title = "初探徽派建筑村落"
 date = "2024-10-14T00:44:49+08:00"
 lastmod = "2026-01-06T00:44:49+08:00"
-tags = ["huangshan","huizhou","mountaineering"]
+tags = ["huangshan","outdoors"]
 +++
 
 ![the-first-visit-to-huizhou-style-villages-0.jpg](/images/the-first-visit-to-huizhou-style-villages-0.jpg "安徽黄山黔县·卢村")

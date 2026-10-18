@@ -2,7 +2,7 @@
 title = "OceanColor 遥感数据产品的获取"
 date = "2020-03-11T09:17:34+08:00"
 lastmod = "2020-03-12T09:17:34+08:00"
-tags = ["ocean","remote-sensing"]
+tags = ["data-processing"]
 displayExpiredTip = true
 +++
 

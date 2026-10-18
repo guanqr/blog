@@ -2,7 +2,7 @@
 title = "清明小记"
 date = "2021-04-13T14:07:44+08:00"
 lastmod = "2021-04-22T20:53:58+08:00"
-tags = ["hangzhou","pressure","research","youth","zju"]
+tags = ["hangzhou","youth","zju"]
 indent = true
 +++
 

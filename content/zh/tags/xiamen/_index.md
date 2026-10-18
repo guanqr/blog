@@ -1,4 +1,4 @@
 +++
-title = "厦门"
+title = "廈門"
 slug = "xiamen"
 +++

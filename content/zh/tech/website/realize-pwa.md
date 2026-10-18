@@ -2,7 +2,7 @@
 title = "博客实现 PWA 功能"
 date = "2019-10-04T07:15:43+08:00"
 lastmod = "2019-10-05T07:15:43+08:00"
-tags = ["gulp","hugo","meme","next","pwa"]
+tags = ["hugo","meme","next"]
 series = ["create-a-blog"]
 displayExpiredTip = true
 +++

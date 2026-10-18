@@ -2,7 +2,7 @@
 title = "影视周边：十二寸兵人收藏"
 date = "2019-11-22T23:29:25+08:00"
 lastmod = "2020-11-14T23:29:25+08:00"
-tags = ["collection","model"]
+tags = ["collection"]
 series = ["one-sixth-scale-figures"]
 +++
 

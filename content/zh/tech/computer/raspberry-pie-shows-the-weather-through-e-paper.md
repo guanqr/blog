@@ -2,7 +2,7 @@
 title = "树莓派利用水墨屏显示实时天气状况"
 date = "2020-07-08T18:17:53+08:00"
 lastmod = "2020-07-09T18:17:53+08:00"
-tags = ["engineering","python","hardware"]
+tags = ["hardware","python"]
 dropCap = false
 displayExpiredTip = true
 +++

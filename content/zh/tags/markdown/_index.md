@@ -1,4 +1,0 @@
-+++
-title = "Markdown"
-slug = "markdown"
-+++

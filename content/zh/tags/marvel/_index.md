@@ -1,4 +1,0 @@
-+++
-title = "MARVEL"
-slug = "marvel"
-+++

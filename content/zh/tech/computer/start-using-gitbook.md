@@ -2,7 +2,7 @@
 title = "使用 GitBook 制作电子书"
 date = "2019-07-22T10:05:12+08:00"
 lastmod = "2019-07-23T10:05:12+08:00"
-tags = ["git","markdown"]
+tags = ["tool"]
 displayExpiredTip = true
 +++
 

@@ -1,4 +1,0 @@
-+++
-title = "Zemax"
-slug = "zemax"
-+++

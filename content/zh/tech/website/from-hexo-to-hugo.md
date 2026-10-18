@@ -2,7 +2,7 @@
 title = "博客迁移，从 Hexo 到 Hugo"
 date = "2020-01-26T14:35:40+08:00"
 lastmod = "2020-01-27T14:35:40+08:00"
-tags = ["hexo","hugo","meme","fine-art"]
+tags = ["hexo","hugo","meme"]
 +++
 
 ![hugo-theme-meme.png](/images/hugo-theme-meme.png)

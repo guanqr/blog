@@ -2,7 +2,7 @@
 title = "YOLO v3 目标检测"
 date = "2020-05-02T13:11:09+08:00"
 lastmod = "2020-05-03T13:11:09+08:00"
-tags = ["linux","machine-learning"]
+tags = ["linux","python"]
 dropCap = false
 displayExpiredTip = true
 +++

@@ -2,7 +2,7 @@
 title = "初识成像系统的像质评价"
 date = "2019-06-17T01:11:55+08:00"
 lastmod = "2020-06-03T01:11:55+08:00"
-tags = ["fourier-optics","image-processing","white-balance"]
+tags = ["image-processing","physical-optics"]
 series = ["major-courses"]
 katex = true
 toc = true

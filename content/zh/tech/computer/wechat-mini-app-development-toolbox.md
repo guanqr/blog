@@ -3,7 +3,7 @@ title = "微信小程序课程后记"
 description = "「微信小程序开发实践」课程总结，微信小程序「生活工具箱」设计"
 date = "2020-01-18T19:52:44+08:00"
 lastmod = "2020-01-19T19:52:44+08:00"
-tags = ["mini-app","fine-art","wechat","zju"]
+tags = ["wechat","zju"]
 displayExpiredTip = true
 +++
 

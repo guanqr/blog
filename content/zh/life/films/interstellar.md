@@ -2,7 +2,7 @@
 title = "Interstellar"
 date = "2022-08-03T13:59:27+08:00"
 lastmod = "2022-08-03T13:59:27+08:00"
-tags = ["humankind","love","sci-fi"]
+tags = ["love","sci-fi"]
 +++
 
 ![interstellar-0.jpg](/images/interstellar-0.jpg)

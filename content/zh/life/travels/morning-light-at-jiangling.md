@@ -2,7 +2,7 @@
 title = "江嶺晨光"
 date = "2026-03-15T21:47:37+08:00"
 lastmod = "2026-04-05T21:47:37+08:00"
-tags = ["huizhou","mountaineering","shangrao"]
+tags = ["outdoors","photography","shangrao"]
 +++
 
 春節期間，乘坐大巴穿越上饒的鄉鎮，田間已有零星的油菜花綻放。僅僅驚鴻一瞥，我便決心等待半個月後返回這片安徽與江西的交界地帶，一覽皖南初春的山水畫卷。

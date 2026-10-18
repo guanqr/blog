@@ -2,7 +2,7 @@
 title = "再见浙大，毕业快乐"
 date = "2021-07-01T08:26:01+08:00"
 lastmod = "2021-08-01T08:26:01+08:00"
-tags = ["youth","zju"]
+tags = ["memory","youth","zju"]
 toc = true
 +++
 

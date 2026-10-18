@@ -2,7 +2,7 @@
 title = "使用 Excel 对校园卡流水对账"
 date = "2019-06-30T09:11:32+08:00"
 lastmod = "2019-07-01T09:11:32+08:00"
-tags = ["engineering","zju"]
+tags = ["zju"]
 dropCap = false
 displayExpiredTip = true
 +++

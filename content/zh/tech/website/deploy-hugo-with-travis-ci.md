@@ -2,7 +2,7 @@
 title = "旧事新说：使用 Travis CI 部署 Hugo 博客"
 date = "2021-03-30T07:43:03+08:00"
 lastmod = "2021-03-30T14:34:15+08:00"
-tags = ["hugo","travis-ci"]
+tags = ["hugo"]
 series = ["create-a-blog"]
 +++
 

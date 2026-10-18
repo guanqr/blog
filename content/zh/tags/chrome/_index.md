@@ -1,4 +1,0 @@
-+++
-title = "Chrome"
-slug = "chrome"
-+++

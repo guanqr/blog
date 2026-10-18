@@ -3,7 +3,7 @@ title = "三个老实人被人背刺了"
 subtitle = "一篇论文的诞生"
 date = "2021-07-12T10:53:34+08:00"
 lastmod = "2021-08-07T10:05:00+08:00"
-tags = ["research","roast","zju"]
+tags = ["roast","zju"]
 dropCap = false
 +++
 

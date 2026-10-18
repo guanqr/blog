@@ -2,7 +2,7 @@
 title = "五一厦门行"
 date = "2024-05-10T01:03:02+08:00"
 lastmod = "2026-01-05T01:03:02+08:00"
-tags = ["xiamen","seaside"]
+tags = ["outdoors","xiamen"]
 dropCap = false
 +++
 

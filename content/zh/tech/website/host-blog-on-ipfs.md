@@ -2,7 +2,7 @@
 title = "将博客持续集成地部署到 IPFS"
 date = "2020-04-03T21:05:01+08:00"
 lastmod = "2020-04-04T21:05:01+08:00"
-tags = ["society","hugo","meme","netlify"]
+tags = ["hugo","meme"]
 series = ["create-a-blog"]
 displayExpiredTip = true
 +++

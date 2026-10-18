@@ -2,7 +2,7 @@
 title = "东极岛的周末"
 date = "2023-06-06T22:35:09+08:00"
 lastmod = "2023-06-06T22:35:09+08:00"
-tags = ["mountaineering","seaside"]
+tags = ["outdoors","zhoushan"]
 dropCap = false
 +++
 

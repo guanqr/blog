@@ -2,7 +2,7 @@
 title = "博客通过 Netlify 实现持续集成"
 date = "2019-10-05T00:04:30+08:00"
 lastmod = "2019-10-06T00:04:30+08:00"
-tags = ["hexo","netlify"]
+tags = ["hexo"]
 series = ["create-a-blog"]
 displayExpiredTip = true
 +++

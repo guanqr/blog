@@ -2,7 +2,7 @@
 title = "非同凡想"
 date = "2020-06-14T10:21:05+08:00"
 lastmod = "2020-06-15T10:21:05+08:00"
-tags = ["apple","fine-art"]
+tags = ["ideal"]
 dropCap = false
 +++
 

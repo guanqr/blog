@@ -2,7 +2,7 @@
 title = "网站字体优化方案"
 date = "2019-06-11T23:58:24+08:00"
 lastmod = "2019-06-12T23:58:24+08:00"
-tags = ["hexo","next","fine-art"]
+tags = ["hexo","next"]
 series = ["create-a-blog"]
 displayExpiredTip = true
 +++

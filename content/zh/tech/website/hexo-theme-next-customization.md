@@ -2,7 +2,7 @@
 title = "Hexo-NexT 主题个性优化"
 date = "2019-05-04T00:00:39+08:00"
 lastmod = "2020-07-23T00:00:39+08:00"
-tags = ["git","hexo","next","fine-art"]
+tags = ["hexo","next"]
 series = ["create-a-blog"]
 dropCap = false
 toc = true

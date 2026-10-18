@@ -2,7 +2,7 @@
 title = "网络数据监测与分析"
 date = "2019-07-10T00:23:42+08:00"
 lastmod = "2019-07-11T00:23:42+08:00"
-tags = ["network","security"]
+tags = ["network","tool"]
 series = ["major-courses"]
 dropCap = false
 toc = true

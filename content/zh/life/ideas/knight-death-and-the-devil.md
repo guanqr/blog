@@ -2,7 +2,7 @@
 title = "骑士、死神与魔鬼"
 date = "2025-10-30T19:58:15+08:00"
 lastmod = "2025-10-30T19:58:15+08:00"
-tags = ["fine-art", "religion"]
+tags = ["religion"]
 +++
 
 ![knight-death-and-the-devil-0.jpg](/images/knight-death-and-the-devil-0.jpg "收到的三幅画")

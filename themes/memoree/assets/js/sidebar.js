@@ -1,5 +1,5 @@
-// Sidebar logic
-function initSidebar() {
+// Sidebar logic（全局模块，DOMContentLoaded 后执行一次）
+export function initSidebar() {
     var sidebar = document.getElementById('sidebar');
     var sidebarToggle = document.getElementById('sidebar-toggle');
     var sidebarDimmer = document.getElementById('sidebar-dimmer');
@@ -96,5 +96,3 @@ function initSidebar() {
         headings.forEach(function(h) { observer.observe(h.el); });
     }
 }
-
-window.addEventListener("DOMContentLoaded", initSidebar);

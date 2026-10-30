@@ -1,0 +1,74 @@
+// 设计参数默认值（站点值由 main.scss 的 @use ... with 注入）
+// 仅变量、不产出 CSS；partial 经 utils/deps 共享同一模块实例。
+// 2026-10-30 起由 LibSass 的全局变量迁移到 Dart Sass 模块配置。
+@use "../utils/functions" as *;
+
+// 排版与尺寸（hugo.toml [params] 同名参数的兜底值）
+$fontSize: 16px !default;
+$tabSize: 4 !default;
+$lineHeight: 2 !default;
+$postWidth: 42em !default;
+$listWidth: 42em !default;
+$duration: 0.5s !default;
+$durationFast: 0.3s !default;
+$postBlockGap: 5em !default;
+$postBlockItemWidth: 42% !default;
+$radiusSm: 3px !default;
+
+// 功能开关
+$enableHeaderAutoHide: false !default;
+$enableNavToggle: false !default;
+$navHeight: 10em !default;
+$displayBackToTopOnMobile: false !default;
+$enableCopy: false !default;
+$enableCopyAutoHide: false !default;
+$enableSmoothScroll: false !default;
+$enableHighlight: false !default;
+$defaultTheme: light !default;
+$enableAnchorAutoHide: false !default;
+$footnoteReturnLinkIcon: false !default;
+$enableBackToTopAutoHide: false !default;
+
+// 顶栏 / 列表 / 品牌
+$listDatePosition: left !default;
+$headerBackground: transparent !default;
+$baseRelURL: "" !default;
+
+$siteBrandSVG: false !default;
+$siteBrandSVGWidth: 0px !default;
+$siteBrandSVGHeight: 0px !default;
+$siteBrandSVGFill: currentColor !default;
+$siteBrandFontSize: 1em !default;
+$siteBrandFontColor: inherit !default;
+
+// 字体栈：null 表示未配置，相应规则不输出（原 variable-exists 语义）
+$fontFamilySiteBrand: null !default;
+$fontFamilyMenu: null !default;
+$fontFamilyTitle: null !default;
+$fontFamilyHeadings: null !default;
+$fontFamilyCode: null !default;
+$fontFamilyQuote: null !default;
+$fontFamilyCaption: null !default;
+$fontFamilyFooter: null !default;
+$fontFamilyBody: null !default;
+$fontFamilyGlyph: null !default;
+$fontFamilyStrong: null !default;
+
+// 主色 HSL 分量（main.scss 注入站点值）
+$primaryColorLightH: 220 !default;
+$primaryColorLightS: 90% !default;
+$primaryColorLightL: 56% !default;
+$primaryColorDarkH: 201 !default;
+$primaryColorDarkS: 65% !default;
+$primaryColorDarkL: 62% !default;
+
+// 侧边栏
+$sidebarWidth: 320px !default;
+$sidebarPushBreakpoint: 1200px !default;
+
+// 页面最大宽度：由 postWidth / listWidth 推导（原 main.scss 末尾计算）
+$greaterWidth: $postWidth;
+@if $listWidth > $postWidth {
+    $greaterWidth: $listWidth;
+}
+$maxWidth: $fontSize * (strip-unit($greaterWidth) + 5);

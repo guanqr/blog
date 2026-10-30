@@ -1,12 +1,14 @@
+@use "../utils/deps" as *;
+
 .post-gitinfo {
     font-size: 0.7em;
     margin-top: 5rem;
     display: flex;
     justify-content: space-between;
-    color: alpha(var(--color-contrast-medium), 0.8);
+    color: alpha-color(var(--color-contrast-medium), 0.8);
     overflow: auto hidden;
     a {
-        color: alpha(var(--color-contrast-medium), 0.8);
+        color: alpha-color(var(--color-contrast-medium), 0.8);
         &:hover {
             color: var(--color-primary);
         }

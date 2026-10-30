@@ -1,7 +1,10 @@
+{{- /* 标准版 Hugo + 外部 Dart Sass（1.107 独立版，PATH 中需有 sass 命令）：
+       toCSS 依赖 extended 内置 LibSass，标准版不可用；dartsass 走 external binary，
+       与 MimoRee 构建链一致（2026-10-30） */ -}}
 {{- $path := (strings.TrimPrefix "/" (printf `%s/css/meme.min.css` .Site.LanguagePrefix)) -}}
-{{- $options := (dict "targetPath" $path "outputStyle" "compressed") -}}
+{{- $options := (dict "targetPath" $path "outputStyle" "compressed" "transpiler" "dartsass") -}}
 
-{{- $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate (printf "%s/styles/main-rendered.scss" .Lang) . | toCSS $options -}}
+{{- $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate (printf "%s/styles/main-rendered.scss" .Lang) . | css.Sass $options -}}
 {{- if .Site.Params.enableFingerprint -}}
     {{- $style = $style | resources.Fingerprint -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}"

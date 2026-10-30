@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 @if ($enableSmoothScroll) {
     html {
         scroll-behavior: smooth;
@@ -95,7 +97,7 @@ a {
 }
 
 ::selection {
-    background-color: alpha(var(--color-primary), 0.3);
+    background-color: alpha-color(var(--color-primary), 0.3);
 }
 
 // ============================================================

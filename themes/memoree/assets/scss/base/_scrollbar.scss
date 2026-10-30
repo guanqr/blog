@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 ::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
@@ -8,10 +10,10 @@
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-contrast-low);
   &:hover {
-      background-color: alpha(var(--color-primary), 0.5);
+      background-color: alpha-color(var(--color-primary), 0.5);
   }
   &:active {
-      background-color: alpha(var(--color-primary), 0.75);
+      background-color: alpha-color(var(--color-primary), 0.75);
   }
 }
 ::-webkit-scrollbar-corner {

@@ -1,0 +1,5 @@
+@use "../utils/deps" as *;
+
+:root {
+    --max-width: #{$maxWidth};
+}

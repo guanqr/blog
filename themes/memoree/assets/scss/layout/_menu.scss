@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 .nav {
     z-index: var(--z-header);
     position: relative;

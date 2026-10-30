@@ -2,8 +2,10 @@
  * Service Worker（策略参考 MimoRee、按本站裁剪）：
  * - 页面导航（HTML）：NetworkFirst → 运行时缓存回退 → 预缓存首页回退
  *   （离线打开任意链接至少看到站点首页）
- * - /css/ /js/ 哈希产物、/fonts/ /icons/：Stale-While-Revalidate
- *   （缓存即用、后台更新——内容随 URL 哈希不可变，不会陈旧）
+ * - 指纹 JS/CSS（文件名含 .hex. 段）：Stale-While-Revalidate
+ *   （缓存即用、后台更新——内容随 URL 哈希不可变，不会陈旧）；
+ *   未指纹 JS/CSS 与 /fonts/ /icons/ 走 NetworkFirst（同名替换后
+ *   首访不会回退旧缓存）
  * - 其余同源 GET：NetworkFirst 入运行时缓存
  * - 跨域（OSS 图片、CDN 字体）与非 GET 不拦截；Range 请求直接放行网络
  * - 版本号由构建时间自动注入（service-worker.html 的 ExecuteAsTemplate，
@@ -42,6 +44,9 @@ self.addEventListener('activate', (event) => {
         .filter((k) => k.startsWith('memoree-') && k !== SHELL_CACHE && k !== RUNTIME)
         .map((k) => caches.delete(k))
     )
+    // 旧版 SW 使用无版本的通用 runtime 缓存，不在 memoree-* 清理范围；
+    // 新版不使用该缓存，activate 时一并删除（2026-10-31）
+    await caches.delete('runtime')
     // 运行时缓存条目上限（防长期使用撑爆配额；按 keys 序淘汰最旧）
     try {
       const cache = await runtimeCache
@@ -65,6 +70,10 @@ self.addEventListener('fetch', (event) => {
   if (request.headers.has('range')) return
   const isNavigation = request.mode === 'navigate'
   const isHashed = /^\/(css|js|fonts|icons)\//.test(url.pathname)
+  // 仅指纹文件走 SWR：生产 bundle/style 带内容哈希，内容不可变；
+  // 无指纹的 JS/CSS（instantpage/medium-zoom）与 /fonts/ /icons/ 走
+  // NetworkFirst，避免同名替换后首访命中旧缓存（2026-10-31）
+  const isFingerprinted = /\.[a-f0-9]{8,}\./.test(url.pathname)
   // 缓存键去查询串：?y=/?p= 等客户端状态参数服务端返回同一份 HTML——
   // 旧版本按完整 URL 写入的条目不再命中（一次性离线回退损失，超限自动裁剪回收）
   const cacheKey = url.search && !isHashed
@@ -74,10 +83,10 @@ self.addEventListener('fetch', (event) => {
   event.respondWith((async () => {
     const cache = await runtimeCache
 
-    // 哈希产物/字体/图标：SWR——缓存即用、后台更新。
+    // 指纹 JS/CSS：SWR——缓存即用、后台更新。
     // 单次 fetch 共享：未命中时返回同一个 promise（后台写缓存与响应共用），
     // 避免冷缓存时同一 URL 并发两次请求
-    if (isHashed) {
+    if (isHashed && isFingerprinted) {
       const cachedResponse = await cache.match(request)
       const network = fetch(request)
         .then((res) => {

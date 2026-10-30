@@ -1,4 +1,27 @@
-// Waline 评论：全局函数
+// Waline 评论：按页面标记延迟初始化
+import { enableComments, autoLoadComments, waline } from '@params';
+
+export function initComments() {
+    if (!enableComments) return;
+
+    if (autoLoadComments) {
+        if (document.getElementById('waline')) {
+            loadComments();
+        }
+        return;
+    }
+
+    // 初始页面的加载按钮
+    const commentsToggle = document.getElementById('load-comments');
+
+    if (commentsToggle !== null) {
+        commentsToggle.addEventListener('click', function () {
+            loadComments();
+            this.style = 'display: none';
+        });
+    }
+}
+
 function loadComments() {
     if (!document.getElementById('waline')) return;
     // lazy-load CSS
@@ -9,49 +32,26 @@ function loadComments() {
         css.href = 'https://unpkg.com/@waline/client@3/dist/waline.css';
         document.head.appendChild(css);
     }
-    newWaline();
+    newWaline().catch((error) => console.error(error));
 }
 
 async function newWaline() {
     const { init } = await import('https://unpkg.com/@waline/client@3/dist/waline.js');
-    var locale = {
-        nick: "{{ i18n "waline_nick" }}",
-        mail: "{{ i18n "waline_mail" }}",
-        placeholder: "{{ i18n "waline_placeholder" }}"
-    };
     init({
         el: '#waline',
-        serverURL: '{{ .Site.Params.walineServerURL }}',
-        lang: '{{ .Site.Params.walineLang }}',
-        locale: locale,
-        emoji: {{ .Site.Params.walineEmoji | jsonify }},
+        serverURL: waline.serverURL,
+        lang: waline.lang,
+        locale: waline.locale,
+        emoji: waline.emoji,
         dark: 'html[data-theme="dark"]',
-        commentSorting: '{{ .Site.Params.walineCommentSorting }}',
-        meta: {{ .Site.Params.walineMeta | jsonify }},
-        requiredMeta: {{ .Site.Params.walineRequiredMeta | jsonify }},
-        login: '{{ .Site.Params.walineLogin }}',
-        pageSize: {{ .Site.Params.walinePageSize }},
-        imageUploader: {{ .Site.Params.walineImageUploader }},
-        highlighter: {{ .Site.Params.walineHighlighter }},
-        search: {{ .Site.Params.walineSearch }},
-        copyright: {{ .Site.Params.walineCopyright }}
+        commentSorting: waline.commentSorting,
+        meta: waline.meta,
+        requiredMeta: waline.requiredMeta,
+        login: waline.login,
+        pageSize: waline.pageSize,
+        imageUploader: waline.imageUploader,
+        highlighter: waline.highlighter,
+        search: waline.search,
+        copyright: waline.copyright
     });
 }
-
-window.addEventListener("DOMContentLoaded", event => {
-    {{ if .Site.Params.autoLoadComments }}
-        if (document.getElementById('waline')) {
-            loadComments();
-        }
-    {{ else }}
-        // 初始页面的加载按钮
-        const commentsToggle = document.getElementById('load-comments');
-
-        if (commentsToggle !== null) {
-            commentsToggle.addEventListener('click', function () {
-                loadComments();
-                this.style = "display: none";
-            });
-        }
-    {{  end }}
-}, {once: true});

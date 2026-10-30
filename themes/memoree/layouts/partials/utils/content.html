@@ -106,20 +106,21 @@
 {{- end -}}
 
 <!-- Image & Video Footnote -->
-{{- $regexPatternFootnoteImage := `(<sup)(.+</sup><(img|video))` -}}
+{{- $regexPatternFootnoteImage := `(<sup)(.+</sup><(picture|img|video))` -}}
 {{- $regexReplacementFootnoteImage := `$1 style="float:right"$2` -}}
 {{- $Content = $Content | replaceRE $regexPatternFootnoteImage $regexReplacementFootnoteImage -}}
 
 <!-- Image & Video Caption -->
 {{- if .Site.Params.enableCaption -}}
     {{- $captionPrefix := .Site.Params.captionPrefix -}}
-    {{- $regexPatternCaption := `(<(img|video).+) title="([^"]+)"( controls)?( />|>)(</video>)?` -}}
+    {{- /* 图片 caption 已由 _markup/render-image.html 生成，这里只处理视频 */ -}}
+    {{- $regexPatternCaption := `(<(video).+) title="([^"]+)"( controls)?( />|>)(</video>)?` -}}
     {{- $regexReplacementCaption := (printf `$1$4$5$6<span class="caption">%s$3</span>` $captionPrefix) -}}
     {{- $Content = $Content | replaceRE $regexPatternCaption $regexReplacementCaption -}}
 {{- end -}}
 
 <!-- Image Hosting -->
-{{- if and .Site.Params.enableImageHost (eq hugo.Environment "production") -}}
+{{- if and .Site.Params.enableImageHost (or (eq hugo.Environment "production") .Site.Params.previewOSS) -}}
     {{- $hostURL := strings.TrimSuffix "/" .Site.Params.imageHostURL -}}
     {{- $temps := findRE `<(img)\s+[^>]*?src="/?([^":]+)` $Content | uniq -}}
     {{- with $temps -}}

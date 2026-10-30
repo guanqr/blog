@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 // 行号配色与明暗主题无关：从 themes/_light/_dark 上移到本共享文件
 // （随 enableHighlight 条件导入，与原 @if ($enableHighlight) 生效条件一致）
 :root {

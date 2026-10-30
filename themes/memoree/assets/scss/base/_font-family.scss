@@ -1,26 +1,27 @@
 // ============================================================
 // 字体家族映射（由 config.toml 的 fontFamily* 参数驱动）
 // ============================================================
+@use "../utils/deps" as *;
 
-@if variable-exists("fontFamilySiteBrand") {
+@if $fontFamilySiteBrand != null {
     .site-brand {
         font-family: $fontFamilySiteBrand;
     }
 }
 
-@if variable-exists("fontFamilyMenu") {
+@if $fontFamilyMenu != null {
     .menu {
         font-family: $fontFamilyMenu;
     }
 }
 
-@if variable-exists("fontFamilyTitle") {
+@if $fontFamilyTitle != null {
     .list-title, .term-title, .list-year, .list-month, .post-title, .post-subtitle, .related-title, .post-nav, thead, dt {
         font-family: $fontFamilyTitle;
     }
 }
 
-@if variable-exists("fontFamilyHeadings") {
+@if $fontFamilyHeadings != null {
     .post-body,
     .summary {
         h1, h2, h3, h4, h5, h6 {
@@ -29,37 +30,37 @@
     }
 }
 
-@if variable-exists("fontFamilyCode") {
+@if $fontFamilyCode != null {
     code, pre, sup, .post-gitinfo, .minimal-footer-about, .copy-button {
         font-family: $fontFamilyCode;
     }
 }
 
-@if variable-exists("fontFamilyQuote") {
+@if $fontFamilyQuote != null {
     blockquote {
         font-family: $fontFamilyQuote;
     }
 }
 
-@if variable-exists("fontFamilyCaption") {
+@if $fontFamilyCaption != null {
     .caption {
         font-family: $fontFamilyCaption;
     }
 }
 
-@if variable-exists("fontFamilyFooter") {
+@if $fontFamilyFooter != null {
     .footer {
         font-family: $fontFamilyFooter;
     }
 }
 
-@if variable-exists("fontFamilyBody") {
+@if $fontFamilyBody != null {
     body {
         font-family: $fontFamilyBody;
     }
 }
 
-@if variable-exists("fontFamilyStrong") {
+@if $fontFamilyStrong != null {
     strong {
         font-family: $fontFamilyStrong;
     }
@@ -94,7 +95,7 @@ body {
 // 标注字体应用
 // ============================================================
 
-@if variable-exists("fontFamilyGlyph") {
+@if $fontFamilyGlyph != null {
     .post-meta {
         font-family: $fontFamilyGlyph;
     }
@@ -110,7 +111,7 @@ body {
     }
 }
 
-@if variable-exists("fontFamilyBody") {
+@if $fontFamilyBody != null {
     .emphasis-point {
         font-family: $fontFamilyBody;
     }

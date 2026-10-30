@@ -1,6 +1,7 @@
 // ============================================================
 // 书单页面
 // ============================================================
+@use "../utils/deps" as *;
 
 .book-list {
     margin: 1.5em 0;
@@ -51,7 +52,7 @@
 
 .book-meta {
     font-size: 0.9em;
-    @if variable-exists("fontFamilyGlyph") {
+    @if $fontFamilyGlyph != null {
         font-family: $fontFamilyGlyph;
     }
     margin-left: 0.6em;

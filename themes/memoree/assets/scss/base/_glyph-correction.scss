@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 @font-face {
     font-family: 'glyph-correction';
     src: url('#{$baseRelURL}/fonts/glyph-correction.woff2') format('woff2');
@@ -6,4 +8,9 @@
     font-weight: inherit;
     // Middle dot, em dash, bullet, and ellipsis
     unicode-range: U+00B7, U+2014, U+2022, U+2026;
+}
+
+// zh-cn 的字形校正需要轻微下移首字下沉（原 main.scss 内联规则）
+.drop-cap {
+    margin-top: 1rem !important;
 }

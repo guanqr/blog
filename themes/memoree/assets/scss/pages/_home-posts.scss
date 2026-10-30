@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 article.content.post.home {
     margin-top: $postBlockGap;
 }

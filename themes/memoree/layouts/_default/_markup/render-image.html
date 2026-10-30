@@ -1,0 +1,67 @@
+{{/*
+  正文图片渲染钩子：生产环境 + 图床开启时输出 AVIF/WebP <picture>，
+  原图作为 <img> 兜底；有尺寸表时再叠一层 OSS 低清模糊占位（LQIP），
+  主图加载完成经 is-loaded 做 opacity 渐变。GIF/SVG、外链与开发环境
+  只输出普通 <img>。caption 在此生成，旧 utils/content.html 的 caption
+  正则已收窄为视频（避免重复插入）。
+*/}}
+{{- $dest := .Destination -}}
+{{- $alt := .Text | plainify -}}
+{{- $title := .Title -}}
+{{- $page := .Page -}}
+{{- $site := $page.Site -}}
+{{- $ext := lower (path.Ext $dest) -}}
+{{- $raster := in (slice ".jpg" ".jpeg" ".png") $ext -}}
+{{- $remote := or (strings.HasPrefix $dest "http") (strings.HasPrefix $dest "//") -}}
+{{- $useCDN := and (not $remote) $site.Params.enableImageHost $site.Params.imageHostURL (or (eq hugo.Environment "production") $site.Params.previewOSS) -}}
+{{- $quality := $site.Params.imageQuality | default 85 -}}
+{{- $isMicro := eq $page.Section "micro" -}}
+{{- $base := partial "utils/img-url.html" (dict "page" $page "src" $dest) -}}
+
+{{/* 尺寸表用于 LQIP 布局；缺条目时仍走 AVIF/WebP + 原生懒加载 */}}
+{{- $dims := dict -}}
+{{- with hugo.Data.image_dimensions -}}
+    {{- $key := $dest -}}
+    {{- if not (hasPrefix $key "/") -}}
+        {{- $key = printf "/%s" $key -}}
+    {{- end -}}
+    {{- with index . $key -}}
+        {{- $dims = . -}}
+    {{- end -}}
+{{- end -}}
+{{- $w := 0 -}}
+{{- $h := 0 -}}
+{{- with $dims -}}
+    {{- $w = .width -}}
+    {{- $h = .height -}}
+{{- end -}}
+
+{{- if and $raster $useCDN (not $isMicro) (gt $w 0) (gt $h 0) -}}
+    {{- $avif := partial "utils/img-url.html" (dict "page" $page "src" $dest "format" "avif" "quality" $quality) -}}
+    {{- $webp := partial "utils/img-url.html" (dict "page" $page "src" $dest "format" "webp" "quality" $quality) -}}
+    {{- $lqipWidth := $site.Params.imagePlaceholderWidth | default 64 -}}
+    {{- $lqipQuality := $site.Params.imagePlaceholderQuality | default 30 -}}
+    {{- $lqipBlur := $site.Params.imagePlaceholderBlur | default 3 -}}
+    {{- $lqip := partial "utils/img-url.html" (dict "page" $page "src" $dest "format" "webp" "quality" $lqipQuality "width" $lqipWidth "blur" $lqipBlur) -}}
+<span class="post-img">
+    <picture class="post-img-main">
+        <source data-srcset="{{ $avif }}" type="image/avif">
+        <source data-srcset="{{ $webp }}" type="image/webp">
+        <img data-src="{{ $base }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} width="{{ $w }}" height="{{ $h }}" decoding="async">
+    </picture>
+    <img class="post-img-lqip" src="{{ $lqip }}" alt="" aria-hidden="true" decoding="async">
+</span>
+{{- else if and $raster $useCDN -}}
+    {{- $avif := partial "utils/img-url.html" (dict "page" $page "src" $dest "format" "avif" "quality" $quality) -}}
+    {{- $webp := partial "utils/img-url.html" (dict "page" $page "src" $dest "format" "webp" "quality" $quality) -}}
+<picture>
+    <source srcset="{{ $avif }}" type="image/avif">
+    <source srcset="{{ $webp }}" type="image/webp">
+    <img src="{{ $base }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+</picture>
+{{- else -}}
+<img src="{{ $base }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- end -}}
+{{- if and $site.Params.enableCaption $title -}}
+<span class="caption">{{ $site.Params.captionPrefix }}{{ $title }}</span>
+{{- end -}}

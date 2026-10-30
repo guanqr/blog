@@ -1,10 +1,12 @@
+@use "../utils/deps" as *;
+
 .post-copyright {
     margin: 0;
     list-style: none;
     margin-top: $postBlockGap !important;
     padding: 0.5em 1em;
-    background-color: alpha(var(--color-contrast-lower), 0.5);
-    border-left: 3px solid alpha(var(--color-primary), 0.5);
+    background-color: alpha-color(var(--color-contrast-lower), 0.5);
+    border-left: 3px solid alpha-color(var(--color-primary), 0.5);
     line-height: 2;
 }
 

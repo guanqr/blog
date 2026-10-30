@@ -18,6 +18,8 @@ memoree 是 [Guanqr](https://guanqr.com/) 使用的个人 Hugo 主题，基于 [
 - 标签云、生肖年份图标、相关文章
 - KaTeX / MathJax / Mermaid 公式与图表（按文章开启）
 - Waline 评论、代码块复制、medium-zoom 图片缩放、instant.page 预加载
+- 正文图片 AVIF/WebP、OSS 64px 模糊占位（LQIP）与淡入、IntersectionObserver 懒加载
+- 字体/CDN/OSS 预连接、本地字形字体与字体 CSS 预加载
 - 9 个自定义短码：`align`、`blogroll`、`book-list`、`github`、`identity-cards`、`notice`、`quote-center`、`quote`、`simple-notice`
 - 中文排版：段首缩排、两端对齐、首字下沉、着重号（`..文本..`）、中文标点字形纠正、文章时效性提醒
 - 自定义 Atom / RSS 输出、图片外链重写、Service Worker
@@ -28,8 +30,8 @@ memoree 是 [Guanqr](https://guanqr.com/) 使用的个人 Hugo 主题，基于 [
 memoree/
 ├── archetypes/         # 文章与微动态模板
 ├── assets/
-│   ├── js/             # 深色模式、侧边栏、代码复制等脚本
-│   └── scss/           # main.scss 注入配置变量；按 base/components/layout/pages/themes/utils 分层
+│   ├── js/             # ES 模块入口与页面模块（js.Build 打包）
+│   └── scss/           # config 默认值 + @use 模块；按 base/components/layout/pages/themes/utils 分层
 ├── data/
 │   ├── SVG.toml        # 图标
 │   └── ChineseZodiac.toml  # 生肖
@@ -40,7 +42,7 @@ memoree/
 
 ## 使用
 
-主题随[本站仓库](https://github.com/guanqr/blog)的 `themes/memoree/` 目录维护，站点配置 `theme = "memoree"` 即可。需 Hugo extended（SCSS 由 Hugo 编译，无 npm 构建步骤），版本 >= 0.164.0。
+主题随[本站仓库](https://github.com/guanqr/blog)的 `themes/memoree/` 目录维护，站点配置 `theme = "memoree"` 即可。需 Hugo 标准版 >= 0.164.0 + Dart Sass 1.107.0 独立版（`sass` 在 PATH 中；无 npm 构建步骤）。
 
 ## 许可证
 

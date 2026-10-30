@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 .header {
     z-index: var(--z-header);
     position: fixed;

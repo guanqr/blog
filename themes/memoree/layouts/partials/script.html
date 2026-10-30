@@ -1,51 +1,57 @@
-{{- $scripts := slice "js/utils.js" -}}
-
-{{- if and .Site.Params.enableForceHTTPS (eq hugo.Environment "production") -}}
-    {{- $scripts = $scripts | append "js/force-https.js" -}}
+{{- /* JS 统一走 js.Build（esbuild）ES 模块入口：模板值与 i18n 经 params
+       注入，功能开关在 main.js 内按 params 守卫；sw.js 与 instant.page 保持独立。
+       2026-10-30 自 resources.Concat + Minify 迁移。 */ -}}
+{{- $enableComments := and .Site.Params.enableComments (eq hugo.Environment "production") -}}
+{{- $enableForceHTTPS := and .Site.Params.enableForceHTTPS (eq hugo.Environment "production") -}}
+{{- $waline := dict
+    "serverURL" (.Site.Params.walineServerURL | default "")
+    "lang" (.Site.Params.walineLang | default "zh-TW")
+    "emoji" (.Site.Params.walineEmoji | default slice)
+    "commentSorting" (.Site.Params.walineCommentSorting | default "latest")
+    "meta" (.Site.Params.walineMeta | default slice)
+    "requiredMeta" (.Site.Params.walineRequiredMeta | default slice)
+    "login" (.Site.Params.walineLogin | default "enabled")
+    "pageSize" (.Site.Params.walinePageSize | default 10)
+    "imageUploader" (.Site.Params.walineImageUploader)
+    "highlighter" (.Site.Params.walineHighlighter)
+    "search" (.Site.Params.walineSearch)
+    "copyright" (.Site.Params.walineCopyright)
+    "locale" (dict
+        "nick" (i18n "waline_nick")
+        "mail" (i18n "waline_mail")
+        "placeholder" (i18n "waline_placeholder"))
+-}}
+{{- $params := dict
+    "enableForceHTTPS" $enableForceHTTPS
+    "siteHost" ((urls.Parse .Site.BaseURL).Host)
+    "enableHeader" (.Site.Params.enableHeader)
+    "enableHeaderAutoHide" (.Site.Params.enableHeaderAutoHide)
+    "enableNavToggle" (.Site.Params.enableNavToggle)
+    "enableBackToTopAutoHide" (.Site.Params.enableBackToTopAutoHide)
+    "enableDarkMode" (.Site.Params.enableDarkMode)
+    "defaultTheme" (.Site.Params.defaultTheme | default "light")
+    "themeColors" (partial "utils/theme-colors.html" .)
+    "enableCopy" (.Site.Params.enableCopy)
+    "enableCopyAutoHide" (.Site.Params.enableCopyAutoHide)
+    "copyText" (i18n "copy")
+    "copiedText" (i18n "copied")
+    "copyIcon" (partial "utils/icon.html" (dict "name" "clipboard"))
+    "checkIcon" (partial "utils/icon.html" (dict "name" "check"))
+    "clipboardSrc" (partial "utils/lib.html" (dict "page" . "type" "clipboard"))
+    "enableComments" $enableComments
+    "autoLoadComments" (.Site.Params.autoLoadComments)
+    "waline" $waline
+    "enableMediumZoom" (.Site.Params.enableMediumZoom)
+-}}
+{{- $path := (strings.TrimPrefix "/" (printf `%s/js/meme.min.js` .Site.LanguagePrefix)) -}}
+{{- $options := dict "targetPath" $path "params" $params -}}
+{{- if hugo.IsProduction -}}
+    {{- $options = merge $options (dict "minify" true) -}}
 {{- end -}}
-
-{{- if .Site.Params.enableHeader -}}
-    {{- $scripts = $scripts | append "js/header.js" -}}
-
-    {{- if .Site.Params.enableNavToggle -}}
-        {{- $scripts = $scripts | append "js/nav-toggle.js" -}}
-    {{- end -}}
-{{- end -}}
-
-{{- if .Site.Params.enableBackToTopAutoHide -}}
-    {{- $scripts = $scripts | append "js/back-to-top.js" -}}
-{{- end -}}
-
-{{- if .Site.Params.enableDarkMode -}}
-    {{- $scripts = $scripts | append "js/dark-mode.js" -}}
-{{- end -}}
-
-{{- if .Site.Params.enableCopy -}}
-    {{- $scripts = $scripts | append "js/copy.js" -}}
-{{- end -}}
-
-{{- if and .Site.Params.enableComments (eq hugo.Environment "production") -}}
-    {{- $scripts = $scripts | append "js/comments.js" -}}
-{{- end -}}
-
-{{- $scripts = $scripts | append "js/resize-freeze.js" -}}
-
-{{- $scripts = $scripts | append "js/sidebar.js" -}}
-
-{{- $processedScripts := slice ("" | resources.FromString "dummy.js") -}}
-{{- range $scripts -}}
-    {{- $path := printf "%s/%s" $.Lang (. | replaceRE `\.js$` "-rendered.js") -}}
-    {{- $processedScripts = $processedScripts | append (resources.Get . | resources.ExecuteAsTemplate $path $) -}}
-{{- end -}}
-
-{{- $path := (strings.TrimPrefix "/" (printf `%s/js/meme.js` .Site.LanguagePrefix)) -}}
-
-{{- $script := $processedScripts | resources.Concat $path | resources.Minify -}}
+{{- $script := resources.Get "js/main.js" | js.Build $options -}}
 {{- if .Site.Params.enableFingerprint -}}
     {{- $script = $script | resources.Fingerprint -}}
-    <script src="{{ $script.RelPermalink }}" defer
-    {{- if .Site.Params.enableSRI }} integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"{{- end -}}
-    ></script>
-{{- else -}}
-    <script src="{{ $script.RelPermalink }}" defer></script>
-{{- end }}
+{{- end -}}
+<script src="{{ $script.RelPermalink }}" defer
+{{- if and .Site.Params.enableSRI $script.Data.Integrity }} integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"{{- end -}}
+></script>

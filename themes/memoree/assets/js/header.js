@@ -1,43 +1,34 @@
-window.addEventListener(
-  'DOMContentLoaded',
-  (event) => {
-    /**
-     * Measure header height for the scrolling fix
-     */
-    const header = document.querySelector('.header');
+import { throttle, delayTime } from './utils.js';
+import { enableHeader, enableHeaderAutoHide } from '@params';
 
-    if (header) {
-      const headerHeight = window
+// 顶栏高度测量与自动隐藏（全局模块，DOMContentLoaded 后执行一次）
+export function initHeader() {
+    if (!enableHeader) return;
+
+    const header = document.querySelector('.header');
+    if (!header) return;
+
+    const headerHeight = window
         .getComputedStyle(header, null)
         .getPropertyValue('height');
 
-      document.documentElement.style.setProperty(
-        '--header-height',
-        headerHeight
-      );
+    document.documentElement.style.setProperty('--header-height', headerHeight);
 
-      {{ if .Site.Params.enableHeaderAutoHide }}
-      /**
-       * Auto hide header
-       */
-      let lastScrollY = 0;
+    if (!enableHeaderAutoHide) return;
 
-      window.addEventListener(
+    let lastScrollY = 0;
+
+    window.addEventListener(
         'scroll',
         throttle(() => {
-          // Don't hide if page content is shorter than viewport + header
-          if (document.body.scrollHeight <= window.innerHeight + header.clientHeight) return;
+            // 页面内容短于视口 + 顶栏时不隐藏
+            if (document.body.scrollHeight <= window.innerHeight + header.clientHeight) return;
 
-          window.scrollY > lastScrollY
-            ? header.classList.add('hide')
-            : header.classList.remove('hide');
+            window.scrollY > lastScrollY
+                ? header.classList.add('hide')
+                : header.classList.remove('hide');
 
-          lastScrollY = window.scrollY;
+            lastScrollY = window.scrollY;
         }, delayTime)
-      );
-
-      {{ end }}
-    }
-  },
-  { once: true }
-);
+    );
+}

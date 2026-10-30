@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 .copy-button {
     @extend %icon-button;
     position: absolute;

@@ -47,6 +47,25 @@
 
     <title>{{ (partial "utils/title.html" (dict "page" . "title" .Title)).title }}</title>
 
+    <!-- Resource hints -->
+    {{- if .Site.Params.fontsLink }}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="{{ .Site.Params.fontsLink }}" as="style" />
+    {{- end }}
+    {{- if .Site.Params.customFontsLink }}
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preload" href="{{ .Site.Params.customFontsLink }}" as="style" />
+    {{- end }}
+    {{- if .Site.Params.enableChinesePunctuationGlyphCorrection }}
+    <link rel="preload" href="{{ "/fonts/glyph-correction.woff2" | relURL }}" as="font" type="font/woff2" crossorigin />
+    {{- end }}
+    {{- if and .Site.Params.enableImageHost (or (eq hugo.Environment "production") .Site.Params.previewOSS) }}
+    {{- with .Site.Params.imageHostURL }}
+    <link rel="preconnect" href="{{ . }}" />
+    {{- end }}
+    {{- end }}
+
     <!-- CSS -->
     {{- /* 产物只依赖站点配置与语言：variant 带上语言，避免单语言假设写死
            （多语言站点下固定 variant 会跨语言复用首个语言的样式表） */ -}}
@@ -61,14 +80,10 @@
 
     <!-- Fonts -->
     {{- with .Site.Params.fontsLink -}}
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
         <link rel="stylesheet" href="{{ . }}" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="{{ . }}" /></noscript>
     {{- end }}
     {{- with .Site.Params.customFontsLink -}}
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-
         <link rel="stylesheet" href="{{ . }}" media="print" onload="this.media='all'" />
     {{- end }}
 

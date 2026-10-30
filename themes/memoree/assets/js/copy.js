@@ -1,16 +1,20 @@
-{{ $src := partial "utils/lib.html" (dict "page" . "type" "clipboard") }}
-
 // Copy Button for Code Blocks
+import {
+    enableCopy,
+    enableCopyAutoHide,
+    copyText,
+    copiedText,
+    copyIcon,
+    checkIcon,
+    clipboardSrc
+} from '@params';
 
 // References
 // 1. https://tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/
 // 2. https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/
 
-function initCopyButtons() {
-    const copyText = '{{ i18n "copy" }}';
-    const copiedText = '{{ i18n "copied" }}';
-    const copyIcon = '{{ partial "utils/icon.html" (dict "name" "clipboard") }}';
-    const checkIcon = '{{ partial "utils/icon.html" (dict "name" "check") }}';
+export function initCopyButtons() {
+    if (!enableCopy) return;
 
     // 无语言的裸代码块包一层 .highlight：
     // 统一外边距规则，并作为复制按钮的绝对定位锚点
@@ -72,7 +76,7 @@ function initCopyButtons() {
 
             root.appendChild(button);
 
-            {{ if .Site.Params.enableCopyAutoHide }}
+            if (enableCopyAutoHide) {
                 root.addEventListener('mouseover', () => {
                     button.style = 'visibility: visible; opacity: 1';
                 });
@@ -80,7 +84,7 @@ function initCopyButtons() {
                 root.addEventListener('mouseout', () => {
                     button.style = 'visibility: hidden; opacity: 0';
                 });
-            {{ end }}
+            }
         });
     }
 
@@ -90,7 +94,7 @@ function initCopyButtons() {
         addCopyButtons(clipboard);
     } else {
         const script = document.createElement('script');
-        script.src = '{{ $src }}';
+        script.src = clipboardSrc;
         script.onload = function() {
             addCopyButtons(clipboard);
         };
@@ -102,5 +106,3 @@ function initCopyButtons() {
         document.head.appendChild(script);
     }
 }
-
-window.addEventListener("DOMContentLoaded", initCopyButtons, { once: true });

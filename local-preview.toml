@@ -1,0 +1,6 @@
+# 本地预览正文 OSS 图片（AVIF/WebP + LQIP）：
+#   hugo serve --config hugo.toml,local-preview.toml
+# 开启 previewOSS 后 development 环境也走 imageHostURL；用 http://localhost:1313/ 访问。
+# 仅限本地使用，CI/生产保持 false。
+[params]
+    previewOSS = true

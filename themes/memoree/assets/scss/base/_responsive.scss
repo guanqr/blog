@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 @media (max-width: $maxWidth) {
     .main-inner {
         width: auto !important;

@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 .load-comments {
     margin-top: 5em;
     text-align: center;
@@ -11,7 +13,7 @@
     border-radius: 0.5em;
     transition: background-color $duration;
     &:hover {
-        background-color: alpha(var(--color-primary), 0.3);
+        background-color: alpha-color(var(--color-primary), 0.3);
     }
 }
 

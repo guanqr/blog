@@ -1,24 +1,26 @@
-window.addEventListener("DOMContentLoaded", event => {
+import { throttle, delayTime } from './utils.js';
+
+// 窄屏导航开关（全局模块，DOMContentLoaded 后执行一次）
+export function initNavToggle() {
     // Create nav toggle icon
-
     const navToggleLabel = document.querySelector('.nav-toggle');
-    const navToggleLabelInner = document.createElement('div');
+    if (!navToggleLabel) return;
 
+    const navToggleLabelInner = document.createElement('div');
     navToggleLabelInner.className = 'nav-toggle-inner';
     navToggleLabel.appendChild(navToggleLabelInner);
 
     for (let i = 0; i < 3; i++) {
         const span = document.createElement('span');
-
         navToggleLabelInner.appendChild(span);
     }
 
-
     // Main function
-
     const navToggle = document.getElementById('nav-toggle');
     const header = document.querySelector('.header');
     const navCurtain = document.querySelector('.nav-curtain');
+
+    if (!navToggle || !header || !navCurtain) return;
 
     navToggle.addEventListener('change', (e) => {
         if (e.target.checked) {
@@ -36,14 +38,10 @@ window.addEventListener("DOMContentLoaded", event => {
 
             // Cannot remove `display: block` immediately, or CSS animation
             // will failed. The workaround is down below.
-
-            // navCurtain.removeAttribute('style');
         }
     });
 
-
     // Fix animation failed caused by removing `display: block`
-
     navCurtain.addEventListener('animationend', (e) => {
         if (!navToggle.checked) {
             e.target.removeAttribute('style');
@@ -53,7 +51,6 @@ window.addEventListener("DOMContentLoaded", event => {
             header.classList.remove('fade');
         }
     });
-
 
     const maxWidth = window.getComputedStyle(document.documentElement, null).getPropertyValue('--max-width');
     let mediaQuery = window.matchMedia(`(max-width: ${maxWidth})`);
@@ -99,7 +96,6 @@ window.addEventListener("DOMContentLoaded", event => {
         attachScroll();
     }
 
-
     function checkInput() {
         closeNav();
     }
@@ -112,11 +108,11 @@ window.addEventListener("DOMContentLoaded", event => {
             navToggleLabel.classList.remove('open');
 
             if (noFade) {
-                navCurtain.removeAttribute("style");
+                navCurtain.removeAttribute('style');
             }
             else {
                 header.classList.add('fade');
             }
         }
     }
-}, {once: true});
+}

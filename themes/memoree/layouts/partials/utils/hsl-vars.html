@@ -1,5 +1,5 @@
 {{/*
-  把 "H, S%, L%" 形式的 HSL 值展开为 SCSS 变量声明（main.scss 配置注入用）
+  把 "H, S%, L%" 形式的 HSL 值展开为 main.scss @use ... with 列表中的逗号分隔分量
   参数：value（HSL 字符串）、prefix（变量名前缀）
   Usage:
     {{ partial "utils/hsl-vars.html" (dict "value" . "prefix" "primaryColorLight") }}
@@ -7,7 +7,7 @@
 {{- $prefix := .prefix -}}
 {{- $number := (split (replace .value "%" "") ", ") -}}
 {{- range $index, $v := $number -}}
-    {{- if eq $index 0 }}${{ $prefix }}H: {{ $v | int }};{{ end -}}
-    {{- if eq $index 1 }}${{ $prefix }}S: {{ $v | int }}%;{{ end -}}
-    {{- if eq $index 2 }}${{ $prefix }}L: {{ $v | int }}%;{{ end -}}
+    {{- if eq $index 0 -}}${{ $prefix }}H: {{ $v | int }}{{ end -}}
+    {{- if eq $index 1 -}}, ${{ $prefix }}S: {{ $v | int }}%{{ end -}}
+    {{- if eq $index 2 -}}, ${{ $prefix }}L: {{ $v | int }}%{{ end -}}
 {{- end -}}

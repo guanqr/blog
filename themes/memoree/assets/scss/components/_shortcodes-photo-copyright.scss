@@ -1,3 +1,5 @@
+@use "../utils/deps" as *;
+
 // ============================================================
 // 照片版权卡片 — photo-copyright 短代码
 // ============================================================
@@ -6,7 +8,7 @@
     margin: 2em 0;
     padding: 0.75em 1em;
     border: 1px solid var(--color-contrast-low);
-    background-color: alpha(var(--color-contrast-lower), 0.5);
+    background-color: alpha-color(var(--color-contrast-lower), 0.5);
     font-size: 0.9em;
     color: var(--color-contrast-medium);
     line-height: 1.8;

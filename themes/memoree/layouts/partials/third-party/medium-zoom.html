@@ -1,16 +1,4 @@
 {{/* medium-zoom 自托管（2026-10-18，v1.1.0，static/js/medium-zoom.min.js 含 MIT 许可证头）：
-     去除运行时对 jsDelivr 的依赖（与影集同款自托管做法） */}}
+     去除运行时对 jsDelivr 的依赖（与影集同款自托管做法）；初始化已移到
+     assets/js/medium-zoom-init.js（JS ES 模块入口统一调用） */}}
 <script src="{{ "/js/medium-zoom.min.js" | relURL }}"></script>
-
-<script>
-    function initMediumZoom() {
-        let imgNodes = document.querySelectorAll('div.post-body img');
-        imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
-
-        mediumZoom(imgNodes, {
-            background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
-        });
-    }
-
-    initMediumZoom();
-</script>

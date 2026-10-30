@@ -7,10 +7,25 @@
 <!-- https://gohugo.io/functions/replacere/ -->
 <!-- https://regex101.com/ -->
 {{- $imgs := slice -}}
+{{- $host := .Site.Params.imageHostURL | default "" -}}
 {{- if and .IsPage (in .Site.Params.mainSections .Section) -}}
-    {{- range (findRE `<img\s+[^>]*?src="/?([^"]+)` .Content | uniq) -}}
-        {{- $url := replaceRE `<img\s+[^>]*?src="/?([^"]+)` `$1` . -}}
-        {{- $imgs = union $imgs (slice $url) -}}
+    {{- range (findRE `<img\s+[^>]*?(src|data-src)="[^"]+"` .Content | uniq) -}}
+        {{- if not (strings.Contains . "post-img-lqip") -}}
+            {{- $url := "" -}}
+            {{- $match := findRE `data-src="([^"]+)"` . 1 -}}
+            {{- if $match -}}
+                {{- $url = replaceRE `data-src="([^"]+)"` `$1` (index $match 0) -}}
+            {{- else -}}
+                {{- $srcMatch := findRE `src="([^"]+)"` . 1 -}}
+                {{- with $srcMatch -}}
+                    {{- $url = replaceRE `src="([^"]+)"` `$1` (index . 0) -}}
+                {{- end -}}
+            {{- end -}}
+            {{- /* 只收站内相对路径与图床 URL；外链图片（如友链头像）不进 OG/JSON-LD */ -}}
+            {{- if or (not (hasPrefix $url "http")) (and $host (hasPrefix $url $host)) -}}
+                {{- $imgs = union $imgs (slice $url) -}}
+            {{- end -}}
+        {{- end -}}
     {{- end -}}
 {{- end -}}
 {{- return $imgs -}}

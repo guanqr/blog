@@ -19,21 +19,24 @@
 ├── themes/memoree/            # 自有主题（基于 MemE 修改，含 CHANGELOG）
 │   ├── layouts/               # 全部模板（含侧边栏、归档、微动态、9 个 shortcode）
 │   ├── assets/
-│   │   ├── js/                # dark-mode/header/sidebar 等脚本
-│   │   └── scss/              # 按功能分层：base/components/layout/pages/themes
+│   │   ├── js/                # ES 模块源码（js.Build 打包为单 bundle）
+│   │   └── scss/              # config 默认值 + @use 模块，按 base/components/layout/pages/themes 分层
 │   ├── i18n/                  # en / zh-hant（含站点定制键）
 │   ├── archetypes/            # 文章与微动态模板
 │   └── data/SVG.toml          # 图标（含站点新增图标）
 ├── data/                      # 站点结构化数据
 │   ├── booklist.toml          # 书单
 │   ├── identities.toml        # 身份标签
-│   └── blogroll.toml          # 友链
+│   ├── blogroll.toml          # 友链
+│   └── image_dimensions.json  # 正文图片尺寸表（LQIP，脚本生成）
 ├── content/zh/
 │   ├── archives/              # 归档（分页列表）
 │   ├── micro/                 # 微动态
 │   └── ...
+├── local-preview.toml         # 本地预览 OSS 图片的配置覆盖
 ├── scripts/
-│   └── upload-images.py       # OSS 图片上传
+│   ├── upload-images.py       # OSS 图片上传
+│   └── generate-image-dimensions.py  # 生成正文图片尺寸表（LQIP）
 ├── upload-images.bat          # 一键上传
 ├── .github/workflows/build.yml  # 推送即自动构建部署
 └── hugo.toml
@@ -41,12 +44,13 @@
 
 ## 本地运行
 
-需要 [Hugo extended](https://gohugo.io/installation/) ≥ 0.164.0（SCSS 由 Hugo 编译，无 npm 依赖）：
+需要 [Hugo 标准版](https://gohugo.io/installation/) ≥ 0.164.0 + [Dart Sass](https://sass-lang.com/dart-sass/) 1.107.0 独立版（把 `sass` 加入 PATH；CI 会自动下载，不需要 npm 构建链）：
 
 ```bash
 git clone https://github.com/guanqr/blog.git
 cd blog
-hugo serve        # 开发
+hugo serve        # 开发（正文图片走本地 static/images）
+hugo serve --config hugo.toml,local-preview.toml  # 预览 OSS 图片（打开 http://localhost:1313/；127.0.0.1 可能被 OSS 防盗链拒绝）
 hugo              # 构建（生产，输出至 public/）
 ```
 

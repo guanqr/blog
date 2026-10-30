@@ -1,7 +1,11 @@
+// 样式入口：站点参数先经 Hugo 模板注入 config/base 的 @use 配置，
+// 再按原顺序加载各 partial。2026-10-30 起由 LibSass 的 @import 全局变量
+// 迁移为 Dart Sass 模块（partial 经 utils/deps 共享配置与工具）。
 {{/* 标量配置注入表：名称 / 参数键 / 默认值 / 单位后缀——新增参数只改表一行；
      默认值仅兜底，站点值以 hugo.toml 为准；with 对 0 视为空的既有行为沿用
      （见 CLAUDE.md「Hugo 0.164 陷阱」） */}}
-{{ $scalarParams := slice
+{{- $config := slice -}}
+{{- $scalarParams := slice
     (dict "name" "fontSize" "param" "fontSize" "default" 16 "unit" "px")
     (dict "name" "tabSize" "param" "tabSize" "default" 4 "unit" "")
     (dict "name" "lineHeight" "param" "lineHeight" "default" 2 "unit" "")
@@ -12,360 +16,213 @@
     (dict "name" "postBlockGap" "param" "postBlockGap" "default" "5em" "unit" "")
     (dict "name" "postBlockItemWidth" "param" "postBlockItemWidth" "default" "42%" "unit" "")
     (dict "name" "radiusSm" "param" "radiusSm" "default" "3px" "unit" "")
-}}
-{{ range $p := $scalarParams }}
+-}}
+{{- range $p := $scalarParams -}}
     {{- with index $.Site.Params $p.param | default $p.default -}}
-        {{ printf "$%s: %v%s;" $p.name . $p.unit }}
+        {{- $config = $config | append (printf "$%s: %v%s" $p.name . $p.unit) -}}
     {{- end -}}
-{{ end }}
+{{- end -}}
 
-{{ if .Site.Params.enableHeaderAutoHide }}
-    $enableHeaderAutoHide: true;
-{{ else }}
-    $enableHeaderAutoHide: false;
-{{ end }}
+{{- $config = $config | append (printf "$enableHeaderAutoHide: %v" (cond .Site.Params.enableHeaderAutoHide true false)) -}}
+{{- if .Site.Params.enableNavToggle -}}
+    {{- $config = $config | append "$enableNavToggle: true" -}}
+    {{- with .Site.Params.navHeight | default "10em" -}}
+        {{- $config = $config | append (printf "$navHeight: %s" .) -}}
+    {{- end -}}
+{{- else -}}
+    {{- $config = $config | append "$enableNavToggle: false" -}}
+{{- end -}}
+{{- $config = $config | append (printf "$displayBackToTopOnMobile: %v" (cond .Site.Params.displayBackToTopOnMobile true false)) -}}
+{{- $config = $config | append (printf "$enableCopy: %v" (cond .Site.Params.enableCopy true false)) -}}
+{{- $config = $config | append (printf "$enableCopyAutoHide: %v" (cond .Site.Params.enableCopyAutoHide true false)) -}}
+{{- $config = $config | append (printf "$enableSmoothScroll: %v" (cond .Site.Params.enableSmoothScroll true false)) -}}
+{{- $config = $config | append (printf "$baseRelURL: \"%s\"" ("" | relURL | strings.TrimSuffix "/")) -}}
 
-{{ if .Site.Params.enableNavToggle }}
-    $enableNavToggle: true;
+{{- $glyph := cond .Site.Params.enableChinesePunctuationGlyphCorrection "'glyph-correction', " "" -}}
+{{- range $name := slice "SiteBrand" "Menu" "Title" "Headings" "Code" "Quote" "Caption" "Footer" "Body" "Glyph" "Strong" -}}
+    {{- with index $.Site.Params (printf "fontFamily%s" $name) -}}
+        {{- $config = $config | append (printf "$fontFamily%s: (%s%s)" $name $glyph .) -}}
+    {{- end -}}
+{{- end -}}
 
-    {{ with .Site.Params.navHeight | default "10em" }}
-        $navHeight: {{ . }};
-    {{ end }}
-{{ else }}
-    $enableNavToggle: false;
-{{ end }}
+{{- with .Site.Params.primaryColorLight | default "220, 90%, 56%" -}}
+    {{- $config = $config | append (partial "utils/hsl-vars.html" (dict "value" . "prefix" "primaryColorLight")) -}}
+{{- end -}}
+{{- if and .Site.Params.enableDarkMode (eq .Site.Params.defaultTheme "dark") -}}
+    {{- $config = $config | append "$defaultTheme: dark" -}}
+{{- else -}}
+    {{- $config = $config | append "$defaultTheme: light" -}}
+{{- end -}}
+{{- $config = $config | append (printf "$enableHighlight: %v" (cond .Site.Params.enableHighlight true false)) -}}
+{{- if .Site.Params.enableDarkMode -}}
+    {{- with .Site.Params.primaryColorDark | default "201, 65%, 62%" -}}
+        {{- $config = $config | append (partial "utils/hsl-vars.html" (dict "value" . "prefix" "primaryColorDark")) -}}
+    {{- end -}}
+{{- end -}}
 
-{{ if .Site.Params.displayBackToTopOnMobile }}
-    $displayBackToTopOnMobile: true;
-{{ else }}
-    $displayBackToTopOnMobile: false;
-{{ end }}
+{{- if .Site.Params.enableHeader -}}
+    {{- with .Site.Params.headerBackground -}}
+        {{- $config = $config | append (printf "$headerBackground: %s" .) -}}
+    {{- end -}}
+    {{- if .Site.Params.siteBrandSVG -}}
+        {{- $config = $config | append "$siteBrandSVG: true" -}}
+        {{- $config = $config | append (printf "$siteBrandSVGWidth: %vpx" .Site.Params.siteBrandSVGWidth) -}}
+        {{- $config = $config | append (printf "$siteBrandSVGHeight: %vpx" .Site.Params.siteBrandSVGHeight) -}}
+        {{- $config = $config | append (printf "$siteBrandSVGFill: %s" .Site.Params.siteBrandSVGFill) -}}
+    {{- else -}}
+        {{- $config = $config | append "$siteBrandSVG: false" -}}
+        {{- $config = $config | append (printf "$siteBrandFontSize: %vem" .Site.Params.siteBrandFontSize) -}}
+        {{- $config = $config | append (printf "$siteBrandFontColor: %s" .Site.Params.siteBrandFontColor) -}}
+    {{- end -}}
+{{- end -}}
 
-{{ if .Site.Params.enableCopy }}
-    $enableCopy: true;
-{{ else }}
-    $enableCopy: false;
-{{ end }}
+{{- if eq .Site.Params.listDatePosition "right" -}}
+    {{- $config = $config | append "$listDatePosition: right" -}}
+{{- else if eq .Site.Params.listDatePosition "left" -}}
+    {{- $config = $config | append "$listDatePosition: left" -}}
+{{- end -}}
+{{- $config = $config | append (printf "$enableAnchorAutoHide: %v" (cond .Site.Params.enableAnchorAutoHide true false)) -}}
+{{- if .Site.Params.footnoteReturnLinkIcon -}}
+    {{- $config = $config | append "$footnoteReturnLinkIcon: true" -}}
+{{- else -}}
+    {{- $config = $config | append "$footnoteReturnLinkIcon: false" -}}
+{{- end -}}
+{{- if .Site.Params.enableBackToTop -}}
+    {{- $config = $config | append (printf "$enableBackToTopAutoHide: %v" (cond .Site.Params.enableBackToTopAutoHide true false)) -}}
+{{- end -}}
+{{- with .Site.Params.sidebarWidth -}}
+    {{- $config = $config | append (printf "$sidebarWidth: %s" .) -}}
+{{- end -}}
+{{- with .Site.Params.sidebarPushBreakpoint -}}
+    {{- $config = $config | append (printf "$sidebarPushBreakpoint: %s" .) -}}
+{{- end -}}
 
-{{ if .Site.Params.enableCopyAutoHide }}
-    $enableCopyAutoHide: true;
-{{ else }}
-    $enableCopyAutoHide: false;
-{{ end }}
+@use "config/base" as * with (
+    {{ delimit $config ",\n    " }}
+);
 
-{{ if .Site.Params.enableSmoothScroll }}
-    $enableSmoothScroll: true;
-{{ else }}
-    $enableSmoothScroll: false;
-{{ end }}
-
-$baseRelURL: "{{ "" | relURL | strings.TrimSuffix "/" }}";
-
-
-// Utilities
-
-@import "utils/functions";
-@import "utils/mixins";
-@import "utils/placeholders";
-
-
-// Base
-
-@import "base/base";
-
+// 基础
+@use "base/base";
 {{ if .Site.Params.customizeScrollbar }}
-    @import "base/scrollbar";
+@use "base/scrollbar";
 {{ end }}
-
-
-// Typography
-
-// Font Family
-
-{{ $glyph := cond .Site.Params.enableChinesePunctuationGlyphCorrection "'glyph-correction', " "" }}
-
-{{ range $name := slice "SiteBrand" "Menu" "Title" "Headings" "Code" "Quote" "Caption" "Footer" "Body" "Glyph" "Strong" }}
-    {{ with index $.Site.Params (printf "fontFamily%s" $name) }}
-        $fontFamily{{ $name }}: {{ $glyph }}{{ . }};
-    {{ end }}
-{{ end }}
-
-@import "base/font-family";
-
-// Variable Font (Amstelvar)
-
+@use "base/font-family";
 {{ if .Site.Params.enableVariableFont }}
-    @import "base/variable-font";
+@use "base/variable-font";
 {{ end }}
-
-// Chinese Punctuation Glyph Correction
-
 {{ if .Site.Params.enableChinesePunctuationGlyphCorrection }}
-    @import "base/glyph-correction";
-
-    // Magic adjustment for zh-cn
-    .drop-cap {
-        margin-top: 1rem !important;
-    }
+@use "base/glyph-correction";
 {{ end }}
-
-// Emphasis Point
-
 {{ if .Site.Params.enableEmphasisPoint }}
-    @import "base/emphasis-point";
+@use "base/emphasis-point";
 {{ end }}
-
-// Paragraph Indents
-
 {{ if .Site.Params.enableParagraphIndent }}
-    @import "base/indent";
+@use "base/indent";
 {{ end }}
 
-
-// Themes
-
-// Light
-
-{{ with .Site.Params.primaryColorLight | default "220, 90%, 56%" }}
-    {{ partial "utils/hsl-vars.html" (dict "value" . "prefix" "primaryColorLight") }}
-{{ end }}
-
-{{ if and .Site.Params.enableDarkMode (eq .Site.Params.defaultTheme "dark") }}
-    $defaultTheme: dark;
-{{ else }}
-    $defaultTheme: light;
-{{ end }}
-
-{{ if .Site.Params.enableHighlight }}
-    $enableHighlight: true;
-{{ else }}
-    $enableHighlight: false;
-{{ end }}
-
-@import "themes/light";
-
-// Dark Mode
-
+// 主题
+@use "themes/light";
 {{ if .Site.Params.enableDarkMode }}
-    {{ with .Site.Params.primaryColorDark | default "201, 65%, 62%" }}
-        {{ partial "utils/hsl-vars.html" (dict "value" . "prefix" "primaryColorDark") }}
-    {{ end }}
-
-    @import "themes/dark";
-    @import "components/theme-switcher";
+@use "themes/dark";
+@use "components/theme-switcher";
 {{ end }}
 
-
-// Header
-
+// 布局
 {{ if .Site.Params.enableHeader }}
-    {{ with .Site.Params.headerBackground }}
-        $headerBackground: {{ . }};
-    {{ end }}
-
-    {{ if .Site.Params.siteBrandSVG }}
-        $siteBrandSVG: true;
-        $siteBrandSVGWidth: {{ .Site.Params.siteBrandSVGWidth }}px;
-        $siteBrandSVGHeight: {{ .Site.Params.siteBrandSVGHeight }}px;
-        $siteBrandSVGFill: {{ .Site.Params.siteBrandSVGFill }};
-    {{ else }}
-        $siteBrandSVG: false;
-        $siteBrandFontSize: {{ .Site.Params.siteBrandFontSize }}em;
-        $siteBrandFontColor: {{ .Site.Params.siteBrandFontColor }};
-    {{ end }}
-
-    @import 'layout/header';
-
-    {{ if .Site.Params.enableNavToggle }}
-        @import 'components/nav-toggle';
-    {{ end }}
+@use "layout/header";
+{{ if .Site.Params.enableNavToggle }}
+@use "components/nav-toggle";
 {{ end }}
-
-
-// Menu Bar
-
-@import 'layout/menu';
-
-
-// List Page
-
-{{ if eq .Site.Params.listDatePosition "right" }}
-    $listDatePosition: right;
 {{ end }}
-{{ if eq .Site.Params.listDatePosition "left" }}
-    $listDatePosition: left;
-{{ end }}
-
-@import "layout/list";
-
-
-// Single Page
-
-{{ if .Site.Params.enableAnchorAutoHide }}
-    $enableAnchorAutoHide: true;
-{{ else }}
-    $enableAnchorAutoHide: false;
-{{ end }}
-
-{{ with .Site.Params.footnoteReturnLinkIcon }}
-    $footnoteReturnLinkIcon: true;
-{{ else }}
-    $footnoteReturnLinkIcon: false;
-{{ end }}
-
-@import "layout/single";
-
-
-// Footer
-
+@use "layout/menu";
+@use "layout/list";
+@use "layout/single";
 {{ if .Site.Params.enableFooter }}
-    @import "layout/footer";
+@use "layout/footer";
 {{ end }}
 
-
-// Components
-
+// 组件
 {{ if or .Site.Params.enablePostMeta .Site.Params.enablePostMetaInHome }}
-    @import "components/post-meta";
+@use "components/post-meta";
 {{ end }}
-
 {{ if .Site.Params.enablePostCopyright }}
-    @import "components/post-copyright";
+@use "components/post-copyright";
 {{ end }}
-
 {{ if .Site.Params.enablePostGitInfo }}
-    @import "components/post-gitinfo";
+@use "components/post-gitinfo";
 {{ end }}
-
 {{ if .Site.Params.enableRelatedPosts }}
-    @import "components/related-posts";
+@use "components/related-posts";
 {{ end }}
-
 {{ if .Site.Params.enablePostTags }}
-    @import "components/post-tags";
+@use "components/post-tags";
 {{ end }}
-
 {{ if .Site.Params.enableAboutPageMinimalFooter }}
-    @import "components/minimal-footer-about";
+@use "components/minimal-footer-about";
 {{ end }}
-
 {{ if .Site.Params.enablePostNav }}
-    @import "components/post-nav";
+@use "components/post-nav";
 {{ end }}
-
 {{ if .Site.Params.enableComments }}
-    @import "components/comments";
+@use "components/comments";
 {{ end }}
-
 {{ if .Site.Params.enableBackToTop }}
-    {{ if .Site.Params.enableBackToTopAutoHide }}
-        $enableBackToTopAutoHide: true;
-    {{ else }}
-        $enableBackToTopAutoHide: false;
-    {{ end }}
-
-    @import "components/back-to-top";
+@use "components/back-to-top";
 {{ end }}
-
 {{ if .Site.Params.enableHighlight }}
-    @import "components/highlight";
+@use "components/highlight";
 {{ end }}
-
 {{ if .Site.Params.enableCopy }}
-    @import "components/copy-button";
+@use "components/copy-button";
 {{ end }}
-
 {{ if .Site.Params.enableSocials }}
-    @import "components/socials";
+@use "components/socials";
 {{ end }}
 
 // 分页样式无条件导入：归档页 /archives/page/N/ 不依赖首页布局配置
-@import "components/pagination";
+@use "components/pagination";
 
-
-// Homepage Layout
-
+// 首页布局
 {{ if eq .Site.Params.homeLayout "poetry" }}
-    @import "pages/home-poetry";
+@use "pages/home-poetry";
 {{ end }}
-
 {{ if eq .Site.Params.homeLayout "posts" }}
-    @import "pages/home-posts";
+@use "pages/home-posts";
 {{ end }}
 
-
-// Tags Page
-
+// 标签页
 {{ if .Site.Params.enableTagCloud }}
-    @import "pages/tag-cloud";
+@use "pages/tag-cloud";
 {{ end }}
 
+// 微动态
+@use "pages/micro";
 
-// Micro Page
+// 404
+@use "pages/404" as page404;
 
-@import "pages/micro";
-
-
-// 404 Page
-
-@import "pages/404";
-
-
-// Third Party
-
-// Medium Zoom
-
+// 第三方样式
 {{ if .Site.Params.enableMediumZoom }}
-    @import "third-party/medium-zoom";
+@use "third-party/medium-zoom";
 {{ end }}
+@use "third-party/katex";
+@use "third-party/mermaid";
 
-// KaTeX
+// 宽度变量与响应式（宽度变量须先于响应式加载）
+@use "base/width";
+@use "base/responsive";
 
-@import "third-party/katex";
+// 数据属性
+@use "base/data-attributes";
 
-// Mermaid
+// 短代码
+@use "components/shortcodes-quote";
+@use "components/shortcodes-notice";
+@use "components/shortcodes-github";
+@use "components/shortcodes-blogroll";
+@use "components/shortcodes-identity-cards";
+@use "components/shortcodes-book-list";
+@use "components/shortcodes-photo-copyright";
 
-@import "third-party/mermaid";
-
-// Responsive
-
-$greaterWidth: null;
-
-@if ($postWidth > $listWidth) {
-    $greaterWidth: $postWidth;
-} @else {
-    $greaterWidth: $listWidth;
-}
-
-$maxWidth: $fontSize * (strip-unit($greaterWidth) + 5);
-:root {
-    --max-width: #{$maxWidth};
-}
-@import "base/responsive";
-
-
-// Data Attributes
-
-@import "base/data-attributes";
-
-
-// Site Shortcodes
-
-@import "components/shortcodes-quote";
-@import "components/shortcodes-notice";
-@import "components/shortcodes-github";
-@import "components/shortcodes-blogroll";
-@import "components/shortcodes-identity-cards";
-@import "components/shortcodes-book-list";
-@import "components/shortcodes-photo-copyright";
-
-// Sidebar
-
-{{ with .Site.Params.sidebarWidth }}
-    $sidebarWidth: {{ . }};
-{{ end }}
-{{ with .Site.Params.sidebarPushBreakpoint }}
-    $sidebarPushBreakpoint: {{ . }};
-{{ end }}
-
-@import "components/sidebar";
+// 侧边栏
+@use "components/sidebar";

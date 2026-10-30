@@ -751,6 +751,18 @@ uglyURLs = false
     # 图片外链地址
     imageHostURL = "https://guanqr.oss-cn-hangzhou.aliyuncs.com"
 
+    # OSS 格式转换质量（正文图片 AVIF/WebP；0 = 不传 quality 参数）
+    imageQuality = 85
+
+    # 低清占位（LQIP）：64px WebP + 模糊半径 3，铺在主图下方
+    imagePlaceholderWidth = 64
+    imagePlaceholderQuality = 30
+    imagePlaceholderBlur = 3
+
+    # 本地预览时经 OSS 加载正文图片（hugo serve --config hugo.toml,local-preview.toml）
+    # 生产/CI 保持 false
+    previewOSS = false
+
     # 是否将 HTML 的头部元数据中的图片链接也替换为外链
     headAlso = false
 

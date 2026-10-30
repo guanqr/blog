@@ -1,6 +1,7 @@
 // ============================================================
 // 微动态页面
 // ============================================================
+@use "../utils/deps" as *;
 
 .micro-list {
     margin-top: 3em;
@@ -24,7 +25,7 @@
     margin-top: 0.5em;
     font-size: 0.85em;
     color: var(--color-contrast-low);
-    @if variable-exists("fontFamilyGlyph") {
+    @if $fontFamilyGlyph != null {
         font-family: $fontFamilyGlyph;
     }
     transition: color $duration;

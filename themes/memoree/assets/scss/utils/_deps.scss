@@ -1,0 +1,6 @@
+// 共享依赖门面：partial 统一 @use "../utils/deps" as *;
+// 提供配置变量、函数、mixin 与占位符；本文件不产出 CSS。
+@forward "../config/base";
+@forward "functions";
+@forward "mixins";
+@forward "placeholders";

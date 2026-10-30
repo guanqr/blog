@@ -18,8 +18,16 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
       with:
-        hugo-version: '0.164.0'
-        extended: true
+        hugo-version: '0.169.0'
+        extended: false
+
+    - name: Install Dart Sass
+      run: |
+        curl -fsSL -o /tmp/dart-sass.tar.gz \
+          https://github.com/sass/dart-sass/releases/download/1.107.0/dart-sass-1.107.0-linux-x64.tar.gz
+        tar -xzf /tmp/dart-sass.tar.gz -C /tmp
+        echo "/tmp/dart-sass" >> "$GITHUB_PATH"
+        /tmp/dart-sass/sass --version
 
     - name: Build
       run: hugo --gc --minify --cleanDestinationDir

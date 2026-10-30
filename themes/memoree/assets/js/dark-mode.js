@@ -1,12 +1,15 @@
 // Two-State Dark Mode (Light ↔ Dark)
+import { enableDarkMode, defaultTheme as initialDefaultTheme, themeColors } from '@params';
 
-const defaultTheme = '{{ .Site.Params.defaultTheme | default "light" }}';
+const defaultTheme = initialDefaultTheme || 'light';
 
 // Initialize — 主题决议由 head 内联脚本在样式表前完成并写入 data-theme，
 // 此处以其结果为准（脚本早退时属性缺失，回退默认主题），避免双份维护
 let theme = document.documentElement.getAttribute('data-theme') || defaultTheme;
 
-window.addEventListener('DOMContentLoaded', () => {
+export function initDarkMode() {
+    if (!enableDarkMode) return;
+
     changeModeMeta();
 
     const switcher = document.getElementById('theme-switcher');
@@ -19,16 +22,16 @@ window.addEventListener('DOMContentLoaded', () => {
             changeModeMeta();
         });
     }
-}, { once: true });
 
-// Cross-tab sync
-window.addEventListener('storage', (e) => {
-    if (e.key !== 'theme') return;
-    theme = e.newValue || defaultTheme;
-    if (theme === 'system') theme = defaultTheme;
-    applyTheme(theme);
-    changeModeMeta();
-});
+    // Cross-tab sync
+    window.addEventListener('storage', (e) => {
+        if (e.key !== 'theme') return;
+        theme = e.newValue || defaultTheme;
+        if (theme === 'system') theme = defaultTheme;
+        applyTheme(theme);
+        changeModeMeta();
+    });
+}
 
 function applyTheme(t) {
     document.documentElement.setAttribute('data-theme', t);
@@ -37,7 +40,7 @@ function applyTheme(t) {
 function changeModeMeta() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     // 主题色与 head 的 theme-color meta 共用 utils/theme-colors.html 单源
-    const color = isDark ? '{{ (partial "utils/theme-colors.html" .).dark }}' : '{{ (partial "utils/theme-colors.html" .).light }}';
+    const color = isDark ? themeColors.dark : themeColors.light;
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', color);
 }

@@ -1,3 +1,6 @@
+@use "sass:math";
+@use "../utils/deps" as *;
+
 .single .main-inner {
     width: $postWidth;
 }
@@ -28,7 +31,7 @@
         // 此规则会覆盖全局 a 的 transition: color（2026-10-18 实测）
         transition: color $duration, text-decoration-color $duration;
         &:hover {
-            text-decoration-color: alpha(var(--color-primary), 0.5);
+            text-decoration-color: alpha-color(var(--color-primary), 0.5);
         }
     }
 }
@@ -76,6 +79,60 @@
     }
 }
 
+/* <picture> 不参与布局，img 仍按原规则居中；caption 紧跟其后 */
+.post picture,
+.micro-content picture {
+    display: contents;
+}
+
+/* 正文图片 LQIP：低清占位负责布局，主图绝对覆盖，加载完成淡入 */
+.post-img {
+    position: relative;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 2em auto;
+}
+.post-img .post-img-main {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+.post-img .post-img-main img {
+    box-sizing: border-box;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border: 1px solid var(--color-contrast-lower);
+    opacity: 0;
+}
+/* 用 animation 而非 transition：主图可能在首次绘制前就 load，
+   transition 会因同帧写入首尾状态而不产生中间帧；animation 从
+   class 写入起强制走 0 → 1 的 0.6s 淡入（2026-10-30 实测）。 */
+.post-img .post-img-main img.is-loaded {
+    opacity: 1;
+    animation: post-img-fade 0.6s ease forwards;
+}
+@keyframes post-img-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.post-img .post-img-lqip {
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    /* 边框由上层主图提供；占位层不加边框，避免内容盒溢出在底部露线 */
+    border: 0;
+    object-fit: cover;
+    pointer-events: none;
+}
+
 blockquote {
     margin: 2em 0;
     padding-left: 1em;
@@ -93,7 +150,7 @@ blockquote {
     float: left;
     font-size: $fontSize * 3;
     margin-right: $lineHeight * $fontSize - $fontSize;
-    margin-top: $fontSize / $lineHeight;
+    margin-top: math.div($fontSize, $lineHeight);
     line-height: $lineHeight * $fontSize;
 }
 
@@ -125,7 +182,7 @@ blockquote {
 
 @if ($footnoteReturnLinkIcon) {
     .footnote-icon {
-        fill: alpha(var(--color-contrast-high), 0.5);
+        fill: alpha-color(var(--color-contrast-high), 0.5);
         transition: fill $duration;
         margin-bottom: 0.3em;
         &:hover {
@@ -150,7 +207,7 @@ blockquote {
     }
     .anchor-link {
         opacity: var(--anchor-opacity);
-        transition: opacity ($duration / 2);
+        transition: opacity math.div($duration, 2);
     }
     .post {
         h1, h2, h3, h4, h5, h6, .anchor-link {
@@ -180,7 +237,7 @@ th, td {
     border: 1px solid var(--color-contrast-lower);
 }
 table > tbody > tr:nth-of-type(odd) {
-    background-color: alpha(var(--color-contrast-lower), 0.5);
+    background-color: alpha-color(var(--color-contrast-lower), 0.5);
 }
 table > tbody > tr:hover {
     background-color: var(--color-contrast-lower);
@@ -194,7 +251,7 @@ dd {
 }
 
 code {
-    padding: ($fontSize / 8) ($fontSize / 4);
+    padding: math.div($fontSize, 8) math.div($fontSize, 4);
     background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0.7);
     font-size: 0.8em;
 }

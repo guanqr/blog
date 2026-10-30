@@ -1,0 +1,42 @@
+{{/*
+  正文图片 URL：生产环境把 /images/... 映射到 imageHostURL（OSS），
+  可选 resize/blur/format/quality 参数生成 OSS 处理地址（AVIF/WebP/LQIP）。
+  参数：page（页面）、src（Markdown 目标）、format（可选 avif/webp）、
+        quality（可选）、width（可选，等比缩放宽）、blur（可选，模糊半径）
+  返回：字符串 URL；开发环境、外链、未配置图床时原样返回。
+  Usage:
+    {{ partial "utils/img-url.html" (dict "page" . "src" $dest "format" "avif" "quality" 85) }}
+    {{ partial "utils/img-url.html" (dict "page" . "src" $dest "format" "webp" "quality" 30 "width" 64 "blur" 3) }}
+*/}}
+{{- $src := .src | default "" -}}
+{{- $page := .page -}}
+{{- $site := $page.Site -}}
+{{- $format := .format | default "" -}}
+{{- $quality := .quality | default 0 -}}
+{{- $width := .width | default 0 -}}
+{{- $blur := .blur | default 0 -}}
+{{- $url := $src -}}
+{{- $remote := or (strings.HasPrefix $src "http") (strings.HasPrefix $src "//") -}}
+{{- $useHost := or (eq hugo.Environment "production") $site.Params.previewOSS -}}
+{{- if and (not $remote) $site.Params.enableImageHost $site.Params.imageHostURL $useHost -}}
+    {{- $host := strings.TrimSuffix "/" $site.Params.imageHostURL -}}
+    {{- $url = printf "%s/%s" $host (strings.TrimPrefix "/" $src) -}}
+    {{- $process := slice -}}
+    {{- if gt $width 0 -}}
+        {{- $process = $process | append (printf "resize,m_lfit,w_%d" (int $width)) -}}
+    {{- end -}}
+    {{- if gt $blur 0 -}}
+        {{- $process = $process | append (printf "blur,r_%d,s_%d" (int $blur) (int $blur)) -}}
+    {{- end -}}
+    {{- with $format -}}
+        {{- $process = $process | append (printf "format,%s" .) -}}
+    {{- end -}}
+    {{- if gt $quality 0 -}}
+        {{- $process = $process | append (printf "quality,q_%d" (int $quality)) -}}
+    {{- end -}}
+    {{- if gt (len $process) 0 -}}
+        {{- $sep := cond (strings.Contains $url "?") "&" "?" -}}
+        {{- $url = printf "%s%sx-oss-process=image/%s" $url $sep (delimit $process "/") -}}
+    {{- end -}}
+{{- end -}}
+{{- return $url -}}
